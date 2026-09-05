@@ -32,7 +32,7 @@ coverage.xml
 .DS_Store
 
 # Runtime and generated data
-data/
+/data/
 logs/
 artifacts/
 tmp/

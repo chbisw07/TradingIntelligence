@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A0
+## Unreleased — TIAF_A1.1
+
+- Added provider-neutral market-data enums, normalized models, provider
+  protocol, typed failures, and deterministic normalization/freshness helpers.
+- Added A1.1 model, serialization, protocol, validation, and public-export tests.
+
+## TIAF_A0 — Complete / Frozen
 
 - Added immutable, versioned Pydantic domain contracts for requests, evidence,
   opinions, assessments, horizons, snapshots, and option expressions.

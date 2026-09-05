@@ -17,9 +17,10 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**Active:** TIAF_A0 — Domain Contracts and Foundation.
+**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.1 —
+Provider Contracts + Normalized Market Models**.
 
-## TIAF_A0 — Domain Contracts and Foundation — ACTIVE
+## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
 Purpose: establish the stable language every future Planner, Agent, Scanner and TradeMonitor integration will use.
 
@@ -41,7 +42,18 @@ Planned scope:
 
 No LangGraph workflow, LLM call, broker API, market prediction, or execution capability belongs in A0.
 
-## TIAF_A1 — Data Foundation
+## TIAF_A1 — Data Foundation — ACTIVE
+
+**Current:** TIAF_A1.1 — Provider Contracts + Normalized Market Models
+
+- normalized instrument, quote, OHLCV, historical-series, and instrument-master models
+- provider capability protocol
+- typed data/provider failures
+- canonical timestamp, identity, interval, and freshness normalization helpers
+- no live provider adapter
+
+Later A1 sub-targets add provider adapters, resolution, caching, shared context,
+and fallback behavior.
 
 - provider-neutral market-data interfaces
 - Dhan and/or Zerodha adapters as appropriate

@@ -7,9 +7,9 @@ attributable intelligence for consumers such as TradeMonitor.
 
 ## Current stage
 
-The **TIAF_TGT0** project-bootstrap baseline is complete and frozen. Development
-is now at **TIAF_A0**, which adds versioned, validated domain contracts while
-preserving all system authority boundaries.
+The **TIAF_TGT0** and **TIAF_A0** baselines are complete and frozen. Development
+is now at **TIAF_A1.1**, which defines provider-neutral market-data contracts,
+capabilities, failures, and normalization without connecting to a live provider.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker integration, LLM calls, execution capability, or
