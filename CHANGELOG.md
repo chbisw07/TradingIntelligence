@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A1.1
+## Unreleased — TIAF_A1.2
+
+- Added a secret-safe, read-only DhanHQ v2 adapter using an injectable HTTPX
+  transport.
+- Added normalized full quotes, ordered 1,000-instrument batch chunking, daily
+  and supported intraday OHLCV, explicit mappings, and typed error translation.
+- Added mocked transport/provider tests and an optional one-quote smoke script.
+
+## TIAF_A1.1 — Complete / Frozen
 
 - Added provider-neutral market-data enums, normalized models, provider
   protocol, typed failures, and deterministic normalization/freshness helpers.

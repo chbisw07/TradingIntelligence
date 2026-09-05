@@ -17,8 +17,8 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.1 —
-Provider Contracts + Normalized Market Models**.
+**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.2 —
+Dhan Core Market Data Adapter**.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -44,13 +44,22 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
 
 ## TIAF_A1 — Data Foundation — ACTIVE
 
-**Current:** TIAF_A1.1 — Provider Contracts + Normalized Market Models
+**Complete / frozen:** TIAF_A1.1 — Provider Contracts + Normalized Market Models
 
 - normalized instrument, quote, OHLCV, historical-series, and instrument-master models
 - provider capability protocol
 - typed data/provider failures
 - canonical timestamp, identity, interval, and freshness normalization helpers
 - no live provider adapter
+
+**Current:** TIAF_A1.2 — Dhan Core Market Data Adapter
+
+- authenticated, read-only DhanHQ v2 HTTP transport
+- ordered and chunked full market quotes
+- daily and supported intraday OHLCV
+- typed Dhan error translation
+- explicit security-ID and derivative-instrument mapping boundaries
+- no orders, portfolio access, WebSocket, option chain, or trading behavior
 
 Later A1 sub-targets add provider adapters, resolution, caching, shared context,
 and fallback behavior.

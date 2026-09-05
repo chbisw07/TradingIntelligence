@@ -68,7 +68,7 @@ not a freshness TTL.
 ## Interval normalization
 
 The normalizer maps a deliberately small group of common minute, hour, and day
-spellings to `1m`, `5m`, `15m`, `1h`, and `1d`. Unknown non-empty labels are
+spellings to `1m`, `5m`, `15m`, `25m`, `1h`, and `1d`. Unknown non-empty labels are
 trimmed and case-normalized rather than assigned invented semantics. Numeric
 uppercase-`M` forms such as `1M` are rejected because they are ambiguous between
 minutes and months; a future adapter must disambiguate them explicitly.
@@ -104,10 +104,35 @@ market-data fetch, cache, persistence, fallback orchestration, agent, LLM,
 LangGraph workflow, ranking, signal, trade action, Google Sheet integration, or
 `AnalysisContext` construction.
 
+## A1.2 — Dhan core market-data adapter
+
+Dhan is the first concrete factual provider because it supplies the project's
+required batched quotes and daily/intraday OHLCV behind explicit security IDs.
+The A1.2 adapter implements only `QUOTES` and `HISTORICAL_OHLCV`; instrument
+master and resolver work remains deferred. Credentials come from
+`DHAN_CLIENT_ID` and `DHAN_ACCESS_TOKEN`, and the adapter never logs or exposes
+the token.
+
+The adapter uses Dhan's full quote endpoint, preserves ordered all-success batch
+semantics, and chunks requests at the documented 1,000-instrument boundary. It
+does not sleep or enforce the documented one-quote-request-per-second policy;
+call scheduling belongs to the future Data Service. Historical support covers
+daily bars and Dhan's `1`, `5`, `15`, `25`, and `60` minute intervals. Intraday
+ranges over Dhan's documented 90-day per-request maximum fail explicitly
+instead of being silently changed or automatically rate-limited.
+
+An explicit `provider_instrument_id` is required as Dhan `securityId`.
+Index-versus-stock derivative terminology cannot be inferred safely from A1.1
+identity alone, so derivative historical requests require injected
+`FUTIDX`/`FUTSTK` or `OPTIDX`/`OPTSTK` mapping. A1.4 will own full resolution.
+
+See [the Dhan adapter design](TIAF_A1_2_DHAN_CORE_ADAPTER.md) for endpoint,
+mapping, security, testing, and smoke-test details.
+
 ## Planned A1 steps
 
-- **A1.2:** Dhan adapter
-- **A1.3:** Zerodha adapter
+- **A1.2:** Dhan core adapter (current)
+- **A1.3:** Dhan derivatives-data extension
 - **A1.4:** instrument resolver
 - **A1.5:** cache and caller-configured freshness policy
 - **A1.6:** `AnalysisContext` builder

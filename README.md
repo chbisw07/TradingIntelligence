@@ -7,9 +7,9 @@ attributable intelligence for consumers such as TradeMonitor.
 
 ## Current stage
 
-The **TIAF_TGT0** and **TIAF_A0** baselines are complete and frozen. Development
-is now at **TIAF_A1.1**, which defines provider-neutral market-data contracts,
-capabilities, failures, and normalization without connecting to a live provider.
+The **TIAF_TGT0**, **TIAF_A0**, and **TIAF_A1.1** baselines are complete and
+frozen. Development is now at **TIAF_A1.2**, which adds a read-only DhanHQ v2
+adapter for normalized quotes and historical OHLCV.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker integration, LLM calls, execution capability, or
