@@ -104,6 +104,35 @@ def option_chain_response(
 OPTION_EXPIRY = date(2026, 9, 24)
 
 
+def rolling_option_side(timestamps: list[int] | None = None) -> dict[str, list[Any]]:
+    """Return aligned arrays matching Dhan's rolling expired-option response."""
+    epochs = timestamps or [1785555900, 1785556800]
+    size = len(epochs)
+    return {
+        "timestamp": epochs,
+        "open": [100.0 + index for index in range(size)],
+        "high": [105.0 + index for index in range(size)],
+        "low": [98.0 + index for index in range(size)],
+        "close": [103.0 + index for index in range(size)],
+        "iv": [18.5 + index for index in range(size)],
+        "volume": [1000 + index for index in range(size)],
+        "strike": [3000.0 for _ in range(size)],
+        "oi": [5000 + index for index in range(size)],
+        "spot": [3005.0 + index for index in range(size)],
+    }
+
+
+def rolling_option_response(
+    *,
+    side: str = "ce",
+    values: dict[str, list[Any]] | None = None,
+) -> dict[str, Any]:
+    """Return one requested side with the opposite side explicitly unavailable."""
+    data: dict[str, Any] = {"ce": None, "pe": None}
+    data[side] = values or rolling_option_side()
+    return {"data": data}
+
+
 def call_option(
     symbol: str = "RELIANCE",
     security_id: str = "49081",

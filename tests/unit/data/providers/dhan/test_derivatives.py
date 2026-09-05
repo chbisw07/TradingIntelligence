@@ -49,6 +49,7 @@ def test_provider_advertises_derivatives_and_satisfies_segregated_protocol() -> 
             ProviderCapability.HISTORICAL_OHLCV,
             ProviderCapability.DERIVATIVES_METADATA,
             ProviderCapability.OPTION_CHAIN,
+            ProviderCapability.HISTORICAL_OPTIONS,
         }
     )
 

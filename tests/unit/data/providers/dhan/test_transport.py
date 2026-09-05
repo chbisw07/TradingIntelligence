@@ -1,5 +1,7 @@
 """HTTP boundary tests using HTTPX's in-memory mock transport."""
 
+import json
+
 import httpx
 import pytest
 
@@ -116,3 +118,22 @@ def test_access_token_is_absent_from_transport_repr_and_errors() -> None:
     assert token not in repr(transport)
     assert token not in str(captured.value)
     assert token not in repr(captured.value)
+
+
+@pytest.mark.parametrize("expiry_code", [1, 2, 3])
+def test_transport_json_preserves_historical_option_expiry_code(expiry_code: int) -> None:
+    captured: dict[str, object] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured.update(json.loads(request.content.decode("utf-8")))
+        return httpx.Response(200, json={"data": {"ce": None, "pe": None}})
+
+    transport = HttpxDhanTransport(
+        dhan_config(),
+        transport=httpx.MockTransport(handler),
+    )
+    transport.post("/charts/rollingoption", {"expiryCode": expiry_code})
+
+    assert "expiryCode" in captured
+    assert captured["expiryCode"] == expiry_code
+    assert type(captured["expiryCode"]) is int

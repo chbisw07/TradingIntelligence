@@ -17,8 +17,8 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.3 —
-Dhan Derivatives & Live Option Intelligence Data**.
+**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.4 —
+Dhan Historical / Expired Options Data**.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -61,13 +61,22 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
 - explicit security-ID and derivative-instrument mapping boundaries
 - no orders, portfolio access, WebSocket, or trading behavior
 
-**Current:** TIAF_A1.3 — Dhan Derivatives & Live Option Intelligence Data
+**Complete / live-validated:** TIAF_A1.3 — Dhan Derivatives & Live Option Intelligence Data
 
 - provider-neutral frozen expiry-list and live option-chain contracts
 - read-only Dhan expiry discovery and complete option-chain normalization
 - contract IDs, spot, prices, top-of-book, OI, volume, IV, and reported Greeks
 - separate `DerivativesDataProvider` protocol
 - no expired history, selection, analytics, recommendations, or execution
+
+**Current:** TIAF_A1.4 — Dhan Historical / Expired Options Data
+
+- provider-neutral rolling historical-option bars and series
+- read-only Dhan expired-options endpoint using underlying security IDs
+- explicit weekly/monthly expiry code and ATM-relative strike context
+- complete factual OHLC, IV, volume, OI, actual-strike, and spot arrays
+- adjacent half-open 30-day chunking and deterministic merge semantics
+- no replay strategy, option selection, recommendation, or execution
 
 Later A1 sub-targets add provider adapters, resolution, caching, shared context,
 and fallback behavior.

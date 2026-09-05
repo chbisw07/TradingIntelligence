@@ -2,7 +2,18 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A1.3
+## Unreleased — TIAF_A1.4
+
+- Added frozen provider-neutral rolling historical-option bars, series,
+  expiry context, and ATM-relative strike types behind a segregated protocol.
+- Added Dhan expired-options requests with complete factual arrays, half-open
+  30-day chunking, deterministic merging, and typed malformed-data handling.
+- Corrected the rolling expired-options endpoint to its live-validated dedicated
+  expiry-code mapping: `1` near, `2` next, and `3` far; `0` is rejected.
+- Added mocked tests, a read-only smoke utility, and the detailed evolving TIAF
+  implementation-target map.
+
+## TIAF_A1.3 — Accepted / Live Validated
 
 - Added provider-neutral immutable expiry, option-chain, strike, contract, and
   Greeks snapshots behind a segregated derivatives provider protocol.

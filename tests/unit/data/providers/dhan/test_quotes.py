@@ -172,6 +172,7 @@ def test_capabilities_and_provider_protocol_are_accurate() -> None:
             ProviderCapability.HISTORICAL_OHLCV,
             ProviderCapability.DERIVATIVES_METADATA,
             ProviderCapability.OPTION_CHAIN,
+            ProviderCapability.HISTORICAL_OPTIONS,
         }
     )
     assert ProviderCapability.INSTRUMENT_MASTER not in provider.capabilities()

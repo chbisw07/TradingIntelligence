@@ -28,6 +28,14 @@ from tiaf.data.errors import (
     TIAFDataError,
     UnsupportedCapabilityError,
 )
+from tiaf.data.historical_options import (
+    ExpiryFlag,
+    HistoricalOptionBar,
+    HistoricalOptionExpiryCode,
+    HistoricalOptionSeries,
+    RelativeStrike,
+)
+from tiaf.data.historical_options_provider import HistoricalOptionsDataProvider
 from tiaf.data.models import (
     HistoricalSeries,
     InstrumentKey,
@@ -50,7 +58,12 @@ __all__ = [
     "DataFailureKind",
     "DerivativesDataProvider",
     "ExpiryListSnapshot",
+    "ExpiryFlag",
     "HistoricalSeries",
+    "HistoricalOptionBar",
+    "HistoricalOptionExpiryCode",
+    "HistoricalOptionSeries",
+    "HistoricalOptionsDataProvider",
     "InstrumentKey",
     "InstrumentNotFoundError",
     "InstrumentRecord",
@@ -72,6 +85,7 @@ __all__ = [
     "ProviderTimeoutError",
     "QuoteFieldAvailability",
     "QuoteSnapshot",
+    "RelativeStrike",
     "StaleDataError",
     "TIAFDataError",
     "UnsupportedCapabilityError",

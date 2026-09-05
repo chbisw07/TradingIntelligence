@@ -3,9 +3,16 @@
 from collections.abc import Callable, Mapping
 from datetime import date, datetime, timedelta
 
+from pydantic import ValidationError
+
 from tiaf.config import Settings
+from tiaf.contracts import DataQuality, OptionType
 from tiaf.data import (
+    ExpiryFlag,
     ExpiryListSnapshot,
+    HistoricalOptionBar,
+    HistoricalOptionExpiryCode,
+    HistoricalOptionSeries,
     HistoricalSeries,
     InstrumentKey,
     InstrumentNotFoundError,
@@ -13,8 +20,10 @@ from tiaf.data import (
     InstrumentType,
     MarketSegment,
     OptionChainSnapshot,
+    ProviderBadResponseError,
     ProviderCapability,
     QuoteSnapshot,
+    RelativeStrike,
     UnsupportedCapabilityError,
 )
 from tiaf.data.normalization import TIAF_TIMEZONE, normalize_datetime_to_ist, normalize_interval
@@ -22,6 +31,9 @@ from tiaf.data.providers.dhan.config import DhanConfig
 from tiaf.data.providers.dhan.derivatives_parser import (
     parse_expiry_list_response,
     parse_option_chain_response,
+)
+from tiaf.data.providers.dhan.historical_options_parser import (
+    parse_historical_option_response,
 )
 from tiaf.data.providers.dhan.mappings import (
     DhanInstrumentType,
@@ -40,6 +52,37 @@ _INTRADAY_INTERVALS = {
     "25m": ("25", 25),
     "1h": ("60", 60),
 }
+_ROLLING_OPTION_INTERVALS = {key: value[0] for key, value in _INTRADAY_INTERVALS.items()}
+_ROLLING_OPTION_REQUIRED_DATA = (
+    "open",
+    "high",
+    "low",
+    "close",
+    "iv",
+    "volume",
+    "strike",
+    "oi",
+    "spot",
+)
+_ROLLING_OPTION_MAX_DAYS = 30
+
+
+def plan_rolling_option_chunks(
+    start_date: date,
+    end_date: date,
+) -> tuple[tuple[date, date], ...]:
+    """Split a half-open date range into adjacent requests of at most 30 days."""
+    if isinstance(start_date, datetime) or isinstance(end_date, datetime):
+        raise ValueError("rolling-option chunk boundaries must be dates, not datetimes")
+    if end_date <= start_date:
+        raise ValueError("end_date must be later than start_date")
+    chunks: list[tuple[date, date]] = []
+    cursor = start_date
+    while cursor < end_date:
+        chunk_end = min(cursor + timedelta(days=_ROLLING_OPTION_MAX_DAYS), end_date)
+        chunks.append((cursor, chunk_end))
+        cursor = chunk_end
+    return tuple(chunks)
 
 
 def _ist_now() -> datetime:
@@ -80,6 +123,7 @@ class DhanMarketDataProvider:
                 ProviderCapability.HISTORICAL_OHLCV,
                 ProviderCapability.DERIVATIVES_METADATA,
                 ProviderCapability.OPTION_CHAIN,
+                ProviderCapability.HISTORICAL_OPTIONS,
             }
         )
 
@@ -230,6 +274,147 @@ class DhanMarketDataProvider:
             received_at=received_at,
         )
 
+    def get_historical_options(
+        self,
+        underlying: InstrumentKey,
+        interval: str,
+        expiry_flag: ExpiryFlag,
+        expiry_code: HistoricalOptionExpiryCode | int,
+        relative_strike: RelativeStrike,
+        option_type: OptionType,
+        start_date: date,
+        end_date: date,
+    ) -> HistoricalOptionSeries:
+        """Retrieve and merge Dhan rolling expired-option data in 30-day chunks."""
+        if expiry_code is None:
+            raise ValueError("expiry_code is required")
+        chunks = plan_rolling_option_chunks(start_date, end_date)
+        try:
+            normalized_interval = normalize_interval(interval)
+        except ValueError as exc:
+            raise UnsupportedCapabilityError(
+                ProviderCapability.HISTORICAL_OPTIONS,
+                provider="DHAN",
+                detail=f"Dhan rolling-option interval {interval!r} is unsupported",
+            ) from exc
+        if normalized_interval not in _ROLLING_OPTION_INTERVALS:
+            raise UnsupportedCapabilityError(
+                ProviderCapability.HISTORICAL_OPTIONS,
+                provider="DHAN",
+                detail=f"Dhan rolling-option interval {normalized_interval!r} is unsupported",
+            )
+        try:
+            normalized_expiry_flag = ExpiryFlag(expiry_flag)
+            normalized_expiry_code = HistoricalOptionExpiryCode(expiry_code)
+            normalized_option_type = OptionType(option_type)
+            normalized_strike = (
+                relative_strike
+                if isinstance(relative_strike, RelativeStrike)
+                else RelativeStrike.model_validate(relative_strike)
+            )
+        except (ValueError, ValidationError) as exc:
+            raise ValueError("invalid historical-option request value") from exc
+
+        segment, dhan_instrument, max_offset = self._historical_option_identity(underlying)
+        if abs(normalized_strike.offset) > max_offset:
+            raise UnsupportedCapabilityError(
+                ProviderCapability.HISTORICAL_OPTIONS,
+                provider="DHAN",
+                detail=(
+                    f"Dhan supports historical {dhan_instrument.value} strikes only through "
+                    f"ATM +/-{max_offset}"
+                ),
+            )
+        security_id = self._security_id(underlying)
+        now = normalize_datetime_to_ist(self._clock())
+        if start_date >= now.date():
+            raise ValueError("historical-option range must not be future-only")
+
+        merged: dict[datetime, HistoricalOptionBar] = {}
+        chunk_qualities: list[DataQuality] = []
+        duplicate_count = 0
+        last_received_at = now
+        for chunk_start, chunk_end in chunks:
+            response = self._transport.post(
+                "/charts/rollingoption",
+                {
+                    "exchangeSegment": segment,
+                    "interval": _ROLLING_OPTION_INTERVALS[normalized_interval],
+                    "securityId": security_id,
+                    "instrument": dhan_instrument.value,
+                    "expiryFlag": normalized_expiry_flag.value,
+                    "expiryCode": int(normalized_expiry_code),
+                    "strike": str(normalized_strike),
+                    "drvOptionType": (
+                        "CALL" if normalized_option_type is OptionType.CE else "PUT"
+                    ),
+                    "requiredData": list(_ROLLING_OPTION_REQUIRED_DATA),
+                    "fromDate": chunk_start.isoformat(),
+                    "toDate": chunk_end.isoformat(),
+                },
+            )
+            last_received_at = normalize_datetime_to_ist(self._clock())
+            bars, chunk_quality = parse_historical_option_response(
+                response,
+                underlying=underlying,
+                option_type=normalized_option_type,
+                expiry_flag=normalized_expiry_flag,
+                expiry_code=normalized_expiry_code,
+                relative_strike=normalized_strike,
+            )
+            chunk_qualities.append(chunk_quality)
+            for bar in bars:
+                if not start_date <= bar.start_at.date() < end_date:
+                    raise ProviderBadResponseError(
+                        "Dhan rolling-option bar fell outside the requested range",
+                        provider="DHAN",
+                    )
+                existing = merged.get(bar.start_at)
+                if existing is not None:
+                    if existing != bar:
+                        raise ProviderBadResponseError(
+                            "Dhan returned conflicting duplicate rolling-option bars",
+                            provider="DHAN",
+                        )
+                    duplicate_count += 1
+                    continue
+                merged[bar.start_at] = bar
+
+        bars = tuple(sorted(merged.values(), key=lambda item: item.start_at))
+        if not bars:
+            quality = DataQuality.UNAVAILABLE
+        elif DataQuality.DEGRADED in chunk_qualities:
+            quality = DataQuality.DEGRADED
+        elif any(item is not DataQuality.GOOD for item in chunk_qualities):
+            quality = DataQuality.PARTIAL
+        else:
+            quality = DataQuality.GOOD
+        try:
+            return HistoricalOptionSeries(
+                underlying=underlying,
+                option_type=normalized_option_type,
+                expiry_flag=normalized_expiry_flag,
+                expiry_code=normalized_expiry_code,
+                relative_strike=normalized_strike,
+                interval=normalized_interval,
+                bars=bars,
+                requested_from=start_date,
+                requested_to=end_date,
+                observed_at=last_received_at,
+                source_provider="DHAN",
+                quality=quality,
+                metadata={
+                    "chunk_count": len(chunks),
+                    "deduplicated_boundary_bars": duplicate_count,
+                    "observed_at_source": "retrieval_time",
+                },
+            )
+        except ValidationError as exc:
+            raise ProviderBadResponseError(
+                "Dhan rolling-option series failed normalized validation",
+                provider="DHAN",
+            ) from exc
+
     def search_instruments(self, query: str) -> tuple[InstrumentRecord, ...]:
         """Defer instrument-master search to the dedicated resolver target."""
         del query
@@ -280,3 +465,35 @@ class DhanMarketDataProvider:
                 detail="Dhan option-chain underlying must be a supported equity or index",
             )
         return to_dhan_segment(underlying.segment)
+
+    @staticmethod
+    def _historical_option_identity(
+        underlying: InstrumentKey,
+    ) -> tuple[str, DhanInstrumentType, int]:
+        if underlying.segment in {
+            MarketSegment.NSE_EQUITY,
+            MarketSegment.NSE_INDEX,
+            MarketSegment.NSE_FNO,
+        }:
+            segment = "NSE_FNO"
+        elif underlying.segment in {
+            MarketSegment.BSE_EQUITY,
+            MarketSegment.BSE_INDEX,
+            MarketSegment.BSE_FNO,
+        }:
+            segment = "BSE_FNO"
+        else:
+            raise UnsupportedCapabilityError(
+                ProviderCapability.HISTORICAL_OPTIONS,
+                provider="DHAN",
+                detail="Dhan rolling options require a supported NSE or BSE underlying",
+            )
+        if underlying.instrument_type is InstrumentType.INDEX:
+            return segment, DhanInstrumentType.OPTIDX, 10
+        if underlying.instrument_type is InstrumentType.EQUITY:
+            return segment, DhanInstrumentType.OPTSTK, 3
+        raise UnsupportedCapabilityError(
+            ProviderCapability.HISTORICAL_OPTIONS,
+            provider="DHAN",
+            detail="Dhan rolling options require an equity or index underlying identity",
+        )

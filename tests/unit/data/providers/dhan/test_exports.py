@@ -12,6 +12,7 @@ def test_dhan_provider_exports_are_available() -> None:
         "DhanMarketDataProvider",
         "DhanTransport",
         "HttpxDhanTransport",
+        "plan_rolling_option_chunks",
         "to_dhan_instrument_type",
         "to_dhan_segment",
     } <= set(dhan.__all__)

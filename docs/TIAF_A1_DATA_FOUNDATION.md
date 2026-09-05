@@ -84,7 +84,7 @@ minutes and months; a future adapter must disambiguate them explicitly.
 
 Capabilities are advertised as an immutable `frozenset` of `QUOTES`,
 `HISTORICAL_OHLCV`, `INSTRUMENT_MASTER`, `DERIVATIVES_METADATA`, `OPTION_CHAIN`,
-`MARKET_DEPTH`, `FUNDAMENTALS`, and `NEWS`. An adapter must raise
+`HISTORICAL_OPTIONS`, `MARKET_DEPTH`, `FUNDAMENTALS`, and `NEWS`. An adapter must raise
 `UnsupportedCapabilityError` instead of fabricating success for an unsupported
 operation. Partial batch-result semantics are intentionally deferred.
 
@@ -124,7 +124,7 @@ instead of being silently changed or automatically rate-limited.
 An explicit `provider_instrument_id` is required as Dhan `securityId`.
 Index-versus-stock derivative terminology cannot be inferred safely from A1.1
 identity alone, so derivative historical requests require injected
-`FUTIDX`/`FUTSTK` or `OPTIDX`/`OPTSTK` mapping. A1.4 will own full resolution.
+`FUTIDX`/`FUTSTK` or `OPTIDX`/`OPTSTK` mapping. A1.6 will own full resolution.
 
 See [the Dhan adapter design](TIAF_A1_2_DHAN_CORE_ADAPTER.md) for endpoint,
 mapping, security, testing, and smoke-test details.
@@ -146,11 +146,31 @@ Dhan does not return a chain timestamp, so acquisition time is both observed
 and received time. It remains aware and canonicalized to `Asia/Kolkata`.
 See [the A1.3 design](TIAF_A1_3_DHAN_DERIVATIVES.md).
 
+## A1.4 — Dhan historical / expired options
+
+Rolling expired-option facts now cross a separate
+`HistoricalOptionsDataProvider` boundary. `HistoricalOptionSeries` preserves
+the underlying, CE/PE side, weekly/monthly cadence, relative expiry, ATM-relative
+strike, interval, request range, quality, acquisition time, and immutable bars.
+
+Dhan requests use only the underlying security ID. All documented factual
+arrays are requested and length-validated before indexing. Half-open ranges are
+split into adjacent requests of at most 30 days, then sorted and deduplicated by
+timestamp without hidden sleeps. IV remains in provider units and epochs become
+aware `Asia/Kolkata` timestamps.
+
+See [the A1.4 design](TIAF_A1_4_DHAN_HISTORICAL_OPTIONS.md) and the
+[detailed continuation map](TIAF_IMPLEMENTATION_TARGETS.md).
+
 ## Planned A1 steps
 
 - **A1.2:** Dhan core adapter (complete and live-validated)
-- **A1.3:** Dhan derivatives-data extension (current)
-- **A1.4:** expired options history
-- **A1.5:** cache and caller-configured freshness policy
-- **A1.6:** `AnalysisContext` builder
-- **A1.7:** fallback and partial-data semantics
+- **A1.3:** Dhan derivatives-data extension (complete and live-validated)
+- **A1.4:** Dhan historical/expired options (current)
+- **A1.5:** Zerodha secondary/fallback provider
+- **A1.6:** instrument resolver
+- **A1.7:** cache, freshness, and provider scheduling
+- **A1.8:** `AnalysisContext` builder
+- **A1.9:** fallback and partial-data semantics
+- **A1.10:** news, filings, and external-evidence foundation
+- **A1.11:** fundamentals and macro evidence foundation

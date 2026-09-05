@@ -8,9 +8,9 @@ attributable intelligence for consumers such as TradeMonitor.
 ## Current stage
 
 The **TIAF_TGT0**, **TIAF_A0**, and **TIAF_A1.1** baselines are frozen, and
-**TIAF_A1.2** is accepted/live-validated. Development is now at **TIAF_A1.3**,
-which adds provider-neutral expiry and live option-chain data to the read-only
-DhanHQ v2 adapter.
+**TIAF_A1.2** and **TIAF_A1.3** are accepted/live-validated. Development is now
+at **TIAF_A1.4**, which adds provider-neutral rolling historical/expired-option
+data to the read-only DhanHQ v2 adapter.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker execution/account integration, LLM calls, or
