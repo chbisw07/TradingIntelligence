@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "trading-intelligence"
+version = "0.1.0"
+description = "Baseline foundation for the Trading Intelligence Agent Fabric"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "TradingIntelligence contributors" }]
+dependencies = [
+    "pydantic>=2.7,<3",
+    "pydantic-settings>=2.2,<3",
+    "python-dotenv>=1.0,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.10,<2",
+    "pytest>=8.2,<9",
+    "pytest-cov>=5,<7",
+    "ruff>=0.5,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tiaf"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]

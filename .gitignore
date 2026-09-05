@@ -1,0 +1,38 @@
+# Environment and secrets
+.env
+*.env
+!.env.example
+credentials/
+**/credentials.*
+tokens/
+**/tokens.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.python-version
+.venv/
+venv/
+env/
+
+# Tests, typing, and coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Runtime and generated data
+data/
+logs/
+artifacts/
+tmp/
