@@ -129,11 +129,28 @@ identity alone, so derivative historical requests require injected
 See [the Dhan adapter design](TIAF_A1_2_DHAN_CORE_ADAPTER.md) for endpoint,
 mapping, security, testing, and smoke-test details.
 
+## A1.3 — Dhan derivatives-data extension
+
+Dhan expiry discovery and complete live option chains now cross a separate
+`DerivativesDataProvider` boundary into frozen provider-neutral models. The
+adapter preserves contract security IDs, spot LTP, CE/PE prices, top-of-book,
+volume/OI current and previous values, IV, and provider-reported Greeks. It does
+not calculate, rank, recommend, select contracts, or schedule provider calls.
+
+Successful provider results must contain data. Normalized unavailable models
+can represent an explicitly unavailable chain/list, but malformed or empty Dhan
+success responses raise `ProviderBadResponseError`. Chain strikes and expiry
+dates are immutable tuples, while JSON uses ordinary arrays.
+
+Dhan does not return a chain timestamp, so acquisition time is both observed
+and received time. It remains aware and canonicalized to `Asia/Kolkata`.
+See [the A1.3 design](TIAF_A1_3_DHAN_DERIVATIVES.md).
+
 ## Planned A1 steps
 
-- **A1.2:** Dhan core adapter (current)
-- **A1.3:** Dhan derivatives-data extension
-- **A1.4:** instrument resolver
+- **A1.2:** Dhan core adapter (complete and live-validated)
+- **A1.3:** Dhan derivatives-data extension (current)
+- **A1.4:** expired options history
 - **A1.5:** cache and caller-configured freshness policy
 - **A1.6:** `AnalysisContext` builder
 - **A1.7:** fallback and partial-data semantics

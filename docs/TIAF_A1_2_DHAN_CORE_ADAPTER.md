@@ -60,7 +60,7 @@ values only. Dhan documents manually generated access tokens as having a
 Every request requires a positive numeric Dhan `securityId` in
 `InstrumentKey.provider_instrument_id`. The adapter does not guess from a symbol
 or silently select an instrument-master match. Instrument-master ingestion and
-provider-independent resolution remain A1.4 work; consequently A1.2 does not
+provider-independent resolution remain later A1 work; consequently A1.2 does not
 advertise `INSTRUMENT_MASTER`.
 
 ## Segment mappings

@@ -167,7 +167,12 @@ def test_capabilities_and_provider_protocol_are_accurate() -> None:
 
     assert isinstance(provider, MarketDataProvider)
     assert provider.capabilities() == frozenset(
-        {ProviderCapability.QUOTES, ProviderCapability.HISTORICAL_OHLCV}
+        {
+            ProviderCapability.QUOTES,
+            ProviderCapability.HISTORICAL_OHLCV,
+            ProviderCapability.DERIVATIVES_METADATA,
+            ProviderCapability.OPTION_CHAIN,
+        }
     )
     assert ProviderCapability.INSTRUMENT_MASTER not in provider.capabilities()
 

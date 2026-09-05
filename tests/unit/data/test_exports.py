@@ -5,11 +5,17 @@ import tiaf.data as data
 
 def test_expected_data_foundation_symbols_are_public() -> None:
     expected = {
+        "DerivativesDataProvider",
+        "ExpiryListSnapshot",
         "HistoricalSeries",
         "InstrumentKey",
         "InstrumentRecord",
         "MarketDataProvider",
         "OHLCVBar",
+        "OptionChainSnapshot",
+        "OptionGreeks",
+        "OptionMarketSnapshot",
+        "OptionStrikeSnapshot",
         "ProviderCapability",
         "QuoteSnapshot",
         "TIAFDataError",

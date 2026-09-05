@@ -1,7 +1,7 @@
 """Deterministic Dhan test helpers with no network behavior."""
 
 from collections.abc import Callable, Mapping
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from typing import Any
 
 from tiaf.contracts import OptionType
@@ -38,6 +38,70 @@ def equity(
         instrument_type=InstrumentType.EQUITY,
         provider_instrument_id=security_id,
     )
+
+
+def index(
+    symbol: str = "NIFTY",
+    security_id: str = "13",
+    *,
+    segment: MarketSegment = MarketSegment.NSE_INDEX,
+) -> InstrumentKey:
+    """Build an index identity carrying an explicit Dhan security ID."""
+    exchange = "BSE" if segment is MarketSegment.BSE_INDEX else "NSE"
+    return InstrumentKey(
+        symbol=symbol,
+        exchange=exchange,
+        segment=segment,
+        instrument_type=InstrumentType.INDEX,
+        provider_instrument_id=security_id,
+    )
+
+
+def option_side(
+    security_id: int = 49081,
+    *,
+    last_price: float = 146.99,
+) -> dict[str, Any]:
+    """Return a complete documented Dhan option-side response."""
+    return {
+        "average_price": 140.25,
+        "greeks": {"delta": 0.53871, "theta": -12.4, "gamma": 0.0012, "vega": 8.7},
+        "implied_volatility": 18.5,
+        "last_price": last_price,
+        "oi": 123456,
+        "previous_close_price": 141.5,
+        "previous_oi": 120000,
+        "previous_volume": 50000,
+        "security_id": security_id,
+        "top_ask_price": 147.2,
+        "top_ask_quantity": 100,
+        "top_bid_price": 146.8,
+        "top_bid_quantity": 75,
+        "volume": 55000,
+    }
+
+
+def option_chain_response(
+    *,
+    strikes: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    """Return a deterministic complete live option-chain fixture."""
+    return {
+        "status": "success",
+        "data": {
+            "last_price": 3005.5,
+            "oc": strikes
+            or {
+                "3000.000000": {
+                    "ce": option_side(49081),
+                    "pe": option_side(49082, last_price=138.2),
+                }
+            },
+        },
+    }
+
+
+OPTION_EXPIRY = date(2026, 9, 24)
 
 
 def call_option(

@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A1.2
+## Unreleased — TIAF_A1.3
+
+- Added provider-neutral immutable expiry, option-chain, strike, contract, and
+  Greeks snapshots behind a segregated derivatives provider protocol.
+- Extended the Dhan adapter with active-expiry discovery and complete live
+  option-chain normalization, including contract IDs, spot, prices, depth, OI,
+  volume, IV, Greeks, provenance, and typed failures.
+- Added deterministic mocked coverage and an explicit-expiry read-only smoke
+  utility.
+
+## TIAF_A1.2 — Accepted / Live Validated
 
 - Added a secret-safe, read-only DhanHQ v2 adapter using an injectable HTTPX
   transport.

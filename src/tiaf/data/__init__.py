@@ -1,5 +1,13 @@
 """Public provider-neutral market-data foundation."""
 
+from tiaf.data.derivatives import (
+    ExpiryListSnapshot,
+    OptionChainSnapshot,
+    OptionGreeks,
+    OptionMarketSnapshot,
+    OptionStrikeSnapshot,
+)
+from tiaf.data.derivatives_provider import DerivativesDataProvider
 from tiaf.data.enums import (
     DataFailureKind,
     InstrumentType,
@@ -40,6 +48,8 @@ from tiaf.data.provider import MarketDataProvider
 
 __all__ = [
     "DataFailureKind",
+    "DerivativesDataProvider",
+    "ExpiryListSnapshot",
     "HistoricalSeries",
     "InstrumentKey",
     "InstrumentNotFoundError",
@@ -48,6 +58,10 @@ __all__ = [
     "MarketDataProvider",
     "MarketSegment",
     "OHLCVBar",
+    "OptionChainSnapshot",
+    "OptionGreeks",
+    "OptionMarketSnapshot",
+    "OptionStrikeSnapshot",
     "PartialDataError",
     "ProviderAuthError",
     "ProviderBadResponseError",

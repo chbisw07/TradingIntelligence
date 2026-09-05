@@ -1,21 +1,28 @@
-"""DhanHQ v2 adapter for normalized quotes and historical OHLCV."""
+"""DhanHQ v2 adapter for normalized core and live derivatives data."""
 
 from collections.abc import Callable, Mapping
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 from tiaf.config import Settings
 from tiaf.data import (
+    ExpiryListSnapshot,
     HistoricalSeries,
     InstrumentKey,
     InstrumentNotFoundError,
     InstrumentRecord,
     InstrumentType,
+    MarketSegment,
+    OptionChainSnapshot,
     ProviderCapability,
     QuoteSnapshot,
     UnsupportedCapabilityError,
 )
 from tiaf.data.normalization import TIAF_TIMEZONE, normalize_datetime_to_ist, normalize_interval
 from tiaf.data.providers.dhan.config import DhanConfig
+from tiaf.data.providers.dhan.derivatives_parser import (
+    parse_expiry_list_response,
+    parse_option_chain_response,
+)
 from tiaf.data.providers.dhan.mappings import (
     DhanInstrumentType,
     to_dhan_instrument_type,
@@ -41,7 +48,7 @@ def _ist_now() -> datetime:
 
 
 class DhanMarketDataProvider:
-    """Read-only Dhan data adapter satisfying the A1.1 provider protocol."""
+    """Read-only Dhan adapter satisfying core and derivatives protocols."""
 
     def __init__(
         self,
@@ -66,11 +73,13 @@ class DhanMarketDataProvider:
         return "dhan"
 
     def capabilities(self) -> frozenset[ProviderCapability]:
-        """Advertise only capabilities implemented in A1.2."""
+        """Advertise the factual core and live-derivatives capabilities."""
         return frozenset(
             {
                 ProviderCapability.QUOTES,
                 ProviderCapability.HISTORICAL_OHLCV,
+                ProviderCapability.DERIVATIVES_METADATA,
+                ProviderCapability.OPTION_CHAIN,
             }
         )
 
@@ -180,13 +189,54 @@ class DhanMarketDataProvider:
             received_at=received_at,
         )
 
+    def get_option_expiries(self, underlying: InstrumentKey) -> ExpiryListSnapshot:
+        """Retrieve all active Dhan expiries for one explicit underlying ID."""
+        segment = self._option_underlying_segment(
+            underlying, ProviderCapability.DERIVATIVES_METADATA
+        )
+        security_id = self._security_id(underlying)
+        response = self._transport.post(
+            "/optionchain/expirylist",
+            {"UnderlyingScrip": int(security_id), "UnderlyingSeg": segment},
+        )
+        received_at = normalize_datetime_to_ist(self._clock())
+        return parse_expiry_list_response(
+            response,
+            underlying=underlying,
+            received_at=received_at,
+        )
+
+    def get_option_chain(
+        self,
+        underlying: InstrumentKey,
+        expiry: date,
+    ) -> OptionChainSnapshot:
+        """Retrieve one complete live Dhan chain without rate scheduling."""
+        segment = self._option_underlying_segment(underlying, ProviderCapability.OPTION_CHAIN)
+        security_id = self._security_id(underlying)
+        response = self._transport.post(
+            "/optionchain",
+            {
+                "UnderlyingScrip": int(security_id),
+                "UnderlyingSeg": segment,
+                "Expiry": expiry.isoformat(),
+            },
+        )
+        received_at = normalize_datetime_to_ist(self._clock())
+        return parse_option_chain_response(
+            response,
+            underlying=underlying,
+            expiry=expiry,
+            received_at=received_at,
+        )
+
     def search_instruments(self, query: str) -> tuple[InstrumentRecord, ...]:
         """Defer instrument-master search to the dedicated resolver target."""
         del query
         raise UnsupportedCapabilityError(
             ProviderCapability.INSTRUMENT_MASTER,
             provider="DHAN",
-            detail="Dhan instrument-master search is deferred to TIAF_A1.4",
+            detail="Dhan instrument-master search is deferred to a later milestone",
         )
 
     @staticmethod
@@ -209,3 +259,24 @@ class DhanMarketDataProvider:
             instrument.instrument_type,
             derivative_type=derivative_type,
         )
+
+    @staticmethod
+    def _option_underlying_segment(
+        underlying: InstrumentKey,
+        capability: ProviderCapability,
+    ) -> str:
+        valid_identity = (
+            underlying.instrument_type is InstrumentType.EQUITY
+            and underlying.segment
+            in {MarketSegment.NSE_EQUITY, MarketSegment.BSE_EQUITY}
+        ) or (
+            underlying.instrument_type is InstrumentType.INDEX
+            and underlying.segment in {MarketSegment.NSE_INDEX, MarketSegment.BSE_INDEX}
+        )
+        if not valid_identity:
+            raise UnsupportedCapabilityError(
+                capability,
+                provider="DHAN",
+                detail="Dhan option-chain underlying must be a supported equity or index",
+            )
+        return to_dhan_segment(underlying.segment)
