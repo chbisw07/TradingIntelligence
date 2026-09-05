@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from pydantic import AliasChoices, Field, SecretStr
+from pydantic import AliasChoices, Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     env: str = "development"
     log_level: str = "INFO"
     data_dir: Path = Path("data")
+    primary_exchange: str = "NSE"
+    primary_fno_exchange: str = "NSE"
     dhan_client_id: str | None = Field(
         default=None,
         validation_alias=AliasChoices("DHAN_CLIENT_ID", "TIAF_DHAN_CLIENT_ID"),
@@ -31,3 +33,12 @@ class Settings(BaseSettings):
         default="https://api.dhan.co/v2",
         validation_alias=AliasChoices("DHAN_BASE_URL", "TIAF_DHAN_BASE_URL"),
     )
+
+    @field_validator("primary_exchange", "primary_fno_exchange")
+    @classmethod
+    def normalize_primary_exchange(cls, value: str) -> str:
+        """Keep deployment market scope explicit and consistently normalized."""
+        normalized = value.strip().upper()
+        if not normalized:
+            raise ValueError("primary exchange must not be empty")
+        return normalized

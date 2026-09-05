@@ -57,11 +57,11 @@ values only. Dhan documents manually generated access tokens as having a
 
 ## Security-ID boundary
 
-Every request requires a positive numeric Dhan `securityId` in
-`InstrumentKey.provider_instrument_id`. The adapter does not guess from a symbol
-or silently select an instrument-master match. Instrument-master ingestion and
-provider-independent resolution remain later A1 work; consequently A1.2 does not
-advertise `INSTRUMENT_MASTER`.
+Every provider request requires a positive numeric Dhan `securityId` in
+`InstrumentKey.provider_instrument_id`. The A1.2 adapter itself does not guess
+from a symbol. The current smoke utility now resolves and validates that
+identity through the A1.5 instrument-master boundary before it invokes the
+adapter; A1.2 still does not advertise `INSTRUMENT_MASTER`.
 
 ## Segment mappings
 
@@ -157,20 +157,28 @@ JSON round trips.
 
 ## Optional real read-only smoke test
 
-After setting current credentials, request exactly one explicit security ID:
+After setting current credentials, resolve a symbol and request exactly one
+quote:
 
 ```bash
 python scripts/dhan_market_data_smoke.py \
-  --segment NSE_EQUITY \
-  --security-id 1333 \
-  --symbol HDFCBANK \
-  --exchange NSE
+  --symbol RELIANCE
 ```
 
 The script calls only the full-quote data endpoint and prints normalized JSON.
 It refuses to run without credentials and never prints them. It is not part of
-pytest. Confirm the current symbol/security-ID pairing from Dhan's instrument
-master before running; the sample is illustrative, not a production mapping.
+pytest. `--security-id` remains available for diagnostics, but if both symbol
+and ID are supplied they must resolve to the same master identity before any
+provider request occurs.
+
+### Live-validation identity correction
+
+Earlier A1.2/A1.3/A1.4 smoke invocations paired the caller label `RELIANCE`
+with security ID `1333`. Subsequent A1.5 master validation on 2026-09-06 showed
+that current Dhan identities are `1333 = HDFCBANK` and `2885 = RELIANCE`. The
+earlier transport and factual data-path validation remains valid for ID 1333,
+but its displayed RELIANCE label was incorrect. Current smoke utilities resolve
+symbols and refuse symbol/ID mismatches before provider transport.
 
 ## Capabilities, limitations, and next target
 

@@ -108,16 +108,20 @@ After setting `DHAN_CLIENT_ID` and `DHAN_ACCESS_TOKEN`, list active expiries:
 
 ```bash
 python scripts/dhan_option_chain_smoke.py \
-  --segment NSE_EQUITY \
-  --security-id 1333 \
   --symbol RELIANCE
 ```
 
 The script stops after listing dates unless the user explicitly adds, for
 example, `--expiry 2026-09-24`. It then displays only a compact normalized
 near-spot sample for inspection. It has no trading import or order operation and
-does not print credentials. Confirm sample IDs and expiries against the current
-Dhan instrument data before use.
+does not print credentials. The A1.5 resolver supplies the current underlying
+ID; an optional caller-supplied ID must agree before any expiry or chain request.
+
+Earlier validation paired `RELIANCE` with security ID `1333`. A1.5 live master
+validation on 2026-09-06 corrected the current mapping to `2885 = RELIANCE` and
+`1333 = HDFCBANK`. The option-expiry/chain transport validation for ID 1333 was
+still factual, but the displayed underlying label was wrong. Symbol-first and
+symbol-plus-ID smoke paths now prevent that integrity failure.
 
 ## Security, non-goals, and next target
 

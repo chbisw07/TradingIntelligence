@@ -5,9 +5,12 @@ from datetime import date
 
 from pydantic import ValidationError
 
-from tiaf.data import InstrumentKey, InstrumentNotFoundError, InstrumentType, MarketSegment
+from tiaf.data import InstrumentNotFoundError, InstrumentType, MarketSegment
 from tiaf.data.errors import TIAFDataError
-from tiaf.data.providers.dhan import DhanMarketDataProvider
+from tiaf.data.providers.dhan import (
+    DhanMarketDataProvider,
+    resolve_dhan_diagnostic_instrument,
+)
 
 _SEGMENTS = {
     MarketSegment.NSE_EQUITY: ("NSE", InstrumentType.EQUITY),
@@ -20,9 +23,9 @@ _SEGMENTS = {
 def parse_args() -> argparse.Namespace:
     """Parse an explicit underlying identity and optional active expiry."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--segment", required=True, choices=[item.value for item in _SEGMENTS])
-    parser.add_argument("--security-id", required=True)
-    parser.add_argument("--symbol", required=True)
+    parser.add_argument("--segment", choices=[item.value for item in _SEGMENTS])
+    parser.add_argument("--security-id")
+    parser.add_argument("--symbol")
     parser.add_argument("--expiry", type=date.fromisoformat)
     parser.add_argument("--sample-size", type=int, default=5)
     return parser.parse_args()
@@ -35,14 +38,15 @@ def _value(value: float | int | None) -> str:
 def main() -> int:
     """List expiries and fetch a chain only after an explicit expiry request."""
     args = parse_args()
-    exchange, instrument_type = _SEGMENTS[MarketSegment(args.segment)]
     try:
-        underlying = InstrumentKey(
+        segment = MarketSegment(args.segment) if args.segment else None
+        exchange, instrument_type = _SEGMENTS[segment] if segment is not None else (None, None)
+        underlying = resolve_dhan_diagnostic_instrument(
             symbol=args.symbol,
+            security_id=args.security_id,
             exchange=exchange,
-            segment=MarketSegment(args.segment),
+            segment=segment,
             instrument_type=instrument_type,
-            provider_instrument_id=args.security_id,
         )
         provider = DhanMarketDataProvider()
         expiries = provider.get_option_expiries(underlying)

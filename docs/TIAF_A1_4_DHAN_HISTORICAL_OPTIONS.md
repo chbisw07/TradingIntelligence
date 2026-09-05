@@ -124,7 +124,6 @@ Optional read-only inspection:
 ```bash
 python scripts/dhan_expired_options_smoke.py \
   --segment NSE_FNO \
-  --security-id 1333 \
   --symbol RELIANCE \
   --instrument OPTSTK \
   --expiry-flag MONTH \
@@ -137,7 +136,16 @@ python scripts/dhan_expired_options_smoke.py \
 ```
 
 The utility prints normalized factual bars only. It imports no trading/order
-API and emits no directional analysis.
+API and emits no directional analysis. It resolves the underlying security ID
+from the symbol. If `--security-id` is also supplied, it must match the resolved
+underlying—not a child option contract—before the historical request is made.
+
+Earlier validation paired the label `RELIANCE` with security ID `1333`.
+Subsequent A1.5 live master validation on 2026-09-06 established the current
+mapping as `2885 = RELIANCE` and `1333 = HDFCBANK`. The rolling-options endpoint,
+payload, expiry-code, parsing, and chunking validation remains valid for the
+underlying ID that was requested, but the earlier displayed RELIANCE identity
+was incorrect. The hardened smoke path now refuses this mismatch.
 
 Official references: [Dhan expired options data](https://dhanhq.co/docs/v2/expired-options-data/),
 [Dhan annexure](https://dhanhq.co/docs/v2/annexure/), and

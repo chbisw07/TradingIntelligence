@@ -8,9 +8,9 @@ attributable intelligence for consumers such as TradeMonitor.
 ## Current stage
 
 The **TIAF_TGT0**, **TIAF_A0**, and **TIAF_A1.1** baselines are frozen, and
-**TIAF_A1.2** and **TIAF_A1.3** are accepted/live-validated. Development is now
-at **TIAF_A1.4**, which adds provider-neutral rolling historical/expired-option
-data to the read-only DhanHQ v2 adapter.
+**TIAF_A1.2** through **TIAF_A1.4** are accepted/live-validated. Development is
+now at **TIAF_A1.5**, which adds deterministic provider-neutral instrument
+resolution over Dhan's public instrument master.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker execution/account integration, LLM calls, or
@@ -34,6 +34,14 @@ python -m pip install -e '.[dev]'
 ```
 
 For runtime dependencies only, use `python -m pip install -e .`.
+
+The current India deployment defaults symbol-only cash resolution and F&O
+universe generation to NSE. Override these non-secret settings when needed:
+
+```bash
+TIAF_PRIMARY_EXCHANGE=NSE
+TIAF_PRIMARY_FNO_EXCHANGE=NSE
+```
 
 ## Verification
 

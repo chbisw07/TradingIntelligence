@@ -2,7 +2,27 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A1.4
+## Unreleased — TIAF_A1.5
+
+- Added frozen provider-neutral instrument query, resolved identity, and
+  explicit unique/ambiguous/not-found result contracts behind a synchronous
+  resolver protocol and provider registry.
+- Added header-driven Dhan detailed instrument-master ingestion with a narrow
+  local file cache, absent/explicit-refresh downloads, atomic replacement,
+  typed schema failures, and indexed exact lookup.
+- Added exact provider-ID/trading-symbol lookup, filtered equity/index/future/
+  option resolution, inactive-record visibility, order-preserving batches, a
+  deterministic eligible F&O-underlying universe, tests, and read-only smoke.
+- Added configurable primary cash/F&O exchange policy after live validation
+  exposed legitimate NSE/BSE symbol duplication. Policy-selected results are
+  explicit, query scope always overrides policy, and F&O universes are unique
+  within their configured exchange scope.
+- Hardened all Dhan factual smoke utilities with symbol-first master resolution
+  and mandatory symbol/security-ID consistency before provider transport.
+- Excluded Dhan `DUMMYSAN` diagnostic underlyings from canonical F&O universes
+  using provider identity metadata rather than broad symbol substring matching.
+
+## TIAF_A1.4 — Accepted / Live Validated
 
 - Added frozen provider-neutral rolling historical-option bars, series,
   expiry context, and ATM-relative strike types behind a segregated protocol.

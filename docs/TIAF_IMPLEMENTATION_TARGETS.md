@@ -50,7 +50,7 @@ the stable project roadmap. Status must describe repository reality.
   read-only adapter is live-validated.
 - Tag: `tiaf-a1.3`.
 
-### TIAF_A1.4 — Current
+### TIAF_A1.4 — Complete / Live Validated
 
 - Purpose: provider-neutral rolling historical/expired-option data without
   expired contract IDs.
@@ -65,30 +65,25 @@ the stable project roadmap. Status must describe repository reality.
   the rolling expired-options endpoint is live-validated as `1/2/3`; A1.4 uses
   a dedicated type and does not change other expiry-code consumers.
 
+### TIAF_A1.5 — Current
+
+- Purpose: resolve human-facing instrument inputs to explicit canonical and
+  provider identities without guessing.
+- Scope: frozen provider-neutral query/results, Dhan detailed-master ingestion,
+  narrow local file caching, exact indexed matching, ambiguity visibility,
+  configurable primary-exchange policy, inactive-ID inspection, batch
+  resolution, symbol/ID integrity guards for diagnostics, and exchange-scoped
+  unique eligible F&O underlyings excluding provider diagnostic identities.
+- Non-goals: fuzzy preferences, nearest-contract choice, recommendations,
+  Agents, orders, accounts, execution, and spreadsheet integration.
+- Dependency: accepted A1 identity contracts and Dhan's public master source.
+- Acceptance concept: representative equity, index, future, and exact option
+  inputs resolve uniquely or return explicit policy-selected,
+  ambiguous/not-found outcomes without first-row guessing.
+
 ## Planned near-term A1 decomposition
 
-### TIAF_A1.5 — Zerodha secondary/fallback provider
-
-- Purpose: introduce a second factual market-data source.
-- Likely scope: adapter-specific authentication, supported quote/history
-  capabilities, normalized mapping, and typed provider failures.
-- Non-goals: automatic provider arbitration, cache policy, or trading APIs.
-- Dependency: A1.1 provider contracts and established adapter boundaries.
-- Acceptance concept: supported Zerodha facts normalize to the same public
-  models under deterministic mocked tests and a safe validation path.
-
-### TIAF_A1.6 — Instrument resolver
-
-- Purpose: resolve provider-neutral identities to explicit provider IDs and
-  derivative classifications.
-- Likely scope: instrument-master ingestion, normalized lookup, ambiguity
-  handling, and provider-ID attribution.
-- Non-goals: ranking securities, choosing options, or fuzzy silent matches.
-- Dependency: provider instrument sources and A1 identity contracts.
-- Acceptance concept: representative equity, index, future, and option inputs
-  resolve deterministically or return an explicit typed failure.
-
-### TIAF_A1.7 — Cache, freshness, and provider scheduling
+### TIAF_A1.6 — Cache, freshness, and provider scheduling
 
 - Purpose: centralize reusable data acquisition and rate-aware coordination.
 - Likely scope: keyed caches, caller-visible age/TTL, request coalescing, and
@@ -98,7 +93,7 @@ the stable project roadmap. Status must describe repository reality.
 - Acceptance concept: repeated workloads reuse factual results while freshness,
   expiry, and provider rate constraints stay visible and deterministic.
 
-### TIAF_A1.8 — AnalysisContext builder
+### TIAF_A1.7 — AnalysisContext builder
 
 - Purpose: assemble a timestamp-consistent provider-neutral factual context for
   downstream deterministic and Agent consumers.
@@ -109,7 +104,7 @@ the stable project roadmap. Status must describe repository reality.
 - Acceptance concept: a watchlist request yields one coherent immutable context
   or explicit missing/stale evidence.
 
-### TIAF_A1.9 — Fallback and partial-data semantics
+### TIAF_A1.8 — Fallback and partial-data semantics
 
 - Purpose: define deterministic behavior when providers fail or return
   incomplete facts.
@@ -119,6 +114,17 @@ the stable project roadmap. Status must describe repository reality.
 - Dependency: at least two providers and shared Data Service context.
 - Acceptance concept: simulated provider failures produce predictable fallback
   or explicit degradation without losing attribution.
+
+### TIAF_A1.9 — Zerodha secondary/fallback provider
+
+- Purpose: introduce a second factual market-data and identity source.
+- Likely scope: adapter-specific authentication, supported quote/history and
+  resolution capabilities, normalized mapping, and typed provider failures.
+- Non-goals: opaque provider arbitration or trading APIs.
+- Dependency: A1.1 provider contracts, A1.5 resolution boundaries, and A1.8
+  fallback semantics.
+- Acceptance concept: supported Zerodha facts normalize to the same public
+  models under deterministic mocked tests and a safe validation path.
 
 ### TIAF_A1.10 — News, filings, and external-evidence foundation
 

@@ -9,13 +9,16 @@ from tiaf.contracts import OptionType
 from tiaf.data import (
     ExpiryFlag,
     HistoricalOptionExpiryCode,
-    InstrumentKey,
     InstrumentType,
     MarketSegment,
 )
 from tiaf.data.errors import TIAFDataError
 from tiaf.data.historical_options import RelativeStrike
-from tiaf.data.providers.dhan import DhanInstrumentType, DhanMarketDataProvider
+from tiaf.data.providers.dhan import (
+    DhanInstrumentType,
+    DhanMarketDataProvider,
+    resolve_dhan_diagnostic_instrument,
+)
 
 _SEGMENTS = (MarketSegment.NSE_FNO, MarketSegment.BSE_FNO)
 _INSTRUMENTS = (DhanInstrumentType.OPTSTK, DhanInstrumentType.OPTIDX)
@@ -25,8 +28,8 @@ def parse_args() -> argparse.Namespace:
     """Parse explicit factual request parameters without trading inputs."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--segment", required=True, choices=[item.value for item in _SEGMENTS])
-    parser.add_argument("--security-id", required=True)
-    parser.add_argument("--symbol", required=True)
+    parser.add_argument("--security-id")
+    parser.add_argument("--symbol")
     parser.add_argument(
         "--instrument", required=True, choices=[item.value for item in _INSTRUMENTS]
     )
@@ -60,13 +63,19 @@ def main() -> int:
         if args.instrument == DhanInstrumentType.OPTSTK.value
         else InstrumentType.INDEX
     )
+    underlying_segment = {
+        ("NSE", InstrumentType.EQUITY): MarketSegment.NSE_EQUITY,
+        ("NSE", InstrumentType.INDEX): MarketSegment.NSE_INDEX,
+        ("BSE", InstrumentType.EQUITY): MarketSegment.BSE_EQUITY,
+        ("BSE", InstrumentType.INDEX): MarketSegment.BSE_INDEX,
+    }[(exchange, instrument_type)]
     try:
-        underlying = InstrumentKey(
+        underlying = resolve_dhan_diagnostic_instrument(
             symbol=args.symbol,
+            security_id=args.security_id,
             exchange=exchange,
-            segment=segment,
+            segment=underlying_segment,
             instrument_type=instrument_type,
-            provider_instrument_id=args.security_id,
         )
         provider = DhanMarketDataProvider()
         result = provider.get_historical_options(

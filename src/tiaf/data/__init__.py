@@ -53,6 +53,19 @@ from tiaf.data.normalization import (
     normalize_symbol,
 )
 from tiaf.data.provider import MarketDataProvider
+from tiaf.data.resolution import (
+    InstrumentAmbiguousError,
+    InstrumentMasterParseError,
+    InstrumentMasterUnavailableError,
+    InstrumentQuery,
+    InstrumentResolutionError,
+    InstrumentResolver,
+    InstrumentResolverRegistry,
+    ResolutionKind,
+    ResolutionPolicy,
+    ResolutionResult,
+    ResolvedInstrument,
+)
 
 __all__ = [
     "DataFailureKind",
@@ -65,8 +78,15 @@ __all__ = [
     "HistoricalOptionSeries",
     "HistoricalOptionsDataProvider",
     "InstrumentKey",
+    "InstrumentAmbiguousError",
+    "InstrumentMasterParseError",
+    "InstrumentMasterUnavailableError",
     "InstrumentNotFoundError",
+    "InstrumentQuery",
     "InstrumentRecord",
+    "InstrumentResolutionError",
+    "InstrumentResolver",
+    "InstrumentResolverRegistry",
     "InstrumentType",
     "MarketDataProvider",
     "MarketSegment",
@@ -86,6 +106,10 @@ __all__ = [
     "QuoteFieldAvailability",
     "QuoteSnapshot",
     "RelativeStrike",
+    "ResolutionKind",
+    "ResolutionPolicy",
+    "ResolutionResult",
+    "ResolvedInstrument",
     "StaleDataError",
     "TIAFDataError",
     "UnsupportedCapabilityError",
