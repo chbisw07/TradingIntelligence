@@ -123,7 +123,7 @@ Core contracts should include:
 Core enums should include concepts for:
 
 - trade style
-- time horizon class
+- flexible time-horizon semantics
 - direction policy
 - trade direction
 - opportunity action
@@ -138,13 +138,12 @@ Core enums should include concepts for:
 Foundation should also include:
 
 - request/assessment/snapshot identifiers
-- timezone-aware timestamps
+- timezone-aware timestamps normalized to canonical `Asia/Kolkata`
 - schema versioning
 - serialization/deserialization
 - validation
 - backward-compatibility policy
 - error taxonomy
-- structured logging foundation
 
 ### Non-goals
 
@@ -179,7 +178,7 @@ Make a watchlist sufficient input by centralizing factual data acquisition, norm
 - sector/peer context
 - option-chain/OI/IV data where available
 - public news/filings/event sources
-- canonical timezone/timestamps
+- canonical `Asia/Kolkata` timezone and aware timestamps
 - cache with explicit TTL
 - freshness and stale-data state
 - optional user enrichment ingestion

@@ -17,9 +17,9 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**Next:** TIAF_A0 — Domain Contracts and Foundation.
+**Active:** TIAF_A0 — Domain Contracts and Foundation.
 
-## TIAF_A0 — Domain Contracts and Foundation — NEXT
+## TIAF_A0 — Domain Contracts and Foundation — ACTIVE
 
 Purpose: establish the stable language every future Planner, Agent, Scanner and TradeMonitor integration will use.
 

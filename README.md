@@ -7,8 +7,9 @@ attributable intelligence for consumers such as TradeMonitor.
 
 ## Current stage
 
-The repository is at **TIAF_TGT0**, the project-bootstrap baseline. It contains
-packaging, configuration, documentation, namespace boundaries, and smoke tests.
+The **TIAF_TGT0** project-bootstrap baseline is complete and frozen. Development
+is now at **TIAF_A0**, which adds versioned, validated domain contracts while
+preserving all system authority boundaries.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker integration, LLM calls, execution capability, or
