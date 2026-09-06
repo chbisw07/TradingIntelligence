@@ -12,8 +12,8 @@ the stable project roadmap. Status must describe repository reality.
 
 ### TIAF_A1 — Complete / Baselined
 
-TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at tag
-`tiaf-a1.7`. The canonical contract and evidence record are
+TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
+`tiaf-a1-baseline`. The canonical contract and evidence record are
 [`TIAF_A1_FOUNDATION_BASELINE.md`](TIAF_A1_FOUNDATION_BASELINE.md) and
 [`TIAF_A1_ACCEPTANCE_REPORT.md`](TIAF_A1_ACCEPTANCE_REPORT.md).
 
@@ -117,14 +117,38 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at tag
   blocks with factual unavailability or retrieval freshness with source-
   observation age. A1.7 does not schedule retries for deferred work.
 
-## Next target
+## Current target
 
-### TIAF_A2 — Deterministic Analysis / Feature Foundation — Next
+### TIAF_A2 — Deterministic Analysis / Feature Foundation — Current
 
 - Purpose: consume `AnalysisContext` and compute reproducible, non-AI derived
   features without bypassing A1 identity, acquisition, quality, freshness, or
   provenance boundaries.
-- Dependency: the accepted `tiaf-a1.7` Data Foundation baseline.
+- Dependency: the accepted `tiaf-a1-baseline` Data Foundation baseline.
+
+### TIAF_A2.1 — Feature Contracts + Engine Foundation — Current
+
+- Purpose: establish immutable feature definitions, requests, results and
+  bundles; an explicit calculator registry; and deterministic context-only
+  orchestration.
+- Scope: seven small baseline measurements proving exact windows, source
+  quality/provenance inheritance, insufficient-data behavior, deterministic
+  summaries, and a read-only A1-to-A2 smoke path.
+- Non-goals: an indicator library, scoring, ranking, market direction,
+  recommendations, Agents, brokers, or execution.
+- Detail: [`TIAF_A2_1_FEATURE_FOUNDATION.md`](TIAF_A2_1_FEATURE_FOUNDATION.md).
+
+## Near-term A2 sequence
+
+1. **A2.1 — Feature Contracts + Engine Foundation** — Current
+2. **A2.2 — Price / Return / Volatility Features**
+3. **A2.3 — Trend & Structure Features**
+4. **A2.4 — Volume / Participation Features**
+5. **A2.5 — Support / Resistance / Breakout Structure**
+6. **A2.6 — Derivatives / Option-Chain Features**
+7. **A2.7 — Multi-Timeframe Feature Context**
+8. **A2.8 — Deterministic Market-State / Feature Summary**
+9. **A2.9 — Replay / Validation / Baseline Evaluation**
 
 Provider fallback/Zerodha, persistent caching, deferred-work orchestration,
 provider health, and external news/fundamental evidence remain intentionally

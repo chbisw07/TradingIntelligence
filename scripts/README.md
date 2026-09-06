@@ -43,5 +43,11 @@ factual unavailability or freshness. The utility never sleeps or retries
 implicitly. There is no recommendation, scoring, or ranking. `--repeat`
 demonstrates cache reuse.
 
+`feature_engine_smoke.py` is the read-only A2.1 proof path. It builds a factual
+context through the accepted A1 resolver/runtime/builder, then derives only
+current price, history count, fixed-window returns, and high/low range. The
+feature layer performs no provider access. Use `--json` for the immutable
+contract form or `--repeat` to inspect repeatability and A1 cache reuse.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.

@@ -17,9 +17,11 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**TIAF_A1 — Data Foundation: COMPLETE / BASELINED** at tag `tiaf-a1.7`.
+**TIAF_A1 — Data Foundation: COMPLETE / BASELINED** at tag `tiaf-a1-baseline`.
 
-**Next:** TIAF_A2 — Deterministic Analysis / Feature Foundation.
+**Current:** TIAF_A2 — Deterministic Analysis / Feature Foundation.
+
+**Current milestone:** TIAF_A2.1 — Feature Contracts + Engine Foundation.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -49,7 +51,7 @@ Canonical closure records:
 
 - `TIAF_A1_FOUNDATION_BASELINE.md`
 - `TIAF_A1_ACCEPTANCE_REPORT.md`
-- baseline tag: `tiaf-a1.7`
+- baseline tag: `tiaf-a1-baseline`
 
 **Complete / frozen:** TIAF_A1.1 — Provider Contracts + Normalized Market Models
 
@@ -124,7 +126,20 @@ contexts or explicit partial/deferred/error outcomes. Provider fallback,
 external evidence, persistent caching, and retry orchestration remain future
 work rather than hidden A1 behavior.
 
-## TIAF_A2 — Deterministic Baseline — NEXT
+## TIAF_A2 — Deterministic Baseline — CURRENT
+
+**TIAF_A2.1 — Feature Contracts + Engine Foundation: CURRENT**
+
+- immutable provider-neutral feature definitions, requests, results, and bundles
+- explicit deterministic calculator registry and context-only engine
+- exact baseline price, history, return, and high/low range measurements
+- source quality, provenance, timestamp, and insufficient-data preservation
+- no interpretation, recommendation, Agent, broker, or execution behavior
+
+Near-term sequence: A2.2 price/return/volatility; A2.3 trend/structure; A2.4
+volume/participation; A2.5 support/resistance/breakout; A2.6 derivatives; A2.7
+multi-timeframe context; A2.8 deterministic market-state summary; A2.9 replay
+and baseline evaluation.
 
 - deterministic feature engine
 - multi-timeframe price/volume features

@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added the TIAF_A2.1 provider-neutral immutable feature contracts, explicit
+  calculator registry, deterministic context-only engine, and factual bundle
+  summary.
+- Added seven small baseline price/history/return/range features with exact
+  lookback, insufficient-data, source-quality, timestamp, and provenance
+  semantics.
+- Added a read-only A1-to-A2 feature smoke utility, focused test coverage, and
+  the A2.1 architecture/handoff record.
 - Added the canonical A1 architectural baseline and engineering acceptance
   report, and closed milestone/roadmap status for the A2 handoff.
 
