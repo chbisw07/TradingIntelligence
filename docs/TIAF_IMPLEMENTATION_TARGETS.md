@@ -81,9 +81,7 @@ the stable project roadmap. Status must describe repository reality.
   inputs resolve uniquely or return explicit policy-selected,
   ambiguous/not-found outcomes without first-row guessing.
 
-## Current A1 target
-
-### TIAF_A1.6 — Current — Cache, freshness, and provider scheduling
+### TIAF_A1.6 — Complete / Live Validated
 
 - Purpose: centralize reusable data acquisition and rate-aware coordination.
 - Scope: deterministic immutable keys, in-memory optional-LRU caching,
@@ -95,18 +93,26 @@ the stable project roadmap. Status must describe repository reality.
 - Acceptance concept: repeated workloads reuse factual results while freshness,
   expiry, and provider rate constraints stay visible and deterministic.
 
-## Planned near-term A1 decomposition
+## Current A1 target
 
-### TIAF_A1.7 — AnalysisContext builder
+### TIAF_A1.7 — Current — AnalysisContext builder
 
 - Purpose: assemble a timestamp-consistent provider-neutral factual context for
   downstream deterministic and Agent consumers.
-- Likely scope: requested instruments, quotes, histories, derivatives evidence,
-  provenance, quality, freshness, and missing-data visibility.
-- Non-goals: scoring, recommendations, prompts, or execution authority.
-- Dependency: resolution, caching, scheduling, and existing A1 models.
-- Acceptance concept: a watchlist request yields one coherent immutable context
-  or explicit missing/stale evidence.
+- Scope: explicit requirements, canonical subject, A1.6-coordinated quote,
+  history, option-chain, and bounded historical-option retrieval, evidence
+  requirement roles, separate retrieval/source-observation provenance,
+  deterministic quality/retrieval-freshness/completeness, ordered batch
+  outcomes with explicit scheduler deferral, and factual summaries.
+- Non-goals: indicators, scoring, recommendations, prompts, Agents, queues,
+  TradeMonitor, broker/account access, or execution authority.
+- Dependency: accepted A1.5 resolution, A1.6 runtime, and normalized A1 facts.
+- Acceptance concept: a symbol or watchlist yields coherent immutable contexts
+  or explicit partial/deferred/error outcomes without conflating provider gate
+  blocks with factual unavailability or retrieval freshness with source-
+  observation age. A1.7 does not schedule retries for deferred work.
+
+## Planned near-term A1 decomposition
 
 ### TIAF_A1.8 — Fallback and partial-data semantics
 

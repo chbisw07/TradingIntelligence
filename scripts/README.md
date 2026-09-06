@@ -30,5 +30,18 @@ gate decision and never sleeps to wait for eligibility. The demo measures cache
 age from the quote's `received_at`; the nested quote still preserves Dhan's
 actual `observed_at`/last-trade time, including outside market hours.
 
+`analysis_context_smoke.py` is the read-only A1.7 context inspection path. It
+combines symbol-first resolution, quote and explicit calendar-day history, and
+optionally an explicit-expiry option chain through the A1.6 coordinator.
+`--include-derivatives` makes that chain required; `--optional-derivatives`
+requests it without making it required. Output shows Requested/Required/Status
+and separates retrieval freshness/age from source observation time/age.
+`--symbols RELIANCE,HDFCBANK,KAYNES` runs a sequential, order-preserving batch
+with an explicit completed, partial, deferred, or error result per symbol.
+Deferred rows show provider gate and retry-after details without claiming
+factual unavailability or freshness. The utility never sleeps or retries
+implicitly. There is no recommendation, scoring, or ranking. `--repeat`
+demonstrates cache reuse.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.

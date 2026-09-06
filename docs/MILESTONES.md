@@ -17,8 +17,8 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.6 —
-Cache, Freshness & Provider Scheduling**.
+**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.7 —
+AnalysisContext Builder**.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -90,7 +90,7 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
 - provider diagnostic/test identities excluded from canonical F&O universes
 - no recommendation, ranking, Agent, order, account, or spreadsheet behavior
 
-**Current:** TIAF_A1.6 — Cache, Freshness & Provider Scheduling
+**Complete / live-validated:** TIAF_A1.6 — Cache, Freshness & Provider Scheduling
 
 - provider-neutral in-process factual cache and deterministic cache keys
 - caller-relative freshness with visible `FRESH` / `AGING` / `STALE` / `UNKNOWN`
@@ -98,6 +98,19 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
 - key-scoped request coalescing and opt-in bounded stale-on-error fallback
 - documented Dhan quote and option-chain constraints outside generic runtime
 - no background queues, Intelligence OS, Agents, recommendations, or execution
+
+**Current:** TIAF_A1.7 — AnalysisContext Builder
+
+- immutable provider-neutral analysis subject, requirements, evidence slots,
+  aggregate context, ordered batch outcomes, and factual summary
+- A1.5 resolution plus A1.6-coordinated quote, history, explicit option-chain,
+  and exact historical-options acquisition
+- deterministic required-only retrieval freshness, completeness, quality, and
+  partial/failure semantics with separate retrieval/source-observation
+  provenance
+- ordered batch statuses distinguish completed/partial contexts, temporary
+  provider-scheduler deferral, and errors without hidden sleeps or retries
+- no indicators, scoring, recommendation, Agent, queue, broker, or execution
 
 Later A1 sub-targets add provider adapters, resolution, caching, shared context,
 and fallback behavior.

@@ -2,7 +2,23 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A1.6
+## Unreleased — TIAF_A1.7
+
+- Added immutable, provider-neutral AnalysisContext requirements, subjects,
+  evidence descriptors, aggregate context, ordered batch outcomes, and factual
+  diagnostic summaries.
+- Added a dependency-injected builder that resolves through A1.5 and routes
+  quote, history, option-chain, and exact historical-option requests through
+  the A1.6 coordinator.
+- Added deterministic completeness, quality, retrieval freshness,
+  partial/failure, and dual retrieval/source-observation provenance semantics.
+- Hardened the read-only utility with explicit required-versus-optional
+  derivatives and sequential, order-preserving batch inspection.
+- Preserved A1.6 provider-scheduler blocks as typed A1.7 deferrals with gate
+  provenance, partial-context retention, truthful `UNKNOWN` required freshness,
+  and explicit completed/partial/deferred/error batch statuses.
+
+## TIAF_A1.6 — Complete / Live Validated
 
 - Added a provider-neutral in-process factual cache with deterministic keys,
   optional LRU capacity, explicit invalidation, generation tracking, and local
