@@ -40,7 +40,8 @@ eventually support conclusions such as `HOLD`, `WATCH_CLOSELY`, `PROTECT`,
 
 ## Package boundaries
 
-The current namespaces reserve clear seams for contracts, data, planning,
-specialist interpretation, arbitration, workflows, memory, evaluation, service
-delivery, and observability. At `TIAF_TGT0` these are boundaries only; no agent,
-market, or execution behavior is implemented.
+The namespaces reserve clear seams for contracts, data, planning, specialist
+interpretation, arbitration, workflows, memory, evaluation, service delivery,
+and observability. TIAF_A1 implements the factual data boundary through
+immutable `AnalysisContext`; planning and interpretive namespaces remain future
+boundaries. No Agent or execution behavior is implemented.

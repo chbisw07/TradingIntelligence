@@ -1,5 +1,12 @@
 # TIAF_A1 Data Foundation
 
+> **Closure note:** TIAF_A1.1 through TIAF_A1.7 are complete and baselined at
+> tag `tiaf-a1.7`. This document preserves the incremental A1.1–A1.4 design
+> history. The binding completed architecture is
+> [`TIAF_A1_FOUNDATION_BASELINE.md`](TIAF_A1_FOUNDATION_BASELINE.md), with
+> engineering evidence in
+> [`TIAF_A1_ACCEPTANCE_REPORT.md`](TIAF_A1_ACCEPTANCE_REPORT.md).
+
 ## A1.1 purpose
 
 TIAF_A1.1 defines the provider-neutral factual market-data boundary that future
@@ -13,21 +20,14 @@ schema version `1.0`; package and wire-schema versions remain independent.
 ## Architecture
 
 ```text
-Future provider adapters
-        |
-        v
-MarketDataProvider protocol
-        |
-        v
-Normalized A1 market models
-        |
-        v
-Future shared Data Service / AnalysisContext
+Provider adapters -> provider-neutral models -> DataFetchCoordinator
+    -> AnalysisContextBuilder -> AnalysisContext
 ```
 
-Provider-native response dictionaries stop at the future adapter boundary.
-Downstream components receive only validated normalized models. A future shared
-Data Service will acquire facts once and distribute a consistent context.
+Provider-native response dictionaries stop at the adapter boundary. Downstream
+components receive only validated normalized models. The A1.6 runtime and A1.7
+builder acquire facts through shared policy and distribute a consistent
+context.
 Agents must never call providers directly: direct access would duplicate calls,
 create inconsistent snapshots, leak provider details, and bypass shared
 freshness and failure handling.
@@ -86,7 +86,8 @@ Capabilities are advertised as an immutable `frozenset` of `QUOTES`,
 `HISTORICAL_OHLCV`, `INSTRUMENT_MASTER`, `DERIVATIVES_METADATA`, `OPTION_CHAIN`,
 `HISTORICAL_OPTIONS`, `MARKET_DEPTH`, `FUNDAMENTALS`, and `NEWS`. An adapter must raise
 `UnsupportedCapabilityError` instead of fabricating success for an unsupported
-operation. Partial batch-result semantics are intentionally deferred.
+operation. A1.7 now provides explicit completed, partial, deferred, and error
+`AnalysisContext` batch outcomes above this provider protocol.
 
 ## Error model
 
@@ -109,22 +110,24 @@ LangGraph workflow, ranking, signal, trade action, Google Sheet integration, or
 Dhan is the first concrete factual provider because it supplies the project's
 required batched quotes and daily/intraday OHLCV behind explicit security IDs.
 The A1.2 adapter implements only `QUOTES` and `HISTORICAL_OHLCV`; instrument
-master and resolver work remains deferred. Credentials come from
+master and resolver behavior is outside A1.2 and is supplied by A1.5.
+Credentials come from
 `DHAN_CLIENT_ID` and `DHAN_ACCESS_TOKEN`, and the adapter never logs or exposes
 the token.
 
 The adapter uses Dhan's full quote endpoint, preserves ordered all-success batch
 semantics, and chunks requests at the documented 1,000-instrument boundary. It
-does not sleep or enforce the documented one-quote-request-per-second policy;
-call scheduling belongs to the future Data Service. Historical support covers
+does not sleep; A1.6 now enforces the documented quote rate gate above the
+adapter. Historical support covers
 daily bars and Dhan's `1`, `5`, `15`, `25`, and `60` minute intervals. Intraday
 ranges over Dhan's documented 90-day per-request maximum fail explicitly
 instead of being silently changed or automatically rate-limited.
 
-An explicit `provider_instrument_id` is required as Dhan `securityId`.
-Index-versus-stock derivative terminology cannot be inferred safely from A1.1
-identity alone, so derivative historical requests require injected
-`FUTIDX`/`FUTSTK` or `OPTIDX`/`OPTSTK` mapping. A1.6 will own full resolution.
+An explicit `provider_instrument_id` is required as Dhan `securityId` at the
+adapter boundary. A1.5 now supplies that identity through symbol-first
+resolution. Index-versus-stock derivative terminology cannot be inferred
+safely from A1.1 identity alone, so derivative historical requests require
+explicit `FUTIDX`/`FUTSTK` or `OPTIDX`/`OPTSTK` mapping.
 
 See [the Dhan adapter design](TIAF_A1_2_DHAN_CORE_ADAPTER.md) for endpoint,
 mapping, security, testing, and smoke-test details.
@@ -162,15 +165,15 @@ aware `Asia/Kolkata` timestamps.
 See [the A1.4 design](TIAF_A1_4_DHAN_HISTORICAL_OPTIONS.md) and the
 [detailed continuation map](TIAF_IMPLEMENTATION_TARGETS.md).
 
-## Planned A1 steps
+## Completed A1 sequence
 
-- **A1.2:** Dhan core adapter (complete and live-validated)
-- **A1.3:** Dhan derivatives-data extension (complete and live-validated)
-- **A1.4:** Dhan historical/expired options (current)
-- **A1.5:** Zerodha secondary/fallback provider
-- **A1.6:** instrument resolver
-- **A1.7:** cache, freshness, and provider scheduling
-- **A1.8:** `AnalysisContext` builder
-- **A1.9:** fallback and partial-data semantics
-- **A1.10:** news, filings, and external-evidence foundation
-- **A1.11:** fundamentals and macro evidence foundation
+- **A1.1:** provider-neutral contracts
+- **A1.2:** Dhan core adapter — complete / live validated
+- **A1.3:** Dhan live derivatives — complete / live validated
+- **A1.4:** Dhan historical/expired options — complete / live validated
+- **A1.5:** instrument resolution — complete / live validated
+- **A1.6:** cache, freshness, and provider scheduling — complete / live validated
+- **A1.7:** `AnalysisContext` — complete / live validated
+
+Secondary-provider fallback, external evidence, persistent caching, and retry
+orchestration are intentionally deferred beyond the accepted A1 baseline.

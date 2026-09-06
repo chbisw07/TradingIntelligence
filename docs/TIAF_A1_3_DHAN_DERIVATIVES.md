@@ -96,8 +96,8 @@ with `ZoneInfo("Asia/Kolkata")`; JSON emits `+05:30`.
 
 Dhan documents a special option-chain policy based on one unique request per
 three seconds. The adapter does not sleep, serialize callers, retry, or cache.
-The later shared Data Service can cache by `(underlying, expiry)` and schedule
-calls with full workload context. HTTP/provider failures continue to translate
+A1.6 can cache by `(underlying, expiry)` and schedule calls with full workload
+context. HTTP/provider failures continue to translate
 to typed authentication, rate-limit, timeout, network, not-found, unsupported,
 or bad-response errors. Tokens are never included in model metadata, reprs, or
 test fixtures.

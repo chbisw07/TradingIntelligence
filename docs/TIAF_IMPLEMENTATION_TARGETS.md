@@ -10,6 +10,13 @@ the stable project roadmap. Status must describe repository reality.
 
 ## Accepted foundation
 
+### TIAF_A1 — Complete / Baselined
+
+TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at tag
+`tiaf-a1.7`. The canonical contract and evidence record are
+[`TIAF_A1_FOUNDATION_BASELINE.md`](TIAF_A1_FOUNDATION_BASELINE.md) and
+[`TIAF_A1_ACCEPTANCE_REPORT.md`](TIAF_A1_ACCEPTANCE_REPORT.md).
+
 ### TIAF_TGT0 — Complete / Frozen
 
 - Purpose: establish the Python repository, package layout, configuration,
@@ -26,7 +33,7 @@ the stable project roadmap. Status must describe repository reality.
   semantic collections.
 - Tag: `tiaf-a0`.
 
-### TIAF_A1.1 — Complete / Frozen
+### TIAF_A1.1 — Complete
 
 - Purpose: provider-neutral instrument, quote, OHLCV, historical-series,
   capability, normalization, and typed-error contracts.
@@ -93,9 +100,7 @@ the stable project roadmap. Status must describe repository reality.
 - Acceptance concept: repeated workloads reuse factual results while freshness,
   expiry, and provider rate constraints stay visible and deterministic.
 
-## Current A1 target
-
-### TIAF_A1.7 — Current — AnalysisContext builder
+### TIAF_A1.7 — Complete / Live Validated
 
 - Purpose: assemble a timestamp-consistent provider-neutral factual context for
   downstream deterministic and Agent consumers.
@@ -112,50 +117,19 @@ the stable project roadmap. Status must describe repository reality.
   blocks with factual unavailability or retrieval freshness with source-
   observation age. A1.7 does not schedule retries for deferred work.
 
-## Planned near-term A1 decomposition
+## Next target
 
-### TIAF_A1.8 — Fallback and partial-data semantics
+### TIAF_A2 — Deterministic Analysis / Feature Foundation — Next
 
-- Purpose: define deterministic behavior when providers fail or return
-  incomplete facts.
-- Likely scope: capability-aware fallback, provenance retention, conflict
-  visibility, and stable partial/unavailable outcomes.
-- Non-goals: blending facts by opaque judgment or concealing stale data.
-- Dependency: at least two providers and shared Data Service context.
-- Acceptance concept: simulated provider failures produce predictable fallback
-  or explicit degradation without losing attribution.
+- Purpose: consume `AnalysisContext` and compute reproducible, non-AI derived
+  features without bypassing A1 identity, acquisition, quality, freshness, or
+  provenance boundaries.
+- Dependency: the accepted `tiaf-a1.7` Data Foundation baseline.
 
-### TIAF_A1.9 — Zerodha secondary/fallback provider
+Provider fallback/Zerodha, persistent caching, deferred-work orchestration,
+provider health, and external news/fundamental evidence remain intentionally
+deferred. They are not unimplemented promises inside the accepted A1 baseline;
+their eventual milestone placement will be decided when scoped.
 
-- Purpose: introduce a second factual market-data and identity source.
-- Likely scope: adapter-specific authentication, supported quote/history and
-  resolution capabilities, normalized mapping, and typed provider failures.
-- Non-goals: opaque provider arbitration or trading APIs.
-- Dependency: A1.1 provider contracts, A1.5 resolution boundaries, and A1.8
-  fallback semantics.
-- Acceptance concept: supported Zerodha facts normalize to the same public
-  models under deterministic mocked tests and a safe validation path.
-
-### TIAF_A1.10 — News, filings, and external-evidence foundation
-
-- Purpose: add normalized attributed event/text evidence for later analysis.
-- Likely scope: source identity, publication/retrieval time, symbol association,
-  deduplication, and freshness/quality metadata.
-- Non-goals: sentiment recommendation, LLM conclusions, or automated actions.
-- Dependency: common evidence contracts and shared acquisition boundaries.
-- Acceptance concept: deterministic fixtures normalize and deduplicate evidence
-  while preserving source, time, and missing-content status.
-
-### TIAF_A1.11 — Fundamentals and macro evidence foundation
-
-- Purpose: add structured attributed company and macroeconomic facts.
-- Likely scope: provider-neutral observations, reporting periods, units,
-  revisions, provenance, and freshness.
-- Non-goals: valuation recommendations, forecasts, or portfolio construction.
-- Dependency: evidence normalization conventions and provider integrations.
-- Acceptance concept: representative observations round-trip with explicit
-  period, unit, source, and revision semantics.
-
-Major phases A2 through A10 remain defined only by the canonical
-`TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace or
-invent detail for them.
+Major phases A2 through A10 remain defined by the canonical
+`TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.

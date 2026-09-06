@@ -120,7 +120,7 @@ Prometheus or distributed telemetry dependency.
 
 ## Future relationships
 
-A future `AnalysisContext` can carry `FetchResult` attribution so consumers see
+A1.7 `AnalysisContext` evidence carries fetch attribution so consumers see
 where facts came from and how old they are. A future provider-health layer can
 drive the existing enable/disable and cooldown boundary. A future Intelligence
 OS can decide work order above this runtime without putting candidate queues,

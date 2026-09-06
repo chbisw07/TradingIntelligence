@@ -161,6 +161,10 @@ Foundation should also include:
 
 # TIAF_A1 — Data Foundation
 
+**Status: COMPLETE / BASELINED**
+
+**Baseline tag: `tiaf-a1.7`**
+
 ## Goal
 
 Make a watchlist sufficient input by centralizing factual data acquisition, normalization and derived context.
@@ -192,11 +196,22 @@ Agents do not independently hammer provider APIs. The Data Service obtains evide
 
 ### Acceptance
 
-> Given only a list of F&O symbols, TradingIntelligence can build internally consistent, timestamped analysis contexts or explicitly state what evidence is missing/stale.
+> Given only a list of F&O symbols, TradingIntelligence can build internally
+> consistent, timestamped factual contexts or explicitly return
+> partial/deferred/error outcomes.
+
+The accepted A1 implementation covers provider-neutral contracts, Dhan
+quote/history/live and historical-option facts, symbol-first resolution, the
+in-process data runtime, and `AnalysisContext`. Broader items in the original
+scope—secondary-provider fallback, news/filings, fundamentals, sector/peer
+context, persistent caching, and retry orchestration—remain intentionally
+deferred. See `TIAF_A1_FOUNDATION_BASELINE.md` for the binding A1 boundary.
 
 ---
 
 # TIAF_A2 — Deterministic Baseline
+
+**Status: NEXT**
 
 ## Goal
 

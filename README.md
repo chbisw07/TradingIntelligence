@@ -7,10 +7,10 @@ attributable intelligence for consumers such as TradeMonitor.
 
 ## Current stage
 
-The **TIAF_TGT0**, **TIAF_A0**, and **TIAF_A1.1** baselines are frozen, and
-**TIAF_A1.2** through **TIAF_A1.4** are accepted/live-validated. Development is
-now at **TIAF_A1.5**, which adds deterministic provider-neutral instrument
-resolution over Dhan's public instrument master.
+The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
+**TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
+`tiaf-a1.7`. The next target is **TIAF_A2**, which consumes factual
+`AnalysisContext` values to build deterministic derived features.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker execution/account integration, LLM calls, or
@@ -60,5 +60,6 @@ increment. Deterministic computation stays deterministic; judgment-oriented AI
 capabilities will be introduced deliberately and remain subordinate to the
 centralized authority and risk controls of TradeMonitor.
 
-See [the implementation roadmap](docs/IMPLEMENTATION_ROADMAP.md) for the
-planned sequence.
+See the [A1 foundation baseline](docs/TIAF_A1_FOUNDATION_BASELINE.md),
+[A1 acceptance report](docs/TIAF_A1_ACCEPTANCE_REPORT.md), and
+[implementation roadmap](docs/IMPLEMENTATION_ROADMAP.md).

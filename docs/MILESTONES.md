@@ -1,9 +1,9 @@
 # Milestones
 
-The canonical roadmap is maintained in:
-
-- `TRADINGINTELLIGENCE_ROADMAP.md`
-- `TradingIntelligence_TIAF_Implementation_Roadmap.docx`
+The canonical roadmap is maintained in `TRADINGINTELLIGENCE_ROADMAP.md`. The
+repository also retains the original companion
+`TradingIntelligence_TIAF_Implementation_Roadmap.docx`; milestone status follows
+the Markdown source and the closure records below.
 
 The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. The active development sequence now proceeds through the TIAF implementation roadmap.
 
@@ -17,8 +17,9 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.7 —
-AnalysisContext Builder**.
+**TIAF_A1 — Data Foundation: COMPLETE / BASELINED** at tag `tiaf-a1.7`.
+
+**Next:** TIAF_A2 — Deterministic Analysis / Feature Foundation.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -42,7 +43,13 @@ Planned scope:
 
 No LangGraph workflow, LLM call, broker API, market prediction, or execution capability belongs in A0.
 
-## TIAF_A1 — Data Foundation — ACTIVE
+## TIAF_A1 — Data Foundation — COMPLETE / BASELINED
+
+Canonical closure records:
+
+- `TIAF_A1_FOUNDATION_BASELINE.md`
+- `TIAF_A1_ACCEPTANCE_REPORT.md`
+- baseline tag: `tiaf-a1.7`
 
 **Complete / frozen:** TIAF_A1.1 — Provider Contracts + Normalized Market Models
 
@@ -99,7 +106,7 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
 - documented Dhan quote and option-chain constraints outside generic runtime
 - no background queues, Intelligence OS, Agents, recommendations, or execution
 
-**Current:** TIAF_A1.7 — AnalysisContext Builder
+**Complete / live-validated:** TIAF_A1.7 — AnalysisContext Builder
 
 - immutable provider-neutral analysis subject, requirements, evidence slots,
   aggregate context, ordered batch outcomes, and factual summary
@@ -112,22 +119,12 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
   provider-scheduler deferral, and errors without hidden sleeps or retries
 - no indicators, scoring, recommendation, Agent, queue, broker, or execution
 
-Later A1 sub-targets add provider adapters, resolution, caching, shared context,
-and fallback behavior.
+**Acceptance:** a watchlist can be converted into timestamp-consistent factual
+contexts or explicit partial/deferred/error outcomes. Provider fallback,
+external evidence, persistent caching, and retry orchestration remain future
+work rather than hidden A1 behavior.
 
-- provider-neutral market-data interfaces
-- Dhan and/or Zerodha adapters as appropriate
-- quote and historical OHLCV acquisition
-- instrument/symbol resolution
-- normalized timestamps/time zones
-- shared cache and freshness/TTL
-- optional enrichment ingestion
-- `AnalysisContext` construction
-- provider fallbacks and stale/partial-data visibility
-
-**Acceptance:** a watchlist alone can be converted into timestamp-consistent analysis contexts or clearly marked missing/stale evidence.
-
-## TIAF_A2 — Deterministic Baseline
+## TIAF_A2 — Deterministic Baseline — NEXT
 
 - deterministic feature engine
 - multi-timeframe price/volume features

@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A1.7
+## Unreleased
+
+- Added the canonical A1 architectural baseline and engineering acceptance
+  report, and closed milestone/roadmap status for the A2 handoff.
+
+## TIAF_A1.7 — Complete / Live Validated
 
 - Added immutable, provider-neutral AnalysisContext requirements, subjects,
   evidence descriptors, aggregate context, ordered batch outcomes, and factual
