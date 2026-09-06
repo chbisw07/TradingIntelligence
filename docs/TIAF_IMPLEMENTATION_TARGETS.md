@@ -65,7 +65,7 @@ the stable project roadmap. Status must describe repository reality.
   the rolling expired-options endpoint is live-validated as `1/2/3`; A1.4 uses
   a dedicated type and does not change other expiry-code consumers.
 
-### TIAF_A1.5 — Current
+### TIAF_A1.5 — Complete / Live Validated
 
 - Purpose: resolve human-facing instrument inputs to explicit canonical and
   provider identities without guessing.
@@ -81,17 +81,21 @@ the stable project roadmap. Status must describe repository reality.
   inputs resolve uniquely or return explicit policy-selected,
   ambiguous/not-found outcomes without first-row guessing.
 
-## Planned near-term A1 decomposition
+## Current A1 target
 
-### TIAF_A1.6 — Cache, freshness, and provider scheduling
+### TIAF_A1.6 — Current — Cache, freshness, and provider scheduling
 
 - Purpose: centralize reusable data acquisition and rate-aware coordination.
-- Likely scope: keyed caches, caller-visible age/TTL, request coalescing, and
-  endpoint-aware scheduling policies.
+- Scope: deterministic immutable keys, in-memory optional-LRU caching,
+  caller-visible freshness/age, operation policy registry, monotonic endpoint
+  scheduling, provider disable/cooldown controls, key-scoped request
+  coalescing, explicit bounded stale fallback, invalidation, and metrics.
 - Non-goals: Agent judgment, recommendation caching, or hidden adapter sleeps.
 - Dependency: stable provider operations and normalized snapshot identities.
 - Acceptance concept: repeated workloads reuse factual results while freshness,
   expiry, and provider rate constraints stay visible and deterministic.
+
+## Planned near-term A1 decomposition
 
 ### TIAF_A1.7 — AnalysisContext builder
 

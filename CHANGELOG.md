@@ -2,7 +2,21 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased — TIAF_A1.5
+## Unreleased — TIAF_A1.6
+
+- Added a provider-neutral in-process factual cache with deterministic keys,
+  optional LRU capacity, explicit invalidation, generation tracking, and local
+  metrics.
+- Added caller-relative freshness requirements and an explicit operation policy
+  registry without universal TTL assumptions.
+- Added a monotonic, non-sleeping provider scheduler with explicit rate blocks,
+  cooldowns, provider disable/enable controls, and documented Dhan quote and
+  option-chain policies.
+- Added synchronous fetch coordination, key-scoped single flight, explicit
+  bounded stale-on-error behavior, immutable acquisition results, tests, and a
+  read-only Dhan quote demo.
+
+## TIAF_A1.5 — Complete / Live Validated
 
 - Added frozen provider-neutral instrument query, resolved identity, and
   explicit unique/ambiguous/not-found result contracts behind a synchronous

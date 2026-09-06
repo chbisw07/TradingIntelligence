@@ -17,8 +17,8 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 - no trading logic, broker integration, LLM calls, or agent workflows introduced
 - tag: `tiaf-tgt0`
 
-**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.5 —
-Instrument Resolver**.
+**Active:** TIAF_A1 — Data Foundation. Current sub-target: **TIAF_A1.6 —
+Cache, Freshness & Provider Scheduling**.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -78,7 +78,7 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
 - adjacent half-open 30-day chunking and deterministic merge semantics
 - no replay strategy, option selection, recommendation, or execution
 
-**Current:** TIAF_A1.5 — Instrument Resolver
+**Complete / live-validated:** TIAF_A1.5 — Instrument Resolver
 
 - frozen provider-neutral exact query and explicit result contracts
 - Dhan detailed instrument-master load/download and narrow atomic file cache
@@ -89,6 +89,15 @@ No LangGraph workflow, LLM call, broker API, market prediction, or execution cap
 - symbol-first smoke diagnostics with hard symbol/security-ID consistency checks
 - provider diagnostic/test identities excluded from canonical F&O universes
 - no recommendation, ranking, Agent, order, account, or spreadsheet behavior
+
+**Current:** TIAF_A1.6 — Cache, Freshness & Provider Scheduling
+
+- provider-neutral in-process factual cache and deterministic cache keys
+- caller-relative freshness with visible `FRESH` / `AGING` / `STALE` / `UNKNOWN`
+- monotonic provider scheduling with explicit non-sleeping eligibility decisions
+- key-scoped request coalescing and opt-in bounded stale-on-error fallback
+- documented Dhan quote and option-chain constraints outside generic runtime
+- no background queues, Intelligence OS, Agents, recommendations, or execution
 
 Later A1 sub-targets add provider adapters, resolution, caching, shared context,
 and fallback behavior.

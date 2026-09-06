@@ -6,6 +6,8 @@ import tiaf.data as data
 def test_expected_data_foundation_symbols_are_public() -> None:
     expected = {
         "DerivativesDataProvider",
+        "DataFetchCoordinator",
+        "CacheKey",
         "ExpiryListSnapshot",
         "HistoricalSeries",
         "HistoricalOptionBar",
@@ -25,6 +27,8 @@ def test_expected_data_foundation_symbols_are_public() -> None:
         "OptionStrikeSnapshot",
         "ProviderCapability",
         "QuoteSnapshot",
+        "ProviderScheduler",
+        "FreshnessRequirement",
         "RelativeStrike",
         "ResolutionResult",
         "ResolutionPolicy",

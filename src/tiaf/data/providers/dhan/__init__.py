@@ -19,6 +19,12 @@ from tiaf.data.providers.dhan.mappings import (
     to_dhan_segment,
 )
 from tiaf.data.providers.dhan.provider import DhanMarketDataProvider, plan_rolling_option_chunks
+from tiaf.data.providers.dhan.rate_policies import (
+    DHAN_OPTION_CHAIN_RATE_POLICY,
+    DHAN_QUOTE_RATE_POLICY,
+    DHAN_RATE_POLICIES,
+    dhan_rate_policy_registry,
+)
 from tiaf.data.providers.dhan.transport import DhanTransport, HttpxDhanTransport
 
 __all__ = [
@@ -34,6 +40,10 @@ __all__ = [
     "HttpxDhanTransport",
     "HttpxInstrumentMasterDownloader",
     "InstrumentMasterDownloader",
+    "DHAN_OPTION_CHAIN_RATE_POLICY",
+    "DHAN_QUOTE_RATE_POLICY",
+    "DHAN_RATE_POLICIES",
+    "dhan_rate_policy_registry",
     "plan_rolling_option_chunks",
     "resolve_dhan_diagnostic_instrument",
     "to_dhan_instrument_type",

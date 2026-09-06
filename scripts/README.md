@@ -22,5 +22,13 @@ use `--exchange` to override scope and `--all-matches` for full diagnostics.
 three factual smoke utilities, a symbol/security-ID mismatch is a hard failure
 before provider construction; ID-only output is derived from the master.
 
+`data_runtime_smoke.py` is the read-only A1.6 quote path. It resolves RELIANCE
+symbol-first by default, fetches through `DataFetchCoordinator`, then repeats
+the request to show provider-versus-cache disposition, freshness, age, source,
+and local runtime metrics. `--force-refresh` demonstrates an explicit second
+gate decision and never sleeps to wait for eligibility. The demo measures cache
+age from the quote's `received_at`; the nested quote still preserves Dhan's
+actual `observed_at`/last-trade time, including outside market hours.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.
