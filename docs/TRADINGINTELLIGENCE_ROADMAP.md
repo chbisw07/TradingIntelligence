@@ -242,8 +242,8 @@ Build a transparent non-AI benchmark that future Agents must beat.
 1. **A2.1 — Feature Contracts + Engine Foundation** — COMPLETE / LIVE VALIDATED
 2. **A2.2 — Price / Return / Volatility Features** — COMPLETE / LIVE VALIDATED
 3. **A2.3 — Trend & Structure Features** — COMPLETE / LIVE VALIDATED
-4. **A2.4 — Indicator Framework + Initial Indicator Library** — CURRENT
-5. **A2.5 — Volume / Participation Features**
+4. **A2.4 — Indicator Framework + Initial Indicator Library** — COMPLETE / LIVE VALIDATED
+5. **A2.5 — Volume / Participation Features** — CURRENT
 6. **A2.6 — Support / Resistance / Breakout Structure**
 7. **A2.7 — Derivatives / Option-Chain Features**
 8. **A2.8 — Multi-Timeframe Feature Context**

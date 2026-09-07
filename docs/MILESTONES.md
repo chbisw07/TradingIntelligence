@@ -27,7 +27,9 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.3:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.3`.
 
-**Current milestone:** TIAF_A2.4 — Indicator Framework + Initial Indicator Library.
+**TIAF_A2.4:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.4`.
+
+**Current milestone:** TIAF_A2.5 — Volume / Participation Features.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -158,7 +160,7 @@ work rather than hidden A1 behavior.
 - deterministic adjacent high/low fractions and rolling-range position
 - ATR-normalized distance from SMA/EMA without interpretation or signals
 
-**TIAF_A2.4 — Indicator Framework + Initial Indicator Library: CURRENT**
+**TIAF_A2.4 — Indicator Framework + Initial Indicator Library: COMPLETE / LIVE VALIDATED**
 
 - first-class immutable definitions, requests, results, bundles, and explicit
   extensible calculator registry
@@ -172,7 +174,14 @@ parameter optimization, dashboards, and custom indicators need one reusable
 versioned abstraction. Indicators complement rather than replace A2.3
 primitive measurements.
 
-Near-term sequence: A2.4 indicators; A2.5 volume/participation; A2.6
+**TIAF_A2.5 — Volume / Participation Features: CURRENT**
+
+- completed-history raw, average, median, relative, change, dispersion, and
+  volume-slope measurements
+- deterministic close-transition participation and price/range alignment
+- no accumulation/distribution claims, confirmation, signal, or Agent logic
+
+Near-term sequence: A2.5 volume/participation; A2.6
 support/resistance/breakout; A2.7 derivatives; A2.8 multi-timeframe context;
 A2.9 deterministic market-state summary; A2.10 replay and baseline evaluation.
 

@@ -17,12 +17,14 @@ from tiaf.features.models import (
     FeatureRequest,
     FeatureResult,
 )
+from tiaf.features.participation import PARTICIPATION_CALCULATORS
 from tiaf.features.price import PRICE_CALCULATORS
 from tiaf.features.registry import FeatureCalculator, FeatureRegistry
 from tiaf.features.returns import RETURN_CALCULATORS
 from tiaf.features.structure import STRUCTURE_CALCULATORS
 from tiaf.features.trend import TREND_CALCULATORS
 from tiaf.features.volatility import VOLATILITY_CALCULATORS
+from tiaf.features.volume import VOLUME_CALCULATORS
 
 _SOURCE_EVIDENCE_NAMES = {
     FeatureSourceKind.QUOTE: "quote",
@@ -44,6 +46,8 @@ def builtin_feature_registry() -> FeatureRegistry:
             *VOLATILITY_CALCULATORS,
             *TREND_CALCULATORS,
             *STRUCTURE_CALCULATORS,
+            *VOLUME_CALCULATORS,
+            *PARTICIPATION_CALCULATORS,
         )
     )
 

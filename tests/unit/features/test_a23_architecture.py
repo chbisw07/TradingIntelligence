@@ -38,7 +38,7 @@ def test_registry_contains_all_a23_definitions_in_stable_order() -> None:
     definitions = registry.definitions()
     a23 = (*TREND_FEATURE_DEFINITIONS, *STRUCTURE_FEATURE_DEFINITIONS)
     assert len(a23) == 23
-    assert len(definitions) == 53
+    assert len(definitions) == 70
     assert tuple(item.feature_id for item in definitions) == tuple(
         sorted(item.feature_id for item in definitions)
     )

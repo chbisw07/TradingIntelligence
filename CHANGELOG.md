@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added 17 TIAF_A2.5 completed-history raw, relative, dispersion, slope,
+  persistence, close-transition participation, signed-balance, and transparent
+  price/range correlation features.
+- Added strict exact-window and destination-volume alignment semantics,
+  zero-denominator/variance guards, inherited history quality and market-time
+  provenance, a `--volume` read-only smoke pack, tests, and architecture docs.
 - Added the first-class TIAF_A2.4 indicator contracts, explicit registry, and
   indicator-agnostic deterministic engine.
 - Added completed-history SuperTrend, Wilder RSI, MACD, Wilder ADX/+DI/-DI,

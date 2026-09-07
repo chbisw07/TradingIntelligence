@@ -33,7 +33,7 @@ Statuses describe repository reality:
 | Price / return / volatility | IMPLEMENTED | A2.1–A2.2 features |
 | Trend / structure primitives | IMPLEMENTED | A2.3 features |
 | Indicator framework and initial library | IMPLEMENTED | A2.4 |
-| Volume / participation | PLANNED | A2.5 |
+| Volume / participation primitives | IMPLEMENTED | A2.5 completed-history features |
 | Support / resistance | PLANNED | A2.6 |
 | Breakout / compression | PLANNED | A2.6 |
 | Derivatives deterministic features | PLANNED | A2.7 |
@@ -53,6 +53,13 @@ Statuses describe repository reality:
 | ADX / +DI / -DI | IMPLEMENTED | A2.4 library |
 | Bollinger Bands | IMPLEMENTED | A2.4 library |
 | Donchian Channel | IMPLEMENTED | A2.4 library |
+| OBV | FUTURE | Indicator-library extension |
+| MFI | FUTURE | Indicator-library extension |
+| Chaikin / Accumulation-Distribution | FUTURE | Indicator-library extension with named variant |
+| Session VWAP | FUTURE | Indicator extension with explicit intraday sessions |
+| Anchored VWAP | FUTURE | Indicator extension with explicit anchor contract |
+| Volume profile | FUTURE | Deterministic analysis with explicit binning semantics |
+| Delivery / participant statistics | FUTURE | Requires normalized provider evidence |
 | HalfTrend | FUTURE | Deferred pending a named canonical variant |
 | Future / proprietary indicators | FUTURE | Explicit registry extensions |
 

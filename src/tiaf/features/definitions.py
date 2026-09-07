@@ -6,11 +6,13 @@ from tiaf.features.enums import (
     FeatureValueType,
 )
 from tiaf.features.models import FeatureDefinition
+from tiaf.features.participation import PARTICIPATION_FEATURE_DEFINITIONS
 from tiaf.features.price import PRICE_FEATURE_DEFINITIONS
 from tiaf.features.returns import RETURN_FEATURE_DEFINITIONS
 from tiaf.features.structure import STRUCTURE_FEATURE_DEFINITIONS
 from tiaf.features.trend import TREND_FEATURE_DEFINITIONS
 from tiaf.features.volatility import VOLATILITY_FEATURE_DEFINITIONS
+from tiaf.features.volume import VOLUME_FEATURE_DEFINITIONS
 
 CURRENT_PRICE = FeatureDefinition(
     feature_id="price.current",
@@ -104,4 +106,6 @@ BUILTIN_FEATURE_DEFINITIONS = (
     *VOLATILITY_FEATURE_DEFINITIONS,
     *TREND_FEATURE_DEFINITIONS,
     *STRUCTURE_FEATURE_DEFINITIONS,
+    *VOLUME_FEATURE_DEFINITIONS,
+    *PARTICIPATION_FEATURE_DEFINITIONS,
 )

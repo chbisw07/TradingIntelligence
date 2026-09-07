@@ -20,6 +20,7 @@ def context_with_bars(
     opens: tuple[float, ...] | None = None,
     highs: tuple[float, ...] | None = None,
     lows: tuple[float, ...] | None = None,
+    volumes: tuple[int | None, ...] | None = None,
     interval: str = "1d",
     quote_ltp: float = 1400.0,
     quote_open: float | None = None,
@@ -39,6 +40,8 @@ def context_with_bars(
         raise ValueError("lows must match closes")
     if opens is not None and len(opens) != len(closes):
         raise ValueError("opens must match closes")
+    if volumes is not None and len(volumes) != len(closes):
+        raise ValueError("volumes must match closes")
 
     market = FakeMarketProvider()
     market.history_value = market.history_value.model_copy(
@@ -73,7 +76,7 @@ def context_with_bars(
             high=(highs[index] if highs is not None else close + 1),
             low=(lows[index] if lows is not None else max(close - 1, 0)),
             close=close,
-            volume=index,
+            volume=(volumes[index] if volumes is not None else index),
             source_provider="test",
         )
         for index, close in enumerate(closes)

@@ -13,7 +13,7 @@ target, stop, or execution action. No A2.3 calculator accesses a provider,
 resolver, cache, network, clock, broker, LLM, Agent, or workflow. Current quote
 data is deliberately excluded.
 
-The built-in registry contains 53 definitions: 7 from A2.1, 23 from A2.2, and
+At A2.3 completion, the built-in registry contained 53 definitions: 7 from A2.1, 23 from A2.2, and
 23 from A2.3.
 
 ## 2. Moving averages

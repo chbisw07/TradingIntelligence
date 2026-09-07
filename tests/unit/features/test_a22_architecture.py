@@ -34,7 +34,7 @@ def test_registry_contains_all_new_definitions_in_deterministic_order() -> None:
         *RETURN_FEATURE_DEFINITIONS,
         *VOLATILITY_FEATURE_DEFINITIONS,
     )
-    assert len(definitions) == 53
+    assert len(definitions) == 70
     assert tuple(item.feature_id for item in definitions) == tuple(
         sorted(item.feature_id for item in definitions)
     )

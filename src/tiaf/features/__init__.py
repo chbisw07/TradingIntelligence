@@ -30,6 +30,7 @@ from tiaf.features.models import (
     FeatureRequest,
     FeatureResult,
 )
+from tiaf.features.participation import PARTICIPATION_FEATURE_DEFINITIONS
 from tiaf.features.price import PRICE_FEATURE_DEFINITIONS
 from tiaf.features.registry import FeatureCalculator, FeatureRegistry
 from tiaf.features.returns import RETURN_FEATURE_DEFINITIONS, LogReturnCalculator
@@ -41,6 +42,7 @@ from tiaf.features.volatility import (
     MoveOverAtrCalculator,
     RealizedVolatilityCalculator,
 )
+from tiaf.features.volume import VOLUME_FEATURE_DEFINITIONS
 
 __all__ = [
     "AbsoluteReturnCalculator",
@@ -67,6 +69,7 @@ __all__ = [
     "HistoryFirstCloseCalculator",
     "HistoryLastCloseCalculator",
     "PercentReturnCalculator",
+    "PARTICIPATION_FEATURE_DEFINITIONS",
     "PRICE_FEATURE_DEFINITIONS",
     "RETURN_FEATURE_DEFINITIONS",
     "STRUCTURE_FEATURE_DEFINITIONS",
@@ -75,6 +78,7 @@ __all__ = [
     "MoveOverAtrCalculator",
     "RealizedVolatilityCalculator",
     "VOLATILITY_FEATURE_DEFINITIONS",
+    "VOLUME_FEATURE_DEFINITIONS",
     "builtin_feature_registry",
     "summarize_feature_bundle",
 ]

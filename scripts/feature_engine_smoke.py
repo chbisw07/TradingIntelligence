@@ -47,6 +47,11 @@ def parse_args() -> argparse.Namespace:
         help="include completed-history A2.3 trend and structure features",
     )
     parser.add_argument(
+        "--volume",
+        action="store_true",
+        help="include completed-history A2.5 volume and participation features",
+    )
+    parser.add_argument(
         "--annualization-factor",
         type=float,
         help="explicit realized-volatility factor; defaults to 252 only for 1d",
@@ -220,6 +225,53 @@ def _trend_requests(interval: str) -> tuple[FeatureRequest, ...]:
     )
 
 
+def _volume_requests(interval: str) -> tuple[FeatureRequest, ...]:
+    """Return the deterministic A2.5 user-facing measurement pack."""
+    return (
+        FeatureRequest(feature_id="volume.current", interval=interval),
+        *(
+            FeatureRequest(
+                feature_id="volume.average",
+                parameters=(("bars", bars),),
+                interval=interval,
+            )
+            for bars in (5, 20)
+        ),
+        FeatureRequest(
+            feature_id="volume.median",
+            parameters=(("bars", 20),),
+            interval=interval,
+        ),
+        FeatureRequest(
+            feature_id="volume.relative",
+            parameters=(("bars", 20),),
+            interval=interval,
+        ),
+        FeatureRequest(feature_id="volume.change_percent", interval=interval),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("bars", 20),),
+                interval=interval,
+            )
+            for feature_id in (
+                "volume.position_in_range",
+                "volume.coefficient_of_variation_percent",
+                "volume.linear_slope",
+                "volume.linear_slope_percent",
+                "participation.up_volume_fraction",
+                "participation.down_volume_fraction",
+                "participation.flat_volume_fraction",
+                "participation.signed_volume_balance",
+                "participation.return_volume_alignment",
+                "participation.range_volume_alignment",
+            )
+        ),
+        FeatureRequest(feature_id="volume.consecutive_increases", interval=interval),
+        FeatureRequest(feature_id="volume.consecutive_decreases", interval=interval),
+    )
+
+
 def _print_bundle(
     bundle: FeatureBundle, *, as_json: bool, label: str | None = None
 ) -> None:
@@ -244,9 +296,9 @@ def main() -> int:
             else _requests(args.history_interval)
         )
         requests = (
-            (*base_requests, *_trend_requests(args.history_interval))
-            if args.trend
-            else base_requests
+            *base_requests,
+            *(_trend_requests(args.history_interval) if args.trend else ()),
+            *(_volume_requests(args.history_interval) if args.volume else ()),
         )
         requested_at = datetime.now(TIAF_TIMEZONE)
         provider = DhanMarketDataProvider()

@@ -66,6 +66,13 @@ concise baseline or combined with `--extended`. Its 10/20/50 smoke periods are
 inspection defaults, not calculator restrictions, and it does not mix current
 quote data into historical trend measurements.
 
+`--volume` adds the A2.5 completed-history raw/relative volume, dispersion,
+slope, persistence, close-transition participation, signed balance, and
+price/range correlation measurements. It can be combined with `--extended`
+and `--trend`; its 5/20-bar values are inspection defaults. Short history and
+undefined denominator/variance cases stay explicit, and no quote is mixed into
+the historical volume calculations.
+
 `indicator_engine_smoke.py` is the dedicated read-only A2.4 path. It requests
 completed history only and runs the default SuperTrend, RSI, MACD, ADX/DI,
 Bollinger, and Donchian pack. Use repeatable or comma-separated `--indicator`

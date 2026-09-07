@@ -60,14 +60,22 @@ def test_smoke_script_help_is_user_runnable(monkeypatch: pytest.MonkeyPatch) -> 
 
 
 @pytest.mark.parametrize(
-    ("extended", "trend"),
-    [(False, False), (True, False), (False, True), (True, True)],
+    ("extended", "trend", "volume"),
+    [
+        (False, False, False),
+        (True, False, False),
+        (False, True, False),
+        (True, True, False),
+        (False, False, True),
+        (True, True, True),
+    ],
 )
 def test_smoke_script_builds_context_then_features_without_live_io(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
     extended: bool,
     trend: bool,
+    volume: bool,
 ) -> None:
     namespace = _load_smoke()
     smoke_globals = namespace["main"].__globals__
@@ -98,6 +106,7 @@ def test_smoke_script_builds_context_then_features_without_live_io(
             json=False,
             extended=extended,
             trend=trend,
+            volume=volume,
             annualization_factor=None,
         ),
     )
@@ -117,6 +126,11 @@ def test_smoke_script_builds_context_then_features_without_live_io(
         assert "structure.higher_high_fraction[bars=20]" in output
     else:
         assert "trend.sma[period=20]" not in output
+    if volume:
+        assert "volume.relative[bars=20]" in output
+        assert "participation.signed_volume_balance[bars=20]" in output
+    else:
+        assert "volume.relative[bars=20]" not in output
 
 
 def test_smoke_script_is_documented() -> None:

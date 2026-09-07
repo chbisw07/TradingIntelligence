@@ -161,7 +161,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
   scoring, ADX, Agents, brokers, or execution.
 - Detail: [`TIAF_A2_3_TREND_STRUCTURE.md`](TIAF_A2_3_TREND_STRUCTURE.md).
 
-### TIAF_A2.4 — Indicator Framework + Initial Indicator Library — Current
+### TIAF_A2.4 — Indicator Framework + Initial Indicator Library — Complete / Live Validated
 
 - Purpose: establish indicators as a first-class, versioned, discoverable
   evidence subsystem complementary to primitive A2 features.
@@ -175,13 +175,25 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
   reusable abstraction before later feature families build on them.
 - Detail: [`TIAF_A2_4_INDICATOR_FRAMEWORK.md`](TIAF_A2_4_INDICATOR_FRAMEWORK.md).
 
+### TIAF_A2.5 — Volume / Participation Features — Current
+
+- Purpose: add deterministic completed-history measurements of volume level,
+  variation, persistence, and alignment with price movement.
+- Scope: raw and relative volume, exact-window dispersion and slope,
+  close-transition participation fractions/balance, and transparent Pearson
+  alignment primitives.
+- Non-goals: accumulation/distribution claims, confirmation signals,
+  option-chain OI, session VWAP, OBV-family indicators, Agents, or execution.
+- Detail:
+  [`TIAF_A2_5_VOLUME_PARTICIPATION.md`](TIAF_A2_5_VOLUME_PARTICIPATION.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
 2. **A2.2 — Price / Return / Volatility Features** — Complete / Live Validated
 3. **A2.3 — Trend & Structure Features** — Complete / Live Validated
-4. **A2.4 — Indicator Framework + Initial Indicator Library** — Current
-5. **A2.5 — Volume / Participation Features**
+4. **A2.4 — Indicator Framework + Initial Indicator Library** — Complete / Live Validated
+5. **A2.5 — Volume / Participation Features** — Current
 6. **A2.6 — Support / Resistance / Breakout Structure**
 7. **A2.7 — Derivatives / Option-Chain Features**
 8. **A2.8 — Multi-Timeframe Feature Context**

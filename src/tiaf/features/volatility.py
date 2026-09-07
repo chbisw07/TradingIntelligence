@@ -130,6 +130,13 @@ def true_range(current: OHLCVBar, previous_close: float) -> float:
     )
 
 
+def bar_range_percent(bar: OHLCVBar) -> float:
+    """Return one validated bar's high-low range divided by close."""
+    if bar.close == 0:
+        raise ValueError("bar range percentage is undefined for zero close")
+    return ((bar.high - bar.low) / bar.close) * 100.0
+
+
 def wilder_atr(bars: tuple[OHLCVBar, ...], period: int) -> float:
     """Calculate latest Wilder ATR from all supplied chronological bars."""
     return wilder_atr_series(bars, period)[-1]
@@ -192,14 +199,21 @@ class CandleRangeCalculator(A22Calculator):
                     warnings=(f"{request.feature_id} is undefined for zero close",),
                 )
             if self._mode is _CandleMode.BAR_PERCENT:
-                numerator = current.high - current.low
+                value = bar_range_percent(current)
             elif self._mode is _CandleMode.BODY_PERCENT:
-                numerator = abs(current.close - current.open)
+                value = abs(current.close - current.open) / current.close * 100
             elif self._mode is _CandleMode.UPPER_WICK_PERCENT:
-                numerator = current.high - max(current.open, current.close)
+                value = (
+                    (current.high - max(current.open, current.close))
+                    / current.close
+                    * 100
+                )
             else:
-                numerator = min(current.open, current.close) - current.low
-            value = (numerator / current.close) * 100
+                value = (
+                    (min(current.open, current.close) - current.low)
+                    / current.close
+                    * 100
+                )
         return self._history_result(
             context,
             request,
