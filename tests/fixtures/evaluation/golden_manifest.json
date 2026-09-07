@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {"name": "positive-early", "profile": "positive", "direction": "POSITIVE", "class": "EARLY_OPPORTUNITY"},
+    {"name": "negative", "profile": "negative", "direction": "NEGATIVE"},
+    {"name": "neutral", "profile": "neutral", "direction": "NEUTRAL", "class": "NO_TRADE"},
+    {"name": "conflicted", "profile": "conflicted", "direction": "CONFLICTED", "class": "NO_TRADE"}
+  ]
+}

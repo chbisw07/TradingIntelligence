@@ -87,13 +87,17 @@ sub-milestone.
 | DEF-046 | Gamma exposure and dealer positioning | A2.7 | DEPENDENCY_DEFERRAL | Raw gamma/OI do not establish dealer sign or positioning assumptions. | Positioning source or explicit sign/model assumptions | MEDIUM | AFTER HISTORICAL DERIVATIVES FOUNDATION | DEFERRED | Provider gamma remains factual; dealer exposure is not inferred. |
 | DEF-047 | Automatic benchmark and sector mapping | A2.8 | DEPENDENCY_DEFERRAL | No accepted provider-neutral sector/classification source exists. | Normalized classification evidence, versioning and mapping policy | HIGH | A3 CLOSURE | DEFERRED | A2.8 requires an explicit caller-supplied benchmark and role. |
 | DEF-048 | Multi-timeframe SuperTrend aggregation | A2.8 | DEPENDENCY_DEFERRAL | SuperTrend lives in `IndicatorBundle`, separate from A2.8 `FeatureBundle` aggregation. | Explicit multi-timeframe indicator-context contract | MEDIUM | A2 CLOSURE | DEFERRED | Do not copy indicator state into feature bundles merely to aggregate it. |
+| DEF-049 | Exact arbitrary historical point-in-time reconstruction | A2.10 | DEPENDENCY_DEFERRAL | Replay of captured evidence cannot prove what data, instruments, or revisions were available on an uncaptured historical date. | Point-in-time universe, corporate-action, data-vintage, and availability-time contracts | HIGH | AFTER DATA-VINTAGE FOUNDATION | DEFERRED | A2.10 prioritizes captured-snapshot replay and makes no synthetic historical-fidelity claim. |
+| DEF-050 | Persistent database and distributed/large-scale replay farm | A2.10 | CAPABILITY_DEFERRAL | A filesystem JSON/JSONL corpus is sufficient for deterministic foundation and audit tests. | Retention, licensing, concurrency, job-control, and operational scale evidence | MEDIUM | A7/A10 CLOSURE | DEFERRED | Content-addressed JSON and append-only local logs remain the accepted small-scale substrate. |
+| DEF-051 | Scheduled provider-backed subsequent-outcome acquisition | A2.10 | DEPENDENCY_DEFERRAL | A2.10 defines provider-neutral later paths but does not wait, schedule, or backfill unfrozen decisions. | Exchange calendar, outcome acquisition policy, runtime queue, and data-retention rules | HIGH | A7/A10 CLOSURE | DEFERRED | Tests use explicit historical fixtures; no newly captured assessment is given fabricated future data. |
 
-## Immediate planned work deliberately not registered
+## Immediate milestone work deliberately not registered
 
-The following is not a deferral because the accepted roadmap already places it
-in the immediate remaining A2 sequence:
+The following was not a deferral because the accepted roadmap placed it in the
+immediate A2 sequence:
 
-- replay and deterministic baseline evaluation in A2.10.
+- replay and deterministic baseline evaluation in A2.10 (now implemented;
+  live capture/replay validated, acceptance pending).
 
 Deterministic market-state summary, horizon-aware baseline scoring, ranking,
 and candidate classes were delivered by A2.9 and therefore are neither open
@@ -105,15 +109,16 @@ Those are later-layer boundaries, not A2.9 calculator work.
 
 ## Inventory summary
 
-The initial audit recovered 48 stable records: A0 (6), A1 (10), A2.1 (1),
+The register now contains 51 stable records: A0 (6), A1 (10), A2.1 (1),
 A2.3 (3), A2.4 (6), A2.5 (7), A2.6 (5), A2.7 (8), and A2.8 (2). A2.2 added no
-distinct deferral beyond already planned A2.3 work. Current statuses are 38
-DEFERRED, 4 PLANNED, 3 IMPLEMENTED, and 3 REJECTED.
+distinct deferral beyond already planned A2.3 work; A2.10 added three. Current
+statuses are 41 DEFERRED, 4 PLANNED, 3 IMPLEMENTED, and 3 REJECTED.
 
 The unresolved HIGH-priority IDs are DEF-007, DEF-008, DEF-010 through DEF-013,
 DEF-020, DEF-022, DEF-023, DEF-025, DEF-027, DEF-034, DEF-035, DEF-038,
 DEF-040 through DEF-042, and DEF-047. High-priority planned layer boundaries
-are DEF-002, DEF-004, and DEF-006. Every one remains subject to roadmap order
+and DEF-049 and DEF-051. High-priority planned layer boundaries are DEF-002,
+DEF-004, and DEF-006. Every one remains subject to roadmap order
 and prerequisite satisfaction.
 
 ## A2.8 deferral summary
@@ -132,3 +137,12 @@ work. In particular, market-calendar recency (DEF-007), live-forming bars
 (DEF-047), and a first-class multi-timeframe indicator context (DEF-048) remain
 outside policy 1.0. Agent reasoning, option-expression selection, and execution
 remain governed by DEF-002, DEF-006, and DEF-005 respectively.
+
+## A2.10 deferral summary
+
+A2.10 introduced DEF-049 through DEF-051 for arbitrary point-in-time
+reconstruction, database/distributed replay scale, and scheduled provider-backed
+outcome acquisition. Parameter optimization remains DEF-024 rather than being
+duplicated. Agent and human evaluation await their later producer layers. This
+is a recording pass only; the full A2 deferral burn-down remains reserved for
+A2 closure after A2.10 acceptance.

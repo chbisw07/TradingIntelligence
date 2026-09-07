@@ -269,6 +269,21 @@ class DeterministicBaselineRequest(ContractModel):
             return value
         return tuple(normalize_interval(item) for item in value)
 
+    @field_validator("evidence_freshness", mode="before")
+    @classmethod
+    def canonical_evidence_freshness(cls, value: Any) -> Any:
+        """Canonicalize this semantically unordered source map for stable identity."""
+        if isinstance(value, (str, bytes)):
+            return value
+        return tuple(
+            sorted(
+                value,
+                key=lambda item: (
+                    item.source.value if isinstance(item, EvidenceFreshness) else item["source"]
+                ),
+            )
+        )
+
     @model_validator(mode="after")
     def validate_evidence(self) -> Self:
         if self.primary_timeframe in self.supporting_timeframes:

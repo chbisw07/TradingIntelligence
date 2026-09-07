@@ -117,5 +117,52 @@ access and deterministically prints every A2.9 component weight, evidence rule,
 selector, transform, scale/cap, sign semantic, effective maximum contribution,
 classification threshold, quality factor, and penalty.
 
+`capture_baseline_snapshot.py` is the only live A2.10 utility. It acquires
+normalized evidence once, writes a portable `EvidenceSnapshot` plus separate
+immutable `BaselineRunRecord`, and refuses replacement unless `--overwrite` is
+explicit. `replay_baseline_snapshot.py` loads that file with no provider or
+resolver import and reports exact original-versus-replay equality.
+`run_baseline_regression.py` accepts repeatable `--input` captured snapshot/run
+files or a persisted `--corpus` directory and reports stable field-level replay
+failures.
+
+These are three distinct validation paths:
+
+1. **Synthetic golden tests.**
+   `tests/fixtures/evaluation/golden_manifest.json` is a golden test manifest,
+   not a runnable replay corpus. The test suite reads its profiles and constructs
+   stable synthetic cases programmatically. Run them with:
+
+   ```bash
+   .venv/bin/pytest -q \
+     tests/unit/evaluation/test_regression_store_architecture.py \
+     -k golden
+   ```
+
+2. **Captured snapshot regression.** Use `--input` for one portable captured
+   snapshot/run file (and repeat the option for more files):
+
+   ```bash
+   python scripts/run_baseline_regression.py \
+     --input /tmp/reliance_a210.json
+   ```
+
+3. **Replay corpus regression.** Use `--corpus` for a directory containing
+   persisted snapshot and decision/run records:
+
+   ```text
+   corpus/
+     snapshots/
+       <snapshot-id>.json
+     decision_records.jsonl
+     outcome_records.jsonl   # optional
+   ```
+
+   `--corpus` loads `decision_records.jsonl` and resolves each run's snapshot
+   from `snapshots/`. It does not consume `golden_manifest.json` directly.
+   Golden fixtures validate deterministic behavior, captured files validate
+   real persisted replay, and corpus regression validates a persisted collection
+   of runs.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.

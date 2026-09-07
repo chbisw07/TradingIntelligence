@@ -1,5 +1,6 @@
 """Pure policy-driven scoring for the deterministic A2.9 benchmark."""
 
+import json
 from dataclasses import dataclass
 from uuid import NAMESPACE_URL, uuid5
 
@@ -651,7 +652,15 @@ def score_request(
             )
         )
     )
-    identity = f"{request.model_dump_json()}|{policy.model_dump_json()}"
+    identity = json.dumps(
+        {
+            "request": request.model_dump(mode="json"),
+            "policy": policy.model_dump(mode="json"),
+        },
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    )
     return OpportunityAssessment(
         assessment_id=str(uuid5(NAMESPACE_URL, f"tiaf:baseline:{identity}")),
         request_id=request.request_id,

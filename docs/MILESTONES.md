@@ -37,8 +37,10 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.8:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.8`.
 
-**Current milestone:** TIAF_A2.9 — Deterministic Market-State & Opportunity
-Baseline (implemented and live-validated; acceptance freeze pending).
+**TIAF_A2.9:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.9`.
+
+**Current milestone:** TIAF_A2.10 — Replay / Validation / Baseline Evaluation
+(implemented and live capture/replay validated; acceptance pending).
 
 ## Deferral governance
 
@@ -221,7 +223,7 @@ primitive measurements.
 - no scoring, ranking, recommendation, Agent, or execution logic
 - implementation and read-only Dhan validation accepted at tag `tiaf-a2.8`
 
-**TIAF_A2.9 — Deterministic Market-State & Opportunity Baseline: IMPLEMENTED / LIVE VALIDATED**
+**TIAF_A2.9 — Deterministic Market-State & Opportunity Baseline: COMPLETE / LIVE VALIDATED**
 
 - immutable policy, request, component, contribution, assessment, and ranking contracts
 - separate positive/negative direction, alignment/conflict, quality, room, and maturity
@@ -230,7 +232,16 @@ primitive measurements.
 - eligible-only score/quality/symbol ranking with stable ties and complete audit retention
 - no providers, Agents, LLMs, strategies, order logic, or execution inside the subsystem
 
-Near-term sequence: freeze A2.9 after acceptance; A2.10 replay and baseline evaluation.
+**TIAF_A2.10 — Replay / Validation / Baseline Evaluation: CURRENT**
+
+- content-addressed normalized evidence snapshots and immutable run records
+- exact provider-free replay and policy comparison over unchanged evidence
+- later factual outcome paths, MFE/MAE, and frozen-ranking statistics
+- append-only filesystem corpus and deterministic field-level regression checks
+- no policy optimization, historical reconstruction claim, simulated execution, or Agents
+
+Near-term sequence: complete user-level A2.10 validation, then perform the
+separate A2 closure and governed deferral burn-down.
 
 - deterministic feature engine
 - multi-timeframe price/volume features

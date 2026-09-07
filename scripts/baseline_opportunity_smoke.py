@@ -246,7 +246,7 @@ def _acquire_context(
     )
 
 
-def _assess_symbol(
+def _build_request(
     builder: AnalysisContextBuilder,
     symbol: str,
     benchmark_symbol: str | None,
@@ -254,7 +254,7 @@ def _assess_symbol(
     lookback_days: int,
     trade_style: TradeStyle,
     requested_at: datetime,
-) -> OpportunityAssessment:
+) -> DeterministicBaselineRequest:
     policy = default_policy(trade_style)
     feature_engine = DeterministicFeatureEngine(builtin_feature_registry())
     contexts: dict[str, AnalysisContext] = {}
@@ -381,7 +381,7 @@ def _assess_symbol(
                 state=_history_freshness(subject_context),
             )
         )
-    request = DeterministicBaselineRequest(
+    return DeterministicBaselineRequest(
         request_id=str(
             uuid5(NAMESPACE_URL, f"tiaf:a2.9-request:{symbol}:{requested_at.isoformat()}")
         ),
@@ -400,6 +400,27 @@ def _assess_symbol(
         requested_at=requested_at,
         metadata={"benchmark_symbol": benchmark_symbol},
     )
+
+
+def _assess_symbol(
+    builder: AnalysisContextBuilder,
+    symbol: str,
+    benchmark_symbol: str | None,
+    intervals: tuple[str, ...],
+    lookback_days: int,
+    trade_style: TradeStyle,
+    requested_at: datetime,
+) -> OpportunityAssessment:
+    request = _build_request(
+        builder,
+        symbol,
+        benchmark_symbol,
+        intervals,
+        lookback_days,
+        trade_style,
+        requested_at,
+    )
+    policy = default_policy(trade_style)
     return BaselineEngine((policy,)).assess(request)
 
 

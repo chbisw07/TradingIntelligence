@@ -1,1 +1,107 @@
-"""Reserved namespace for future evaluation capabilities."""
+"""Provider-neutral replay and factual outcome evaluation for the A2.9 baseline."""
+
+from .comparison import compare_policies
+from .enums import ProducerType, RegressionStatus
+from .errors import (
+    CorpusError,
+    EvaluationError,
+    OutcomeEvaluationError,
+    ReplayError,
+    SnapshotIntegrityError,
+)
+from .metrics import aggregate_metrics, evaluate_ranking, observed_statistics
+from .models import (
+    BaselineComparison,
+    BaselineOutcome,
+    BaselineRunRecord,
+    CapturedBaselineCase,
+    ComponentDelta,
+    ComponentScoreRecord,
+    EvaluationMetrics,
+    EvidenceSnapshot,
+    ExcursionMetrics,
+    FieldDifference,
+    ObservedStatistics,
+    OutcomeObservation,
+    OutcomePath,
+    OutcomeWindow,
+    RankingContext,
+    RankingEvaluation,
+    RankingOutcomeItem,
+    RegressionCheckResult,
+    RegressionReport,
+    ReplayRequest,
+    ReplayResult,
+    SnapshotContextReference,
+)
+from .outcome import calculate_excursions, create_outcome_path, evaluate_outcome
+from .regression import run_regression
+from .replay import create_run_record, field_differences, replay
+from .snapshot import (
+    canonical_json,
+    context_references,
+    create_evidence_snapshot,
+    load_snapshot_json,
+    semantic_fingerprint,
+    snapshot_json,
+    validate_no_secrets,
+)
+from .store import ReplayCorpusStore, case_json, load_case, load_case_json, save_case
+from .summaries import summarize_regression, summarize_replay
+
+__all__ = [
+    "BaselineComparison",
+    "BaselineOutcome",
+    "BaselineRunRecord",
+    "CapturedBaselineCase",
+    "ComponentDelta",
+    "ComponentScoreRecord",
+    "CorpusError",
+    "EvaluationError",
+    "EvaluationMetrics",
+    "EvidenceSnapshot",
+    "ExcursionMetrics",
+    "FieldDifference",
+    "ObservedStatistics",
+    "OutcomeEvaluationError",
+    "OutcomeObservation",
+    "OutcomePath",
+    "OutcomeWindow",
+    "ProducerType",
+    "RankingContext",
+    "RankingEvaluation",
+    "RankingOutcomeItem",
+    "RegressionCheckResult",
+    "RegressionReport",
+    "RegressionStatus",
+    "ReplayCorpusStore",
+    "ReplayError",
+    "ReplayRequest",
+    "ReplayResult",
+    "SnapshotContextReference",
+    "SnapshotIntegrityError",
+    "aggregate_metrics",
+    "calculate_excursions",
+    "canonical_json",
+    "case_json",
+    "compare_policies",
+    "context_references",
+    "create_evidence_snapshot",
+    "create_outcome_path",
+    "create_run_record",
+    "evaluate_outcome",
+    "evaluate_ranking",
+    "field_differences",
+    "load_case",
+    "load_case_json",
+    "load_snapshot_json",
+    "observed_statistics",
+    "replay",
+    "run_regression",
+    "save_case",
+    "semantic_fingerprint",
+    "snapshot_json",
+    "summarize_regression",
+    "summarize_replay",
+    "validate_no_secrets",
+]

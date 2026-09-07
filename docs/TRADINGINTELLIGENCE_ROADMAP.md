@@ -247,8 +247,8 @@ Build a transparent non-AI benchmark that future Agents must beat.
 6. **A2.6 — Support / Resistance / Breakout Structure** — COMPLETE / LIVE VALIDATED
 7. **A2.7 — Derivatives / Option-Chain Features** — COMPLETE / LIVE VALIDATED
 8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — COMPLETE / LIVE VALIDATED
-9. **A2.9 — Deterministic Market-State / Feature Summary** — IMPLEMENTED / LIVE VALIDATED; acceptance freeze pending
-10. **A2.10 — Replay / Validation / Baseline Evaluation**
+9. **A2.9 — Deterministic Market-State / Feature Summary** — COMPLETE / LIVE VALIDATED
+10. **A2.10 — Replay / Validation / Baseline Evaluation** — CURRENT
 
 A2.4 was inserted before the previously planned feature families because
 indicators need a stable reusable abstraction for scanners, strategy engines,
@@ -269,6 +269,12 @@ The baseline should be able to distinguish a stock already +4.5% but with limite
 **A2.9 result:** the version 1.0 reproducible non-AI ranking benchmark is now
 implemented and live-validated. A2.10 adds replay/evaluation rather than
 replacing or silently recalibrating it.
+
+**A2.10 implementation:** complete normalized evidence snapshots and immutable
+decision records now support exact provider-free replay, same-evidence policy
+comparison, later raw outcome/MFE/MAE measurement, frozen-ranking statistics,
+append-only filesystem corpora, and deterministic regressions. User-level live
+capture/replay validation succeeded; acceptance and A2 closure remain separate.
 
 ---
 

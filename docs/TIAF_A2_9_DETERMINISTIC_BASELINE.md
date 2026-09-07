@@ -2,7 +2,7 @@
 
 ## Status and purpose
 
-**Status: IMPLEMENTED / LIVE VALIDATED; acceptance freeze pending.**
+**Status: COMPLETE / LIVE VALIDATED at tag `tiaf-a2.9`.**
 
 A2.9 is a transparent non-AI benchmark, not the final TradingIntelligence
 recommendation engine. Future Agents must be evaluated against it rather than

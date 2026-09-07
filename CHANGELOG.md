@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added the provider-neutral A2.10 evaluation package with content-addressed
+  normalized evidence snapshots, immutable decision records, exact offline
+  replay, policy comparison, subsequent outcome paths, MFE/MAE, frozen-ranking
+  statistics, append-only JSONL storage, and field-level regression checks.
+- Added live capture plus provider-free replay/regression CLIs, synthetic golden
+  coverage, secret-field scanning, canonical decision-time freshness order, and
+  sorted-key assessment identity input. A2.9 policy weights, thresholds, and
+  scoring semantics remain unchanged.
 - Hardened A2.9 interpretability by publishing each component score's basis
   direction, separating score-relevant reasons from retained evidence facts,
   qualifying MTF labels with existing thresholds, and adding a complete

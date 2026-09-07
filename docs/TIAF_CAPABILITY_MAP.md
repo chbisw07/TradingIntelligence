@@ -60,7 +60,10 @@ Statuses describe repository reality:
 | Market-state summary | IMPLEMENTED | A2.9 deterministic baseline |
 | Horizon-aware opportunity scoring | IMPLEMENTED | A2.9 versioned DAY/POSITIONAL policy |
 | Candidate classification / ranking | IMPLEMENTED | A2.9 eligible-only stable ranking |
-| Replay / baseline evaluation | PLANNED | A2.10 |
+| Evidence snapshot / exact offline replay | IMPLEMENTED | A2.10 provider-neutral foundation |
+| Baseline outcome / MFE / MAE evaluation | IMPLEMENTED | A2.10 raw factual metrics, no execution model |
+| Replay regression corpus | IMPLEMENTED | A2.10 JSON/JSONL and golden harness |
+| Arbitrary historical reconstruction | DEFERRED | Point-in-time data-vintage boundary; DEF-049 |
 
 ## Indicators
 
@@ -135,7 +138,8 @@ deterministic calculators.
 | UI / dashboard | FUTURE | Application layer; service dependency DEF-003 |
 | API / service | PLANNED | A8 service boundary; DEF-003 |
 | Alerts | FUTURE | Application/policy layer; runtime dependency DEF-010 |
-| Replay / backtest | PLANNED | A2.10 foundation, later strategy use |
+| Baseline replay / validation | IMPLEMENTED | A2.10 captured-snapshot foundation |
+| Strategy backtest | DEFERRED | Requires strategy/execution model; DEF-025 |
 | Optimization | DEFERRED | Evaluation layer; DEF-024 |
 | Watchlists | EXTERNAL/INTEGRATION | Input source consumed through A1 |
 

@@ -233,7 +233,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_8_RELATIVE_STRENGTH_MTF.md`](TIAF_A2_8_RELATIVE_STRENGTH_MTF.md).
 
-### TIAF_A2.9 — Deterministic Market-State & Opportunity Baseline — Implemented / Live Validated
+### TIAF_A2.9 — Deterministic Market-State & Opportunity Baseline — Complete / Live Validated
 
 - Purpose: preserve a replayable, understandable non-AI benchmark that future
   Agents must beat rather than replace.
@@ -247,6 +247,18 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_9_DETERMINISTIC_BASELINE.md`](TIAF_A2_9_DETERMINISTIC_BASELINE.md).
 
+### TIAF_A2.10 — Replay / Validation / Baseline Evaluation — Current
+
+- Purpose: freeze normalized decision-time evidence and A2.9 output, prove exact
+  provider-free replay, and attach later factual outcomes without lookahead.
+- Scope: SHA-256 content identity, immutable run records, policy comparison,
+  raw return/MFE/MAE, frozen-ranking statistics, append-only JSON/JSONL corpus,
+  golden fixtures, and field-level regression diagnostics.
+- Non-goals: policy tuning, arbitrary point-in-time reconstruction, execution
+  simulation/P&L, database/replay farm, Agents, or human evaluation.
+- Detail:
+  [`TIAF_A2_10_REPLAY_VALIDATION_EVALUATION.md`](TIAF_A2_10_REPLAY_VALIDATION_EVALUATION.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
@@ -257,8 +269,8 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 6. **A2.6 — Support / Resistance / Breakout Structure** — Complete / Live Validated
 7. **A2.7 — Derivatives / Option-Chain Features** — Complete / Live Validated
 8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — Complete / Live Validated
-9. **A2.9 — Deterministic Market-State / Feature Summary** — Implemented / Live Validated; acceptance freeze pending
-10. **A2.10 — Replay / Validation / Baseline Evaluation**
+9. **A2.9 — Deterministic Market-State / Feature Summary** — Complete / Live Validated
+10. **A2.10 — Replay / Validation / Baseline Evaluation** — Current
 
 Provider fallback/Zerodha, persistent caching, deferred-work orchestration,
 provider health, and external news/fundamental evidence remain intentionally

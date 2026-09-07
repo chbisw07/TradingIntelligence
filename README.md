@@ -10,9 +10,9 @@ attributable intelligence for consumers such as TradeMonitor.
 The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
 `tiaf-a1.7`. A2.1 through A2.8 are complete and live-validated; A2.8 is tagged
-`tiaf-a2.8`. The current **TIAF_A2.9** target adds a versioned deterministic
-market-state and opportunity benchmark. Implementation and live validation are
-complete; acceptance freeze is pending.
+`tiaf-a2.8`. **TIAF_A2.9** is complete and live-validated at tag `tiaf-a2.9`.
+The current **TIAF_A2.10** target adds provider-neutral evidence capture,
+offline replay, deterministic regression, and factual outcome evaluation.
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -81,6 +81,10 @@ The A2.9 policies, exact transforms, quality gates, candidate classes, ranking
 tie rules, live record, and non-AI benchmark role are documented in the
 [A2.9 technical note](docs/TIAF_A2_9_DETERMINISTIC_BASELINE.md).
 
+The snapshot fingerprint, offline replay, outcome separation, MFE/MAE,
+append-only corpus, regression, and anti-lookahead rules are documented in the
+[A2.10 technical note](docs/TIAF_A2_10_REPLAY_VALIDATION_EVALUATION.md).
+
 For a read-only A2.7 option-chain feature smoke, first obtain an active expiry
 with `scripts/dhan_option_chain_smoke.py`, then run:
 
@@ -137,3 +141,13 @@ python scripts/baseline_opportunity_smoke.py \
 
 The benchmark and any override mapping are explicit caller inputs. Ranking
 never fills requested slots with `NO_TRADE` candidates.
+
+Capture normalized evidence once, then replay it without network access:
+
+```bash
+python scripts/capture_baseline_snapshot.py \
+  --symbol RELIANCE --horizon POSITIONAL --benchmark NIFTY \
+  --timeframes 1d,1h,15m --output /tmp/reliance_snapshot.json
+python scripts/replay_baseline_snapshot.py \
+  --input /tmp/reliance_snapshot.json
+```
