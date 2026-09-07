@@ -15,6 +15,7 @@ from tiaf.features.models import (
     FeatureDefinition,
     FeatureRequest,
     FeatureResult,
+    FeatureValue,
     JSONScalar,
 )
 
@@ -436,7 +437,7 @@ class A22Calculator(ABC):
         request: FeatureRequest,
         *,
         status: FeatureStatus,
-        value: int | float | None,
+        value: FeatureValue,
         quality: DataQuality,
         as_of: datetime,
         source_evidence: tuple[str, ...],
@@ -445,7 +446,7 @@ class A22Calculator(ABC):
         warnings: tuple[str, ...] = (),
         metadata: Metadata | None = None,
     ) -> FeatureResult:
-        if value is not None and not math.isfinite(value):
+        if isinstance(value, float) and not math.isfinite(value):
             status = FeatureStatus.FAILED
             value = None
             warnings += ("calculation produced a non-finite value",)

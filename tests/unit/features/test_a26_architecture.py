@@ -40,8 +40,8 @@ def test_registry_contains_all_a26_definitions_in_stable_order() -> None:
         *COMPRESSION_FEATURE_DEFINITIONS,
     )
     assert len(a26) == 15
-    assert len(definitions) == 85
-    assert len({definition.feature_id for definition in definitions}) == 85
+    assert len(definitions) == 124
+    assert len({definition.feature_id for definition in definitions}) == 124
     assert tuple(definition.feature_id for definition in definitions) == tuple(
         sorted(definition.feature_id for definition in definitions)
     )

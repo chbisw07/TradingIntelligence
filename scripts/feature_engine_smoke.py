@@ -1,7 +1,7 @@
 """Build one read-only A1 context and inspect deterministic A2 features."""
 
 import argparse
-from datetime import datetime
+from datetime import date, datetime
 
 from pydantic import ValidationError
 
@@ -34,6 +34,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--symbol", default="RELIANCE")
     parser.add_argument("--history-interval", default="1d")
     parser.add_argument("--lookback-days", type=int, default=90)
+    parser.add_argument(
+        "--purpose",
+        choices=tuple(item.value for item in AnalysisPurpose),
+        default=AnalysisPurpose.RESEARCH.value,
+    )
     parser.add_argument("--repeat", action="store_true")
     parser.add_argument("--json", action="store_true")
     parser.add_argument(
@@ -57,11 +62,29 @@ def parse_args() -> argparse.Namespace:
         help="include completed-history A2.6 prior-boundary and range features",
     )
     parser.add_argument(
+        "--include-derivatives",
+        action="store_true",
+        help="acquire one normalized option chain; requires --expiry",
+    )
+    parser.add_argument(
+        "--expiry",
+        type=date.fromisoformat,
+        help="explicit option-chain expiry in YYYY-MM-DD form",
+    )
+    parser.add_argument(
+        "--derivatives",
+        action="store_true",
+        help="include the A2.7 option-chain feature pack; requires --expiry",
+    )
+    parser.add_argument(
         "--annualization-factor",
         type=float,
         help="explicit realized-volatility factor; defaults to 252 only for 1d",
     )
-    return parser.parse_args()
+    args = parser.parse_args()
+    if (args.include_derivatives or args.derivatives) and args.expiry is None:
+        parser.error("--expiry is required with derivative acquisition or features")
+    return args
 
 
 def _requests(interval: str) -> tuple[FeatureRequest, ...]:
@@ -327,6 +350,62 @@ def _levels_requests(interval: str) -> tuple[FeatureRequest, ...]:
     )
 
 
+def _derivatives_requests(strikes_each_side: int = 5) -> tuple[FeatureRequest, ...]:
+    """Return the factual A2.7 single-expiry option-chain measurement pack."""
+    window_parameters = (("strikes_each_side", strikes_each_side),)
+    return (
+        *(
+            FeatureRequest(feature_id=feature_id)
+            for feature_id in (
+                "derivatives.expiry_date",
+                "derivatives.days_to_expiry",
+                "derivatives.strike_count",
+                "derivatives.atm_strike",
+                "derivatives.atm_distance_percent",
+                "derivatives.atm_ce_ltp",
+                "derivatives.atm_pe_ltp",
+                "derivatives.atm_straddle_premium",
+                "derivatives.atm_straddle_percent_of_spot",
+                "derivatives.atm_ce_iv",
+                "derivatives.atm_pe_iv",
+                "derivatives.atm_mean_iv",
+                "derivatives.atm_iv_difference",
+                "derivatives.atm_ce_delta",
+                "derivatives.atm_pe_delta",
+                "derivatives.atm_ce_gamma",
+                "derivatives.atm_pe_gamma",
+                "derivatives.atm_ce_theta",
+                "derivatives.atm_pe_theta",
+                "derivatives.atm_ce_vega",
+                "derivatives.atm_pe_vega",
+                "derivatives.atm_ce_bid_ask_spread_percent",
+                "derivatives.atm_pe_bid_ask_spread_percent",
+            )
+        ),
+        *(
+            FeatureRequest(feature_id=feature_id, parameters=window_parameters)
+            for feature_id in (
+                "derivatives.ce_iv_mean",
+                "derivatives.pe_iv_mean",
+                "derivatives.ce_oi_total",
+                "derivatives.pe_oi_total",
+                "derivatives.oi_put_call_ratio",
+                "derivatives.ce_volume_total",
+                "derivatives.pe_volume_total",
+                "derivatives.volume_put_call_ratio",
+                "derivatives.ce_max_oi_strike",
+                "derivatives.pe_max_oi_strike",
+                "derivatives.ce_max_oi",
+                "derivatives.pe_max_oi",
+                "derivatives.ce_oi_top1_fraction",
+                "derivatives.pe_oi_top1_fraction",
+                "derivatives.ce_oi_weighted_strike",
+                "derivatives.pe_oi_weighted_strike",
+            )
+        ),
+    )
+
+
 def _print_bundle(
     bundle: FeatureBundle, *, as_json: bool, label: str | None = None
 ) -> None:
@@ -355,6 +434,7 @@ def main() -> int:
             *(_trend_requests(args.history_interval) if args.trend else ()),
             *(_volume_requests(args.history_interval) if args.volume else ()),
             *(_levels_requests(args.history_interval) if args.levels else ()),
+            *(_derivatives_requests() if args.derivatives else ()),
         )
         requested_at = datetime.now(TIAF_TIMEZONE)
         provider = DhanMarketDataProvider()
@@ -364,10 +444,11 @@ def main() -> int:
             DataFetchCoordinator(
                 scheduler=ProviderScheduler(dhan_rate_policy_registry())
             ),
+            derivatives_provider=provider,
             clock=lambda: requested_at,
         )
         requirements = AnalysisContextRequirement(
-            purpose=AnalysisPurpose.RESEARCH,
+            purpose=AnalysisPurpose(args.purpose),
             history_interval=args.history_interval,
             history_lookback_days=args.lookback_days,
             quote_freshness=FreshnessRequirement(
@@ -377,6 +458,17 @@ def main() -> int:
             history_freshness=FreshnessRequirement(
                 fresh_for_seconds=3600,
                 aging_for_seconds=86_400,
+            ),
+            include_derivatives=args.include_derivatives or args.derivatives,
+            require_derivatives=args.derivatives,
+            option_expiry=args.expiry,
+            derivatives_freshness=(
+                FreshnessRequirement(
+                    fresh_for_seconds=3,
+                    aging_for_seconds=30,
+                )
+                if args.include_derivatives or args.derivatives
+                else None
             ),
         )
         engine = DeterministicFeatureEngine(builtin_feature_registry())

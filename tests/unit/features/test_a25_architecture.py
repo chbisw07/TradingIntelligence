@@ -35,8 +35,8 @@ def test_registry_contains_all_a25_definitions_in_stable_order() -> None:
     definitions = builtin_feature_registry().definitions()
     a25 = (*VOLUME_FEATURE_DEFINITIONS, *PARTICIPATION_FEATURE_DEFINITIONS)
     assert len(a25) == 17
-    assert len(definitions) == 85
-    assert len({item.feature_id for item in definitions}) == 85
+    assert len(definitions) == 124
+    assert len({item.feature_id for item in definitions}) == 124
     assert tuple(item.feature_id for item in definitions) == tuple(
         sorted(item.feature_id for item in definitions)
     )

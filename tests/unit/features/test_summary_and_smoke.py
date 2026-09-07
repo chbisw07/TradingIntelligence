@@ -108,9 +108,13 @@ def test_smoke_script_builds_context_then_features_without_live_io(
             json=False,
             extended=extended,
             trend=trend,
-            volume=volume,
-            levels=levels,
-            annualization_factor=None,
+                volume=volume,
+                levels=levels,
+                derivatives=False,
+                include_derivatives=False,
+                expiry=None,
+                purpose="RESEARCH",
+                annualization_factor=None,
         ),
     )
     assert namespace["main"]() == 0

@@ -7,6 +7,7 @@ from tiaf.contracts import DataQuality
 from tiaf.features.breakout import BREAKOUT_CALCULATORS
 from tiaf.features.calculators import BUILTIN_CALCULATORS
 from tiaf.features.compression import COMPRESSION_CALCULATORS
+from tiaf.features.derivatives import DERIVATIVES_CALCULATORS
 from tiaf.features.enums import FeatureSourceKind, FeatureStatus
 from tiaf.features.errors import (
     FeatureComputationError,
@@ -54,6 +55,7 @@ def builtin_feature_registry() -> FeatureRegistry:
             *SUPPORT_RESISTANCE_CALCULATORS,
             *BREAKOUT_CALCULATORS,
             *COMPRESSION_CALCULATORS,
+            *DERIVATIVES_CALCULATORS,
         )
     )
 

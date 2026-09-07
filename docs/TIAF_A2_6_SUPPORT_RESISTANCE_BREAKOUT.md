@@ -2,7 +2,7 @@
 
 ## Status and architectural role
 
-**Status: CURRENT — implemented and live read-only validated; pending acceptance.**
+**Status: COMPLETE / LIVE VALIDATED** at tag `tiaf-a2.6`.
 
 TIAF_A2.6 adds deterministic, provider-neutral measurements of fixed prior
 price boundaries and current completed-bar geometry. It remains inside the

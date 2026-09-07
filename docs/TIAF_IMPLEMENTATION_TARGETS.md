@@ -187,7 +187,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_5_VOLUME_PARTICIPATION.md`](TIAF_A2_5_VOLUME_PARTICIPATION.md).
 
-### TIAF_A2.6 — Support / Resistance / Breakout Structure — Current
+### TIAF_A2.6 — Support / Resistance / Breakout Structure — Complete / Live Validated
 
 - Purpose: add anti-lookahead measurements of prior price boundaries, current
   completed-bar distance/excursion, prior-range geometry, and range
@@ -200,6 +200,19 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_6_SUPPORT_RESISTANCE_BREAKOUT.md`](TIAF_A2_6_SUPPORT_RESISTANCE_BREAKOUT.md).
 
+### TIAF_A2.7 — Derivatives / Option-Chain Features — Current
+
+- Purpose: derive provider-neutral, deterministic strike geometry, premiums,
+  IV, OI, option volume, spreads, Greeks, concentration, and expiry facts from
+  one explicit normalized option-chain snapshot.
+- Scope: chain-consistent ATM resolution, exact listed-strike windows,
+  field-independent missingness, preserved provider IV/Greeks, and option-chain
+  quality/time provenance.
+- Non-goals: option selection, expected-move or probability models, max pain,
+  dealer positioning, strategy templates/ranking, recommendations, or execution.
+- Detail:
+  [`TIAF_A2_7_DERIVATIVES_OPTION_CHAIN_FEATURES.md`](TIAF_A2_7_DERIVATIVES_OPTION_CHAIN_FEATURES.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
@@ -207,8 +220,8 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 3. **A2.3 — Trend & Structure Features** — Complete / Live Validated
 4. **A2.4 — Indicator Framework + Initial Indicator Library** — Complete / Live Validated
 5. **A2.5 — Volume / Participation Features** — Complete / Live Validated
-6. **A2.6 — Support / Resistance / Breakout Structure** — Current
-7. **A2.7 — Derivatives / Option-Chain Features**
+6. **A2.6 — Support / Resistance / Breakout Structure** — Complete / Live Validated
+7. **A2.7 — Derivatives / Option-Chain Features** — Current
 8. **A2.8 — Multi-Timeframe Feature Context**
 9. **A2.9 — Deterministic Market-State / Feature Summary**
 10. **A2.10 — Replay / Validation / Baseline Evaluation**

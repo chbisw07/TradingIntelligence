@@ -31,7 +31,9 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.5:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.5`.
 
-**Current milestone:** TIAF_A2.6 — Support / Resistance / Breakout Structure.
+**TIAF_A2.6:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.6`.
+
+**Current milestone:** TIAF_A2.7 — Derivatives / Option-Chain Features.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -183,13 +185,19 @@ primitive measurements.
 - deterministic close-transition participation and price/range alignment
 - no accumulation/distribution claims, confirmation, signal, or Agent logic
 
-**TIAF_A2.6 — Support / Resistance / Breakout Structure: CURRENT**
+**TIAF_A2.6 — Support / Resistance / Breakout Structure: COMPLETE / LIVE VALIDATED**
 
 - prior rolling boundaries that explicitly exclude the current completed bar
 - close/wick excursion, prior-range position, and normalized range geometry
 - no subjective pivots, confirmation, score, recommendation, or Agent logic
 
-Near-term sequence: A2.6 support/resistance/breakout; A2.7 derivatives; A2.8 multi-timeframe context;
+**TIAF_A2.7 — Derivatives / Option-Chain Features: CURRENT**
+
+- explicit-expiry option-chain geometry and factual derivative measurements
+- ATM premiums/IV/Greeks, exact-window OI/volume/spread/concentration primitives
+- no option selection, strategy model, recommendation, or execution
+
+Near-term sequence: A2.7 derivatives; A2.8 multi-timeframe context;
 A2.9 deterministic market-state summary; A2.10 replay and baseline evaluation.
 
 - deterministic feature engine

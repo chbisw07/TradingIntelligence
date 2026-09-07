@@ -43,7 +43,13 @@ Statuses describe repository reality:
 | Support / resistance scoring | FUTURE | Later deterministic interpretation |
 | Breakout quality scoring | FUTURE | A2.9 or later strategy layer |
 | Failed-breakout classification | FUTURE | Market-state/replay event semantics |
-| Derivatives deterministic features | PLANNED | A2.7 |
+| Derivatives deterministic features | IMPLEMENTED | A2.7 single-expiry facts |
+| Option-chain deterministic features | IMPLEMENTED | A2.7 single-expiry facts |
+| ATM / strike geometry | IMPLEMENTED | A2.7 chain-consistent listed strikes |
+| ATM premium / IV / Greeks | IMPLEMENTED | A2.7 provider-supplied facts |
+| OI / option-volume ratios | IMPLEMENTED | A2.7 exact strike windows |
+| OI concentration / weighted strike | IMPLEMENTED | A2.7 exact strike windows |
+| Bid/ask spread primitives | IMPLEMENTED | A2.7 ATM contract facts |
 | Relative strength | FUTURE | Deterministic contextual analysis |
 | Sector rotation | FUTURE | Deterministic contextual analysis |
 | Multi-timeframe context | PLANNED | A2.8 |
@@ -77,9 +83,17 @@ Statuses describe repository reality:
 |---|---|---|
 | Option-chain factual structure | IMPLEMENTED | A1 evidence |
 | Greeks / IV / OI facts | IMPLEMENTED | A1 evidence |
-| Skew / term structure | PLANNED | A2.7 |
-| Expected move | PLANNED | A2.7 |
-| Derivative liquidity measurements | PLANNED | A2.7 |
+| Single-expiry deterministic features | IMPLEMENTED | A2.7 |
+| ATM bid/ask spread measurements | IMPLEMENTED | A2.7 |
+| Historical option feature library | FUTURE | Historical-options extension |
+| Cross-expiry / term structure | FUTURE | Multi-chain evidence extension |
+| IV surface / skew surface | FUTURE | Explicit surface model |
+| OI-change regime interpretation | FUTURE | Temporal derivative model |
+| Gamma exposure / dealer positioning | FUTURE | Model-dependent positioning assumptions |
+| Max pain | FUTURE | Explicit payoff/OI convention |
+| Probability of profit | FUTURE | Strategy/evaluation model |
+| Expected move model | FUTURE | Explicit formula/model |
+| Derivative liquidity measurements | IMPLEMENTED | A2.7 factual ATM spread primitive |
 | Expiry-effect analysis | FUTURE | Later deterministic/Agent evidence |
 
 ## Option strategy library

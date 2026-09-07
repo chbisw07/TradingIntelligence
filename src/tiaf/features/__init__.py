@@ -12,6 +12,7 @@ from tiaf.features.calculators import (
 )
 from tiaf.features.compression import COMPRESSION_FEATURE_DEFINITIONS
 from tiaf.features.definitions import BUILTIN_FEATURE_DEFINITIONS
+from tiaf.features.derivatives import DERIVATIVES_FEATURE_DEFINITIONS
 from tiaf.features.engine import DeterministicFeatureEngine, builtin_feature_registry
 from tiaf.features.enums import (
     FeatureCategory,
@@ -54,6 +55,7 @@ __all__ = [
     "CurrentPriceCalculator",
     "COMPRESSION_FEATURE_DEFINITIONS",
     "DeterministicFeatureEngine",
+    "DERIVATIVES_FEATURE_DEFINITIONS",
     "FeatureBundle",
     "FeatureCalculator",
     "FeatureCategory",

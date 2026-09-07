@@ -2,6 +2,7 @@
 
 from tiaf.features.breakout import BREAKOUT_FEATURE_DEFINITIONS
 from tiaf.features.compression import COMPRESSION_FEATURE_DEFINITIONS
+from tiaf.features.derivatives import DERIVATIVES_FEATURE_DEFINITIONS
 from tiaf.features.enums import (
     FeatureCategory,
     FeatureSourceKind,
@@ -114,4 +115,5 @@ BUILTIN_FEATURE_DEFINITIONS = (
     *SUPPORT_RESISTANCE_FEATURE_DEFINITIONS,
     *BREAKOUT_FEATURE_DEFINITIONS,
     *COMPRESSION_FEATURE_DEFINITIONS,
+    *DERIVATIVES_FEATURE_DEFINITIONS,
 )

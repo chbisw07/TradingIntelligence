@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added 39 TIAF_A2.7 provider-neutral, single-expiry option-chain features for
+  expiry/ATM geometry, premiums, IV, provider Greeks, exact-window OI and
+  option volume, put/call ratios, maximum OI, concentration, weighted strikes,
+  and ATM bid/ask spreads.
+- Added defensive strike normalization and identity checks, strict full-window
+  semantics, independent missing-field handling, zero/NaN/infinity guards,
+  inherited option-chain quality/acquisition-time provenance, a read-only
+  `--derivatives` smoke pack, tests, and explicit model/strategy deferrals.
 - Added 15 TIAF_A2.6 completed-history prior-boundary, signed-distance,
   close/wick excursion, prior-range geometry, compression, and latest-range
   comparison features with strict current-bar exclusion.
