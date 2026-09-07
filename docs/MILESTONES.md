@@ -35,7 +35,10 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.7:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.7`.
 
-**Current milestone:** TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context.
+**TIAF_A2.8:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.8`.
+
+**Current milestone:** TIAF_A2.9 — Deterministic Market-State & Opportunity
+Baseline (implemented and live-validated; acceptance freeze pending).
 
 ## Deferral governance
 
@@ -211,16 +214,23 @@ primitive measurements.
 - ATM premiums/IV/Greeks, exact-window OI/volume/spread/concentration primitives
 - no option selection, strategy model, recommendation, or execution
 
-**TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context: CURRENT**
+**TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context: COMPLETE / LIVE VALIDATED**
 
 - explicit caller-supplied benchmark identity and exact aligned-bar comparisons
 - ordered per-timeframe feature contexts and factual cross-timeframe fractions
 - no scoring, ranking, recommendation, Agent, or execution logic
-- implementation and read-only Dhan validation complete; acceptance freeze/tag
-  remains pending review
+- implementation and read-only Dhan validation accepted at tag `tiaf-a2.8`
 
-Near-term sequence: A2.8 relative/multi-timeframe context;
-A2.9 deterministic market-state summary; A2.10 replay and baseline evaluation.
+**TIAF_A2.9 — Deterministic Market-State & Opportunity Baseline: IMPLEMENTED / LIVE VALIDATED**
+
+- immutable policy, request, component, contribution, assessment, and ranking contracts
+- separate positive/negative direction, alignment/conflict, quality, room, and maturity
+- horizon-specific version 1.0 DAY/POSITIONAL engineering policies
+- transparent `TOP_MOVER`, `EARLY_OPPORTUNITY`, `MATURE_AVOID_CHASE`, and `NO_TRADE`
+- eligible-only score/quality/symbol ranking with stable ties and complete audit retention
+- no providers, Agents, LLMs, strategies, order logic, or execution inside the subsystem
+
+Near-term sequence: freeze A2.9 after acceptance; A2.10 replay and baseline evaluation.
 
 - deterministic feature engine
 - multi-timeframe price/volume features

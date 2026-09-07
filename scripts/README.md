@@ -102,5 +102,20 @@ valid-contributor denominator and remain visible. Dhan's accepted intraday
 single-request maximum is 90 days, so a larger common `--lookback-days` value
 is visibly capped for intraday intervals while daily lookback remains unchanged.
 
+`baseline_opportunity_smoke.py` is the read-only A2.9 synthesis path. It
+acquires each timeframe through accepted A1/A2 boundaries, then passes only
+immutable evidence to the provider-neutral `BaselineEngine`. `--horizon` is
+mandatory. `--benchmark` is an explicit common choice and repeatable
+`--benchmark-map SYMBOL=BENCHMARK` entries provide explicit per-symbol
+overrides; no sector mapping is invented. `--rank` and `--top-n` return only
+eligible candidates, while all assessments—including `NO_TRADE`—remain in the
+JSON audit record. It emits no option contract, strategy, order, target, or
+stop instruction.
+
+`inspect_baseline_policy.py --horizon DAY|POSITIONAL` requires no provider
+access and deterministically prints every A2.9 component weight, evidence rule,
+selector, transform, scale/cap, sign semantic, effective maximum contribution,
+classification threshold, quality factor, and penalty.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.

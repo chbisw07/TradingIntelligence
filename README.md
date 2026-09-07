@@ -9,14 +9,15 @@ attributable intelligence for consumers such as TradeMonitor.
 
 The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
-`tiaf-a1.7`. A2.1 through A2.7 are complete and live-validated. The current
-**TIAF_A2.8** target adds deterministic explicit-benchmark relative strength
-and first-class multi-timeframe factual context.
+`tiaf-a1.7`. A2.1 through A2.8 are complete and live-validated; A2.8 is tagged
+`tiaf-a2.8`. The current **TIAF_A2.9** target adds a versioned deterministic
+market-state and opportunity benchmark. Implementation and live validation are
+complete; acceptance freeze is pending.
 
-It is **not** a trading system at this stage. It has no trading logic, agents,
-workflows, scanners, broker execution/account integration, LLM calls, or
-TradeMonitor integration. Nothing in this repository currently produces or
-acts on market recommendations.
+It is **not** a trading system. A2.9 emits replayable benchmark judgments and
+may validly return `NO_TRADE`, but it has no final recommendation Agent,
+strategy selection, broker execution/account integration, LLM calls, or
+TradeMonitor integration and cannot act on its output.
 
 ## Layout
 
@@ -76,6 +77,10 @@ The current A2.8 formulas, alignment rules, denominator semantics, live
 observations, and explicit deferrals are recorded in the
 [A2.8 technical note](docs/TIAF_A2_8_RELATIVE_STRENGTH_MTF.md).
 
+The A2.9 policies, exact transforms, quality gates, candidate classes, ranking
+tie rules, live record, and non-AI benchmark role are documented in the
+[A2.9 technical note](docs/TIAF_A2_9_DETERMINISTIC_BASELINE.md).
+
 For a read-only A2.7 option-chain feature smoke, first obtain an active expiry
 with `scripts/dhan_option_chain_smoke.py`, then run:
 
@@ -117,3 +122,18 @@ Dhan intraday retrieval has an accepted 90-day single-request limit. The
 multi-timeframe smoke reports its effective per-interval lookbacks and does not
 resample or fabricate bars. Both commands are read-only factual diagnostics;
 they do not select benchmarks, score candidates, or make recommendations.
+
+For the separate read-only A2.9 synthesis smoke:
+
+```bash
+python scripts/baseline_opportunity_smoke.py \
+  --symbols RELIANCE,HDFCBANK,KAYNES \
+  --horizon POSITIONAL \
+  --benchmark NIFTY \
+  --benchmark-map HDFCBANK=BANKNIFTY \
+  --timeframes 1d,1h,15m \
+  --rank
+```
+
+The benchmark and any override mapping are explicit caller inputs. Ranking
+never fills requested slots with `NO_TRADE` candidates.

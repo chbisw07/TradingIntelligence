@@ -221,7 +221,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_7_DERIVATIVES_OPTION_CHAIN_FEATURES.md`](TIAF_A2_7_DERIVATIVES_OPTION_CHAIN_FEATURES.md).
 
-### TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context — Current
+### TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context — Complete / Live Validated
 
 - Purpose: provide explicit-benchmark relative measurements and ordered
   multi-timeframe factual contexts for later deterministic synthesis.
@@ -233,6 +233,20 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_8_RELATIVE_STRENGTH_MTF.md`](TIAF_A2_8_RELATIVE_STRENGTH_MTF.md).
 
+### TIAF_A2.9 — Deterministic Market-State & Opportunity Baseline — Implemented / Live Validated
+
+- Purpose: preserve a replayable, understandable non-AI benchmark that future
+  Agents must beat rather than replace.
+- Scope: explicit DAY/POSITIONAL policy 1.0, independent positive/negative
+  direction, decomposable component evidence, opportunity/room/maturity and
+  alignment scoring, quality/freshness gates, four candidate classes, and
+  eligible-only stable ranking.
+- Non-goals: LLM/Agent reasoning, provider acquisition inside the baseline,
+  option/strategy selection, targets, probability claims, orders, position
+  management, or execution.
+- Detail:
+  [`TIAF_A2_9_DETERMINISTIC_BASELINE.md`](TIAF_A2_9_DETERMINISTIC_BASELINE.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
@@ -242,8 +256,8 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 5. **A2.5 — Volume / Participation Features** — Complete / Live Validated
 6. **A2.6 — Support / Resistance / Breakout Structure** — Complete / Live Validated
 7. **A2.7 — Derivatives / Option-Chain Features** — Complete / Live Validated
-8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — Current
-9. **A2.9 — Deterministic Market-State / Feature Summary**
+8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — Complete / Live Validated
+9. **A2.9 — Deterministic Market-State / Feature Summary** — Implemented / Live Validated; acceptance freeze pending
 10. **A2.10 — Replay / Validation / Baseline Evaluation**
 
 Provider fallback/Zerodha, persistent caching, deferred-work orchestration,

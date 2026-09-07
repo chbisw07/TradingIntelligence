@@ -42,8 +42,8 @@ Statuses describe repository reality:
 | Swing pivots / fractals | DEFERRED | Confirmation-time semantics; DEF-020 |
 | Classic floor pivots | DEFERRED | Session-aware level/Indicator extension; DEF-036 |
 | Multi-timeframe levels | DEFERRED | Explicit level-context extension; DEF-038 |
-| Support / resistance scoring | FUTURE | Later deterministic interpretation |
-| Breakout quality scoring | FUTURE | A2.9 or later strategy layer |
+| Structural remaining-room scoring | IMPLEMENTED | A2.9 direction-specific prior-boundary room |
+| Breakout/readiness scoring | IMPLEMENTED | A2.9 transparent geometry/compression synthesis |
 | Failed-breakout classification | DEFERRED | Event-state/replay semantics; DEF-035 |
 | Derivatives deterministic features | IMPLEMENTED | A2.7 single-expiry facts |
 | Option-chain deterministic features | IMPLEMENTED | A2.7 single-expiry facts |
@@ -57,7 +57,9 @@ Statuses describe repository reality:
 | Sector rotation | FUTURE | Agent interpretation depends on DEF-002/DEF-047 |
 | Ordered multi-timeframe context | IMPLEMENTED | A2.8 independent FeatureBundle evidence |
 | Multi-timeframe factual fractions | IMPLEMENTED | A2.8 valid-contributor aggregation |
-| Market-state summary | PLANNED | A2.9 |
+| Market-state summary | IMPLEMENTED | A2.9 deterministic baseline |
+| Horizon-aware opportunity scoring | IMPLEMENTED | A2.9 versioned DAY/POSITIONAL policy |
+| Candidate classification / ranking | IMPLEMENTED | A2.9 eligible-only stable ranking |
 | Replay / baseline evaluation | PLANNED | A2.10 |
 
 ## Indicators

@@ -90,12 +90,14 @@ sub-milestone.
 
 ## Immediate planned work deliberately not registered
 
-The following are not deferrals because the accepted roadmap already places
-them in the immediate remaining A2 sequence:
+The following is not a deferral because the accepted roadmap already places it
+in the immediate remaining A2 sequence:
 
-- deterministic market-state summary, horizon-aware baseline scoring, ranking,
-  and candidate classes in A2.9;
 - replay and deterministic baseline evaluation in A2.10.
+
+Deterministic market-state summary, horizon-aware baseline scoring, ranking,
+and candidate classes were delivered by A2.9 and therefore are neither open
+deferrals nor additions to this register.
 
 Recommendation-bearing Agent conclusions remain represented by DEF-002, option
 expression/strategy selection by DEF-006, and execution authority by DEF-005.
@@ -120,3 +122,13 @@ A2.8 introduced DEF-047 and DEF-048 and reaffirmed DEF-002, DEF-005, DEF-006,
 DEF-023, and DEF-038. Scoring/ranking and replay were not added because they are
 already scheduled as A2.9 and A2.10. No runtime behavior changed during this
 documentation pass.
+
+## A2.9 deferral summary
+
+A2.9 introduced no new `DEF-*` records. It implemented the already-planned
+deterministic synthesis and ranking layer without closing unrelated later-layer
+work. In particular, market-calendar recency (DEF-007), live-forming bars
+(DEF-022), strategy transitions (DEF-025), automatic benchmark mapping
+(DEF-047), and a first-class multi-timeframe indicator context (DEF-048) remain
+outside policy 1.0. Agent reasoning, option-expression selection, and execution
+remain governed by DEF-002, DEF-006, and DEF-005 respectively.

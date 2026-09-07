@@ -2,7 +2,7 @@
 
 ## Status and role
 
-**Status: IMPLEMENTED / LIVE VALIDATED; acceptance freeze and review pending.**
+**Status: COMPLETE / LIVE VALIDATED at tag `tiaf-a2.8`.**
 
 TIAF_A2.8 adds provider-neutral factual comparison structures above the
 accepted A1 `AnalysisContext` and A2 `FeatureBundle` contracts. Calculators do

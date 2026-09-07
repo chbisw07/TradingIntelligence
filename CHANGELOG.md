@@ -4,6 +4,20 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Hardened A2.9 interpretability by publishing each component score's basis
+  direction, separating score-relevant reasons from retained evidence facts,
+  qualifying MTF labels with existing thresholds, and adding a complete
+  deterministic policy inspector. Scoring weights and thresholds are unchanged.
+- Added the separate provider-neutral TIAF_A2.9 deterministic-baseline package
+  with immutable request, versioned policy, evidence-contribution, component,
+  market-state, assessment, and ranking contracts.
+- Added transparent horizon-aware direction, opportunity, remaining-room,
+  extension/chase-risk, alignment/conflict, quality/freshness gating, four
+  candidate classes, and eligible-only deterministic ranking. Policy 1.0 is a
+  generic engineering benchmark and was not fitted to live examples.
+- Added a read-only single/batch baseline smoke with explicit benchmark
+  mappings, component/provenance output, stable JSON, all-`NO_TRADE` behavior,
+  unit/architecture coverage, and the detailed A2.9 technical record.
 - Added a stable-ID deferral register covering documented A0-A2.8 decisions,
   linked deferred capability-map entries, and established a deferral burn-down
   review at major milestone closures rather than after every sub-milestone.
