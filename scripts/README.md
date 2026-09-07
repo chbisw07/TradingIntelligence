@@ -85,5 +85,22 @@ Bollinger, and Donchian pack. Use repeatable or comma-separated `--indicator`
 selectors, `--all`, `--json`, or `--repeat`. It emits indicator measurements
 and minimal deterministic state without strategy or recommendation semantics.
 
+`relative_strength_smoke.py` is the dedicated A2.8 cross-symbol path. The
+caller must supply `--benchmark` and may state its MARKET, SECTOR, PEER, or
+CUSTOM role. Subject and benchmark histories are acquired independently
+through A1, then aligned by an exact latest common `(start_at, end_at)` suffix.
+Output exposes both identities, latest endpoints, window, status, quality,
+`as_of`, and the six raw relative measurements. There is no automatic benchmark
+mapping or judgment about whether the chosen comparison is appropriate.
+
+`multi_timeframe_smoke.py` is the dedicated A2.8 ordered timeframe path. Each
+requested interval receives its own provider history, `AnalysisContext`, and
+`FeatureBundle`; no bars are resampled. It then reports requested/available
+counts and raw return-sign, EMA-position, slope-sign, agreement, and
+disagreement fractions. Missing constituent results are excluded from the
+valid-contributor denominator and remain visible. Dhan's accepted intraday
+single-request maximum is 90 days, so a larger common `--lookback-days` value
+is visibly capped for intraday intervals while daily lookback remains unchanged.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.

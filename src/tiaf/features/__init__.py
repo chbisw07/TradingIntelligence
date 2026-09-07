@@ -33,9 +33,25 @@ from tiaf.features.models import (
     FeatureRequest,
     FeatureResult,
 )
+from tiaf.features.multi_timeframe import (
+    MULTI_TIMEFRAME_FEATURE_DEFINITIONS,
+    MultiTimeframeContext,
+    MultiTimeframeFeatureEngine,
+    TimeframeFeatureContext,
+    multi_timeframe_context,
+    timeframe_feature_context,
+)
 from tiaf.features.participation import PARTICIPATION_FEATURE_DEFINITIONS
 from tiaf.features.price import PRICE_FEATURE_DEFINITIONS
 from tiaf.features.registry import FeatureCalculator, FeatureRegistry
+from tiaf.features.relative import (
+    RELATIVE_FEATURE_DEFINITIONS,
+    BenchmarkReference,
+    BenchmarkRole,
+    RelativeStrengthContext,
+    RelativeStrengthEngine,
+    relative_strength_context,
+)
 from tiaf.features.returns import RETURN_FEATURE_DEFINITIONS, LogReturnCalculator
 from tiaf.features.structure import STRUCTURE_FEATURE_DEFINITIONS
 from tiaf.features.summaries import summarize_feature_bundle
@@ -51,6 +67,8 @@ from tiaf.features.volume import VOLUME_FEATURE_DEFINITIONS
 __all__ = [
     "AbsoluteReturnCalculator",
     "BREAKOUT_FEATURE_DEFINITIONS",
+    "BenchmarkReference",
+    "BenchmarkRole",
     "BUILTIN_FEATURE_DEFINITIONS",
     "CurrentPriceCalculator",
     "COMPRESSION_FEATURE_DEFINITIONS",
@@ -75,18 +93,28 @@ __all__ = [
     "HistoryBarCountCalculator",
     "HistoryFirstCloseCalculator",
     "HistoryLastCloseCalculator",
+    "MULTI_TIMEFRAME_FEATURE_DEFINITIONS",
+    "MultiTimeframeContext",
+    "MultiTimeframeFeatureEngine",
     "PercentReturnCalculator",
     "PARTICIPATION_FEATURE_DEFINITIONS",
     "PRICE_FEATURE_DEFINITIONS",
+    "RELATIVE_FEATURE_DEFINITIONS",
     "RETURN_FEATURE_DEFINITIONS",
+    "RelativeStrengthContext",
+    "RelativeStrengthEngine",
     "STRUCTURE_FEATURE_DEFINITIONS",
     "SUPPORT_RESISTANCE_FEATURE_DEFINITIONS",
     "TREND_FEATURE_DEFINITIONS",
+    "TimeframeFeatureContext",
     "LogReturnCalculator",
     "MoveOverAtrCalculator",
     "RealizedVolatilityCalculator",
     "VOLATILITY_FEATURE_DEFINITIONS",
     "VOLUME_FEATURE_DEFINITIONS",
     "builtin_feature_registry",
+    "multi_timeframe_context",
+    "relative_strength_context",
+    "timeframe_feature_context",
     "summarize_feature_bundle",
 ]

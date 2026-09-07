@@ -105,6 +105,18 @@ def test_inactive_flag_is_preserved(tmp_path: Path) -> None:
     assert old.active is False
 
 
+def test_non_derivative_expiry_sentinel_does_not_hide_current_index(tmp_path: Path) -> None:
+    body = (
+        b"EXCH_ID,SEGMENT,SECURITY_ID,INSTRUMENT,UNDERLYING_SYMBOL,SYMBOL_NAME,"
+        b"SM_EXPIRY_DATE,BUY_SELL_INDICATOR\n"
+        b"NSE,I,13,INDEX,NIFTY,NIFTY,0001-01-01,A\n"
+    )
+    record = _master(tmp_path / "index.csv", RecordingDownloader(body)).load().records[0]
+    assert record.instrument.instrument_type is InstrumentType.INDEX
+    assert record.instrument.expiry is None
+    assert record.active is True
+
+
 def test_observed_timestamp_is_timezone_aware_ist(tmp_path: Path) -> None:
     observed = _master(tmp_path / "dhan.csv", RecordingDownloader()).load().observed_at
     assert observed.tzinfo == TIAF_TIMEZONE

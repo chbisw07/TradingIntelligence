@@ -9,9 +9,9 @@ attributable intelligence for consumers such as TradeMonitor.
 
 The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
-`tiaf-a1.7`. A2.1 through A2.6 are complete and live-validated. The current
-**TIAF_A2.7** target adds deterministic provider-neutral option-chain and
-derivatives measurements for one explicit expiry.
+`tiaf-a1.7`. A2.1 through A2.7 are complete and live-validated. The current
+**TIAF_A2.8** target adds deterministic explicit-benchmark relative strength
+and first-class multi-timeframe factual context.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker execution/account integration, LLM calls, or
@@ -67,6 +67,15 @@ See the [A1 foundation baseline](docs/TIAF_A1_FOUNDATION_BASELINE.md),
 [capability map](docs/TIAF_CAPABILITY_MAP.md) shows where implemented and future
 platform capabilities belong.
 
+Intentional future work and architectural non-goals are tracked under stable
+IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are
+reviewed collectively at major milestone closures rather than interrupting
+each sub-milestone.
+
+The current A2.8 formulas, alignment rules, denominator semantics, live
+observations, and explicit deferrals are recorded in the
+[A2.8 technical note](docs/TIAF_A2_8_RELATIVE_STRENGTH_MTF.md).
+
 For a read-only A2.7 option-chain feature smoke, first obtain an active expiry
 with `scripts/dhan_option_chain_smoke.py`, then run:
 
@@ -81,3 +90,30 @@ python scripts/feature_engine_smoke.py \
 
 The expiry is explicit, the feature calculations use the chain snapshot's own
 underlying LTP, and the command never places trades.
+
+For an explicit-benchmark A2.8 comparison, pass both identities and the
+caller-declared benchmark role:
+
+```bash
+python scripts/relative_strength_smoke.py \
+  --symbol RELIANCE \
+  --benchmark NIFTY \
+  --benchmark-type INDEX \
+  --benchmark-role MARKET \
+  --history-interval 1d \
+  --lookback-days 180
+```
+
+For ordered multi-timeframe evidence from separate provider histories:
+
+```bash
+python scripts/multi_timeframe_smoke.py \
+  --symbol RELIANCE \
+  --timeframes 1d,1h,15m \
+  --lookback-days 180
+```
+
+Dhan intraday retrieval has an accepted 90-day single-request limit. The
+multi-timeframe smoke reports its effective per-interval lookbacks and does not
+resample or fabricate bars. Both commands are read-only factual diagnostics;
+they do not select benchmarks, score candidates, or make recommendations.

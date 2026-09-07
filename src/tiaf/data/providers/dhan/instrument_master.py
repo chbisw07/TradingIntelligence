@@ -322,6 +322,14 @@ class DhanInstrumentMaster:
                 raw_option,
             )
             expiry = _parse_date(value(row, "expiry"), row_number=row_number)
+            if instrument_type not in {
+                InstrumentType.FUTURE,
+                InstrumentType.CALL_OPTION,
+                InstrumentType.PUT_OPTION,
+            }:
+                # Current Dhan index rows use 0001-01-01 as a not-applicable
+                # sentinel. Cash/index identities do not carry contract expiry.
+                expiry = None
             strike = _parse_float(value(row, "strike"), field="strike", row_number=row_number)
             if instrument_type not in {
                 InstrumentType.CALL_OPTION,

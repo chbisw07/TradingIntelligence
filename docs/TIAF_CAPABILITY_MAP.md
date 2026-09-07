@@ -5,6 +5,8 @@ Statuses describe repository reality:
 
 - **IMPLEMENTED** — accepted code/contracts exist;
 - **PLANNED** — placed on the current deterministic roadmap;
+- **DEFERRED** — recorded with an unresolved prerequisite in the
+  [deferral register](TIAF_DEFERRAL_REGISTER.md);
 - **FUTURE** — recognized capability without a committed near-term milestone;
 - **EXTERNAL/INTEGRATION** — owned by or dependent on another system boundary.
 
@@ -21,10 +23,10 @@ Statuses describe repository reality:
 | IV / OI / option volume | IMPLEMENTED | A1 option facts |
 | Cash-history volume | IMPLEMENTED | A1 OHLCV fact; analysis is A2.5 |
 | Liquidity analysis | PLANNED | A2 derivatives/participation extensions |
-| News / filings | FUTURE | External evidence adapters |
-| Fundamentals | FUTURE | External evidence adapters |
-| Corporate actions | FUTURE | Data normalization and adjustment policy |
-| Sector / index / macro context | FUTURE | Shared contextual evidence |
+| News / filings | DEFERRED | External evidence adapters; DEF-012 |
+| Fundamentals | DEFERRED | External evidence adapters; DEF-012 |
+| Corporate actions | DEFERRED | Adjustment evidence/policy; DEF-013 |
+| Sector / index / macro context | DEFERRED | Shared contextual evidence; DEF-012 |
 
 ## Deterministic analysis
 
@@ -37,12 +39,12 @@ Statuses describe repository reality:
 | Support / resistance primitives | IMPLEMENTED | A2.6 fixed prior boundaries |
 | Prior-boundary breakout primitives | IMPLEMENTED | A2.6 close/wick excursions |
 | Range compression / expansion | IMPLEMENTED | A2.6 prior/latest range geometry |
-| Swing pivots / fractals | FUTURE | Requires confirmation-time semantics |
-| Classic floor pivots | FUTURE | Level/Indicator extension with session semantics |
-| Multi-timeframe levels | PLANNED | A2.8 |
+| Swing pivots / fractals | DEFERRED | Confirmation-time semantics; DEF-020 |
+| Classic floor pivots | DEFERRED | Session-aware level/Indicator extension; DEF-036 |
+| Multi-timeframe levels | DEFERRED | Explicit level-context extension; DEF-038 |
 | Support / resistance scoring | FUTURE | Later deterministic interpretation |
 | Breakout quality scoring | FUTURE | A2.9 or later strategy layer |
-| Failed-breakout classification | FUTURE | Market-state/replay event semantics |
+| Failed-breakout classification | DEFERRED | Event-state/replay semantics; DEF-035 |
 | Derivatives deterministic features | IMPLEMENTED | A2.7 single-expiry facts |
 | Option-chain deterministic features | IMPLEMENTED | A2.7 single-expiry facts |
 | ATM / strike geometry | IMPLEMENTED | A2.7 chain-consistent listed strikes |
@@ -50,9 +52,11 @@ Statuses describe repository reality:
 | OI / option-volume ratios | IMPLEMENTED | A2.7 exact strike windows |
 | OI concentration / weighted strike | IMPLEMENTED | A2.7 exact strike windows |
 | Bid/ask spread primitives | IMPLEMENTED | A2.7 ATM contract facts |
-| Relative strength | FUTURE | Deterministic contextual analysis |
-| Sector rotation | FUTURE | Deterministic contextual analysis |
-| Multi-timeframe context | PLANNED | A2.8 |
+| Explicit-benchmark relative strength | IMPLEMENTED | A2.8 exact aligned returns/ATR facts |
+| Automatic benchmark / sector mapping | DEFERRED | Classification evidence; DEF-047 |
+| Sector rotation | FUTURE | Agent interpretation depends on DEF-002/DEF-047 |
+| Ordered multi-timeframe context | IMPLEMENTED | A2.8 independent FeatureBundle evidence |
+| Multi-timeframe factual fractions | IMPLEMENTED | A2.8 valid-contributor aggregation |
 | Market-state summary | PLANNED | A2.9 |
 | Replay / baseline evaluation | PLANNED | A2.10 |
 
@@ -66,16 +70,16 @@ Statuses describe repository reality:
 | ADX / +DI / -DI | IMPLEMENTED | A2.4 library |
 | Bollinger Bands | IMPLEMENTED | A2.4 library |
 | Donchian Channel | IMPLEMENTED | A2.4 library |
-| OBV | FUTURE | Indicator-library extension |
-| MFI | FUTURE | Indicator-library extension |
-| Chaikin / Accumulation-Distribution | FUTURE | Indicator-library extension with named variant |
-| Session VWAP | FUTURE | Indicator extension with explicit intraday sessions |
-| Anchored VWAP | FUTURE | Indicator extension with explicit anchor contract |
-| Volume profile | FUTURE | Deterministic analysis with explicit binning semantics |
-| Market profile | FUTURE | Deterministic analysis with explicit session/binning semantics |
-| Delivery / participant statistics | FUTURE | Requires normalized provider evidence |
-| HalfTrend | FUTURE | Deferred pending a named canonical variant |
-| Future / proprietary indicators | FUTURE | Explicit registry extensions |
+| OBV | DEFERRED | Named Indicator-library variant; DEF-030 |
+| MFI | DEFERRED | Named Indicator-library variant; DEF-030 |
+| Chaikin / Accumulation-Distribution | DEFERRED | Named Indicator-library variant; DEF-030 |
+| Session VWAP | DEFERRED | Explicit intraday sessions; DEF-027 |
+| Anchored VWAP | DEFERRED | Explicit anchor contract; DEF-028 |
+| Volume profile | DEFERRED | Explicit binning semantics; DEF-029 |
+| Market profile | DEFERRED | Explicit session/binning semantics; DEF-029 |
+| Delivery / participant statistics | DEFERRED | Normalized provider evidence; DEF-032 |
+| HalfTrend | DEFERRED | Named canonical variant; DEF-021 |
+| Future / proprietary indicators | DEFERRED | Named/versioned registry extensions; DEF-026 |
 
 ## Derivatives intelligence
 
@@ -85,20 +89,20 @@ Statuses describe repository reality:
 | Greeks / IV / OI facts | IMPLEMENTED | A1 evidence |
 | Single-expiry deterministic features | IMPLEMENTED | A2.7 |
 | ATM bid/ask spread measurements | IMPLEMENTED | A2.7 |
-| Historical option feature library | FUTURE | Historical-options extension |
-| Cross-expiry / term structure | FUTURE | Multi-chain evidence extension |
-| IV surface / skew surface | FUTURE | Explicit surface model |
-| OI-change regime interpretation | FUTURE | Temporal derivative model |
-| Gamma exposure / dealer positioning | FUTURE | Model-dependent positioning assumptions |
-| Max pain | FUTURE | Explicit payoff/OI convention |
-| Probability of profit | FUTURE | Strategy/evaluation model |
-| Expected move model | FUTURE | Explicit formula/model |
+| Historical option feature library | DEFERRED | Historical-options extension; DEF-040 |
+| Cross-expiry / term structure | DEFERRED | Multi-chain evidence; DEF-042 |
+| IV surface / skew surface | DEFERRED | Explicit surface model; DEF-043 |
+| OI-change regime interpretation | DEFERRED | Temporal derivative model; DEF-041 |
+| Gamma exposure / dealer positioning | DEFERRED | Positioning assumptions; DEF-046 |
+| Max pain | DEFERRED | Explicit payoff/OI convention; DEF-045 |
+| Probability of profit | DEFERRED | Explicit model/evaluation; DEF-044 |
+| Expected move model | DEFERRED | Explicit model/evaluation; DEF-044 |
 | Derivative liquidity measurements | IMPLEMENTED | A2.7 factual ATM spread primitive |
-| Expiry-effect analysis | FUTURE | Later deterministic/Agent evidence |
+| Expiry-effect analysis | DEFERRED | Historical derivative evidence; DEF-041 |
 
 ## Option strategy library
 
-All are **FUTURE** under Option Expression Intelligence rather than A2.4:
+All are **PLANNED** under Option Expression Intelligence (DEF-006) rather than A2.4:
 long call, long put, bull call spread, bear put spread, bull put spread, bear
 call spread, straddle, strangle, iron condor, iron butterfly, butterflies,
 calendars, diagonals, ratio spreads, and defined-risk variants.
@@ -107,38 +111,39 @@ calendars, diagonals, ratio spreads, and defined-risk variants.
 
 | Capability | Status | Placement |
 |---|---|---|
-| SigmaDSL integration | FUTURE | Rule/strategy policy boundary |
-| Strategy entry/exit rules | FUTURE | Separate from indicator evidence |
-| Parameter optimization | FUTURE | Replay/evaluation boundary |
+| SigmaDSL integration | DEFERRED | Rule/strategy policy boundary; DEF-025 |
+| Strategy entry/exit rules | DEFERRED | Separate from indicator evidence; DEF-025 |
+| Parameter optimization | DEFERRED | Replay/evaluation boundary; DEF-024 |
 
 ## Agent intelligence
 
 Opportunity analysis, position management, strategy comparison/selection,
 sector rotation, scanner intelligence, explanation, and scenario analysis are
-all **FUTURE** Agent-layer capabilities beginning at A3. They consume evidence;
-they do not belong inside deterministic calculators.
+all **PLANNED** Agent-layer capabilities beginning at A3 (DEF-002, with option
+selection tracked by DEF-006). They consume evidence; they do not belong inside
+deterministic calculators.
 
 ## Applications
 
 | Capability | Status | Placement |
 |---|---|---|
 | Read-only console diagnostics | IMPLEMENTED | Milestone smoke scripts |
-| Monitoring daemon / intelligence OS | FUTURE | Application/runtime layer |
+| Monitoring daemon / intelligence OS | DEFERRED | Runtime orchestration; DEF-010 |
 | Scanner | EXTERNAL/INTEGRATION | Future TIAF scanner boundary |
-| UI / dashboard | FUTURE | Application layer |
-| API / service | FUTURE | Service boundary |
-| Alerts | FUTURE | Application/policy layer |
+| UI / dashboard | FUTURE | Application layer; service dependency DEF-003 |
+| API / service | PLANNED | A8 service boundary; DEF-003 |
+| Alerts | FUTURE | Application/policy layer; runtime dependency DEF-010 |
 | Replay / backtest | PLANNED | A2.10 foundation, later strategy use |
-| Optimization | FUTURE | Evaluation layer |
+| Optimization | DEFERRED | Evaluation layer; DEF-024 |
 | Watchlists | EXTERNAL/INTEGRATION | Input source consumed through A1 |
 
 ## Governance and execution
 
 | Capability | Status | Placement |
 |---|---|---|
-| TradeMonitor intelligence contract | EXTERNAL/INTEGRATION | A8 integration boundary |
-| Risk, authority, lifecycle, execution | EXTERNAL/INTEGRATION | TradeMonitor owns |
-| Broker execution | EXTERNAL/INTEGRATION | Outside deterministic analysis |
+| TradeMonitor intelligence contract | EXTERNAL/INTEGRATION | A8 boundary; DEF-004 |
+| Risk, authority, lifecycle, execution | EXTERNAL/INTEGRATION | TradeMonitor owns; DEF-005 |
+| Broker execution | EXTERNAL/INTEGRATION | Rejected from TIAF scope; DEF-005 |
 
 TIAF indicators and features never place orders. Primitive features,
 indicators, future strategies, Agent reasoning, and execution authority remain

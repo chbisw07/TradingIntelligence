@@ -7,6 +7,14 @@ the stable project roadmap. Status must describe repository reality.
 - `TRADINGINTELLIGENCE_ROADMAP.md` is the canonical major roadmap.
 - `TIAF_IMPLEMENTATION_TARGETS.md` is the detailed evolving engineering
   continuation map.
+- `TIAF_DEFERRAL_REGISTER.md` owns stable deferred-capability IDs and their
+  resolution history.
+
+Deferrals are captured when they arise and reviewed at major milestone closure
+(A2, A3, A4, and so on), not after each sub-milestone. The closure review must
+report introduced, implemented, rejected, superseded, carried-forward, and
+remaining high-priority deferrals. See
+[`TIAF_DEFERRAL_REGISTER.md`](TIAF_DEFERRAL_REGISTER.md) for the binding policy.
 
 ## Accepted foundation
 
@@ -200,7 +208,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_6_SUPPORT_RESISTANCE_BREAKOUT.md`](TIAF_A2_6_SUPPORT_RESISTANCE_BREAKOUT.md).
 
-### TIAF_A2.7 — Derivatives / Option-Chain Features — Current
+### TIAF_A2.7 — Derivatives / Option-Chain Features — Complete / Live Validated
 
 - Purpose: derive provider-neutral, deterministic strike geometry, premiums,
   IV, OI, option volume, spreads, Greeks, concentration, and expiry facts from
@@ -213,6 +221,18 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_7_DERIVATIVES_OPTION_CHAIN_FEATURES.md`](TIAF_A2_7_DERIVATIVES_OPTION_CHAIN_FEATURES.md).
 
+### TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context — Current
+
+- Purpose: provide explicit-benchmark relative measurements and ordered
+  multi-timeframe factual contexts for later deterministic synthesis.
+- Scope: exact common-suffix bar alignment, relative return/ATR primitives,
+  first-class timeframe bundle references, valid-contributor fractions, and
+  weakest-source quality/time provenance.
+- Non-goals: benchmark auto-mapping, scoring, ranking, signals,
+  recommendations, Agents, strategies, or execution.
+- Detail:
+  [`TIAF_A2_8_RELATIVE_STRENGTH_MTF.md`](TIAF_A2_8_RELATIVE_STRENGTH_MTF.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
@@ -221,8 +241,8 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 4. **A2.4 — Indicator Framework + Initial Indicator Library** — Complete / Live Validated
 5. **A2.5 — Volume / Participation Features** — Complete / Live Validated
 6. **A2.6 — Support / Resistance / Breakout Structure** — Complete / Live Validated
-7. **A2.7 — Derivatives / Option-Chain Features** — Current
-8. **A2.8 — Multi-Timeframe Feature Context**
+7. **A2.7 — Derivatives / Option-Chain Features** — Complete / Live Validated
+8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — Current
 9. **A2.9 — Deterministic Market-State / Feature Summary**
 10. **A2.10 — Replay / Validation / Baseline Evaluation**
 

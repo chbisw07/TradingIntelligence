@@ -33,7 +33,21 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.6:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.6`.
 
-**Current milestone:** TIAF_A2.7 — Derivatives / Option-Chain Features.
+**TIAF_A2.7:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.7`.
+
+**Current milestone:** TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context.
+
+## Deferral governance
+
+Intentional deferrals are retained under stable IDs in
+[`TIAF_DEFERRAL_REGISTER.md`](TIAF_DEFERRAL_REGISTER.md). They are recorded when
+discovered but reviewed as a group only at each **major milestone closure**
+(A2, A3, A4, and so on), not after every sub-milestone.
+
+Each major closure reports deferrals introduced, implemented, rejected,
+superseded, carried forward with rationale, and remaining high-priority items.
+Satisfied dependencies should trigger an implementation attempt; unresolved
+items remain visible rather than silently rolling forward.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -191,13 +205,21 @@ primitive measurements.
 - close/wick excursion, prior-range position, and normalized range geometry
 - no subjective pivots, confirmation, score, recommendation, or Agent logic
 
-**TIAF_A2.7 — Derivatives / Option-Chain Features: CURRENT**
+**TIAF_A2.7 — Derivatives / Option-Chain Features: COMPLETE / LIVE VALIDATED**
 
 - explicit-expiry option-chain geometry and factual derivative measurements
 - ATM premiums/IV/Greeks, exact-window OI/volume/spread/concentration primitives
 - no option selection, strategy model, recommendation, or execution
 
-Near-term sequence: A2.7 derivatives; A2.8 multi-timeframe context;
+**TIAF_A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context: CURRENT**
+
+- explicit caller-supplied benchmark identity and exact aligned-bar comparisons
+- ordered per-timeframe feature contexts and factual cross-timeframe fractions
+- no scoring, ranking, recommendation, Agent, or execution logic
+- implementation and read-only Dhan validation complete; acceptance freeze/tag
+  remains pending review
+
+Near-term sequence: A2.8 relative/multi-timeframe context;
 A2.9 deterministic market-state summary; A2.10 replay and baseline evaluation.
 
 - deterministic feature engine

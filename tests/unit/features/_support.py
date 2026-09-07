@@ -32,6 +32,8 @@ def context_with_bars(
     latest_bar_end_at: datetime = NOW,
     history_quality: DataQuality = DataQuality.GOOD,
     quote_quality: DataQuality = DataQuality.GOOD,
+    symbol: str = "RELIANCE",
+    context_id: str = "ctx-features",
 ) -> AnalysisContext:
     """Build a coherent context and replace its history with chronological bars."""
     if highs is not None and len(highs) != len(closes):
@@ -60,9 +62,9 @@ def context_with_bars(
     )
     builder, *_ = make_builder(market=market)
     context = builder.build(
-        "RELIANCE",
+        symbol,
         requirement(history_interval=interval),
-        context_id="ctx-features",
+        context_id=context_id,
     )
     assert context.history is not None
 

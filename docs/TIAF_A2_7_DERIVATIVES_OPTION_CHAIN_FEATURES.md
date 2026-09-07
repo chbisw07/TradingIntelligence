@@ -2,7 +2,7 @@
 
 ## Status and role
 
-**Status: CURRENT — implemented and live read-only validated; pending acceptance.**
+**Status: COMPLETE / LIVE VALIDATED** at tag `tiaf-a2.7`.
 
 TIAF_A2.7 converts the provider-neutral `OptionChainSnapshot` already embedded
 in `AnalysisContext` into deterministic facts. Calculators perform no provider,

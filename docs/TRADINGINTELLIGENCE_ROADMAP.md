@@ -245,8 +245,8 @@ Build a transparent non-AI benchmark that future Agents must beat.
 4. **A2.4 — Indicator Framework + Initial Indicator Library** — COMPLETE / LIVE VALIDATED
 5. **A2.5 — Volume / Participation Features** — COMPLETE / LIVE VALIDATED
 6. **A2.6 — Support / Resistance / Breakout Structure** — COMPLETE / LIVE VALIDATED
-7. **A2.7 — Derivatives / Option-Chain Features** — CURRENT
-8. **A2.8 — Multi-Timeframe Feature Context**
+7. **A2.7 — Derivatives / Option-Chain Features** — COMPLETE / LIVE VALIDATED
+8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — CURRENT
 9. **A2.9 — Deterministic Market-State / Feature Summary**
 10. **A2.10 — Replay / Validation / Baseline Evaluation**
 
@@ -567,6 +567,23 @@ Suggested tags:
 - `tiaf-a1`
 - ...
 - `tiaf-a10`
+
+### Major-milestone deferral review
+
+Deferrals are recorded as they arise without interrupting every sub-milestone.
+At closure of each **major milestone**—A2, A3, A4, and so on—the closure record
+must review the stable IDs in `TIAF_DEFERRAL_REGISTER.md` and report:
+
+- deferrals introduced;
+- deferrals implemented;
+- deferrals rejected;
+- deferrals superseded;
+- deferrals carried forward, with rationale;
+- remaining high-priority deferrals.
+
+The review must attempt items whose dependencies have become satisfied and
+carry forward only genuinely unresolved work. It does not run after every
+A2.x/A3.x sub-milestone, and the register does not override roadmap order.
 
 ---
 

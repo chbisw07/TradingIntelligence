@@ -4,6 +4,25 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added a stable-ID deferral register covering documented A0-A2.8 decisions,
+  linked deferred capability-map entries, and established a deferral burn-down
+  review at major milestone closures rather than after every sub-milestone.
+- Added TIAF_A2.8 explicit MARKET/SECTOR/PEER/CUSTOM benchmark contracts and
+  six deterministic cross-symbol relative-return, return-ratio, Wilder-ATR,
+  and transition-consistency measurements.
+- Added exact latest common bar-endpoint suffix alignment, weakest-history
+  quality/provenance propagation, zero-denominator and malformed-history
+  safeguards, and explicit missing-benchmark behavior.
+- Added ordered first-class multi-timeframe contexts retaining independent
+  A1 context and feature-bundle identity, plus ten factual count, return-sign,
+  EMA-position, slope-sign, agreement, and disagreement measurements using
+  valid-contributor denominators.
+- Added dedicated read-only relative-strength and multi-timeframe smoke tools,
+  regression/architecture coverage, and explicit automatic benchmark mapping,
+  SuperTrend aggregation, resampling, scoring, and recommendation deferrals.
+- Corrected a live-proven Dhan master normalization defect narrowly: the
+  `0001-01-01` non-applicable expiry sentinel on cash/index rows no longer marks
+  current index benchmarks inactive; derivative expiry semantics are unchanged.
 - Added 39 TIAF_A2.7 provider-neutral, single-expiry option-chain features for
   expiry/ATM geometry, premiums, IV, provider Greeks, exact-window OI and
   option volume, put/call ratios, maximum OI, concentration, weighted strikes,
