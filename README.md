@@ -9,10 +9,10 @@ attributable intelligence for consumers such as TradeMonitor.
 
 The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
-`tiaf-a1.7`. A2.1 through A2.8 are complete and live-validated; A2.8 is tagged
-`tiaf-a2.8`. **TIAF_A2.9** is complete and live-validated at tag `tiaf-a2.9`.
-The current **TIAF_A2.10** target adds provider-neutral evidence capture,
-offline replay, deterministic regression, and factual outcome evaluation.
+`tiaf-a1.7`. **TIAF_A2.1** through **TIAF_A2.10** form the complete,
+live-validated deterministic A2 platform; the final accepted sub-milestone is
+tagged `tiaf-a2.10`. The repository is prepared for the separate major
+`tiaf-a2-baseline` freeze. A3 Agent implementation has not begun.
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -68,12 +68,18 @@ See the [A1 foundation baseline](docs/TIAF_A1_FOUNDATION_BASELINE.md),
 [capability map](docs/TIAF_CAPABILITY_MAP.md) shows where implemented and future
 platform capabilities belong.
 
+The complete deterministic platform and closure evidence are recorded in the
+[A2 foundation baseline](docs/TIAF_A2_FOUNDATION_BASELINE.md) and
+[A2 acceptance report](docs/TIAF_A2_ACCEPTANCE_REPORT.md). The
+[A3 entry conditions](docs/TIAF_A3_ENTRY_CONDITIONS.md) bind future Agents to
+the frozen A2 evidence and replay benchmark.
+
 Intentional future work and architectural non-goals are tracked under stable
 IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are
 reviewed collectively at major milestone closures rather than interrupting
 each sub-milestone.
 
-The current A2.8 formulas, alignment rules, denominator semantics, live
+The A2.8 formulas, alignment rules, denominator semantics, live
 observations, and explicit deferrals are recorded in the
 [A2.8 technical note](docs/TIAF_A2_8_RELATIVE_STRENGTH_MTF.md).
 

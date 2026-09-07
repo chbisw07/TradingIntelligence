@@ -4,7 +4,7 @@ This is an architectural placement inventory, not an implementation schedule.
 Statuses describe repository reality:
 
 - **IMPLEMENTED** — accepted code/contracts exist;
-- **PLANNED** — placed on the current deterministic roadmap;
+- **PLANNED** — placed on an explicit future roadmap milestone;
 - **DEFERRED** — recorded with an unresolved prerequisite in the
   [deferral register](TIAF_DEFERRAL_REGISTER.md);
 - **FUTURE** — recognized capability without a committed near-term milestone;
@@ -22,11 +22,15 @@ Statuses describe repository reality:
 | Provider-reported Greeks | IMPLEMENTED | A1 live option-chain facts |
 | IV / OI / option volume | IMPLEMENTED | A1 option facts |
 | Cash-history volume | IMPLEMENTED | A1 OHLCV fact; analysis is A2.5 |
-| Liquidity analysis | PLANNED | A2 derivatives/participation extensions |
+| Option-chain bid/ask liquidity primitives | IMPLEMENTED | A2.7 factual ATM spreads |
 | News / filings | DEFERRED | External evidence adapters; DEF-012 |
 | Fundamentals | DEFERRED | External evidence adapters; DEF-012 |
 | Corporate actions | DEFERRED | Adjustment evidence/policy; DEF-013 |
 | Sector / index / macro context | DEFERRED | Shared contextual evidence; DEF-012 |
+| Market-calendar recency | DEFERRED | Session/calendar contract; DEF-007 |
+| Secondary-provider fallback | DEFERRED | Identity, health, and conflict policy; DEF-008 |
+| Persistent/distributed cache | DEFERRED | Operational storage and consistency; DEF-009 |
+| Provider health arbitration | DEFERRED | Health/fallback policy; DEF-011 |
 
 ## Deterministic analysis
 
@@ -57,13 +61,16 @@ Statuses describe repository reality:
 | Sector rotation | FUTURE | Agent interpretation depends on DEF-002/DEF-047 |
 | Ordered multi-timeframe context | IMPLEMENTED | A2.8 independent FeatureBundle evidence |
 | Multi-timeframe factual fractions | IMPLEMENTED | A2.8 valid-contributor aggregation |
+| Multi-timeframe indicator aggregation | DEFERRED | Explicit indicator-context contract; DEF-048 |
 | Market-state summary | IMPLEMENTED | A2.9 deterministic baseline |
 | Horizon-aware opportunity scoring | IMPLEMENTED | A2.9 versioned DAY/POSITIONAL policy |
 | Candidate classification / ranking | IMPLEMENTED | A2.9 eligible-only stable ranking |
 | Evidence snapshot / exact offline replay | IMPLEMENTED | A2.10 provider-neutral foundation |
 | Baseline outcome / MFE / MAE evaluation | IMPLEMENTED | A2.10 raw factual metrics, no execution model |
-| Replay regression corpus | IMPLEMENTED | A2.10 JSON/JSONL and golden harness |
+| Replay regression corpus | IMPLEMENTED | A2.10 persisted JSON/JSONL snapshot/run collections |
+| Synthetic golden regression | IMPLEMENTED | A2.10 pytest-built deterministic fixtures |
 | Arbitrary historical reconstruction | DEFERRED | Point-in-time data-vintage boundary; DEF-049 |
+| Scheduled subsequent-outcome acquisition | DEFERRED | Calendar/queue/retention boundary; DEF-051 |
 
 ## Indicators
 
@@ -134,6 +141,8 @@ deterministic calculators.
 |---|---|---|
 | Read-only console diagnostics | IMPLEMENTED | Milestone smoke scripts |
 | Monitoring daemon / intelligence OS | DEFERRED | Runtime orchestration; DEF-010 |
+| Persistent/distributed data runtime | DEFERRED | Storage and operations boundary; DEF-009 |
+| Provider fallback and health arbitration | DEFERRED | Multi-provider policy boundary; DEF-008/DEF-011 |
 | Scanner | EXTERNAL/INTEGRATION | Future TIAF scanner boundary |
 | UI / dashboard | FUTURE | Application layer; service dependency DEF-003 |
 | API / service | PLANNED | A8 service boundary; DEF-003 |

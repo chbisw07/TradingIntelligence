@@ -4,6 +4,10 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Closed the complete TIAF_A2 deterministic platform across A2.1-A2.10, added
+  the major foundation baseline, acceptance report, A3 entry conditions, and
+  the governed 51-record deferral burn-down. No scoring policy or runtime
+  contract changed during closure.
 - Added the provider-neutral A2.10 evaluation package with content-addressed
   normalized evidence snapshots, immutable decision records, exact offline
   replay, policy comparison, subsequent outcome paths, MFE/MAE, frozen-ranking

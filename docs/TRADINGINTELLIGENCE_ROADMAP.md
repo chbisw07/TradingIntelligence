@@ -211,7 +211,7 @@ deferred. See `TIAF_A1_FOUNDATION_BASELINE.md` for the binding A1 boundary.
 
 # TIAF_A2 — Deterministic Baseline
 
-**Status: CURRENT**
+**Status: COMPLETE / LIVE VALIDATED; MAJOR BASELINE FREEZE PREPARED**
 
 ## Goal
 
@@ -248,7 +248,7 @@ Build a transparent non-AI benchmark that future Agents must beat.
 7. **A2.7 — Derivatives / Option-Chain Features** — COMPLETE / LIVE VALIDATED
 8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — COMPLETE / LIVE VALIDATED
 9. **A2.9 — Deterministic Market-State / Feature Summary** — COMPLETE / LIVE VALIDATED
-10. **A2.10 — Replay / Validation / Baseline Evaluation** — CURRENT
+10. **A2.10 — Replay / Validation / Baseline Evaluation** — COMPLETE / LIVE VALIDATED
 
 A2.4 was inserted before the previously planned feature families because
 indicators need a stable reusable abstraction for scanners, strategy engines,
@@ -274,7 +274,9 @@ replacing or silently recalibrating it.
 decision records now support exact provider-free replay, same-evidence policy
 comparison, later raw outcome/MFE/MAE measurement, frozen-ranking statistics,
 append-only filesystem corpora, and deterministic regressions. User-level live
-capture/replay validation succeeded; acceptance and A2 closure remain separate.
+capture/replay validation succeeded. The governed A2 closure is recorded in
+`TIAF_A2_FOUNDATION_BASELINE.md` and `TIAF_A2_ACCEPTANCE_REPORT.md`; the final
+major tag remains a separate operator action.
 
 ---
 

@@ -43,5 +43,7 @@ eventually support conclusions such as `HOLD`, `WATCH_CLOSELY`, `PROTECT`,
 The namespaces reserve clear seams for contracts, data, planning, specialist
 interpretation, arbitration, workflows, memory, evaluation, service delivery,
 and observability. TIAF_A1 implements the factual data boundary through
-immutable `AnalysisContext`; planning and interpretive namespaces remain future
-boundaries. No Agent or execution behavior is implemented.
+immutable `AnalysisContext`. TIAF_A2 adds deterministic features, indicators,
+explicit-benchmark and multi-timeframe evidence, a transparent baseline, and
+provider-free replay/evaluation. Planning and interpretive namespaces remain
+future boundaries. No Agent or execution behavior is implemented.

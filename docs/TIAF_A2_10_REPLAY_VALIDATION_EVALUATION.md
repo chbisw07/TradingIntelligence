@@ -2,7 +2,7 @@
 
 ## Status and purpose
 
-**Status: IMPLEMENTED / LIVE CAPTURE-REPLAY VALIDATED; acceptance pending.**
+**Status: COMPLETE / LIVE VALIDATED at tag `tiaf-a2.10`.**
 
 A2.10 preserves the accepted A2.9 deterministic benchmark as an auditable
 decision-time record. It persists normalized evidence, replays it without a
@@ -267,4 +267,6 @@ their producer implementations and existing later-layer boundaries. A2.10 only
 executes `DETERMINISTIC_BASELINE`, though producer identity contracts reserve
 future stable enum values.
 
-A2 closure and full deferral burn-down occur only after A2.10 acceptance.
+A2.10 is the final accepted A2 sub-milestone. The separate A2 major closure and
+deferral burn-down are recorded in `TIAF_A2_FOUNDATION_BASELINE.md`,
+`TIAF_A2_ACCEPTANCE_REPORT.md`, and `TIAF_DEFERRAL_REGISTER.md`.

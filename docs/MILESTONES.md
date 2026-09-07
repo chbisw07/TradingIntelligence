@@ -19,7 +19,8 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A1 — Data Foundation: COMPLETE / BASELINED** at tag `tiaf-a1-baseline`.
 
-**Current:** TIAF_A2 — Deterministic Analysis / Feature Foundation.
+**TIAF_A2 — Deterministic Baseline: COMPLETE / LIVE VALIDATED; major baseline
+freeze prepared.** Final accepted sub-milestone tag: `tiaf-a2.10`.
 
 **TIAF_A2.1:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.1`.
 
@@ -39,8 +40,10 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.9:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.9`.
 
-**Current milestone:** TIAF_A2.10 — Replay / Validation / Baseline Evaluation
-(implemented and live capture/replay validated; acceptance pending).
+**TIAF_A2.10:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.10`.
+
+**Next implementation milestone:** TIAF_A3 — Planner + Specialist Agent MVP,
+after the separate `tiaf-a2-baseline` major freeze.
 
 ## Deferral governance
 
@@ -157,7 +160,7 @@ contexts or explicit partial/deferred/error outcomes. Provider fallback,
 external evidence, persistent caching, and retry orchestration remain future
 work rather than hidden A1 behavior.
 
-## TIAF_A2 — Deterministic Baseline — CURRENT
+## TIAF_A2 — Deterministic Baseline — COMPLETE / LIVE VALIDATED
 
 **TIAF_A2.1 — Feature Contracts + Engine Foundation: COMPLETE / LIVE VALIDATED**
 
@@ -232,7 +235,7 @@ primitive measurements.
 - eligible-only score/quality/symbol ranking with stable ties and complete audit retention
 - no providers, Agents, LLMs, strategies, order logic, or execution inside the subsystem
 
-**TIAF_A2.10 — Replay / Validation / Baseline Evaluation: CURRENT**
+**TIAF_A2.10 — Replay / Validation / Baseline Evaluation: COMPLETE / LIVE VALIDATED**
 
 - content-addressed normalized evidence snapshots and immutable run records
 - exact provider-free replay and policy comparison over unchanged evidence
@@ -240,8 +243,10 @@ primitive measurements.
 - append-only filesystem corpus and deterministic field-level regression checks
 - no policy optimization, historical reconstruction claim, simulated execution, or Agents
 
-Near-term sequence: complete user-level A2.10 validation, then perform the
-separate A2 closure and governed deferral burn-down.
+The A2 closure and governed deferral burn-down are complete. Canonical closure
+records are `TIAF_A2_FOUNDATION_BASELINE.md` and
+`TIAF_A2_ACCEPTANCE_REPORT.md`; the major baseline tag remains intentionally
+uncreated until the closure changes are reviewed and committed.
 
 - deterministic feature engine
 - multi-timeframe price/volume features

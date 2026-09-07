@@ -25,6 +25,14 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 [`TIAF_A1_FOUNDATION_BASELINE.md`](TIAF_A1_FOUNDATION_BASELINE.md) and
 [`TIAF_A1_ACCEPTANCE_REPORT.md`](TIAF_A1_ACCEPTANCE_REPORT.md).
 
+### TIAF_A2 — Complete / Live Validated; Major Baseline Freeze Prepared
+
+TIAF_A2.1 through TIAF_A2.10 form the accepted deterministic platform. The
+final sub-milestone tag is `tiaf-a2.10`; the major `tiaf-a2-baseline` tag is
+prepared but intentionally not created by the closure pass. Canonical closure
+records are [`TIAF_A2_FOUNDATION_BASELINE.md`](TIAF_A2_FOUNDATION_BASELINE.md)
+and [`TIAF_A2_ACCEPTANCE_REPORT.md`](TIAF_A2_ACCEPTANCE_REPORT.md).
+
 ### TIAF_TGT0 — Complete / Frozen
 
 - Purpose: establish the Python repository, package layout, configuration,
@@ -125,9 +133,9 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
   blocks with factual unavailability or retrieval freshness with source-
   observation age. A1.7 does not schedule retries for deferred work.
 
-## Current target
+## Accepted deterministic foundation
 
-### TIAF_A2 — Deterministic Analysis / Feature Foundation — Current
+### TIAF_A2 — Deterministic Analysis / Feature Foundation — Complete / Live Validated
 
 - Purpose: consume `AnalysisContext` and compute reproducible, non-AI derived
   features without bypassing A1 identity, acquisition, quality, freshness, or
@@ -247,7 +255,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_9_DETERMINISTIC_BASELINE.md`](TIAF_A2_9_DETERMINISTIC_BASELINE.md).
 
-### TIAF_A2.10 — Replay / Validation / Baseline Evaluation — Current
+### TIAF_A2.10 — Replay / Validation / Baseline Evaluation — Complete / Live Validated
 
 - Purpose: freeze normalized decision-time evidence and A2.9 output, prove exact
   provider-free replay, and attach later factual outcomes without lookahead.
@@ -259,7 +267,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_10_REPLAY_VALIDATION_EVALUATION.md`](TIAF_A2_10_REPLAY_VALIDATION_EVALUATION.md).
 
-## Near-term A2 sequence
+## Accepted A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
 2. **A2.2 — Price / Return / Volatility Features** — Complete / Live Validated
@@ -270,12 +278,13 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 7. **A2.7 — Derivatives / Option-Chain Features** — Complete / Live Validated
 8. **A2.8 — Relative Strength, Benchmark & Multi-Timeframe Context** — Complete / Live Validated
 9. **A2.9 — Deterministic Market-State / Feature Summary** — Complete / Live Validated
-10. **A2.10 — Replay / Validation / Baseline Evaluation** — Current
+10. **A2.10 — Replay / Validation / Baseline Evaluation** — Complete / Live Validated
 
 Provider fallback/Zerodha, persistent caching, deferred-work orchestration,
 provider health, and external news/fundamental evidence remain intentionally
-deferred. They are not unimplemented promises inside the accepted A1 baseline;
-their eventual milestone placement will be decided when scoped.
+deferred under stable `DEF-*` records. They are not unimplemented promises
+inside the accepted A1 or A2 baseline. The A2 closure disposition for every
+record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
