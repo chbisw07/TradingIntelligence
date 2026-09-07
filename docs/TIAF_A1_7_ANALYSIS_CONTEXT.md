@@ -173,6 +173,12 @@ evidence descriptor under partial mode. Instrument not-found or ambiguous
 resolution produces `ERROR`. Neither is relabeled as `DEFERRED`. One item never
 suppresses later symbols and input order is preserved.
 
+FAILED evidence retains a safe typed detail plus provider, operation,
+failure-kind, and retryability metadata when available. The read-only smoke
+prints those diagnostics without printing configuration, credentials, request
+headers, or untyped exception details. DEFERRED evidence continues to print its
+gate state and retry information separately.
+
 ## History and derivatives
 
 Regular history uses aware `requested_at` as the end and subtracts the explicit

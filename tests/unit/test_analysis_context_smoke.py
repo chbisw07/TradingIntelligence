@@ -9,7 +9,7 @@ from typing import cast
 import pytest
 
 from tiaf.contracts.common import TIAF_TIMEZONE
-from tiaf.data import InstrumentQuery
+from tiaf.data import InstrumentQuery, ProviderAuthError
 from tiaf.data.resolution import ResolutionResult
 from tiaf.data.runtime import (
     DataFetchCoordinator,
@@ -28,7 +28,20 @@ def test_analysis_context_smoke_builds_and_reuses_factual_context(
     namespace = runpy.run_path("scripts/analysis_context_smoke.py")
     market = FakeMarketProvider()
     current = datetime.now(TIAF_TIMEZONE)
-    market.quote_value = quote(observed_at=current, received_at=current)
+    market.quote_value = quote(observed_at=current, received_at=current).model_copy(
+        update={
+            "previous_close": 1302.5,
+            "metadata": {
+                "dhan_raw_last_price": 1322.0,
+                "dhan_raw_net_change": 19.5,
+                "dhan_raw_ohlc_open": 1300.0,
+                "dhan_raw_ohlc_high": 1330.0,
+                "dhan_raw_ohlc_low": 1290.0,
+                "dhan_raw_ohlc_close": 1322.0,
+                "dhan_raw_last_trade_time": "04/09/2026 15:30:00",
+            },
+        }
+    )
     market.history_value = market.history_value.model_copy(update={"observed_at": current})
 
     monkeypatch.setattr(
@@ -56,6 +69,11 @@ def test_analysis_context_smoke_builds_and_reuses_factual_context(
     assert "SECOND BUILD" in output
     assert "Source          : PROVIDER" in output
     assert "Source          : CACHE" in output
+    assert "Previous Close  : 1302.5" in output
+    assert "Raw last_price  : 1322.0" in output
+    assert "Raw net_change  : 19.5" in output
+    assert "Raw ohlc.close  : 1322.0" in output
+    assert "Raw trade time  : 04/09/2026 15:30:00" in output
     assert "BUY" not in output
     assert "SELL" not in output
     assert market.quote_calls == 1
@@ -75,6 +93,64 @@ def test_analysis_context_smoke_requires_explicit_derivatives_expiry(
     main = cast(Callable[[], int], namespace["main"])
     assert main() == 2
     assert "--expiry is required" in capsys.readouterr().out
+
+
+def test_analysis_context_smoke_prints_safe_failed_evidence_diagnostics(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    namespace = runpy.run_path("scripts/analysis_context_smoke.py")
+    market = FakeMarketProvider()
+    market.history_error = ProviderAuthError(
+        "Dhan API error DH-901: access token is invalid or expired",
+        provider="dhan",
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["analysis-context-smoke", "--symbol", "RELIANCE"],
+    )
+    main = cast(Callable[[], int], namespace["main"])
+    main.__globals__["DhanMarketDataProvider"] = lambda: market
+    main.__globals__["DhanInstrumentResolver"] = FakeResolver
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    history_section = output.split("History", maxsplit=1)[1].split(
+        "Option Chain", maxsplit=1
+    )[0]
+    assert "Status          : FAILED" in history_section
+    assert "Error Type      : ProviderAuthError" in history_section
+    assert "Error Detail    : Dhan API error DH-901" in history_section
+    assert "Provider        : dhan" in history_section
+    assert "Operation       : historical" in history_section
+    assert "test-token-value" not in output
+
+
+def test_analysis_context_smoke_suppresses_untyped_failure_secrets(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    namespace = runpy.run_path("scripts/analysis_context_smoke.py")
+    secret = "highly-sensitive-test-token"
+    market = FakeMarketProvider()
+    market.history_error = RuntimeError(secret)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["analysis-context-smoke", "--symbol", "RELIANCE"],
+    )
+    main = cast(Callable[[], int], namespace["main"])
+    main.__globals__["DhanMarketDataProvider"] = lambda: market
+    main.__globals__["DhanInstrumentResolver"] = FakeResolver
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "Error Type      : RuntimeError" in output
+    assert "Error Detail    : evidence fetch failed" in output
+    assert secret not in output
 
 
 @pytest.mark.parametrize(

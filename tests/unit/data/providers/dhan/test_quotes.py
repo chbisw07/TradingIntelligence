@@ -48,7 +48,49 @@ def test_single_equity_quote_normalization() -> None:
     assert snapshot.availability is QuoteFieldAvailability.AVAILABLE
     assert snapshot.quality is DataQuality.GOOD
     assert snapshot.metadata["observed_at_source"] == "last_trade_time"
+    assert snapshot.metadata["previous_close_source"] == "last_price_minus_net_change"
     assert transport.calls[0][0] == "/marketfeed/quote"
+
+
+def test_previous_close_uses_net_change_not_post_market_ohlc_close() -> None:
+    def response(path: str, payload: Mapping[str, Any]) -> dict[str, Any]:
+        del path
+        body = quote_response(payload)
+        quote = body["data"]["NSE_EQ"]["1333"]
+        quote["last_price"] = 1322.0
+        quote["net_change"] = 19.5
+        quote["ohlc"]["open"] = 1300.0
+        quote["ohlc"]["high"] = 1330.0
+        quote["ohlc"]["low"] = 1290.0
+        quote["ohlc"]["close"] = 1322.0
+        quote["last_trade_time"] = "04/09/2026 15:30:00"
+        return body
+
+    snapshot = provider_with(RecordingTransport(response)).get_quote(equity())
+
+    assert snapshot.ltp == 1322.0
+    assert snapshot.previous_close == 1302.5
+    assert snapshot.metadata["dhan_raw_last_price"] == 1322.0
+    assert snapshot.metadata["dhan_raw_net_change"] == 19.5
+    assert snapshot.metadata["dhan_raw_ohlc_open"] == 1300.0
+    assert snapshot.metadata["dhan_raw_ohlc_high"] == 1330.0
+    assert snapshot.metadata["dhan_raw_ohlc_low"] == 1290.0
+    assert snapshot.metadata["dhan_raw_ohlc_close"] == 1322.0
+    assert snapshot.metadata["dhan_raw_last_trade_time"] == "04/09/2026 15:30:00"
+
+
+def test_missing_net_change_does_not_mislabel_ohlc_close_as_previous_close() -> None:
+    def response(path: str, payload: Mapping[str, Any]) -> dict[str, Any]:
+        del path
+        body = quote_response(payload)
+        del body["data"]["NSE_EQ"]["1333"]["net_change"]
+        return body
+
+    snapshot = provider_with(RecordingTransport(response)).get_quote(equity())
+
+    assert snapshot.previous_close is None
+    assert snapshot.metadata["previous_close_source"] == "unavailable"
+    assert snapshot.metadata["dhan_raw_ohlc_close"] == 2985.0
 
 
 def test_single_fno_quote_normalizes_open_interest() -> None:

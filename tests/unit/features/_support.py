@@ -1,6 +1,6 @@
 """Deterministic A1 contexts for feature-foundation tests."""
 
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from tiaf.context import AnalysisContext
 from tiaf.contracts import DataQuality
@@ -17,8 +17,18 @@ from ..context._support import (
 def context_with_bars(
     closes: tuple[float, ...] = (100.0, 110.0),
     *,
+    opens: tuple[float, ...] | None = None,
     highs: tuple[float, ...] | None = None,
     lows: tuple[float, ...] | None = None,
+    interval: str = "1d",
+    quote_ltp: float = 1400.0,
+    quote_open: float | None = None,
+    quote_high: float | None = None,
+    quote_low: float | None = None,
+    quote_previous_close: float | None = None,
+    quote_observed_at: datetime = NOW,
+    history_observed_at: datetime = NOW,
+    latest_bar_end_at: datetime = NOW,
     history_quality: DataQuality = DataQuality.GOOD,
     quote_quality: DataQuality = DataQuality.GOOD,
 ) -> AnalysisContext:
@@ -27,23 +37,39 @@ def context_with_bars(
         raise ValueError("highs must match closes")
     if lows is not None and len(lows) != len(closes):
         raise ValueError("lows must match closes")
+    if opens is not None and len(opens) != len(closes):
+        raise ValueError("opens must match closes")
 
     market = FakeMarketProvider()
     market.history_value = market.history_value.model_copy(
-        update={"quality": history_quality}
+        update={"quality": history_quality, "observed_at": history_observed_at}
     )
-    market.quote_value = market.quote_value.model_copy(update={"quality": quote_quality})
+    market.quote_value = market.quote_value.model_copy(
+        update={
+            "ltp": quote_ltp,
+            "open": quote_open,
+            "high": quote_high,
+            "low": quote_low,
+            "previous_close": quote_previous_close,
+            "quality": quote_quality,
+            "observed_at": quote_observed_at,
+        }
+    )
     builder, *_ = make_builder(market=market)
-    context = builder.build("RELIANCE", requirement(), context_id="ctx-features")
+    context = builder.build(
+        "RELIANCE",
+        requirement(history_interval=interval),
+        context_id="ctx-features",
+    )
     assert context.history is not None
 
     bars = tuple(
         OHLCVBar(
             instrument=context.history.instrument,
             interval=context.history.interval,
-            start_at=NOW - timedelta(days=len(closes) - index),
-            end_at=NOW - timedelta(days=len(closes) - index - 1),
-            open=close,
+            start_at=latest_bar_end_at - timedelta(days=len(closes) - index),
+            end_at=latest_bar_end_at - timedelta(days=len(closes) - index - 1),
+            open=(opens[index] if opens is not None else close),
             high=(highs[index] if highs is not None else close + 1),
             low=(lows[index] if lows is not None else max(close - 1, 0)),
             close=close,

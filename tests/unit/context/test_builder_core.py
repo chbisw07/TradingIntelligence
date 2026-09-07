@@ -149,7 +149,16 @@ def test_history_failure_with_partial_allowed_is_visible() -> None:
     market.history_error = ProviderNetworkError("offline", provider="test")
     builder, *_ = make_builder(market=market)
     context = builder.build("RELIANCE", requirement())
-    assert descriptor(context, "history").status is EvidenceStatus.FAILED  # type: ignore[attr-defined]
+    history_slot = descriptor(context, "history")
+    assert history_slot.status is EvidenceStatus.FAILED  # type: ignore[attr-defined]
+    assert history_slot.error_type == "ProviderNetworkError"  # type: ignore[attr-defined]
+    assert history_slot.error_detail == "offline"  # type: ignore[attr-defined]
+    assert history_slot.metadata == {  # type: ignore[attr-defined]
+        "provider": "test",
+        "operation": "historical",
+        "failure_kind": "NETWORK",
+        "retryable": True,
+    }
     assert context.history is None
     assert not context.complete
 

@@ -6,6 +6,9 @@ from tiaf.features.enums import (
     FeatureValueType,
 )
 from tiaf.features.models import FeatureDefinition
+from tiaf.features.price import PRICE_FEATURE_DEFINITIONS
+from tiaf.features.returns import RETURN_FEATURE_DEFINITIONS
+from tiaf.features.volatility import VOLATILITY_FEATURE_DEFINITIONS
 
 CURRENT_PRICE = FeatureDefinition(
     feature_id="price.current",
@@ -94,4 +97,7 @@ BUILTIN_FEATURE_DEFINITIONS = (
     ABSOLUTE_RETURN,
     PERCENT_RETURN,
     HIGH_LOW_RANGE_PERCENT,
+    *PRICE_FEATURE_DEFINITIONS,
+    *RETURN_FEATURE_DEFINITIONS,
+    *VOLATILITY_FEATURE_DEFINITIONS,
 )

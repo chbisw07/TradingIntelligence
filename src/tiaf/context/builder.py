@@ -493,7 +493,13 @@ class AnalysisContextBuilder:
         except ProviderScheduleBlockedError as exc:
             return None, self._deferred(name, required, exc)
         except Exception as exc:
-            descriptor = self._failed(name, required, exc)
+            descriptor = self._failed(
+                name,
+                required,
+                exc,
+                provider=provider,
+                operation=operation,
+            )
             if required and not context_requirement.allow_partial:
                 raise RequiredEvidenceUnavailableError(
                     name, descriptor.error_detail or "failed"
@@ -573,13 +579,30 @@ class AnalysisContextBuilder:
         )
 
     @staticmethod
-    def _failed(name: str, required: bool, error: Exception) -> EvidenceDescriptor:
+    def _failed(
+        name: str,
+        required: bool,
+        error: Exception,
+        *,
+        provider: str | None = None,
+        operation: str | None = None,
+    ) -> EvidenceDescriptor:
         safe_detail = "evidence fetch failed"
+        metadata: dict[str, Any] = {}
         if isinstance(
             error,
             (TIAFDataError, AnalysisContextError),
         ):
             safe_detail = str(error)
+        if provider is not None:
+            metadata["provider"] = provider
+        if operation is not None:
+            metadata["operation"] = operation
+        if isinstance(error, TIAFDataError):
+            if error.provider is not None:
+                metadata["provider"] = error.provider
+            metadata["failure_kind"] = error.failure_kind.value
+            metadata["retryable"] = error.retryable
         return EvidenceDescriptor(
             evidence_name=name,
             requested=True,
@@ -593,6 +616,7 @@ class AnalysisContextBuilder:
             quality=DataQuality.UNAVAILABLE,
             error_type=type(error).__name__,
             error_detail=safe_detail,
+            metadata=metadata,
         )
 
     @staticmethod

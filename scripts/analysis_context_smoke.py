@@ -14,6 +14,7 @@ from tiaf.context import (
     AnalysisPurpose,
     BatchItemStatus,
     EvidenceDescriptor,
+    EvidenceStatus,
     summarize_context,
 )
 from tiaf.contracts.common import TIAF_TIMEZONE
@@ -63,6 +64,25 @@ def _source(slot: EvidenceDescriptor) -> str:
     return slot.fetch_disposition.value if slot.fetch_disposition is not None else "-"
 
 
+def _print_evidence_diagnostics(slot: EvidenceDescriptor) -> None:
+    if slot.status is EvidenceStatus.FAILED:
+        print(f"Error Type      : {slot.error_type or '-'}")
+        print(f"Error Detail    : {slot.error_detail or '-'}")
+        print(f"Provider        : {slot.metadata.get('provider', '-')}")
+        print(f"Operation       : {slot.metadata.get('operation', '-')}")
+    elif slot.status is EvidenceStatus.DEFERRED:
+        retry = (
+            "unknown"
+            if slot.retry_after_seconds is None
+            else f"{slot.retry_after_seconds:.2f} sec"
+        )
+        print(f"Deferred Reason : {slot.deferred_reason or '-'}")
+        print(f"Provider        : {slot.deferred_provider or '-'}")
+        print(f"Operation       : {slot.deferred_operation or '-'}")
+        print(f"Gate State      : {slot.gate_state.value if slot.gate_state else '-'}")
+        print(f"Retry After     : {retry}")
+
+
 def _print_context(context: AnalysisContext, label: str | None = None) -> None:
     summary = summarize_context(context)
     resolved = context.subject.resolved_instrument
@@ -94,6 +114,19 @@ def _print_context(context: AnalysisContext, label: str | None = None) -> None:
     print(f"Market Observed : {quote_slot.source_observed_at or '-'}")
     print(f"Observation Age : {quote_slot.observation_age_seconds}")
     print(f"Source          : {_source(quote_slot)}")
+    _print_evidence_diagnostics(quote_slot)
+    if context.quote is not None:
+        print(f"Previous Close  : {context.quote.previous_close}")
+        print(f"Raw last_price  : {context.quote.metadata.get('dhan_raw_last_price', '-')}")
+        print(f"Raw net_change  : {context.quote.metadata.get('dhan_raw_net_change', '-')}")
+        print(f"Raw ohlc.open   : {context.quote.metadata.get('dhan_raw_ohlc_open', '-')}")
+        print(f"Raw ohlc.high   : {context.quote.metadata.get('dhan_raw_ohlc_high', '-')}")
+        print(f"Raw ohlc.low    : {context.quote.metadata.get('dhan_raw_ohlc_low', '-')}")
+        print(f"Raw ohlc.close  : {context.quote.metadata.get('dhan_raw_ohlc_close', '-')}")
+        print(
+            f"Raw trade time  : "
+            f"{context.quote.metadata.get('dhan_raw_last_trade_time', '-')}"
+        )
 
     print("\nHistory")
     print("-" * 48)
@@ -114,12 +147,14 @@ def _print_context(context: AnalysisContext, label: str | None = None) -> None:
     print(f"Source Observed : {history_slot.source_observed_at or '-'}")
     print(f"Observation Age : {history_slot.observation_age_seconds}")
     print(f"Source          : {_source(history_slot)}")
+    _print_evidence_diagnostics(history_slot)
 
     print("\nOption Chain")
     print("-" * 48)
     print(f"Requested       : {'YES' if chain_slot.requested else 'NO'}")
     print(f"Required        : {'YES' if chain_slot.required else 'NO'}")
     print(f"Status          : {chain_slot.status.value}")
+    _print_evidence_diagnostics(chain_slot)
     if context.option_chain is not None:
         print(f"Underlying LTP  : {context.option_chain.underlying_ltp}")
         print(f"Expiry          : {context.option_chain.expiry}")

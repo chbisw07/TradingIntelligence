@@ -4,6 +4,24 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Preserved safe provider/operation diagnostics for failed AnalysisContext
+  evidence and exposed them in the read-only context smoke without leaking
+  credentials or untyped exception details.
+- Corrected Dhan REST quote `previous_close` normalization to derive it from
+  `last_price - net_change`; raw OHLC close remains diagnostic metadata rather
+  than being mislabeled as the prior-session close.
+- Corrected A2.2 previous-close semantics after live validation: normalized
+  quote `previous_close` is canonical, with a session-aware daily-history
+  fallback shared by price change and move/ATR calculations.
+- Clarified that `price.open`, `price.high`, `price.low`, and day-range position
+  use current-session quote facts rather than latest historical-bar OHLC.
+- Added 23 TIAF_A2.2 price-location, log-return, candle-range, Wilder ATR,
+  realized-volatility, rolling-extrema, drawdown/run-up, and signed move/ATR
+  measurements to the deterministic feature registry.
+- Added strict exact-window and numerical-safety behavior, worst-source quality
+  propagation, and explicit market-time versus acquisition-time provenance.
+- Extended the read-only feature smoke with `--extended` and explicit intraday
+  annualization, plus deterministic A2.2 tests and architecture documentation.
 - Added the TIAF_A2.1 provider-neutral immutable feature contracts, explicit
   calculator registry, deterministic context-only engine, and factual bundle
   summary.

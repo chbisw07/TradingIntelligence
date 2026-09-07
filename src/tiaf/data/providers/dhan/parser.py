@@ -157,10 +157,13 @@ def parse_quote_response(
         ohlc_value = quote.get("ohlc", {})
         ohlc = _as_mapping(ohlc_value, "ohlc")
 
+        last_price = _required_float(quote, "last_price")
+        net_change = _optional_float(quote, "net_change")
         open_price = _optional_float(ohlc, "open")
         high = _optional_float(ohlc, "high")
         low = _optional_float(ohlc, "low")
-        previous_close = _optional_float(ohlc, "close")
+        ohlc_close = _optional_float(ohlc, "close")
+        previous_close = last_price - net_change if net_change is not None else None
         volume = _optional_int(quote, "volume")
         open_interest = _optional_int(quote, "oi")
         bid = _best_depth_price(quote, "buy")
@@ -174,7 +177,7 @@ def parse_quote_response(
         try:
             snapshot = QuoteSnapshot(
                 instrument=instrument,
-                ltp=_required_float(quote, "last_price"),
+                ltp=last_price,
                 open=open_price,
                 high=high,
                 low=low,
@@ -192,6 +195,22 @@ def parse_quote_response(
                 metadata={
                     "dhan_security_id": security_id,
                     "observed_at_source": observed_at_source,
+                    "previous_close_source": (
+                        "last_price_minus_net_change"
+                        if net_change is not None
+                        else "unavailable"
+                    ),
+                    "dhan_raw_last_price": last_price,
+                    "dhan_raw_net_change": net_change,
+                    "dhan_raw_ohlc_open": open_price,
+                    "dhan_raw_ohlc_high": high,
+                    "dhan_raw_ohlc_low": low,
+                    "dhan_raw_ohlc_close": ohlc_close,
+                    "dhan_raw_last_trade_time": (
+                        quote.get("last_trade_time")
+                        if isinstance(quote.get("last_trade_time"), str)
+                        else None
+                    ),
                 },
             )
         except ValidationError as exc:

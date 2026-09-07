@@ -1,4 +1,4 @@
-"""Build one read-only A1 context and inspect deterministic A2.1 features."""
+"""Build one read-only A1 context and inspect deterministic A2 features."""
 
 import argparse
 from datetime import datetime
@@ -36,6 +36,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--lookback-days", type=int, default=90)
     parser.add_argument("--repeat", action="store_true")
     parser.add_argument("--json", action="store_true")
+    parser.add_argument(
+        "--extended",
+        action="store_true",
+        help="include the A2.2 price, return, range, and volatility feature set",
+    )
+    parser.add_argument(
+        "--annualization-factor",
+        type=float,
+        help="explicit realized-volatility factor; defaults to 252 only for 1d",
+    )
     return parser.parse_args()
 
 
@@ -66,6 +76,74 @@ def _requests(interval: str) -> tuple[FeatureRequest, ...]:
     )
 
 
+def _extended_requests(
+    interval: str,
+    annualization_factor: float | None = None,
+) -> tuple[FeatureRequest, ...]:
+    normalized_interval = FeatureRequest(
+        feature_id="history.bar_count", interval=interval
+    ).interval
+    factor = annualization_factor
+    if factor is None:
+        if normalized_interval != "1d":
+            raise ValueError(
+                "--annualization-factor is required for extended intraday features"
+            )
+        factor = 252.0
+    return (
+        FeatureRequest(feature_id="price.current"),
+        FeatureRequest(feature_id="price.previous_close", interval=interval),
+        FeatureRequest(feature_id="price.change_percent", interval=interval),
+        FeatureRequest(feature_id="price.position_in_day_range", interval=interval),
+        *(
+            FeatureRequest(
+                feature_id="return.percent",
+                parameters=(("bars", bars),),
+                interval=interval,
+            )
+            for bars in (1, 5, 20)
+        ),
+        FeatureRequest(feature_id="range.bar_percent", interval=interval),
+        FeatureRequest(feature_id="range.body_percent", interval=interval),
+        FeatureRequest(feature_id="range.true_range", interval=interval),
+        FeatureRequest(
+            feature_id="volatility.atr",
+            parameters=(("period", 14),),
+            interval=interval,
+        ),
+        FeatureRequest(
+            feature_id="volatility.atr_percent",
+            parameters=(("period", 14),),
+            interval=interval,
+        ),
+        FeatureRequest(
+            feature_id="volatility.realized",
+            parameters=(("bars", 20), ("annualization_factor", factor)),
+            interval=interval,
+        ),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("bars", 20),),
+                interval=interval,
+            )
+            for feature_id in (
+                "price.rolling_high",
+                "price.rolling_low",
+                "price.distance_from_rolling_high_percent",
+                "price.distance_from_rolling_low_percent",
+                "return.max_drawdown_percent",
+                "return.max_runup_percent",
+            )
+        ),
+        FeatureRequest(
+            feature_id="range.move_over_atr",
+            parameters=(("atr_period", 14),),
+            interval=interval,
+        ),
+    )
+
+
 def _print_bundle(
     bundle: FeatureBundle, *, as_json: bool, label: str | None = None
 ) -> None:
@@ -78,9 +156,17 @@ def _print_bundle(
 
 
 def main() -> int:
-    """Acquire factual context through A1, then derive A2.1 features."""
+    """Acquire factual context through A1, then derive deterministic A2 features."""
     args = parse_args()
     try:
+        requests = (
+            _extended_requests(
+                args.history_interval,
+                annualization_factor=args.annualization_factor,
+            )
+            if args.extended
+            else _requests(args.history_interval)
+        )
         requested_at = datetime.now(TIAF_TIMEZONE)
         provider = DhanMarketDataProvider()
         builder = AnalysisContextBuilder(
@@ -105,7 +191,6 @@ def main() -> int:
             ),
         )
         engine = DeterministicFeatureEngine(builtin_feature_registry())
-        requests = _requests(args.history_interval)
         first_context = builder.build(
             args.symbol,
             requirements,

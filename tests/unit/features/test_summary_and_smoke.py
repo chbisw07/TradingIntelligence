@@ -59,9 +59,11 @@ def test_smoke_script_help_is_user_runnable(monkeypatch: pytest.MonkeyPatch) -> 
     assert caught.value.code == 0
 
 
+@pytest.mark.parametrize("extended", [False, True])
 def test_smoke_script_builds_context_then_features_without_live_io(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
+    extended: bool,
 ) -> None:
     namespace = _load_smoke()
     smoke_globals = namespace["main"].__globals__
@@ -90,6 +92,8 @@ def test_smoke_script_builds_context_then_features_without_live_io(
             lookback_days=90,
             repeat=False,
             json=False,
+            extended=extended,
+            annualization_factor=None,
         ),
     )
     assert namespace["main"]() == 0
@@ -97,6 +101,11 @@ def test_smoke_script_builds_context_then_features_without_live_io(
     assert "RELIANCE FEATURE BUNDLE" in output
     assert "price.current" in output
     assert "return.percent[bars=20]" in output
+    if extended:
+        assert "volatility.atr[period=14]" in output
+        assert "range.move_over_atr[atr_period=14]" in output
+    else:
+        assert "volatility.atr[period=14]" not in output
 
 
 def test_smoke_script_is_documented() -> None:

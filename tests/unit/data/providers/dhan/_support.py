@@ -158,6 +158,7 @@ def quote_entry(
     """Return a fixture matching Dhan's documented full-quote shape."""
     entry: dict[str, Any] = {
         "last_price": last_price,
+        "net_change": last_price - 2985,
         "last_trade_time": "05/09/2026 10:00:00",
         "ohlc": {"open": 2990, "high": 3020, "low": 2980, "close": 2985},
         "volume": 1000,

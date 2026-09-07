@@ -98,10 +98,14 @@ segment or security ID raises `InstrumentNotFoundError`; a shorter tuple is neve
 returned silently.
 
 The adapter maps LTP, OHLC, volume, OI, and positive best bid/ask levels into
-`QuoteSnapshot`. Dhan OHLC `close` is treated as `previous_close` according to
-the quote API's prior/market-close semantics. Empty depth does not fabricate a
-price. Availability and quality reflect populated optional fields; freshness is
-`UNKNOWN` because A1.2 defines no market TTL.
+`QuoteSnapshot`. `previous_close` is derived as `last_price - net_change`.
+Dhan documents `net_change` as the LTP change from the previous day's closing
+price, while `ohlc.close` is the market closing price and may equal current LTP
+after the session closes. The raw safe quote fields are retained in metadata
+for diagnostics; `ohlc.close` is not mislabeled as previous close. If
+`net_change` is absent, normalized `previous_close` remains unavailable. Empty
+depth does not fabricate a price. Availability and quality reflect populated
+optional fields; freshness is `UNKNOWN` because A1.2 defines no market TTL.
 
 A valid Dhan `last_trade_time` from year 2000 onward becomes `observed_at`.
 Missing, malformed, or sentinel-era values fall back to the actual injected

@@ -43,11 +43,21 @@ factual unavailability or freshness. The utility never sleeps or retries
 implicitly. There is no recommendation, scoring, or ranking. `--repeat`
 demonstrates cache reuse.
 
-`feature_engine_smoke.py` is the read-only A2.1 proof path. It builds a factual
-context through the accepted A1 resolver/runtime/builder, then derives only
-current price, history count, fixed-window returns, and high/low range. The
-feature layer performs no provider access. Use `--json` for the immutable
-contract form or `--repeat` to inspect repeatability and A1 cache reuse.
+Single-context FAILED evidence prints its safe error type/detail, provider, and
+operation. Quote output also exposes the safe Dhan REST fields needed to audit
+previous-close normalization; it never prints credentials or authentication
+headers.
+
+`feature_engine_smoke.py` is the read-only A2 proof path. Its concise default
+retains the A2.1 current-price, history-count, fixed-window return, and high/low
+range output. `--extended` adds A2.2 price location, candle structure, Wilder
+ATR, realized volatility, rolling extrema, path measures, and signed move/ATR.
+Previous close and current-session OHLC come from normalized quote fields;
+previous close alone has a visible session-aware daily-history fallback.
+Daily extended output defaults realized-volatility annualization to 252;
+intraday use must pass `--annualization-factor` explicitly. The feature layer
+performs no provider access. Use `--json` for immutable contracts or `--repeat`
+to inspect repeatability and A1 cache reuse.
 
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.
