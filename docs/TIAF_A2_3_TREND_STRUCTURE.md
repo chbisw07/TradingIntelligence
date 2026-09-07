@@ -240,9 +240,10 @@ accept any positive period satisfying the available history.
 ## 15. Deferred work and A2.4 handoff
 
 ADX, plus/minus directional indicators, subjective swing points, categorical
-trend labels, and public structure-count duplicates are intentionally deferred.
-ADX would materially enlarge the Wilder directional-movement surface and
-deserves its own rigorously scoped follow-up if required.
+trend labels, and public structure-count duplicates were intentionally deferred
+from A2.3. ADX/DI moves into the dedicated A2.4 indicator subsystem, where its
+Wilder warm-up and multi-output contract can be specified rigorously.
 
-A2.4 may add deterministic volume and participation measurements without
-changing these completed-price semantics. Interpretation remains outside A2.
+A2.4 adds a first-class indicator framework without changing these primitive
+feature semantics. Under the revised roadmap, A2.5 follows with deterministic
+volume and participation measurements. Interpretation remains outside A2.

@@ -150,7 +150,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_2_PRICE_RETURN_VOLATILITY.md`](TIAF_A2_2_PRICE_RETURN_VOLATILITY.md).
 
-### TIAF_A2.3 — Trend & Structure Features — Current
+### TIAF_A2.3 — Trend & Structure Features — Complete / Live Validated
 
 - Purpose: add reusable completed-history moving averages, slope, linearity,
   directional-efficiency, close-persistence, adjacent high/low structure,
@@ -161,17 +161,32 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
   scoring, ADX, Agents, brokers, or execution.
 - Detail: [`TIAF_A2_3_TREND_STRUCTURE.md`](TIAF_A2_3_TREND_STRUCTURE.md).
 
+### TIAF_A2.4 — Indicator Framework + Initial Indicator Library — Current
+
+- Purpose: establish indicators as a first-class, versioned, discoverable
+  evidence subsystem complementary to primitive A2 features.
+- Scope: immutable contracts, explicit registry, indicator-agnostic engine,
+  SuperTrend, RSI, MACD, ADX/DI, Bollinger, Donchian, and a dedicated read-only
+  smoke path.
+- Non-goals: strategy signals, recommendations, parameter optimization,
+  HalfTrend guesswork, Agents, brokers, or execution.
+- Why inserted: scanners, strategy engines, Agents, replay/backtesting,
+  optimization, UI/dashboard consumers, and custom indicators need one stable
+  reusable abstraction before later feature families build on them.
+- Detail: [`TIAF_A2_4_INDICATOR_FRAMEWORK.md`](TIAF_A2_4_INDICATOR_FRAMEWORK.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
 2. **A2.2 — Price / Return / Volatility Features** — Complete / Live Validated
-3. **A2.3 — Trend & Structure Features** — Current
-4. **A2.4 — Volume / Participation Features**
-5. **A2.5 — Support / Resistance / Breakout Structure**
-6. **A2.6 — Derivatives / Option-Chain Features**
-7. **A2.7 — Multi-Timeframe Feature Context**
-8. **A2.8 — Deterministic Market-State / Feature Summary**
-9. **A2.9 — Replay / Validation / Baseline Evaluation**
+3. **A2.3 — Trend & Structure Features** — Complete / Live Validated
+4. **A2.4 — Indicator Framework + Initial Indicator Library** — Current
+5. **A2.5 — Volume / Participation Features**
+6. **A2.6 — Support / Resistance / Breakout Structure**
+7. **A2.7 — Derivatives / Option-Chain Features**
+8. **A2.8 — Multi-Timeframe Feature Context**
+9. **A2.9 — Deterministic Market-State / Feature Summary**
+10. **A2.10 — Replay / Validation / Baseline Evaluation**
 
 Provider fallback/Zerodha, persistent caching, deferred-work orchestration,
 provider health, and external news/fundamental evidence remain intentionally

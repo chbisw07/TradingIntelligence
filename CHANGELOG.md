@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added the first-class TIAF_A2.4 indicator contracts, explicit registry, and
+  indicator-agnostic deterministic engine.
+- Added completed-history SuperTrend, Wilder RSI, MACD, Wilder ADX/+DI/-DI,
+  population Bollinger Bands, and Donchian Channel calculations with a
+  dedicated read-only smoke CLI.
+- Added indicator architecture documentation, extension guidance, revised A2
+  numbering, and a platform capability-placement map; HalfTrend is explicitly
+  deferred pending selection of a stable canonical variant.
 - Added 23 TIAF_A2.3 completed-history moving-average, regression,
   directional-efficiency, persistence, adjacent-structure, rolling-range, and
   ATR-normalized extension measurements.

@@ -43,13 +43,22 @@ def simple_moving_average(closes: tuple[float, ...], period: int) -> float:
 
 def exponential_moving_average(closes: tuple[float, ...], period: int) -> float:
     """Return canonical EMA seeded by the first period-close SMA."""
+    return exponential_moving_average_series(closes, period)[-1]
+
+
+def exponential_moving_average_series(
+    closes: tuple[float, ...], period: int
+) -> tuple[float, ...]:
+    """Return the canonical EMA series beginning at the seed observation."""
     if period <= 0 or len(closes) < period:
         raise ValueError("EMA requires a positive period and sufficient closes")
     alpha = 2.0 / (period + 1.0)
     value = math.fsum(closes[:period]) / period
+    values = [value]
     for close in closes[period:]:
         value = (alpha * close) + ((1.0 - alpha) * value)
-    return value
+        values.append(value)
+    return tuple(values)
 
 
 def linear_regression(closes: tuple[float, ...]) -> LinearRegression:

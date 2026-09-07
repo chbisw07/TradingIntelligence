@@ -211,7 +211,7 @@ deferred. See `TIAF_A1_FOUNDATION_BASELINE.md` for the binding A1 boundary.
 
 # TIAF_A2 — Deterministic Baseline
 
-**Status: NEXT**
+**Status: CURRENT**
 
 ## Goal
 
@@ -219,6 +219,7 @@ Build a transparent non-AI benchmark that future Agents must beat.
 
 ### Scope
 
+- deterministic feature and first-class indicator contracts/engines
 - change %
 - gap
 - ATR / ATR%
@@ -235,6 +236,27 @@ Build a transparent non-AI benchmark that future Agents must beat.
 - multi-timeframe features
 - horizon-specific bullish/bearish baseline scoring
 - candidate classes: `TOP_MOVER`, `EARLY_OPPORTUNITY`, `MATURE_AVOID_CHASE`, `NO_TRADE`
+
+### Detailed implementation sequence
+
+1. **A2.1 — Feature Contracts + Engine Foundation** — COMPLETE / LIVE VALIDATED
+2. **A2.2 — Price / Return / Volatility Features** — COMPLETE / LIVE VALIDATED
+3. **A2.3 — Trend & Structure Features** — COMPLETE / LIVE VALIDATED
+4. **A2.4 — Indicator Framework + Initial Indicator Library** — CURRENT
+5. **A2.5 — Volume / Participation Features**
+6. **A2.6 — Support / Resistance / Breakout Structure**
+7. **A2.7 — Derivatives / Option-Chain Features**
+8. **A2.8 — Multi-Timeframe Feature Context**
+9. **A2.9 — Deterministic Market-State / Feature Summary**
+10. **A2.10 — Replay / Validation / Baseline Evaluation**
+
+A2.4 was inserted before the previously planned feature families because
+indicators need a stable reusable abstraction for scanners, strategy engines,
+Agents, replay/backtesting, parameter optimization, UI/dashboard applications,
+and proprietary extensions. Indicators do not replace A2.3 primitives: the
+two are complementary deterministic evidence layers. This insertion shifts
+the former A2.4–A2.9 detailed targets to A2.5–A2.10; major phases A3 through
+A10 are unchanged.
 
 ### Important objective
 

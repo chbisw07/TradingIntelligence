@@ -9,8 +9,9 @@ attributable intelligence for consumers such as TradeMonitor.
 
 The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
-`tiaf-a1.7`. The next target is **TIAF_A2**, which consumes factual
-`AnalysisContext` values to build deterministic derived features.
+`tiaf-a1.7`. A2.1 through A2.3 are complete and live-validated. The current
+**TIAF_A2.4** target adds a first-class deterministic indicator framework and
+initial completed-history indicator library alongside the primitive features.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker execution/account integration, LLM calls, or
@@ -62,4 +63,6 @@ centralized authority and risk controls of TradeMonitor.
 
 See the [A1 foundation baseline](docs/TIAF_A1_FOUNDATION_BASELINE.md),
 [A1 acceptance report](docs/TIAF_A1_ACCEPTANCE_REPORT.md), and
-[implementation roadmap](docs/IMPLEMENTATION_ROADMAP.md).
+[implementation roadmap](docs/TRADINGINTELLIGENCE_ROADMAP.md). The
+[capability map](docs/TIAF_CAPABILITY_MAP.md) shows where implemented and future
+platform capabilities belong.

@@ -66,5 +66,11 @@ concise baseline or combined with `--extended`. Its 10/20/50 smoke periods are
 inspection defaults, not calculator restrictions, and it does not mix current
 quote data into historical trend measurements.
 
+`indicator_engine_smoke.py` is the dedicated read-only A2.4 path. It requests
+completed history only and runs the default SuperTrend, RSI, MACD, ADX/DI,
+Bollinger, and Donchian pack. Use repeatable or comma-separated `--indicator`
+selectors, `--all`, `--json`, or `--repeat`. It emits indicator measurements
+and minimal deterministic state without strategy or recommendation semantics.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.

@@ -132,14 +132,23 @@ def true_range(current: OHLCVBar, previous_close: float) -> float:
 
 def wilder_atr(bars: tuple[OHLCVBar, ...], period: int) -> float:
     """Calculate latest Wilder ATR from all supplied chronological bars."""
+    return wilder_atr_series(bars, period)[-1]
+
+
+def wilder_atr_series(bars: tuple[OHLCVBar, ...], period: int) -> tuple[float, ...]:
+    """Return Wilder ATR values beginning after the strict period warm-up."""
+    if period <= 0 or len(bars) < period + 1:
+        raise ValueError("Wilder ATR requires period+1 bars")
     ranges = tuple(
         true_range(bars[index], bars[index - 1].close)
         for index in range(1, len(bars))
     )
     atr = sum(ranges[:period]) / period
+    values = [atr]
     for value in ranges[period:]:
         atr = ((atr * (period - 1)) + value) / period
-    return atr
+        values.append(atr)
+    return tuple(values)
 
 
 class _CandleMode(StrEnum):
