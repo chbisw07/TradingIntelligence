@@ -20,8 +20,8 @@ from ._support import context_with_bars
 
 
 def test_builtin_definitions_are_stable_unique_and_immutable() -> None:
-    assert len(BUILTIN_FEATURE_DEFINITIONS) == 30
-    assert len({item.feature_id for item in BUILTIN_FEATURE_DEFINITIONS}) == 30
+    assert len(BUILTIN_FEATURE_DEFINITIONS) == 53
+    assert len({item.feature_id for item in BUILTIN_FEATURE_DEFINITIONS}) == 53
     assert all(item.definition_version == "1.0" for item in BUILTIN_FEATURE_DEFINITIONS)
     assert all(
         item.parameters_schema_version == "1.0"

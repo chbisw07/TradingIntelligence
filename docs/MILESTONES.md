@@ -23,7 +23,9 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.1:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.1`.
 
-**Current milestone:** TIAF_A2.2 — Price / Return / Volatility Features.
+**TIAF_A2.2:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.2`.
+
+**Current milestone:** TIAF_A2.3 — Trend & Structure Features.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -138,7 +140,7 @@ work rather than hidden A1 behavior.
 - source quality, provenance, timestamp, and insufficient-data preservation
 - no interpretation, recommendation, Agent, broker, or execution behavior
 
-**TIAF_A2.2 — Price / Return / Volatility Features: CURRENT**
+**TIAF_A2.2 — Price / Return / Volatility Features: COMPLETE / LIVE VALIDATED**
 
 - exact price-location, logarithmic return, candle-range, drawdown, and run-up
   measurements
@@ -147,7 +149,14 @@ work rather than hidden A1 behavior.
 - worst-source quality aggregation and market-observation `as_of` semantics
 - no trend classification, score, recommendation, Agent, or execution behavior
 
-Near-term sequence: A2.2 price/return/volatility; A2.3 trend/structure; A2.4
+**TIAF_A2.3 — Trend & Structure Features: CURRENT**
+
+- completed-history moving averages, distance/spread, OLS slope, and R-squared
+- directional efficiency, close-transition fractions, and trailing runs
+- deterministic adjacent high/low fractions and rolling-range position
+- ATR-normalized distance from SMA/EMA without interpretation or signals
+
+Near-term sequence: A2.3 trend/structure; A2.4
 volume/participation; A2.5 support/resistance/breakout; A2.6 derivatives; A2.7
 multi-timeframe context; A2.8 deterministic market-state summary; A2.9 replay
 and baseline evaluation.

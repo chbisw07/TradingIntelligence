@@ -20,6 +20,8 @@ from tiaf.features.models import (
 from tiaf.features.price import PRICE_CALCULATORS
 from tiaf.features.registry import FeatureCalculator, FeatureRegistry
 from tiaf.features.returns import RETURN_CALCULATORS
+from tiaf.features.structure import STRUCTURE_CALCULATORS
+from tiaf.features.trend import TREND_CALCULATORS
 from tiaf.features.volatility import VOLATILITY_CALCULATORS
 
 _SOURCE_EVIDENCE_NAMES = {
@@ -40,6 +42,8 @@ def builtin_feature_registry() -> FeatureRegistry:
             *PRICE_CALCULATORS,
             *RETURN_CALCULATORS,
             *VOLATILITY_CALCULATORS,
+            *TREND_CALCULATORS,
+            *STRUCTURE_CALCULATORS,
         )
     )
 

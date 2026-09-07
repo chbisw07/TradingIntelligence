@@ -138,7 +138,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
   recommendations, Agents, brokers, or execution.
 - Detail: [`TIAF_A2_1_FEATURE_FOUNDATION.md`](TIAF_A2_1_FEATURE_FOUNDATION.md).
 
-### TIAF_A2.2 — Price / Return / Volatility Features — Current
+### TIAF_A2.2 — Price / Return / Volatility Features — Complete / Live Validated
 
 - Purpose: extend the stable A2.1 engine with exact price-location, return,
   candle-range, Wilder ATR, realized-volatility, rolling-extrema, drawdown,
@@ -150,11 +150,22 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_2_PRICE_RETURN_VOLATILITY.md`](TIAF_A2_2_PRICE_RETURN_VOLATILITY.md).
 
+### TIAF_A2.3 — Trend & Structure Features — Current
+
+- Purpose: add reusable completed-history moving averages, slope, linearity,
+  directional-efficiency, close-persistence, adjacent high/low structure,
+  rolling-range location, and ATR-normalized extension measurements.
+- Scope: strict windows and warm-ups, shared pure calculations, inherited
+  history quality, latest-bar market timestamps, and a read-only trend smoke.
+- Non-goals: signals, directional recommendations, subjective swing points,
+  scoring, ADX, Agents, brokers, or execution.
+- Detail: [`TIAF_A2_3_TREND_STRUCTURE.md`](TIAF_A2_3_TREND_STRUCTURE.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
-2. **A2.2 — Price / Return / Volatility Features** — Current
-3. **A2.3 — Trend & Structure Features**
+2. **A2.2 — Price / Return / Volatility Features** — Complete / Live Validated
+3. **A2.3 — Trend & Structure Features** — Current
 4. **A2.4 — Volume / Participation Features**
 5. **A2.5 — Support / Resistance / Breakout Structure**
 6. **A2.6 — Derivatives / Option-Chain Features**

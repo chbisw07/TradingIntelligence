@@ -436,7 +436,7 @@ class A22Calculator(ABC):
         request: FeatureRequest,
         *,
         status: FeatureStatus,
-        value: float | None,
+        value: int | float | None,
         quality: DataQuality,
         as_of: datetime,
         source_evidence: tuple[str, ...],
@@ -473,7 +473,7 @@ class A22Calculator(ABC):
         prepared: HistoryInput,
         *,
         status: FeatureStatus | None = None,
-        value: float | None,
+        value: int | float | None,
         lookback_bars_used: int | None = None,
         warnings: tuple[str, ...] = (),
     ) -> FeatureResult:
@@ -498,7 +498,7 @@ class A22Calculator(ABC):
         prepared: MixedInput,
         *,
         status: FeatureStatus | None = None,
-        value: float | None,
+        value: int | float | None,
         lookback_bars_used: int | None = None,
         warnings: tuple[str, ...] = (),
     ) -> FeatureResult:

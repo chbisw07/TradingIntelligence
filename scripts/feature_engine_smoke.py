@@ -42,6 +42,11 @@ def parse_args() -> argparse.Namespace:
         help="include the A2.2 price, return, range, and volatility feature set",
     )
     parser.add_argument(
+        "--trend",
+        action="store_true",
+        help="include completed-history A2.3 trend and structure features",
+    )
+    parser.add_argument(
         "--annualization-factor",
         type=float,
         help="explicit realized-volatility factor; defaults to 252 only for 1d",
@@ -144,6 +149,77 @@ def _extended_requests(
     )
 
 
+def _trend_requests(interval: str) -> tuple[FeatureRequest, ...]:
+    return (
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("period", period),),
+                interval=interval,
+            )
+            for feature_id in ("trend.sma", "trend.ema")
+            for period in (10, 20, 50)
+        ),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("period", 20),),
+                interval=interval,
+            )
+            for feature_id in (
+                "trend.distance_from_sma_percent",
+                "trend.distance_from_ema_percent",
+            )
+        ),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("fast_period", 10), ("slow_period", 20)),
+                interval=interval,
+            )
+            for feature_id in (
+                "trend.sma_spread_percent",
+                "trend.ema_spread_percent",
+            )
+        ),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("bars", 20),),
+                interval=interval,
+            )
+            for feature_id in (
+                "trend.linear_slope",
+                "trend.linear_slope_percent",
+                "trend.linear_r2",
+                "trend.directional_efficiency",
+                "trend.signed_efficiency",
+                "trend.up_close_fraction",
+                "trend.down_close_fraction",
+                "trend.flat_close_fraction",
+                "structure.higher_high_fraction",
+                "structure.higher_low_fraction",
+                "structure.lower_high_fraction",
+                "structure.lower_low_fraction",
+                "structure.position_in_rolling_range",
+            )
+        ),
+        FeatureRequest(feature_id="trend.consecutive_up_closes", interval=interval),
+        FeatureRequest(feature_id="trend.consecutive_down_closes", interval=interval),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("atr_period", 14), ("ma_period", 20)),
+                interval=interval,
+            )
+            for feature_id in (
+                "trend.distance_from_sma_atr",
+                "trend.distance_from_ema_atr",
+            )
+        ),
+    )
+
+
 def _print_bundle(
     bundle: FeatureBundle, *, as_json: bool, label: str | None = None
 ) -> None:
@@ -159,13 +235,18 @@ def main() -> int:
     """Acquire factual context through A1, then derive deterministic A2 features."""
     args = parse_args()
     try:
-        requests = (
+        base_requests = (
             _extended_requests(
                 args.history_interval,
                 annualization_factor=args.annualization_factor,
             )
             if args.extended
             else _requests(args.history_interval)
+        )
+        requests = (
+            (*base_requests, *_trend_requests(args.history_interval))
+            if args.trend
+            else base_requests
         )
         requested_at = datetime.now(TIAF_TIMEZONE)
         provider = DhanMarketDataProvider()

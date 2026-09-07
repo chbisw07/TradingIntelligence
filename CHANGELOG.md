@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added 23 TIAF_A2.3 completed-history moving-average, regression,
+  directional-efficiency, persistence, adjacent-structure, rolling-range, and
+  ATR-normalized extension measurements.
+- Added strict A2.3 window/warm-up semantics, shared pure calculations,
+  inherited history quality, latest-bar market timestamps, numerical guards,
+  a `--trend` smoke view, and architecture documentation.
 - Preserved safe provider/operation diagnostics for failed AnalysisContext
   evidence and exposed them in the read-only context smoke without leaking
   credentials or untyped exception details.

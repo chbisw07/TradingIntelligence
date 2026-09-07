@@ -59,5 +59,12 @@ intraday use must pass `--annualization-factor` explicitly. The feature layer
 performs no provider access. Use `--json` for immutable contracts or `--repeat`
 to inspect repeatability and A1 cache reuse.
 
+`--trend` adds the A2.3 completed-history moving-average, regression,
+directional-efficiency, close-persistence, adjacent high/low structure,
+rolling-range position, and ATR-extension view. It can be used alone with the
+concise baseline or combined with `--extended`. Its 10/20/50 smoke periods are
+inspection defaults, not calculator restrictions, and it does not mix current
+quote data into historical trend measurements.
+
 Development and operational scripts will be added when a concrete milestone
 requires them. The bootstrap baseline intentionally has no runtime scripts.

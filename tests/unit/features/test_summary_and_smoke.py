@@ -59,11 +59,15 @@ def test_smoke_script_help_is_user_runnable(monkeypatch: pytest.MonkeyPatch) -> 
     assert caught.value.code == 0
 
 
-@pytest.mark.parametrize("extended", [False, True])
+@pytest.mark.parametrize(
+    ("extended", "trend"),
+    [(False, False), (True, False), (False, True), (True, True)],
+)
 def test_smoke_script_builds_context_then_features_without_live_io(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
     extended: bool,
+    trend: bool,
 ) -> None:
     namespace = _load_smoke()
     smoke_globals = namespace["main"].__globals__
@@ -93,6 +97,7 @@ def test_smoke_script_builds_context_then_features_without_live_io(
             repeat=False,
             json=False,
             extended=extended,
+            trend=trend,
             annualization_factor=None,
         ),
     )
@@ -106,6 +111,12 @@ def test_smoke_script_builds_context_then_features_without_live_io(
         assert "range.move_over_atr[atr_period=14]" in output
     else:
         assert "volatility.atr[period=14]" not in output
+    if trend:
+        assert "trend.sma[period=20]" in output
+        assert "trend.linear_r2[bars=20]" in output
+        assert "structure.higher_high_fraction[bars=20]" in output
+    else:
+        assert "trend.sma[period=20]" not in output
 
 
 def test_smoke_script_is_documented() -> None:
