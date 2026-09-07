@@ -1,5 +1,6 @@
 """Public provider-neutral deterministic feature foundation."""
 
+from tiaf.features.breakout import BREAKOUT_FEATURE_DEFINITIONS
 from tiaf.features.calculators import (
     AbsoluteReturnCalculator,
     CurrentPriceCalculator,
@@ -9,6 +10,7 @@ from tiaf.features.calculators import (
     HistoryLastCloseCalculator,
     PercentReturnCalculator,
 )
+from tiaf.features.compression import COMPRESSION_FEATURE_DEFINITIONS
 from tiaf.features.definitions import BUILTIN_FEATURE_DEFINITIONS
 from tiaf.features.engine import DeterministicFeatureEngine, builtin_feature_registry
 from tiaf.features.enums import (
@@ -36,6 +38,7 @@ from tiaf.features.registry import FeatureCalculator, FeatureRegistry
 from tiaf.features.returns import RETURN_FEATURE_DEFINITIONS, LogReturnCalculator
 from tiaf.features.structure import STRUCTURE_FEATURE_DEFINITIONS
 from tiaf.features.summaries import summarize_feature_bundle
+from tiaf.features.support_resistance import SUPPORT_RESISTANCE_FEATURE_DEFINITIONS
 from tiaf.features.trend import TREND_FEATURE_DEFINITIONS
 from tiaf.features.volatility import (
     VOLATILITY_FEATURE_DEFINITIONS,
@@ -46,8 +49,10 @@ from tiaf.features.volume import VOLUME_FEATURE_DEFINITIONS
 
 __all__ = [
     "AbsoluteReturnCalculator",
+    "BREAKOUT_FEATURE_DEFINITIONS",
     "BUILTIN_FEATURE_DEFINITIONS",
     "CurrentPriceCalculator",
+    "COMPRESSION_FEATURE_DEFINITIONS",
     "DeterministicFeatureEngine",
     "FeatureBundle",
     "FeatureCalculator",
@@ -73,6 +78,7 @@ __all__ = [
     "PRICE_FEATURE_DEFINITIONS",
     "RETURN_FEATURE_DEFINITIONS",
     "STRUCTURE_FEATURE_DEFINITIONS",
+    "SUPPORT_RESISTANCE_FEATURE_DEFINITIONS",
     "TREND_FEATURE_DEFINITIONS",
     "LogReturnCalculator",
     "MoveOverAtrCalculator",

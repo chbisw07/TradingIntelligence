@@ -4,7 +4,9 @@ from uuid import NAMESPACE_URL, uuid5
 
 from tiaf.context import AnalysisContext, EvidenceStatus
 from tiaf.contracts import DataQuality
+from tiaf.features.breakout import BREAKOUT_CALCULATORS
 from tiaf.features.calculators import BUILTIN_CALCULATORS
+from tiaf.features.compression import COMPRESSION_CALCULATORS
 from tiaf.features.enums import FeatureSourceKind, FeatureStatus
 from tiaf.features.errors import (
     FeatureComputationError,
@@ -22,6 +24,7 @@ from tiaf.features.price import PRICE_CALCULATORS
 from tiaf.features.registry import FeatureCalculator, FeatureRegistry
 from tiaf.features.returns import RETURN_CALCULATORS
 from tiaf.features.structure import STRUCTURE_CALCULATORS
+from tiaf.features.support_resistance import SUPPORT_RESISTANCE_CALCULATORS
 from tiaf.features.trend import TREND_CALCULATORS
 from tiaf.features.volatility import VOLATILITY_CALCULATORS
 from tiaf.features.volume import VOLUME_CALCULATORS
@@ -48,6 +51,9 @@ def builtin_feature_registry() -> FeatureRegistry:
             *STRUCTURE_CALCULATORS,
             *VOLUME_CALCULATORS,
             *PARTICIPATION_CALCULATORS,
+            *SUPPORT_RESISTANCE_CALCULATORS,
+            *BREAKOUT_CALCULATORS,
+            *COMPRESSION_CALCULATORS,
         )
     )
 

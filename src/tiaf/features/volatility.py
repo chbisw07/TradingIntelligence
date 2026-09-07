@@ -130,11 +130,16 @@ def true_range(current: OHLCVBar, previous_close: float) -> float:
     )
 
 
+def bar_range(bar: OHLCVBar) -> float:
+    """Return one validated bar's raw high-low range."""
+    return bar.high - bar.low
+
+
 def bar_range_percent(bar: OHLCVBar) -> float:
     """Return one validated bar's high-low range divided by close."""
     if bar.close == 0:
         raise ValueError("bar range percentage is undefined for zero close")
-    return ((bar.high - bar.low) / bar.close) * 100.0
+    return (bar_range(bar) / bar.close) * 100.0
 
 
 def wilder_atr(bars: tuple[OHLCVBar, ...], period: int) -> float:

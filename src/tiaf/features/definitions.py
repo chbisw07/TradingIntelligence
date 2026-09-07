@@ -1,5 +1,7 @@
 """Stable A2.1 built-in feature definitions."""
 
+from tiaf.features.breakout import BREAKOUT_FEATURE_DEFINITIONS
+from tiaf.features.compression import COMPRESSION_FEATURE_DEFINITIONS
 from tiaf.features.enums import (
     FeatureCategory,
     FeatureSourceKind,
@@ -10,6 +12,7 @@ from tiaf.features.participation import PARTICIPATION_FEATURE_DEFINITIONS
 from tiaf.features.price import PRICE_FEATURE_DEFINITIONS
 from tiaf.features.returns import RETURN_FEATURE_DEFINITIONS
 from tiaf.features.structure import STRUCTURE_FEATURE_DEFINITIONS
+from tiaf.features.support_resistance import SUPPORT_RESISTANCE_FEATURE_DEFINITIONS
 from tiaf.features.trend import TREND_FEATURE_DEFINITIONS
 from tiaf.features.volatility import VOLATILITY_FEATURE_DEFINITIONS
 from tiaf.features.volume import VOLUME_FEATURE_DEFINITIONS
@@ -108,4 +111,7 @@ BUILTIN_FEATURE_DEFINITIONS = (
     *STRUCTURE_FEATURE_DEFINITIONS,
     *VOLUME_FEATURE_DEFINITIONS,
     *PARTICIPATION_FEATURE_DEFINITIONS,
+    *SUPPORT_RESISTANCE_FEATURE_DEFINITIONS,
+    *BREAKOUT_FEATURE_DEFINITIONS,
+    *COMPRESSION_FEATURE_DEFINITIONS,
 )

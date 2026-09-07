@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added 15 TIAF_A2.6 completed-history prior-boundary, signed-distance,
+  close/wick excursion, prior-range geometry, compression, and latest-range
+  comparison features with strict current-bar exclusion.
+- Added shared anti-lookahead range helpers, ATR/range reuse, a `--levels`
+  read-only smoke pack, numerical/provenance safeguards, regression tests, and
+  detailed placement/deferral documentation.
 - Added 17 TIAF_A2.5 completed-history raw, relative, dispersion, slope,
   persistence, close-transition participation, signed-balance, and transparent
   price/range correlation features.

@@ -29,7 +29,9 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.4:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.4`.
 
-**Current milestone:** TIAF_A2.5 — Volume / Participation Features.
+**TIAF_A2.5:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.5`.
+
+**Current milestone:** TIAF_A2.6 — Support / Resistance / Breakout Structure.
 
 ## TIAF_A0 — Domain Contracts and Foundation — COMPLETE / FROZEN
 
@@ -174,15 +176,20 @@ parameter optimization, dashboards, and custom indicators need one reusable
 versioned abstraction. Indicators complement rather than replace A2.3
 primitive measurements.
 
-**TIAF_A2.5 — Volume / Participation Features: CURRENT**
+**TIAF_A2.5 — Volume / Participation Features: COMPLETE / LIVE VALIDATED**
 
 - completed-history raw, average, median, relative, change, dispersion, and
   volume-slope measurements
 - deterministic close-transition participation and price/range alignment
 - no accumulation/distribution claims, confirmation, signal, or Agent logic
 
-Near-term sequence: A2.5 volume/participation; A2.6
-support/resistance/breakout; A2.7 derivatives; A2.8 multi-timeframe context;
+**TIAF_A2.6 — Support / Resistance / Breakout Structure: CURRENT**
+
+- prior rolling boundaries that explicitly exclude the current completed bar
+- close/wick excursion, prior-range position, and normalized range geometry
+- no subjective pivots, confirmation, score, recommendation, or Agent logic
+
+Near-term sequence: A2.6 support/resistance/breakout; A2.7 derivatives; A2.8 multi-timeframe context;
 A2.9 deterministic market-state summary; A2.10 replay and baseline evaluation.
 
 - deterministic feature engine

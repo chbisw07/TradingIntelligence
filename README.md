@@ -9,9 +9,9 @@ attributable intelligence for consumers such as TradeMonitor.
 
 The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
-`tiaf-a1.7`. A2.1 through A2.4 are complete and live-validated. The current
-**TIAF_A2.5** target adds deterministic completed-history volume and
-participation primitives alongside the feature and indicator layers.
+`tiaf-a1.7`. A2.1 through A2.5 are complete and live-validated. The current
+**TIAF_A2.6** target adds deterministic prior-boundary, support/resistance,
+breakout-excursion, and range-geometry primitives.
 
 It is **not** a trading system at this stage. It has no trading logic, agents,
 workflows, scanners, broker execution/account integration, LLM calls, or

@@ -73,6 +73,12 @@ and `--trend`; its 5/20-bar values are inspection defaults. Short history and
 undefined denominator/variance cases stay explicit, and no quote is mixed into
 the historical volume calculations.
 
+`--levels` adds the A2.6 fixed prior-boundary, signed-distance, close/wick
+excursion, prior-range geometry, compression, and latest-range comparison
+measurements. Every prior window excludes the latest completed bar. The smoke
+uses 20/50-bar level examples, ATR period 14, and 10/50 compression defaults;
+these are inspection choices rather than calculator restrictions.
+
 `indicator_engine_smoke.py` is the dedicated read-only A2.4 path. It requests
 completed history only and runs the default SuperTrend, RSI, MACD, ADX/DI,
 Bollinger, and Donchian pack. Use repeatable or comma-separated `--indicator`

@@ -52,6 +52,11 @@ def parse_args() -> argparse.Namespace:
         help="include completed-history A2.5 volume and participation features",
     )
     parser.add_argument(
+        "--levels",
+        action="store_true",
+        help="include completed-history A2.6 prior-boundary and range features",
+    )
+    parser.add_argument(
         "--annualization-factor",
         type=float,
         help="explicit realized-volatility factor; defaults to 252 only for 1d",
@@ -272,6 +277,56 @@ def _volume_requests(interval: str) -> tuple[FeatureRequest, ...]:
     )
 
 
+def _levels_requests(interval: str) -> tuple[FeatureRequest, ...]:
+    """Return the deterministic A2.6 prior-boundary measurement pack."""
+    return (
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("bars", bars),),
+                interval=interval,
+            )
+            for feature_id in ("resistance.prior_high", "support.prior_low")
+            for bars in (20, 50)
+        ),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("bars", 20),),
+                interval=interval,
+            )
+            for feature_id in (
+                "resistance.distance_percent",
+                "support.distance_percent",
+                "breakout.above_prior_high_percent",
+                "breakdown.below_prior_low_percent",
+                "breakout.high_above_prior_high_percent",
+                "breakdown.low_below_prior_low_percent",
+                "structure.position_vs_prior_range",
+                "structure.prior_range_percent",
+                "structure.latest_bar_range_vs_average",
+            )
+        ),
+        *(
+            FeatureRequest(
+                feature_id=feature_id,
+                parameters=(("atr_period", 14), ("bars", 20)),
+                interval=interval,
+            )
+            for feature_id in (
+                "resistance.distance_atr",
+                "support.distance_atr",
+                "structure.prior_range_atr",
+            )
+        ),
+        FeatureRequest(
+            feature_id="structure.range_compression_ratio",
+            parameters=(("long_bars", 50), ("short_bars", 10)),
+            interval=interval,
+        ),
+    )
+
+
 def _print_bundle(
     bundle: FeatureBundle, *, as_json: bool, label: str | None = None
 ) -> None:
@@ -299,6 +354,7 @@ def main() -> int:
             *base_requests,
             *(_trend_requests(args.history_interval) if args.trend else ()),
             *(_volume_requests(args.history_interval) if args.volume else ()),
+            *(_levels_requests(args.history_interval) if args.levels else ()),
         )
         requested_at = datetime.now(TIAF_TIMEZONE)
         provider = DhanMarketDataProvider()

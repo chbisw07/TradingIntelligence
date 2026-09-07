@@ -175,7 +175,7 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
   reusable abstraction before later feature families build on them.
 - Detail: [`TIAF_A2_4_INDICATOR_FRAMEWORK.md`](TIAF_A2_4_INDICATOR_FRAMEWORK.md).
 
-### TIAF_A2.5 — Volume / Participation Features — Current
+### TIAF_A2.5 — Volume / Participation Features — Complete / Live Validated
 
 - Purpose: add deterministic completed-history measurements of volume level,
   variation, persistence, and alignment with price movement.
@@ -187,14 +187,27 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 - Detail:
   [`TIAF_A2_5_VOLUME_PARTICIPATION.md`](TIAF_A2_5_VOLUME_PARTICIPATION.md).
 
+### TIAF_A2.6 — Support / Resistance / Breakout Structure — Current
+
+- Purpose: add anti-lookahead measurements of prior price boundaries, current
+  completed-bar distance/excursion, prior-range geometry, and range
+  compression/expansion.
+- Scope: prior rolling high/low excluding the current bar, close and wick
+  excursion, unclamped prior-range position, ATR-normalized geometry, and
+  strict exact-window comparisons.
+- Non-goals: subjective levels, pivot hindsight, breakout confirmation or
+  quality, volume confirmation, scoring, recommendations, Agents, or execution.
+- Detail:
+  [`TIAF_A2_6_SUPPORT_RESISTANCE_BREAKOUT.md`](TIAF_A2_6_SUPPORT_RESISTANCE_BREAKOUT.md).
+
 ## Near-term A2 sequence
 
 1. **A2.1 — Feature Contracts + Engine Foundation** — Complete / Live Validated
 2. **A2.2 — Price / Return / Volatility Features** — Complete / Live Validated
 3. **A2.3 — Trend & Structure Features** — Complete / Live Validated
 4. **A2.4 — Indicator Framework + Initial Indicator Library** — Complete / Live Validated
-5. **A2.5 — Volume / Participation Features** — Current
-6. **A2.6 — Support / Resistance / Breakout Structure**
+5. **A2.5 — Volume / Participation Features** — Complete / Live Validated
+6. **A2.6 — Support / Resistance / Breakout Structure** — Current
 7. **A2.7 — Derivatives / Option-Chain Features**
 8. **A2.8 — Multi-Timeframe Feature Context**
 9. **A2.9 — Deterministic Market-State / Feature Summary**

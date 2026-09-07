@@ -2,6 +2,8 @@
 
 ## Status and scope
 
+**Status: COMPLETE / LIVE VALIDATED** at tag `tiaf-a2.5`.
+
 TIAF_A2.5 adds provider-neutral, deterministic measurements of participation
 from completed historical OHLCV bars. It extends the accepted A2 feature
 registry and engine; it does not introduce another framework. Every definition

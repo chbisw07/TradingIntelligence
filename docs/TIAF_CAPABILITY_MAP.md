@@ -34,8 +34,15 @@ Statuses describe repository reality:
 | Trend / structure primitives | IMPLEMENTED | A2.3 features |
 | Indicator framework and initial library | IMPLEMENTED | A2.4 |
 | Volume / participation primitives | IMPLEMENTED | A2.5 completed-history features |
-| Support / resistance | PLANNED | A2.6 |
-| Breakout / compression | PLANNED | A2.6 |
+| Support / resistance primitives | IMPLEMENTED | A2.6 fixed prior boundaries |
+| Prior-boundary breakout primitives | IMPLEMENTED | A2.6 close/wick excursions |
+| Range compression / expansion | IMPLEMENTED | A2.6 prior/latest range geometry |
+| Swing pivots / fractals | FUTURE | Requires confirmation-time semantics |
+| Classic floor pivots | FUTURE | Level/Indicator extension with session semantics |
+| Multi-timeframe levels | PLANNED | A2.8 |
+| Support / resistance scoring | FUTURE | Later deterministic interpretation |
+| Breakout quality scoring | FUTURE | A2.9 or later strategy layer |
+| Failed-breakout classification | FUTURE | Market-state/replay event semantics |
 | Derivatives deterministic features | PLANNED | A2.7 |
 | Relative strength | FUTURE | Deterministic contextual analysis |
 | Sector rotation | FUTURE | Deterministic contextual analysis |
@@ -59,6 +66,7 @@ Statuses describe repository reality:
 | Session VWAP | FUTURE | Indicator extension with explicit intraday sessions |
 | Anchored VWAP | FUTURE | Indicator extension with explicit anchor contract |
 | Volume profile | FUTURE | Deterministic analysis with explicit binning semantics |
+| Market profile | FUTURE | Deterministic analysis with explicit session/binning semantics |
 | Delivery / participant statistics | FUTURE | Requires normalized provider evidence |
 | HalfTrend | FUTURE | Deferred pending a named canonical variant |
 | Future / proprietary indicators | FUTURE | Explicit registry extensions |

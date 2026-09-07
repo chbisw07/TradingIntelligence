@@ -60,14 +60,15 @@ def test_smoke_script_help_is_user_runnable(monkeypatch: pytest.MonkeyPatch) -> 
 
 
 @pytest.mark.parametrize(
-    ("extended", "trend", "volume"),
+    ("extended", "trend", "volume", "levels"),
     [
-        (False, False, False),
-        (True, False, False),
-        (False, True, False),
-        (True, True, False),
-        (False, False, True),
-        (True, True, True),
+        (False, False, False, False),
+        (True, False, False, False),
+        (False, True, False, False),
+        (True, True, False, False),
+        (False, False, True, False),
+        (False, False, False, True),
+        (True, True, True, True),
     ],
 )
 def test_smoke_script_builds_context_then_features_without_live_io(
@@ -76,6 +77,7 @@ def test_smoke_script_builds_context_then_features_without_live_io(
     extended: bool,
     trend: bool,
     volume: bool,
+    levels: bool,
 ) -> None:
     namespace = _load_smoke()
     smoke_globals = namespace["main"].__globals__
@@ -107,6 +109,7 @@ def test_smoke_script_builds_context_then_features_without_live_io(
             extended=extended,
             trend=trend,
             volume=volume,
+            levels=levels,
             annualization_factor=None,
         ),
     )
@@ -131,6 +134,12 @@ def test_smoke_script_builds_context_then_features_without_live_io(
         assert "participation.signed_volume_balance[bars=20]" in output
     else:
         assert "volume.relative[bars=20]" not in output
+    if levels:
+        assert "resistance.prior_high[bars=20]" in output
+        assert "breakout.high_above_prior_high_percent[bars=20]" in output
+        assert "structure.range_compression_ratio[long_bars=50,short_bars=10]" in output
+    else:
+        assert "resistance.prior_high[bars=20]" not in output
 
 
 def test_smoke_script_is_documented() -> None:
