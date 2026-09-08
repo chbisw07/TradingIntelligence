@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## Planned TIAF_A3 sequence — Architecture Defined / A3.1 Next
+## TIAF_A3 sequence — Architecture Accepted / A3.1 Pending Acceptance
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -298,11 +298,14 @@ acceptance, deferrals, and handoffs are in
 [`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md). No item below is
 implemented merely by being documented.
 
-1. **A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation — NEXT**
+1. **A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation — IMPLEMENTED / PENDING ACCEPTANCE**
    Freeze immutable requests, evidence references/packs, claims/citations,
    opinions, missing-evidence requests, budgets/usage, run records,
    capabilities, the calibrated-forecast consumer seam, typed failures, and
-   `SpecialistAgent`/`ReasoningProvider` protocols. No tool/model execution.
+   `SpecialistAgent`/`ReasoningProvider` protocols, registry, deterministic
+   serialization, and bounded single-specialist runtime. No tool/model
+   execution. Detail:
+   [`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md).
 2. **A3.2 — Controlled Evidence, Reasoning, and Budget Gateways — PLANNED**
    Enforce allow-listed read capabilities, schema-constrained optional
    reasoning, fingerprints/cache, least privilege, and complete budget/usage

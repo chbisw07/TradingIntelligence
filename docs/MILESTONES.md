@@ -42,9 +42,10 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A2.10:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.10`.
 
-**TIAF_A3 — Specialist Intelligence: ARCHITECTURE DEFINED / READY FOR
-IMPLEMENTATION.** **Next:** TIAF_A3.1 — Agent Contracts and Provider-Neutral
-Runtime Foundation. No A3 runtime is implemented.
+**TIAF_A3_ARCH — COMPLETE / ACCEPTED** at tag `tiaf-a3-arch`.
+
+**TIAF_A3.1 — Agent Contracts and Runtime Foundation: IMPLEMENTED / PENDING
+ACCEPTANCE.** A3.2 has not started.
 
 ## Deferral governance
 
@@ -263,7 +264,7 @@ records are `TIAF_A2_FOUNDATION_BASELINE.md` and
 
 **Acceptance:** reproducible non-AI rankings exist as a benchmark the Agent system must later beat.
 
-## TIAF_A3 — Specialist Intelligence — Architecture Defined / Ready
+## TIAF_A3 — Specialist Intelligence — Architecture Accepted
 
 Planned bounded capabilities are Technical/Market Structure,
 Fundamental/Company Quality, News/Catalyst/Event, Relative, Sector/Rotation,
@@ -279,6 +280,13 @@ relative/sector/macro; A3.7 derivatives/risk; A3.8 Planner; A3.9 structured
 underlying intelligence; and A3.10 replay/cost/failure hardening. See
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md) and
 [`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md).
+
+**A3.1 implementation:** immutable Agent/evidence/claim/confidence/budget/run
+contracts, AgentOpinion v2 with frozen A0-v1 compatibility, runtime-checkable
+protocols, extensible registry, deterministic serialization, and an exactly-one-
+specialist failure-isolating runtime. See
+[`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). Status is
+implemented/pending acceptance; A3.2 is not started.
 
 **Acceptance:** a bounded A2-screened set can produce zero or more replayable,
 cited underlying-opportunity records with separate specialist opinions,

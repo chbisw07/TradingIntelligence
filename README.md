@@ -11,8 +11,9 @@ The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
 `tiaf-a1.7`. **TIAF_A2.1** through **TIAF_A2.10** form the complete,
 live-validated deterministic A2 platform, frozen at `tiaf-a2-baseline`.
-**TIAF_A3 Specialist Intelligence architecture is defined and ready for
-implementation; A3.1 is next and no A3 runtime has been implemented.**
+**TIAF_A3 Specialist Intelligence architecture is accepted at `tiaf-a3-arch`.
+A3.1 contracts and the bounded single-specialist runtime are implemented and
+pending acceptance; A3.2 has not started.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -75,7 +76,9 @@ The complete deterministic platform and closure evidence are recorded in the
 the frozen A2 evidence and replay benchmark. The authoritative
 [A3 architecture](docs/TIAF_A3_ARCHITECTURE.md) and
 [detailed A3 roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md) define the specialist,
-evidence, budget, failure, and milestone boundaries before A3.1 begins.
+evidence, budget, failure, and milestone boundaries. The
+[A3.1 technical record](docs/TIAF_A3_1_AGENT_FOUNDATION.md) documents the
+implemented provider-neutral contract and runtime foundation.
 
 Intentional future work and architectural non-goals are tracked under stable
 IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are

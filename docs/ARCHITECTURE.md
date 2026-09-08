@@ -50,8 +50,10 @@ provider-free replay/evaluation. The provider-neutral A3 architecture is now
 defined in [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), with sequential
 implementation gates in
 [`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md). Planning and
-interpretive runtime namespaces remain future boundaries. No Agent, external
-model call, or execution behavior is implemented.
+interpretive namespaces now contain A3.1 provider-neutral contracts, registry,
+and an exactly-one-specialist runtime foundation. No real specialist market
+logic, evidence gateway, external model call, orchestration, or execution
+behavior is implemented.
 
 ## A3 architecture boundary
 

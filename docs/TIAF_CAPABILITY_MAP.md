@@ -71,7 +71,7 @@ Statuses describe repository reality:
 | Synthetic golden regression | IMPLEMENTED | A2.10 pytest-built deterministic fixtures |
 | Arbitrary historical reconstruction | DEFERRED | Point-in-time data-vintage boundary; DEF-049 |
 | Scheduled subsequent-outcome acquisition | DEFERRED | Calendar/queue/retention boundary; DEF-051 |
-| Calibrated forecast evidence contract | PLANNED | A3.1 consumer seam; no forecast generation |
+| Calibrated forecast evidence contract | IMPLEMENTED | A3.1 consumer seam; no forecast generation |
 | Forecast generation / calibration | PLANNED | A7 Evaluation, Forecasting and Learning |
 
 ## Indicators
@@ -131,14 +131,16 @@ calendars, diagonals, ratio spreads, and defined-risk variants.
 
 ## Agent intelligence
 
-The architecture is defined in
-[`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md); runtime remains planned.
-Agents consume controlled evidence and do not belong inside deterministic
-calculators.
+The architecture is accepted in
+[`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md). A3.1 contracts and the
+bounded single-specialist runtime are implemented/pending acceptance; evidence
+gateways and actual specialist intelligence remain planned. Agents consume
+controlled evidence and do not belong inside deterministic calculators.
 
 | Capability | Status | Placement |
 |---|---|---|
-| Agent contracts / provider-neutral protocols | PLANNED | A3.1; next implementation target, DEF-002 |
+| Agent contracts / provider-neutral protocols | IMPLEMENTED | A3.1; pending acceptance, DEF-002 remains open until milestone acceptance |
+| Single-specialist registry/runtime foundation | IMPLEMENTED | A3.1; no tools, model calls, or orchestration |
 | Controlled evidence/reasoning/budget gateways | PLANNED | A3.2 |
 | Technical / market-structure interpretation | PLANNED | A3.3 |
 | Fundamental / company-quality interpretation | PLANNED | A3.4 |

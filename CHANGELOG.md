@@ -4,12 +4,21 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added the TIAF_A3.1 provider-neutral Agent foundation: stable specialist and
+  controlled-capability identities, immutable requests/evidence/claims/
+  confidence/opinion/run records, budget and usage enforcement, runtime-
+  checkable specialist/reasoning protocols, an extensible registry, and a
+  failure-isolating single-specialist runtime.
+- Preserved the frozen A0 AgentOpinion schema 1.0 alongside an explicit A3
+  AgentOpinion v2 compatibility boundary, added deterministic run-record JSON,
+  a calibrated-forecast consumer seam, security/architecture coverage, and no
+  provider, LLM, LangGraph, broker, option-expression, or position behavior.
 - Defined the provider-neutral TIAF_A3 Specialist Intelligence architecture
   and sequential A3.1–A3.10 implementation roadmap. The design preserves A2 as
   the visible deterministic benchmark, introduces controlled evidence and
   budget gateways, instrument-aware specialist planning, cited claims,
   separated confidence dimensions, replay/cost/failure records, and a future
-  calibrated-forecast seam. A3 runtime remains unimplemented.
+  calibrated-forecast seam. That architecture pass implemented no runtime.
 - Assigned fundamental and news/event evidence foundations to A3, refined A7
   to include forecasting/calibration without renumbering major milestones, and
   removed CE/PE from planned A3 output because A6 owns option expression.

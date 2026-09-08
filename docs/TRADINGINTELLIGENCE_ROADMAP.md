@@ -282,7 +282,7 @@ major tag is `tiaf-a2-baseline`.
 
 # TIAF_A3 — Specialist Intelligence
 
-**Status: ARCHITECTURE DEFINED / READY FOR IMPLEMENTATION; A3.1 NEXT**
+**Status: ARCHITECTURE ACCEPTED; A3.1 IMPLEMENTED / PENDING ACCEPTANCE; A3.2 NOT STARTED**
 
 ## Goal
 
@@ -317,7 +317,7 @@ replacing the A2 benchmark.
 
 ### Detailed implementation sequence
 
-1. **A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation** — NEXT
+1. **A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation** — IMPLEMENTED / PENDING ACCEPTANCE
 2. **A3.2 — Controlled Evidence, Reasoning, and Budget Gateways** — PLANNED
 3. **A3.3 — Technical and Market Structure Specialist** — PLANNED
 4. **A3.4 — Fundamental Evidence and Company Quality Specialist** — PLANNED
@@ -330,6 +330,7 @@ replacing the A2 benchmark.
 
 The authoritative decisions and milestone gates are in
 `TIAF_A3_ARCHITECTURE.md` and `TIAF_A3_DETAILED_ROADMAP.md`.
+The A3.1 implementation record is `TIAF_A3_1_AGENT_FOUNDATION.md`.
 
 ### Output
 

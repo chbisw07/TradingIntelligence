@@ -1,1 +1,112 @@
-"""Reserved namespace for future specialist agents."""
+"""Public framework-independent A3.1 specialist intelligence foundation."""
+
+from .budget import AgentBudget, AgentUsage
+from .compatibility import agent_opinion_v1_to_v2, agent_opinion_v2_to_v1
+from .enums import (
+    AgentCapability,
+    AgentRunStatus,
+    AgentStance,
+    AnalysisMode,
+    BaselineAgreement,
+    CalibrationStatus,
+    CitationRole,
+    ClaimKind,
+    EvidenceImportance,
+    ReasoningStatus,
+    SpecialistCostTier,
+    SpecialistId,
+)
+from .errors import (
+    AgentBudgetExceededError,
+    AgentError,
+    AgentEvidenceError,
+    AgentNotRegisteredError,
+    AgentOutputValidationError,
+    AgentTimeoutError,
+    ReasoningProviderError,
+)
+from .evidence import (
+    AgentEvidencePack,
+    AgentEvidenceReference,
+    EvidenceCitation,
+    EvidenceClaim,
+    MissingEvidenceRequest,
+)
+from .models import (
+    AgentConfidence,
+    AgentFailure,
+    AgentOpinionV2,
+    AgentRequest,
+    AgentRunRecord,
+    EmpiricallyCalibratedConfidence,
+    ForecastEvidence,
+    ForecastQuantile,
+    ForecastThresholdProbability,
+    ForecastValidationMetric,
+    PolicyDerivedConfidence,
+    ReasoningField,
+    ReasoningModelIdentity,
+    ReasoningRequest,
+    ReasoningResponse,
+    SpecialistCapability,
+)
+from .protocols import ReasoningProvider, SpecialistAgent
+from .registry import AgentRegistry
+from .runtime import AgentRuntime
+from .serialization import agent_record_json, load_agent_record_json
+from .summaries import AgentRunSummary, summarize_agent_run
+
+__all__ = [
+    "AgentBudget",
+    "AgentBudgetExceededError",
+    "AgentCapability",
+    "AgentConfidence",
+    "AgentError",
+    "AgentEvidenceError",
+    "AgentEvidencePack",
+    "AgentEvidenceReference",
+    "AgentFailure",
+    "AgentNotRegisteredError",
+    "AgentOpinionV2",
+    "AgentOutputValidationError",
+    "AgentRegistry",
+    "AgentRequest",
+    "AgentRunRecord",
+    "AgentRunStatus",
+    "AgentRunSummary",
+    "AgentRuntime",
+    "AgentStance",
+    "AgentTimeoutError",
+    "AgentUsage",
+    "AnalysisMode",
+    "BaselineAgreement",
+    "CalibrationStatus",
+    "CitationRole",
+    "ClaimKind",
+    "EmpiricallyCalibratedConfidence",
+    "EvidenceCitation",
+    "EvidenceClaim",
+    "EvidenceImportance",
+    "ForecastEvidence",
+    "ForecastQuantile",
+    "ForecastThresholdProbability",
+    "ForecastValidationMetric",
+    "MissingEvidenceRequest",
+    "PolicyDerivedConfidence",
+    "ReasoningField",
+    "ReasoningModelIdentity",
+    "ReasoningProvider",
+    "ReasoningProviderError",
+    "ReasoningRequest",
+    "ReasoningResponse",
+    "ReasoningStatus",
+    "SpecialistAgent",
+    "SpecialistCapability",
+    "SpecialistCostTier",
+    "SpecialistId",
+    "agent_opinion_v1_to_v2",
+    "agent_opinion_v2_to_v1",
+    "agent_record_json",
+    "load_agent_record_json",
+    "summarize_agent_run",
+]

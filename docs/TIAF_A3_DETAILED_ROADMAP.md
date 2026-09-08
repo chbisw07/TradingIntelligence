@@ -4,9 +4,11 @@
 
 **A2:** complete/baselined at `tiaf-a2-baseline`.
 
-**A3:** architecture defined; ready for implementation.
+**A3 architecture:** accepted at `tiaf-a3-arch`.
 
-**A3.1:** next; not implemented.
+**A3.1:** implemented / pending acceptance.
+
+**A3.2:** not started.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -60,7 +62,7 @@ flowchart LR
 An implementation may develop independent adapters internally in parallel,
 but acceptance and tags follow this dependency order so each handoff is stable.
 
-## A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation
+## A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation — Implemented / Pending Acceptance
 
 ### Goal
 
@@ -775,9 +777,9 @@ A3 is complete only when:
 
 ## Immediate next implementation scope
 
-The exact next scope is **A3.1 only**: implement and test the immutable,
-provider-neutral contracts, enums, failures, and `SpecialistAgent`/
-`ReasoningProvider` protocols listed in the A3.1 section; include only local
-fakes and serialization/architecture tests. Do not add gateways, prompts,
-LangGraph, external model calls, specialist logic, forecasting models, ranking,
-position semantics, option-expression semantics, or execution authority.
+The A3.1 implementation is recorded in
+[`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). After A3.1
+acceptance, the next scope is **A3.2 only**: controlled evidence, optional
+reasoning, and budget gateways. A3.2 must not add specialist market logic,
+multi-Agent planning, arbitration, position semantics, option expression, or
+execution authority.

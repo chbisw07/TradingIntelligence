@@ -68,8 +68,9 @@ statistical policy optimization (future evaluation), or broker execution
 
 The architecture entry gate is satisfied at
 `e27674070537a7d81e6e117283913d7da2785d1c` (`tiaf-a2-baseline`). A3 is
-**architecture defined / ready for implementation**, and **A3.1 is next**.
-A3.1 is limited to immutable provider-neutral contracts, enums, failures,
-consumer-facing forecast evidence, and `SpecialistAgent`/`ReasoningProvider`
-protocols with local fakes and contract tests. It does not authorize evidence
-gateways, external model calls, specialist reasoning, or orchestration.
+**accepted** at `tiaf-a3-arch`. A3.1 contracts and bounded single-specialist
+runtime are **implemented / pending acceptance**; A3.2 has not started. The
+A3.1 result is documented in
+[`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md) and does not
+authorize evidence gateways, external model calls, specialist market logic,
+or orchestration.
