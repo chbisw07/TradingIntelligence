@@ -16,7 +16,8 @@ A3.1 contracts and the bounded single-specialist runtime are accepted at
 `tiaf-a3.1`. A3.2 controlled evidence/reasoning/budget gateways are accepted at
 `tiaf-a3.2`. A3.3 Technical / Market-Structure Specialist is complete and
 accepted at `tiaf-a3.3`. A3.4 Fundamental / Company-Quality Intelligence is
-implemented and pending acceptance; A3.5 is next.**
+accepted at `tiaf-a3.4`. A3.5 News / Catalyst / Event Intelligence is
+implemented and pending acceptance; A3.6 is next.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -91,6 +92,10 @@ policy, cited claims, zero-LLM behavior, and live-validation status. The
 [A3.4 fundamental intelligence record](docs/TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md)
 documents point-in-time company facts, period-safe metrics, the controlled
 fundamental gateway, cited company-quality interpretation, and source limits.
+The [A3.5 news/event intelligence record](docs/TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md)
+documents event identity and information time, revisions, conservative
+clustering, controlled news/filing reads, cited catalyst interpretation,
+zero-LLM behavior, and production-source limits.
 
 Intentional future work and architectural non-goals are tracked under stable
 IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are

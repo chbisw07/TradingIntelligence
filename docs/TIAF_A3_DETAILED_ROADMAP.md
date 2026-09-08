@@ -12,7 +12,9 @@
 
 **A3.3:** complete / accepted at `tiaf-a3.3`.
 
-**A3.4:** implemented / pending acceptance.
+**A3.4:** complete / accepted at `tiaf-a3.4`.
+
+**A3.5:** implemented / pending acceptance.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -291,7 +293,7 @@ Additional indicators (existing DEF records), automatic benchmark mapping
 
 Establishes the implementation/test template for evidence-specific specialists.
 
-## A3.4 — Fundamental Evidence and Company Quality Specialist — Implemented / Pending Acceptance
+## A3.4 — Fundamental Evidence and Company Quality Specialist — Complete / Accepted
 
 ### Goal
 
@@ -360,7 +362,7 @@ models.
 Supplies a reusable external-evidence acquisition pattern and a company context
 for event interpretation.
 
-## A3.5 — News, Filing, Catalyst, and Event Intelligence
+## A3.5 — News, Filing, Catalyst, and Event Intelligence — Implemented / Pending Acceptance
 
 ### Goal
 
@@ -787,8 +789,9 @@ A3 is complete only when:
 The accepted A3.1 implementation is recorded in
 [`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). The A3.2
 implementation is recorded in
-[`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). After A3.2
-acceptance, the current scope is **A3.4 only**: provider-neutral fundamental
-evidence and company-quality interpretation. A3.4 must not add
-multi-Agent planning, arbitration, position semantics, option expression, or
-execution authority.
+[`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). The current
+scope is **A3.5 only**: provider-neutral event evidence, deterministic
+point-in-time preprocessing, bounded news/filing gateways, and cited catalyst
+interpretation. A3.5 does not add A3.6 context specialists, multi-Agent
+planning, arbitration, position semantics, option expression, or execution
+authority.

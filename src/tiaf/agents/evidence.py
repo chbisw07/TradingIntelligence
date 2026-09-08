@@ -54,6 +54,7 @@ class EvidenceFactKind(StrEnum):
     INDICATOR = "INDICATOR"
     BASELINE = "BASELINE"
     FUNDAMENTAL = "FUNDAMENTAL"
+    EVENT = "EVENT"
 
 
 class EvidenceFactParameter(ContractModel):

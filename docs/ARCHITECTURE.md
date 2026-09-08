@@ -59,9 +59,11 @@ specialist over immutable scalar A2 fact projections, with typed detail, cited
 claims, explicit contradiction, and zero model usage. A3.4 adds provider-neutral
 point-in-time fundamental facts, deterministic period-safe preprocessing, a
 controlled read gateway, and a cited no-LLM Fundamental / Company-Quality
-specialist. Its bounded adapter accepts normalized caller-owned/licensed data;
-no production source scraper, live model adapter, multi-Agent orchestration, or
-execution behavior is implemented.
+specialist. A3.5 adds provider-neutral point-in-time event records, revision and
+dedupe clusters, controlled news/filing reads, and a deterministic cited
+News/Event specialist. The bounded A3.4/A3.5 adapters accept normalized
+caller-owned/licensed data; no production scraper/feed, live model adapter,
+multi-Agent orchestration, or execution behavior is implemented.
 
 ## A3 architecture boundary
 

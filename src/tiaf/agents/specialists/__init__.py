@@ -21,6 +21,16 @@ from .fundamental import (
     default_fundamental_policy,
     fundamental_assessment_from_opinion,
 )
+from .news_event import (
+    EventClusterAssessment,
+    EventImpactDimension,
+    NewsEventAssessment,
+    NewsEventInterpretationPolicy,
+    NewsEventReasonCode,
+    NewsEventSpecialist,
+    default_news_event_policy,
+    news_event_assessment_from_opinion,
+)
 from .technical import (
     BreakoutState,
     ExtensionState,
@@ -51,6 +61,8 @@ __all__ = [
     "CompanyQualityState",
     "EarningsQualityState",
     "ExtensionState",
+    "EventClusterAssessment",
+    "EventImpactDimension",
     "FundamentalAssessment",
     "FundamentalContradiction",
     "FundamentalInterpretationPolicy",
@@ -59,6 +71,10 @@ __all__ = [
     "FundamentalSpecialist",
     "GrowthState",
     "MarginState",
+    "NewsEventAssessment",
+    "NewsEventInterpretationPolicy",
+    "NewsEventReasonCode",
+    "NewsEventSpecialist",
     "OwnershipEvidenceState",
     "MomentumState",
     "MultiTimeframeState",
@@ -77,9 +93,11 @@ __all__ = [
     "baseline_facts",
     "default_technical_policy",
     "default_fundamental_policy",
+    "default_news_event_policy",
     "feature_fact",
     "indicator_facts",
     "multi_timeframe_constituent_facts",
     "technical_assessment_from_opinion",
     "fundamental_assessment_from_opinion",
+    "news_event_assessment_from_opinion",
 ]

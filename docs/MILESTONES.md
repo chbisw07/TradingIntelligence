@@ -53,8 +53,11 @@ tag `tiaf-a3.1`.
 **TIAF_A3.3 — Technical / Market-Structure Specialist: COMPLETE / ACCEPTED** at
 tag `tiaf-a3.3`.
 
-**TIAF_A3.4 — Fundamental / Company-Quality Intelligence: IMPLEMENTED / PENDING
-ACCEPTANCE.** A3.5 is next.
+**TIAF_A3.4 — Fundamental / Company-Quality Intelligence: COMPLETE / ACCEPTED**
+at tag `tiaf-a3.4`.
+
+**TIAF_A3.5 — News / Catalyst / Event Intelligence: IMPLEMENTED / PENDING
+ACCEPTANCE.** A3.6 is next.
 
 ## Deferral governance
 

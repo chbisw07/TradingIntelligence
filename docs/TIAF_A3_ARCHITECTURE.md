@@ -4,15 +4,15 @@
 
 **Status:** architecture accepted at `tiaf-a3-arch`.
 
-**Runtime status:** A3.1 through A3.3 complete / accepted; A3.4 implemented /
+**Runtime status:** A3.1 through A3.4 complete / accepted; A3.5 implemented /
 pending acceptance.
 
 **Accepted substrate:** `tiaf-a2-baseline` at
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
-**Current milestone:** TIAF_A3.4 — Fundamental / Company-Quality Intelligence,
+**Current milestone:** TIAF_A3.5 — News / Catalyst / Event Intelligence,
 documented in
-[`TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md`](TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md).
+[`TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md`](TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md).
 
 This is the authoritative architecture for TIAF_A3. It supplements the
 [canonical roadmap](TRADINGINTELLIGENCE_ROADMAP.md), and the executable sequence

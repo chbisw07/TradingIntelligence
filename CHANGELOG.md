@@ -4,6 +4,16 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added TIAF_A3.5 provider-neutral event/entity/source/structured-fact,
+  point-in-time revision, contradiction, dedupe-cluster, and dataset contracts;
+  deterministic classification/relevance/materiality helpers; stable JSON; and
+  a bounded caller-supplied/test provider adapter.
+- Added controlled `READ_NEWS` and filing-source-restricted `READ_FILINGS`
+  gateway projections with cache-version identity, plus the deterministic cited
+  News / Catalyst / Event Specialist and typed cluster assessment. Duplicate
+  reports are one interpreted event, later corrections cannot leak backward,
+  conflicting sources remain visible, and model usage is zero. No production
+  scraper/feed, recommendation, forecast, or execution behavior was added.
 - Added TIAF_A3.4 provider-neutral company identity, reporting-period,
   point-in-time fundamental fact/dataset, revision, source-quality, unit,
   currency, and deterministic derivation contracts.

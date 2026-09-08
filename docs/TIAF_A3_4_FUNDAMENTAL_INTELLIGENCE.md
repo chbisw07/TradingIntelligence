@@ -2,15 +2,15 @@
 
 ## Status and boundary
 
-**Status:** implemented / pending acceptance.  
+**Status:** complete / accepted at `tiaf-a3.4`.
 **Accepted base:** `tiaf-a3.3`.  
 **Contract, gateway, specialist, policy, and formula version:** `1.0`.
 
 A3.4 adds point-in-time, provider-neutral company evidence and a deterministic,
 cited Fundamental Specialist for listed equities. It does not add news, live web
 browsing, model forecasts, target prices, recommendations, order authority, or
-multi-Agent arbitration. A3.5 remains the News / Filing / Catalyst / Event
-milestone.
+multi-Agent arbitration. A3.5 owns News / Filing / Catalyst / Event
+intelligence.
 
 ## Architecture
 
