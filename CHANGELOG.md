@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added the TIAF_A3.3 deterministic Technical / Market-Structure Specialist,
+  immutable scalar A2 evidence-fact projections, typed technical assessment,
+  dimension-grouped interpretation, explicit contradiction/invalidation,
+  cited claims, A2 baseline comparison, and no-LLM registry/runtime path.
+- Added versioned horizon-aware technical policy 1.0, 13 synthetic market-state
+  cases, confidence/degradation/authority coverage, and a read-only live
+  inspection CLI. Live representative attempts correctly stopped on expired
+  Dhan credentials (`DH-901`) without inventing evidence.
 - Added TIAF_A3.2 controlled evidence and optional reasoning gateways with
   deterministic registries, least-privilege capability authorization, a
   read-only frozen-A2 evidence adapter, freshness/version-aware result reuse,

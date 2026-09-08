@@ -4,20 +4,21 @@
 
 **Status:** architecture accepted at `tiaf-a3-arch`.
 
-**Runtime status:** A3.1 complete / accepted; A3.2 implemented / pending acceptance.
+**Runtime status:** A3.1 and A3.2 complete / accepted; A3.3 implemented / pending
+acceptance.
 
 **Accepted substrate:** `tiaf-a2-baseline` at
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
-**Current milestone:** TIAF_A3.2 — Controlled Evidence, Reasoning, and Budget
-Gateways, documented in
-[`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md).
+**Current milestone:** TIAF_A3.3 — Technical / Market-Structure Specialist,
+documented in
+[`TIAF_A3_3_TECHNICAL_SPECIALIST.md`](TIAF_A3_3_TECHNICAL_SPECIALIST.md).
 
 This is the authoritative architecture for TIAF_A3. It supplements the
 [canonical roadmap](TRADINGINTELLIGENCE_ROADMAP.md), and the executable sequence
 is defined in the [A3 detailed roadmap](TIAF_A3_DETAILED_ROADMAP.md). It does
-not claim that specialist intelligence, a live model provider, multi-Agent
-orchestration, or execution authority exists.
+not claim that unimplemented specialists, a live model provider,
+multi-Agent orchestration, or execution authority exist.
 
 ## North star
 

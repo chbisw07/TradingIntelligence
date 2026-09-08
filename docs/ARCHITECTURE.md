@@ -54,8 +54,10 @@ interpretive namespaces contain the accepted A3.1 provider-neutral contracts,
 registry, and exactly-one-specialist runtime foundation. A3.2 adds controlled
 evidence and optional reasoning gateways, least-privilege capability policy,
 model/tool budgets, freshness-aware evidence reuse, no-LLM mode, and audit
-records. No real specialist market logic, live model adapter, multi-Agent
-orchestration, or execution behavior is implemented.
+records. A3.3 adds the first deterministic Technical / Market-Structure
+specialist over immutable scalar A2 fact projections, with typed detail, cited
+claims, explicit contradiction, and zero model usage. No live model adapter,
+multi-Agent orchestration, or execution behavior is implemented.
 
 ## A3 architecture boundary
 

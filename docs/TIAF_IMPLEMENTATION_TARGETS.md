@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.1 Accepted / A3.2 Pending Acceptance
+## TIAF_A3 sequence — A3.2 Accepted / A3.3 Pending Acceptance
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -306,14 +306,15 @@ implemented merely by being documented.
    serialization, and bounded single-specialist runtime. No tool/model
    execution. Detail:
    [`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md).
-2. **A3.2 — Controlled Evidence, Reasoning, and Budget Gateways — IMPLEMENTED / PENDING ACCEPTANCE**
+2. **A3.2 — Controlled Evidence, Reasoning, and Budget Gateways — COMPLETE / ACCEPTED**
    Enforce allow-listed read capabilities, schema-constrained optional
    reasoning, fingerprints/cache, least privilege, and complete budget/usage
    accounting with a first-class no-LLM mode.
    Detail: [`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md).
-3. **A3.3 — Technical and Market Structure Specialist — PLANNED**
+3. **A3.3 — Technical and Market Structure Specialist — IMPLEMENTED / PENDING ACCEPTANCE**
    Interpret and cite A2 evidence without recalculating it; preserve the A2.9
-   benchmark and all conflict.
+   benchmark and all conflict. Detail:
+   [`TIAF_A3_3_TECHNICAL_SPECIALIST.md`](TIAF_A3_3_TECHNICAL_SPECIALIST.md).
 4. **A3.4 — Fundamental Evidence and Company Quality Specialist — PLANNED**
    Add provider-neutral point-in-time contracts, deterministic preprocessing,
    one bounded read-only source path, and long-horizon company interpretation.

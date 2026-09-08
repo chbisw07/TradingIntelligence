@@ -4,9 +4,11 @@
 
 **TIAF_A3.1:** complete / accepted at `tiaf-a3.1`
 
-**TIAF_A3.2:** implemented / pending acceptance
+**TIAF_A3.2:** complete / accepted at `tiaf-a3.2`
 
-**Next:** TIAF_A3.3 — Technical and Market Structure Specialist
+**TIAF_A3.3:** implemented / pending acceptance
+
+**Next:** TIAF_A3.4 — Fundamental Evidence and Company Quality Specialist
 
 The implementation baseline is
 `4b6cb8bacd6c6e7966fac2ce52ce6ab892ebc35c`. A3.2 adds infrastructure and

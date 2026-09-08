@@ -1,8 +1,19 @@
 """Provider-neutral evidence references, claims, and missing-evidence contracts."""
 
+import math
+import re
+from enum import StrEnum
 from typing import Annotated, Self
 
-from pydantic import Field, field_validator, model_validator
+from pydantic import (
+    Field,
+    StrictBool,
+    StrictFloat,
+    StrictInt,
+    StrictStr,
+    field_validator,
+    model_validator,
+)
 
 from tiaf.context import EvidenceStatus
 from tiaf.contracts import (
@@ -18,6 +29,9 @@ from ._validation import require_unique, validate_safe_metadata
 from .enums import AgentCapability, CitationRole, ClaimKind, EvidenceImportance
 
 UnitFloat = Annotated[float, Field(ge=0, le=1, allow_inf_nan=False)]
+type EvidenceFactValue = StrictStr | StrictInt | StrictFloat | StrictBool
+type EvidenceFactParameterValue = EvidenceFactValue | None
+_FACT_METRIC_PATTERN = re.compile(r"^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$")
 
 _QUALITY_ORDER = {
     DataQuality.GOOD: 0,
@@ -31,6 +45,55 @@ _FRESHNESS_ORDER = {
     FreshnessState.STALE: 2,
     FreshnessState.UNKNOWN: 3,
 }
+
+
+class EvidenceFactKind(StrEnum):
+    """Accepted origin shape of one supplied scalar fact."""
+
+    FEATURE = "FEATURE"
+    INDICATOR = "INDICATOR"
+    BASELINE = "BASELINE"
+
+
+class EvidenceFactParameter(ContractModel):
+    """One immutable parameter needed to identify an A2 calculation exactly."""
+
+    name: NonEmptyStr
+    value: EvidenceFactParameterValue
+
+
+class EvidenceFact(ContractModel):
+    """Immutable scalar projection of an already-computed evidence value."""
+
+    fact_id: NonEmptyStr
+    kind: EvidenceFactKind
+    metric_id: NonEmptyStr
+    value: EvidenceFactValue
+    unit: NonEmptyStr | None = None
+    parameters: tuple[EvidenceFactParameter, ...] = ()
+    output_name: NonEmptyStr | None = None
+    interval: NonEmptyStr | None = None
+    as_of: TiafDateTime
+    quality: DataQuality
+    freshness: FreshnessState
+    source_evidence: tuple[NonEmptyStr, ...]
+
+    @model_validator(mode="after")
+    def validate_fact(self) -> Self:
+        if not _FACT_METRIC_PATTERN.fullmatch(self.metric_id):
+            raise ValueError("fact metric_id must be a canonical dotted identifier")
+        if isinstance(self.value, float) and not math.isfinite(self.value):
+            raise ValueError("evidence fact value must be finite")
+        names = tuple(item.name for item in self.parameters)
+        require_unique(names, "evidence fact parameters")
+        if not self.source_evidence:
+            raise ValueError("evidence fact requires source evidence")
+        require_unique(self.source_evidence, "evidence fact source evidence")
+        if self.kind is EvidenceFactKind.INDICATOR and self.output_name is None:
+            raise ValueError("indicator fact requires output_name")
+        if self.kind is not EvidenceFactKind.INDICATOR and self.output_name is not None:
+            raise ValueError("only indicator facts accept output_name")
+        return self
 
 
 class AgentEvidenceReference(ContractModel):
@@ -51,6 +114,7 @@ class AgentEvidenceReference(ContractModel):
     source_reference: NonEmptyStr | None = None
     failure_code: NonEmptyStr | None = None
     failure_detail: NonEmptyStr | None = None
+    facts: tuple[EvidenceFact, ...] = ()
     metadata: Metadata = Field(default_factory=dict)
 
     _safe_metadata = field_validator("metadata")(validate_safe_metadata)
@@ -77,6 +141,14 @@ class AgentEvidenceReference(ContractModel):
             for value in (self.quality, self.freshness, self.observed_at, self.checksum)
         ):
             raise ValueError("unavailable evidence cannot claim factual quality/provenance")
+        if self.availability not in factual and self.facts:
+            raise ValueError("unavailable evidence cannot carry factual values")
+        require_unique(tuple(item.fact_id for item in self.facts), "evidence fact IDs")
+        if any(
+            self.observed_at is not None and item.as_of > self.observed_at
+            for item in self.facts
+        ):
+            raise ValueError("evidence fact cannot postdate reference observation")
         if self.availability is EvidenceStatus.FAILED:
             if self.failure_code is None or self.failure_detail is None:
                 raise ValueError("FAILED evidence requires typed failure details")

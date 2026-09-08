@@ -126,6 +126,28 @@ resolver import and reports exact original-versus-replay equality.
 files or a persisted `--corpus` directory and reports stable field-level replay
 failures.
 
+`inspect_technical_specialist.py` is the read-only A3.3 vertical smoke path. It
+acquires accepted A2 evidence with an explicit symbol, horizon, benchmark, and
+timeframe list; freezes the A2 fingerprint and baseline; mechanically projects
+only usable scalar facts; then invokes the registered deterministic Technical
+Specialist. Output includes structured dimensions, reasons, contradiction,
+missing evidence, baseline agreement, fingerprint, and zero model usage. It
+does not recalculate A2 facts, place trades, or call a model. Example:
+
+```bash
+python scripts/inspect_technical_specialist.py \
+  --symbol RELIANCE \
+  --horizon POSITIONAL \
+  --benchmark NIFTY \
+  --timeframes 1d,1h,15m \
+  --mode deterministic
+```
+
+An existing A2.10 captured snapshot/run can be inspected entirely offline with
+`python scripts/inspect_technical_specialist.py --input /path/to/capture.json`.
+`--input` is mutually exclusive with `--symbol`; it performs no Dhan/provider
+access and preserves the capture's A2 assessment and evidence fingerprint.
+
 These are three distinct validation paths:
 
 1. **Synthetic golden tests.**

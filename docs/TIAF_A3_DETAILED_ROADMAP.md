@@ -8,7 +8,9 @@
 
 **A3.1:** complete / accepted at `tiaf-a3.1`.
 
-**A3.2:** implemented / pending acceptance.
+**A3.2:** complete / accepted at `tiaf-a3.2`.
+
+**A3.3:** implemented / pending acceptance.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -154,7 +156,7 @@ unresolved external dependency is discovered.
 A3.2 receives stable contracts/protocols against which evidence and reasoning
 gateways can be implemented without changing specialist semantics.
 
-## A3.2 — Controlled Evidence, Reasoning, and Budget Gateways — Implemented / Pending Acceptance
+## A3.2 — Controlled Evidence, Reasoning, and Budget Gateways — Complete / Accepted
 
 ### Goal
 
@@ -227,7 +229,7 @@ Distributed cache/queues (DEF-009/010), provider health/fallback
 The first specialist can consume a bounded A2 pack and optional fake/provider-
 neutral reasoning without acquiring its own tools.
 
-## A3.3 — Technical and Market Structure Specialist
+## A3.3 — Technical and Market Structure Specialist — Implemented / Pending Acceptance
 
 ### Goal
 

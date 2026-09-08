@@ -1,5 +1,6 @@
 """Immutable framework-independent contracts for A3 specialist intelligence."""
 
+import json
 from typing import Annotated, Literal, Self
 
 from pydantic import Field, JsonValue, StringConstraints, field_validator, model_validator
@@ -297,12 +298,26 @@ class AgentOpinionV2(ContractModel):
     produced_at: TiafDateTime
     valid_until: TiafDateTime | None = None
     legacy_opinion: AgentOpinionV1 | None = None
+    specialist_detail_schema_id: NonEmptyStr | None = None
+    specialist_detail_json: NonEmptyStr | None = None
     metadata: Metadata = Field(default_factory=dict)
 
     _safe_metadata = field_validator("metadata")(validate_safe_metadata)
 
     @model_validator(mode="after")
     def validate_opinion(self) -> Self:
+        if (self.specialist_detail_schema_id is None) != (
+            self.specialist_detail_json is None
+        ):
+            raise ValueError("specialist detail schema and JSON must appear together")
+        if self.specialist_detail_json is not None:
+            try:
+                detail = json.loads(self.specialist_detail_json)
+            except json.JSONDecodeError as exc:
+                raise ValueError("specialist detail must be valid JSON") from exc
+            if not isinstance(detail, dict):
+                raise ValueError("specialist detail JSON must contain an object")
+            validate_no_secrets(detail)
         if self.status in {
             AgentRunStatus.BUDGET_EXCEEDED,
             AgentRunStatus.TIMEOUT,

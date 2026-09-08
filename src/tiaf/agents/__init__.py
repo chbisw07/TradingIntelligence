@@ -30,6 +30,9 @@ from .evidence import (
     AgentEvidenceReference,
     EvidenceCitation,
     EvidenceClaim,
+    EvidenceFact,
+    EvidenceFactKind,
+    EvidenceFactParameter,
     MissingEvidenceRequest,
 )
 from .gateways import (
@@ -126,6 +129,9 @@ __all__ = [
     "EmpiricallyCalibratedConfidence",
     "EvidenceCitation",
     "EvidenceClaim",
+    "EvidenceFact",
+    "EvidenceFactKind",
+    "EvidenceFactParameter",
     "EvidenceImportance",
     "EvidenceGateway",
     "EvidenceGatewayAuditRecord",

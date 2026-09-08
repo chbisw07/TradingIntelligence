@@ -47,8 +47,11 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 **TIAF_A3.1 — Agent Contracts and Runtime Foundation: COMPLETE / ACCEPTED** at
 tag `tiaf-a3.1`.
 
-**TIAF_A3.2 — Controlled Gateways and Budgets: IMPLEMENTED / PENDING
-ACCEPTANCE.** A3.3 is next and has not started.
+**TIAF_A3.2 — Controlled Gateways and Budgets: COMPLETE / ACCEPTED** at tag
+`tiaf-a3.2`.
+
+**TIAF_A3.3 — Technical / Market-Structure Specialist: IMPLEMENTED / PENDING
+ACCEPTANCE.** A3.4 is next.
 
 ## Deferral governance
 
@@ -292,8 +295,11 @@ specialist failure-isolating runtime. See
 complete/accepted. A3.2 adds controlled evidence/reasoning registries and
 runtimes, A2 evidence reuse, capability policy, model-tier mapping, no-LLM
 mode, structured-output validation, budgets, cache keys, and audit records; it
-is implemented/pending acceptance. See
-[`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). A3.3 is next.
+is complete/accepted. See
+[`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). A3.3 adds the
+first deterministic, cited technical specialist and is pending acceptance; see
+[`TIAF_A3_3_TECHNICAL_SPECIALIST.md`](TIAF_A3_3_TECHNICAL_SPECIALIST.md). A3.4
+is next.
 
 **Acceptance:** a bounded A2-screened set can produce zero or more replayable,
 cited underlying-opportunity records with separate specialist opinions,
