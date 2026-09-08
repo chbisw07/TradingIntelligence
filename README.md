@@ -12,8 +12,9 @@ The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 `tiaf-a1.7`. **TIAF_A2.1** through **TIAF_A2.10** form the complete,
 live-validated deterministic A2 platform, frozen at `tiaf-a2-baseline`.
 **TIAF_A3 Specialist Intelligence architecture is accepted at `tiaf-a3-arch`.
-A3.1 contracts and the bounded single-specialist runtime are implemented and
-pending acceptance; A3.2 has not started.**
+A3.1 contracts and the bounded single-specialist runtime are accepted at
+`tiaf-a3.1`. A3.2 controlled evidence/reasoning/budget gateways are implemented
+and pending acceptance; A3.3 is next.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -78,7 +79,10 @@ the frozen A2 evidence and replay benchmark. The authoritative
 [detailed A3 roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md) define the specialist,
 evidence, budget, failure, and milestone boundaries. The
 [A3.1 technical record](docs/TIAF_A3_1_AGENT_FOUNDATION.md) documents the
-implemented provider-neutral contract and runtime foundation.
+accepted provider-neutral contract and runtime foundation. The
+[A3.2 gateway and budget record](docs/TIAF_A3_2_GATEWAYS_BUDGETS.md) documents
+least-privilege evidence access, A2 reuse, optional model tiers, no-LLM mode,
+budget enforcement, structured-output validation, and audit records.
 
 Intentional future work and architectural non-goals are tracked under stable
 IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are

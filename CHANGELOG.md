@@ -4,6 +4,15 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added TIAF_A3.2 controlled evidence and optional reasoning gateways with
+  deterministic registries, least-privilege capability authorization, a
+  read-only frozen-A2 evidence adapter, freshness/version-aware result reuse,
+  provider-neutral model-tier mappings, and explicit downgrade policy.
+- Added pre/post tool/model/token/total-token/cost/time budget enforcement,
+  schema-validated structured model output, sanitized failures, immutable audit
+  records, future reasoning-cache identity, and a complete no-LLM path with
+  zero provider calls or model usage. No live model adapter or specialist
+  intelligence was added.
 - Added the TIAF_A3.1 provider-neutral Agent foundation: stable specialist and
   controlled-capability identities, immutable requests/evidence/claims/
   confidence/opinion/run records, budget and usage enforcement, runtime-

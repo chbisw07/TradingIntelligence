@@ -478,7 +478,7 @@ class AgentRunRecord(ContractModel):
 
 
 class ReasoningRequest(ContractModel):
-    """Minimal structured request for a future optional reasoning provider."""
+    """Structured provider invocation assembled only by the A3.2 gateway."""
 
     reasoning_request_id: NonEmptyStr
     run_id: NonEmptyStr
@@ -491,6 +491,16 @@ class ReasoningRequest(ContractModel):
     max_output_tokens: int = Field(ge=0)
     timeout_seconds: PositiveFiniteFloat
     created_at: TiafDateTime
+    subject: Symbol | None = None
+    horizon: Horizon | None = None
+    task: NonEmptyStr | None = None
+    structured_instructions: tuple["ReasoningField", ...] = ()
+    model_tier: NonEmptyStr | None = None
+    allowed_model_capabilities: tuple[NonEmptyStr, ...] = ()
+    policy_version: NonEmptyStr | None = None
+    specialist_version: NonEmptyStr | None = None
+    temperature: FiniteFloat | None = None
+    correlation_id: NonEmptyStr | None = None
 
 
 class ReasoningField(ContractModel):
@@ -516,6 +526,7 @@ class ReasoningResponse(ContractModel):
     fields: tuple[ReasoningField, ...] = ()
     usage: AgentUsage
     completed_at: TiafDateTime
+    finish_reason: NonEmptyStr | None = None
     failure: AgentFailure | None = None
 
     @model_validator(mode="after")

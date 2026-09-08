@@ -35,6 +35,7 @@ class AgentBudget(ContractModel):
     max_tool_calls: int = Field(default=0, ge=0)
     max_input_tokens: int = Field(default=0, ge=0)
     max_output_tokens: int = Field(default=0, ge=0)
+    max_total_tokens: int | None = Field(default=None, ge=0)
     max_cost_units: NonNegativeFiniteFloat = 0.0
     max_elapsed_seconds: PositiveFiniteFloat = 30.0
     metadata: Metadata = Field(default_factory=dict)
@@ -51,7 +52,13 @@ class AgentBudget(ContractModel):
             (usage.cost_units, self.max_cost_units, "cost_units"),
             (usage.elapsed_seconds, self.max_elapsed_seconds, "elapsed_seconds"),
         )
-        return tuple(name for actual, maximum, name in checks if actual > maximum)
+        violations = tuple(name for actual, maximum, name in checks if actual > maximum)
+        if (
+            self.max_total_tokens is not None
+            and usage.input_tokens + usage.output_tokens > self.max_total_tokens
+        ):
+            violations = (*violations, "total_tokens")
+        return violations
 
     def ensure_within(self, usage: AgentUsage) -> None:
         """Raise a typed error when any reported/observed usage exceeds limits."""

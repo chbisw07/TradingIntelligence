@@ -133,15 +133,16 @@ calendars, diagonals, ratio spreads, and defined-risk variants.
 
 The architecture is accepted in
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md). A3.1 contracts and the
-bounded single-specialist runtime are implemented/pending acceptance; evidence
-gateways and actual specialist intelligence remain planned. Agents consume
-controlled evidence and do not belong inside deterministic calculators.
+bounded single-specialist runtime are complete/accepted. A3.2 controlled
+evidence/reasoning/budget gateways are implemented/pending acceptance; actual
+specialist intelligence remains planned. Agents consume controlled evidence
+and do not belong inside deterministic calculators.
 
 | Capability | Status | Placement |
 |---|---|---|
-| Agent contracts / provider-neutral protocols | IMPLEMENTED | A3.1; pending acceptance, DEF-002 remains open until milestone acceptance |
+| Agent contracts / provider-neutral protocols | IMPLEMENTED | A3.1 complete/accepted; DEF-002 remains governed through A3 closure |
 | Single-specialist registry/runtime foundation | IMPLEMENTED | A3.1; no tools, model calls, or orchestration |
-| Controlled evidence/reasoning/budget gateways | PLANNED | A3.2 |
+| Controlled evidence/reasoning/budget gateways | IMPLEMENTED | A3.2; pending acceptance, no live provider or specialist logic |
 | Technical / market-structure interpretation | PLANNED | A3.3 |
 | Fundamental / company-quality interpretation | PLANNED | A3.4 |
 | News / catalyst / event interpretation | PLANNED | A3.5 |

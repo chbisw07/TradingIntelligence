@@ -16,6 +16,15 @@ _FORBIDDEN_KEY_PARTS = (
     "password",
     "secret",
 )
+_FORBIDDEN_VALUE_MARKERS = (
+    "access_token=",
+    "access-token:",
+    "api_key=",
+    "api-key:",
+    "authorization:",
+    "client_secret=",
+    "password=",
+)
 
 
 def validate_no_secrets(value: object) -> None:
@@ -31,6 +40,10 @@ def validate_no_secrets(value: object) -> None:
                 pending.append(item)
         elif isinstance(current, (list, tuple)):
             pending.extend(current)
+        elif isinstance(current, str):
+            normalized_value = current.casefold()
+            if any(marker in normalized_value for marker in _FORBIDDEN_VALUE_MARKERS):
+                raise ValueError("credential-shaped text is not permitted")
 
 
 def validate_safe_metadata(value: Metadata) -> Metadata:

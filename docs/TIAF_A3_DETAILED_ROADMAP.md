@@ -6,9 +6,9 @@
 
 **A3 architecture:** accepted at `tiaf-a3-arch`.
 
-**A3.1:** implemented / pending acceptance.
+**A3.1:** complete / accepted at `tiaf-a3.1`.
 
-**A3.2:** not started.
+**A3.2:** implemented / pending acceptance.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -62,7 +62,7 @@ flowchart LR
 An implementation may develop independent adapters internally in parallel,
 but acceptance and tags follow this dependency order so each handoff is stable.
 
-## A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation — Implemented / Pending Acceptance
+## A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation — Complete / Accepted
 
 ### Goal
 
@@ -154,7 +154,7 @@ unresolved external dependency is discovered.
 A3.2 receives stable contracts/protocols against which evidence and reasoning
 gateways can be implemented without changing specialist semantics.
 
-## A3.2 — Controlled Evidence, Reasoning, and Budget Gateways
+## A3.2 — Controlled Evidence, Reasoning, and Budget Gateways — Implemented / Pending Acceptance
 
 ### Goal
 
@@ -777,9 +777,11 @@ A3 is complete only when:
 
 ## Immediate next implementation scope
 
-The A3.1 implementation is recorded in
-[`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). After A3.1
-acceptance, the next scope is **A3.2 only**: controlled evidence, optional
-reasoning, and budget gateways. A3.2 must not add specialist market logic,
+The accepted A3.1 implementation is recorded in
+[`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). The A3.2
+implementation is recorded in
+[`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). After A3.2
+acceptance, the next scope is **A3.3 only**: Technical and Market Structure
+specialist interpretation over authorized A2 evidence. A3.3 must not add
 multi-Agent planning, arbitration, position semantics, option expression, or
 execution authority.
