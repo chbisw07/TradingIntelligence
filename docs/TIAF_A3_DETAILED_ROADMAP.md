@@ -10,7 +10,9 @@
 
 **A3.2:** complete / accepted at `tiaf-a3.2`.
 
-**A3.3:** implemented / pending acceptance.
+**A3.3:** complete / accepted at `tiaf-a3.3`.
+
+**A3.4:** implemented / pending acceptance.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -289,7 +291,7 @@ Additional indicators (existing DEF records), automatic benchmark mapping
 
 Establishes the implementation/test template for evidence-specific specialists.
 
-## A3.4 — Fundamental Evidence and Company Quality Specialist
+## A3.4 — Fundamental Evidence and Company Quality Specialist — Implemented / Pending Acceptance
 
 ### Goal
 
@@ -337,6 +339,9 @@ claim citations, no invented guidance, and abstention coverage gates.
 
 Read-only validation on a small, diverse equity set using filed/source data;
 compare source facts manually and demonstrate historical availability cutoffs.
+No licensed production provider was bound in A3.4, so this remains an explicit
+acceptance limitation rather than a synthetic live claim. The bounded
+in-memory/caller-supplied adapter exercises the complete read path.
 
 ### Acceptance criteria
 
@@ -783,7 +788,7 @@ The accepted A3.1 implementation is recorded in
 [`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). The A3.2
 implementation is recorded in
 [`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). After A3.2
-acceptance, the next scope is **A3.3 only**: Technical and Market Structure
-specialist interpretation over authorized A2 evidence. A3.3 must not add
+acceptance, the current scope is **A3.4 only**: provider-neutral fundamental
+evidence and company-quality interpretation. A3.4 must not add
 multi-Agent planning, arbitration, position semantics, option expression, or
 execution authority.

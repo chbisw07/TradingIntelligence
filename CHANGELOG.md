@@ -4,6 +4,19 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added TIAF_A3.4 provider-neutral company identity, reporting-period,
+  point-in-time fundamental fact/dataset, revision, source-quality, unit,
+  currency, and deterministic derivation contracts.
+- Added exact YoY/QoQ/CAGR/TTM/ratio preprocessing, explicit insufficient-window
+  results, the bounded read-only `FundamentalProvider` adapter boundary,
+  controlled `READ_FUNDAMENTALS` gateway projection/cache compatibility, and
+  future-publication exclusion.
+- Added the deterministic cited Fundamental / Company-Quality Specialist with
+  dimensional growth, profitability, margin, capital-efficiency, balance-sheet,
+  cash-flow, earnings-quality, valuation, stability, ownership-evidence,
+  momentum and contradiction states; financial-sector abstention; and zero LLM
+  usage. No production source scraper, forecast, target, recommendation, or
+  execution behavior was added.
 - Added the TIAF_A3.3 deterministic Technical / Market-Structure Specialist,
   immutable scalar A2 evidence-fact projections, typed technical assessment,
   dimension-grouped interpretation, explicit contradiction/invalidation,

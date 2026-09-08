@@ -56,8 +56,12 @@ evidence and optional reasoning gateways, least-privilege capability policy,
 model/tool budgets, freshness-aware evidence reuse, no-LLM mode, and audit
 records. A3.3 adds the first deterministic Technical / Market-Structure
 specialist over immutable scalar A2 fact projections, with typed detail, cited
-claims, explicit contradiction, and zero model usage. No live model adapter,
-multi-Agent orchestration, or execution behavior is implemented.
+claims, explicit contradiction, and zero model usage. A3.4 adds provider-neutral
+point-in-time fundamental facts, deterministic period-safe preprocessing, a
+controlled read gateway, and a cited no-LLM Fundamental / Company-Quality
+specialist. Its bounded adapter accepts normalized caller-owned/licensed data;
+no production source scraper, live model adapter, multi-Agent orchestration, or
+execution behavior is implemented.
 
 ## A3 architecture boundary
 

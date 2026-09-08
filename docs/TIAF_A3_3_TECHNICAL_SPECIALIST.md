@@ -4,9 +4,10 @@
 
 **TIAF_A3.2:** complete / accepted at `tiaf-a3.2`.
 
-**TIAF_A3.3:** implemented / pending acceptance.
+**TIAF_A3.3:** complete / accepted at `tiaf-a3.3`.
 
-**Next:** TIAF_A3.4 — Fundamental Evidence and Company Quality Specialist.
+**Next:** TIAF_A3.4 — Fundamental Evidence and Company Quality Specialist,
+implemented / pending acceptance.
 
 Implementation began from commit
 `42192121518c6fe34a3137e5cc6f2a415c119d1a`, exactly resolved by

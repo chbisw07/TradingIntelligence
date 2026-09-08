@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.2 Accepted / A3.3 Pending Acceptance
+## TIAF_A3 sequence — A3.3 Accepted / A3.4 Pending Acceptance
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -311,13 +311,15 @@ implemented merely by being documented.
    reasoning, fingerprints/cache, least privilege, and complete budget/usage
    accounting with a first-class no-LLM mode.
    Detail: [`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md).
-3. **A3.3 — Technical and Market Structure Specialist — IMPLEMENTED / PENDING ACCEPTANCE**
+3. **A3.3 — Technical and Market Structure Specialist — COMPLETE / ACCEPTED**
    Interpret and cite A2 evidence without recalculating it; preserve the A2.9
    benchmark and all conflict. Detail:
    [`TIAF_A3_3_TECHNICAL_SPECIALIST.md`](TIAF_A3_3_TECHNICAL_SPECIALIST.md).
-4. **A3.4 — Fundamental Evidence and Company Quality Specialist — PLANNED**
-   Add provider-neutral point-in-time contracts, deterministic preprocessing,
-   one bounded read-only source path, and long-horizon company interpretation.
+4. **A3.4 — Fundamental Evidence and Company Quality Specialist — IMPLEMENTED / PENDING ACCEPTANCE**
+   Adds provider-neutral point-in-time contracts, deterministic preprocessing,
+   a bounded read-only caller-supplied/test source path, and long-horizon company
+   interpretation. Detail:
+   [`TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md`](TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md).
 5. **A3.5 — News, Filing, Catalyst, and Event Intelligence — PLANNED**
    Add sourced/time-aware contracts, deterministic entity/dedup/freshness
    processing, one bounded read-only source path, and cited interpretation.

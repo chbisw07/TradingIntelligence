@@ -24,7 +24,7 @@ Statuses describe repository reality:
 | Cash-history volume | IMPLEMENTED | A1 OHLCV fact; analysis is A2.5 |
 | Option-chain bid/ask liquidity primitives | IMPLEMENTED | A2.7 factual ATM spreads |
 | News / filings | PLANNED | A3.5 provider-neutral evidence plus bounded read-only acquisition; closes relevant DEF-012 scope when accepted |
-| Fundamentals | PLANNED | A3.4 point-in-time evidence plus bounded read-only acquisition; closes relevant DEF-012 scope when accepted |
+| Fundamentals | IMPLEMENTED | A3.4 point-in-time contracts, deterministic metrics, bounded caller-supplied/test adapter and controlled gateway; production licensed adapter remains in DEF-012 |
 | Corporate actions | DEFERRED | Adjustment evidence/policy; DEF-013 |
 | Sector / index / macro context | PLANNED | A3.6 explicit context evidence/specialists; DEF-012/047 prerequisites remain visible until accepted |
 | Market-calendar recency | DEFERRED | Session/calendar contract; DEF-007 |
@@ -134,8 +134,9 @@ calendars, diagonals, ratio spreads, and defined-risk variants.
 The architecture is accepted in
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md). A3.1 contracts and the
 bounded single-specialist runtime and A3.2 controlled evidence/reasoning/budget
-gateways are complete/accepted. A3.3 implements the first deterministic,
-cited technical specialist and is pending acceptance. Agents consume
+gateways are complete/accepted. A3.3 is complete/accepted; A3.4 implements the
+provider-neutral deterministic, cited Fundamental Specialist and is pending
+acceptance. Agents consume
 controlled evidence and do not belong inside deterministic calculators.
 
 | Capability | Status | Placement |
@@ -143,8 +144,8 @@ controlled evidence and do not belong inside deterministic calculators.
 | Agent contracts / provider-neutral protocols | IMPLEMENTED | A3.1 complete/accepted; DEF-002 remains governed through A3 closure |
 | Single-specialist registry/runtime foundation | IMPLEMENTED | A3.1; no tools, model calls, or orchestration |
 | Controlled evidence/reasoning/budget gateways | IMPLEMENTED | A3.2 complete/accepted; no live model provider |
-| Technical / market-structure interpretation | IMPLEMENTED | A3.3 pending acceptance; deterministic/cited/no-LLM path |
-| Fundamental / company-quality interpretation | PLANNED | A3.4 |
+| Technical / market-structure interpretation | IMPLEMENTED | A3.3 complete/accepted; deterministic/cited/no-LLM path |
+| Fundamental / company-quality interpretation | IMPLEMENTED | A3.4 pending acceptance; point-in-time, deterministic/cited/no-LLM path |
 | News / catalyst / event interpretation | PLANNED | A3.5 |
 | Relative / sector / macro interpretation | PLANNED | A3.6 |
 | Derivatives context / opportunity risk | PLANNED | A3.7; option selection excluded |

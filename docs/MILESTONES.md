@@ -50,8 +50,11 @@ tag `tiaf-a3.1`.
 **TIAF_A3.2 — Controlled Gateways and Budgets: COMPLETE / ACCEPTED** at tag
 `tiaf-a3.2`.
 
-**TIAF_A3.3 — Technical / Market-Structure Specialist: IMPLEMENTED / PENDING
-ACCEPTANCE.** A3.4 is next.
+**TIAF_A3.3 — Technical / Market-Structure Specialist: COMPLETE / ACCEPTED** at
+tag `tiaf-a3.3`.
+
+**TIAF_A3.4 — Fundamental / Company-Quality Intelligence: IMPLEMENTED / PENDING
+ACCEPTANCE.** A3.5 is next.
 
 ## Deferral governance
 
@@ -297,9 +300,11 @@ runtimes, A2 evidence reuse, capability policy, model-tier mapping, no-LLM
 mode, structured-output validation, budgets, cache keys, and audit records; it
 is complete/accepted. See
 [`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). A3.3 adds the
-first deterministic, cited technical specialist and is pending acceptance; see
+first deterministic, cited technical specialist and is complete/accepted; see
 [`TIAF_A3_3_TECHNICAL_SPECIALIST.md`](TIAF_A3_3_TECHNICAL_SPECIALIST.md). A3.4
-is next.
+adds provider-neutral point-in-time company evidence and the deterministic,
+cited Fundamental Specialist; see
+[`TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md`](TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md).
 
 **Acceptance:** a bounded A2-screened set can produce zero or more replayable,
 cited underlying-opportunity records with separate specialist opinions,

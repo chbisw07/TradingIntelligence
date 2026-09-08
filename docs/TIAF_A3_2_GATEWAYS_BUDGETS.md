@@ -6,9 +6,10 @@
 
 **TIAF_A3.2:** complete / accepted at `tiaf-a3.2`
 
-**TIAF_A3.3:** implemented / pending acceptance
+**TIAF_A3.3:** complete / accepted at `tiaf-a3.3`
 
-**Next:** TIAF_A3.4 — Fundamental Evidence and Company Quality Specialist
+**Current:** TIAF_A3.4 — Fundamental Evidence and Company Quality Specialist,
+implemented / pending acceptance
 
 The implementation baseline is
 `4b6cb8bacd6c6e7966fac2ce52ce6ab892ebc35c`. A3.2 adds infrastructure and
