@@ -19,8 +19,8 @@ The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. T
 
 **TIAF_A1 — Data Foundation: COMPLETE / BASELINED** at tag `tiaf-a1-baseline`.
 
-**TIAF_A2 — Deterministic Baseline: COMPLETE / LIVE VALIDATED; major baseline
-freeze prepared.** Final accepted sub-milestone tag: `tiaf-a2.10`.
+**TIAF_A2 — Deterministic Baseline: COMPLETE / BASELINED** at tag
+`tiaf-a2-baseline`. Final accepted sub-milestone tag: `tiaf-a2.10`.
 
 **TIAF_A2.1:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.1`.
 
@@ -42,8 +42,9 @@ freeze prepared.** Final accepted sub-milestone tag: `tiaf-a2.10`.
 
 **TIAF_A2.10:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.10`.
 
-**Next implementation milestone:** TIAF_A3 — Planner + Specialist Agent MVP,
-after the separate `tiaf-a2-baseline` major freeze.
+**TIAF_A3 — Specialist Intelligence: ARCHITECTURE DEFINED / READY FOR
+IMPLEMENTATION.** **Next:** TIAF_A3.1 — Agent Contracts and Provider-Neutral
+Runtime Foundation. No A3 runtime is implemented.
 
 ## Deferral governance
 
@@ -245,8 +246,8 @@ primitive measurements.
 
 The A2 closure and governed deferral burn-down are complete. Canonical closure
 records are `TIAF_A2_FOUNDATION_BASELINE.md` and
-`TIAF_A2_ACCEPTANCE_REPORT.md`; the major baseline tag remains intentionally
-uncreated until the closure changes are reviewed and committed.
+`TIAF_A2_ACCEPTANCE_REPORT.md`; the accepted major baseline tag is
+`tiaf-a2-baseline`.
 
 - deterministic feature engine
 - multi-timeframe price/volume features
@@ -262,20 +263,28 @@ uncreated until the closure changes are reviewed and committed.
 
 **Acceptance:** reproducible non-AI rankings exist as a benchmark the Agent system must later beat.
 
-## TIAF_A3 — Planner + Specialist Agent MVP
+## TIAF_A3 — Specialist Intelligence — Architecture Defined / Ready
 
-Initial specialist set:
+Planned bounded capabilities are Technical/Market Structure,
+Fundamental/Company Quality, News/Catalyst/Event, Relative, Sector/Rotation,
+Macro, Derivatives Context, Opportunity Risk, Contrarian Hypothesis, and
+conditional Forecast Interpretation. An instrument-aware Planner selects only
+the evidence and specialists justified by the horizon, purpose, candidate
+stage, and explicit budget. Agents consume shared evidence through controlled
+gateways and cannot call brokers, arbitrary providers, browsers, or shell tools.
 
-- Technical Structure
-- Relative Strength
-- Sector / Rotation
-- News / Catalyst
-- Risk
-- Contrarian
+The accepted sequence is A3.1 contracts; A3.2 evidence/reasoning/budget
+gateways; A3.3 technical specialist; A3.4 fundamentals; A3.5 news/events; A3.6
+relative/sector/macro; A3.7 derivatives/risk; A3.8 Planner; A3.9 structured
+underlying intelligence; and A3.10 replay/cost/failure hardening. See
+[`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md) and
+[`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md).
 
-The Planner decides which evidence and specialists are needed for the requested horizon and task. Agents consume shared normalized data rather than independently calling broker/data APIs.
-
-**Acceptance:** a 10–20 symbol universe can produce structured 0–5 opportunity assessments with CE/PE/WAIT/NO-TRADE conclusions, confidence, expected remaining move, invalidation and evidence.
+**Acceptance:** a bounded A2-screened set can produce zero or more replayable,
+cited underlying-opportunity records with separate specialist opinions,
+disagreement, quality/freshness, missing evidence, budgets, and A2 comparison.
+`WAIT`, `NO_TRADE`, `ABSTAIN`, and insufficient evidence are valid. A3 does not
+emit `CE`/`PE`; A6 owns option expression.
 
 ## TIAF_A4 — Arbitration and Adversarial Review
 
@@ -316,7 +325,7 @@ Primary TradeMonitor use case:
 
 **Acceptance:** TIAF can recommend a suitable CE/PE contract or explicitly return `NO_OPTION_TRADE`.
 
-## TIAF_A7 — Evaluation and Learning Harness
+## TIAF_A7 — Evaluation, Forecasting and Learning
 
 - store recommendation before outcome
 - subsequent price-path capture
@@ -327,8 +336,12 @@ Primary TradeMonitor use case:
 - deterministic baseline comparison
 - human/expert comparison
 - specialist performance by horizon and regime
+- versioned forecast distributions and threshold probabilities
+- walk-forward/out-of-sample calibration
+- candidate/champion promotion and rollback
 
-**Acceptance:** Agent value is measured rather than assumed.
+**Acceptance:** forecast calibration and Agent value versus A2 are measured
+from subsequent outcomes rather than assumed or learned from Agent prose.
 
 ## TIAF_A8 — TradeMonitor Integration
 

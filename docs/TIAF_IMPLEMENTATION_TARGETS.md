@@ -25,11 +25,11 @@ TIAF_A1.1 through TIAF_A1.7 form the accepted Data Foundation at baseline tag
 [`TIAF_A1_FOUNDATION_BASELINE.md`](TIAF_A1_FOUNDATION_BASELINE.md) and
 [`TIAF_A1_ACCEPTANCE_REPORT.md`](TIAF_A1_ACCEPTANCE_REPORT.md).
 
-### TIAF_A2 — Complete / Live Validated; Major Baseline Freeze Prepared
+### TIAF_A2 — Complete / Baselined
 
 TIAF_A2.1 through TIAF_A2.10 form the accepted deterministic platform. The
-final sub-milestone tag is `tiaf-a2.10`; the major `tiaf-a2-baseline` tag is
-prepared but intentionally not created by the closure pass. Canonical closure
+final sub-milestone tag is `tiaf-a2.10`; the accepted major tag is
+`tiaf-a2-baseline`. Canonical closure
 records are [`TIAF_A2_FOUNDATION_BASELINE.md`](TIAF_A2_FOUNDATION_BASELINE.md)
 and [`TIAF_A2_ACCEPTANCE_REPORT.md`](TIAF_A2_ACCEPTANCE_REPORT.md).
 
@@ -288,3 +288,50 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
+
+## Planned TIAF_A3 sequence — Architecture Defined / A3.1 Next
+
+The authoritative design is
+[`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
+non-goals, dependencies, contracts, deliverables, tests, live gates,
+acceptance, deferrals, and handoffs are in
+[`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md). No item below is
+implemented merely by being documented.
+
+1. **A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation — NEXT**
+   Freeze immutable requests, evidence references/packs, claims/citations,
+   opinions, missing-evidence requests, budgets/usage, run records,
+   capabilities, the calibrated-forecast consumer seam, typed failures, and
+   `SpecialistAgent`/`ReasoningProvider` protocols. No tool/model execution.
+2. **A3.2 — Controlled Evidence, Reasoning, and Budget Gateways — PLANNED**
+   Enforce allow-listed read capabilities, schema-constrained optional
+   reasoning, fingerprints/cache, least privilege, and complete budget/usage
+   accounting with a first-class no-LLM mode.
+3. **A3.3 — Technical and Market Structure Specialist — PLANNED**
+   Interpret and cite A2 evidence without recalculating it; preserve the A2.9
+   benchmark and all conflict.
+4. **A3.4 — Fundamental Evidence and Company Quality Specialist — PLANNED**
+   Add provider-neutral point-in-time contracts, deterministic preprocessing,
+   one bounded read-only source path, and long-horizon company interpretation.
+5. **A3.5 — News, Filing, Catalyst, and Event Intelligence — PLANNED**
+   Add sourced/time-aware contracts, deterministic entity/dedup/freshness
+   processing, one bounded read-only source path, and cited interpretation.
+6. **A3.6 — Relative, Sector, and Macro Context Specialists — PLANNED**
+   Implement three separate selectable capabilities and explicit mappings.
+7. **A3.7 — Derivatives Context and Opportunity Risk Specialists — PLANNED**
+   Interpret A2.7/current derivative and downside evidence without contract
+   selection, position management, or unsupported probabilities.
+8. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — PLANNED**
+   Apply progressive A2 screening, specialist selection, shallow/deep
+   escalation, cache/reuse, hard budgets, and isolated degradation.
+9. **A3.9 — Structured Underlying Opportunity Intelligence MVP — PLANNED**
+   Publish cited opinions, disagreement, missing evidence, quality/freshness,
+   separated confidence, and A2 comparison. A6—not A3—owns `CE`/`PE`.
+10. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — PLANNED**
+    Freeze Agent records/corpora, offline replay/regression, scale/cost evidence,
+    failure injection, security checks, and the A7 outcome linkage.
+
+A7 is minimally refined to **Evaluation, Forecasting and Learning**. A3 defines
+and consumes calibrated forecast evidence but never asks an LLM to manufacture
+probabilities; A7 owns forecast generation, out-of-sample calibration,
+evaluation, promotion, and rollback.

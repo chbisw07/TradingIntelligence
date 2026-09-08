@@ -27,10 +27,11 @@ the governor, while the broker remains the final truth for live state.
 
 ### Opportunity Intelligence
 
-Given an F&O universe plus a requested style and horizon, identify the strongest
-forward opportunities, allow `CE`, `PE`, `WAIT`, or `NO TRADE` conclusions, and
-estimate remaining opportunity. Underlying selection and option-expression
-selection remain separate stages.
+Given a bounded universe plus a requested style and horizon, identify the
+strongest forward underlying opportunities, preserve `WAIT`, `NO_TRADE`,
+`ABSTAIN`, and insufficient-evidence outcomes, and estimate remaining
+opportunity only when evidence supports it. A3 produces specialist underlying
+intelligence; A6 separately owns `CE`/`PE` and option-expression selection.
 
 ### Position Intelligence
 
@@ -45,5 +46,20 @@ interpretation, arbitration, workflows, memory, evaluation, service delivery,
 and observability. TIAF_A1 implements the factual data boundary through
 immutable `AnalysisContext`. TIAF_A2 adds deterministic features, indicators,
 explicit-benchmark and multi-timeframe evidence, a transparent baseline, and
-provider-free replay/evaluation. Planning and interpretive namespaces remain
-future boundaries. No Agent or execution behavior is implemented.
+provider-free replay/evaluation. The provider-neutral A3 architecture is now
+defined in [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), with sequential
+implementation gates in
+[`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md). Planning and
+interpretive runtime namespaces remain future boundaries. No Agent, external
+model call, or execution behavior is implemented.
+
+## A3 architecture boundary
+
+A3 Agents consume immutable A2 evidence through controlled, least-privilege
+gateways; they do not recalculate A2 facts or receive arbitrary browser, shell,
+database, broker, or execution access. An instrument-aware Planner selects
+bounded specialists and reasoning depth under explicit token, tool, latency,
+specialist, and cost budgets. A3 preserves individual cited opinions and
+disagreement. A4 later arbitrates them, A5 manages adopted positions, A6 chooses
+option expression, A7 evaluates and calibrates intelligence, and A8 integrates
+with TradeMonitor without transferring authority.

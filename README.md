@@ -10,9 +10,9 @@ attributable intelligence for consumers such as TradeMonitor.
 The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
 **TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
 `tiaf-a1.7`. **TIAF_A2.1** through **TIAF_A2.10** form the complete,
-live-validated deterministic A2 platform; the final accepted sub-milestone is
-tagged `tiaf-a2.10`. The repository is prepared for the separate major
-`tiaf-a2-baseline` freeze. A3 Agent implementation has not begun.
+live-validated deterministic A2 platform, frozen at `tiaf-a2-baseline`.
+**TIAF_A3 Specialist Intelligence architecture is defined and ready for
+implementation; A3.1 is next and no A3 runtime has been implemented.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -72,7 +72,10 @@ The complete deterministic platform and closure evidence are recorded in the
 [A2 foundation baseline](docs/TIAF_A2_FOUNDATION_BASELINE.md) and
 [A2 acceptance report](docs/TIAF_A2_ACCEPTANCE_REPORT.md). The
 [A3 entry conditions](docs/TIAF_A3_ENTRY_CONDITIONS.md) bind future Agents to
-the frozen A2 evidence and replay benchmark.
+the frozen A2 evidence and replay benchmark. The authoritative
+[A3 architecture](docs/TIAF_A3_ARCHITECTURE.md) and
+[detailed A3 roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md) define the specialist,
+evidence, budget, failure, and milestone boundaries before A3.1 begins.
 
 Intentional future work and architectural non-goals are tracked under stable
 IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are

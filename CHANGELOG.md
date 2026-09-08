@@ -4,6 +4,15 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Defined the provider-neutral TIAF_A3 Specialist Intelligence architecture
+  and sequential A3.1–A3.10 implementation roadmap. The design preserves A2 as
+  the visible deterministic benchmark, introduces controlled evidence and
+  budget gateways, instrument-aware specialist planning, cited claims,
+  separated confidence dimensions, replay/cost/failure records, and a future
+  calibrated-forecast seam. A3 runtime remains unimplemented.
+- Assigned fundamental and news/event evidence foundations to A3, refined A7
+  to include forecasting/calibration without renumbering major milestones, and
+  removed CE/PE from planned A3 output because A6 owns option expression.
 - Closed the complete TIAF_A2 deterministic platform across A2.1-A2.10, added
   the major foundation baseline, acceptance report, A3 entry conditions, and
   the governed 51-record deferral burn-down. No scoring policy or runtime

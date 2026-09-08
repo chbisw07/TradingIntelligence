@@ -3,8 +3,10 @@
 ## Purpose
 
 This handoff binds the future Planner and specialist Agent layer to the accepted
-TIAF_A2 deterministic foundation. It is an entry contract, not an A3 design or
-implementation.
+TIAF_A2 deterministic foundation. The design is now authoritative in
+[`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and the sequential freeze
+plan is in [`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md). No A3
+runtime is implemented.
 
 ## Required inherited substrate
 
@@ -46,9 +48,8 @@ A3 inherits and must reuse:
 
 Before A3 implementation begins:
 
-- review and commit the A2 closure records;
-- create the recommended `tiaf-a2-baseline` tag through the operator workflow;
-- start from a clean worktree whose HEAD resolves to that baseline;
+- start from a clean worktree whose HEAD resolves to the accepted
+  `tiaf-a2-baseline` tag;
 - identify which high-priority A3-closure deferrals are required by the first
   concrete Agent consumer rather than implementing all of them speculatively;
 - define stable Agent input/output, attribution, prompt/model identity, failure,
@@ -63,3 +64,12 @@ intelligence (A5), TradeMonitor integration (A8), production schedulers (A10),
 statistical policy optimization (future evaluation), or broker execution
 (rejected from TIAF scope).
 
+## Entry decision
+
+The architecture entry gate is satisfied at
+`e27674070537a7d81e6e117283913d7da2785d1c` (`tiaf-a2-baseline`). A3 is
+**architecture defined / ready for implementation**, and **A3.1 is next**.
+A3.1 is limited to immutable provider-neutral contracts, enums, failures,
+consumer-facing forecast evidence, and `SpecialistAgent`/`ReasoningProvider`
+protocols with local fakes and contract tests. It does not authorize evidence
+gateways, external model calls, specialist reasoning, or orchestration.

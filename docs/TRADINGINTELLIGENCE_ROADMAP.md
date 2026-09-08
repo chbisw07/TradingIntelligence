@@ -19,7 +19,7 @@ The progression is deliberate:
 - **TIAF_A4 — Challenge and Arbitrate**
 - **TIAF_A5 — Manage Positions Intelligently**
 - **TIAF_A6 — Express the Trade through Options**
-- **TIAF_A7 — Prove Value**
+- **TIAF_A7 — Forecast and Prove Value**
 - **TIAF_A8 — Integrate with TradeMonitor**
 - **TIAF_A9 — Enrich Scanners**
 - **TIAF_A10 — Harden for Production**
@@ -57,11 +57,11 @@ This order reflects the architecture:
 | **TIAF_A0** | Domain Contracts + Foundation | Stable language for all future components |
 | **TIAF_A1** | Data Foundation | Watchlist becomes sufficient input |
 | **TIAF_A2** | Deterministic Baseline | Reproducible non-AI benchmark |
-| **TIAF_A3** | Planner + Specialist Agent MVP | Structured opportunity intelligence |
+| **TIAF_A3** | Specialist Intelligence | Structured, cited underlying opportunity intelligence |
 | **TIAF_A4** | Arbitration + Adversarial Review | Challenged, disagreement-aware conclusions |
 | **TIAF_A5** | Position Intelligence MVP | Forward-looking adopted-position management |
 | **TIAF_A6** | Option Expression Intelligence | Underlying view translated into suitable CE/PE contract |
-| **TIAF_A7** | Evaluation + Learning Harness | Intelligence value measured empirically |
+| **TIAF_A7** | Evaluation, Forecasting + Learning | Calibrated forecasts and intelligence value measured empirically |
 | **TIAF_A8** | TradeMonitor Integration | TIAF advice safely consumed operationally |
 | **TIAF_A9** | Scanner Integration | Day/Pos scanners enriched with forward intelligence |
 | **TIAF_A10** | Production Hardening | Long-running reliable intelligence service |
@@ -211,7 +211,7 @@ deferred. See `TIAF_A1_FOUNDATION_BASELINE.md` for the binding A1 boundary.
 
 # TIAF_A2 — Deterministic Baseline
 
-**Status: COMPLETE / LIVE VALIDATED; MAJOR BASELINE FREEZE PREPARED**
+**Status: COMPLETE / BASELINED** at tag `tiaf-a2-baseline`
 
 ## Goal
 
@@ -275,43 +275,79 @@ decision records now support exact provider-free replay, same-evidence policy
 comparison, later raw outcome/MFE/MAE measurement, frozen-ranking statistics,
 append-only filesystem corpora, and deterministic regressions. User-level live
 capture/replay validation succeeded. The governed A2 closure is recorded in
-`TIAF_A2_FOUNDATION_BASELINE.md` and `TIAF_A2_ACCEPTANCE_REPORT.md`; the final
-major tag remains a separate operator action.
+`TIAF_A2_FOUNDATION_BASELINE.md` and `TIAF_A2_ACCEPTANCE_REPORT.md`; the accepted
+major tag is `tiaf-a2-baseline`.
 
 ---
 
-# TIAF_A3 — Planner + Specialist Agent MVP
+# TIAF_A3 — Specialist Intelligence
+
+**Status: ARCHITECTURE DEFINED / READY FOR IMPLEMENTATION; A3.1 NEXT**
 
 ## Goal
 
-Introduce contextual reasoning after factual data and deterministic features are dependable.
+Introduce evidence-grounded, cost-disciplined specialist interpretation after
+factual data and deterministic judgment are dependable, without weakening or
+replacing the A2 benchmark.
 
-### Initial Agent set
+### Specialist capabilities
 
-- Technical Structure Agent
-- Relative Strength Agent
-- Sector / Rotation Agent
-- News / Catalyst Agent
-- Risk Agent
-- Contrarian Agent
+- Technical / Market Structure
+- Fundamental / Company Quality
+- News / Catalyst / Event
+- Relative Context
+- Sector / Rotation Context
+- Macro Context
+- Derivatives Context
+- Opportunity Risk
+- Contrarian Hypothesis Challenger
+- Forecast Interpretation, only when calibrated forecast evidence exists
 
 ### Planner responsibilities
 
-- understand requested trading style and horizon
+- understand requested instrument, purpose, style, and horizon
 - decide what evidence is necessary
-- choose which specialist Agents to invoke
-- request missing evidence through the Data Service
-- control analysis budget and latency
-- allow insufficient-evidence conclusions
+- choose which specialist capabilities to invoke
+- request missing evidence through controlled, least-privilege gateways
+- control analysis, model, token, tool, latency, specialist, and cost budgets
+- allow insufficient-evidence and abstaining conclusions
 - avoid unnecessary deep research on every symbol
+- preserve separate opinions, citations, A2 comparison, and run/usage records
+- leave conflict resolution to A4
+
+### Detailed implementation sequence
+
+1. **A3.1 — Agent Contracts and Provider-Neutral Runtime Foundation** — NEXT
+2. **A3.2 — Controlled Evidence, Reasoning, and Budget Gateways** — PLANNED
+3. **A3.3 — Technical and Market Structure Specialist** — PLANNED
+4. **A3.4 — Fundamental Evidence and Company Quality Specialist** — PLANNED
+5. **A3.5 — News, Filing, Catalyst, and Event Intelligence** — PLANNED
+6. **A3.6 — Relative, Sector, and Macro Context Specialists** — PLANNED
+7. **A3.7 — Derivatives Context and Opportunity Risk Specialists** — PLANNED
+8. **A3.8 — Instrument-Aware Planner and Specialist Orchestration** — PLANNED
+9. **A3.9 — Structured Underlying Opportunity Intelligence MVP** — PLANNED
+10. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening** — PLANNED
+
+The authoritative decisions and milestone gates are in
+`TIAF_A3_ARCHITECTURE.md` and `TIAF_A3_DETAILED_ROADMAP.md`.
 
 ### Output
 
-For a 10–20 stock input set, produce 0–5 ranked opportunities containing symbol, CE/PE/WAIT/NO_TRADE, horizon, opportunity score, confidence, expected remaining move, preferred entry state, invalidation, evidence summary, specialist opinions and disagreement.
+For a bounded A2-screened candidate set, produce zero or more ranked,
+structured underlying-opportunity records containing identity, horizon,
+directional specialist stances, evidence-linked interpretations, entry-state
+and invalidation concepts, missing evidence, quality/freshness, separated
+confidence dimensions, specialist disagreement, run provenance, and explicit
+A2 comparison. `WAIT`, `NO_TRADE`, `ABSTAIN`, and insufficient evidence remain
+valid. A3 does not emit `CE`/`PE`; A6 owns option expression.
+Any A3 ordering preserves A2 or another explicit non-arbitrating policy; A4
+owns final intelligence-aware ranking and recommendation.
 
 ### Acceptance
 
-> TIAF produces structured opportunity intelligence with evidence and no broker execution.
+> TIAF produces replayable, cited specialist and underlying-opportunity
+> intelligence under explicit budgets, with no final arbitration, option
+> expression, position action, or broker execution.
 
 ---
 
@@ -420,11 +456,12 @@ Translate a validated underlying opportunity into an appropriate option contract
 
 ---
 
-# TIAF_A7 — Evaluation and Learning Harness
+# TIAF_A7 — Evaluation, Forecasting and Learning
 
 ## Goal
 
-Prove whether TIAF improves decisions instead of merely producing convincing explanations.
+Produce and calibrate first-class probabilistic forecasts, and prove whether
+TIAF improves decisions instead of merely producing convincing explanations.
 
 ### Scope
 
@@ -442,10 +479,16 @@ Prove whether TIAF improves decisions instead of merely producing convincing exp
 - performance by market regime
 - specialist Agent scorecards
 - future evidence-based arbitration weighting
+- versioned forecast models and immutable forecast evidence
+- return/price distributions and threshold probabilities with calibration
+- walk-forward and out-of-sample validation
+- candidate/champion promotion and rollback
 
 ### Acceptance
 
-> TIAF's contribution can be quantified and compared against deterministic and human benchmarks.
+> Forecasts are empirically calibrated and TIAF's contribution can be
+> quantified against deterministic and human benchmarks without self-training
+> from its own prose.
 
 ---
 
@@ -547,7 +590,7 @@ Deep AI research on every F&O stock every minute is neither necessary nor desira
 
 The intended funnel is:
 
-`F&O universe → deterministic screening → candidate pool → fast specialist pass → serious candidates → deep research/debate → final 0–5`
+`bounded universe → deterministic screening → candidate pool → fast specialist pass → serious candidates → selective deep research → bounded eligible set`
 
 The same principle applies to open positions:
 
@@ -625,8 +668,8 @@ Provide forward-looking adopted-position intelligence.
 **A6 — EXPRESS THROUGH OPTIONS**  
 Choose or reject the CE/PE contract.
 
-**A7 — PROVE VALUE**  
-Measure whether the Agents actually improve decisions.
+**A7 — FORECAST AND PROVE VALUE**
+Produce calibrated forecasts and measure whether intelligence improves decisions.
 
 **A8 — SERVE TRADEMONITOR**  
 Integrate intelligence without surrendering authority.

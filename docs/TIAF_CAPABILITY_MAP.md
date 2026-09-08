@@ -23,10 +23,10 @@ Statuses describe repository reality:
 | IV / OI / option volume | IMPLEMENTED | A1 option facts |
 | Cash-history volume | IMPLEMENTED | A1 OHLCV fact; analysis is A2.5 |
 | Option-chain bid/ask liquidity primitives | IMPLEMENTED | A2.7 factual ATM spreads |
-| News / filings | DEFERRED | External evidence adapters; DEF-012 |
-| Fundamentals | DEFERRED | External evidence adapters; DEF-012 |
+| News / filings | PLANNED | A3.5 provider-neutral evidence plus bounded read-only acquisition; closes relevant DEF-012 scope when accepted |
+| Fundamentals | PLANNED | A3.4 point-in-time evidence plus bounded read-only acquisition; closes relevant DEF-012 scope when accepted |
 | Corporate actions | DEFERRED | Adjustment evidence/policy; DEF-013 |
-| Sector / index / macro context | DEFERRED | Shared contextual evidence; DEF-012 |
+| Sector / index / macro context | PLANNED | A3.6 explicit context evidence/specialists; DEF-012/047 prerequisites remain visible until accepted |
 | Market-calendar recency | DEFERRED | Session/calendar contract; DEF-007 |
 | Secondary-provider fallback | DEFERRED | Identity, health, and conflict policy; DEF-008 |
 | Persistent/distributed cache | DEFERRED | Operational storage and consistency; DEF-009 |
@@ -71,6 +71,8 @@ Statuses describe repository reality:
 | Synthetic golden regression | IMPLEMENTED | A2.10 pytest-built deterministic fixtures |
 | Arbitrary historical reconstruction | DEFERRED | Point-in-time data-vintage boundary; DEF-049 |
 | Scheduled subsequent-outcome acquisition | DEFERRED | Calendar/queue/retention boundary; DEF-051 |
+| Calibrated forecast evidence contract | PLANNED | A3.1 consumer seam; no forecast generation |
+| Forecast generation / calibration | PLANNED | A7 Evaluation, Forecasting and Learning |
 
 ## Indicators
 
@@ -129,11 +131,28 @@ calendars, diagonals, ratio spreads, and defined-risk variants.
 
 ## Agent intelligence
 
-Opportunity analysis, position management, strategy comparison/selection,
-sector rotation, scanner intelligence, explanation, and scenario analysis are
-all **PLANNED** Agent-layer capabilities beginning at A3 (DEF-002, with option
-selection tracked by DEF-006). They consume evidence; they do not belong inside
-deterministic calculators.
+The architecture is defined in
+[`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md); runtime remains planned.
+Agents consume controlled evidence and do not belong inside deterministic
+calculators.
+
+| Capability | Status | Placement |
+|---|---|---|
+| Agent contracts / provider-neutral protocols | PLANNED | A3.1; next implementation target, DEF-002 |
+| Controlled evidence/reasoning/budget gateways | PLANNED | A3.2 |
+| Technical / market-structure interpretation | PLANNED | A3.3 |
+| Fundamental / company-quality interpretation | PLANNED | A3.4 |
+| News / catalyst / event interpretation | PLANNED | A3.5 |
+| Relative / sector / macro interpretation | PLANNED | A3.6 |
+| Derivatives context / opportunity risk | PLANNED | A3.7; option selection excluded |
+| Instrument-aware Planner / orchestration | PLANNED | A3.8 |
+| Structured underlying opportunity intelligence | PLANNED | A3.9 |
+| Agent replay / A2 comparison / cost/failure hardening | PLANNED | A3.10 |
+| Arbitration / adversarial resolution | PLANNED | A4 |
+| Position intelligence | PLANNED | A5 |
+| Option strategy comparison/selection | PLANNED | A6; DEF-006 |
+| Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
+| Scanner intelligence | EXTERNAL/INTEGRATION | A9 scanner boundary |
 
 ## Applications
 
