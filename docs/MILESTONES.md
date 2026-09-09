@@ -56,8 +56,9 @@ tag `tiaf-a3.3`.
 **TIAF_A3.4 — Fundamental / Company-Quality Intelligence: COMPLETE / ACCEPTED**
 at tag `tiaf-a3.4`.
 
-**TIAF_A3.5 — News / Catalyst / Event Intelligence: IMPLEMENTED / PENDING
-ACCEPTANCE.** A3.6 is next.
+**TIAF_A3.5 — News / Catalyst / Event Intelligence: COMPLETE / ACCEPTED.**
+**TIAF_A3.6 — Relative / Sector / Macro Context Intelligence: IMPLEMENTED /
+PENDING ACCEPTANCE.** A3.7 is next.
 
 ## Deferral governance
 
@@ -308,6 +309,10 @@ first deterministic, cited technical specialist and is complete/accepted; see
 adds provider-neutral point-in-time company evidence and the deterministic,
 cited Fundamental Specialist; see
 [`TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md`](TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md).
+A3.5 is complete/accepted at `tiaf-a3.5`. A3.6 adds three separate contextual
+specialists, explicit mapping/sensitivity evidence, controlled sector/macro
+gateways, and shared source-context reuse; see
+[`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`](TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md).
 
 **Acceptance:** a bounded A2-screened set can produce zero or more replayable,
 cited underlying-opportunity records with separate specialist opinions,

@@ -398,6 +398,11 @@ separate Agent.
 
 ### Relative Context
 
+A3.6 implementation detail is recorded in
+[`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`](TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md).
+The implemented version is deterministic/no-LLM and consumes unchanged A2.8
+facts with an explicit benchmark identity.
+
 - **Purpose/output:** interpret explicit market/sector/peer-relative A2 facts
   and identify whether absolute strength is broadly or idiosyncratically based.
 - **Inputs/dependencies:** A2.8 explicit-benchmark evidence and caller-approved
@@ -413,6 +418,10 @@ separate Agent.
 
 ### Sector and Rotation Context
 
+A3.6 implements an explicit effective-time classification contract, bounded
+`READ_SECTOR_CONTEXT` gateway, multi-period rotation policy, and reusable
+sector snapshots. Automatic mapping remains DEF-047.
+
 - **Purpose/output:** explain industry/sector participation, leadership,
   breadth, and rotation context around the subject.
 - **Inputs/dependencies:** normalized sector classification, constituent facts,
@@ -427,6 +436,10 @@ separate Agent.
   mark mapping and coverage limitations.
 
 ### Macro Context
+
+A3.6 implements typed point-in-time observations, explicit subject sensitivity,
+a bounded `READ_MACRO_CONTEXT` gateway, and reusable market snapshots. A
+licensed production source remains DEF-012, so fixture data is not live data.
 
 - **Purpose/output:** identify material rate, currency, commodity, policy, and
   macro-event sensitivities relevant to instrument and horizon.

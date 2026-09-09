@@ -14,7 +14,9 @@
 
 **A3.4:** complete / accepted at `tiaf-a3.4`.
 
-**A3.5:** implemented / pending acceptance.
+**A3.5:** complete / accepted at `tiaf-a3.5`.
+
+**A3.6:** implemented / pending acceptance.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -428,7 +430,7 @@ point-in-time reconstruction (DEF-049), and corporate-action adjustment
 
 Makes sourced company and macro/sector events available to context specialists.
 
-## A3.6 — Relative, Sector, and Macro Context Specialists
+## A3.6 — Relative, Sector, and Macro Context Specialists — Implemented / Pending Acceptance
 
 ### Goal
 
@@ -790,8 +792,9 @@ The accepted A3.1 implementation is recorded in
 [`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). The A3.2
 implementation is recorded in
 [`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). The current
-scope is **A3.5 only**: provider-neutral event evidence, deterministic
-point-in-time preprocessing, bounded news/filing gateways, and cited catalyst
-interpretation. A3.5 does not add A3.6 context specialists, multi-Agent
-planning, arbitration, position semantics, option expression, or execution
-authority.
+scope is **A3.6 only**: three separate relative, sector, and macro specialists,
+explicit mappings and sensitivities, bounded point-in-time context gateways,
+shared source reuse, and cited deterministic interpretation. A3.6 does not add
+A3.7 derivatives/risk, multi-Agent planning, arbitration, position semantics,
+option expression, or execution authority. See
+[`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`](TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md).

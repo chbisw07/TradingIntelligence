@@ -148,6 +148,26 @@ An existing A2.10 captured snapshot/run can be inspected entirely offline with
 `--input` is mutually exclusive with `--symbol`; it performs no Dhan/provider
 access and preserves the capture's A2 assessment and evidence fingerprint.
 
+`inspect_relative_specialist.py` is the read-only A3.6 Relative Strength
+Specialist path. It acquires or loads the accepted A2 request/baseline, copies
+the already-computed A2.8 subject return, benchmark return, spread, ratio,
+consistency, and ATR-relative excess facts, and preserves the explicit
+benchmark identity. It does not recalculate those values. Example:
+
+```bash
+python scripts/inspect_relative_specialist.py \
+  --symbol RELIANCE \
+  --horizon POSITIONAL \
+  --benchmark NIFTY \
+  --benchmark-role MARKET \
+  --timeframes 1d,1h,15m
+```
+
+`--input /path/to/capture.json` runs the same specialist provider-free when the
+captured A2.10 request contains relative evidence. There are intentionally no
+live sector/macro scripts: this repository has controlled contracts and
+caller-supplied/test adapters, not trustworthy production sector/macro feeds.
+
 These are three distinct validation paths:
 
 1. **Synthetic golden tests.**

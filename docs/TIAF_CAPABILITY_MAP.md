@@ -26,7 +26,7 @@ Statuses describe repository reality:
 | News / filings | IMPLEMENTED | A3.5 point-in-time event contracts, deterministic clustering, bounded caller-supplied/test adapter, and controlled reads; production licensed adapter remains DEF-012 |
 | Fundamentals | IMPLEMENTED | A3.4 point-in-time contracts, deterministic metrics, bounded caller-supplied/test adapter and controlled gateway; production licensed adapter remains in DEF-012 |
 | Corporate actions | DEFERRED | Adjustment evidence/policy; DEF-013 |
-| Sector / index / macro context | PLANNED | A3.6 explicit context evidence/specialists; DEF-012/047 prerequisites remain visible until accepted |
+| Sector / index / macro context | IMPLEMENTED | A3.6 explicit point-in-time contracts, test/caller adapters, controlled reads, and shared source reuse; production adapters remain DEF-012 and automatic mapping remains DEF-047 |
 | Market-calendar recency | DEFERRED | Session/calendar contract; DEF-007 |
 | Secondary-provider fallback | DEFERRED | Identity, health, and conflict policy; DEF-008 |
 | Persistent/distributed cache | DEFERRED | Operational storage and consistency; DEF-009 |
@@ -58,7 +58,7 @@ Statuses describe repository reality:
 | Bid/ask spread primitives | IMPLEMENTED | A2.7 ATM contract facts |
 | Explicit-benchmark relative strength | IMPLEMENTED | A2.8 exact aligned returns/ATR facts |
 | Automatic benchmark / sector mapping | DEFERRED | Classification evidence; DEF-047 |
-| Sector rotation | FUTURE | Agent interpretation depends on DEF-002/DEF-047 |
+| Sector rotation | IMPLEMENTED | A3.6 cautious multi-period interpretation over explicit mapping/evidence; automatic mapping remains DEF-047 |
 | Ordered multi-timeframe context | IMPLEMENTED | A2.8 independent FeatureBundle evidence |
 | Multi-timeframe factual fractions | IMPLEMENTED | A2.8 valid-contributor aggregation |
 | Multi-timeframe indicator aggregation | DEFERRED | Explicit indicator-context contract; DEF-048 |
@@ -134,9 +134,9 @@ calendars, diagonals, ratio spreads, and defined-risk variants.
 The architecture is accepted in
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md). A3.1 contracts and the
 bounded single-specialist runtime and A3.2 controlled evidence/reasoning/budget
-gateways are complete/accepted. A3.3 and A3.4 are complete/accepted; A3.5
-implements provider-neutral deterministic, cited event intelligence and is
-pending acceptance. Agents consume
+gateways are complete/accepted. A3.3 through A3.5 are complete/accepted; A3.6
+implements three separate deterministic, cited relative/sector/macro
+specialists and is pending acceptance. Agents consume
 controlled evidence and do not belong inside deterministic calculators.
 
 | Capability | Status | Placement |
@@ -146,8 +146,8 @@ controlled evidence and do not belong inside deterministic calculators.
 | Controlled evidence/reasoning/budget gateways | IMPLEMENTED | A3.2 complete/accepted; no live model provider |
 | Technical / market-structure interpretation | IMPLEMENTED | A3.3 complete/accepted; deterministic/cited/no-LLM path |
 | Fundamental / company-quality interpretation | IMPLEMENTED | A3.4 complete/accepted; point-in-time, deterministic/cited/no-LLM path |
-| News / catalyst / event interpretation | IMPLEMENTED | A3.5 pending acceptance; PIT, deduplicated, cited/no-LLM path |
-| Relative / sector / macro interpretation | NEXT | A3.6 |
+| News / catalyst / event interpretation | IMPLEMENTED | A3.5 complete/accepted; PIT, deduplicated, cited/no-LLM path |
+| Relative / sector / macro interpretation | IMPLEMENTED | A3.6 pending acceptance; three separate cited/no-LLM specialists, explicit mappings, PIT and reusable context |
 | Derivatives context / opportunity risk | PLANNED | A3.7; option selection excluded |
 | Instrument-aware Planner / orchestration | PLANNED | A3.8 |
 | Structured underlying opportunity intelligence | PLANNED | A3.9 |

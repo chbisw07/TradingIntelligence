@@ -4,6 +4,17 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added TIAF_A3.6 as three separate deterministic, cited Relative Strength,
+  Sector / Rotation, and Macro Context specialists with independent identities,
+  typed detail, policies, contradictions, missing-evidence behavior, A2
+  comparison, and zero model usage.
+- Added provider-neutral point-in-time sector/macro observations, explicit
+  effective-time sector and subject-sensitivity mappings, bounded in-memory/test
+  providers, controlled `READ_SECTOR_CONTEXT` / `READ_MACRO_CONTEXT` gateways,
+  future-evidence exclusion, and sector/market source-snapshot reuse across
+  symbols. Automatic mapping and licensed production context adapters remain
+  deferred; no browsing, recommendation, forecast, trading, or execution was
+  added.
 - Added TIAF_A3.5 provider-neutral event/entity/source/structured-fact,
   point-in-time revision, contradiction, dedupe-cluster, and dataset contracts;
   deterministic classification/relevance/materiality helpers; stable JSON; and

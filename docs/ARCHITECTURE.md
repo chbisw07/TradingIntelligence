@@ -64,6 +64,12 @@ dedupe clusters, controlled news/filing reads, and a deterministic cited
 News/Event specialist. The bounded A3.4/A3.5 adapters accept normalized
 caller-owned/licensed data; no production scraper/feed, live model adapter,
 multi-Agent orchestration, or execution behavior is implemented.
+A3.6 adds separate Relative, Sector, and Macro specialists. Relative consumes
+unchanged A2.8 facts; sector and macro use provider-neutral point-in-time
+observations through controlled capability gateways. Sector and subject-macro
+mappings are explicit/versioned, and reusable source snapshots are cached by
+sector or market rather than fetched once per symbol. Production context feeds
+and automatic mapping remain deferred; no arbitrary browsing was added.
 
 ## A3 architecture boundary
 

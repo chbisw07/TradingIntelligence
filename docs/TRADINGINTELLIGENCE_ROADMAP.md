@@ -282,7 +282,7 @@ major tag is `tiaf-a2-baseline`.
 
 # TIAF_A3 — Specialist Intelligence
 
-**Status: ARCHITECTURE AND A3.1–A3.4 ACCEPTED; A3.5 IMPLEMENTED / PENDING ACCEPTANCE; A3.6 NEXT**
+**Status: ARCHITECTURE AND A3.1–A3.5 ACCEPTED; A3.6 IMPLEMENTED / PENDING ACCEPTANCE; A3.7 NEXT**
 
 ## Goal
 
@@ -321,8 +321,8 @@ replacing the A2 benchmark.
 2. **A3.2 — Controlled Evidence, Reasoning, and Budget Gateways** — COMPLETE / ACCEPTED
 3. **A3.3 — Technical and Market Structure Specialist** — COMPLETE / ACCEPTED
 4. **A3.4 — Fundamental Evidence and Company Quality Specialist** — COMPLETE / ACCEPTED
-5. **A3.5 — News, Filing, Catalyst, and Event Intelligence** — IMPLEMENTED / PENDING ACCEPTANCE
-6. **A3.6 — Relative, Sector, and Macro Context Specialists** — NEXT
+5. **A3.5 — News, Filing, Catalyst, and Event Intelligence** — COMPLETE / ACCEPTED
+6. **A3.6 — Relative, Sector, and Macro Context Specialists** — IMPLEMENTED / PENDING ACCEPTANCE
 7. **A3.7 — Derivatives Context and Opportunity Risk Specialists** — PLANNED
 8. **A3.8 — Instrument-Aware Planner and Specialist Orchestration** — PLANNED
 9. **A3.9 — Structured Underlying Opportunity Intelligence MVP** — PLANNED
@@ -332,7 +332,9 @@ The authoritative decisions and milestone gates are in
 `TIAF_A3_ARCHITECTURE.md` and `TIAF_A3_DETAILED_ROADMAP.md`.
 The A3.1 implementation record is `TIAF_A3_1_AGENT_FOUNDATION.md`; the A3.2
 gateway/budget record is `TIAF_A3_2_GATEWAYS_BUDGETS.md`; and the A3.3
-specialist record is `TIAF_A3_3_TECHNICAL_SPECIALIST.md`.
+specialist record is `TIAF_A3_3_TECHNICAL_SPECIALIST.md`. A3.6 implementation
+and its explicit mapping/provider limits are recorded in
+`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`.
 The A3.4 implementation record is `TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md`.
 The A3.5 implementation record is `TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md`.
 

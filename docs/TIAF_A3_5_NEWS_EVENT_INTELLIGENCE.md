@@ -2,7 +2,7 @@
 
 ## Status and boundary
 
-**Status:** implemented / pending acceptance.
+**Status:** complete / accepted at `tiaf-a3.5`.
 **Accepted base:** `tiaf-a3.4` at
 `e0fdd056a4c056bd505d9f6b96620f4760de2981`.
 **Contract, gateway, normalization, dedupe, policy, and specialist version:**
