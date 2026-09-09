@@ -16,6 +16,27 @@ from .tapetide_mcp import (
     TapetideSchemaDriftError,
     TapetideToolNotAllowedError,
 )
+from .yahoo import (
+    YahooMarketIntelligenceProvider,
+    YahooNormalizer,
+    YahooSymbolMapper,
+    YahooToolClient,
+    india_yahoo_symbol_mapper,
+    yahoo_normalizer,
+)
+from .yahoo_mcp import (
+    YAHOO_READ_TOOLS,
+    YahooCallTimeoutError,
+    YahooConnectionClosedError,
+    YahooConnectorError,
+    YahooInitializationError,
+    YahooMalformedResultError,
+    YahooMcpClient,
+    YahooProcessLaunchError,
+    YahooProviderCallError,
+    YahooSchemaDriftError,
+    YahooToolNotAllowedError,
+)
 
 __all__ = [
     "FixtureMarketIntelligenceProvider",
@@ -33,4 +54,21 @@ __all__ = [
     "TapetideSchemaDriftError",
     "TapetideToolClient",
     "TapetideToolNotAllowedError",
+    "YAHOO_READ_TOOLS",
+    "YahooCallTimeoutError",
+    "YahooConnectionClosedError",
+    "YahooConnectorError",
+    "YahooInitializationError",
+    "YahooMalformedResultError",
+    "YahooMarketIntelligenceProvider",
+    "YahooMcpClient",
+    "YahooNormalizer",
+    "YahooProcessLaunchError",
+    "YahooProviderCallError",
+    "YahooSchemaDriftError",
+    "YahooSymbolMapper",
+    "YahooToolClient",
+    "YahooToolNotAllowedError",
+    "india_yahoo_symbol_mapper",
+    "yahoo_normalizer",
 ]

@@ -55,6 +55,7 @@ from .models import (
 )
 from .normalization import RuleBasedNormalizer, SemanticRule, tapetide_normalizer
 from .protocols import MarketIntelligenceNormalizer, MarketIntelligenceProvider
+from .provider_routes import yahoo_secondary_route_policy
 from .registry import MarketIntelligenceRegistry
 from .research import (
     BusinessModelAssessment,
@@ -151,4 +152,5 @@ __all__ = [
     "authorities_for",
     "authority_for",
     "tapetide_normalizer",
+    "yahoo_secondary_route_policy",
 ]

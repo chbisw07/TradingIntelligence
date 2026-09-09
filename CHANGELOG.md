@@ -4,6 +4,17 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added a read-only Yahoo/yfinance MCP secondary provider for bounded company
+  profile/valuation, financial statement, earnings-event, news, and optional
+  analyst-recommendation evidence. Explicit `.NS` symbol mappings, conservative
+  native-first normalization, typed failures, Tapetide fallback, multi-source
+  contradiction preservation, and offline replay all remain behind the frozen
+  A3.6.1 contracts. Added an explicit ten-call, read-only live-acceptance script;
+  live acceptance remains on HOLD because `uvx` is unavailable.
+- Corrected Yahoo FastMCP 4.0.3 `result`-wrapper decoding, valid-empty status
+  handling, safe profile projections, and earnings-calendar semantics. The
+  additive `READ_EARNINGS_CALENDAR` capability retains the existing
+  `READ_FILINGS` authority ceiling and does not alter routing core behavior.
 - Implemented the TIAF_A3.6.1 provider-neutral market-intelligence fabric with
   fine capabilities beneath existing A3.2 authority, immutable provider
   manifests, four per-capability routing modes, budgeted progressive
