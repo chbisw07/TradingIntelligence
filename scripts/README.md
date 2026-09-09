@@ -168,6 +168,20 @@ captured A2.10 request contains relative evidence. There are intentionally no
 live sector/macro scripts: this repository has controlled contracts and
 caller-supplied/test adapters, not trustworthy production sector/macro feeds.
 
+`tapetide_live_acceptance.py` is the explicit A3.6.1 read-only live path. It
+requires `TAPETIDE_TOKEN` in the process environment or repository `.env` and
+will not run without `--live`. It launches `npx -y tapetide-mcp`, uses one
+reusable MCP session for exactly 12 bounded calls, prints only sanitized
+counts/statuses/fingerprints, and verifies persisted offline reconstruction
+after the connector closes:
+
+```bash
+python scripts/tapetide_live_acceptance.py --live
+```
+
+Normal unit tests inject a fake connector worker and never require Tapetide,
+credentials, `npx`, or network access.
+
 These are three distinct validation paths:
 
 1. **Synthetic golden tests.**

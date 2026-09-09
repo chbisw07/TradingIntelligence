@@ -19,8 +19,11 @@ accepted at `tiaf-a3.3`. A3.4 Fundamental / Company-Quality Intelligence is
 accepted at `tiaf-a3.4`. A3.5 News / Catalyst / Event Intelligence is accepted
 at `tiaf-a3.5`. A3.6 Relative / Sector / Macro Context Intelligence is accepted
 at `tiaf-a3.6`. The A3.6.1 Market Intelligence Provider Fabric and Deep Research
-Foundation architecture is defined pending acceptance/implementation; A3.7
-follows it.**
+Foundation is implemented over the accepted `tiaf-a3.6.1-arch` design; its
+deterministic acceptance passes and its read-only stdio connector is complete.
+The final exact-code live matrix remains on HOLD because the daily Tapetide
+quota was exhausted before the ATHERENERG financial diagnostic could observe a
+raw financial response. A3.7 follows it.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -103,10 +106,11 @@ The [A3.6 contextual intelligence record](docs/TIAF_A3_6_RELATIVE_SECTOR_MACRO_I
 documents the three-specialist separation, explicit benchmark/sector/sensitivity
 mappings, controlled sector/macro reads, shared context reuse, deterministic
 cited interpretation, point-in-time rules, and production-source limits.
-The [A3.6.1 provider-fabric architecture](docs/TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md)
-defines per-capability provider declarations/routing, progressive evidence
-enrichment, native-semantic normalization, contradiction preservation, sparse
-research memory, and structured deep-research boundaries. The associated
+The [A3.6.1 provider-fabric record](docs/TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md)
+documents the implemented per-capability provider declarations/routing,
+progressive evidence enrichment, native-semantic normalization, contradiction
+preservation, sparse research memory, and structured deep-research boundaries.
+The associated
 [Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
 is non-authoritative evidence informing that design.
 

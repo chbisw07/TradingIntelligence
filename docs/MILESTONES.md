@@ -62,8 +62,10 @@ at tag `tiaf-a3.4`.
 ACCEPTED** at tag `tiaf-a3.6`.
 
 **TIAF_A3.6.1 — Market Intelligence Provider Fabric + Deep Research
-Foundation: ARCHITECTURE DEFINED / PENDING ACCEPTANCE AND IMPLEMENTATION.** A3.7
-follows it.
+Foundation: IMPLEMENTED / LIVE ACCEPTANCE HOLD.** The read-only Tapetide
+connector is complete; the final exact-code matrix is blocked until the daily
+quota resets and the inconclusive ATHERENERG financial diagnostic can be
+repeated. A3.7 follows it.
 
 ## Deferral governance
 
@@ -294,7 +296,8 @@ gateways and cannot call brokers, arbitrary providers, browsers, or shell tools.
 
 The accepted sequence is A3.1 contracts; A3.2 evidence/reasoning/budget
 gateways; A3.3 technical specialist; A3.4 fundamentals; A3.5 news/events; A3.6
-relative/sector/macro; A3.7 derivatives/risk; A3.8 Planner; A3.9 structured
+relative/sector/macro; A3.6.1 provider fabric/research foundation; A3.7
+derivatives/risk; A3.8 Planner; A3.9 structured
 underlying intelligence; and A3.10 replay/cost/failure hardening. See
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md) and
 [`TIAF_A3_DETAILED_ROADMAP.md`](TIAF_A3_DETAILED_ROADMAP.md).
@@ -318,6 +321,10 @@ A3.5 is complete/accepted at `tiaf-a3.5`. A3.6 adds three separate contextual
 specialists, explicit mapping/sensitivity evidence, controlled sector/macro
 gateways, and shared source-context reuse; see
 [`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`](TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md).
+A3.6.1 implements provider-neutral fine capabilities, per-capability routing,
+semantic normalization/conflicts, a read-only Tapetide adapter boundary, a
+secondary fixture, sparse evidence memory, and composable research contracts;
+see [`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
 
 **Acceptance:** a bounded A2-screened set can produce zero or more replayable,
 cited underlying-opportunity records with separate specialist opinions,

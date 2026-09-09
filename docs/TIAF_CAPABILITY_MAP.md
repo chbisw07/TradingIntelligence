@@ -135,9 +135,13 @@ The architecture is accepted in
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md). A3.1 contracts and the
 bounded single-specialist runtime and A3.2 controlled evidence/reasoning/budget
 gateways are complete/accepted. A3.3 through A3.6 are complete/accepted. The
-A3.6.1 provider-fabric and deep-research-foundation architecture is defined but
-not implemented. Agents consume controlled evidence and do not belong inside
-deterministic calculators.
+A3.6.1 provider-fabric and deep-research-foundation contracts, routing,
+normalization, evidence memory, and read-only adapter boundary are implemented.
+The isolated stdio connector is complete and the bounded Tapetide
+adapter-to-replay path was exercised. Final live acceptance remains on HOLD
+because the daily Tapetide quota was exhausted before the ATHERENERG financial
+diagnostic could observe a raw response. Agents consume controlled evidence and
+do not belong inside deterministic calculators.
 
 | Capability | Status | Placement |
 |---|---|---|
@@ -148,9 +152,9 @@ deterministic calculators.
 | Fundamental / company-quality interpretation | IMPLEMENTED | A3.4 complete/accepted; point-in-time, deterministic/cited/no-LLM path |
 | News / catalyst / event interpretation | IMPLEMENTED | A3.5 complete/accepted; PIT, deduplicated, cited/no-LLM path |
 | Relative / sector / macro interpretation | IMPLEMENTED | A3.6 complete/accepted; three separate cited/no-LLM specialists, explicit mappings, PIT and reusable context |
-| Multi-provider market-intelligence routing | PLANNED | A3.6.1 architecture; per-capability declarations/routing and progressive enrichment, no global provider |
-| Provider-native semantic normalization / contradiction journal | PLANNED | A3.6.1 architecture; reuses A3.4–A3.6 canonical evidence |
-| Sparse Evidence Graph / structured deep-research foundation | PLANNED | A3.6.1 architecture; materiality-driven, point-in-time, FACT/INFERENCE/HYPOTHESIS separated |
+| Multi-provider market-intelligence routing | IMPLEMENTED | A3.6.1 per-capability declarations, four routing modes, progressive enrichment, secondary fixture, and no global provider |
+| Provider-native semantic normalization / contradiction journal | IMPLEMENTED | A3.6.1 conservative mapping journal and canonical provenance projection; A3.4–A3.6 outputs remain unchanged |
+| Sparse Evidence Graph / structured deep-research foundation | IMPLEMENTED | A3.6.1 materiality-driven point-in-time graph and composable FACT/INFERENCE/HYPOTHESIS-separated research contracts |
 | Derivatives context / opportunity risk | PLANNED | A3.7; option selection excluded |
 | Instrument-aware Planner / orchestration | PLANNED | A3.8 |
 | Structured underlying opportunity intelligence | PLANNED | A3.9 |

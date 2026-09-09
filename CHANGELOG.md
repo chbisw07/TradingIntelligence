@@ -4,6 +4,27 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented the TIAF_A3.6.1 provider-neutral market-intelligence fabric with
+  fine capabilities beneath existing A3.2 authority, immutable provider
+  manifests, four per-capability routing modes, budgeted progressive
+  enrichment, typed failures/usage/audits, and replay fingerprints.
+- Added provider-native preservation, conservative semantic normalization,
+  canonical provenance projections, source-lineage-aware contradiction groups,
+  a deterministic secondary fixture, sparse point-in-time Evidence Graph, and
+  composable deep-research/synthesis contracts with enforced FACT/INFERENCE/
+  HYPOTHESIS separation and a valid zero-LLM path.
+- Added an SDK-isolated read-only Tapetide adapter and reusable stdio MCP
+  connector for the Phase-1 validated tool subset. Its tool names are
+  allow-listed, credentials remain environment-only, and ambiguous
+  revenue/sales/borrowings and provider-derived FCF semantics remain explicit.
+  The bounded live connector and replay path worked, but final acceptance
+  remains on HOLD because the daily Tapetide quota was exhausted before the
+  ATHERENERG financial diagnostic could observe a raw financial response.
+- Hardened the Tapetide boundary to recognize explicit provider failures even
+  when MCP reports `isError=false`. Rate-limit denials become the existing
+  typed `RATE_LIMIT`/`RATE_LIMITED` result before normalization, retain explicit
+  retry/reset metadata, respect configured fallback policy, and redact
+  credential-shaped provider diagnostics.
 - Defined the TIAF_A3.6.1 provider-neutral architecture for fine-grained
   capability declarations, per-capability routing, progressive budgeted
   enrichment, provider-native semantic preservation, contradiction-aware

@@ -502,7 +502,7 @@ cross-market macro feeds, provider fallback, and systematic regime forecasts.
 Supplies stable specialist and context contracts that multi-provider
 normalization must populate without changing downstream semantics.
 
-## A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation — Architecture Defined / Pending Implementation
+## A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation — Implemented / Deterministic Acceptance Complete
 
 ### Goal and boundary
 
@@ -510,8 +510,12 @@ Add provider declarations, per-capability route policy, progressive enrichment,
 provider-native semantic preservation, explicit normalization, contradiction
 groups, sparse evidence memory, and structured deep-research inputs. Reuse A3.2
 authorization/budgets and A3.4–A3.6 canonical evidence contracts. MCP and
-Tapetide remain adapter concerns; no production adapter or research runtime is
-implemented by the architecture pass.
+Tapetide remain adapter concerns. The provider-neutral runtime, read-only
+Tapetide adapter and stdio connector boundary, fixture provider, graph, and
+research contracts are implemented. The bounded live path was exercised, but
+final exact-code acceptance is on HOLD because the daily provider quota was
+exhausted before the ATHERENERG financial diagnostic could observe a raw
+response.
 
 ### Work packages
 

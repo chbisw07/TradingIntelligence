@@ -1,0 +1,298 @@
+"""Stable provider-neutral vocabulary for the A3.6.1 intelligence fabric."""
+
+from enum import StrEnum
+
+from tiaf.agents import AgentCapability
+
+
+class MarketIntelligenceCapability(StrEnum):
+    READ_COMPANY_PROFILE = "READ_COMPANY_PROFILE"
+    READ_COMPANY_IDENTITY = "READ_COMPANY_IDENTITY"
+    READ_PEERS = "READ_PEERS"
+    READ_FINANCIALS = "READ_FINANCIALS"
+    READ_FINANCIAL_RATIOS = "READ_FINANCIAL_RATIOS"
+    READ_VALUATION_CONTEXT = "READ_VALUATION_CONTEXT"
+    READ_SHAREHOLDING = "READ_SHAREHOLDING"
+    READ_PROMOTER_PLEDGE = "READ_PROMOTER_PLEDGE"
+    READ_CREDIT_RATINGS = "READ_CREDIT_RATINGS"
+    READ_ANALYST_FORECASTS = "READ_ANALYST_FORECASTS"
+    READ_FILINGS = "READ_FILINGS"
+    READ_NEWS = "READ_NEWS"
+    READ_CORPORATE_ACTIONS = "READ_CORPORATE_ACTIONS"
+    READ_EARNINGS_CALL_CONTEXT = "READ_EARNINGS_CALL_CONTEXT"
+    READ_MANAGEMENT_EVIDENCE = "READ_MANAGEMENT_EVIDENCE"
+    READ_INDUSTRY_CONTEXT = "READ_INDUSTRY_CONTEXT"
+    READ_COMPETITORS = "READ_COMPETITORS"
+    READ_CUSTOMER_EXPOSURE = "READ_CUSTOMER_EXPOSURE"
+    READ_SUPPLIER_EXPOSURE = "READ_SUPPLIER_EXPOSURE"
+    READ_SUPPLY_CHAIN_EXPOSURE = "READ_SUPPLY_CHAIN_EXPOSURE"
+    READ_GEOGRAPHIC_EXPOSURE = "READ_GEOGRAPHIC_EXPOSURE"
+    READ_COMMODITY_EXPOSURE = "READ_COMMODITY_EXPOSURE"
+    READ_CURRENCY_EXPOSURE = "READ_CURRENCY_EXPOSURE"
+    READ_POLICY_REGULATION = "READ_POLICY_REGULATION"
+    READ_GOVERNANCE_RISK = "READ_GOVERNANCE_RISK"
+    READ_INTERNATIONAL_CONTEXT = "READ_INTERNATIONAL_CONTEXT"
+    READ_SECTOR_CONTEXT = "READ_SECTOR_CONTEXT"
+    READ_INDEX_CONTEXT = "READ_INDEX_CONTEXT"
+    READ_MARKET_CONTEXT = "READ_MARKET_CONTEXT"
+    READ_INSTITUTIONAL_FLOW_CONTEXT = "READ_INSTITUTIONAL_FLOW_CONTEXT"
+    READ_MACRO_CONTEXT = "READ_MACRO_CONTEXT"
+    READ_IDENTIFIER_ASOF = "READ_IDENTIFIER_ASOF"
+    READ_INDEX_MEMBERSHIP_ASOF = "READ_INDEX_MEMBERSHIP_ASOF"
+    READ_POINT_IN_TIME_FINANCIALS = "READ_POINT_IN_TIME_FINANCIALS"
+
+
+_CAPABILITY_AUTHORITY = {
+    **{
+        item: AgentCapability.READ_FUNDAMENTALS
+        for item in (
+            MarketIntelligenceCapability.READ_COMPANY_PROFILE,
+            MarketIntelligenceCapability.READ_COMPANY_IDENTITY,
+            MarketIntelligenceCapability.READ_FINANCIALS,
+            MarketIntelligenceCapability.READ_FINANCIAL_RATIOS,
+            MarketIntelligenceCapability.READ_VALUATION_CONTEXT,
+            MarketIntelligenceCapability.READ_SHAREHOLDING,
+            MarketIntelligenceCapability.READ_PROMOTER_PLEDGE,
+            MarketIntelligenceCapability.READ_CREDIT_RATINGS,
+            MarketIntelligenceCapability.READ_ANALYST_FORECASTS,
+            MarketIntelligenceCapability.READ_POINT_IN_TIME_FINANCIALS,
+        )
+    },
+    **{
+        item: AgentCapability.READ_FILINGS
+        for item in (
+            MarketIntelligenceCapability.READ_FILINGS,
+            MarketIntelligenceCapability.READ_CORPORATE_ACTIONS,
+            MarketIntelligenceCapability.READ_EARNINGS_CALL_CONTEXT,
+            MarketIntelligenceCapability.READ_MANAGEMENT_EVIDENCE,
+        )
+    },
+    MarketIntelligenceCapability.READ_NEWS: AgentCapability.READ_NEWS,
+    **{
+        item: AgentCapability.READ_SECTOR_CONTEXT
+        for item in (
+            MarketIntelligenceCapability.READ_PEERS,
+            MarketIntelligenceCapability.READ_INDUSTRY_CONTEXT,
+            MarketIntelligenceCapability.READ_COMPETITORS,
+            MarketIntelligenceCapability.READ_SECTOR_CONTEXT,
+            MarketIntelligenceCapability.READ_IDENTIFIER_ASOF,
+            MarketIntelligenceCapability.READ_INDEX_MEMBERSHIP_ASOF,
+        )
+    },
+    **{
+        item: AgentCapability.READ_MACRO_CONTEXT
+        for item in (
+            MarketIntelligenceCapability.READ_INDEX_CONTEXT,
+            MarketIntelligenceCapability.READ_MARKET_CONTEXT,
+            MarketIntelligenceCapability.READ_INSTITUTIONAL_FLOW_CONTEXT,
+            MarketIntelligenceCapability.READ_MACRO_CONTEXT,
+        )
+    },
+    **{
+        item: AgentCapability.REQUEST_ADDITIONAL_MARKET_EVIDENCE
+        for item in (
+            MarketIntelligenceCapability.READ_CUSTOMER_EXPOSURE,
+            MarketIntelligenceCapability.READ_SUPPLIER_EXPOSURE,
+            MarketIntelligenceCapability.READ_SUPPLY_CHAIN_EXPOSURE,
+            MarketIntelligenceCapability.READ_GEOGRAPHIC_EXPOSURE,
+            MarketIntelligenceCapability.READ_COMMODITY_EXPOSURE,
+            MarketIntelligenceCapability.READ_CURRENCY_EXPOSURE,
+            MarketIntelligenceCapability.READ_POLICY_REGULATION,
+            MarketIntelligenceCapability.READ_GOVERNANCE_RISK,
+            MarketIntelligenceCapability.READ_INTERNATIONAL_CONTEXT,
+        )
+    },
+}
+
+_ALTERNATE_AUTHORITIES = {
+    MarketIntelligenceCapability.READ_EARNINGS_CALL_CONTEXT: (
+        AgentCapability.READ_FILINGS,
+        AgentCapability.READ_NEWS,
+    ),
+    MarketIntelligenceCapability.READ_MANAGEMENT_EVIDENCE: (
+        AgentCapability.READ_FILINGS,
+        AgentCapability.READ_NEWS,
+    ),
+}
+
+
+def authority_for(capability: MarketIntelligenceCapability) -> AgentCapability:
+    """Return the existing A3.2 authority ceiling for a fine capability."""
+    return _CAPABILITY_AUTHORITY[capability]
+
+
+def authorities_for(
+    capability: MarketIntelligenceCapability,
+) -> tuple[AgentCapability, ...]:
+    """Return every allowed coarse ceiling when source class permits a choice."""
+    return _ALTERNATE_AUTHORITIES.get(capability, (authority_for(capability),))
+
+
+class CapabilitySupport(StrEnum):
+    FULL = "FULL"
+    PARTIAL = "PARTIAL"
+    UNSUPPORTED = "UNSUPPORTED"
+
+
+class EvidenceOutputType(StrEnum):
+    PRIMARY_EVIDENCE = "PRIMARY_EVIDENCE"
+    SECONDARY_STRUCTURED = "SECONDARY_STRUCTURED"
+    INTERPRETED_AI = "INTERPRETED_AI"
+    PROVIDER_DERIVED = "PROVIDER_DERIVED"
+
+
+class SourceAuthority(StrEnum):
+    AUTHORITATIVE = "AUTHORITATIVE"
+    PRIMARY = "PRIMARY"
+    TRUSTED_SECONDARY = "TRUSTED_SECONDARY"
+    AGGREGATOR = "AGGREGATOR"
+    UNKNOWN = "UNKNOWN"
+
+
+class RoutingMode(StrEnum):
+    FIRST_SUCCESS = "FIRST_SUCCESS"
+    PRIMARY_WITH_FALLBACK = "PRIMARY_WITH_FALLBACK"
+    MULTI_SOURCE = "MULTI_SOURCE"
+    AUTHORITATIVE_CONFIRMATION = "AUTHORITATIVE_CONFIRMATION"
+
+
+class ProviderResultStatus(StrEnum):
+    SUCCESS = "SUCCESS"
+    PARTIAL = "PARTIAL"
+    UNSUPPORTED = "UNSUPPORTED"
+    UNAVAILABLE = "UNAVAILABLE"
+    STALE = "STALE"
+    OUT_OF_COVERAGE = "OUT_OF_COVERAGE"
+    RATE_LIMITED = "RATE_LIMITED"
+    TIMEOUT = "TIMEOUT"
+    BUDGET_EXCEEDED = "BUDGET_EXCEEDED"
+    INVALID_OUTPUT = "INVALID_OUTPUT"
+    FAILED = "FAILED"
+
+
+class ProviderFailureKind(StrEnum):
+    UNAUTHORIZED = "UNAUTHORIZED"
+    UNKNOWN_SYMBOL = "UNKNOWN_SYMBOL"
+    UNSUPPORTED_CAPABILITY = "UNSUPPORTED_CAPABILITY"
+    TIMEOUT = "TIMEOUT"
+    MALFORMED_PAYLOAD = "MALFORMED_PAYLOAD"
+    MISSING_SOURCE_REFERENCE = "MISSING_SOURCE_REFERENCE"
+    MISSING_PERIOD = "MISSING_PERIOD"
+    AMBIGUOUS_MAPPING = "AMBIGUOUS_MAPPING"
+    STALE = "STALE"
+    ESTIMATED_AVAILABILITY = "ESTIMATED_AVAILABILITY"
+    OUT_OF_COVERAGE = "OUT_OF_COVERAGE"
+    RATE_LIMIT = "RATE_LIMIT"
+    BUDGET_EXCEEDED = "BUDGET_EXCEEDED"
+    NETWORK = "NETWORK"
+    PROVIDER_UNAVAILABLE = "PROVIDER_UNAVAILABLE"
+    UNKNOWN = "UNKNOWN"
+
+
+class SemanticMappingQuality(StrEnum):
+    EXACT = "EXACT"
+    WELL_SUPPORTED = "WELL_SUPPORTED"
+    PROVIDER_DEFINED = "PROVIDER_DEFINED"
+    AMBIGUOUS = "AMBIGUOUS"
+
+
+class DerivationClass(StrEnum):
+    REPORTED = "REPORTED"
+    PROVIDER_DERIVED = "PROVIDER_DERIVED"
+    TI_DERIVED = "TI_DERIVED"
+
+
+class AvailabilityBasis(StrEnum):
+    EXACT_PUBLICATION_TIME = "EXACT_PUBLICATION_TIME"
+    PROVIDER_AVAILABLE_FROM = "PROVIDER_AVAILABLE_FROM"
+    ESTIMATED_DATE = "ESTIMATED_DATE"
+    ACQUISITION_TIME = "ACQUISITION_TIME"
+    UNKNOWN = "UNKNOWN"
+
+
+class PointInTimeQuality(StrEnum):
+    EXACT = "EXACT"
+    CONSERVATIVE = "CONSERVATIVE"
+    LIMITED = "LIMITED"
+    UNKNOWN = "UNKNOWN"
+
+
+class ContradictionResolution(StrEnum):
+    UNRESOLVED = "UNRESOLVED"
+    QUALIFIED = "QUALIFIED"
+    SUPERSEDED = "SUPERSEDED"
+    RESOLVED_BY_AUTHORITY = "RESOLVED_BY_AUTHORITY"
+
+
+class EnrichmentAction(StrEnum):
+    CONTINUE = "CONTINUE"
+    STOP_SUFFICIENT = "STOP_SUFFICIENT"
+    STOP_BUDGET = "STOP_BUDGET"
+    STOP_NO_ELIGIBLE_PROVIDER = "STOP_NO_ELIGIBLE_PROVIDER"
+
+
+class EpistemicKind(StrEnum):
+    FACT = "FACT"
+    INFERENCE = "INFERENCE"
+    HYPOTHESIS = "HYPOTHESIS"
+
+
+class GraphNodeKind(StrEnum):
+    COMPANY = "COMPANY"
+    SECURITY = "SECURITY"
+    SECTOR = "SECTOR"
+    INDUSTRY = "INDUSTRY"
+    INDEX = "INDEX"
+    ORGANIZATION = "ORGANIZATION"
+    COMPETITOR = "COMPETITOR"
+    CUSTOMER = "CUSTOMER"
+    SUPPLIER = "SUPPLIER"
+    END_MARKET = "END_MARKET"
+    GEOGRAPHY = "GEOGRAPHY"
+    COMMODITY = "COMMODITY"
+    CURRENCY = "CURRENCY"
+    POLICY = "POLICY"
+    REGULATION = "REGULATION"
+    MACRO_DRIVER = "MACRO_DRIVER"
+    CATALYST = "CATALYST"
+    RISK = "RISK"
+
+
+class GraphRelation(StrEnum):
+    LISTED_AS = "LISTED_AS"
+    BELONGS_TO_SECTOR = "BELONGS_TO_SECTOR"
+    BELONGS_TO_INDUSTRY = "BELONGS_TO_INDUSTRY"
+    MEMBER_OF_INDEX = "MEMBER_OF_INDEX"
+    COMPETES_WITH = "COMPETES_WITH"
+    HAS_CUSTOMER = "HAS_CUSTOMER"
+    HAS_SUPPLIER = "HAS_SUPPLIER"
+    SERVES_END_MARKET = "SERVES_END_MARKET"
+    EXPOSED_TO_GEOGRAPHY = "EXPOSED_TO_GEOGRAPHY"
+    EXPOSED_TO_COMMODITY = "EXPOSED_TO_COMMODITY"
+    EXPOSED_TO_CURRENCY = "EXPOSED_TO_CURRENCY"
+    AFFECTED_BY_POLICY = "AFFECTED_BY_POLICY"
+    AFFECTED_BY_REGULATION = "AFFECTED_BY_REGULATION"
+    SENSITIVE_TO_MACRO = "SENSITIVE_TO_MACRO"
+    HAS_CATALYST = "HAS_CATALYST"
+    HAS_RISK = "HAS_RISK"
+
+
+class GraphEdgeStatus(StrEnum):
+    CONFIRMED = "CONFIRMED"
+    REPORTED = "REPORTED"
+    INFERRED = "INFERRED"
+    UNCERTAIN = "UNCERTAIN"
+
+
+class ResearchDepth(StrEnum):
+    L0_IDENTITY = "L0_IDENTITY"
+    L1_BASIC_CONTEXT = "L1_BASIC_CONTEXT"
+    L2_INVESTMENT_RESEARCH = "L2_INVESTMENT_RESEARCH"
+    L3_DEEP_POSITION_INTELLIGENCE = "L3_DEEP_POSITION_INTELLIGENCE"
+
+
+class ResearchStatus(StrEnum):
+    SUCCESS = "SUCCESS"
+    PARTIAL = "PARTIAL"
+    INSUFFICIENT_EVIDENCE = "INSUFFICIENT_EVIDENCE"
+    ABSTAIN = "ABSTAIN"

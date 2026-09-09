@@ -282,8 +282,8 @@ major tag is `tiaf-a2-baseline`.
 
 # TIAF_A3 — Specialist Intelligence
 
-**Status: ARCHITECTURE AND A3.1–A3.6 ACCEPTED; A3.6.1 PROVIDER-FABRIC
-ARCHITECTURE DEFINED / PENDING IMPLEMENTATION; A3.7 FOLLOWS**
+**Status: ARCHITECTURE AND A3.1–A3.6 ACCEPTED; A3.6.1 PROVIDER FABRIC
+IMPLEMENTED / DETERMINISTIC ACCEPTANCE COMPLETE; A3.7 FOLLOWS**
 
 ## Goal
 
@@ -324,7 +324,7 @@ replacing the A2 benchmark.
 4. **A3.4 — Fundamental Evidence and Company Quality Specialist** — COMPLETE / ACCEPTED
 5. **A3.5 — News, Filing, Catalyst, and Event Intelligence** — COMPLETE / ACCEPTED
 6. **A3.6 — Relative, Sector, and Macro Context Specialists** — COMPLETE / ACCEPTED
-7. **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation** — ARCHITECTURE DEFINED / PENDING IMPLEMENTATION
+7. **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation** — IMPLEMENTED / DETERMINISTIC ACCEPTANCE COMPLETE
 8. **A3.7 — Derivatives Context and Opportunity Risk Specialists** — PLANNED
 9. **A3.8 — Instrument-Aware Planner and Specialist Orchestration** — PLANNED
 10. **A3.9 — Structured Underlying Opportunity Intelligence MVP** — PLANNED
@@ -339,9 +339,13 @@ and its explicit mapping/provider limits are recorded in
 `TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`.
 The A3.4 implementation record is `TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md`.
 The A3.5 implementation record is `TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md`.
-The A3.6.1 provider-fabric and deep-research implementation design is
-`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`; its Tapetide study is
-non-authoritative reference evidence, not provider-defined architecture.
+The A3.6.1 provider-fabric design and implementation record is
+`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`; its isolated read-only
+Tapetide connector is complete and the adapter-to-replay path was exercised.
+Final live acceptance remains on HOLD because the daily Tapetide quota was
+exhausted before the ATHERENERG financial diagnostic could observe a raw
+response. Its Tapetide study is non-authoritative reference evidence, not
+provider-defined architecture.
 
 ### Output
 

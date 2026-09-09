@@ -2,20 +2,23 @@
 
 ## Status and authority
 
-**Status:** architecture defined / pending acceptance and implementation.
-**Accepted base:** `tiaf-a3.6` at
-`a7e00121b1662bc68dddf620330e7cd18d1dbd5f`.
-**Milestone type:** architecture/design pass only.
+**Status:** implementation and deterministic acceptance complete; final live
+acceptance on HOLD because provider quota exhaustion made the ATHERENERG
+financial diagnostic inconclusive.
+**Implementation base:** `tiaf-a3.6.1-arch` at
+`f3fc9369c181d35affbb9c824eb33e9af73d1284`.
+**Milestone type:** additive implementation of the accepted architecture.
 
-This document is the authoritative implementation design for A3.6.1. The
+This document is the authoritative design and implementation record for A3.6.1. The
 forensic Tapetide study is retained separately in
 [`STUDY_Tapetide_Forensic_Validation_Report_Phase1.md`](STUDY_Tapetide_Forensic_Validation_Report_Phase1.md).
 `STUDY_` material is evidence informing the architecture, not an authoritative
 domain contract. `TBD_` continues to mean an unresolved design note.
 
-No production provider adapter, MCP invocation, deep-research workflow, model
-call, trading action, or broker operation is implemented by this architecture
-pass.
+The implementation adds a real read-only Tapetide adapter boundary and an
+SDK-isolated stdio connector. Credentials remain environment-only and are not
+bundled. It adds no model call, trading action, broker operation, A4
+arbitration, or unrestricted research workflow.
 
 ## Purpose and scope
 
@@ -44,6 +47,84 @@ authorized semantic evidence request
         -> structured context pack
         -> existing specialist or optional reasoning gateway
 ```
+
+## Implemented package and behavior
+
+The provider-neutral implementation lives in `tiaf.market_intelligence`:
+
+- immutable capability, provider-manifest, request, result, failure, route,
+  enrichment, coverage, audit, normalization, contradiction, and replay-run
+  contracts;
+- a registry of independently replaceable provider/normalizer pairs;
+- deterministic `FIRST_SUCCESS`, `PRIMARY_WITH_FALLBACK`, `MULTI_SOURCE`, and
+  `AUTHORITATIVE_CONFIRMATION` routing with A3.2 `AgentBudget`/`AgentUsage`;
+- typed provider-native observations and an explicit normalization journal;
+- a read-only Tapetide adapter with an injected transport protocol, a reusable
+  stdio MCP connector, and an exact tool allowlist, plus a deterministic
+  secondary fixture provider;
+- immutable, point-in-time sparse Evidence Graph nodes and versioned edges;
+- composable deep-research components with enforced `FACT`, `INFERENCE`, and
+  `HYPOTHESIS` rules; and
+- a normalized synthesis context and multi-capability research controller.
+
+Core/domain imports do not import the Tapetide adapter. A3 specialists do not
+know provider identities, tool names, MCP, or transport schemas. Offline replay
+uses the serialized `MarketIntelligenceRun` or
+`MarketIntelligenceResearchRun`; model reconstruction validates their evidence
+fingerprints without contacting a provider.
+
+The Tapetide adapter implements the Phase-1 validated read operations only:
+`get_company_profile`, `get_financials`, `get_shareholding`,
+`get_stock_events`, `get_forecasts`, `get_earnings_call_summary`,
+`get_promoter_pledge`, `get_credit_ratings`, and
+`get_index_membership_asof`. Every fine capability is declared `FULL`,
+`PARTIAL`, or `UNSUPPORTED`; absent tools are not inferred. Earnings-call and
+management summaries are declared `INTERPRETED_AI`, not primary facts. No
+portfolio, watchlist, order, broker, arbitrary-tool, or mutation operation is
+exposed.
+
+MCP transport success and provider success are distinct. Before any native
+observation or normalization is produced, the Tapetide boundary conservatively
+classifies explicit provider-level failures in structured or textual results,
+including the observed `isError=false` rate-limit denial. It reuses the
+provider-neutral typed failure taxonomy, retains explicit retry seconds and
+exact reset timestamps when parseable, and leaves configured route fallback
+and budget limits authoritative. Ambiguous normal text is not treated as an
+error. Credential-shaped text is redacted before it becomes a loggable or
+serializable provider result.
+
+Tapetide `yearly_revenue`, `Sales`, and `Borrowings` remain native
+provider-defined/ambiguous observations. Provider free cash flow remains
+`PROVIDER_DERIVED`. Only explicit `EXACT` or policy-approved
+`WELL_SUPPORTED` rules with a reporting period and source reference emit a
+canonical projection. A date-only `available_from` is conservatively normalized
+to the end of that date in canonical `Asia/Kolkata`; an absent availability
+time falls back to acquisition time and is labelled accordingly.
+
+The explicit live acceptance path is
+`python scripts/tapetide_live_acceptance.py --live`. It loads
+`TAPETIDE_TOKEN` from the process or repository `.env`, launches
+`npx -y tapetide-mcp`, reuses one initialized MCP session, and rejects every
+tool outside the adapter's read-only allowlist. The bounded pass covered
+RELIANCE, HDFCBANK, KAYNES, and ATHERENERG plus filings and ownership, but the
+final exact-code matrix was interrupted when the daily quota was exhausted.
+Consequently, the ATHERENERG financial diagnostic did not observe a raw
+financial response and is inconclusive. Its sanitized evidence is recorded in
+[`STUDY_Tapetide_Live_Acceptance_A3_6_1.md`](STUDY_Tapetide_Live_Acceptance_A3_6_1.md).
+
+Implementation and connector validation on 2026-09-09:
+
+- focused A3.6.1 suite: 70 passed;
+- complete repository suite: 1,621 passed;
+- `python -m compileall src`: passed;
+- `ruff check src tests`: passed;
+- `mypy src tests`: passed for 379 source files; and
+- `git diff --check`: passed.
+
+These deterministic results are supplemented by the bounded live study. The
+connector path is proven, but the study retains HOLD until the exact current
+matrix completes; neither result expands Tapetide beyond the documented
+provider role.
 
 ## Non-goals and authority boundaries
 
@@ -569,8 +650,9 @@ results.
 No new permanent `DEF-*` ID is required by this design pass:
 
 - `DEF-012` already covers production fundamentals, filings, sector, macro, and
-  peer acquisition; A3.6.1 designs its provider fabric and selects Tapetide only
-  as a conditional first candidate.
+  peer acquisition; A3.6.1 implements its provider fabric and a read-only
+  Tapetide adapter boundary, while licensed live access and broader source
+  coverage remain deferred.
 - `DEF-008` continues to cover market-data fallback; market-intelligence routing
   must not be mistaken for Dhan/Zerodha quote fallback.
 - `DEF-009` covers durable/distributed evidence-graph and cache persistence.
