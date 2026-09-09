@@ -70,6 +70,13 @@ observations through controlled capability gateways. Sector and subject-macro
 mappings are explicit/versioned, and reusable source snapshots are cached by
 sector or market rather than fetched once per symbol. Production context feeds
 and automatic mapping remain deferred; no arbitrary browsing was added.
+A3.6.1 designs the next acquisition layer without changing those specialists:
+fine provider capabilities sit beneath A3.2 authorization, route policy is per
+capability, native observations are retained before explicit normalization, and
+gaps/conflicts trigger only budgeted progressive enrichment. It also defines a
+sparse point-in-time Evidence Graph and structured deep-research context while
+keeping provider/MCP code outside canonical packages. Detail is in
+[`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
 
 ## A3 architecture boundary
 

@@ -282,7 +282,8 @@ major tag is `tiaf-a2-baseline`.
 
 # TIAF_A3 — Specialist Intelligence
 
-**Status: ARCHITECTURE AND A3.1–A3.5 ACCEPTED; A3.6 IMPLEMENTED / PENDING ACCEPTANCE; A3.7 NEXT**
+**Status: ARCHITECTURE AND A3.1–A3.6 ACCEPTED; A3.6.1 PROVIDER-FABRIC
+ARCHITECTURE DEFINED / PENDING IMPLEMENTATION; A3.7 FOLLOWS**
 
 ## Goal
 
@@ -322,11 +323,12 @@ replacing the A2 benchmark.
 3. **A3.3 — Technical and Market Structure Specialist** — COMPLETE / ACCEPTED
 4. **A3.4 — Fundamental Evidence and Company Quality Specialist** — COMPLETE / ACCEPTED
 5. **A3.5 — News, Filing, Catalyst, and Event Intelligence** — COMPLETE / ACCEPTED
-6. **A3.6 — Relative, Sector, and Macro Context Specialists** — IMPLEMENTED / PENDING ACCEPTANCE
-7. **A3.7 — Derivatives Context and Opportunity Risk Specialists** — PLANNED
-8. **A3.8 — Instrument-Aware Planner and Specialist Orchestration** — PLANNED
-9. **A3.9 — Structured Underlying Opportunity Intelligence MVP** — PLANNED
-10. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening** — PLANNED
+6. **A3.6 — Relative, Sector, and Macro Context Specialists** — COMPLETE / ACCEPTED
+7. **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation** — ARCHITECTURE DEFINED / PENDING IMPLEMENTATION
+8. **A3.7 — Derivatives Context and Opportunity Risk Specialists** — PLANNED
+9. **A3.8 — Instrument-Aware Planner and Specialist Orchestration** — PLANNED
+10. **A3.9 — Structured Underlying Opportunity Intelligence MVP** — PLANNED
+11. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening** — PLANNED
 
 The authoritative decisions and milestone gates are in
 `TIAF_A3_ARCHITECTURE.md` and `TIAF_A3_DETAILED_ROADMAP.md`.
@@ -337,6 +339,9 @@ and its explicit mapping/provider limits are recorded in
 `TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`.
 The A3.4 implementation record is `TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md`.
 The A3.5 implementation record is `TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md`.
+The A3.6.1 provider-fabric and deep-research implementation design is
+`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`; its Tapetide study is
+non-authoritative reference evidence, not provider-defined architecture.
 
 ### Output
 

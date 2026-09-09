@@ -16,7 +16,10 @@
 
 **A3.5:** complete / accepted at `tiaf-a3.5`.
 
-**A3.6:** implemented / pending acceptance.
+**A3.6:** complete / accepted at `tiaf-a3.6`.
+
+**A3.6.1:** Market Intelligence Provider Fabric + Deep Research Foundation
+architecture defined / pending acceptance and implementation.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -39,6 +42,9 @@ deliberate refinements:
   bounded read-only acquisition path before their specialist is accepted.
 - A3.6 contains three distinct capabilities—Relative, Sector, and Macro—behind
   separate capability IDs; it is not one blended context Agent.
+- A3.6.1 inserts the provider-neutral acquisition/normalization fabric needed
+  to populate those and earlier evidence contracts from multiple providers. It
+  is not a planner, specialist, or deep-research god-agent.
 - A3.7 separates Derivatives Context from Opportunity Risk. Neither selects an
   option contract or manages a position.
 - A3.8 moves full planning after specialist boundaries have been exercised.
@@ -60,7 +66,8 @@ flowchart LR
     A33 --> A34[A3.4 Fundamentals]
     A34 --> A35[A3.5 News/events]
     A35 --> A36[A3.6 Relative/sector/macro]
-    A36 --> A37[A3.7 Derivatives/risk]
+    A36 --> A361[A3.6.1 Provider fabric/research foundation]
+    A361 --> A37[A3.7 Derivatives/risk]
     A37 --> A38[A3.8 Planner/orchestration]
     A38 --> A39[A3.9 Opportunity intelligence MVP]
     A39 --> A310[A3.10 Replay/cost/failure hardening]
@@ -430,7 +437,7 @@ point-in-time reconstruction (DEF-049), and corporate-action adjustment
 
 Makes sourced company and macro/sector events available to context specialists.
 
-## A3.6 — Relative, Sector, and Macro Context Specialists — Implemented / Pending Acceptance
+## A3.6 — Relative, Sector, and Macro Context Specialists — Complete / Accepted
 
 ### Goal
 
@@ -490,9 +497,42 @@ final authority.
 Automatic mapping (DEF-047 if unresolved), richer breadth/factor evidence,
 cross-market macro feeds, provider fallback, and systematic regime forecasts.
 
+### Handoff to A3.6.1
+
+Supplies stable specialist and context contracts that multi-provider
+normalization must populate without changing downstream semantics.
+
+## A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation — Architecture Defined / Pending Implementation
+
+### Goal and boundary
+
+Add provider declarations, per-capability route policy, progressive enrichment,
+provider-native semantic preservation, explicit normalization, contradiction
+groups, sparse evidence memory, and structured deep-research inputs. Reuse A3.2
+authorization/budgets and A3.4–A3.6 canonical evidence contracts. MCP and
+Tapetide remain adapter concerns; no production adapter or research runtime is
+implemented by the architecture pass.
+
+### Work packages
+
+Capability/provider contracts; routing/enrichment; normalization/conflicts;
+Tapetide adapter; secondary-provider substitution fixture; sparse Evidence
+Graph; deep-research contracts/context; and live/replay/failure hardening.
+
+### Acceptance
+
+Provider substitution leaves canonical contracts and specialists unchanged;
+unsupported/ambiguous/conflicting evidence remains explicit; sufficient
+evidence stops fan-out; optional providers are not core dependencies; and all
+work remains authorized, budgeted, point-in-time, replayable, and read-only.
+
+Full design:
+[`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
+
 ### Handoff to A3.7
 
-Supplies surrounding context for derivative and downside-risk interpretation.
+Provides bounded external context acquisition without taking ownership of
+derivative interpretation, risk judgment, orchestration, or option selection.
 
 ## A3.7 — Derivatives Context and Opportunity Risk Specialists
 

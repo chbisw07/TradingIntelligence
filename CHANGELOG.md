@@ -4,6 +4,17 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Defined the TIAF_A3.6.1 provider-neutral architecture for fine-grained
+  capability declarations, per-capability routing, progressive budgeted
+  enrichment, provider-native semantic preservation, contradiction-aware
+  normalization, sparse point-in-time evidence memory, and structured deep
+  research.
+- Recorded Tapetide as the first conditional production candidate without
+  making Tapetide or MCP a domain dependency; preserved Dhan's live market/F&O
+  role and all A2/A3.1–A3.6 semantics. Added the Phase-1 Tapetide forensic study
+  as non-authoritative `STUDY_` evidence. No adapter/model runtime or live call
+  is included in this architecture-only pass.
+
 - Added TIAF_A3.6 as three separate deterministic, cited Relative Strength,
   Sector / Rotation, and Macro Context specialists with independent identities,
   typed detail, policies, contradictions, missing-evidence behavior, A2

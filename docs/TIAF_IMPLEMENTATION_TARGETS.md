@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.5 Accepted / A3.6 Pending Acceptance
+## TIAF_A3 sequence — A3.6 Accepted / A3.6.1 Architecture Defined
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -325,23 +325,29 @@ implemented merely by being documented.
    processing, bounded caller-supplied/test reads, and cited no-LLM
    interpretation. Detail:
    [`TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md`](TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md).
-6. **A3.6 — Relative, Sector, and Macro Context Specialists — IMPLEMENTED / PENDING ACCEPTANCE**
+6. **A3.6 — Relative, Sector, and Macro Context Specialists — COMPLETE / ACCEPTED**
    Implements three separate selectable, cited, deterministic/no-LLM
    capabilities; explicit benchmark/sector/sensitivity mappings; point-in-time
    sector/macro evidence contracts; controlled gateways; and shared source
    snapshot reuse. Production adapters and automatic mapping remain deferred.
    Detail:
    [`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`](TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md).
-7. **A3.7 — Derivatives Context and Opportunity Risk Specialists — PLANNED**
+7. **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation — ARCHITECTURE DEFINED / PENDING IMPLEMENTATION**
+   Define provider declarations, per-capability routing, progressive enrichment,
+   provider-native normalization, contradiction preservation, sparse evidence
+   memory, and structured research inputs without making Tapetide/MCP a domain
+   dependency. Detail:
+   [`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
+8. **A3.7 — Derivatives Context and Opportunity Risk Specialists — PLANNED**
    Interpret A2.7/current derivative and downside evidence without contract
    selection, position management, or unsupported probabilities.
-8. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — PLANNED**
+9. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — PLANNED**
    Apply progressive A2 screening, specialist selection, shallow/deep
    escalation, cache/reuse, hard budgets, and isolated degradation.
-9. **A3.9 — Structured Underlying Opportunity Intelligence MVP — PLANNED**
+10. **A3.9 — Structured Underlying Opportunity Intelligence MVP — PLANNED**
    Publish cited opinions, disagreement, missing evidence, quality/freshness,
    separated confidence, and A2 comparison. A6—not A3—owns `CE`/`PE`.
-10. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — PLANNED**
+11. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — PLANNED**
     Freeze Agent records/corpora, offline replay/regression, scale/cost evidence,
     failure injection, security checks, and the A7 outcome linkage.
 

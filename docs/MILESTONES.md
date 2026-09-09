@@ -57,8 +57,13 @@ tag `tiaf-a3.3`.
 at tag `tiaf-a3.4`.
 
 **TIAF_A3.5 — News / Catalyst / Event Intelligence: COMPLETE / ACCEPTED.**
-**TIAF_A3.6 — Relative / Sector / Macro Context Intelligence: IMPLEMENTED /
-PENDING ACCEPTANCE.** A3.7 is next.
+
+**TIAF_A3.6 — Relative / Sector / Macro Context Intelligence: COMPLETE /
+ACCEPTED** at tag `tiaf-a3.6`.
+
+**TIAF_A3.6.1 — Market Intelligence Provider Fabric + Deep Research
+Foundation: ARCHITECTURE DEFINED / PENDING ACCEPTANCE AND IMPLEMENTATION.** A3.7
+follows it.
 
 ## Deferral governance
 

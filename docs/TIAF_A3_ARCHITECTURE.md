@@ -4,15 +4,15 @@
 
 **Status:** architecture accepted at `tiaf-a3-arch`.
 
-**Runtime status:** A3.1 through A3.4 complete / accepted; A3.5 implemented /
-pending acceptance.
+**Runtime status:** A3.1 through A3.6 complete / accepted. A3.6.1 provider-fabric
+and deep-research-foundation architecture is defined pending implementation.
 
 **Accepted substrate:** `tiaf-a2-baseline` at
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
-**Current milestone:** TIAF_A3.5 — News / Catalyst / Event Intelligence,
-documented in
-[`TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md`](TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md).
+**Current milestone:** TIAF_A3.6.1 — Market Intelligence Provider Fabric + Deep
+Research Foundation, designed in
+[`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
 
 This is the authoritative architecture for TIAF_A3. It supplements the
 [canonical roadmap](TRADINGINTELLIGENCE_ROADMAP.md), and the executable sequence
@@ -453,6 +453,24 @@ licensed production source remains DEF-012, so fixture data is not live data.
   skip when no material mapped exposure exists; medium cost only when selected.
 - **Failures:** release revisions, stale series, weak exposure mapping, event
   uncertainty; qualify or abstain.
+
+### A3.6.1 Market Intelligence Provider Fabric
+
+A3.6.1 defines a provider-neutral acquisition layer beneath the existing A3.2
+gateways. Coarse `AgentCapability` values remain the least-privilege authority;
+fine market-intelligence capabilities drive provider declarations and
+per-capability routing without widening specialist permissions.
+
+The fabric preserves provider-native semantics before explicit mapping into the
+accepted A3.4 fundamental, A3.5 event, and A3.6 context contracts. It retains
+ambiguity and multi-source contradiction, enriches only when deterministic
+coverage policy and budget justify another call, and builds sparse
+point-in-time research memory. Optional model synthesis receives a structured
+context pack through the A3.2 reasoning gateway, never raw provider/MCP access.
+
+Tapetide is the first conditional production candidate, not an architectural
+dependency or Dhan replacement. The complete implementation design is
+[`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
 
 ### Derivatives Context
 

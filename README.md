@@ -17,8 +17,10 @@ A3.1 contracts and the bounded single-specialist runtime are accepted at
 `tiaf-a3.2`. A3.3 Technical / Market-Structure Specialist is complete and
 accepted at `tiaf-a3.3`. A3.4 Fundamental / Company-Quality Intelligence is
 accepted at `tiaf-a3.4`. A3.5 News / Catalyst / Event Intelligence is accepted
-at `tiaf-a3.5`. A3.6 Relative / Sector / Macro Context Intelligence is
-implemented and pending acceptance; A3.7 is next.**
+at `tiaf-a3.5`. A3.6 Relative / Sector / Macro Context Intelligence is accepted
+at `tiaf-a3.6`. The A3.6.1 Market Intelligence Provider Fabric and Deep Research
+Foundation architecture is defined pending acceptance/implementation; A3.7
+follows it.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -101,6 +103,12 @@ The [A3.6 contextual intelligence record](docs/TIAF_A3_6_RELATIVE_SECTOR_MACRO_I
 documents the three-specialist separation, explicit benchmark/sector/sensitivity
 mappings, controlled sector/macro reads, shared context reuse, deterministic
 cited interpretation, point-in-time rules, and production-source limits.
+The [A3.6.1 provider-fabric architecture](docs/TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md)
+defines per-capability provider declarations/routing, progressive evidence
+enrichment, native-semantic normalization, contradiction preservation, sparse
+research memory, and structured deep-research boundaries. The associated
+[Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
+is non-authoritative evidence informing that design.
 
 Intentional future work and architectural non-goals are tracked under stable
 IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are

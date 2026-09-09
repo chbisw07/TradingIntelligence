@@ -2,7 +2,7 @@
 
 ## Status and boundary
 
-**Status:** implemented / pending acceptance.
+**Status:** complete / accepted at `tiaf-a3.6`.
 
 TIAF_A3.6 adds three independently registered specialists and does not create a
 single market-context Agent:
