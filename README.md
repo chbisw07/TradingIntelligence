@@ -7,48 +7,59 @@ attributable intelligence for consumers such as TradeMonitor.
 
 ## Current stage
 
-The **TIAF_TGT0** and **TIAF_A0** baselines are frozen. **TIAF_A1.1** through
-**TIAF_A1.7** form the complete, live-validated A1 Data Foundation at tag
-`tiaf-a1.7`. **TIAF_A2.1** through **TIAF_A2.10** form the complete,
-live-validated deterministic A2 platform, frozen at `tiaf-a2-baseline`.
-**TIAF_A3 Specialist Intelligence architecture is accepted at `tiaf-a3-arch`.
-A3.1 contracts and the bounded single-specialist runtime are accepted at
-`tiaf-a3.1`. A3.2 controlled evidence/reasoning/budget gateways are accepted at
-`tiaf-a3.2`. A3.3 Technical / Market-Structure Specialist is complete and
-accepted at `tiaf-a3.3`. A3.4 Fundamental / Company-Quality Intelligence is
-accepted at `tiaf-a3.4`. A3.5 News / Catalyst / Event Intelligence is accepted
-at `tiaf-a3.5`. A3.6 Relative / Sector / Macro Context Intelligence is accepted
-at `tiaf-a3.6`. The A3.6.1 Market Intelligence Provider Fabric and Deep Research
-Foundation is frozen at `tiaf-a3.6.1`. Its post-freeze Yahoo/yfinance MCP
-follow-up adds a bounded secondary/fallback provider for profile, financial,
-earnings, and news evidence without changing specialist or canonical contracts.
-The corrected Yahoo ten-call live-acceptance matrix and exact offline replay
-passed on 2026-09-10. A bounded authoritative-confirmation gateway for NSE,
-BSE, and company IR primary sources is implemented and bounded-live-validated
-as a post-A3.6.1 follow-up. A3.6.2 now integrates these sources into bounded,
-graph-aware deterministic company research with explicit gaps, epistemic
-separation, zero-LLM operation, and exact offline replay. Its four-symbol,
-12-call live matrix passed on 2026-09-10. A3.7 now implements separate,
-deterministic/no-LLM Derivatives Context, Opportunity Quality, and Opportunity
-Risk specialists with cited evidence, grouped confidence, A2 comparison, and
-exact replay, accepted at `tiaf-a3.7`. Bounded Dhan live acquisition was
-attempted but returned `request failed`, so no A3.7 live result is claimed.**
+TradingIntelligence has completed its deterministic foundation and most of the A3 specialist-intelligence layer.
 
-**A3.8 Planner + Specialist Orchestration is implemented, pending user freeze.**
-The [A3.8 implementation](docs/TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md)
-provides capability-driven planning, bounded parallelism, selective enrichment
-and reruns, shared reservations, and offline replay with an isolated LangGraph
-adapter and serial reference runner. The Planner owns workflow decisions, not
-investment decisions. [Deterministic acceptance](docs/STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md)
-uses synthetic/captured evidence, not live market validation. Independent opinions,
-A2 `NO_TRADE`, gaps and disagreement remain explicit. No A3.9/A4–A10 behavior,
-new provider, specialist interpretation change, or model execution is added.
+### Completed foundations
 
-It is **not** a trading system. A2.9 emits replayable benchmark judgments and
-may validly return `NO_TRADE`, but it has no final recommendation Agent,
-strategy selection, broker execution/account integration, LLM calls, or
-TradeMonitor integration and cannot act on its output.
+- **A0 / TGT0** — frozen baseline.
+- **A1 Data Foundation** — complete and live-validated; frozen at `tiaf-a1.7`.
+- **A2 Deterministic Intelligence Platform** — complete and live-validated; frozen at `tiaf-a2-baseline`.
+- **A3 Specialist Intelligence architecture** — accepted at `tiaf-a3-arch`.
 
+### A3 specialist intelligence completed
+
+- **A3.1 — Agent contracts and bounded runtime** — accepted at `tiaf-a3.1`.
+- **A3.2 — Evidence, reasoning, and budget gateways** — accepted at `tiaf-a3.2`.
+- **A3.3 — Technical / Market-Structure Specialist** — accepted at `tiaf-a3.3`.
+- **A3.4 — Fundamental / Company-Quality Intelligence** — accepted at `tiaf-a3.4`.
+- **A3.5 — News / Catalyst / Event Intelligence** — accepted at `tiaf-a3.5`.
+- **A3.6 — Relative / Sector / Macro Context Intelligence** — accepted at `tiaf-a3.6`.
+- **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation** — frozen at `tiaf-a3.6.1`.
+  - Tapetide: primary structured India-market intelligence provider.
+  - Yahoo/yfinance MCP: secondary/fallback provider for profile, financial, earnings, and news evidence.
+  - NSE/BSE/company-IR Authoritative Confirmation Gateway: bounded primary-source confirmation.
+- **A3.6.2 — Market Intelligence / Deep Research Integration** — accepted with multi-source research, explicit gaps, epistemic separation, sparse evidence-graph updates, zero-LLM operation, and offline replay.
+- **A3.7 — Derivatives / Opportunity-Risk Specialists** — accepted at `tiaf-a3.7`.
+  - Separate Derivatives Context, Opportunity Quality, and Opportunity Risk specialists.
+  - Deterministic/no-LLM behavior, cited evidence, grouped confidence, A2 comparison, and exact replay.
+  - Bounded Dhan live option-chain acquisition was attempted but failed at the provider boundary; no live specialist result was fabricated.
+
+### Current milestone
+
+**A3.8 — Planner + Specialist Orchestration** is implemented and awaiting final freeze.
+
+A3.8 adds:
+
+- capability-driven specialist selection;
+- deterministic dependency planning;
+- bounded parallel execution;
+- shared evidence reuse and single-flight acquisition;
+- progressive enrichment and selective reruns;
+- materiality-based authoritative confirmation;
+- deep-research gating;
+- budget, timeout, failure, and stop semantics;
+- serial/LangGraph semantic parity;
+- replayable orchestration records.
+
+The Planner owns **workflow decisions only**. It does not make investment decisions, select specialist winners, choose option contracts, manage positions, or emit calibrated probabilities.
+
+The next planned milestones are:
+
+1. **A3.9 — Structured Opportunity Intelligence MVP**
+2. **A3.10 — Agent Replay / Baseline Comparison / Cost & Failure Hardening**
+3. **A3 closure** — deferred-item burn-down, cumulative A1+A2+A3 alignment review, documentation reconciliation, final regression/live acceptance, and freeze.
+
+TradingIntelligence is still an **intelligence and decision-support system, not an execution system**. Trade execution, position authority, and broker truth remain outside TI and are planned for later integration with TradeMonitor.
 ## Layout
 
 - `src/tiaf/` — application package and future capability namespaces
