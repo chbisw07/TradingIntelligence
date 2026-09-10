@@ -26,6 +26,13 @@ from .authoritative_models import (
     SourceAuthorityMetadata,
     UnresolvedDiscrepancy,
 )
+from .deep_research import (
+    AuthoritativeConfirmationTask,
+    ContextEvidenceQuality,
+    DeepResearchContextPack,
+    DeepResearchIntegrationController,
+    DeepResearchResult,
+)
 from .enums import (
     AuthoritativeDocumentKind,
     AvailabilityBasis,
@@ -115,6 +122,7 @@ __all__ = [
     "AuthoritativeConfirmationGateway",
     "AuthoritativeConfirmationRequest",
     "AuthoritativeConfirmationResult",
+    "AuthoritativeConfirmationTask",
     "AuthoritativeDocumentEvidence",
     "AuthoritativeDocumentKind",
     "AuthoritativeEscalationDecision",
@@ -135,9 +143,13 @@ __all__ = [
     "ConfirmationReasonCode",
     "ConfirmationRouteAudit",
     "ConfirmationStatus",
+    "ContextEvidenceQuality",
     "ConfirmedFieldFact",
     "CustomerExposure",
     "DerivationClass",
+    "DeepResearchContextPack",
+    "DeepResearchIntegrationController",
+    "DeepResearchResult",
     "DiscoveredClaim",
     "DocumentContentCache",
     "DocumentExtractionRule",

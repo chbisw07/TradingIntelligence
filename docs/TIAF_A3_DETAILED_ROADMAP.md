@@ -549,6 +549,28 @@ and exact replay; it does not add a crawler or browser-automation platform.
 Full design:
 [`TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md`](TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md).
 
+## A3.6.2 — Market Intelligence / Deep Research Integration — Complete / Accepted
+
+### Goal and boundary
+
+Compose the accepted A3.6.1, Yahoo, and authoritative seams into one bounded
+company-research path without adding a provider or expanding into planner,
+recommendation, forecast, trading, or source-UI architecture.
+
+### Implemented acceptance
+
+Multi-capability requests now flow through progressive enrichment into a
+normalized evidence-quality/PIT context, explicit research gaps and
+contradictions, evidence-backed sparse graph relationships, deterministic
+FACT-only research components, a company profile, semantic fingerprint, and
+provider-free replay. INFERENCE and HYPOTHESIS contracts enforce cited support
+and conditionality. The four-symbol live matrix completed 12 read-only calls,
+used Tapetide/Yahoo plus one bounded company-IR attempt, made zero model calls,
+and replayed exactly.
+
+Full record:
+[`TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md`](TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md).
+
 ### Handoff to A3.7
 
 Provides bounded external context acquisition without taking ownership of

@@ -149,6 +149,11 @@ live-validated. It reuses A3.6.1 routing and A3.5 event clustering to link
 material discovery claims to exchange, regulator, company-IR, rating, or other
 official document evidence without exposing source transports to specialists.
 
+A3.6.2 end-to-end deep-research integration is complete and bounded-live-
+validated. It composes the existing sources into normalized context, explicit
+gaps/contradictions, sparse graph memory, deterministic epistemically separated
+research output, and exact provider-free replay with zero model usage.
+
 The Yahoo earnings adapter uses the additive provider-neutral
 `READ_EARNINGS_CALENDAR` capability under the existing `READ_FILINGS` authority;
 it does not overload corporate-action or earnings-call semantics.
@@ -166,6 +171,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Provider-native semantic normalization / contradiction journal | IMPLEMENTED | A3.6.1 conservative mapping journal and canonical provenance projection; A3.4–A3.6 outputs remain unchanged |
 | Sparse Evidence Graph / structured deep-research foundation | IMPLEMENTED | A3.6.1 materiality-driven point-in-time graph and composable FACT/INFERENCE/HYPOTHESIS-separated research contracts |
 | Authoritative primary-source claim confirmation | IMPLEMENTED / LIVE VALIDATED | Bounded post-A3.6.1 NSE/BSE/company-IR adapters; source/domain validation, document/revision lineage, field-level confirmation, content cache, event/graph integration, and replay; no crawler |
+| Integrated deterministic company research | IMPLEMENTED / LIVE VALIDATED | A3.6.2 multi-capability enrichment, normalized quality/PIT context, authoritative linkage, sparse graph, FACT/INFERENCE/HYPOTHESIS enforcement, explicit gaps, no-LLM baseline, and exact replay |
 | Derivatives context / opportunity risk | PLANNED | A3.7; option selection excluded |
 | Instrument-aware Planner / orchestration | PLANNED | A3.8 |
 | Structured underlying opportunity intelligence | PLANNED | A3.9 |

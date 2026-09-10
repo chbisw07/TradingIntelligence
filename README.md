@@ -25,7 +25,10 @@ earnings, and news evidence without changing specialist or canonical contracts.
 The corrected Yahoo ten-call live-acceptance matrix and exact offline replay
 passed on 2026-09-10. A bounded authoritative-confirmation gateway for NSE,
 BSE, and company IR primary sources is implemented and bounded-live-validated
-as a post-A3.6.1 follow-up. A3.7 remains next.**
+as a post-A3.6.1 follow-up. A3.6.2 now integrates these sources into bounded,
+graph-aware deterministic company research with explicit gaps, epistemic
+separation, zero-LLM operation, and exact offline replay. Its four-symbol,
+12-call live matrix passed on 2026-09-10. A3.7 remains next.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -119,6 +122,13 @@ without exposing exchange transports to specialists. Its
 [bounded live acceptance](docs/STUDY_Authoritative_Confirmation_Gateway_Live_Acceptance.md)
 acquired and replayed official NSE/BSE evidence while preserving a typed
 not-found company-IR result.
+The [A3.6.2 integration record](docs/TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md)
+documents multi-capability planning, progressive enrichment, authoritative
+linkage, sparse evidence-graph updates, deterministic research outputs,
+epistemic enforcement, and provider-free replay. Its
+[bounded live study](docs/STUDY_A3_6_2_Deep_Research_Live_Acceptance.md) covers
+RELIANCE, HDFCBANK, KAYNES, and ATHERENERG without adding a provider or model
+call.
 The associated
 [Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
 is non-authoritative evidence informing that design.

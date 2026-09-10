@@ -4,6 +4,18 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF_A3.6.2 end-to-end market-intelligence/deep-research
+  integration over the existing multi-capability controller, progressive
+  provider routing, authoritative gateway, sparse Evidence Graph, and research
+  contracts. Added a normalized quality/PIT context pack, deterministic
+  evidence-cited research skeleton, explicit gap/contradiction retention,
+  sector-safe bank handling, semantic fingerprinting, and provider-free exact
+  replay with no model calls.
+- Added a bounded read-only A3.6.2 live path for RELIANCE, HDFCBANK, KAYNES,
+  and ATHERENERG. The final 12-call Tapetide/Yahoo/company-IR matrix produced
+  canonical evidence and sparse graph relationships for every symbol, retained
+  an honest authoritative `NOT_FOUND`, and replayed all four complete research
+  results exactly with zero tokens and no secrets.
 - Defined the bounded post-A3.6.1 Authoritative Confirmation Gateway
   architecture for selective material-claim confirmation against NSE, BSE,
   company IR, regulator, and other official evidence. The design reuses existing

@@ -214,6 +214,22 @@ normalized through the provider-neutral router, and replayed offline. The
 script never crawls, submits forms, logs in, bypasses access controls, or invokes
 a broker.
 
+`deep_research_live_acceptance.py` is the explicit A3.6.2 integration path:
+
+```bash
+.venv/bin/python scripts/deep_research_live_acceptance.py
+.venv/bin/python scripts/deep_research_live_acceptance.py --live
+```
+
+Without `--live`, it makes no external call. The live mode preflights `npx` and
+`uvx` (including the repository virtual environment sibling executable), uses
+the existing Tapetide/Yahoo adapters and authoritative gateway, and permits at
+most 12 read-only calls across RELIANCE, HDFCBANK, KAYNES, and ATHERENERG. It
+prints provider-neutral research counts/statuses, serializes complete
+`DeepResearchResult` records, closes the live connectors, and reconstructs the
+same evidence, gaps, graph, confirmation states, and semantic fingerprints
+offline. It performs no model or broker call.
+
 These are three distinct validation paths:
 
 1. **Synthetic golden tests.**

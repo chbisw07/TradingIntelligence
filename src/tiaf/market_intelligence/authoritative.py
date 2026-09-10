@@ -552,6 +552,7 @@ class AuthoritativeConfirmationGateway:
             route_audits=audits,
             event_cluster_id=request.claim.event_cluster_id,
             evidence_graph_node_ids=(),
+            usage=run.usage,
             confirmed_at=confirmed_at,
             quality=quality,
             semantic_fingerprint=fingerprint,

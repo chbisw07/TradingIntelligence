@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.6 Accepted / A3.6.1 + Authoritative Follow-up Implemented
+## TIAF_A3 sequence — A3.6.2 Complete / Accepted
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -350,16 +350,23 @@ implemented merely by being documented.
    specialists. This is an internal follow-up and does not renumber A3.7.
    Detail:
    [`TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md`](TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md).
-8. **A3.7 — Derivatives Context and Opportunity Risk Specialists — PLANNED**
+8. **A3.6.2 — Market Intelligence / Deep Research Integration — COMPLETE / ACCEPTED**
+   Integrates existing capability routing, Tapetide/Yahoo enrichment,
+   authoritative confirmation, normalized evidence quality/PIT, sparse graph,
+   deterministic epistemically constrained research output, explicit gaps,
+   fingerprints, and provider-free replay. The bounded four-symbol live matrix
+   passed with 12 read-only calls and zero model usage. Detail:
+   [`TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md`](TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md).
+9. **A3.7 — Derivatives Context and Opportunity Risk Specialists — PLANNED**
    Interpret A2.7/current derivative and downside evidence without contract
    selection, position management, or unsupported probabilities.
-9. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — PLANNED**
+10. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — PLANNED**
    Apply progressive A2 screening, specialist selection, shallow/deep
    escalation, cache/reuse, hard budgets, and isolated degradation.
-10. **A3.9 — Structured Underlying Opportunity Intelligence MVP — PLANNED**
+11. **A3.9 — Structured Underlying Opportunity Intelligence MVP — PLANNED**
    Publish cited opinions, disagreement, missing evidence, quality/freshness,
    separated confidence, and A2 comparison. A6—not A3—owns `CE`/`PE`.
-11. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — PLANNED**
+12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — PLANNED**
     Freeze Agent records/corpora, offline replay/regression, scale/cost evidence,
     failure injection, security checks, and the A7 outcome linkage.
 

@@ -7,7 +7,7 @@ from typing import Annotated, Self
 
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, model_validator
 
-from tiaf.agents import AgentBudget, AgentCapability
+from tiaf.agents import AgentBudget, AgentCapability, AgentUsage
 from tiaf.contracts import ContractModel, DataQuality, Horizon
 from tiaf.contracts.common import NonEmptyStr, Symbol, TiafDateTime
 from tiaf.events import EventMateriality, StructuredEventFact
@@ -337,6 +337,7 @@ class AuthoritativeConfirmationResult(ContractModel):
     route_audits: tuple[ConfirmationRouteAudit, ...]
     event_cluster_id: NonEmptyStr | None = None
     evidence_graph_node_ids: tuple[NonEmptyStr, ...] = ()
+    usage: AgentUsage = Field(default_factory=AgentUsage)
     confirmed_at: TiafDateTime
     quality: DataQuality
     semantic_fingerprint: Sha256

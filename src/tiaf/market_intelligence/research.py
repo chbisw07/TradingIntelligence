@@ -16,6 +16,7 @@ class ResearchAssertion(ContractModel):
     kind: EpistemicKind
     statement: NonEmptyStr
     evidence_ids: tuple[NonEmptyStr, ...] = ()
+    supporting_assertion_ids: tuple[NonEmptyStr, ...] = ()
     reasoning: NonEmptyStr | None = None
     assumptions: tuple[NonEmptyStr, ...] = ()
     invalidation_conditions: tuple[NonEmptyStr, ...] = ()
@@ -25,15 +26,30 @@ class ResearchAssertion(ContractModel):
         if self.kind is EpistemicKind.FACT:
             if not self.evidence_ids:
                 raise ValueError("FACT assertion requires cited evidence")
+            if self.supporting_assertion_ids:
+                raise ValueError("FACT assertion cannot be promoted from another assertion")
             if self.assumptions:
                 raise ValueError("FACT assertion cannot depend on assumptions")
         elif self.kind is EpistemicKind.INFERENCE:
-            if not self.evidence_ids or self.reasoning is None:
-                raise ValueError("INFERENCE requires evidence and explicit reasoning")
-        elif not self.evidence_ids or not self.assumptions or not self.invalidation_conditions:
+            if (
+                not self.evidence_ids and not self.supporting_assertion_ids
+            ) or self.reasoning is None:
+                raise ValueError(
+                    "INFERENCE requires supporting evidence/assertions and explicit reasoning"
+                )
+        elif (
+            not self.evidence_ids and not self.supporting_assertion_ids
+        ) or not self.assumptions or not self.invalidation_conditions:
             raise ValueError(
-                "HYPOTHESIS requires supporting evidence, assumptions, and invalidation conditions"
+                "HYPOTHESIS requires supporting evidence/assertions, assumptions, and "
+                "invalidation conditions"
             )
+        if len(self.evidence_ids) != len(set(self.evidence_ids)):
+            raise ValueError("assertion evidence IDs must be unique")
+        if len(self.supporting_assertion_ids) != len(set(self.supporting_assertion_ids)):
+            raise ValueError("supporting assertion IDs must be unique")
+        if self.assertion_id in self.supporting_assertion_ids:
+            raise ValueError("assertion cannot support itself")
         return self
 
 

@@ -87,6 +87,14 @@ scraper was implemented by the architecture pass. The subsequent bounded
 implementation supplies configured read-only source adapters, domain/redirect
 validation, immutable document hashing/cache, deterministic parser boundaries,
 claim reconciliation, and offline replay without adding a crawler.
+A3.6.2 composes those accepted seams into one bounded company-research flow:
+multi-capability acquisition, progressive enrichment, material-claim
+confirmation, sparse evidence-backed graph updates, a normalized quality/PIT
+context pack, deterministic FACT-only baseline components, explicit gaps and
+contradictions, semantic fingerprinting, and provider-free replay. It adds no
+new provider, model call, planner/LangGraph workflow, recommendation, or source
+UI. Detail is in
+[`TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md`](TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md).
 
 ## A3 architecture boundary
 
