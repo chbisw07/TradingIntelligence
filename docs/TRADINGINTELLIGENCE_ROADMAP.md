@@ -282,8 +282,8 @@ major tag is `tiaf-a2-baseline`.
 
 # TIAF_A3 — Specialist Intelligence
 
-**Status: ARCHITECTURE AND A3.1–A3.6 ACCEPTED; A3.6.1 PROVIDER FABRIC
-IMPLEMENTED / DETERMINISTIC ACCEPTANCE COMPLETE; A3.7 FOLLOWS**
+**Status: A3.1-A3.10 ACCEPTED THROUGH `tiaf-a3.10`; MAJOR CLOSURE
+`READY_TO_FREEZE_A3`**
 
 ## Goal
 
@@ -325,10 +325,11 @@ replacing the A2 benchmark.
 5. **A3.5 — News, Filing, Catalyst, and Event Intelligence** — COMPLETE / ACCEPTED
 6. **A3.6 — Relative, Sector, and Macro Context Specialists** — COMPLETE / ACCEPTED
 7. **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation** — IMPLEMENTED / DETERMINISTIC ACCEPTANCE COMPLETE
-8. **A3.7 — Derivatives Context and Opportunity Risk Specialists** — PLANNED
-9. **A3.8 — Instrument-Aware Planner and Specialist Orchestration** — PLANNED
-10. **A3.9 — Structured Underlying Opportunity Intelligence MVP** — PLANNED
-11. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening** — PLANNED
+8. **A3.6.2 — Market Intelligence / Deep Research Integration** — COMPLETE / ACCEPTED
+9. **A3.7 — Derivatives Context and Opportunity Risk Specialists** — COMPLETE / ACCEPTED
+10. **A3.8 — Instrument-Aware Planner and Specialist Orchestration** — COMPLETE / ACCEPTED
+11. **A3.9 — Structured Underlying Opportunity Intelligence MVP** — COMPLETE / ACCEPTED
+12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening** — COMPLETE / ACCEPTED
 
 The authoritative decisions and milestone gates are in
 `TIAF_A3_ARCHITECTURE.md` and `TIAF_A3_DETAILED_ROADMAP.md`.
@@ -346,6 +347,12 @@ Final live acceptance remains on HOLD because the daily Tapetide quota was
 exhausted before the ATHERENERG financial diagnostic could observe a raw
 response. Its Tapetide study is non-authoritative reference evidence, not
 provider-defined architecture.
+
+Yahoo's separate ten-call fallback matrix, the bounded authoritative gateway,
+and A3.6.2's 12-call integrated matrix are live-validated. A3.7-A3.10 and their
+limits are recorded in the detailed roadmap and the
+[A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md). The
+Tapetide `HOLD` remains a truthful provider-specific historical result.
 
 ### Output
 

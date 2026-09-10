@@ -9,26 +9,32 @@ attributable intelligence for consumers such as TradeMonitor.
 
 ### Past — accepted foundations
 
-A0/TGT0, A1 and A2 are frozen. A3.1–A3.9 are accepted; A3.8 bounded
-orchestration is frozen at `tiaf-a3.8` and A3.9 structured opportunity
-intelligence at `tiaf-a3.9`. See the
+A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
+`tiaf-a3.10`; A3.8 bounded orchestration is frozen at `tiaf-a3.8` and A3.9
+structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A3.10 hardening implemented
+### Present — A3 major closure ready to freeze
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
-is implemented with content-addressed cumulative A3 capture, offline replay,
-observational A2/A3 comparison, exact cost knowledge, failure degradation, a
-14-case synthetic acceptance corpus, and closure-readiness evidence without
-changing A3.9 states. See the
-[offline acceptance study](docs/STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md).
+is accepted with content-addressed cumulative A3 capture, offline replay,
+observational A2/A3 comparison, unknown-safe cost accounting, failure
+degradation and a 14-case synthetic acceptance corpus. The separate
+[A3 major closure review](docs/TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+classifies every active deferral, reconciles live/non-live claims and concludes
+`READY_TO_FREEZE_A3` without changing runtime semantics. The recommended major
+tag is `tiaf-a3-baseline`; it is not created by the review. A subsequent
+[A3 sub-milestone deferral audit](docs/STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md)
+reconciles four omitted A3-specific governance records without changing that
+freeze decision.
 
-### Future — separate A3 closure
+### Future — post-A3 architecture consolidation
 
-A separate A3 major closure and deferral review follows A3.10 acceptance. A4
-retains arbitration/recommendations; position,
-option-expression, forecast and execution authority remain outside A3. TI is an
-intelligence and decision-support system, not an execution system.
+Before A4, reopen the non-authoritative system, public-capability, Shell,
+source/citation, monitoring and forecasting notes in a dedicated architecture
+consolidation. A4 retains arbitration/recommendations; position,
+option-expression, forecast and execution authority remain outside A3. TI is
+an intelligence and decision-support system, not an execution system.
 
 ## Layout
 

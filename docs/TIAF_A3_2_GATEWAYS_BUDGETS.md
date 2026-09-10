@@ -164,6 +164,11 @@ over semantic task, evidence fingerprint, model identity/version, prompt and
 policy versions, specialist/schema identity, tier, and relevant configuration.
 No reasoning-result reuse is performed in A3.2.
 
+The later A3 sub-milestone deferral-discovery audit assigns DEF-052 to the
+distinct production model-backed reasoning adapter/policy that remains after
+the provider-neutral gateway contracts were accepted. This does not change the
+historical A3.2 implementation boundary.
+
 ## Security and future gateways
 
 Contract metadata and structured fields reject credential-shaped keys such as

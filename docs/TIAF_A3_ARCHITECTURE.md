@@ -4,18 +4,20 @@
 
 **Status:** architecture accepted at `tiaf-a3-arch`.
 
-**Runtime status:** A3.1–A3.7 complete / accepted through `tiaf-a3.7`, including
-the A3.6.1 provider fabric, bounded authoritative confirmation and A3.6.2 deep
-research integration. A3.8 orchestration and A3.9 structured opportunity
-intelligence are frozen at `tiaf-a3.8` and `tiaf-a3.9` respectively.
+**Runtime status:** A3.1-A3.10 complete / accepted through `tiaf-a3.10`,
+including the A3.6.1 provider fabric, bounded authoritative confirmation,
+A3.6.2 deep research integration, A3.8 orchestration, A3.9 structured
+opportunity intelligence and A3.10 hardening.
 
 **Accepted substrate:** `tiaf-a2-baseline` at
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
-**Current milestone:** TIAF_A3.10 — Agent Replay / Baseline Comparison / Cost &
-Failure Hardening, implemented with offline acceptance complete. Its
-authoritative design and implementation record is
-[`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
+**Current review:** the separate
+[A3 major closure](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) concludes
+`READY_TO_FREEZE_A3`. The recommended major tag is `tiaf-a3-baseline` after
+review and commit; post-A3 architecture consolidation precedes A4. The later
+[sub-milestone deferral audit](STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md)
+adds DEF-052 through DEF-055 as non-blocking post-A3 governance records.
 
 This is the authoritative architecture for TIAF_A3. It supplements the
 [canonical roadmap](TRADINGINTELLIGENCE_ROADMAP.md), and the executable sequence

@@ -23,6 +23,11 @@ TIAF will produce timestamped, attributable, and evaluable structured
 intelligence. It will not own broker execution authority. TradeMonitor remains
 the governor, while the broker remains the final truth for live state.
 
+A3.1-A3.10 are accepted through `tiaf-a3.10`. The separate
+[A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) concludes
+`READY_TO_FREEZE_A3`; `tiaf-a3-baseline` is the recommended major tag after
+the documentation-only closure changes are reviewed and committed.
+
 ## Long-term missions
 
 ### Opportunity Intelligence
@@ -125,8 +130,10 @@ implements the final A3 sub-milestone: content-addressed complete replay package
 recorded/deterministic/comparison replay, observational A2/A3 comparison,
 unknown-safe cost accounting, lossless failure/degradation summaries and a
 closure-readiness evidence seam and a 14-case offline acceptance corpus. See the
-[acceptance study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md). It changes no intelligence state or authority;
-the major A3 closure/deferral review remains separate.
+[acceptance study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md). It changes no
+intelligence state or authority. The later, separate
+[A3 closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) found no A3
+blocker and did not change A3.10 runtime semantics.
 
 ## A3 architecture boundary
 

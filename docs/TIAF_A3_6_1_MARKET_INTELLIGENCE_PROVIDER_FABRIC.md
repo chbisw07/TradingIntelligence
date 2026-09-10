@@ -2,9 +2,11 @@
 
 ## Status and authority
 
-**Status:** implementation and deterministic acceptance complete; final live
-acceptance on HOLD because provider quota exhaustion made the ATHERENERG
-financial diagnostic inconclusive.
+**Status:** implementation accepted at `tiaf-a3.6.1`; the standalone
+exact-current Tapetide live matrix remains on HOLD because provider quota
+exhaustion made the ATHERENERG financial diagnostic inconclusive. Separate
+later Yahoo fallback and A3.6.2 integrated bounded-live matrices passed; they
+do not rewrite the Tapetide result.
 **Implementation base:** `tiaf-a3.6.1-arch` at
 `f3fc9369c181d35affbb9c824eb33e9af73d1284`.
 **Milestone type:** additive implementation of the accepted architecture.

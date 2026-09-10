@@ -4,6 +4,18 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Audited all accepted A3 sub-milestone records for deferred capabilities that
+  predated stable governance IDs. Added DEF-052 through DEF-055 for production
+  model-backed reasoning, cross-candidate A3 opportunity analysis, user-facing
+  citation/report rendering and monetary pricing knowledge; clarified DEF-003
+  and DEF-010; and reconciled the register/closure counts without changing A3
+  runtime or freeze readiness.
+- Completed the documentation-only TIAF_A3 major closure review over accepted
+  `tiaf-a3.10`: inventoried every A3 tag/capability and live/non-live claim,
+  reran the cumulative offline/replay boundaries, classified all 43 deferrals
+  active at review entry, closed DEF-002, clarified DEF-008/DEF-012, and found
+  no runtime or architecture blocker to the recommended `tiaf-a3-baseline`
+  freeze. A4 and all post-A3 TBD capabilities remain unimplemented.
 - Implemented TIAF_A3.10 replay/comparison/cost/failure hardening over frozen
   `tiaf-a3.9`: immutable content-addressed packages, full/projection A2 capture
   modes, recorded/deterministic/comparison replay, closed observational A2/A3

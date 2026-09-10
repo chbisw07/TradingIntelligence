@@ -3,6 +3,12 @@
 ## Final status
 
 **Decision:** `HOLD`
+
+**Historical-status clarification (A3 closure):** this `HOLD` remains the
+truthful result for the exact-current standalone Tapetide matrix. It does not
+describe the later Yahoo fallback matrix or A3.6.2 integrated run, which passed
+their own bounded live acceptance, and it does not undo the accepted
+provider-neutral A3.6.1 contracts/runtime at tag `tiaf-a3.6.1`.
 **Latest retry:** `2026-09-09T18:29:42+05:30`
 **Implementation base:** `tiaf-a3.6.1-arch`
 (`f3fc9369c181d35affbb9c824eb33e9af73d1284`)

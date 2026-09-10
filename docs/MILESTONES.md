@@ -56,16 +56,36 @@ tag `tiaf-a3.3`.
 **TIAF_A3.4 — Fundamental / Company-Quality Intelligence: COMPLETE / ACCEPTED**
 at tag `tiaf-a3.4`.
 
-**TIAF_A3.5 — News / Catalyst / Event Intelligence: COMPLETE / ACCEPTED.**
+**TIAF_A3.5 — News / Catalyst / Event Intelligence: COMPLETE / ACCEPTED** at
+tag `tiaf-a3.5`.
 
 **TIAF_A3.6 — Relative / Sector / Macro Context Intelligence: COMPLETE /
 ACCEPTED** at tag `tiaf-a3.6`.
 
 **TIAF_A3.6.1 — Market Intelligence Provider Fabric + Deep Research
-Foundation: IMPLEMENTED / LIVE ACCEPTANCE HOLD.** The read-only Tapetide
-connector is complete; the final exact-code matrix is blocked until the daily
-quota resets and the inconclusive ATHERENERG financial diagnostic can be
-repeated. A3.7 follows it.
+Foundation: COMPLETE / ACCEPTED** at tag `tiaf-a3.6.1`. The standalone
+exact-current Tapetide matrix retained a provider-quota `HOLD`; separate Yahoo
+fallback and A3.6.2 integrated bounded-live matrices passed.
+
+**TIAF_A3.6.2 — Market Intelligence / Deep Research Integration: COMPLETE /
+ACCEPTED** at tag `tiaf-a3.6.2`.
+
+**TIAF_A3.7 — Derivatives / Opportunity Quality / Opportunity Risk: COMPLETE /
+ACCEPTED** at tag `tiaf-a3.7`; bounded Dhan live acquisition failed before
+option-chain evidence, so no live specialist result is claimed.
+
+**TIAF_A3.8 — Planner / Specialist Orchestration: COMPLETE / ACCEPTED** at tag
+`tiaf-a3.8`.
+
+**TIAF_A3.9 — Structured Opportunity Intelligence: COMPLETE / ACCEPTED** at
+tag `tiaf-a3.9`.
+
+**TIAF_A3.10 — Replay / Baseline Comparison / Cost / Failure Hardening:
+COMPLETE / ACCEPTED** at tag `tiaf-a3.10`.
+
+**TIAF_A3 major closure: READY_TO_FREEZE_A3.** Recommended major tag:
+`tiaf-a3-baseline` after review and commit. Post-A3 architecture consolidation
+is next; A4 is not yet authorized.
 
 ## Deferral governance
 
@@ -284,9 +304,9 @@ records are `TIAF_A2_FOUNDATION_BASELINE.md` and
 
 **Acceptance:** reproducible non-AI rankings exist as a benchmark the Agent system must later beat.
 
-## TIAF_A3 — Specialist Intelligence — Architecture Accepted
+## TIAF_A3 — Specialist Intelligence — Ready to Freeze
 
-Planned bounded capabilities are Technical/Market Structure,
+Accepted bounded capabilities include Technical/Market Structure,
 Fundamental/Company Quality, News/Catalyst/Event, Relative, Sector/Rotation,
 Macro, Derivatives Context, Opportunity Risk, Contrarian Hypothesis, and
 conditional Forecast Interpretation. An instrument-aware Planner selects only
@@ -294,7 +314,7 @@ the evidence and specialists justified by the horizon, purpose, candidate
 stage, and explicit budget. Agents consume shared evidence through controlled
 gateways and cannot call brokers, arbitrary providers, browsers, or shell tools.
 
-The accepted sequence is A3.1 contracts; A3.2 evidence/reasoning/budget
+The implemented and accepted sequence is A3.1 contracts; A3.2 evidence/reasoning/budget
 gateways; A3.3 technical specialist; A3.4 fundamentals; A3.5 news/events; A3.6
 relative/sector/macro; A3.6.1 provider fabric/research foundation; A3.7
 derivatives/risk; A3.8 Planner; A3.9 structured
@@ -325,6 +345,13 @@ A3.6.1 implements provider-neutral fine capabilities, per-capability routing,
 semantic normalization/conflicts, a read-only Tapetide adapter boundary, a
 secondary fixture, sparse evidence memory, and composable research contracts;
 see [`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
+
+A3.6.2 through A3.10 are accepted at their corresponding tags. The separate
+[A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reconciles
+the full inventory, live/non-live evidence and all active deferrals, and
+concludes `READY_TO_FREEZE_A3`. The recommended major tag is
+`tiaf-a3-baseline`; post-A3 architecture consolidation, not A4 implementation,
+is the next review.
 
 **Acceptance:** a bounded A2-screened set can produce zero or more replayable,
 cited underlying-opportunity records with separate specialist opinions,

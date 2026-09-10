@@ -32,15 +32,20 @@ complete; bounded Dhan live acquisition attempted but unavailable (`request fail
 [A3.9 implementation design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md)
 and [acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md).
 
-**A3.10:** implemented; offline acceptance complete. See the
+**A3.10:** accepted at `tiaf-a3.10`; offline acceptance complete. See the
 [A3.10 implementation record](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 and [acceptance study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md).
+
+**A3 major closure:** `READY_TO_FREEZE_A3`. See the
+[closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md). The recommended
+major tag is `tiaf-a3-baseline`; it has not been created by the review.
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
 [TIAF A3 Specialist Intelligence Architecture](TIAF_A3_ARCHITECTURE.md). Every
-sub-milestone must be independently testable and accepted before the next one
-uses it. The labels below are plans, not implementation claims.
+sub-milestone had to be independently testable and accepted before the next one
+used it. Current status labels describe repository reality; design sections
+retain the accepted scope and non-goals.
 
 ## Decomposition decision
 
@@ -257,7 +262,7 @@ Distributed cache/queues (DEF-009/010), provider health/fallback
 The first specialist can consume a bounded A2 pack and optional fake/provider-
 neutral reasoning without acquiring its own tools.
 
-## A3.3 — Technical and Market Structure Specialist — Implemented / Pending Acceptance
+## A3.3 — Technical and Market Structure Specialist — Complete / Accepted
 
 ### Goal
 
@@ -386,7 +391,7 @@ models.
 Supplies a reusable external-evidence acquisition pattern and a company context
 for event interpretation.
 
-## A3.5 — News, Filing, Catalyst, and Event Intelligence — Implemented / Pending Acceptance
+## A3.5 — News, Filing, Catalyst, and Event Intelligence — Complete / Accepted
 
 ### Goal
 
@@ -843,11 +848,12 @@ forecasts/value evaluation, A8 service integration, and A9 scanner scheduling.
 Provides the public record whose replay, baseline comparison, cost, and failure
 properties must be hardened before A3 closure.
 
-## A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — Implemented / Offline Acceptance Complete
+## A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — Complete / Accepted
 
 Authoritative implementation design:
 [`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
-This is the final A3 sub-milestone; A3 major closure remains a separate review.
+This is the final A3 sub-milestone. A3 major closure was performed separately
+and did not change A3.10 semantics.
 
 ### Goal
 
@@ -940,7 +946,8 @@ A3 is complete only when:
 
 ## Immediate next review scope
 
-A3.1–A3.10 are implemented in sequence. The immediate next scope is the
-separate **A3 Major Milestone Closure + Deferral Burn-down** review. That review
-consumes A3.10 closure-readiness evidence; it is not performed automatically by
-A3.10. A4 arbitration and every later authority remain pending.
+A3.1-A3.10 are accepted and the separate A3 major closure concludes
+`READY_TO_FREEZE_A3`. After review/commit/tag of that closure, the immediate
+next scope is the post-A3 architecture consolidation described in the
+[closure record](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md). A4 arbitration and
+every later authority remain pending and are not authorized automatically.

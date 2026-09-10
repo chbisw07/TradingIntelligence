@@ -606,7 +606,11 @@ Residual limitations are intentional: local-scale corpus only; no arbitrary
 historical availability reconstruction; no scheduled outcome acquisition; no
 production SLO/recovery; no monetary price inference where source pricing is
 absent; no empirical value/profit evaluation; no fresh model replay. These map to
-existing deferrals, so this architecture pass adds no new deferral record.
+existing deferrals, so this architecture pass added no new deferral record at
+that time. The later focused A3 sub-milestone discovery audit adds DEF-055 for
+the distinct monetary pricing catalog/attribution dependency and links future
+production model behavior to DEF-052. Neither changes A3.10's accepted
+unknown-safe or recorded-only rules.
 
 ## 19. Architecture acceptance criteria
 
@@ -654,6 +658,11 @@ failure normalizer. Neither is represented as live market evidence.
 
 After A3.10 acceptance, perform a separate **TIAF_A3 Major Milestone Closure +
 Deferral Burn-down**. Do not merge that review into A3.10.
+
+That separate review is now recorded in
+[`TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md`](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+and concludes `READY_TO_FREEZE_A3`. It does not retroactively change A3.10
+scope, fixtures, runtime semantics or acceptance evidence.
 
 ## 21. Architecture-pass baseline
 

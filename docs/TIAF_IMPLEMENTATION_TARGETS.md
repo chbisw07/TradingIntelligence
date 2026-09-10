@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.9 Frozen / A3.10 Implemented, Acceptance Complete
+## TIAF_A3 sequence — A3.1-A3.10 Accepted / Major Closure Ready
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -332,7 +332,7 @@ implemented merely by being documented.
    snapshot reuse. Production adapters and automatic mapping remain deferred.
    Detail:
    [`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`](TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md).
-7. **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation — IMPLEMENTED / LIVE ACCEPTANCE HOLD**
+7. **A3.6.1 — Market Intelligence Provider Fabric + Deep Research Foundation — ACCEPTED / PROVIDER-SPECIFIC LIVE LIMIT RECORDED**
    Implements provider declarations, per-capability routing, progressive
    enrichment, provider-native normalization, contradiction preservation,
    sparse evidence memory, structured research inputs, a read-only injected
@@ -385,13 +385,25 @@ implemented merely by being documented.
    replay/user-level acceptance gates are implemented; results are recorded in
    [the acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md). Design:
    [`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
-12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — IMPLEMENTED / OFFLINE ACCEPTANCE COMPLETE**
+12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — COMPLETE / ACCEPTED AT `tiaf-a3.10`**
     Adds content-addressed A3 packages, recorded/deterministic/comparison replay,
     observational A2/A3 axes, exact-versus-unknown cost accounting, lossless
     failure/degradation summaries, a 22-case fault matrix, 14-case synthetic
     acceptance corpus, and a later closure-readiness seam. It does not alter
     A3.9 or perform A3 closure. [Acceptance study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md). Detail:
     [`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
+
+The separate [A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+concludes `READY_TO_FREEZE_A3`, with `tiaf-a3-baseline` as the recommended
+major tag after review and commit. It changes no runtime semantics and does not
+authorize A4.
+
+The later
+[A3 sub-milestone deferral-discovery audit](STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md)
+adds stable governance records DEF-052 through DEF-055 for production
+model-backed reasoning, cross-candidate A3 analysis, user-facing citation/report
+rendering and monetary pricing knowledge. These are post-A3 deferrals and do
+not change accepted runtime or freeze readiness.
 
 A7 is minimally refined to **Evaluation, Forecasting and Learning**. A3 defines
 and consumes calibrated forecast evidence but never asks an LLM to manufacture

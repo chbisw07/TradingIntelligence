@@ -28,7 +28,7 @@ Statuses describe repository reality:
 | Corporate actions | DEFERRED | Adjustment evidence/policy; DEF-013 |
 | Sector / index / macro context | IMPLEMENTED | A3.6 explicit point-in-time contracts, test/caller adapters, controlled reads, and shared source reuse; production adapters remain DEF-012 and automatic mapping remains DEF-047 |
 | Market-calendar recency | DEFERRED | Session/calendar contract; DEF-007 |
-| Secondary-provider fallback | DEFERRED | Identity, health, and conflict policy; DEF-008 |
+| Primary quote/OHLCV/F&O secondary-provider fallback | DEFERRED | Dhan data surface identity, health, and conflict policy; DEF-008. MI evidence fallback is separately implemented |
 | Persistent/distributed cache | DEFERRED | Operational storage and consistency; DEF-009 |
 | Provider health arbitration | DEFERRED | Health/fallback policy; DEF-011 |
 
@@ -160,9 +160,9 @@ it does not overload corporate-action or earnings-call semantics.
 
 | Capability | Status | Placement |
 |---|---|---|
-| Agent contracts / provider-neutral protocols | IMPLEMENTED | A3.1 complete/accepted; DEF-002 remains governed through A3 closure |
+| Agent contracts / provider-neutral protocols | IMPLEMENTED | A3.1 complete/accepted; A3 closure marks DEF-002 implemented by the complete A3.1-A3.10 layer |
 | Single-specialist registry/runtime foundation | IMPLEMENTED | A3.1; no tools, model calls, or orchestration |
-| Controlled evidence/reasoning/budget gateways | IMPLEMENTED | A3.2 complete/accepted; no live model provider |
+| Controlled evidence/reasoning/budget gateways | IMPLEMENTED | A3.2 complete/accepted; production model-backed reasoning remains DEF-052 |
 | Technical / market-structure interpretation | IMPLEMENTED | A3.3 complete/accepted; deterministic/cited/no-LLM path |
 | Fundamental / company-quality interpretation | IMPLEMENTED | A3.4 complete/accepted; point-in-time, deterministic/cited/no-LLM path |
 | News / catalyst / event interpretation | IMPLEMENTED | A3.5 complete/accepted; PIT, deduplicated, cited/no-LLM path |
@@ -176,8 +176,8 @@ it does not overload corporate-action or earnings-call semantics.
 | Opportunity quality interpretation | IMPLEMENTED | A3.7 A2.9 maturity/room and grouped A3 evidence; no recommendation authority |
 | Opportunity risk interpretation | IMPLEMENTED | A3.7 grouped pre-arbitration downside context; no position action |
 | Instrument-aware Planner / orchestration | ACCEPTED / `tiaf-a3.8` | [A3.8 implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md): capability/dependency policy, bounded parallelism, shared evidence/budget reservations, selective enrichment/confirmation/research and reruns, partial stops, isolated LangGraph and replay; [offline acceptance](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md); no investment-decision authority |
-| Structured underlying opportunity intelligence | ACCEPTED / `tiaf-a3.9` | [A3.9 design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md): captured A3.8 input, typed contributions and qualified bias, explicit observation state, preserved A2/conflicts/gaps, separate confidence, cited reasons and pure assembly replay; no ranking/arbitration or provider/specialist execution |
-| Agent replay / A2 comparison / cost/failure hardening | IMPLEMENTED / OFFLINE ACCEPTANCE COMPLETE | [A3.10 implementation](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md): content-addressed capture, explicit replay modes, observational comparison, unknown-cost semantics, lossless failures, 14-case synthetic corpus and closure-readiness seam; [study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md) |
+| Structured underlying opportunity intelligence | ACCEPTED / `tiaf-a3.9` | [A3.9 design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md): captured A3.8 input, typed contributions and qualified bias, explicit observation state, preserved A2/conflicts/gaps, separate confidence, cited reasons and pure assembly replay; cross-candidate analysis/ranking remains DEF-053 and report rendering DEF-054 |
+| Agent replay / A2 comparison / cost/failure hardening | ACCEPTED / `tiaf-a3.10` | [A3.10 implementation](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md): content-addressed capture, explicit replay modes, observational comparison, unknown-cost semantics, lossless failures, 14-case synthetic corpus and closure-readiness seam; monetary pricing knowledge remains DEF-055; [study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md) |
 | Arbitration / adversarial resolution | PLANNED | A4 |
 | Position intelligence | PLANNED | A5 |
 | Option strategy comparison/selection | PLANNED | A6; DEF-006 |
@@ -191,11 +191,13 @@ it does not overload corporate-action or earnings-call semantics.
 | Read-only console diagnostics | IMPLEMENTED | Milestone smoke scripts |
 | Monitoring daemon / intelligence OS | DEFERRED | Runtime orchestration; DEF-010 |
 | Persistent/distributed data runtime | DEFERRED | Storage and operations boundary; DEF-009 |
-| Provider fallback and health arbitration | DEFERRED | Multi-provider policy boundary; DEF-008/DEF-011 |
+| Primary quote/OHLCV/F&O fallback and operational health arbitration | DEFERRED | Dhan data surface; DEF-008/DEF-011. Separate MI evidence fallback is implemented in A3.6.1 |
 | Scanner | EXTERNAL/INTEGRATION | Future TIAF scanner boundary |
 | UI / dashboard | FUTURE | Application layer; service dependency DEF-003 |
 | API / service | PLANNED | A8 service boundary; DEF-003 |
 | Alerts | FUTURE | Application/policy layer; runtime dependency DEF-010 |
+| Human-facing explanation/citation reports | DEFERRED | Internal lineage exists; governed rendering remains DEF-054 |
+| Cross-candidate A3 opportunity comparison/ranking | DEFERRED | Single-subject A3.9 product remains canonical; DEF-053 |
 | Baseline replay / validation | IMPLEMENTED | A2.10 captured-snapshot foundation |
 | Strategy backtest | DEFERRED | Requires strategy/execution model; DEF-025 |
 | Optimization | DEFERRED | Evaluation layer; DEF-024 |

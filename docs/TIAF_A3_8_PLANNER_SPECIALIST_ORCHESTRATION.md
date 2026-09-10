@@ -670,12 +670,16 @@ identity. They are explicit WP2/WP4–8 acceptance gates, not reasons to redesig
 accepted specialists. Unknown provider cost and unsupported acquisition remain
 honest gaps; no new live-access claim is made.
 
-Keep existing deferrals: DEF-002 through A3 closure, DEF-006 option expression,
+At A3.8 acceptance, existing deferrals included DEF-002 through A3 closure,
+DEF-006 option expression,
 DEF-009/010 persistent/distributed operation, DEF-040–046 unavailable derivatives
 families, DEF-047 automatic benchmark/sector mapping and DEF-049 arbitrary
 historical reconstruction. Existing bounded provider fallback is reused, not a
 claim that every broader provider-health/operations deferral is closed. No
-deferral-register status change is justified by bounded in-process orchestration.
+deferral-register status change was justified by bounded in-process
+orchestration alone. The later A3 closure marks DEF-002 implemented by the
+complete A3.1-A3.10 layer; all other IDs named here remain governed by the
+closure disposition.
 
 TI Shell and the post-A3 Source/Provenance/Citation report fabric stay out of
 scope. No A3.9 or A4–A10 implementation is authorized by this document.

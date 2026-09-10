@@ -40,17 +40,17 @@ sub-milestone.
 | ID | Capability | Deferred From | Category | Reason | Dependency / prerequisite | Priority | Suggested Revisit | Status | Resolution Notes |
 |---|---|---|---|---|---|---|---|---|---|
 | DEF-001 | Market-data adapters and factual fetch | A0 | CAPABILITY_DEFERRAL | Contracts preceded provider integration. | Stable provider-neutral data contracts | HIGH | A1 CLOSURE | IMPLEMENTED | Delivered through A1.1-A1.7, including Dhan and `AnalysisContext`. |
-| DEF-002 | Agent, LLM, and workflow reasoning layer | A0; reaffirmed A2.4/A2.8 | INTENTIONAL_NON_GOAL | Deterministic contracts/calculators must not contain judgment-oriented orchestration. | Accepted A2 factual baseline and evidence boundaries | HIGH | A3 CLOSURE | PLANNED | Roadmap A3 introduces Planner and specialist Agents; A4 adds arbitration. |
-| DEF-003 | TIAF service/API surface | A0 | CAPABILITY_DEFERRAL | Foundation milestones intentionally expose packages and diagnostics, not a service boundary. | Stable intelligence contracts and operational requirements | MEDIUM | FUTURE | PLANNED | Roadmap A8 includes the local service/API boundary. |
+| DEF-002 | Agent and workflow reasoning layer | A0; reaffirmed A2.4/A2.8 | INTENTIONAL_NON_GOAL | Deterministic contracts/calculators must not contain judgment-oriented orchestration. | Accepted A2 factual baseline and evidence boundaries | HIGH | A3 CLOSURE | IMPLEMENTED | A3.1-A3.10 deliver bounded specialists, optional model-gateway contracts, Planner/orchestration, structured opportunity intelligence, and replay/cost/failure hardening. The accepted A3 path remains deterministic/no-LLM; A4 arbitration remains separate. Production model-backed reasoning is the distinct later capability in DEF-052. |
+| DEF-003 | Governed TIAF public capability/service/API surface | A0; clarified A3 closure audit | CAPABILITY_DEFERRAL | Foundation milestones expose packages, an in-process A3.9 seam and diagnostics, not a consolidated external consumer boundary. | Stable intelligence contracts plus facade versioning, capability discovery, authentication/authorization, entitlement and operational requirements | MEDIUM | FUTURE | PLANNED | Roadmap A8 includes the local service/API boundary. Diagnostic scripts are not the API; external consumers must not couple to Core internals. |
 | DEF-004 | TradeMonitor intelligence integration | A0 | DEPENDENCY_DEFERRAL | Integration must preserve TradeMonitor risk, lifecycle, and authority. | Stable assessments, freshness/degradation, and evaluation feedback | HIGH | FUTURE | PLANNED | Roadmap A8 owns structured advice integration without authority transfer. |
 | DEF-005 | Broker order placement/modification/cancellation by TIAF | A0; reaffirmed A1-A2.8 | INTENTIONAL_NON_GOAL | TIAF intelligence never owns broker execution authority. | None; TradeMonitor remains authority owner | HIGH | FUTURE | REJECTED | Rejected from TIAF scope; A8 integrates advice only. |
 | DEF-006 | Option-expression selection and strategy templates | A0; reaffirmed A2.7/A2.8 | CAPABILITY_DEFERRAL | Factual underlying/chain evidence must precede contract and strategy choice. | Accepted opportunity view, option evidence, risk and liquidity policy | HIGH | A6 CLOSURE | PLANNED | Roadmap A6 owns expiry/strike/strategy comparison and may return no option trade. |
 | DEF-007 | Market-calendar-aware source-observation recency | A1 | DEPENDENCY_DEFERRAL | Wall-time age alone cannot determine closed-market observation acceptability. | Exchange calendar/session contract | HIGH | A3 CLOSURE | DEFERRED | A1 preserves observation/retrieval time separately and makes no calendar claim. |
-| DEF-008 | Provider fallback and Zerodha integration | A1/A1.5/A1.6 | CAPABILITY_DEFERRAL | Accepted A1 has one live provider and no fallback arbitration. | Second provider adapter, identity mapping, health and conflict policy | HIGH | FUTURE | DEFERRED | Dhan remains the only live market-data adapter; A3.6.1 market-intelligence routing is a separate evidence fabric and must not silently replace Dhan or be misreported as quote/F&O fallback. |
+| DEF-008 | Primary market-data fallback and Zerodha integration | A1/A1.5/A1.6 | CAPABILITY_DEFERRAL | Accepted A1 has one live quote/OHLCV/derivatives provider and no fallback arbitration for that surface. | Second primary market-data adapter, identity mapping, health and conflict policy | HIGH | FUTURE | DEFERRED | Dhan remains the only live primary market-data adapter. A3.6.1 separately implements Tapetide/Yahoo market-intelligence evidence fallback; that does not supply quote/OHLCV/F&O fallback and must not be reported as closing this record. |
 | DEF-009 | Persistent/distributed cache and telemetry | A1/A1.6 | CAPABILITY_DEFERRAL | Current cache, metrics, scheduler, and single-flight state are process-local. | Operational evidence, storage/retention model, distributed consistency | MEDIUM | FUTURE | DEFERRED | Includes Redis/database/distributed-lock, durable sparse Evidence Graph storage, and Prometheus-style concerns only if justified; A3.6.1 defines the storage boundary but not an operational store. |
-| DEF-010 | Deferred-work retry orchestration and continuous runtime queues | A1/A1.7 | CAPABILITY_DEFERRAL | A1 reports scheduler deferral truthfully but never sleeps, retries, or owns work order. | Runtime queue, retry/backoff, idempotency and restart policy | HIGH | FUTURE | DEFERRED | Roadmap A10 contains scheduler/queue and reliable long-running operation. |
+| DEF-010 | Deferred-work retry orchestration and continuous runtime queues | A1/A1.7; clarified A3.8 | CAPABILITY_DEFERRAL | A1 reports scheduler deferral truthfully and A3.8 is bounded in-process orchestration; neither owns durable long-running work. | Runtime queue, retry/backoff, idempotency, checkpoint/resume, restart and late-work/preemption policy | HIGH | FUTURE | DEFERRED | Roadmap A10 contains scheduler/queue and reliable long-running operation. This includes durable orchestration recovery and monitoring-triggered work; it does not require pretending a synchronous worker can always be force-killed. |
 | DEF-011 | Provider health/degradation arbitration | A1/A1.6 | CAPABILITY_DEFERRAL | Enable/disable and cooldown hooks exist without a full health model. | Health signals, thresholds, fallback and circuit-breaker policy | HIGH | FUTURE | DEFERRED | Must drive existing runtime boundaries without rewriting factual evidence. |
-| DEF-012 | News, filings, fundamentals, macro, sector, and peer evidence adapters | A1 | DEPENDENCY_DEFERRAL | Production acquisition needs explicit source rights, identity, time, and quality semantics. | Source selection, licensing, identity, time and quality contracts | HIGH | A3 CLOSURE | DEFERRED | A3.4–A3.6 provide canonical contracts/gateways. A3.6.1 implements provider declarations, routing, normalization, progressive enrichment, and read-only Tapetide/Yahoo paths. The authoritative-confirmation follow-up implements bounded configured NSE/BSE/company-IR acquisition, source validation, document provenance, and replay. Broad production discovery/coverage, licensing, monitoring, and operational governance remain unresolved; acquisition stays outside Agents. |
+| DEF-012 | Broad production news, filing, fundamental, macro, sector, and peer acquisition | A1 | DEPENDENCY_DEFERRAL | Bounded adapters now exist, but production acquisition still needs explicit source rights, coverage, identity, time, quality, and operations semantics. | Licensed source selection, coverage policy, monitoring, and operational governance | HIGH | A3 CLOSURE | DEFERRED | A3.4-A3.6 provide canonical contracts/gateways. A3.6.1 implements provider declarations, routing, normalization, progressive enrichment, and read-only Tapetide/Yahoo paths. The authoritative-confirmation follow-up implements bounded configured NSE/BSE/company-IR acquisition, source validation, document provenance, and replay. These close the bounded A3 need, not broad production discovery/coverage or licensing; acquisition stays outside Agents. |
 | DEF-013 | Corporate-action normalization and adjusted history policy | A1 capability map | DEPENDENCY_DEFERRAL | Historical comparisons need explicit split/dividend adjustment semantics. | Authoritative corporate-action evidence and adjustment contract | HIGH | A3 CLOSURE | DEFERRED | The authoritative-confirmation implementation can acquire and reconcile official corporate-action documents. Adjusted-history policy remains separate and deferred; no calculator may infer adjustments from price discontinuities. |
 | DEF-014 | Authoritative option-chain market-event timestamp | A1/A2.7 | DEPENDENCY_DEFERRAL | Dhan currently exposes acquisition time but no authoritative event time. | Provider field or independently accepted timestamp source | MEDIUM | FUTURE | DEFERRED | A1/A2.7 explicitly label acquisition-time semantics instead of fabricating market time. |
 | DEF-015 | Request-sized coordination for adapter-internal HTTP chunks | A1.6 | CAPABILITY_DEFERRAL | One coordinator callback may currently contain several adapter HTTP requests. | Per-request work decomposition and exact endpoint gating | MEDIUM | FUTURE | DEFERRED | Required only where strict per-call scheduling must cover internal chunks. |
@@ -90,6 +90,10 @@ sub-milestone.
 | DEF-049 | Exact arbitrary historical point-in-time reconstruction | A2.10 | DEPENDENCY_DEFERRAL | Replay of captured evidence cannot prove what data, instruments, or revisions were available on an uncaptured historical date. | Point-in-time universe, corporate-action, data-vintage, and availability-time contracts | HIGH | FUTURE | DEFERRED | A2.10 prioritizes captured replay. A3.6.1 requires availability/revision/PIT-quality preservation, but the Tapetide study shows conservative availability dates, possible restatements, and shallow historical membership coverage; no exact historical-fidelity claim is added. |
 | DEF-050 | Persistent database and distributed/large-scale replay farm | A2.10 | CAPABILITY_DEFERRAL | A filesystem JSON/JSONL corpus is sufficient for deterministic foundation and audit tests. | Retention, licensing, concurrency, job-control, and operational scale evidence | MEDIUM | FUTURE | DEFERRED | Content-addressed JSON and append-only local logs remain the accepted small-scale substrate. |
 | DEF-051 | Scheduled provider-backed subsequent-outcome acquisition | A2.10 | DEPENDENCY_DEFERRAL | A2.10 defines provider-neutral later paths but does not wait, schedule, or backfill unfrozen decisions. | Exchange calendar, outcome acquisition policy, runtime queue, and data-retention rules | HIGH | FUTURE | DEFERRED | Tests use explicit historical fixtures; no newly captured assessment is given fabricated future data. |
+| DEF-052 | Production model-backed specialist/reasoning integration | A3.2; reaffirmed A3.8-A3.10 | CAPABILITY_DEFERRAL | A3 defines a provider-neutral reasoning gateway and model provenance but the accepted runtime is deterministic/no-LLM and has no production model adapter or policy. | Approved model/provider policy, privacy/security review, structured-output evaluation, prompt/config versioning, budgets/pricing and recorded-only replay rules | MEDIUM | A7 CLOSURE | DEFERRED | A future model adapter must remain optional, replaceable and gateway-bound. It may not manufacture facts, calibrated probabilities or fresh historical replay. |
+| DEF-053 | Cross-candidate A3 opportunity analysis and ranking | A3.9 | CAPABILITY_DEFERRAL | A3.9 intentionally emits one captured-underlying product and does not provide batch comparison, top-N selection or an A3 rank. | Stable single-subject products, explicit comparison objective, applicability policy, A4 arbitration boundary and A7 evaluation evidence | MEDIUM | FUTURE | DEFERRED | A2 ranking remains the deterministic benchmark. A future batch wrapper must preserve input order and must not turn A3 observations into an unexplained scalar leaderboard. |
+| DEF-054 | User-facing explanation, source-citation and report rendering fabric | A3.9; reaffirmed A3 closure | CAPABILITY_DEFERRAL | A3 preserves internal claim/evidence/source lineage and deterministic reason templates but implements no bibliography, hyperlink resolution, citation compression or human-facing report projection. | Post-A3 Source/Provenance/Citation architecture, governed source registry, public capability facade and redaction/presentation policy | HIGH | POST-A3 ARCH | DEFERRED | Internal A3 audit lineage is sufficient for freeze. Rendering must consume it without deleting contradictions, fabricating source authority or making UI prose canonical truth. |
+| DEF-055 | Provider/model monetary pricing catalog and cost attribution | A3.10 | DEPENDENCY_DEFERRAL | A3.10 correctly represents absent price knowledge as UNKNOWN/UNPRICED; configured cost units cannot establish billed monetary cost. | Versioned provider/model price sources, currency/effective-time semantics, billable-unit mapping and auditable attribution policy | MEDIUM | A10 CLOSURE | DEFERRED | Unknown or unpriced cost must remain nonzero-unknown rather than being coerced to zero. Replay usage remains separate from original billed usage. |
 
 ## Immediate milestone work deliberately not registered
 
@@ -103,17 +107,25 @@ Deterministic market-state summary, horizon-aware baseline scoring, ranking,
 and candidate classes were delivered by A2.9 and therefore are neither open
 deferrals nor additions to this register.
 
-Recommendation-bearing Agent conclusions remain represented by DEF-002, option
-expression/strategy selection by DEF-006, and execution authority by DEF-005.
-Those are later-layer boundaries, not A2.9 calculator work.
+At A2 closure, recommendation-bearing Agent conclusions were represented by
+DEF-002, option expression/strategy selection by DEF-006, and execution
+authority by DEF-005. The later A3 closure marks DEF-002 implemented while
+leaving A4 arbitration separate; DEF-006 remains deferred and DEF-005 remains
+rejected. None was A2.9 calculator work.
 
 ## Inventory summary
 
-The register contains 51 stable records: A0 (6), A1 (10), A2.1 (1), A2.3 (3),
-A2.4 (6), A2.5 (7), A2.6 (5), A2.7 (8), A2.8 (2), and A2.10 (3). A2.2 and
-A2.9 added no distinct records. Before the A2 closure review, statuses were 41
+At A2 closure the register contained 51 stable records: A0 (6), A1 (10), A2.1
+(1), A2.3 (3), A2.4 (6), A2.5 (7), A2.6 (5), A2.7 (8), A2.8 (2), and A2.10
+(3). A2.2 and A2.9 added no distinct records. Before the A2 closure review,
+statuses were 41
 DEFERRED, 4 PLANNED, 3 IMPLEMENTED, and 3 REJECTED. After review, statuses are
-39 DEFERRED, 4 PLANNED, 3 IMPLEMENTED, 3 REJECTED, and 2 SUPERSEDED.
+39 DEFERRED, 4 PLANNED, 3 IMPLEMENTED, 3 REJECTED, and 2 SUPERSEDED. The A3
+closure review changes DEF-002 from PLANNED to IMPLEMENTED, producing 39
+DEFERRED, 3 PLANNED, 4 IMPLEMENTED, 3 REJECTED, and 2 SUPERSEDED. The later
+A3 sub-milestone discovery audit adds DEF-052 through DEF-055. Current totals
+are therefore 55 records: 43 DEFERRED, 3 PLANNED, 4 IMPLEMENTED, 3 REJECTED,
+and 2 SUPERSEDED.
 
 The A2 closure disposition is: 0 IMPLEMENT NOW, 3 IMPLEMENTED ALREADY, 43
 CARRY TO A3+, 3 REJECT, and 2 SUPERSEDE. `PLANNED` remains the register status
@@ -123,6 +135,11 @@ for four roadmap-owned later layers, but their closure disposition is still
 ## A2 closure burn-down disposition
 
 Every record introduced in A0, A1, or A2 received exactly one closure decision:
+
+> **Historical snapshot:** this table records the A2-closure decision as made
+> at that time. Language such as “begin A3” or “A3 closure” is historical; the
+> authoritative current disposition appears in the A3 closure and post-closure
+> audit sections below.
 
 | ID | A2 closure decision | Revisit | Closure rationale |
 |---|---|---|---|
@@ -237,3 +254,87 @@ outcome acquisition. Parameter optimization remains DEF-024 rather than being
 duplicated. Agent and human evaluation await their later producer layers. The
 completed A2 closure disposition is recorded above; A2.10 did not silently
 expand into those later capabilities.
+
+## A3 closure burn-down disposition
+
+The 2026-09-11 A3 major closure review considered every record that was active
+at the start of the review. `CLOSE_NOW` means the accepted A3 implementation
+fully satisfies the recorded capability. `PROMOTE_TO_POST_A3_ARCH_REVIEW`
+means architecture must be reconciled after the A3 freeze, not that runtime is
+authorized now. `NEEDS_REWORDING` records were clarified in place and remain
+deferred. No record is `MUST_FIX_BEFORE_A3_FREEZE`.
+
+| ID | A3 closure classification | Evidence / reason | Owner or next review |
+|---|---|---|---|
+| DEF-002 | CLOSE_NOW | A3.1-A3.10 implement bounded specialist reasoning, Planner orchestration, structured opportunity intelligence and hardening over unchanged A2. Optional live LLM adapters and A4 arbitration are not part of this original record. | IMPLEMENTED in A3 |
+| DEF-003 | PROMOTE_TO_POST_A3_ARCH_REVIEW | A3.9 exposes a typed in-process service seam, but `tiaf.app` is still bootstrap metadata and no governed public capability surface exists. | Post-A3 TI_CORE/public-capability consolidation; later A8 delivery |
+| DEF-004 | KEEP_DEFERRED | No TradeMonitor integration or authority transfer was added. | A8 |
+| DEF-006 | KEEP_DEFERRED | A3.7 interprets derivative context but deliberately selects no CE/PE, strike, expiry, strategy or quantity. | A6 closure |
+| DEF-007 | PROMOTE_TO_POST_A3_ARCH_REVIEW | Aware timestamps and PIT rules exist, but no exchange-session/calendar recency contract does. | Post-A3 time/monitoring architecture; implementation later |
+| DEF-008 | NEEDS_REWORDING | Tapetide/Yahoo fallback exists only for market-intelligence evidence; Dhan still has no primary quote/OHLCV/F&O fallback and Zerodha is absent. The register wording now makes that scope explicit. | Provider-operations review; later A10/A1 extension |
+| DEF-009 | PROMOTE_TO_POST_A3_ARCH_REVIEW | A3 adds local caches, sparse graph state and a local corpus, not durable/distributed storage or telemetry. | Post-A3 system/monitoring architecture; A10 implementation |
+| DEF-010 | PROMOTE_TO_POST_A3_ARCH_REVIEW | A3.8 has bounded in-request replans, not a durable retry queue, scheduler or restart policy. | Post-A3 monitoring architecture; A10 implementation |
+| DEF-011 | PROMOTE_TO_POST_A3_ARCH_REVIEW | Typed provider failures and policy fallback exist, but health signals, circuit breaking and operational arbitration do not. | Post-A3 monitoring/provider-operations architecture; A10 implementation |
+| DEF-012 | NEEDS_REWORDING | Bounded Tapetide, Yahoo and official-source adapters satisfy A3 evidence exercises; broad licensed discovery, production coverage and source governance do not. The record now says broad production acquisition. | Source/provenance architecture; later provider work |
+| DEF-013 | PROMOTE_TO_POST_A3_ARCH_REVIEW | Official corporate-action documents can be acquired, but no adjusted-history contract or normalization policy exists. | Post-A3 source/PIT architecture; later A1/A2 extension |
+| DEF-014 | KEEP_DEFERRED | Dhan option-chain evidence still has acquisition-time rather than authoritative market-event-time semantics. | Provider/data-contract review |
+| DEF-015 | KEEP_DEFERRED | Strict per-HTTP-call scheduling inside adapter chunks is still an operational refinement without a demonstrated A3 defect. | A10/provider operations |
+| DEF-016 | KEEP_DEFERRED | Fuzzy aliases and liquidity preference still lack an authoritative alias source and explicit policy. | Future identity-resolution work |
+| DEF-020 | KEEP_DEFERRED | A3 replay does not supply the right-side-confirmation availability contract required for leakage-free pivots. | Future A2 indicator/structure work |
+| DEF-021 | KEEP_DEFERRED | No authoritative HalfTrend variant or transition fixtures were selected. | Future indicator library |
+| DEF-022 | PROMOTE_TO_POST_A3_ARCH_REVIEW | A3 uses completed evidence; it does not define live-forming-bar revision/event lifecycle semantics. | Post-A3 event/monitoring architecture; later A2 extension |
+| DEF-024 | PROMOTE_TO_POST_A3_ARCH_REVIEW | Replay/evaluation substrates now exist, but objective, leakage controls and promotion policy remain A7 concerns. | Post-A3 forecasting/evaluation architecture; A7 |
+| DEF-025 | KEEP_DEFERRED | No strategy transition or SigmaDSL interpretation was added. | A6 closure |
+| DEF-026 | KEEP_DEFERRED | Extensibility exists; no named, versioned new indicator is justified. | Future indicator library |
+| DEF-027 | KEEP_DEFERRED | Session VWAP still requires the missing exchange-session contract. | Future A2 indicator work after calendar contract |
+| DEF-028 | KEEP_DEFERRED | Event records exist, but a caller/event anchor contract for VWAP does not. | Future A2 indicator work |
+| DEF-029 | KEEP_DEFERRED | Profile binning, session and allocation variants remain unspecified. | Future indicator/level library |
+| DEF-030 | KEEP_DEFERRED | No concrete consumer requirement selected named OBV/MFI/Chaikin/A-D variants and warm-up rules. | Future indicator library |
+| DEF-031 | KEEP_DEFERRED | Ranking population, tie and window semantics remain unspecified. | Future deterministic feature work |
+| DEF-032 | KEEP_DEFERRED | A3 market-intelligence sources do not provide an accepted normalized delivery/participant-statistics contract. | Future provider/evidence work |
+| DEF-034 | KEEP_DEFERRED | A3 capture does not create the two-window information boundary required for leakage-free touch counts. | Future A2 structure work |
+| DEF-035 | PROMOTE_TO_POST_A3_ARCH_REVIEW | Replay and event evidence now exist, but no canonical price-event state lifecycle fixes discovery, persistence and re-entry boundaries. | Post-A3 event/provenance architecture; later A2 extension |
+| DEF-036 | KEEP_DEFERRED | Named floor-pivot formula and prior-session/calendar semantics remain absent. | Future level library after calendar contract |
+| DEF-038 | KEEP_DEFERRED | A3 opinions consume scalar projections; no first-class timeframe-specific level identity was added. | Future A2 MTF-level work |
+| DEF-039 | KEEP_DEFERRED | Delta-based strike selection remains an option-expression policy, not A3 derivatives context. | A6 closure |
+| DEF-040 | KEEP_DEFERRED | A1.4 history exists, but no accepted historical-option feature contract/use case was added. | A6 closure |
+| DEF-041 | KEEP_DEFERRED | Static/synthetic A3.7 cases do not establish aligned temporal OI or expiry regimes. | A6 closure |
+| DEF-042 | KEEP_DEFERRED | A3.7 consumes one explicit expiry; simultaneous cross-expiry provenance remains absent. | A6 closure |
+| DEF-043 | KEEP_DEFERRED | No named, versioned IV-surface model or interpolation policy exists. | A6 closure |
+| DEF-044 | KEEP_DEFERRED | A3 explicitly forbids invented expected move or probability; calibration/model assumptions remain absent. | A6/A7 boundary review |
+| DEF-045 | KEEP_DEFERRED | Max-pain convention remains ambiguous and A3 does not use it as a target/oracle. | A6 closure |
+| DEF-046 | KEEP_DEFERRED | Provider gamma/OI still cannot prove dealer sign or positioning. | A6 closure |
+| DEF-047 | PROMOTE_TO_POST_A3_ARCH_REVIEW | A3.6 adds explicit versioned mappings, not an automatic provider-neutral benchmark/sector classifier. | Post-A3 source/classification architecture |
+| DEF-048 | KEEP_DEFERRED | A3 does not introduce a first-class MTF `IndicatorBundle` context. | Future A2 MTF-indicator work |
+| DEF-049 | PROMOTE_TO_POST_A3_ARCH_REVIEW | Content-addressed captured replay is accepted; uncaptured historical truth still lacks universes, revisions, corporate actions and availability vintages. | Post-A3 provenance/PIT architecture; A7/A10 implementation as justified |
+| DEF-050 | PROMOTE_TO_POST_A3_ARCH_REVIEW | A3.10 deliberately proves only a filesystem-scale append-only corpus. | Post-A3 system/storage architecture; A10 implementation |
+| DEF-051 | PROMOTE_TO_POST_A3_ARCH_REVIEW | Outcome contracts exist, but no calendar-aware scheduled acquisition, queue or retention policy does. | Post-A3 monitoring/evaluation architecture; A7/A10 implementation |
+
+The eight unavailable/richer derivatives families remain individually governed
+by DEF-039 through DEF-046. A3.7's 2026-09-10 Dhan attempt failed before active
+expiry evidence was acquired; synthetic specialist acceptance therefore does
+not close live acquisition, historical-derivative, cross-expiry, surface,
+probability, max-pain or dealer-positioning work.
+
+### A3 closure totals
+
+At review entry, 43 records were active: 39 DEFERRED and 4 PLANNED. The
+disposition is 1 CLOSE_NOW, 27 KEEP_DEFERRED, 13
+PROMOTE_TO_POST_A3_ARCH_REVIEW, 2 NEEDS_REWORDING, 0
+MUST_FIX_BEFORE_A3_FREEZE and 0 newly obsolete/superseded. The two wording
+corrections remain deferred. Register status after closure is 39 DEFERRED, 3
+PLANNED, 4 IMPLEMENTED, 3 REJECTED and 2 SUPERSEDED.
+
+The already resolved records remain explicit: DEF-001, DEF-017, DEF-018 and
+DEF-002 are IMPLEMENTED; DEF-005, DEF-019 and DEF-033 are REJECTED; DEF-023
+and DEF-037 are SUPERSEDED. No record was deleted or silently absorbed.
+
+### Post-closure A3 sub-milestone discovery audit
+
+The subsequent focused audit found four concrete A3-era omissions and added
+DEF-052 through DEF-055. This does not rewrite the 43-record A3-closure-entry
+snapshot above: those IDs were absent when that classification was performed.
+All four are DEFERRED and none is a pre-freeze blocker. Corrected current totals
+are 55 records: 43 DEFERRED, 3 PLANNED, 4 IMPLEMENTED, 3 REJECTED, and 2
+SUPERSEDED. The evidence and candidate matrix are in
+[`STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md`](STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md).

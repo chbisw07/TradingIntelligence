@@ -12,7 +12,8 @@ See [implementation results and limitations](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md
 This is the implementation design under the [A3 architecture](TIAF_A3_ARCHITECTURE.md)
 and [detailed roadmap](TIAF_A3_DETAILED_ROADMAP.md). New contract, enum and function
 names below describe the approved design; concrete exports are listed in the study. A3.10 hardening is
-implemented after A3.9; the separate A3 closure review remains next. No architectural detour into TI
+implemented after A3.9; the later separate A3 closure review concludes
+`READY_TO_FREEZE_A3`. No architectural detour into TI
 Shell or the post-A3 Source/Provenance/Citation Fabric is introduced.
 
 ## 1. Ownership: classification, not arbitration
@@ -526,7 +527,15 @@ forecasting, A8 TM integration, A9 scanners and A10 production operations stay o
 Automatic mappings, arbitrary historical reconstruction and unavailable source
 families remain existing deferrals. No deferral-register change is justified.
 
-Next milestone: **TIAF_A3.10 — Agent Replay / Baseline Comparison / Cost & Failure Hardening**.
+That was the A3.9 implementation-time disposition. The later focused
+sub-milestone discovery audit assigns DEF-053 to cross-candidate A3 analysis and
+ranking and DEF-054 to user-facing explanation/citation report rendering. Both
+remain outside A3.9 and do not change its accepted single-subject semantics.
+
+The immediate successor was **TIAF_A3.10 — Agent Replay / Baseline Comparison
+/ Cost & Failure Hardening**, now accepted at `tiaf-a3.10`. The separate
+[A3 closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) follows without
+changing A3.9 semantics.
 
 ## 14. Historical architecture-pass validation
 
