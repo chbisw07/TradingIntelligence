@@ -4,6 +4,23 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF_A3.9 WP1–9 in `tiaf.service.opportunity_intelligence`:
+  validated captured-A3.8 handoff, immutable observation products, seven states,
+  three-valued ordered rules, typed contribution/lineage and qualified bias,
+  separate source confidence/completeness, unchanged A2, cited reasons and
+  offline recorded replay/deterministic assembly verification. Added 18 persisted
+  acceptance cases and `scripts/a3_9_user_acceptance.py`; sparse KAYNES honestly
+  remains INSUFFICIENT_EVIDENCE. No new provider/model/specialist execution,
+  dependencies, accepted policy retuning, ranking or A4–A10 authority.
+  See `docs/STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md` for results and limitations.
+- Designed TIAF_A3.9 Structured Opportunity Intelligence MVP on accepted
+  `tiaf-a3.8`: captured orchestration handoff, composable immutable output,
+  typed contribution/qualified-bias semantics, explicit observation-state rules,
+  retained contradictions and A2 NO_TRADE, separate completeness/confidence,
+  cited reason projection and pure offline assembly replay. Defined nine internal
+  implementation packages and user-level acceptance scenarios; aligned stage
+  indexes. Documentation only: no runtime, dependency, provider/model call,
+  specialist policy change, ranking or A4–A10 authority added.
 - Implemented TIAF_A3.8 WP1–10: immutable orchestration contracts, versioned
   dependency policy and typed specialist projections; serial and isolated pinned
   LangGraph runners; bounded parallel waves, atomic aggregate reservations and

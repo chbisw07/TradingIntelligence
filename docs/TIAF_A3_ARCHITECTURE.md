@@ -7,21 +7,20 @@
 **Runtime status:** A3.1–A3.7 complete / accepted through `tiaf-a3.7`, including
 the A3.6.1 provider fabric, bounded authoritative confirmation and A3.6.2 deep
 research integration. A3.8 orchestration is implemented with deterministic
-acceptance; user freeze remains pending.
+acceptance and is frozen at `tiaf-a3.8`.
 
 **Accepted substrate:** `tiaf-a2-baseline` at
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
-**Current milestone:** TIAF_A3.8 — Planner + Specialist Orchestration,
-implementation and offline acceptance complete, pending user freeze. Its
-implementation design and acceptance boundaries are
-[`TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md).
+**Current milestone:** TIAF_A3.9 — Structured Opportunity Intelligence MVP,
+implemented with offline acceptance; awaiting user acceptance/freeze. Its authoritative
+design is
+[`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
 
 This is the authoritative architecture for TIAF_A3. It supplements the
 [canonical roadmap](TRADINGINTELLIGENCE_ROADMAP.md), and the executable sequence
 is defined in the [A3 detailed roadmap](TIAF_A3_DETAILED_ROADMAP.md). It does
-not claim that unimplemented specialists, a live model provider,
-multi-Agent orchestration, or execution authority exist.
+not claim that a live model provider or execution authority exists.
 
 ## North star
 
@@ -686,16 +685,20 @@ because the same in-sample records became more attractive.
 
 ## A3 output
 
-A3.9 emits a versioned, immutable structured underlying-opportunity record. It
-may contain ranked opportunities (subject to eligibility), symbol/identity,
-instrument context, horizon, directional specialist stance, bounded
-interpretation, entry-state and invalidation concepts, expected remaining
-opportunity only when evidence supports it, specialist opinions, atomic
-claims/citations, disagreement, missing evidence, quality/freshness,
-confidence dimensions, A2 baseline comparison, and full run references. Any
-A3 ordering is explicitly the preserved A2 order or a non-arbitrating policy
-order; it cannot convert specialist disagreement into hidden weights. A4 owns
-the final intelligence-aware ranking/recommendation.
+A3.9 emits a versioned, immutable single-underlying opportunity
+record from a captured A3.8 run. Its
+[MVP design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md) specifies
+identity/horizon, typed contributions and qualified bias, observation state,
+source quality/risk/maturity/extension facets, cited reasons, disagreement,
+missing evidence, separate confidence/completeness and unchanged A2 comparison.
+The earlier broad architecture allowed A2-order-preserving sets; the bounded MVP
+does not implement ranking or batch scheduling. No specialist voting or hidden
+weights are introduced. A4 retains final arbitration/ranking/recommendation.
+
+WATCH/WAIT/AVOID/NO_TRADE are observation restrictions, never trade or position
+commands. A2 NO_TRADE may coexist with qualified WATCH, but is never rewritten or
+converted to A2 eligibility. Assembly/replay cannot acquire providers or rerun
+specialists; new prerequisites return to the caller for future A3.8 orchestration.
 
 `CE` and `PE` are removed from A3 output. They prematurely choose an option
 expression. A6 owns contract type, strike, expiry, strategy, payoff, liquidity,

@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.7 Accepted / A3.8 Implemented, Pending User Freeze
+## TIAF_A3 sequence — A3.8 Accepted / A3.9 Implemented, Acceptance Pending
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -367,7 +367,7 @@ implemented merely by being documented.
    `request failed`; no live output is claimed. Six black-box deterministic
    scenarios pass through the public registry/runtime composition. Detail:
    [`TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md`](TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md).
-10. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — IMPLEMENTED / PENDING USER FREEZE**
+10. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — ACCEPTED / FROZEN AT `tiaf-a3.8`**
    Coordinate accepted specialists from `tiaf-a3.7` using capability/dependency
    policy, deterministic bounded parallel waves, shared evidence and budget
    reservations, selective enrichment/confirmation/deep research, affected-node
@@ -376,9 +376,15 @@ implemented merely by being documented.
    not investment decisions. Ten internal work packages and the 14-case offline
    acceptance matrix are complete, without implementing A3.9 or later ownership. Detail:
    [`TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md).
-11. **A3.9 — Structured Underlying Opportunity Intelligence MVP — PLANNED**
-   Publish cited opinions, disagreement, missing evidence, quality/freshness,
-   separated confidence, and A2 comparison. A6—not A3—owns `CE`/`PE`.
+11. **A3.9 — Structured Opportunity Intelligence MVP — IMPLEMENTED / ACCEPTANCE PENDING**
+   Assemble a captured A3.8 run into a single-underlying immutable product with
+   typed contributions, qualified bias, deterministic observation state, cited
+   reasons, visible contradictions/gaps, separated confidence and unchanged A2
+   comparison. No ranking, hidden voting/arbitration, provider acquisition or
+   specialist rerun; A4–A10 authority remains absent. Nine internal packages and
+   replay/user-level acceptance gates are implemented; results are recorded in
+   [the acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md). Design:
+   [`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
 12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — PLANNED**
     Freeze Agent records/corpora, offline replay/regression, scale/cost evidence,
     failure injection, security checks, and the A7 outcome linkage.

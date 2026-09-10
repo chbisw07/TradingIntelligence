@@ -109,6 +109,16 @@ owns workflow decisions, not investment decisions; opinions and A2 disagreement
 remain separate for A3.9. A3.8 has serial/LangGraph deterministic acceptance;
 see the [offline acceptance study](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md).
 
+A3.8 is now frozen at `tiaf-a3.8`. The
+[A3.9 Structured Opportunity Intelligence MVP design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md)
+defines the implemented application boundary: a single-underlying immutable product
+assembled from captured A3.8 results, with typed contribution/bias semantics,
+explicit observation-state rules, retained A2/conflicts/gaps, separate confidence,
+cited reasons and offline assembly replay. Runtime lives in
+`tiaf.service.opportunity_intelligence`; see the
+[acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md). It neither reruns specialists nor acquires providers,
+votes among opinions, ranks candidates or assumes A4–A10 authority.
+
 ## A3 architecture boundary
 
 A3 Agents consume immutable A2 evidence through controlled, least-privilege

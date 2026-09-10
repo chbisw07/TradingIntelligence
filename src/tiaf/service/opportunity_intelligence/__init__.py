@@ -1,0 +1,63 @@
+"""A3.9 public captured-input opportunity-intelligence API; no execution handles."""
+
+from .assembly import assemble_opportunity_intelligence
+from .contracts import (
+    BaselineView,
+    BiasSummary,
+    CaptureIntegrityError,
+    CompletenessProfile,
+    ContextSummary,
+    Contradiction,
+    DeterministicComparison,
+    Facet,
+    IntelligenceReason,
+    IntelligenceRunRecord,
+    LineageGroup,
+    OpportunityIntelligenceRequest,
+    OpportunityState,
+    OpportunitySummary,
+    OpportunitySynthesisPolicy,
+    OrchestrationAuditLink,
+    PredicateTrace,
+    Prerequisite,
+    RuleTrace,
+    SourceLocator,
+    SpecialistContribution,
+    StructuredOpportunityIntelligence,
+    Truth,
+)
+from .handoff import request_from_capture
+from .policy import default_policy
+from .replay import capture_intelligence, replay_intelligence, verify_intelligence
+
+__all__ = [
+    "assemble_opportunity_intelligence",
+    "BaselineView",
+    "BiasSummary",
+    "CaptureIntegrityError",
+    "CompletenessProfile",
+    "ContextSummary",
+    "Contradiction",
+    "DeterministicComparison",
+    "Facet",
+    "IntelligenceReason",
+    "IntelligenceRunRecord",
+    "LineageGroup",
+    "OpportunityIntelligenceRequest",
+    "OpportunityState",
+    "OpportunitySummary",
+    "OpportunitySynthesisPolicy",
+    "OrchestrationAuditLink",
+    "PredicateTrace",
+    "Prerequisite",
+    "RuleTrace",
+    "SourceLocator",
+    "SpecialistContribution",
+    "StructuredOpportunityIntelligence",
+    "Truth",
+    "request_from_capture",
+    "default_policy",
+    "capture_intelligence",
+    "replay_intelligence",
+    "verify_intelligence",
+]

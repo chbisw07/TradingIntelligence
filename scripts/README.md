@@ -303,5 +303,22 @@ These are three distinct validation paths:
    real persisted replay, and corpus regression validates a persisted collection
    of runs.
 
-Development and operational scripts will be added when a concrete milestone
-requires them. The bootstrap baseline intentionally has no runtime scripts.
+## A3.9 captured-input opportunity acceptance
+
+```bash
+python scripts/a3_9_user_acceptance.py
+```
+
+Runs exactly 18 persisted, offline scenarios using the public
+`tiaf.service.opportunity_intelligence` API. It loads captured A3.8 records;
+it does not acquire providers, run specialists, call models or start LangGraph.
+Outputs are diagnostic observation states, not trade recommendations. There is
+no live flag. Imported source usage and new assembly usage remain separate.
+The [acceptance study](../docs/STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md) records the
+expected states, fixture limitations, replay checks and quality gates.
+
+Inputs are gzip/base64-wrapped JSON captures in
+`tests/fixtures/opportunity_intelligence/`, decoded by `_a3_9_cases.py` with the
+standard library. This storage wrapper is only for checked-in test inputs;
+public capture/replay uses ordinary JSON. Fixture authoring is test-only and
+is never imported by the acceptance script.

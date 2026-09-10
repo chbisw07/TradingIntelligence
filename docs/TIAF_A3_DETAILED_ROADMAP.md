@@ -24,9 +24,12 @@ research complete.
 **A3.7:** accepted at `tiaf-a3.7`; deterministic and user-level acceptance
 complete; bounded Dhan live acquisition attempted but unavailable (`request failed`).
 
-**A3.8:** implemented with deterministic acceptance, pending user freeze. See the
+**A3.8:** accepted/frozen at `tiaf-a3.8`. See the
 [A3.8 design/implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md) and
 [acceptance study](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md).
+
+**A3.9:** implemented; awaiting user acceptance/freeze. See the
+[A3.9 implementation design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -652,11 +655,11 @@ Historical derivative features (DEF-040/041), cross-expiry/vol surfaces
 
 Completes the initial specialist inventory needed for instrument-aware planning.
 
-## A3.8 — Instrument-Aware Planner and Specialist Orchestration — Implemented / Pending User Freeze
+## A3.8 — Instrument-Aware Planner and Specialist Orchestration — Accepted / Frozen
 
 Authoritative implementation design:
 [`TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md).
-WP1–10 are implemented on accepted `tiaf-a3.7`; no A3.8 tag is created.
+WP1–10 are implemented on accepted `tiaf-a3.7` and frozen at `tiaf-a3.8`.
 The public offline matrix covers 14 cases with serial/LangGraph semantic parity.
 
 ### Goal
@@ -749,7 +752,12 @@ Provides bounded, stably ordered independent opinions, disagreements, gaps,
 quality/freshness, research/confirmation context, unchanged A2 and complete run
 metadata for the future public A3 output. It does not implement A3.9.
 
-## A3.9 — Structured Underlying Opportunity Intelligence MVP
+## A3.9 — Structured Opportunity Intelligence MVP — Implemented / Acceptance Pending
+
+Authoritative design:
+[`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
+Implemented on accepted `tiaf-a3.8` in `tiaf.service.opportunity_intelligence`.
+The [acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md) records offline scenarios and gates.
 
 ### Goal
 
@@ -758,20 +766,23 @@ specialist disagreement without becoming the A4 recommendation engine.
 
 ### Scope
 
-- immutable opportunity-intelligence request/result and ranked eligible set;
-- subject, instrument context, horizon, directional interpretation, remaining
-  opportunity only when supported, entry-state/invalidation concepts, opinions,
-  claims/citations, disagreement, missing evidence, quality/freshness,
-  confidence dimensions, A2 comparison, and run references;
-- preserved A2 ordering or an explicit non-arbitrating eligibility/tie policy
-  where ranking is exposed; specialist opinions are not silently weighted;
-- `WAIT`/`NO_TRADE` compatibility, `ABSTAIN`/`INSUFFICIENT_EVIDENCE`, stable
-  JSON, and human-readable explanation derived from structured fields;
-- explicit A4, A5, A6, A7, and A8 handoff fields without owning their policy.
+- a single-underlying immutable product assembled only from a captured A3.8
+  run/result and policy snapshot, including active/superseded audit links;
+- typed contribution roles, qualified price-structure bias, source quality/risk/
+  maturity/extension/remaining-room facets and unchanged A2 comparison;
+- explicit OPPORTUNITY/WATCH/WAIT/AVOID/NO_TRADE/CONFLICTED/INSUFFICIENT_EVIDENCE
+  observation rules, not trade actions, majority votes or weighted confidence;
+- structured cited supporting/opposing/risk/gap reasons, preserved source and
+  specialist contradictions, field-level confirmation and research references;
+- separate applicability/coverage/quality/freshness/confidence and exact offline
+  assembly replay. No provider fetch or specialist rerun behind the product.
+
+The broader earlier roadmap allowed ranked eligible sets; this bounded MVP
+does not implement ranking, batch scheduling, UI or authority-bearing handoff fields.
 
 ### Explicit non-goals
 
-No final buy/sell recommendation, specialist-weighted ranking,
+No candidate ranking, final buy/sell recommendation, specialist-weighted ranking,
 consensus/arbitration, guaranteed list size,
 position advice, `CE`/`PE`, contract/strategy selection, fabricated expected
 return/probability, execution, or TradeMonitor policy.
@@ -782,34 +793,40 @@ A3.1–A3.8 and accepted A2 baseline/replay identifiers.
 
 ### Core contracts
 
-`OpportunityIntelligenceRequest`, `OpportunityIntelligence`, candidate/ranking
-entry, specialist-opinion references, disagreement/missing-evidence summary,
-A2 comparison, and aggregate run reference.
+Public `OpportunityIntelligenceRequest`, `StructuredOpportunityIntelligence`,
+composable contribution/bias/baseline/contradiction/completeness/reason records,
+versioned synthesis policy and captured intelligence run. Do not repurpose the
+A0 `OpportunityAssessment`, whose action vocabulary includes ENTER.
 
 ### Implementation deliverables
 
-Output contracts, assembler, deterministic eligibility/A2-order preservation,
-structured explanation renderer, CLI/read-only inspection path, fixtures, and
-consumer examples.
+Nine internal packages: contracts; contribution/applicability model; deterministic
+synthesis; contradiction/completeness/confidence; structured explanation;
+replay/fingerprint; public local application seam; user-level acceptance; hardening.
+A minimal capture-inspection helper may demonstrate the API, not add a UI/live path.
 
 ### Tests
 
 Serialization/immutability, no-action vocabulary, all abstain/insufficient,
-mixed/conflicting opinions, A2 disagreement, quality/freshness gating, stable
-ordering/ties, fewer-than-requested results, no forecast fabrication, and
-absence of option-expression fields.
+mixed/conflicting opinions, A2 disagreement/NO_TRADE preservation, quality/freshness
+gating, stable ordering, correlated-lineage deduplication, reason traceability,
+confirmation scope, pure assembly replay, no provider or specialist execution,
+and no A4/A5/A6/A7 authority fields.
 
 ### Live validation
 
-Read-only small candidate batches across instruments/horizons, including all-
-`NO_TRADE`, partial evidence, and specialist-failure cases. Validate traceability
-and boundaries, not profitability.
+Not required for the architecture pass or deterministic assembly acceptance.
+Future supplemental reads must run upstream through existing A3.8 under explicit
+bounded authorization. Local captured/synthetic cases A–L are mandatory; no tuning
+to live symbols or profitability claims.
 
 ### Acceptance criteria
 
-Every conclusion traces to evidence/run IDs; A2 remains visible; disagreement
-is not collapsed; output may decline to rank; CE/PE and execution semantics are
-absent; later consumers can use it without parsing prose.
+Every conclusion traces to evidence/run IDs; A2 remains unchanged; disagreement
+is not collapsed; the product does not rank; no provider/specialist execution is
+hidden in assembly. Cases include aligned support, poor timing, overextension,
+high event risk, conflict, insufficiency, NO_TRADE, non-F&O, index and exact replay.
+Later consumers use fields without parsing prose.
 
 ### Likely deferrals
 

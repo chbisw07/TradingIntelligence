@@ -175,8 +175,8 @@ it does not overload corporate-action or earnings-call semantics.
 | Derivatives context interpretation | IMPLEMENTED | A3.7 cited deterministic/no-LLM interpretation over supplied A2.7 families; live acquisition unavailable |
 | Opportunity quality interpretation | IMPLEMENTED | A3.7 A2.9 maturity/room and grouped A3 evidence; no recommendation authority |
 | Opportunity risk interpretation | IMPLEMENTED | A3.7 grouped pre-arbitration downside context; no position action |
-| Instrument-aware Planner / orchestration | IMPLEMENTED / PENDING USER FREEZE | [A3.8 implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md): capability/dependency policy, bounded parallelism, shared evidence/budget reservations, selective enrichment/confirmation/research and reruns, partial stops, isolated LangGraph and replay; [offline acceptance](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md); no investment-decision authority |
-| Structured underlying opportunity intelligence | PLANNED | A3.9 |
+| Instrument-aware Planner / orchestration | ACCEPTED / `tiaf-a3.8` | [A3.8 implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md): capability/dependency policy, bounded parallelism, shared evidence/budget reservations, selective enrichment/confirmation/research and reruns, partial stops, isolated LangGraph and replay; [offline acceptance](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md); no investment-decision authority |
+| Structured underlying opportunity intelligence | IMPLEMENTED / ACCEPTANCE PENDING | [A3.9 design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md): captured A3.8 input, typed contributions and qualified bias, explicit observation state, preserved A2/conflicts/gaps, separate confidence, cited reasons and pure assembly replay; no ranking/arbitration or provider/specialist execution |
 | Agent replay / A2 comparison / cost/failure hardening | PLANNED | A3.10 |
 | Arbitration / adversarial resolution | PLANNED | A4 |
 | Position intelligence | PLANNED | A5 |
