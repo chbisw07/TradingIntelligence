@@ -14,17 +14,19 @@ orchestration is frozen at `tiaf-a3.8` and A3.9 structured opportunity
 intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A3.10 hardening architecture
+### Present — A3.10 hardening implemented
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
-is designed; implementation is pending. It will harden cumulative A3 capture,
-offline replay, observational A2/A3 comparison, exact cost knowledge, failure
-degradation and closure-readiness evidence without changing A3.9 states.
+is implemented with content-addressed cumulative A3 capture, offline replay,
+observational A2/A3 comparison, exact cost knowledge, failure degradation, a
+14-case synthetic acceptance corpus, and closure-readiness evidence without
+changing A3.9 states. See the
+[offline acceptance study](docs/STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md).
 
-### Future — implementation, then closure
+### Future — separate A3 closure
 
-A3.10 implementation/acceptance is next, followed by a separate A3 major closure
-and deferral review. A4 retains arbitration/recommendations; position,
+A separate A3 major closure and deferral review follows A3.10 acceptance. A4
+retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is an
 intelligence and decision-support system, not an execution system.
 

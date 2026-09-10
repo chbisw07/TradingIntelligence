@@ -2,16 +2,18 @@
 
 ## Status and authority
 
-Architecture/design pass, 2026-09-10. **Designed; runtime implementation pending.**
-Inspected HEAD `ca71087`, accepted/frozen at `tiaf-a3.9`; the working tree was
-clean before this documentation pass. A1, A2 and A3.1–A3.9 are immutable inputs,
-not redesign targets. This document is the authoritative implementation design
-for the final A3 sub-milestone before the separate A3 major-closure review.
+Architecture approved at `tiaf-a3.10-arch`; implementation and offline acceptance
+completed on 2026-09-10 over frozen `tiaf-a3.9`. A1, A2 and A3.1–A3.9 remain
+immutable inputs, not redesign targets. This document is both the authoritative
+design and implementation record for the final A3 sub-milestone before the
+separate A3 major-closure review.
 
-This pass adds no runtime, provider, specialist, model, dependency or policy
-change. It does not perform the A3 deferral burn-down, closure, commit, tag or
-push. The post-A3 system/Shell/source-fabric/monitoring/forecasting documents
-remain deferred and are not reopened here.
+The implementation adds only replay/evaluation infrastructure under
+`tiaf.a3_hardening`, deterministic synthetic fixtures, tests, and a bounded
+offline helper. It adds no live call, provider, specialist, model, dependency,
+or intelligence-policy change. It does not perform the A3 deferral burn-down,
+closure, commit, tag, or push. Post-A3 system/Shell/source-fabric/monitoring/
+forecasting documents remain deferred and were not reopened.
 
 ## 1. Purpose and ownership
 
@@ -621,16 +623,39 @@ prove all of the following without changing accepted A3 semantics:
 - closure-readiness evidence without performing closure;
 - no A4–A10 authority leakage and full regression.
 
-## 20. Next implementation prompt
+## 20. Implementation result
 
-Recommended title:
+The ten work packages are implemented as follows:
 
-**TIAF_A3.10 — Agent Replay / Baseline Comparison / Cost & Failure Hardening — Implementation Pass**
+- `contracts.py`, `package.py`, and `store.py` implement immutable manifests,
+  portable envelopes, exact/content-addressed blobs, two honest A2 modes, and
+  append-only local records;
+- `replay.py` separates recorded replay, deterministic verification, and policy
+  comparison; it never labels comparison as historical replay;
+- `comparison.py` preserves A2 and A3 independently with closed axes,
+  coexisting disagreement labels, and attributable information additions;
+- `cost.py` reconciles A3.8 reservation leaves once, exposes nested provider
+  attempts without debiting them again, separates replay use, and preserves
+  `UNKNOWN`/`UNPRICED` monetary states;
+- `failures.py` retains original child type/code/message digest and identifiers,
+  and projects accepted A3.8/A3.9 degradation without a new synthesis rule;
+- `evaluation.py` composes immutable hardening results, corpus manifests, and
+  the later closure-readiness seam;
+- the 22-case deterministic fault manifest and 14-case public corpus are
+  explicitly `SYNTHETIC`, versioned, and offline.
 
-After A3.10 implementation and acceptance, perform a separate **TIAF_A3 Major
-Milestone Closure + Deferral Burn-down**. Do not merge that review into A3.10.
+`scripts/a3_10_user_acceptance.py` reports package/replay identities, both
+comparison sides, axes, additions, failures/degradation, original versus replay
+usage, cost knowledge, fingerprints/checksums, and gaps. Package-backed cases
+are distinguished from two explicit closed-function probes: case D supplements
+the persisted conflict capture with a neutral-direction axis probe; case G uses
+captured partial applicability plus the separately tested synthetic optional-
+failure normalizer. Neither is represented as live market evidence.
 
-## 21. Architecture-pass validation and decision
+After A3.10 acceptance, perform a separate **TIAF_A3 Major Milestone Closure +
+Deferral Burn-down**. Do not merge that review into A3.10.
+
+## 21. Architecture-pass baseline
 
 | Gate | Result |
 |---|---|
@@ -649,6 +674,6 @@ documentation. Existing focused tests cover provider/model/execution isolation;
 the implementation plan adds explicit replay import/socket guards. No live call
 was required or made. No `.env` content was read or changed.
 
-**Architecture decision: READY_FOR_A3_10_IMPLEMENTATION.** The design gives a
-bounded, testable plan for replay, baseline comparison, cost/failure truth and
-closure readiness without changing accepted intelligence semantics.
+The architecture decision was `READY_FOR_A3_10_IMPLEMENTATION`. Implementation
+acceptance results are recorded in
+[`STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md`](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md).

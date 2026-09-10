@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "corpus_id": "tiaf-a3.10-public-acceptance-v1",
+  "origin": "SYNTHETIC",
+  "fixture_builder_version": "a3.10-public-fixtures/1.0",
+  "cases": [
+    {"case_id": "A", "scenario": "clean aligned", "source": "aligned"},
+    {"case_id": "B", "scenario": "A2 NO_TRADE / A3 WATCH", "source": "baseline_watch"},
+    {"case_id": "C", "scenario": "constructive A2 / A3 WAIT", "source": "poor_timing"},
+    {"case_id": "D", "scenario": "direction conflict plus neutral-axis probe", "source": "conflict"},
+    {"case_id": "E", "scenario": "sparse evidence", "source": "sparse_kaynes"},
+    {"case_id": "F", "scenario": "primary rate-limit / fallback", "source": "offline-builder"},
+    {"case_id": "G", "scenario": "optional specialist failure", "source": "unknown_fno"},
+    {"case_id": "H", "scenario": "required Risk failure", "source": "abstain"},
+    {"case_id": "I", "scenario": "budget exhaustion", "source": "offline-builder"},
+    {"case_id": "J", "scenario": "replay tamper", "source": "aligned"},
+    {"case_id": "K", "scenario": "policy mismatch", "source": "aligned"},
+    {"case_id": "L", "scenario": "serial/LangGraph equivalents", "source": "aligned-operational-variant"},
+    {"case_id": "M", "scenario": "unknown provider cost", "source": "offline-builder"},
+    {"case_id": "N", "scenario": "no-LLM", "source": "aligned"}
+  ]
+}

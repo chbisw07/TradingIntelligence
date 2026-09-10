@@ -11,8 +11,8 @@ See [implementation results and limitations](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md
 
 This is the implementation design under the [A3 architecture](TIAF_A3_ARCHITECTURE.md)
 and [detailed roadmap](TIAF_A3_DETAILED_ROADMAP.md). New contract, enum and function
-names below describe the approved design; concrete exports are listed in the study. A3.10 remains the next
-hardening milestone after A3.9, then A3 closure. No architectural detour into TI
+names below describe the approved design; concrete exports are listed in the study. A3.10 hardening is
+implemented after A3.9; the separate A3 closure review remains next. No architectural detour into TI
 Shell or the post-A3 Source/Provenance/Citation Fabric is introduced.
 
 ## 1. Ownership: classification, not arbitration

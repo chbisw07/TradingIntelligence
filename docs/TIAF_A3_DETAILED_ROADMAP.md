@@ -32,8 +32,9 @@ complete; bounded Dhan live acquisition attempted but unavailable (`request fail
 [A3.9 implementation design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md)
 and [acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md).
 
-**A3.10:** architecture designed; runtime implementation pending. See the
-[A3.10 design](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
+**A3.10:** implemented; offline acceptance complete. See the
+[A3.10 implementation record](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
+and [acceptance study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md).
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -756,7 +757,7 @@ Provides bounded, stably ordered independent opinions, disagreements, gaps,
 quality/freshness, research/confirmation context, unchanged A2 and complete run
 metadata for the future public A3 output. It does not implement A3.9.
 
-## A3.9 — Structured Opportunity Intelligence MVP — Implemented / Acceptance Pending
+## A3.9 — Structured Opportunity Intelligence MVP — Accepted / Frozen
 
 Authoritative design:
 [`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
@@ -842,7 +843,7 @@ forecasts/value evaluation, A8 service integration, and A9 scanner scheduling.
 Provides the public record whose replay, baseline comparison, cost, and failure
 properties must be hardened before A3 closure.
 
-## A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening
+## A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — Implemented / Offline Acceptance Complete
 
 Authoritative implementation design:
 [`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
@@ -937,15 +938,9 @@ A3 is complete only when:
 9. scale and degradation validation support the intended bounded universe; and
 10. the major A3 deferral review and acceptance record are complete.
 
-## Immediate next implementation scope
+## Immediate next review scope
 
-The accepted A3.1 implementation is recorded in
-[`TIAF_A3_1_AGENT_FOUNDATION.md`](TIAF_A3_1_AGENT_FOUNDATION.md). The A3.2
-implementation is recorded in
-[`TIAF_A3_2_GATEWAYS_BUDGETS.md`](TIAF_A3_2_GATEWAYS_BUDGETS.md). The current
-scope is **A3.6 only**: three separate relative, sector, and macro specialists,
-explicit mappings and sensitivities, bounded point-in-time context gateways,
-shared source reuse, and cited deterministic interpretation. A3.6 does not add
-A3.7 derivatives/risk, multi-Agent planning, arbitration, position semantics,
-option expression, or execution authority. See
-[`TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md`](TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md).
+A3.1–A3.10 are implemented in sequence. The immediate next scope is the
+separate **A3 Major Milestone Closure + Deferral Burn-down** review. That review
+consumes A3.10 closure-readiness evidence; it is not performed automatically by
+A3.10. A4 arbitration and every later authority remain pending.

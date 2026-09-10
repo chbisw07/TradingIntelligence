@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "origin": "SYNTHETIC",
+  "fixture_builder_version": "a3.10-faults/1.0",
+  "cases": [
+    {"id": "primary-rate-limited-fallback", "category": "EVIDENCE_PROVIDER", "code": "RATE_LIMITED"},
+    {"id": "all-providers-unavailable", "category": "EVIDENCE_PROVIDER", "code": "UNAVAILABLE"},
+    {"id": "malformed-native-payload", "category": "EVIDENCE_PROVIDER", "code": "MALFORMED"},
+    {"id": "ambiguous-financial-semantic", "category": "EVIDENCE_PROVIDER", "code": "AMBIGUOUS"},
+    {"id": "authoritative-not-found", "category": "EVIDENCE_PROVIDER", "code": "OUT_OF_COVERAGE"},
+    {"id": "authoritative-contradiction", "category": "EVIDENCE_PROVIDER", "code": "AMBIGUOUS"},
+    {"id": "specialist-exception", "category": "SPECIALIST", "code": "EXCEPTION"},
+    {"id": "specialist-invalid-output", "category": "SPECIALIST", "code": "INVALID_OUTPUT"},
+    {"id": "specialist-abstain", "category": "SPECIALIST", "code": "ABSTAIN"},
+    {"id": "missing-required-risk", "category": "SPECIALIST", "code": "INSUFFICIENT_EVIDENCE"},
+    {"id": "timeout-late-completion", "category": "ORCHESTRATION", "code": "DEADLINE_EXCEEDED"},
+    {"id": "budget-exhaustion", "category": "ORCHESTRATION", "code": "BUDGET_EXHAUSTED"},
+    {"id": "unknown-provider-cost", "category": "EVIDENCE_PROVIDER", "code": "UNCLASSIFIED"},
+    {"id": "missing-artifact", "category": "REPLAY_CAPTURE", "code": "MISSING_ARTIFACT"},
+    {"id": "tampered-blob", "category": "REPLAY_CAPTURE", "code": "CHECKSUM_MISMATCH"},
+    {"id": "schema-mismatch", "category": "REPLAY_CAPTURE", "code": "SCHEMA_MISMATCH"},
+    {"id": "policy-mismatch", "category": "REPLAY_CAPTURE", "code": "POLICY_VERSION_MISMATCH"},
+    {"id": "completion-order-variation", "category": "ORCHESTRATION", "code": "UNCLASSIFIED"},
+    {"id": "duplicate-provider-lineage", "category": "EVIDENCE_PROVIDER", "code": "UNCLASSIFIED"},
+    {"id": "stale-evidence", "category": "EVIDENCE_PROVIDER", "code": "UNAVAILABLE"},
+    {"id": "unknown-fno-applicability", "category": "SPECIALIST", "code": "INSUFFICIENT_EVIDENCE"},
+    {"id": "verified-non-fno-skip", "category": "SPECIALIST", "code": "UNSUPPORTED"}
+  ]
+}

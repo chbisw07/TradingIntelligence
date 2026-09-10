@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.9 Accepted / A3.10 Designed, Implementation Pending
+## TIAF_A3 sequence — A3.9 Frozen / A3.10 Implemented, Acceptance Complete
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -385,11 +385,12 @@ implemented merely by being documented.
    replay/user-level acceptance gates are implemented; results are recorded in
    [the acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md). Design:
    [`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
-12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — DESIGNED / IMPLEMENTATION PENDING**
-    Add content-addressed A3 packages, recorded/deterministic/comparison replay,
+12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — IMPLEMENTED / OFFLINE ACCEPTANCE COMPLETE**
+    Adds content-addressed A3 packages, recorded/deterministic/comparison replay,
     observational A2/A3 axes, exact-versus-unknown cost accounting, lossless
-    failure/degradation summaries, an injected acceptance corpus and a later
-    closure-readiness seam. It does not alter A3.9 or perform A3 closure. Detail:
+    failure/degradation summaries, a 22-case fault matrix, 14-case synthetic
+    acceptance corpus, and a later closure-readiness seam. It does not alter
+    A3.9 or perform A3 closure. [Acceptance study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md). Detail:
     [`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
 
 A7 is minimally refined to **Evaluation, Forecasting and Learning**. A3 defines

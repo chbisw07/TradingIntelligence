@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF_A3.10 replay/comparison/cost/failure hardening over frozen
+  `tiaf-a3.9`: immutable content-addressed packages, full/projection A2 capture
+  modes, recorded/deterministic/comparison replay, closed observational A2/A3
+  axes, leaf-exact usage and explicit monetary knowledge, lossless failure and
+  degradation projections, append-only corpus/closure records, 22 deterministic
+  fault fixtures, and 14 offline public scenarios. No intelligence-policy,
+  provider/model/dependency, live-call, recommendation, execution, or A4–A10
+  authority change.
 - Designed TIAF_A3.10 Agent Replay / Baseline Comparison / Cost & Failure
   Hardening on accepted `tiaf-a3.9`: composable content-addressed capture,
   recorded/deterministic/comparison replay taxonomy, explicit fingerprint

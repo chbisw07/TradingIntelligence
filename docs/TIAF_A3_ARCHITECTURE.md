@@ -13,8 +13,8 @@ intelligence are frozen at `tiaf-a3.8` and `tiaf-a3.9` respectively.
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
 **Current milestone:** TIAF_A3.10 — Agent Replay / Baseline Comparison / Cost &
-Failure Hardening, architecture designed and runtime implementation pending. Its
-authoritative design is
+Failure Hardening, implemented with offline acceptance complete. Its
+authoritative design and implementation record is
 [`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
 
 This is the authoritative architecture for TIAF_A3. It supplements the
