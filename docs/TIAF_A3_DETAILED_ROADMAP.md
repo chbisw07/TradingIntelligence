@@ -18,8 +18,11 @@
 
 **A3.6:** complete / accepted at `tiaf-a3.6`.
 
-**A3.6.1:** Market Intelligence Provider Fabric + Deep Research Foundation
-architecture defined / pending acceptance and implementation.
+**A3.6.1/A3.6.2:** provider fabric, bounded confirmation, and integrated deep
+research complete.
+
+**A3.7:** implemented / deterministic and user-level acceptance complete;
+bounded Dhan live acquisition attempted but unavailable (`request failed`).
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -45,8 +48,8 @@ deliberate refinements:
 - A3.6.1 inserts the provider-neutral acquisition/normalization fabric needed
   to populate those and earlier evidence contracts from multiple providers. It
   is not a planner, specialist, or deep-research god-agent.
-- A3.7 separates Derivatives Context from Opportunity Risk. Neither selects an
-  option contract or manages a position.
+- A3.7 separates Derivatives Context, Opportunity Quality, and Opportunity
+  Risk. None selects an option contract or manages a position.
 - A3.8 moves full planning after specialist boundaries have been exercised.
 - A3.9 emits structured **underlying** opportunity intelligence. `CE`/`PE` and
   all option-expression choices move entirely to A6.
@@ -576,7 +579,7 @@ Full record:
 Provides bounded external context acquisition without taking ownership of
 derivative interpretation, risk judgment, orchestration, or option selection.
 
-## A3.7 — Derivatives Context and Opportunity Risk Specialists
+## A3.7 — Derivatives Context, Opportunity Quality, and Opportunity Risk Specialists — Implemented / User-Level Acceptance Complete
 
 ### Goal
 
@@ -587,6 +590,8 @@ preserving A6 option-expression and A5 position-management boundaries.
 
 - Derivatives Context specialist over A1/A2.7 current-expiry facts and accepted
   later derivative evidence;
+- Opportunity Quality specialist over A2.9 maturity/room plus selected A3
+  evidence;
 - Opportunity Risk specialist over A2 plus selected A3 evidence;
 - explicit chain validity/liquidity/expiry/staleness gates;
 - evidence fragility, extension, event, liquidity, and invalidation concepts;
@@ -610,8 +615,9 @@ claim/citation, and run contracts.
 
 ### Implementation deliverables
 
-Two specialists, chain/risk requirement policies, deterministic fallback,
-captured-chain fixtures, and boundary tests against A5/A6 semantics.
+Three specialists, typed replay detail, chain/quality/risk requirement policy,
+deterministic fixtures, and boundary tests against A4/A5/A6 semantics. Detail:
+[`TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md`](TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md).
 
 ### Tests
 
@@ -622,7 +628,9 @@ opportunity-risk coverage, and action-vocabulary prohibition.
 ### Live validation
 
 Read-only active-expiry cases for a small stock/index set plus cash-only skip
-cases; validate that output names no contract or executable action.
+cases; validate that output names no contract or executable action. The
+2026-09-10 attempt stopped truthfully at Dhan evidence acquisition with
+`request failed`; no live specialist output is claimed.
 
 ### Acceptance criteria
 

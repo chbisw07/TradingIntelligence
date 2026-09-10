@@ -21,6 +21,7 @@ def test_all_accepted_specialist_identities_are_stable() -> None:
         "SECTOR",
         "MACRO",
         "DERIVATIVES_CONTEXT",
+        "OPPORTUNITY_QUALITY",
         "OPPORTUNITY_RISK",
         "CONTRARIAN_HYPOTHESIS",
         "FORECAST_INTERPRETATION",

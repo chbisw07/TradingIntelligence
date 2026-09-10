@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.6.2 Complete / Accepted
+## TIAF_A3 sequence — A3.7 Implemented / User-Level Acceptance Complete
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -357,9 +357,16 @@ implemented merely by being documented.
    fingerprints, and provider-free replay. The bounded four-symbol live matrix
    passed with 12 read-only calls and zero model usage. Detail:
    [`TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md`](TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md).
-9. **A3.7 — Derivatives Context and Opportunity Risk Specialists — PLANNED**
-   Interpret A2.7/current derivative and downside evidence without contract
-   selection, position management, or unsupported probabilities.
+9. **A3.7 — Derivatives Context, Opportunity Quality, and Opportunity Risk Specialists — IMPLEMENTED / USER-LEVEL ACCEPTANCE COMPLETE**
+   Three separate AgentOpinionV2 specialists interpret supplied A2.7/current
+   derivative evidence, A2.9 opportunity maturity/room, and grouped downside
+   context without recomputation, contract selection, position management,
+   arbitration, or unsupported probabilities. Deterministic fixtures, cited
+   claims, grouped-confidence protection, zero-LLM operation, and exact replay
+   pass. Bounded Dhan live acquisition was attempted on 2026-09-10 but returned
+   `request failed`; no live output is claimed. Six black-box deterministic
+   scenarios pass through the public registry/runtime composition. Detail:
+   [`TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md`](TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md).
 10. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — PLANNED**
    Apply progressive A2 screening, specialist selection, shallow/deep
    escalation, cache/reuse, hard budgets, and isolated degradation.

@@ -4,6 +4,21 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF_A3.7 as three separate provider-neutral, deterministic
+  `AgentOpinionV2` specialists for derivatives context, opportunity quality,
+  and opportunity risk. Added typed replay detail, stable reason codes,
+  instrument/horizon context, grouped-family confidence, cited factual and
+  interpretive claims, A2.9 comparison, explicit missing/stale abstention,
+  no-LLM usage, and exact runtime replay without A2 recomputation, option
+  expression, position action, or arbitration authority. Bounded Dhan live
+  acquisition was attempted but returned `request failed`; no live result is
+  claimed.
+- Added a six-scenario deterministic A3.7 user-level acceptance operation over
+  the public registry/runtime. It verifies coherent combined output, forbidden
+  A4/A5/A6/A7 field absence, zero model use, citations, A2 agreement, and exact
+  replay. The pass also corrected implicit-conflict citation selection and
+  stopped explicit unknown-state placeholders from counting as substantive
+  evidence-family coverage.
 - Implemented TIAF_A3.6.2 end-to-end market-intelligence/deep-research
   integration over the existing multi-capability controller, progressive
   provider routing, authoritative gateway, sparse Evidence Graph, and research

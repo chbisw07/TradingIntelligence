@@ -28,7 +28,11 @@ BSE, and company IR primary sources is implemented and bounded-live-validated
 as a post-A3.6.1 follow-up. A3.6.2 now integrates these sources into bounded,
 graph-aware deterministic company research with explicit gaps, epistemic
 separation, zero-LLM operation, and exact offline replay. Its four-symbol,
-12-call live matrix passed on 2026-09-10. A3.7 remains next.**
+12-call live matrix passed on 2026-09-10. A3.7 now implements separate,
+deterministic/no-LLM Derivatives Context, Opportunity Quality, and Opportunity
+Risk specialists with cited evidence, grouped confidence, A2 comparison, and
+exact replay. Bounded Dhan live acquisition was attempted but returned
+`request failed`, so no A3.7 live result is claimed.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -129,6 +133,15 @@ epistemic enforcement, and provider-free replay. Its
 [bounded live study](docs/STUDY_A3_6_2_Deep_Research_Live_Acceptance.md) covers
 RELIANCE, HDFCBANK, KAYNES, and ATHERENERG without adding a provider or model
 call.
+The [A3.7 specialist record](docs/TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md)
+documents the three independent deterministic specialists, implemented A2.7
+evidence surface, non-oracle IV/PCR/OI rules, grouped confidence, instrument and
+horizon handling, abstention, A2 comparison, ownership exclusions, exact
+replay, and truthful live-acquisition status.
+Its [user-level acceptance study](docs/STUDY_A3_7_USER_LEVEL_ACCEPTANCE.md)
+records six deterministic black-box scenarios through the public runtime,
+including conflict, avoid-chase, event-risk, insufficient-evidence, and
+cash-only behavior.
 The associated
 [Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
 is non-authoritative evidence informing that design.

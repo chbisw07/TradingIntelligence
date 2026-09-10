@@ -148,6 +148,21 @@ An existing A2.10 captured snapshot/run can be inspected entirely offline with
 `--input` is mutually exclusive with `--symbol`; it performs no Dhan/provider
 access and preserves the capture's A2 assessment and evidence fingerprint.
 
+`a3_7_user_acceptance.py` is the deterministic black-box acceptance path for
+the A3.7 Derivatives Context, Opportunity Quality, and Opportunity Risk
+specialists. It runs six immutable profiles through the public specialist
+registry/runtime composition, asserts expected interpretation families,
+citations, contradictions, missing evidence, grouped confidence, A2 agreement,
+zero model usage, forbidden-output absence, and exact offline record replay.
+It makes no external call and requires no credentials:
+
+```bash
+python scripts/a3_7_user_acceptance.py
+```
+
+A3.8, not this script, will own general multi-specialist planning and
+orchestration.
+
 `inspect_relative_specialist.py` is the read-only A3.6 Relative Strength
 Specialist path. It acquires or loads the accepted A2 request/baseline, copies
 the already-computed A2.8 subject return, benchmark return, spread, ratio,

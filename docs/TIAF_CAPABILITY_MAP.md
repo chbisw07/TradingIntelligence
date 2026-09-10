@@ -172,7 +172,9 @@ it does not overload corporate-action or earnings-call semantics.
 | Sparse Evidence Graph / structured deep-research foundation | IMPLEMENTED | A3.6.1 materiality-driven point-in-time graph and composable FACT/INFERENCE/HYPOTHESIS-separated research contracts |
 | Authoritative primary-source claim confirmation | IMPLEMENTED / LIVE VALIDATED | Bounded post-A3.6.1 NSE/BSE/company-IR adapters; source/domain validation, document/revision lineage, field-level confirmation, content cache, event/graph integration, and replay; no crawler |
 | Integrated deterministic company research | IMPLEMENTED / LIVE VALIDATED | A3.6.2 multi-capability enrichment, normalized quality/PIT context, authoritative linkage, sparse graph, FACT/INFERENCE/HYPOTHESIS enforcement, explicit gaps, no-LLM baseline, and exact replay |
-| Derivatives context / opportunity risk | PLANNED | A3.7; option selection excluded |
+| Derivatives context interpretation | IMPLEMENTED | A3.7 cited deterministic/no-LLM interpretation over supplied A2.7 families; live acquisition unavailable |
+| Opportunity quality interpretation | IMPLEMENTED | A3.7 A2.9 maturity/room and grouped A3 evidence; no recommendation authority |
+| Opportunity risk interpretation | IMPLEMENTED | A3.7 grouped pre-arbitration downside context; no position action |
 | Instrument-aware Planner / orchestration | PLANNED | A3.8 |
 | Structured underlying opportunity intelligence | PLANNED | A3.9 |
 | Agent replay / A2 comparison / cost/failure hardening | PLANNED | A3.10 |
