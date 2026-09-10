@@ -126,6 +126,30 @@ connector path is proven, but the study retains HOLD until the exact current
 matrix completes; neither result expands Tapetide beyond the documented
 provider role.
 
+## Post-freeze Yahoo secondary-provider follow-up
+
+The additive Yahoo/yfinance MCP integration reuses these frozen contracts and
+routing semantics without changing their meaning. Yahoo is explicitly a
+secondary/fallback aggregator for profile, financial, earnings-event, news, and
+optional recommendation evidence. Provider-local `.NS` identity mapping,
+native-first normalization, `uvx`/MCP process details, and Yahoo schema handling
+remain inside its provider modules. The implementation and limitations are
+recorded in
+[`STUDY_Yahoo_MCP_Secondary_Provider_Evaluation.md`](STUDY_Yahoo_MCP_Secondary_Provider_Evaluation.md).
+
+## Post-freeze authoritative-confirmation architecture follow-up
+
+The bounded
+[`Authoritative Confirmation Gateway`](TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md)
+implementation reuses the frozen provider-neutral fabric for selective confirmation of
+material discovery claims against official exchange, regulator, company-IR, or
+rating evidence. Configured NSE/BSE/company-IR adapters, domain/redirect
+validation, document cache/parser boundaries, claim reconciliation, and bounded
+live acceptance do not change A3.6.1 routing, specialist, or replay semantics. Adapters must
+remain read-only, preserve raw document identity/hash/revision and field-level
+confirmation lineage, and keep NSE/BSE/IR transport code outside canonical and
+specialist packages.
+
 ## Non-goals and authority boundaries
 
 A3.6.1 does not implement A4 arbitration, A5 position actions, A6 option
@@ -188,6 +212,7 @@ authorization.
 | `READ_FILINGS` | `READ_FILINGS` |
 | `READ_NEWS` | `READ_NEWS` |
 | `READ_CORPORATE_ACTIONS` | `READ_FILINGS` |
+| `READ_EARNINGS_CALENDAR` | `READ_FILINGS` |
 | `READ_EARNINGS_CALL_CONTEXT`, `READ_MANAGEMENT_EVIDENCE` | `READ_FILINGS` or `READ_NEWS`, selected explicitly by source class |
 | `READ_INDUSTRY_CONTEXT`, `READ_COMPETITORS` | `READ_SECTOR_CONTEXT` |
 | `READ_CUSTOMER_EXPOSURE`, `READ_SUPPLIER_EXPOSURE`, `READ_SUPPLY_CHAIN_EXPOSURE` | `REQUEST_ADDITIONAL_MARKET_EVIDENCE` |

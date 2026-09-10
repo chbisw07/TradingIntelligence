@@ -137,11 +137,21 @@ bounded single-specialist runtime and A3.2 controlled evidence/reasoning/budget
 gateways are complete/accepted. A3.3 through A3.6 are complete/accepted. The
 A3.6.1 provider-fabric and deep-research-foundation contracts, routing,
 normalization, evidence memory, and read-only adapter boundary are implemented.
-The isolated stdio connector is complete and the bounded Tapetide
-adapter-to-replay path was exercised. Final live acceptance remains on HOLD
-because the daily Tapetide quota was exhausted before the ATHERENERG financial
-diagnostic could observe a raw response. Agents consume controlled evidence and
-do not belong inside deterministic calculators.
+The isolated Tapetide stdio connector and adapter-to-replay path are frozen at
+`tiaf-a3.6.1`. A post-freeze Yahoo/yfinance MCP adapter now provides bounded
+profile, financial, earnings-event, and news fallback/corroboration. Its
+deterministic path passes; its corrected ten-call live-acceptance matrix,
+rate-limit fallback, and exact offline replay passed on 2026-09-10. Agents
+consume controlled evidence and do not belong inside deterministic calculators.
+
+The bounded authoritative-confirmation follow-up is implemented and
+live-validated. It reuses A3.6.1 routing and A3.5 event clustering to link
+material discovery claims to exchange, regulator, company-IR, rating, or other
+official document evidence without exposing source transports to specialists.
+
+The Yahoo earnings adapter uses the additive provider-neutral
+`READ_EARNINGS_CALENDAR` capability under the existing `READ_FILINGS` authority;
+it does not overload corporate-action or earnings-call semantics.
 
 | Capability | Status | Placement |
 |---|---|---|
@@ -155,6 +165,7 @@ do not belong inside deterministic calculators.
 | Multi-provider market-intelligence routing | IMPLEMENTED | A3.6.1 per-capability declarations, four routing modes, progressive enrichment, secondary fixture, and no global provider |
 | Provider-native semantic normalization / contradiction journal | IMPLEMENTED | A3.6.1 conservative mapping journal and canonical provenance projection; A3.4–A3.6 outputs remain unchanged |
 | Sparse Evidence Graph / structured deep-research foundation | IMPLEMENTED | A3.6.1 materiality-driven point-in-time graph and composable FACT/INFERENCE/HYPOTHESIS-separated research contracts |
+| Authoritative primary-source claim confirmation | IMPLEMENTED / LIVE VALIDATED | Bounded post-A3.6.1 NSE/BSE/company-IR adapters; source/domain validation, document/revision lineage, field-level confirmation, content cache, event/graph integration, and replay; no crawler |
 | Derivatives context / opportunity risk | PLANNED | A3.7; option selection excluded |
 | Instrument-aware Planner / orchestration | PLANNED | A3.8 |
 | Structured underlying opportunity intelligence | PLANNED | A3.9 |

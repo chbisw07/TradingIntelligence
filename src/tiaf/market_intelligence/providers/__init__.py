@@ -1,5 +1,18 @@
 """Concrete read-only market-intelligence provider adapters."""
 
+from .authoritative import (
+    AuthoritativeDocumentNormalizer,
+    BseOfficialSourceProvider,
+    CompanyIrOfficialSourceProvider,
+    NseOfficialSourceProvider,
+    OfficialDocumentLocator,
+    OfficialDocumentResponse,
+    OfficialDocumentTransport,
+    OfficialDocumentTransportError,
+    OfficialSourceMarketIntelligenceProvider,
+    default_official_source_registry,
+)
+from .authoritative_http import HttpxOfficialDocumentTransport
 from .fixture import FixtureMarketIntelligenceProvider
 from .tapetide import TapetideMarketIntelligenceProvider, TapetideToolClient
 from .tapetide_mcp import (
@@ -39,7 +52,17 @@ from .yahoo_mcp import (
 )
 
 __all__ = [
+    "AuthoritativeDocumentNormalizer",
+    "BseOfficialSourceProvider",
+    "CompanyIrOfficialSourceProvider",
     "FixtureMarketIntelligenceProvider",
+    "HttpxOfficialDocumentTransport",
+    "NseOfficialSourceProvider",
+    "OfficialDocumentLocator",
+    "OfficialDocumentResponse",
+    "OfficialDocumentTransport",
+    "OfficialDocumentTransportError",
+    "OfficialSourceMarketIntelligenceProvider",
     "TAPETIDE_READ_TOOLS",
     "TapetideCallTimeoutError",
     "TapetideConnectionClosedError",
@@ -71,4 +94,5 @@ __all__ = [
     "YahooToolNotAllowedError",
     "india_yahoo_symbol_mapper",
     "yahoo_normalizer",
+    "default_official_source_registry",
 ]

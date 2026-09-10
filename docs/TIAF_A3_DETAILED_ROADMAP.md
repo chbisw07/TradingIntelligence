@@ -533,6 +533,22 @@ work remains authorized, budgeted, point-in-time, replayable, and read-only.
 Full design:
 [`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
 
+### Bounded authoritative-confirmation follow-up — Implemented / Live Validated
+
+Before A3.7, a bounded internal follow-up adds selective confirmation of
+material claims through official exchange, regulator, company-IR, or rating
+documents. It reuses A3.6.1 provider routing/normalization/replay and A3.5 event
+clusters; it does not create a new permanent milestone number. The architecture
+defines provider-neutral document/revision evidence, field-level claim
+confirmation, deterministic materiality escalation, official-domain validation,
+content-addressed replay, and conservative financial semantics. NSE, BSE, and
+company-IR transports remain replaceable adapter concerns. The implementation
+uses configured one-document locators, read-only bounded HTTP, typed failures,
+and exact replay; it does not add a crawler or browser-automation platform.
+
+Full design:
+[`TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md`](TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md).
+
 ### Handoff to A3.7
 
 Provides bounded external context acquisition without taking ownership of

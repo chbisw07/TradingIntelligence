@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.6 Accepted / A3.6.1 Implemented
+## TIAF_A3 sequence — A3.6 Accepted / A3.6.1 + Authoritative Follow-up Implemented
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -342,6 +342,14 @@ implemented merely by being documented.
    was exhausted before the ATHERENERG financial diagnostic could observe a
    raw response. Detail:
    [`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
+   **Bounded post-A3.6.1 follow-up — Authoritative Confirmation Gateway — IMPLEMENTED / LIVE VALIDATED.** Reuses the existing provider fabric to
+   confirm selectively escalated material claims against official
+   exchange, regulator, company-IR, or rating evidence. Preserve document
+   identity/hash/revision, field-level confirmation status, event clustering,
+   ambiguity, budgets, and replay without exposing source transports to
+   specialists. This is an internal follow-up and does not renumber A3.7.
+   Detail:
+   [`TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md`](TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md).
 8. **A3.7 — Derivatives Context and Opportunity Risk Specialists — PLANNED**
    Interpret A2.7/current derivative and downside evidence without contract
    selection, position management, or unsupported probabilities.

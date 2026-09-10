@@ -29,6 +29,7 @@ from tiaf.events import NormalizedEvent
 from tiaf.fundamentals import FundamentalFact
 from tiaf.market_context import ContextObservation
 
+from .authoritative_models import AuthoritativeDocumentEvidence
 from .enums import (
     AvailabilityBasis,
     CapabilitySupport,
@@ -323,6 +324,7 @@ class NormalizedEvidenceBatch(ContractModel):
     canonical_evidence: tuple[CanonicalEvidenceProjection, ...] = ()
     fundamental_facts: tuple[FundamentalFact, ...] = ()
     normalized_events: tuple[NormalizedEvent, ...] = ()
+    authoritative_documents: tuple[AuthoritativeDocumentEvidence, ...] = ()
     context_observations: tuple[ContextObservation, ...] = ()
     evidence_references: tuple[AgentEvidenceReference, ...] = ()
     gaps: tuple[ProviderFailure, ...] = ()

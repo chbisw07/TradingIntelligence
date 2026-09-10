@@ -77,6 +77,16 @@ gaps/conflicts trigger only budgeted progressive enrichment. It also defines a
 sparse point-in-time Evidence Graph and structured deep-research context while
 keeping provider/MCP code outside canonical packages. Detail is in
 [`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
+The bounded post-A3.6.1
+[`Authoritative Confirmation Gateway`](TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md)
+design reuses that fabric to confirm only material claims against exchange,
+regulator, company-IR, or other official evidence. It preserves original
+discovery evidence, field-level confirmation status, document/revision lineage,
+event clustering, budgets, replay, and provider neutrality. No connector or
+scraper was implemented by the architecture pass. The subsequent bounded
+implementation supplies configured read-only source adapters, domain/redirect
+validation, immutable document hashing/cache, deterministic parser boundaries,
+claim reconciliation, and offline replay without adding a crawler.
 
 ## A3 architecture boundary
 

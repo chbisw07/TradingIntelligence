@@ -182,6 +182,38 @@ python scripts/tapetide_live_acceptance.py --live
 Normal unit tests inject a fake connector worker and never require Tapetide,
 credentials, `npx`, or network access.
 
+`yahoo_live_acceptance.py` is the explicit read-only Yahoo secondary-provider
+acceptance path. It requires `--live`, preflights `uvx`, and makes exactly nine
+scheduled Yahoo calls plus one Yahoo call after a deterministic (not live)
+Tapetide `RATE_LIMITED` fixture. It uses the existing connector, provider,
+registry, router, normalizer, and replay contracts:
+
+```bash
+python scripts/yahoo_live_acceptance.py --live
+```
+
+Its connector launch is fixed to
+`uvx --from git+https://github.com/mobatmedia/yfinance-mcp yfinance-mcp`. No
+Yahoo API credential is required. The allowlist excludes options, price
+history, multiple quotes, and search. Without `uvx`, the script exits before
+constructing the connector and does not claim live acceptance.
+
+`authoritative_live_acceptance.py` is the explicit bounded read-only official
+source path:
+
+```bash
+python scripts/authoritative_live_acceptance.py
+python scripts/authoritative_live_acceptance.py --live
+```
+
+Without `--live`, it exits without external calls. With `--live`, it performs
+at most three configured HTTPS reads covering Reliance IR, NSE KAYNES
+announcements, and BSE RELIANCE corporate actions. Initial and final domains are
+validated before authority classification; acquired content is hashed,
+normalized through the provider-neutral router, and replayed offline. The
+script never crawls, submits forms, logs in, bypasses access controls, or invokes
+a broker.
+
 These are three distinct validation paths:
 
 1. **Synthetic golden tests.**

@@ -23,7 +23,9 @@ Foundation is frozen at `tiaf-a3.6.1`. Its post-freeze Yahoo/yfinance MCP
 follow-up adds a bounded secondary/fallback provider for profile, financial,
 earnings, and news evidence without changing specialist or canonical contracts.
 The corrected Yahoo ten-call live-acceptance matrix and exact offline replay
-passed on 2026-09-10. A3.7 follows it.**
+passed on 2026-09-10. A bounded authoritative-confirmation gateway for NSE,
+BSE, and company IR primary sources is implemented and bounded-live-validated
+as a post-A3.6.1 follow-up. A3.7 remains next.**
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -110,6 +112,13 @@ The [A3.6.1 provider-fabric record](docs/TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDE
 documents the implemented per-capability provider declarations/routing,
 progressive evidence enrichment, native-semantic normalization, contradiction
 preservation, sparse research memory, and structured deep-research boundaries.
+The [authoritative-confirmation gateway architecture](docs/TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md)
+defines selective material-claim confirmation, official-source document and
+revision evidence, conservative extraction, and claim-to-confirmation lineage
+without exposing exchange transports to specialists. Its
+[bounded live acceptance](docs/STUDY_Authoritative_Confirmation_Gateway_Live_Acceptance.md)
+acquired and replayed official NSE/BSE evidence while preserving a typed
+not-found company-IR result.
 The associated
 [Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
 is non-authoritative evidence informing that design.

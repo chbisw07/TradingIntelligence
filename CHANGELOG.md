@@ -4,13 +4,30 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Defined the bounded post-A3.6.1 Authoritative Confirmation Gateway
+  architecture for selective material-claim confirmation against NSE, BSE,
+  company IR, regulator, and other official evidence. The design reuses existing
+  provider-neutral routing, budgets, normalization, event clustering,
+  contradictions, evidence graph, and replay; specifies document/revision and
+  field-level confirmation lineage, conservative financial semantics, IPO
+  document support, security boundaries, and internal implementation packages;
+  and adds no scraper, connector, model call, recommendation, or trading logic.
+- Implemented immutable discovered-claim, authoritative-document, field-level
+  confirmation/discrepancy, route-audit, and replay contracts; qualitative
+  official-source registry and redirect validation; materiality gating;
+  configured read-only NSE/BSE/company-IR adapters; bounded streaming HTTP;
+  content-addressed cache; deterministic text/HTML parsing; conservative exact
+  financial normalization; event-cluster/evidence-graph integration; IPO
+  document kinds; and typed failure/revision/deduplication behavior. A bounded
+  three-call live run acquired official NSE/BSE artifacts, preserved an honest
+  company-IR `NOT_FOUND`, and replayed every result exactly.
 - Added a read-only Yahoo/yfinance MCP secondary provider for bounded company
   profile/valuation, financial statement, earnings-event, news, and optional
   analyst-recommendation evidence. Explicit `.NS` symbol mappings, conservative
   native-first normalization, typed failures, Tapetide fallback, multi-source
   contradiction preservation, and offline replay all remain behind the frozen
   A3.6.1 contracts. Added an explicit ten-call, read-only live-acceptance script;
-  live acceptance remains on HOLD because `uvx` is unavailable.
+  the corrected live matrix, deterministic fallback, and exact replay passed.
 - Corrected Yahoo FastMCP 4.0.3 `result`-wrapper decoding, valid-empty status
   handling, safe profile projections, and earnings-calendar semantics. The
   additive `READ_EARNINGS_CALENDAR` capability retains the existing

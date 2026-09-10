@@ -34,6 +34,26 @@ def test_domain_contracts_have_no_transport_dependency() -> None:
         assert "yahoo" not in source
 
 
+def test_authoritative_contracts_and_specialists_have_no_official_transport_imports() -> None:
+    canonical = "\n".join(
+        (ROOT / relative).read_text().casefold()
+        for relative in (
+            "src/tiaf/market_intelligence/authoritative_models.py",
+            "src/tiaf/market_intelligence/authoritative.py",
+            "src/tiaf/market_intelligence/models.py",
+        )
+    )
+    specialists = "\n".join(
+        path.read_text().casefold()
+        for path in (ROOT / "src/tiaf/agents/specialists").rglob("*.py")
+    )
+    for source in (canonical, specialists):
+        assert "import httpx" not in source
+        assert "nseindia" not in source
+        assert "bseindia" not in source
+        assert "providers.authoritative" not in source
+
+
 def test_mcp_sdk_import_is_confined_to_connector_module() -> None:
     package = ROOT / "src/tiaf/market_intelligence"
     importers = {
