@@ -96,6 +96,19 @@ new provider, model call, planner/LangGraph workflow, recommendation, or source
 UI. Detail is in
 [`TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md`](TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md).
 
+A3.7 completes the initial nine-specialist inventory with separate Derivatives
+Context, Opportunity Quality and Opportunity Risk specialists, accepted at
+`tiaf-a3.7`. The
+[`A3.8 Planner + Specialist Orchestration design`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md)
+now implements the bounded workflow boundary: capability/dependency-driven
+selection, deterministic bounded parallel waves, shared evidence and budget
+reservations, selective MI enrichment/confirmation/deep research, affected-node
+reruns, partial stops and captured replay. Framework-neutral planner contracts
+and policy sit above a replaceable LangGraph infrastructure adapter. The Planner
+owns workflow decisions, not investment decisions; opinions and A2 disagreement
+remain separate for A3.9. A3.8 has serial/LangGraph deterministic acceptance;
+see the [offline acceptance study](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md).
+
 ## A3 architecture boundary
 
 A3 Agents consume immutable A2 evidence through controlled, least-privilege

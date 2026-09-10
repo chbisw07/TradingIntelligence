@@ -21,8 +21,12 @@
 **A3.6.1/A3.6.2:** provider fabric, bounded confirmation, and integrated deep
 research complete.
 
-**A3.7:** implemented / deterministic and user-level acceptance complete;
-bounded Dhan live acquisition attempted but unavailable (`request failed`).
+**A3.7:** accepted at `tiaf-a3.7`; deterministic and user-level acceptance
+complete; bounded Dhan live acquisition attempted but unavailable (`request failed`).
+
+**A3.8:** implemented with deterministic acceptance, pending user freeze. See the
+[A3.8 design/implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md) and
+[acceptance study](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md).
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -648,62 +652,91 @@ Historical derivative features (DEF-040/041), cross-expiry/vol surfaces
 
 Completes the initial specialist inventory needed for instrument-aware planning.
 
-## A3.8 — Instrument-Aware Planner and Specialist Orchestration
+## A3.8 — Instrument-Aware Planner and Specialist Orchestration — Implemented / Pending User Freeze
+
+Authoritative implementation design:
+[`TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md).
+WP1–10 are implemented on accepted `tiaf-a3.7`; no A3.8 tag is created.
+The public offline matrix covers 14 cases with serial/LangGraph semantic parity.
 
 ### Goal
 
-Select the least costly sufficient evidence/specialist plan for each
-instrument, horizon, purpose, and candidate stage.
+Choose an understandable, bounded, sufficient evidence/specialist plan for each
+instrument, horizon, purpose and supplied candidate stage. The Planner owns
+workflow decisions, not investment decisions; this is not an optimal-cost or
+profitable-candidate guarantee.
 
 ### Scope
 
-- versioned deterministic Planner policy and plan representation;
-- cash-equity, stock-option-underlying, and index-option/future compositions;
-- A2 eligibility/prefilter, shallow/deep modes, maximum specialist caps,
-  escalation/stop/reuse rules, and mandatory risk coverage;
-- bounded missing-evidence request loop;
-- independent specialist execution, timeouts, partial results, and usage rollup;
-- framework-neutral orchestration interface and simple in-process reference
-  implementation; selected LangGraph adapter kept replaceable.
+- reused Agent contracts plus a minimal orchestration envelope, versioned plan,
+  dependency registry and deterministic policy;
+- equity/index and explicitly identified derivative-underlying applicability,
+  with no assumed F&O membership or automatic benchmark/sector mapping;
+- supplied A2 eligibility/baseline preservation, required Risk coverage attempt,
+  provider-neutral evidence needs and typed upstream-opinion projections;
+- deterministic bounded parallel waves, single-flight reuse and pre-dispatch
+  aggregate budget reservations;
+- existing MI progressive enrichment, selective authoritative confirmation and
+  depth/permission-gated normalized deep research/graph context;
+- selective invalidation, bounded reruns/replans, failures/abstentions, truthful
+  partial results, stop reasons and complete run/cost/replay records;
+- framework-neutral policy and serial portability/test runner, with LangGraph
+  confined to the selected replaceable infrastructure adapter.
 
 ### Explicit non-goals
 
-No final arbitration/consensus, adaptive self-modifying policy, unrestricted
-tool discovery, universe scheduler/scanner, position lifecycle, option
-expression, or broker action.
+No final arbitration/consensus, adaptive self-modifying policy, new specialist
+or provider, unrestricted tool discovery, universe scheduler/scanner, position
+lifecycle, option expression, calibrated forecasts, or broker action. No TI
+Shell or post-A3 Source/Provenance/Citation report fabric.
 
 ### Dependencies
 
-A3.1–A3.7 and stable capability registry/budget gateway.
+A3.1–A3.7, stable capability registry/budget gateway, accepted MI routing,
+authoritative confirmation, deep-research integration and sparse graph contracts.
 
 ### Core contracts
 
-Planning request/plan/step/decision, capability selection, escalation/stop
-reason, orchestration result, and aggregate run/usage record.
+Minimal workflow request, plan/node/decision, dependency and upstream-projection
+specification, escalation/stop disposition, orchestration result, reservation
+ledger and aggregate run/usage record. Reuse `AgentRequest`, `AgentEvidencePack`,
+`AgentOpinionV2`, `AgentRunRecord`, `AgentBudget` and `AgentUsage` for constituents.
 
 ### Implementation deliverables
 
-Planner policy, in-process orchestrator, capability matrix, bounded follow-up
-  loop, cache/reuse integration, plan inspector, and thin LangGraph adapter with
-  parity tests.
+Ten internal work packages, all within A3.8: contracts; dependency/capability
+registry and projections; deterministic policy; isolated LangGraph adapter;
+parallel execution; enrichment/replanning; budget/failure/stops; run/replay;
+user-level acceptance; hardening. Ledger/admission seams precede concurrency.
+See the design's work-package exit gates and representative KAYNES plan.
 
 ### Tests
 
-Instrument/horizon matrices, candidate prefiltering, no-LLM/shallow/deep plans,
-unchanged-evidence reuse, budget ceilings, maximum specialist count, one/many
-failures, deterministic plan replay, follow-up denial, and framework parity.
+Instrument/horizon/capability selection, provider independence, no-LLM/depth
+gates, deterministic parallel order and reservations, no duplicate fetch,
+projection lineage, progressive enrichment, missing-evidence dispositions,
+material confirmation, selective reruns/replans, fallback, ABSTAIN and partial
+stops, A2 preservation, offline replay and serial/LangGraph parity. Enforce
+provider/model/execution and A4/A5/A6/A7 boundaries; run full regression.
 
 ### Live validation
 
-Plan and execute read-only captured/live-small-batch cases for cash, stock F&O,
-and index F&O. Record specialist/tool/model count, latency, cache reuse, and
-cost units; do not treat attractive outputs as acceptance evidence.
+No live external calls are required for the architecture pass. Implementation
+acceptance first exercises the public orchestration path with captured cases,
+including KAYNES-style positional planning and scenarios A–H in the design.
+Any subsequent live-small-batch acceptance must be read-only, explicitly bounded
+and opt-in, covering supported cash/stock-F&O/index context. Record selected,
+skipped/reused/rerun specialists, provider/tool/model count, latency, cache reuse,
+cost and exact replay; attractive output is not acceptance evidence.
 
 ### Acceptance criteria
 
-Plans are deterministic for identical policy/input state; deep work is bounded
-to finalists; no-LLM mode succeeds; one specialist cannot escape its tools or
-budget; partial results are truthful; Planner does not arbitrate opinions.
+Plans are deterministic for identical admitted evidence, policy and recorded
+outcomes; deep work is selectively gated without planner ranking or stance
+tuning. No-LLM mode succeeds; no specialist or nested acquisition escapes shared
+authority/budget; only affected nodes rerun; partial/abstention outcomes are
+truthful; A2 and separate opinions survive replay. LangGraph stays replaceable;
+the Planner never arbitrates opinions or makes investment decisions.
 
 ### Likely deferrals
 
@@ -712,7 +745,9 @@ automatic scanner integration (A9), and learned Planner policies (A7).
 
 ### Handoff to A3.9
 
-Provides bounded, instrument-aware opinion sets for the public A3 output.
+Provides bounded, stably ordered independent opinions, disagreements, gaps,
+quality/freshness, research/confirmation context, unchanged A2 and complete run
+metadata for the future public A3 output. It does not implement A3.9.
 
 ## A3.9 — Structured Underlying Opportunity Intelligence MVP
 

@@ -31,8 +31,18 @@ separation, zero-LLM operation, and exact offline replay. Its four-symbol,
 12-call live matrix passed on 2026-09-10. A3.7 now implements separate,
 deterministic/no-LLM Derivatives Context, Opportunity Quality, and Opportunity
 Risk specialists with cited evidence, grouped confidence, A2 comparison, and
-exact replay. Bounded Dhan live acquisition was attempted but returned
-`request failed`, so no A3.7 live result is claimed.**
+exact replay, accepted at `tiaf-a3.7`. Bounded Dhan live acquisition was
+attempted but returned `request failed`, so no A3.7 live result is claimed.**
+
+**A3.8 Planner + Specialist Orchestration is implemented, pending user freeze.**
+The [A3.8 implementation](docs/TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md)
+provides capability-driven planning, bounded parallelism, selective enrichment
+and reruns, shared reservations, and offline replay with an isolated LangGraph
+adapter and serial reference runner. The Planner owns workflow decisions, not
+investment decisions. [Deterministic acceptance](docs/STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md)
+uses synthetic/captured evidence, not live market validation. Independent opinions,
+A2 `NO_TRADE`, gaps and disagreement remain explicit. No A3.9/A4–A10 behavior,
+new provider, specialist interpretation change, or model execution is added.
 
 It is **not** a trading system. A2.9 emits replayable benchmark judgments and
 may validly return `NO_TRADE`, but it has no final recommendation Agent,
@@ -52,10 +62,13 @@ TradeMonitor integration and cannot act on its output.
 Python 3.12 or newer is required. From a virtual environment:
 
 ```bash
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev,orchestration]'
 ```
 
 For runtime dependencies only, use `python -m pip install -e .`.
+The optional `orchestration` extra pins LangGraph for the A3.8 adapter; serial
+execution and offline captures do not require it. Run the offline public matrix
+with `python scripts/a3_8_user_acceptance.py` (or `--adapter serial`).
 
 The current India deployment defaults symbol-only cash resolution and F&O
 universe generation to NSE. Override these non-secret settings when needed:

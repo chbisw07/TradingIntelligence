@@ -4,6 +4,25 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF_A3.8 WP1–10: immutable orchestration contracts, versioned
+  dependency policy and typed specialist projections; serial and isolated pinned
+  LangGraph runners; bounded parallel waves, atomic aggregate reservations and
+  single-flight controlled acquisition; selective enrichment, confirmation,
+  captured deep-research/graph reuse and superseding reruns; explicit partial,
+  deadline and unknown-usage accounting; portable capture and offline policy/
+  specialist verification. Added public 14-case synthetic acceptance and focused
+  boundary/concurrency/replay tests. Existing A2/specialist policies, providers,
+  package/schema versions and post-A3 ownership are unchanged. No live market or
+  model call is needed or claimed; user acceptance/freeze remains separate.
+- Defined the TIAF_A3.8 Planner + Specialist Orchestration architecture on
+  accepted `tiaf-a3.7`: reused Agent/evidence contracts, capability/dependency
+  policy, provenance-preserving upstream projections, deterministic bounded
+  parallel waves, progressive MI enrichment, selective confirmation/deep
+  research, dependency-aware reruns/replans, aggregate reservations and partial
+  stops, isolated LangGraph execution, offline replay and an independent-opinion
+  A3.9 handoff. Added internal implementation/acceptance work packages and
+  aligned milestone indexes. Documentation only; no runtime, dependency,
+  interpretation policy, provider/model call, or later-milestone authority change.
 - Implemented TIAF_A3.7 as three separate provider-neutral, deterministic
   `AgentOpinionV2` specialists for derivatives context, opportunity quality,
   and opportunity risk. Added typed replay detail, stable reason codes,

@@ -4,15 +4,18 @@
 
 **Status:** architecture accepted at `tiaf-a3-arch`.
 
-**Runtime status:** A3.1 through A3.6 complete / accepted. A3.6.1 provider-fabric
-and deep-research-foundation architecture is defined pending implementation.
+**Runtime status:** A3.1–A3.7 complete / accepted through `tiaf-a3.7`, including
+the A3.6.1 provider fabric, bounded authoritative confirmation and A3.6.2 deep
+research integration. A3.8 orchestration is implemented with deterministic
+acceptance; user freeze remains pending.
 
 **Accepted substrate:** `tiaf-a2-baseline` at
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
-**Current milestone:** TIAF_A3.6.1 — Market Intelligence Provider Fabric + Deep
-Research Foundation, designed in
-[`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md).
+**Current milestone:** TIAF_A3.8 — Planner + Specialist Orchestration,
+implementation and offline acceptance complete, pending user freeze. Its
+implementation design and acceptance boundaries are
+[`TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md).
 
 This is the authoritative architecture for TIAF_A3. It supplements the
 [canonical roadmap](TRADINGINTELLIGENCE_ROADMAP.md), and the executable sequence
@@ -341,6 +344,17 @@ order, reasoning depth, cache/reuse choices, per-step budgets, escalation and
 stop conditions. Execution returns an `OrchestrationResult` containing the
 unchanged plan, separate step results/opinions, missing evidence, degradation,
 and aggregate usage. Neither object is a final recommendation.
+
+The [A3.8 implementation design](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md)
+refines this conceptual input without changing the accepted single-specialist
+`AgentRequest`: a minimal orchestration envelope carries workflow controls and
+derives ordinary Agent requests after selection. It specifies dependency and
+upstream-output projections, bounded parallel waves, selective evidence
+enrichment/confirmation/research, aggregate reservations, plan-versioned reruns,
+partial termination and framework-neutral replay. The Planner owns workflow
+decisions, not investment decisions. Serial/LangGraph parity, offline capture,
+and the bounded public matrix are recorded in the
+[A3.8 acceptance study](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md).
 
 ## Specialist taxonomy
 

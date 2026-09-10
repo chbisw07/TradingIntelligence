@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.7 Implemented / User-Level Acceptance Complete
+## TIAF_A3 sequence — A3.7 Accepted / A3.8 Implemented, Pending User Freeze
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -367,9 +367,15 @@ implemented merely by being documented.
    `request failed`; no live output is claimed. Six black-box deterministic
    scenarios pass through the public registry/runtime composition. Detail:
    [`TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md`](TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md).
-10. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — PLANNED**
-   Apply progressive A2 screening, specialist selection, shallow/deep
-   escalation, cache/reuse, hard budgets, and isolated degradation.
+10. **A3.8 — Instrument-Aware Planner and Specialist Orchestration — IMPLEMENTED / PENDING USER FREEZE**
+   Coordinate accepted specialists from `tiaf-a3.7` using capability/dependency
+   policy, deterministic bounded parallel waves, shared evidence and budget
+   reservations, selective enrichment/confirmation/deep research, affected-node
+   reruns and versioned replans, honest partial stops, and captured replay.
+   LangGraph stays in an infrastructure adapter; the Planner owns workflow,
+   not investment decisions. Ten internal work packages and the 14-case offline
+   acceptance matrix are complete, without implementing A3.9 or later ownership. Detail:
+   [`TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md).
 11. **A3.9 — Structured Underlying Opportunity Intelligence MVP — PLANNED**
    Publish cited opinions, disagreement, missing evidence, quality/freshness,
    separated confidence, and A2 comparison. A6—not A3—owns `CE`/`PE`.

@@ -175,7 +175,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Derivatives context interpretation | IMPLEMENTED | A3.7 cited deterministic/no-LLM interpretation over supplied A2.7 families; live acquisition unavailable |
 | Opportunity quality interpretation | IMPLEMENTED | A3.7 A2.9 maturity/room and grouped A3 evidence; no recommendation authority |
 | Opportunity risk interpretation | IMPLEMENTED | A3.7 grouped pre-arbitration downside context; no position action |
-| Instrument-aware Planner / orchestration | PLANNED | A3.8 |
+| Instrument-aware Planner / orchestration | IMPLEMENTED / PENDING USER FREEZE | [A3.8 implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md): capability/dependency policy, bounded parallelism, shared evidence/budget reservations, selective enrichment/confirmation/research and reruns, partial stops, isolated LangGraph and replay; [offline acceptance](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md); no investment-decision authority |
 | Structured underlying opportunity intelligence | PLANNED | A3.9 |
 | Agent replay / A2 comparison / cost/failure hardening | PLANNED | A3.10 |
 | Arbitration / adversarial resolution | PLANNED | A4 |

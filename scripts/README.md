@@ -160,8 +160,28 @@ It makes no external call and requires no credentials:
 python scripts/a3_7_user_acceptance.py
 ```
 
-A3.8, not this script, will own general multi-specialist planning and
+A3.8, not this script, owns general multi-specialist planning and
 orchestration.
+
+### A3.8 deterministic orchestration acceptance
+
+`a3_8_user_acceptance.py` exercises the public planner/workflow APIs using bounded
+synthetic/captured fixtures from `_a3_8_fixtures.py`. It needs no credentials and
+makes **zero live provider/model calls**. Fixture transport calls are labelled as
+such; partial/insufficient specialist evidence is an expected visible result.
+
+```bash
+python -m pip install -e '.[dev,orchestration]'
+python scripts/a3_8_user_acceptance.py
+python scripts/a3_8_user_acceptance.py --adapter serial
+```
+
+The default compares serial and pinned LangGraph execution for 14 cases, checks
+offline replay, selective reruns, conditional confirmation, synthetic rate-limit
+fallback, budget stops and unchanged A2 fingerprints. The serial option does not
+import LangGraph. This is neither live acceptance nor a recommendation/scanner
+CLI. See [the study](../docs/STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md) for exact scope,
+counts and limitations.
 
 `inspect_relative_specialist.py` is the read-only A3.6 Relative Strength
 Specialist path. It acquires or loads the accepted A2 request/baseline, copies
