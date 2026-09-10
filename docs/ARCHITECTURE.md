@@ -119,6 +119,14 @@ cited reasons and offline assembly replay. Runtime lives in
 [acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md). It neither reruns specialists nor acquires providers,
 votes among opinions, ranks candidates or assumes A4–A10 authority.
 
+A3.9 is frozen at `tiaf-a3.9`. The
+[A3.10 hardening design](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
+defines the final A3 sub-milestone: content-addressed complete replay packages,
+recorded/deterministic/comparison replay, observational A2/A3 comparison,
+unknown-safe cost accounting, lossless failure/degradation summaries and a
+closure-readiness evidence seam. It changes no intelligence state or authority;
+the major A3 closure/deferral review remains separate.
+
 ## A3 architecture boundary
 
 A3 Agents consume immutable A2 evidence through controlled, least-privilege

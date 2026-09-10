@@ -28,8 +28,12 @@ complete; bounded Dhan live acquisition attempted but unavailable (`request fail
 [A3.8 design/implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md) and
 [acceptance study](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md).
 
-**A3.9:** implemented; awaiting user acceptance/freeze. See the
-[A3.9 implementation design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
+**A3.9:** accepted/frozen at `tiaf-a3.9`. See the
+[A3.9 implementation design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md)
+and [acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md).
+
+**A3.10:** architecture designed; runtime implementation pending. See the
+[A3.10 design](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
 
 This document is the sequential freeze plan for **TIAF_A3 — Specialist
 Intelligence**. The governing design is
@@ -840,6 +844,10 @@ properties must be hardened before A3 closure.
 
 ## A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening
 
+Authoritative implementation design:
+[`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
+This is the final A3 sub-milestone; A3 major closure remains a separate review.
+
 ### Goal
 
 Make A3 auditable and operationally bounded, and create the measurement seam
@@ -849,7 +857,7 @@ through which A7 can test whether specialist intelligence adds value over A2.
 
 - append-only evidence/opinion/run/intelligence corpus using A2.10 conventions;
 - offline replay of immutable evidence and deterministic Planner decisions;
-- recorded non-deterministic provider outputs or explicit fresh-reasoning mode;
+- recorded replay for future nondeterministic outputs; no silent re-inference;
 - field-level regression for contracts, citations, plans, usage, and A2
   comparison; no requirement for identical regenerated prose;
 - cost/latency/tool/token/cache/specialist metrics and scale simulations;
@@ -874,9 +882,9 @@ diff, A2 comparison record, cost/failure summary, and future outcome linkage.
 
 ### Implementation deliverables
 
-Corpus store/readers, offline replay and regression CLIs, golden fixtures,
-failure harness, scale/cost report, security checks, A3 baseline/acceptance
-documents, and major deferral review.
+Content-addressed corpus store/readers, offline replay/comparison helpers, golden
+fixtures, failure harness, cost-knowledge report, security checks, public
+acceptance and a closure-readiness record. The major deferral review follows.
 
 ### Tests
 
@@ -887,10 +895,11 @@ secret scanning, and A2 comparison retention.
 
 ### Live validation
 
-Capture a small, diverse read-only corpus; replay offline; compare A2 and A3
-records; exercise provider/model/source outages; run bounded scale simulation
-for roughly 500–1,000 equities and 200 F&O underlyings. Record cost/latency and
-coverage, not anecdotal attractiveness.
+No live external call is required. Build/reuse a small provenance-labelled
+captured corpus, replay offline, compare A2/A3 records and inject deterministic
+provider/model/source failures. Record cost knowledge, latency and coverage,
+not anecdotal attractiveness. Large-scale simulation remains optional evidence,
+not an architecture acceptance gate.
 
 ### Acceptance criteria
 

@@ -6,16 +6,16 @@
 
 **Runtime status:** A3.1–A3.7 complete / accepted through `tiaf-a3.7`, including
 the A3.6.1 provider fabric, bounded authoritative confirmation and A3.6.2 deep
-research integration. A3.8 orchestration is implemented with deterministic
-acceptance and is frozen at `tiaf-a3.8`.
+research integration. A3.8 orchestration and A3.9 structured opportunity
+intelligence are frozen at `tiaf-a3.8` and `tiaf-a3.9` respectively.
 
 **Accepted substrate:** `tiaf-a2-baseline` at
 `e27674070537a7d81e6e117283913d7da2785d1c`, with 1,229 accepted tests.
 
-**Current milestone:** TIAF_A3.9 — Structured Opportunity Intelligence MVP,
-implemented with offline acceptance; awaiting user acceptance/freeze. Its authoritative
-design is
-[`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
+**Current milestone:** TIAF_A3.10 — Agent Replay / Baseline Comparison / Cost &
+Failure Hardening, architecture designed and runtime implementation pending. Its
+authoritative design is
+[`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
 
 This is the authoritative architecture for TIAF_A3. It supplements the
 [canonical roadmap](TRADINGINTELLIGENCE_ROADMAP.md), and the executable sequence

@@ -2,8 +2,8 @@
 
 ## Status and authority
 
-Implementation pass, 2026-09-10. **Implemented; awaiting user acceptance/freeze.**
-Inspected HEAD: `75ad730`, a README update above accepted/frozen `tiaf-a3.8`
+Implementation pass, 2026-09-10. **Accepted/frozen at `tiaf-a3.9`**
+(`ca71087`). The implementation was built above accepted/frozen `tiaf-a3.8`
 (`eb96879`). The prior architecture-only changes were preserved. A1/A2 and
 A3.1–A3.8 remain unchanged accepted inputs. Runtime, tests and offline acceptance
 are now implemented; no dependencies, specialist policies or live calls changed.

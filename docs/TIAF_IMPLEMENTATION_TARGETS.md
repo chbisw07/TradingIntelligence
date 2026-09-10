@@ -289,7 +289,7 @@ record is authoritative in `TIAF_DEFERRAL_REGISTER.md`.
 Major phases A2 through A10 remain defined by the canonical
 `TRADINGINTELLIGENCE_ROADMAP.md`; this continuation map does not replace it.
 
-## TIAF_A3 sequence — A3.8 Accepted / A3.9 Implemented, Acceptance Pending
+## TIAF_A3 sequence — A3.9 Accepted / A3.10 Designed, Implementation Pending
 
 The authoritative design is
 [`TIAF_A3_ARCHITECTURE.md`](TIAF_A3_ARCHITECTURE.md), and full goals,
@@ -376,7 +376,7 @@ implemented merely by being documented.
    not investment decisions. Ten internal work packages and the 14-case offline
    acceptance matrix are complete, without implementing A3.9 or later ownership. Detail:
    [`TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md`](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md).
-11. **A3.9 — Structured Opportunity Intelligence MVP — IMPLEMENTED / ACCEPTANCE PENDING**
+11. **A3.9 — Structured Opportunity Intelligence MVP — ACCEPTED / FROZEN AT `tiaf-a3.9`**
    Assemble a captured A3.8 run into a single-underlying immutable product with
    typed contributions, qualified bias, deterministic observation state, cited
    reasons, visible contradictions/gaps, separated confidence and unchanged A2
@@ -385,9 +385,12 @@ implemented merely by being documented.
    replay/user-level acceptance gates are implemented; results are recorded in
    [the acceptance study](STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md). Design:
    [`TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md`](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
-12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — PLANNED**
-    Freeze Agent records/corpora, offline replay/regression, scale/cost evidence,
-    failure injection, security checks, and the A7 outcome linkage.
+12. **A3.10 — Agent Replay, Baseline Comparison, Cost, and Failure Hardening — DESIGNED / IMPLEMENTATION PENDING**
+    Add content-addressed A3 packages, recorded/deterministic/comparison replay,
+    observational A2/A3 axes, exact-versus-unknown cost accounting, lossless
+    failure/degradation summaries, an injected acceptance corpus and a later
+    closure-readiness seam. It does not alter A3.9 or perform A3 closure. Detail:
+    [`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
 
 A7 is minimally refined to **Evaluation, Forecasting and Learning**. A3 defines
 and consumes calibrated forecast evidence but never asks an LLM to manufacture

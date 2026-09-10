@@ -2,10 +2,9 @@
 
 ## Scope and status
 
-Implementation/validation date: 2026-09-10, Asia/Kolkata. Base HEAD `75ad730`;
-accepted A3.8 tag `tiaf-a3.8` resolves to `eb96879`. Prior architecture-pass
-documentation changes were preserved. Implementation is complete, awaiting
-user acceptance/freeze; no commit, tag or push was performed.
+Implementation/validation date: 2026-09-10, Asia/Kolkata. The implementation
+was subsequently accepted/frozen at `tiaf-a3.9` (`ca71087`), above accepted A3.8
+at `eb96879`. The implementation pass itself performed no commit, tag or push.
 
 Authority: [approved A3.9 design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md).
 A3.8 chooses work. A3.9 describes captured observations. A4 owns arbitration and
@@ -201,9 +200,9 @@ These were implementation/test findings, not changes to accepted upstream polici
 Boundary tests demonstrate no provider/router/runtime/coordinator/socket call and
 no model/transport/LangGraph imports while assembling and verifying captures.
 
-Implementation recommendation: **READY_TO_ACCEPT_A3_9**. No remaining acceptance
-blocker found within the captured-input MVP scope. User acceptance/freeze remains
-separate; this pass does not claim live KAYNES validation or empirical profitability.
+Implementation recommendation was **READY_TO_ACCEPT_A3_9** and it was subsequently
+accepted/frozen at `tiaf-a3.9`. No blocker was found within the captured-input MVP
+scope. This does not claim live KAYNES validation or empirical profitability.
 Suggested commit message (not committed):
 `feat(a3.9): assemble replayable structured opportunity intelligence from A3.8 captures`.
 

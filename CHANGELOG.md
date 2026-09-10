@@ -4,6 +4,15 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Designed TIAF_A3.10 Agent Replay / Baseline Comparison / Cost & Failure
+  Hardening on accepted `tiaf-a3.9`: composable content-addressed capture,
+  recorded/deterministic/comparison replay taxonomy, explicit fingerprint
+  hierarchy, observational A2/A3 axes, unknown-versus-zero cost knowledge,
+  lossless failure/degradation lineage, deterministic fault corpus, parity and
+  provider/model-disabled replay, plus closure-readiness records. Defined ten
+  implementation work packages and 14 public acceptance cases. Documentation
+  only: no runtime, dependency, provider/model call, policy retuning, A3 closure,
+  deferred architecture work or A4–A10 authority added.
 - Implemented TIAF_A3.9 WP1–9 in `tiaf.service.opportunity_intelligence`:
   validated captured-A3.8 handoff, immutable observation products, seven states,
   three-valued ordered rules, typed contribution/lineage and qualified bias,

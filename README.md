@@ -9,25 +9,24 @@ attributable intelligence for consumers such as TradeMonitor.
 
 ### Past — accepted foundations
 
-A0/TGT0, A1 and A2 are frozen. A3.1–A3.7 specialist intelligence and the
-provider/research fabric are accepted; A3.8 bounded orchestration is frozen at
-`tiaf-a3.8`. See the [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
+A0/TGT0, A1 and A2 are frozen. A3.1–A3.9 are accepted; A3.8 bounded
+orchestration is frozen at `tiaf-a3.8` and A3.9 structured opportunity
+intelligence at `tiaf-a3.9`. See the
+[detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A3.9 Structured Opportunity Intelligence MVP
+### Present — A3.10 hardening architecture
 
-Implemented; awaiting user acceptance/freeze. The
-[A3.9 product](docs/TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md) assembles
-captured A3.8 results into immutable, cited observation states. It preserves A2,
-disagreement and separate confidence/coverage without voting, acquisition or
-specialist reruns. Run `python scripts/a3_9_user_acceptance.py` offline; see the
-[acceptance study](docs/STUDY_A3_9_USER_LEVEL_ACCEPTANCE.md).
+[A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
+is designed; implementation is pending. It will harden cumulative A3 capture,
+offline replay, observational A2/A3 comparison, exact cost knowledge, failure
+degradation and closure-readiness evidence without changing A3.9 states.
 
-### Future — hardening, then closure
+### Future — implementation, then closure
 
-A3.10 replay/baseline-comparison/cost/failure hardening is next, followed by A3
-closure. A4 retains arbitration/recommendations; position, option-expression,
-forecast and execution authority remain outside A3.9. TI is an intelligence
-and decision-support system, not an execution system.
+A3.10 implementation/acceptance is next, followed by a separate A3 major closure
+and deferral review. A4 retains arbitration/recommendations; position,
+option-expression, forecast and execution authority remain outside A3. TI is an
+intelligence and decision-support system, not an execution system.
 
 ## Layout
 
