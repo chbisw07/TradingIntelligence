@@ -22,6 +22,16 @@ now delivered by the bounded
 facade. The Shell adds no remote service. Model challenge and NLP remain
 optional/deferred; this is not A4 runtime expansion.
 
+The authoritative
+[A5 Position Intelligence architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md)
+now defines the next bounded semantic layer. It consumes an explicitly supplied
+TM/broker position snapshot and immutable A4 result, separates operational state
+from analytical posture/thesis health/recommendation, emits only non-executable
+advice and monitoring intent, and preserves captured replay. Its
+[review](TIAF_A5_ARCHITECTURE_REVIEW.md) approves A5.1 contracts plus a
+deterministic single-position baseline; no A5 runtime, scheduler, TM integration,
+multi-leg policy or Shell command exists yet.
+
 The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 now defines field-scoped authority, proposition comparability, independence,
 revisions and preserved contradictions for A4 admission. The
@@ -88,9 +98,17 @@ intelligence; A6 separately owns `CE`/`PE` and option-expression selection.
 
 ### Position Intelligence
 
-Evaluate existing or adopted positions prospectively. The service should
-eventually support conclusions such as `HOLD`, `WATCH_CLOSELY`, `PROTECT`,
-`PARTIAL_BOOK`, `BOOK`, or `EXIT` without requiring the original trade thesis.
+The accepted A5 architecture makes this an advisory successor to A4, not an
+operational position store. Broker/TM snapshots remain authoritative; stale or
+incoherent truth fails closed. A5 owns analytical posture, thesis health,
+recommendation and typed refresh needs. TM owns operational lifecycle and action;
+A6 owns executable expression. See the
+[authoritative design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md).
+
+Evaluate existing or adopted positions prospectively. The trader's original
+entry rationale is optional, but A5.1 requires a current accepted A4 thesis/result
+rather than inventing one. Its bounded taxonomy and compatibility relationship
+to frozen A0 actions are defined in the authoritative A5 design.
 
 ## Package boundaries
 

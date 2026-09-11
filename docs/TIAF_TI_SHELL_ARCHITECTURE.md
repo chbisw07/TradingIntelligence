@@ -384,7 +384,7 @@ Future commands are added capability-first:
 
 | Reserved family | Earliest owner | v0.1 behavior |
 |---|---|---|
-| `position ...` | A5 position intelligence | unknown/unavailable command |
+| `position ...` | Approved [A5 position-intelligence architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md); descriptor/runtime not implemented | unknown/unavailable command |
 | `option ...` | A6 expression/selection | unknown/unavailable command |
 | `evaluate ...`, `rank ...` | A7 evaluation/forecasting and DEF-053 resolution | unknown/unavailable command |
 | `ask ...` | separately accepted Interaction Agent | unknown/unavailable command |

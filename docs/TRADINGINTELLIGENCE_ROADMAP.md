@@ -73,7 +73,8 @@ This order reflects the architecture:
 - A supplied F&O watchlist alone must eventually be sufficient input.
 - Spreadsheet features, OHLC, Greeks and scores are optional enrichment.
 - Underlying selection and option selection are separate problems.
-- Adopted-position management is forward-looking; original entry rationale is optional.
+- Adopted-position management is forward-looking; original entry rationale is
+  optional, while A5.1 requires a current accepted A4 thesis/result.
 - Every recommendation must be timestamped, attributable, freshness-bounded and evaluable.
 - AI may improve profitability; deterministic systems must preserve safety if AI fails.
 
@@ -458,11 +459,13 @@ Strong disagreement is itself information. A nominally bullish candidate may be 
 
 # TIAF_A5 — Position Intelligence MVP
 
-Entry remains accepted A4 and versioned position context, not A6/A7 or a daemon.
-Before implementation, review bounded WatchMandate/lifecycle, evidence-family
-clocks and delta semantics; first delivery can be on-demand. TM owns actual
-position state and operational priority. Durable scheduling remains gated
-separately. Shell v0.1 is implemented, but it is not a hard A5 dependency.
+The [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and
+[review](TIAF_A5_ARCHITECTURE_REVIEW.md) are approved. Entry remains accepted A4
+and an explicitly supplied versioned position snapshot, not A6/A7 or a daemon.
+A5.1 is on-demand, deterministic and single-position. It implements immutable
+position/result/mandate/capture contracts and replay; TM owns actual position
+state, operational lifecycle, action-time freshness and execution. Durable
+scheduling, multi-leg policy and Shell exposure remain separately gated.
 
 ## Goal
 
@@ -474,20 +477,14 @@ Support TradeMonitor's most important generic use case: an existing broker posit
 
 ### Scope
 
-- position assessment request
-- original entry rationale optional
-- current-state analysis
-- multi-timeframe technical structure
-- market/sector/peer context
-- momentum/volume/relative strength
-- company/industry/news/event context
-- volatility and expiry context
-- current P&L and remaining opportunity
-- action: `HOLD`, `WATCH_CLOSELY`, `PROTECT`, `PARTIAL_BOOK`, `BOOK`, `EXIT`
-- strength: `MILD`, `MODERATE`, `STRONG`, `URGENT`
-- confidence
-- stateful reassessment
-- changed-since-previous explanation
+- explicit authorized TM/broker position snapshot with freshness and identity;
+- immutable linked A4 thesis/result and successor lineage;
+- separate analytical risk posture, thesis health and bounded recommendation;
+- cited non-executable protection intent and structural reference levels;
+- explicit contradictions, gaps, confidence basis and authority statement;
+- immutable active-position monitoring/refresh intent, not scheduling;
+- content-addressed capture, successor records, replay and comparison;
+- A5.1 single-leg baseline with explicit unsupported multi-leg behavior.
 
 ### Reassessment triggers
 
@@ -503,7 +500,10 @@ Support TradeMonitor's most important generic use case: an existing broker posit
 
 ### Acceptance
 
-> An adopted position can be monitored and re-evaluated without reconstructing the original thesis, and TIAF can provide structured HOLD/PROTECT/BOOK/EXIT advice.
+> An authorized current position can receive deterministic, evidence-linked and
+> replayable advice without changing its A4 thesis, inferring broker truth or
+> creating an executable command. Stale/incoherent truth fails closed. A5 emits
+> monitoring intent only; TM decides whether and how to act.
 
 ---
 

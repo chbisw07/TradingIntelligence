@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Approved the documentation-only TIAF A5 Position Intelligence architecture:
+  versioned supplied position truth, separate analytical risk posture/thesis
+  health/recommendation, non-executable protection advice, bounded immutable
+  monitoring mandates, explicit failure semantics, and content-addressed replay.
+  The first implementation slice is restricted to a deterministic single-open-
+  position baseline. No A5 runtime, scheduler, TM/broker integration, A6/A7,
+  provider/model call, Shell capability, remote service or storage was added.
+
 - Implemented the command-first local `TI_SHELL` v0.1 under `tiaf.shell` with
   shared one-shot/REPL parsing, isolated typed session defaults, exact facade
   request/result handling, bounded last/refresh state, human and stable JSON

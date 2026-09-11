@@ -103,6 +103,12 @@ command-first local runtime exposes only the governed facade with isolated
 transient session, exact-result JSON and bounded rendering. It adds no NLP,
 Web, model/live access or new intelligence capability.
 
+**TIAF_A5 ARCHITECTURE: COMPLETE / READY TO IMPLEMENT A5.1.** The
+[authoritative design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) fixes the
+position-truth/TM authority boundary, additive contracts, analytical posture,
+thesis health, recommendations, bounded monitoring intent and replay. No A5
+runtime or scheduler has been implemented.
+
 ## Deferral governance
 
 Intentional deferrals are retained under stable IDs in
@@ -391,17 +397,20 @@ unnumbered consumer slice, not A4 expansion or an A5 dependency.
 
 ## TIAF_A5 — Position Intelligence MVP
 
-Primary TradeMonitor use case:
+Architecture is complete; implementation has not begun. A5 consumes an
+explicitly supplied current TM/broker snapshot and linked accepted A4 result,
+then emits evidence-linked advice without operational authority. Operational
+state, analytical risk posture, thesis health, recommendation and monitoring
+lifecycle stay separate. A5.1 is restricted to deterministic single-open-
+position assessment, immutable monitoring intent, capture and offline replay.
+Multi-leg policy, scheduler/runtime monitoring, TM integration, A6/A7 and Shell
+exposure remain later work.
 
-- broker position is adopted in TM
-- original entry rationale is optional and not required
-- TIAF evaluates the position from the current moment forward
-- actions: `HOLD`, `WATCH_CLOSELY`, `PROTECT`, `PARTIAL_BOOK`, `BOOK`, `EXIT`
-- strengths: `MILD`, `MODERATE`, `STRONG`, `URGENT`
-- stateful reassessment
-- event/time/price/news/sector/volatility-triggered review
-
-**Acceptance:** an adopted position can receive forward-looking management intelligence without manual conversational prompting.
+**Acceptance:** the accepted
+[A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and
+[review](TIAF_A5_ARCHITECTURE_REVIEW.md) define the implementation gate;
+runtime acceptance will require fail-closed freshness/identity semantics,
+preserved A4 lineage and exact offline replay with no external call.
 
 ## TIAF_A6 — Option Expression Intelligence
 
@@ -482,5 +491,6 @@ from subsequent outcomes rather than assumed or learned from Agent prose.
 - `WAIT` and `NO_TRADE` are valid outcomes.
 - Watchlist-only input must eventually be sufficient.
 - Underlying selection and option selection are separate problems.
-- For adopted positions, TIAF is forward-looking; original entry rationale is optional.
+- For adopted positions, TIAF is forward-looking; original entry rationale is
+  optional, while A5.1 requires a current accepted A4 thesis/result.
 - TIAF may improve profitability, but account safety must never depend solely on AI.

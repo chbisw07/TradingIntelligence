@@ -20,7 +20,11 @@ are implemented and jointly reviewed by the
 [command-first local interaction architecture](TIAF_TI_SHELL_ARCHITECTURE.md),
 now delivered by the bounded
 [v0.1 implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) over that facade.
-No Web service exists. Accepted
+The subsequent
+[A5 position-intelligence architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md)
+is approved for a bounded A5.1 implementation: supplied position truth,
+deterministic single-position advice, monitoring intent and replay. It adds no
+runtime or operational authority. No Web service exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.
@@ -333,3 +337,11 @@ or bypass TM. This is not initial A4 contract selection. A5 remains position adv
 TM operational governor and broker execution/state truth. The A7 overlay is a
 data dependency for forecast-enhanced A6, not a prerequisite for deterministic
 candidate construction or a renumbering of the A5–A10 roadmap.
+
+The approved A5 boundary makes this precise: A5 consumes one authorized,
+versioned TM/broker snapshot and an immutable A4 result; it owns analytical risk
+posture, thesis health, non-executable recommendations and monitoring needs.
+Operational state, action-time freshness and execution remain TM/broker-owned.
+An A5 `WatchMandate` is immutable intent only—never a scheduled job. Durable
+dispatch, retry/recovery, calendars and worker state remain later operational
+concerns.

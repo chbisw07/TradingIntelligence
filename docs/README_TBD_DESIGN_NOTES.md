@@ -31,6 +31,12 @@ DEF-054; it does not promote NLP, Web, monitoring, forecasting, or deployment
 runtime. The bounded promoted Shell subset is now implemented by
 [TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md);
 the remaining Shell and Web ideas retain TBD status.
+The [A5 architecture review](TIAF_A5_ARCHITECTURE_REVIEW.md) has now split the
+monitoring note: its minimal immutable active-position mandate/refresh-intent
+subset is authoritative in
+[the A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md). Candidate
+lifecycle, calendars, cadence, schedulers/queues, retry/recovery and operational
+state remain TBD.
 
 They are intentionally prefixed with `TBD_` so they remain visibly non-authoritative until the relevant milestone revisits and promotes, revises, splits, or rejects them.
 
@@ -53,6 +59,8 @@ They are intentionally prefixed with `TBD_` so they remain visibly non-authorita
    - point-in-time replay and provider-neutral source governance
 
 4. `TBD_TI_MONITORING_ARCHITECTURE.md`
+   - partially promoted; consult the A5 architecture/review for authoritative
+     position-monitoring contract semantics
    - Semantic lifecycle states instead of color-named domain states
    - Instrument vs WatchMandate
    - Independent cadence/evidence clocks

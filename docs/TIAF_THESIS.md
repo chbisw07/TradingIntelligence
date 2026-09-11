@@ -15,8 +15,10 @@ authoritative. The system must be comfortable returning `WAIT` or `NO TRADE`.
 
 Opportunity intelligence and position intelligence share infrastructure but
 answer different questions. Position evaluation is prospective and does not
-require the original entry rationale. Option expression follows, rather than
-being entangled with, selection of the underlying opportunity.
+require the trader's original entry rationale; A5.1 nevertheless requires a
+current accepted A4 thesis/result so it never invents an implicit thesis. Option
+expression follows, rather than being entangled with, selection of the
+underlying opportunity.
 
 This thesis implies contract-first milestones, strict integration boundaries,
 and evaluation before operational authority is ever considered.

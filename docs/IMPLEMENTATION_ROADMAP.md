@@ -17,6 +17,12 @@ delivered by a
 before A5. It is useful but not an A5 prerequisite and adds no NLP, Web, model,
 live-acquisition or broker authority.
 
+The [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) is now
+approved. A5.1 is the next bounded implementation: immutable additive contracts,
+deterministic single-open-position advice, monitoring intent and captured replay.
+It does not include live TM/broker integration, multi-leg interpretation,
+scheduling, A6/A7 or Shell exposure.
+
 ## Acceptance philosophy
 
 Every milestone should have explicit contracts, representative tests, and

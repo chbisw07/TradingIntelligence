@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — frozen A4 and implemented pre-A5 TI Shell v0.1
+### Present — frozen A4, implemented TI Shell v0.1, and approved A5 architecture
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -79,6 +79,14 @@ acquisition, remote transport and intelligence policy remain outside v0.1.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.
+
+The [A5 architecture](docs/TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md),
+supported by its [review](docs/TIAF_A5_ARCHITECTURE_REVIEW.md), now approves a
+bounded A5.1 implementation: additive immutable position contracts, a
+deterministic single-open-position advisory baseline, monitoring-intent output,
+and offline replay. TM/broker position truth, multi-leg interpretation,
+scheduling, execution, A6/A7 and Shell exposure remain outside A5.1. No A5
+runtime is implemented by this architecture pass.
 
 ## Layout
 

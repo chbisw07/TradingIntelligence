@@ -1,19 +1,17 @@
 # TBD - TI Monitoring / Watch-Mandate Architecture
 
-**Consolidation disposition: REVISE_AND_KEEP_TBD (2026-09-11).**
-The [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) assigns a
-bounded mandate/lifecycle/evidence-family-clock/delta review before A5
-implementation; on-demand A5 does not require a daemon. TI application
-orchestration owns future monitoring semantics, never specialists or Shell.
-A8 binds TM position identity/priority, A9 candidate intake, A10 durable due-work/
-event scheduling and recovery. Calendar/outcome admission precedes unattended
-timing claims. Adaptive cadence and original lifecycle names remain hypotheses;
-source disputes do not implement price-event lifecycle. No monitoring is added.
-The [A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) preserves this timing:
-revisit only the bounded position/mandate contract at A5 entry, after the
-preferred Shell architecture slice; do not pull durable scheduling into Shell.
+**A5 review disposition: SPLIT (2026-09-12).** The
+[A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) promotes only
+immutable position-linked mandate identity, `ACTIVE_POSITION`/`INACTIVE`, typed
+evidence/freshness/trigger intent, next-due hints and replay lineage. The
+[section-by-section review](TIAF_A5_ARCHITECTURE_REVIEW.md) is authoritative.
+Candidate lifecycle (`PASSIVE`/`ACTIVE_WATCH`), clock/cadence calculation,
+calendars, queueing, dispatch, retry/recovery, adaptive budgets, operational
+telemetry and durable state remain TBD. A mandate is not a job; a due hint is not
+a scheduling guarantee. A8 binds TM, A9 candidate intake and A10 operationalizes
+durable monitoring. No monitoring runtime is added by the review.
 
-> **Status:** TBD / temporary exploratory design note  
+> **Status:** PARTIALLY PROMOTED / remaining content is a TBD exploratory note
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  
 > **Promotion rule:** Before becoming authoritative, this note must be revisited at the relevant milestone, reconciled with the then-current repository architecture, tested against implementation realities, and either promoted, revised, split, or rejected.  
 > **Repository placement:** Intended for `docs/` with the `TBD_` prefix so it is immediately recognizable as non-final.
@@ -585,16 +583,18 @@ Lower-priority work may be deferred safely.
 Current view:
 
 - **A3:** specialists remain bounded/stateless; do not interrupt specialist implementation.
-- **A5:** formally revisit WatchMandate / position-monitor architecture.
+- **A5:** bounded review complete; minimal immutable active-position mandate and
+  refresh-intent semantics are promoted to the authoritative A5 architecture.
 - **A8:** operationalize active-position / TradeMonitor linkage.
 - **A9:** scanners may create/populate monitoring mandates.
 - **A10:** production scheduler, persistence, queues, adaptive cadence, retries, recovery, load management and observability.
 
 ---
 
-## 24. Open Questions
+## 24. Remaining Open Questions After A5 Review
 
-- final lifecycle names/transitions
+- candidate-watch lifecycle names/transitions beyond promoted
+  `ACTIVE_POSITION`/`INACTIVE`
 - whether `SUSPENDED` should differ from `INACTIVE`
 - BLUE/PASSIVE maintenance semantics
 - exact cadence profiles
