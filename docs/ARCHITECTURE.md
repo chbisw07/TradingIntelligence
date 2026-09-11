@@ -9,7 +9,10 @@ adopts that architecture with revisions. The subsequent
 [narrow local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) implements its trusted
 same-process admission/lifecycle slice. The additive
 [A4.1 runtime](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) now exposes its
-deterministic captured-read evaluation; no Shell or remote service exists.
+deterministic captured-read evaluation. The internal
+[A4.2 application bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+adds one governed A3.8 enrichment/successor cycle without expanding the facade;
+no Shell or remote service exists.
 
 The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 now defines field-scoped authority, proposition comparability, independence,
@@ -32,8 +35,9 @@ selects the offline POST_A3_PRE_A4_FOUNDATION next, followed by a narrow local
 facade/lifecycle and deterministic A4. Its bounded open-world amendment allows
 model-prior hypotheses to motivate governed research, never canonical facts.
 The source foundation and local facade are implemented and accepted. A4.1 now
-implements deterministic challenge/arbitration, fingerprints and replay; its
-evidence-acquisition and optional model lanes remain future work. No unrelated
+implements deterministic challenge/arbitration, fingerprints and replay; A4.2
+implements its bounded no-model evidence-acquisition/successor lane. Optional
+model challenge remains future work. No unrelated
 TBD is promoted.
 
 TIAF is intended to occupy an intelligence boundary between sources of market

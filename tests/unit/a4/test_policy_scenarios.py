@@ -128,7 +128,7 @@ def test_matched_a2_a3_directional_divergence_is_visible_not_a_vote() -> None:
 def test_missing_required_evidence_is_insufficient() -> None:
     record = evaluate(with_gap(required=True))
     assert record.result.disposition is A4Disposition.INSUFFICIENT_EVIDENCE
-    assert record.result.evidence_needs[0].status.value == "PLACEHOLDER_ONLY"
+    assert record.result.evidence_needs[0].status.value == "OPEN"
 
 
 def test_optional_gap_is_preserved_without_blocking_support() -> None:

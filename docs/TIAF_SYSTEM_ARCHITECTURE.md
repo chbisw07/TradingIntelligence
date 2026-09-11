@@ -209,12 +209,15 @@ hypothesis does not need fabricated claim/source IDs and cannot substitute for
 an evidence-backed factual premise or upgrade a disposition by itself.
 New information becomes decision evidence only after normal acquisition,
 provenance, semantic normalization, authority, entitlement, PIT and admission
-checks. A4 emits typed needs; the future bridge to A3.8/gateways/MI research owns
-controlled acquisition, then a successor projection permits selective challenge.
+checks. A4 emits typed needs; the internal
+[A4.2 bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) now delegates
+one controlled round to A3.8/gateways/MI research, then a successor projection
+permits selective challenge.
 No direct model tools, source instructions, permission increase or recursive
 unbounded loop. Live acquisition after the original cutoff needs a successor
 run/new as-of; replay never acquires. Existing A4 limits and A3 no-LLM controls
-remain binding; this is architecture support, not delivered model integration.
+remain binding. A4.2 delivers the deterministic no-model bridge; this does not
+deliver optional model integration or public live-facade semantics.
 
 ### Reuse boundaries
 

@@ -114,6 +114,18 @@ def result_semantic_payload(result: A4Result) -> dict[str, object]:
     )
 
 
+def logical_run_id(
+    projection: A4SemanticInputProjection,
+    policy: A4DeterministicPolicy,
+) -> str:
+    """Identify one deterministic A4 evaluation context before findings exist."""
+    identity = {
+        "projection": projection.semantic_fingerprint,
+        "policy": policy.model_dump(mode="json"),
+    }
+    return f"a4-run:{digest(identity)[:24]}"
+
+
 def _result(
     *,
     projection: A4SemanticInputProjection,
@@ -269,6 +281,16 @@ def validate_result(
             raise ValueError("A4 result parent identity or usage mismatch")
         challenge_ids = {item.finding_id for item in result.challenge_findings}
         dispute_ids = {item.dispute_id for item in projection.disputes}
+        assertion_ids = {item.assertion_id for item in projection.assertions}
+        predicate_ids = {
+            item.proposition.predicate_id for item in projection.assertions
+        }
+        field_ids = {
+            field.field_id
+            for item in projection.confirmation_projections
+            for field in item.fields
+        }
+        expected_run_id = logical_run_id(projection, policy)
         need_ids = {item.need_id for item in result.evidence_needs}
         if any(
             item.challenged_thesis_ref not in thesis_ids
@@ -289,13 +311,26 @@ def validate_result(
         ):
             raise ValueError("A4 challenge reference is unresolved")
         if any(
-            not set(item.finding_refs) <= challenge_ids
+            not set(item.challenge_refs) <= challenge_ids
             or not set(item.dispute_refs) <= dispute_ids
+            or item.parent_a4_run_id != expected_run_id
+            or item.parent_projection_id != projection.projection_id
+            or item.parent_projection_fingerprint != projection.semantic_fingerprint
             or item.subject != projection.header.subject
+            or item.objective != projection.header.objective
             or item.horizon != projection.header.horizon
-            or item.evidence_cutoff != projection.header.evidence_as_of
-            or item.permitted_scope_ref != projection.header.authority_ref
-            or item.remaining_budget_ref != projection.header.budget_ref
+            or item.original_as_of != projection.header.evidence_as_of
+            or item.created_at != projection.header.evidence_as_of
+            or item.permitted_authority_refs != (projection.header.authority_ref,)
+            or item.budget_ref != projection.header.budget_ref
+            or item.policy_id != "a4-evidence-need-policy:deterministic"
+            or item.policy_version != "1.0"
+            or (item.claim_ref is not None and item.claim_ref not in assertion_ids)
+            or (
+                item.predicate_ref is not None
+                and item.predicate_ref not in predicate_ids
+            )
+            or (item.field_ref is not None and item.field_ref not in field_ids)
             for item in result.evidence_needs
         ):
             raise ValueError("A4 evidence need finding is unresolved")
@@ -341,6 +376,7 @@ def validate_result(
 def record_fingerprint(record: A4RunRecord) -> str:
     return digest(
         {
+            "run_id": record.run_id,
             "input_projection_fingerprint": record.input_projection.semantic_fingerprint,
             "policy": record.policy.model_dump(mode="json"),
             "result_fingerprint": record.result.semantic_fingerprint,
@@ -353,6 +389,8 @@ def validate_run(record: A4RunRecord) -> A4RunRecord:
         record = A4RunRecord.model_validate_json(record.model_dump_json())
         projection = validate_input_projection(record.input_projection)
         policy = require_supported_policy(record.policy)
+        if record.run_id != logical_run_id(projection, policy):
+            raise ValueError("A4 run ID does not match projection and policy")
         validate_result(record.result, projection, policy)
         if record.fingerprint != record_fingerprint(record):
             raise ValueError("A4 run fingerprint mismatch")
@@ -424,13 +462,19 @@ def evaluate_projection(
     except (ProjectionIntegrityError, ValueError, ValidationError) as exc:
         raise A4InputIntegrityError(str(exc)) from exc
     selected = require_supported_policy(selected)
+    run_id = logical_run_id(projection, selected)
     try:
         premises, primary, counter = build_theses(projection, selected)
     except (ThesisConstructionError, TypeError, ValueError, ValidationError) as exc:
         raise A4EvaluationError("deterministic thesis construction failed") from exc
     try:
         challenges, needs, uncertainties = generate_challenges(
-            projection, selected, premises, primary, counter
+            projection,
+            selected,
+            premises,
+            primary,
+            counter,
+            parent_run_id=run_id,
         )
     except ChallengerError as exc:
         result = _challenger_failure_result(
@@ -481,6 +525,7 @@ def evaluate_projection(
         )
     result = validate_result(result, projection, selected)
     provisional = A4RunRecord(
+        run_id=run_id,
         input_projection=projection,
         policy=selected,
         result=result,

@@ -13,8 +13,10 @@ and the approved [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTI
 It does not replace accepted A2/A3 policies or promote unrelated TBDs.
 
 The deterministic contracts, taxonomy and default arbitration limits described
-below are implemented in A4.1; optional model and evidence-acquisition passages
-remain future architecture. Frozen A2/A3 enums are unchanged. No provider/model
+below are implemented in A4.1. The separately bounded
+[A4.2 bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) implements the
+no-model evidence-acquisition/successor passages; optional model execution
+remains future architecture. Frozen A2/A3 enums are unchanged. No provider/model
 adapter, Shell or execution path is delivered by this document or A4.1.
 
 ## 1. Responsibility and intelligence hierarchy
@@ -439,8 +441,9 @@ citation UX or source scoring.
 
 The [A4.1 implementation](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
 completes deterministic contracts/challenge/arbitration and its bounded replay/
-failure acceptance. Subsequent A4 work may add the separately governed Planner
-evidence-need bridge. Optional model execution is conditional on a separately
+failure acceptance. [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+adds the separately governed one-round Planner evidence-need bridge and later
+successor replay. Optional model execution is conditional on a separately
 approved role-aware gateway bridge,
 configured adapter/privacy/pricing policy and evaluation; it is not required to
 accept deterministic A4 and does not close DEF-052 merely by defining contracts.

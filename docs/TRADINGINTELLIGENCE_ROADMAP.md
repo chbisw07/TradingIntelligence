@@ -23,8 +23,8 @@ not a logical diagram. The separate bounded
 POST_A3_PRE_A4_FOUNDATION and the subsequent narrow local facade/lifecycle were
 accepted before A4 runtime; neither adds a numbered major milestone. Citation UX
 remains DEF-054, not part of either prerequisite.
-A3 is frozen at `tiaf-a3-baseline`; the first deterministic A4.1 slice is now an
-implementation acceptance candidate. This sequence does not add or renumber an
+A3 is frozen at `tiaf-a3-baseline`; deterministic A4.1 and its bounded A4.2
+evidence-enrichment bridge are now implementation acceptance candidates. This sequence does not add or renumber an
 A-milestone.
 
 ---
@@ -409,6 +409,10 @@ implemented and accepted. The selected facade track is implemented and accepted 
 [A4.1 implementation](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) adds the
 deterministic roles, seven dispositions, replay and `a4.evaluate`; it adds no
 live capability, model, evidence acquisition, Shell or service.
+The internal [A4.2 bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+adds deterministic need admission, one existing A3.8 workflow round, normalized
+successor capture and replay. It does not publish a live facade operation or add
+a model, service, position, option-expression or broker capability.
 
 ## Goal
 
@@ -435,9 +439,9 @@ Strong disagreement is itself information. A nominally bullish candidate may be 
 > Every A4 disposition exposes its surviving or rejected thesis, evidence-linked
 > challenges, dissent, invalidation conditions and residual uncertainty. No-LLM
 > execution remains supported; no position/expression/execution authority moves
-> into A4. A4.1 acceptance uses the explicit 25-scenario implementation matrix
-> and failure/replay gates; governed evidence acquisition and optional model
-> challenge remain later slices.
+> into A4. A4.1 acceptance uses its explicit implementation matrix; A4.2 adds a
+> separate 32-scenario governed evidence/acquisition/successor gate. Optional
+> model challenge remains a later slice.
 
 ---
 

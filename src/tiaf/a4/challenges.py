@@ -11,6 +11,7 @@ from tiaf.source_semantics import (
     DisputeState,
     IndependenceRelation,
     Missingness,
+    SourceEntityRole,
 )
 
 from .contracts import (
@@ -22,6 +23,7 @@ from .contracts import (
     ResidualUncertainty,
 )
 from .enums import (
+    A4EvidenceCapability,
     ChallengeFamily,
     ChallengeStatus,
     FindingSeverity,
@@ -57,6 +59,8 @@ def _finding(
     premise_ref: str | None = None,
     dispute_refs: tuple[str, ...] = (),
     needs_evidence: bool = False,
+    parent_run_id: str,
+    requested_capability: A4EvidenceCapability | None = None,
 ) -> tuple[ChallengeFinding, A4EvidenceNeed | None]:
     cited_refs = _unique(cited)
     finding_id = _qid(
@@ -88,15 +92,38 @@ def _finding(
     )
     need = (
         A4EvidenceNeed(
-            need_id=need_id,
+            evidence_need_id=need_id,
+            parent_a4_run_id=parent_run_id,
+            parent_projection_id=projection.projection_id,
+            parent_projection_fingerprint=projection.semantic_fingerprint,
             subject=projection.header.subject,
+            objective=projection.header.objective,
+            original_as_of=projection.header.evidence_as_of,
             semantic_question=reason_code,
+            requested_evidence_family=family.value,
+            requested_capability=requested_capability
+            or (
+                A4EvidenceCapability.AUTHORITATIVE_CONFIRMATION
+                if family in {ChallengeFamily.SOURCE_BASIS, ChallengeFamily.THESIS_TENSION}
+                else A4EvidenceCapability.EVENT_NEWS_CONTEXT
+                if family is ChallengeFamily.FRESHNESS
+                else A4EvidenceCapability.BOUNDED_DEEP_RESEARCH
+            ),
             horizon=projection.header.horizon,
-            evidence_cutoff=projection.header.evidence_as_of,
-            finding_refs=(finding_id,),
+            challenge_refs=(finding_id,),
             dispute_refs=dispute_refs,
-            purpose_code=family.value,
             materiality=materiality,
+            reason_codes=(reason_code,),
+            expected_resolvable_question=reason_code,
+            minimum_source_roles=(
+                SourceEntityRole.PUBLISHER,
+                SourceEntityRole.ISSUER,
+            ),
+            require_independent_evidence=family is ChallengeFamily.SOURCE_BASIS,
+            require_authoritative_source=family
+            in {ChallengeFamily.SOURCE_BASIS, ChallengeFamily.THESIS_TENSION},
+            allow_partial_evidence=False,
+            required=materiality is not Materiality.NON_MATERIAL,
             dedupe_key=digest(
                 (
                     projection.header.subject,
@@ -105,8 +132,11 @@ def _finding(
                     projection.header.evidence_as_of.isoformat(),
                 )
             ),
-            permitted_scope_ref=projection.header.authority_ref,
-            remaining_budget_ref=projection.header.budget_ref,
+            permitted_authority_refs=(projection.header.authority_ref,),
+            budget_ref=projection.header.budget_ref,
+            policy_id="a4-evidence-need-policy:deterministic",
+            policy_version="1.0",
+            created_at=projection.header.evidence_as_of,
         )
         if need_id is not None
         else None
@@ -128,6 +158,8 @@ def generate_challenges(
     premises: tuple[ArgumentPremise, ...],
     primary: InvestmentThesis,
     counter: InvestmentThesis | None,
+    *,
+    parent_run_id: str,
 ) -> tuple[
     tuple[ChallengeFinding, ...],
     tuple[A4EvidenceNeed, ...],
@@ -157,6 +189,15 @@ def generate_challenges(
                 materiality=Materiality.MATERIAL if required else Materiality.NON_MATERIAL,
                 status=ChallengeStatus.UPHELD if required else ChallengeStatus.QUALIFIED,
                 needs_evidence=required,
+                parent_run_id=parent_run_id,
+                requested_capability=(
+                    A4EvidenceCapability.COMPANY_FUNDAMENTALS
+                    if any(
+                        token in gap.affected_reference.casefold()
+                        for token in ("revenue", "fundamental", "company")
+                    )
+                    else A4EvidenceCapability.BOUNDED_DEEP_RESEARCH
+                ),
             )
         )
     for gap_id in projection.opportunity.a39_gap_ids:
@@ -171,6 +212,7 @@ def generate_challenges(
                 materiality=Materiality.MATERIAL,
                 status=ChallengeStatus.UPHELD,
                 needs_evidence=True,
+                parent_run_id=parent_run_id,
             )
         )
     for excluded in projection.excluded_evidence:
@@ -184,6 +226,7 @@ def generate_challenges(
                 severity=FindingSeverity.LOW,
                 materiality=Materiality.NON_MATERIAL,
                 status=ChallengeStatus.QUALIFIED,
+                parent_run_id=parent_run_id,
             )
         )
     if projection.opportunity.original_a2_candidate_class is None:
@@ -198,6 +241,7 @@ def generate_challenges(
                 materiality=Materiality.MATERIAL,
                 status=ChallengeStatus.UPHELD,
                 needs_evidence=True,
+                parent_run_id=parent_run_id,
             )
         )
     for authority in projection.authority_assessments:
@@ -218,6 +262,7 @@ def generate_challenges(
                     materiality=Materiality.MATERIAL,
                     status=ChallengeStatus.UPHELD,
                     needs_evidence=True,
+                    parent_run_id=parent_run_id,
                 )
             )
     for relation in projection.independence:
@@ -238,6 +283,7 @@ def generate_challenges(
                     materiality=Materiality.MATERIAL,
                     status=ChallengeStatus.UPHELD,
                     needs_evidence=True,
+                    parent_run_id=parent_run_id,
                 )
             )
     resolved_scope = _resolved_scope_pairs(projection)
@@ -265,6 +311,7 @@ def generate_challenges(
                 ),
                 status=ChallengeStatus.RESOLVED if resolved else ChallengeStatus.UPHELD,
                 needs_evidence=not resolved,
+                parent_run_id=parent_run_id,
             )
         )
     for dispute in projection.disputes:
@@ -303,6 +350,7 @@ def generate_challenges(
                 ),
                 dispute_refs=(dispute.dispute_id,),
                 needs_evidence=unresolved,
+                parent_run_id=parent_run_id,
             )
         )
     premise_by_evidence = {
@@ -326,6 +374,7 @@ def generate_challenges(
                     status=ChallengeStatus.UPHELD,
                     premise_ref=premise_ref,
                     needs_evidence=not stale,
+                    parent_run_id=parent_run_id,
                 )
             )
         if qualification.quality in {DataQuality.DEGRADED, DataQuality.UNAVAILABLE}:
@@ -342,6 +391,7 @@ def generate_challenges(
                     status=ChallengeStatus.UPHELD,
                     premise_ref=premise_ref,
                     needs_evidence=unavailable,
+                    parent_run_id=parent_run_id,
                 )
             )
     for premise in premises:
@@ -358,6 +408,7 @@ def generate_challenges(
                     status=ChallengeStatus.UPHELD,
                     premise_ref=premise.premise_id,
                     needs_evidence=True,
+                    parent_run_id=parent_run_id,
                 )
             )
     a39_state = projection.opportunity.a39_state
@@ -376,6 +427,7 @@ def generate_challenges(
                 severity=FindingSeverity.CRITICAL,
                 materiality=Materiality.HARD_CONSTRAINT,
                 status=ChallengeStatus.UPHELD,
+                parent_run_id=parent_run_id,
             )
         )
     a2_direction = projection.opportunity.original_a2_direction
@@ -397,6 +449,7 @@ def generate_challenges(
                 severity=FindingSeverity.MEDIUM,
                 materiality=Materiality.NON_MATERIAL,
                 status=ChallengeStatus.QUALIFIED,
+                parent_run_id=parent_run_id,
             )
         )
     if a39_state == "AVOID":
@@ -410,6 +463,7 @@ def generate_challenges(
                 severity=FindingSeverity.CRITICAL,
                 materiality=Materiality.HARD_CONSTRAINT,
                 status=ChallengeStatus.UPHELD,
+                parent_run_id=parent_run_id,
             )
         )
     elif a39_state == "WAIT":
@@ -423,6 +477,7 @@ def generate_challenges(
                 severity=FindingSeverity.MEDIUM,
                 materiality=Materiality.MATERIAL,
                 status=ChallengeStatus.UPHELD,
+                parent_run_id=parent_run_id,
             )
         )
     elif a39_state == "INSUFFICIENT_EVIDENCE":
@@ -437,6 +492,7 @@ def generate_challenges(
                 materiality=Materiality.MATERIAL,
                 status=ChallengeStatus.UPHELD,
                 needs_evidence=True,
+                parent_run_id=parent_run_id,
             )
         )
     elif a39_state == "CONFLICTED" and not any(
@@ -452,6 +508,7 @@ def generate_challenges(
                 severity=FindingSeverity.HIGH,
                 materiality=Materiality.MATERIAL,
                 status=ChallengeStatus.UPHELD,
+                parent_run_id=parent_run_id,
             )
         )
     elif a39_state not in {
@@ -473,6 +530,7 @@ def generate_challenges(
                 severity=FindingSeverity.CRITICAL,
                 materiality=Materiality.MATERIAL,
                 status=ChallengeStatus.UNEVALUATED,
+                parent_run_id=parent_run_id,
             )
         )
     if counter is not None and counter.conclusion_relation == "MATERIAL_OPPOSITION" and not any(
@@ -488,6 +546,7 @@ def generate_challenges(
                 severity=FindingSeverity.HIGH,
                 materiality=Materiality.MATERIAL,
                 status=ChallengeStatus.UPHELD,
+                parent_run_id=parent_run_id,
             )
         )
     ordered_findings = tuple(sorted(findings, key=lambda item: item.finding_id))

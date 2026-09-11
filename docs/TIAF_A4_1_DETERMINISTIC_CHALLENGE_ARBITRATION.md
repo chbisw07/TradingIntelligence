@@ -27,7 +27,7 @@ The package is deliberately small and provider-neutral:
 | `contracts.py` | Immutable thesis, premise, finding, uncertainty, result, usage, failure, capture, replay, verification and comparison contracts |
 | `enums.py` | Closed challenge, support, arbitration, disposition, status and failure vocabularies |
 | `thesis.py` | Admitted-reference validation, dependency-cycle rejection and bounded primary/counter construction |
-| `challenges.py` | Deterministic challenges and non-executing evidence-need placeholders |
+| `challenges.py` | Deterministic challenges and provider-neutral evidence needs consumed by the separate A4.2 bridge |
 | `arbitration.py` | Finding-by-finding decisions and ordered domain disposition |
 | `policy.py` | Exact supported policy identities and rule order |
 | `evaluation.py` | Integrity gate, deterministic pipeline, output validation and semantic/run fingerprints |
@@ -85,10 +85,13 @@ epistemic roles, and captured A3.9 state/reasons. Original child reason and
 dispute IDs remain cited. Resolved scope differences remain non-material and do
 not become artificial conflict.
 
-A material unresolved question may create an `A4EvidenceNeed`. In A4.1 this is
-strictly `PLACEHOLDER_ONLY`: it names the semantic question, cutoff, finding,
-scope and budget references, but has no route, provider preference, transport,
-or execution method.
+A material unresolved question may create an `A4EvidenceNeed`. A4.2 finalizes
+that domain message with parent run/projection identity, semantic capability,
+claim/predicate/field scope, evidence characteristics, authority/source-role,
+budget/deadline, dedupe and policy lineage. It still has no route, provider
+preference, transport, tool, model, broker or execution method. The separate
+[A4.2 application bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+may admit and execute it through A3.8.
 
 ## Arbitration policy
 
@@ -148,7 +151,9 @@ entries are retained without another debit.
 ## Fingerprint and replay semantics
 
 The result semantic fingerprint covers all semantic result fields except its
-content-derived ID and the fingerprint itself. The run fingerprint covers the
+content-derived ID and the fingerprint itself. The stable run ID covers the
+input projection fingerprint and exact policy, allowing emitted needs to cite
+their parent before the result exists. The run fingerprint covers that ID, the
 input projection fingerprint, exact policy and result fingerprint; operational
 evaluation time is excluded, so an unchanged deterministic rerun has the same
 identity.
@@ -179,7 +184,7 @@ dispatch, provider/model handle, or broker authority.
 
 The following remain outside A4.1:
 
-- Planner execution of `A4EvidenceNeed` and successor evidence cycles;
+- public/live facade exposure of the internal A4.2 Planner bridge;
 - optional role-aware/model-backed Challenger execution and DEF-052;
 - Shell/report/citation presentation;
 - position intelligence, option expression and forecasting/evaluation;

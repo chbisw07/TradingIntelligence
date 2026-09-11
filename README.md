@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — deterministic A4.1 implemented over the accepted foundation
+### Present — bounded deterministic A4.1/A4.2 over the accepted foundation
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -57,8 +57,13 @@ replay. [A4.1 deterministic challenge/arbitration](docs/TIAF_A4_1_DETERMINISTIC_
 now adds immutable thesis/finding/result contracts, eight evidence-linked
 challenge families, explicit non-voting arbitration, known-zero model usage and
 offline replay/verification. Its additive `a4.evaluate` operation makes seven
-static facade capabilities. It adds no live operation, remote API, Shell,
-provider/model, position, option-expression, forecast or broker authority.
+static facade capabilities. The internal
+[A4.2 governed evidence bridge](docs/TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+now admits material semantic needs, delegates one bounded round to A3.8, captures
+normalized successor evidence, applies upstream-refresh/no-information stops and
+replays the complete chain offline. Its `LIVE_READ` lifecycle is intentionally
+not published through the facade. Neither slice adds a remote API, Shell, model,
+position, option-expression, forecast or broker authority.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.
@@ -173,6 +178,10 @@ The [A4.1 implementation record](docs/TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRAT
 documents the deterministic no-LLM challenge/arbitration benchmark, and its
 [acceptance study](docs/STUDY_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION_ACCEPTANCE.md)
 maps the required replay, failure, authority and non-action scenarios.
+The [A4.2 implementation record](docs/TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+and [acceptance study](docs/STUDY_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE_ACCEPTANCE.md)
+cover governed admission, the existing A3.8 workflow bridge, one later
+source-semantic successor, selective finding lineage and zero-live replay.
 The associated
 [Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
 is non-authoritative evidence informing that design.

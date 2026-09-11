@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF_A4.2 under `tiaf.a4_enrichment`: finalized provider-neutral
+  `A4EvidenceNeed`, deterministic authority/entitlement/budget/deadline admission,
+  a one-round A3.8 serial/optional-LangGraph bridge, explicit normalized-evidence
+  crosswalk, later source-semantic successor, selective finding lineage,
+  no-information/upstream-refresh stops and complete offline chain replay. The
+  current facade remains captured-read-only; no provider, model, trade or broker
+  authority was added to A4 contracts.
+
 - Implemented TIAF_A4.1 under `tiaf.a4`: immutable admitted-reference premises,
   bounded primary/counter theses, eight deterministic challenge families,
   explicit non-voting arbitration and seven distinct non-action dispositions,

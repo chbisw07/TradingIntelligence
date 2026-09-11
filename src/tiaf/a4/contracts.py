@@ -9,9 +9,11 @@ from tiaf.contracts.common import NonEmptyStr, Symbol, TiafDateTime
 from tiaf.planner.models import Sha256
 from tiaf.source_semantics import A4SemanticInputProjection
 from tiaf.source_semantics.contracts import QualifiedId
+from tiaf.source_semantics.enums import SourceEntityRole
 
 from .enums import (
     A4Disposition,
+    A4EvidenceCapability,
     A4ExecutionStatus,
     A4FailureCode,
     A4ReplayMode,
@@ -144,29 +146,63 @@ class InvestmentThesis(ContractModel):
 
 
 class A4EvidenceNeed(ContractModel):
-    need_id: QualifiedId
+    schema_id: Literal["tiaf.a4.evidence-need"] = "tiaf.a4.evidence-need"
+    schema_version: Literal["1.0"] = "1.0"
+    evidence_need_id: QualifiedId
+    parent_a4_run_id: QualifiedId
+    parent_projection_id: QualifiedId
+    parent_projection_fingerprint: Sha256
     subject: Symbol
+    objective: NonEmptyStr
+    original_as_of: TiafDateTime
     semantic_question: NonEmptyStr
+    requested_evidence_family: NonEmptyStr
+    requested_capability: A4EvidenceCapability
+    claim_ref: QualifiedId | None = None
     predicate_ref: QualifiedId | None = None
     field_ref: NonEmptyStr | None = None
     horizon: Horizon
-    evidence_cutoff: TiafDateTime
-    finding_refs: tuple[QualifiedId, ...]
+    challenge_refs: tuple[QualifiedId, ...]
     dispute_refs: tuple[QualifiedId, ...] = ()
-    purpose_code: NonEmptyStr
     materiality: Materiality
+    reason_codes: tuple[NonEmptyStr, ...]
+    expected_resolvable_question: NonEmptyStr
+    minimum_source_roles: tuple[SourceEntityRole, ...]
+    require_point_in_time_eligible: Literal[True] = True
+    require_independent_evidence: bool = False
+    require_authoritative_source: bool = False
+    allow_partial_evidence: bool = False
+    required: bool
     dedupe_key: Sha256
-    permitted_scope_ref: QualifiedId
-    remaining_budget_ref: QualifiedId
-    status: Literal[EvidenceNeedStatus.PLACEHOLDER_ONLY] = (
-        EvidenceNeedStatus.PLACEHOLDER_ONLY
-    )
+    permitted_authority_refs: tuple[QualifiedId, ...]
+    budget_ref: QualifiedId
+    deadline_ref: QualifiedId | None = None
+    policy_id: QualifiedId
+    policy_version: NonEmptyStr
+    created_at: TiafDateTime
+    status: Literal[EvidenceNeedStatus.OPEN] = EvidenceNeedStatus.OPEN
+
+    @property
+    def need_id(self) -> str:
+        """Compatibility spelling used by A4.1 result-reference validation."""
+        return self.evidence_need_id
 
     @model_validator(mode="after")
-    def bounded_placeholder(self) -> Self:
-        if not self.finding_refs:
+    def bounded_need(self) -> Self:
+        if not self.challenge_refs:
             raise ValueError("evidence need requires an originating finding")
-        _unique(self.finding_refs, "evidence-need finding refs")
+        if not self.reason_codes:
+            raise ValueError("evidence need requires a reason code")
+        if not self.minimum_source_roles or not self.permitted_authority_refs:
+            raise ValueError("evidence need requires bounded source and authority scope")
+        for values, label in (
+            (self.challenge_refs, "evidence-need challenge refs"),
+            (self.dispute_refs, "evidence-need dispute refs"),
+            (self.reason_codes, "evidence-need reason codes"),
+            (self.minimum_source_roles, "evidence-need source roles"),
+            (self.permitted_authority_refs, "evidence-need authority refs"),
+        ):
+            _unique(values, label)
         return self
 
 
@@ -306,6 +342,7 @@ class A4Result(ContractModel):
 class A4RunRecord(ContractModel):
     schema_id: Literal["tiaf.a4.deterministic-run"] = "tiaf.a4.deterministic-run"
     schema_version: Literal["1.0"] = "1.0"
+    run_id: QualifiedId
     input_projection: A4SemanticInputProjection
     policy: A4DeterministicPolicy
     result: A4Result

@@ -462,10 +462,19 @@ CANDIDATE.** The bounded [`tiaf.a4` implementation](TIAF_A4_1_DETERMINISTIC_CHAL
 delivers typed thesis/challenge/result contracts, the deterministic Challenger
 and Arbitrator, explicit dispositions/failures, cumulative replay/verification/
 comparison and the 25-scenario acceptance matrix. Semantic-need execution through
-the existing Planner remains the next separate integration. Optional model execution
+the existing Planner is delivered by the separate A4.2 integration. Optional model execution
 requires an additive role-aware gateway bridge and approved adapter/configuration,
 privacy/pricing and validation policy; it is not mandatory for deterministic A4
 or an implicit delivery of DEF-052.
+
+**TIAF_A4.2 — Governed Evidence-Need / Planner Bridge — IMPLEMENTED /
+ACCEPTANCE CANDIDATE.** The internal
+[`tiaf.a4_enrichment` implementation](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+finalizes provider-neutral evidence needs, deterministic admission, one-round
+A3.8 execution, explicit normalized source-semantic capture, later successor
+projection/A4 review and zero-live replay. It stops rather than patching A2/A3
+when lower-layer refresh is required. The facade remains captured-read-only;
+model-backed challenge, Shell, A5/A6/A7 and broker authority remain out of scope.
 DEF-003 has separate local and remote delivery tracks under the same stable ID:
 the selected order is foundation -> narrow local facade/lifecycle -> deterministic
 A4. The facade is mandatory before Shell/public consumers, not a dependency of
@@ -497,7 +506,7 @@ runtime and facade parity are now implemented as a separate acceptance candidate
 
 - A4-D1 typed contracts/policies, D2 deterministic Challenger/Arbitrator and the
   bounded D4 replay/cost/failure acceptance are implemented by A4.1. D3 governed
-  evidence-need/successor bridge remains planned.
+  evidence-need/successor bridge is implemented by A4.2 with one round/cycle.
   Model priors motivate hypotheses only; admitted new evidence follows ordinary
   source/PIT/authority checks and does not alter an old cutoff.
 - Optional model lane after deterministic A4/bridge: role-aware gateway, approved

@@ -49,14 +49,14 @@ def test_a4_timestamps_reject_naive_and_normalize_utc_to_kolkata() -> None:
     ).result.evidence_needs[0]
     normalized = type(need).model_validate(
         need.model_dump(mode="json")
-        | {"evidence_cutoff": need.evidence_cutoff.astimezone(UTC)}
+        | {"original_as_of": need.original_as_of.astimezone(UTC)}
     )
-    assert str(normalized.evidence_cutoff.tzinfo) == "Asia/Kolkata"
-    assert normalized.model_dump(mode="json")["evidence_cutoff"].endswith("+05:30")
+    assert str(normalized.original_as_of.tzinfo) == "Asia/Kolkata"
+    assert normalized.model_dump(mode="json")["original_as_of"].endswith("+05:30")
     with pytest.raises(ValidationError, match="timezone-aware"):
         type(need).model_validate(
             need.model_dump(mode="json")
-            | {"evidence_cutoff": need.evidence_cutoff.replace(tzinfo=None)}
+            | {"original_as_of": need.original_as_of.replace(tzinfo=None)}
         )
 
 

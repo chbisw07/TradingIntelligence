@@ -22,6 +22,7 @@ from .contracts import (
 )
 from .enums import (
     A4Disposition,
+    A4EvidenceCapability,
     A4ExecutionStatus,
     A4FailureCode,
     A4ReplayMode,
@@ -46,6 +47,7 @@ from .evaluation import (
     A4InputIntegrityError,
     A4OutputIntegrityError,
     evaluate_projection,
+    logical_run_id,
     record_fingerprint,
     result_semantic_payload,
     validate_result,
@@ -72,6 +74,7 @@ __all__ = [
     "A4Capture",
     "A4DeterministicPolicy",
     "A4Disposition",
+    "A4EvidenceCapability",
     "A4EvaluationError",
     "A4EvidenceNeed",
     "A4ExecutionStatus",
@@ -119,6 +122,7 @@ __all__ = [
     "deterministic_policy",
     "evaluate_projection",
     "generate_challenges",
+    "logical_run_id",
     "record_fingerprint",
     "replay_recorded",
     "result_semantic_payload",
