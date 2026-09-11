@@ -2,10 +2,14 @@
 
 **Consolidation disposition: SPLIT (2026-09-11).** The
 [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) assigns Core
-semantics to next offline POST_A3_PRE_A4_FOUNDATION; DEF-054 minimal captured-source
-rendering follows foundation/facade with Shell v0.1, richer bibliography/Web
-later. Render from governed captures without re-research; missing artifacts stay
-unavailable. Broad adapters and original presentation ideas remain deferred.
+semantics to the now-implemented POST_A3_PRE_A4_FOUNDATION; DEF-054 minimal
+captured-source rendering follows accepted foundation/facade/A4 with Shell v0.1,
+while richer bibliography/Web remains later. Render from governed captures
+without re-research; missing artifacts stay unavailable. Broad adapters and
+original presentation ideas remain deferred.
+The [A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) changes DEF-054 to
+`PLANNED` only for that minimal Shell renderer now that source and A4 lineage
+exist. Rich reports, bibliography, Web UX and new acquisition remain deferred.
 
 **Status:** Split after post-A3 pass 2: Core semantics promoted with revisions;
 citation/report UX and adapter proposals remain deferred.

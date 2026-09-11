@@ -9,6 +9,9 @@ promotion/rollback criteria. Cross-candidate ranking belongs in evaluated A7
 scope. Ensemble hierarchy, model selection and learning algorithms below remain
 hypotheses, not mandatory complexity or implemented accuracy. Model prior
 knowledge is not empirical forecast evidence.
+The [A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) confirms that A4
+freezes without calibrated forecasting or a model Challenger. This note remains
+an A7 input after deterministic A6 and does not block Shell or A5.
 
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  

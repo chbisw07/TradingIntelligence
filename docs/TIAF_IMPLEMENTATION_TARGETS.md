@@ -456,9 +456,13 @@ semantic input projection; and captured replay/contract tests. It is a bounded
 prerequisite package, not a numbered major milestone or an A4 runtime
 sub-milestone. Citation UX, Shell, adapters and another graph/store remain out of
 scope. DEF-054 remains presentation work; no deferral ID/status changed.
+That statement records the foundation gate. The later
+[A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) changes DEF-054 to
+`PLANNED` for a minimal pre-A5 Shell renderer while leaving richer report/Web
+presentation deferred.
 
-**TIAF_A4.1 — Deterministic Challenge / Arbitration — IMPLEMENTED / ACCEPTANCE
-CANDIDATE.** The bounded [`tiaf.a4` implementation](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
+**TIAF_A4.1 — Deterministic Challenge / Arbitration — IMPLEMENTED / ACCEPTED.**
+The bounded [`tiaf.a4` implementation](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
 delivers typed thesis/challenge/result contracts, the deterministic Challenger
 and Arbitrator, explicit dispositions/failures, cumulative replay/verification/
 comparison and the 25-scenario acceptance matrix. Semantic-need execution through
@@ -467,14 +471,18 @@ requires an additive role-aware gateway bridge and approved adapter/configuratio
 privacy/pricing and validation policy; it is not mandatory for deterministic A4
 or an implicit delivery of DEF-052.
 
-**TIAF_A4.2 — Governed Evidence-Need / Planner Bridge — IMPLEMENTED /
-ACCEPTANCE CANDIDATE.** The internal
+**TIAF_A4.2 — Governed Evidence-Need / Planner Bridge — IMPLEMENTED / ACCEPTED.**
+The internal
 [`tiaf.a4_enrichment` implementation](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
 finalizes provider-neutral evidence needs, deterministic admission, one-round
 A3.8 execution, explicit normalized source-semantic capture, later successor
 projection/A4 review and zero-live replay. It stops rather than patching A2/A3
 when lower-layer refresh is required. The facade remains captured-read-only;
 model-backed challenge, Shell, A5/A6/A7 and broker authority remain out of scope.
+The [A4 major closure review](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts
+both slices as one freeze-ready baseline, recommends `tiaf-a4-baseline` after a
+reviewed commit, keeps DEF-052/055 deferred, and selects a bounded command-first
+Shell architecture pass before A5.
 DEF-003 has separate local and remote delivery tracks under the same stable ID:
 the selected order is foundation -> narrow local facade/lifecycle -> deterministic
 A4. The facade is mandatory before Shell/public consumers, not a dependency of
@@ -500,7 +508,8 @@ foundation/current-boundary tests and full pytest/compile/ruff/mypy/diff gates.
 The foundation gate completed as `READY_TO_ACCEPT_POST_A3_PRE_A4_FOUNDATION`.
 The subsequent local facade/lifecycle gate completed as
 `READY_TO_ACCEPT_POST_A3_PRE_A4_LOCAL_FACADE`; deterministic A4.1 contracts,
-runtime and facade parity are now implemented as a separate acceptance candidate.
+runtime and facade parity plus the A4.2 bridge are now implemented, accepted,
+and jointly reviewed for the A4 baseline freeze.
 
 ### Subsequent planned tracks
 

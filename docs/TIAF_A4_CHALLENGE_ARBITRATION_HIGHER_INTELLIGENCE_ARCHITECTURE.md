@@ -18,6 +18,9 @@ below are implemented in A4.1. The separately bounded
 no-model evidence-acquisition/successor passages; optional model execution
 remains future architecture. Frozen A2/A3 enums are unchanged. No provider/model
 adapter, Shell or execution path is delivered by this document or A4.1.
+The [A4 major closure review](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+accepts these two runtime slices as one freeze-ready deterministic A4 baseline
+while retaining the model lane as an optional separately gated enhancement.
 
 ## 1. Responsibility and intelligence hierarchy
 
@@ -450,3 +453,7 @@ accept deterministic A4 and does not close DEF-052 merely by defining contracts.
 The [review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
 defines the original design corpus and complexity guardrails. This architecture
 document itself authorizes no implementation or dependency.
+The [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) is the current
+freeze-readiness authority and recommends `tiaf-a4-baseline` only after the
+reviewed implementation is committed; this architecture text does not create
+that tag.

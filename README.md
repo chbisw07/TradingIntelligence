@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — bounded deterministic A4.1/A4.2 over the accepted foundation
+### Present — A4 freeze readiness and the pre-A5 Shell boundary
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -42,7 +42,7 @@ now approves the [bounded hosting architecture](docs/TIAF_DEPLOYMENT_ARCHITECTUR
 local Python first, isolated request state and filesystem replay; service,
 worker and database adoption require concrete operational triggers.
 The [completed consolidation](docs/TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
-selects POST_A3_PRE_A4_FOUNDATION next, then a narrow local facade/lifecycle and
+selected POST_A3_PRE_A4_FOUNDATION, then a narrow local facade/lifecycle and
 deterministic A4. Bounded open-world reasoning permits governed research needs,
 not model memory promoted to evidence. A5–A10 retain their major order; A6 gets
 deterministic candidates first and forecast-enhanced comparison after A7.
@@ -64,6 +64,14 @@ normalized successor evidence, applies upstream-refresh/no-information stops and
 replays the complete chain offline. Its `LIVE_READ` lifecycle is intentionally
 not published through the facade. Neither slice adds a remote API, Shell, model,
 position, option-expression, forecast or broker authority.
+A4.1 and A4.2 are reviewed together in the
+[A4 major milestone closure](docs/TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md),
+which finds the deterministic, bounded and replayable A4 layer ready for the
+recommended `tiaf-a4-baseline` tag after a separately authorized commit/tag.
+The optional model-backed Challenger remains deferred. The preferred next slice
+is a command-first local TI_SHELL architecture pass before A5; it may expose
+only the already governed facade and does not add NLP, remote transport or
+intelligence policy.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.
@@ -182,6 +190,9 @@ The [A4.2 implementation record](docs/TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_B
 and [acceptance study](docs/STUDY_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE_ACCEPTANCE.md)
 cover governed admission, the existing A3.8 workflow bridge, one later
 source-semantic successor, selective finding lineage and zero-live replay.
+The [A4 major closure review](docs/TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+audits both slices, records the live-validation truth table and deferral
+burn-down, and defines the scope of the recommended A4 baseline tag.
 The associated
 [Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
 is non-authoritative evidence informing that design.

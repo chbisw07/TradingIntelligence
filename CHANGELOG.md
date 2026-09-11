@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Completed the TIAF A4 major milestone closure review across A4.1 and A4.2:
+  audited dispositions, thesis/challenge/arbitration semantics, source authority,
+  one-round Planner ownership, successor/replay integrity, cost/failure behavior,
+  facade boundaries and frozen A2/A3 identities. The review recommends
+  `tiaf-a4-baseline`, keeps the optional model Challenger deferred, and plans a
+  command-first local TI_SHELL architecture slice before A5. No runtime feature,
+  provider/model call, remote service or broker authority was added by closure.
+
 - Implemented TIAF_A4.2 under `tiaf.a4_enrichment`: finalized provider-neutral
   `A4EvidenceNeed`, deterministic authority/entitlement/budget/deadline admission,
   a one-round A3.8 serial/optional-LangGraph bridge, explicit normalized-evidence

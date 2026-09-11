@@ -17,6 +17,9 @@ The accepted [A4 architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE
 [source-semantic foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md), and
 [local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) remain the governing
 boundaries.
+The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reviews this
+runtime together with A4.2 and finds the combined deterministic layer ready for
+the recommended baseline freeze.
 
 ## Runtime package
 

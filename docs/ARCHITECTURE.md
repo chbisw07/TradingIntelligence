@@ -13,6 +13,11 @@ deterministic captured-read evaluation. The internal
 [A4.2 application bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
 adds one governed A3.8 enrichment/successor cycle without expanding the facade;
 no Shell or remote service exists.
+The [A4 major closure review](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+audits both slices as one L6 layer and finds them ready for the recommended
+`tiaf-a4-baseline` freeze. Model challenge remains optional/deferred; the next
+preferred boundary is a command-first local Shell architecture pass, not A4
+runtime expansion.
 
 The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 now defines field-scoped authority, proposition comparability, independence,
@@ -31,7 +36,7 @@ one trusted local Python application runtime, isolated invocations and a single
 filesystem writer; existing adapter-local MCP subprocesses remain. Service,
 worker and shared-storage deployment is conditional, not implemented.
 The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
-selects the offline POST_A3_PRE_A4_FOUNDATION next, followed by a narrow local
+selected the offline POST_A3_PRE_A4_FOUNDATION, followed by a narrow local
 facade/lifecycle and deterministic A4. Its bounded open-world amendment allows
 model-prior hypotheses to motivate governed research, never canonical facts.
 The source foundation and local facade are implemented and accepted. A4.1 now

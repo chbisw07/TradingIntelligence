@@ -22,10 +22,13 @@ replay initially; service/worker/shared-store adoption requires concrete trigger
 not a logical diagram. The separate bounded
 POST_A3_PRE_A4_FOUNDATION and the subsequent narrow local facade/lifecycle were
 accepted before A4 runtime; neither adds a numbered major milestone. Citation UX
-remains DEF-054, not part of either prerequisite.
+remains separately tracked by DEF-054 and is not part of either prerequisite;
+its minimal Shell slice is planned only after A4 closure.
 A3 is frozen at `tiaf-a3-baseline`; deterministic A4.1 and its bounded A4.2
-evidence-enrichment bridge are now implementation acceptance candidates. This sequence does not add or renumber an
-A-milestone.
+evidence-enrichment bridge are now implemented and jointly accepted by the
+[A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md), pending only the
+separately authorized baseline commit/tag. This sequence does not add or
+renumber an A-milestone.
 
 ---
 
@@ -399,8 +402,8 @@ owns final intelligence-aware ranking and recommendation.
 
 # TIAF_A4 — Arbitration and Adversarial Review
 
-**Architecture approved; deterministic A4.1 implemented as an acceptance
-candidate.** See the
+**Implemented, accepted, and ready for the recommended major baseline freeze.**
+See the
 [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md)
 and [pass-3 decision](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md).
 The separate [source-semantic foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is
@@ -413,6 +416,9 @@ The internal [A4.2 bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
 adds deterministic need admission, one existing A3.8 workflow round, normalized
 successor capture and replay. It does not publish a live facade operation or add
 a model, service, position, option-expression or broker capability.
+The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) audits the
+combined boundary, keeps optional model-backed challenge deferred, and
+recommends `tiaf-a4-baseline` after a reviewed commit.
 
 ## Goal
 

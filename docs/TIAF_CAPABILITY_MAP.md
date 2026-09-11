@@ -6,8 +6,10 @@ and private interface rules are defined in the
 [system architecture](TIAF_SYSTEM_ARCHITECTURE.md), with current code seams
 classified in the [post-A3 pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md).
 The [consolidated transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
-selects foundation -> narrow local facade/lifecycle -> deterministic A4. All
-three are planned, not implemented by architecture. A7 later informs a separately
+selected foundation -> narrow local facade/lifecycle -> deterministic A4. All
+three are implemented, and the
+[A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) finds the combined
+A4.1/A4.2 layer freeze-ready. A7 later informs a separately
 versioned forecast-enhanced A6 follow-up; no major milestone is renumbered.
 
 Statuses describe repository reality:
@@ -189,7 +191,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Agent replay / A2 comparison / cost/failure hardening | ACCEPTED / `tiaf-a3.10` | [A3.10 implementation](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md): content-addressed capture, explicit replay modes, observational comparison, unknown-cost semantics, lossless failures, 14-case synthetic corpus and closure-readiness seam; monetary pricing knowledge remains DEF-055; [study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md) |
 | A4 source/comparability/independence input projection | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) adds immutable source/proposition/authority/dispute/independence contracts, field confirmation, deterministic projection, successor semantics and offline replay over unchanged A2/A3; citation rendering remains absent |
 | Narrow local capability facade and lifecycle | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) now exposes seven explicit same-process capabilities, including A4.1 `a4.evaluate`, with trusted admission, budget/authority intersection, frozen composition, safe logical artifact refs and offline replay; no live operation, remote transport or broker authority |
-| Deterministic arbitration / adversarial resolution | IMPLEMENTED / A4.1+A4.2 ACCEPTANCE CANDIDATE | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; no model or trade-expression authority |
+| Deterministic arbitration / adversarial resolution | IMPLEMENTED / A4 FREEZE READY | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts the combined no-model boundary |
 | Position intelligence | PLANNED | A5 |
 | Option strategy comparison/selection | PLANNED | A6/DEF-006 deterministic valid candidates first; forecast-enhanced higher-order comparison after admitted A7 evidence; no initial A4 contract selection |
 | Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
@@ -208,10 +210,10 @@ it does not overload corporate-action or earnings-call semantics.
 | Governed local capability facade/catalog | IMPLEMENTED / ACCEPTED | [Local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md): static seven-capability catalog, trusted same-process admission/lifecycle, request isolation, logical-ref captured reads and single-writer configuration; live orchestration, Shell and transport remain absent |
 | Remote API / service delivery | PLANNED | DEF-003 delivery track; [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) makes local/remote hosting conditional on real consumer/isolation needs; A8 integration, A10 operations; same intelligence path, no service now |
 | Alerts | FUTURE | Application/policy layer; runtime dependency DEF-010 |
-| Human-facing explanation/citation reports | DEFERRED | DEF-054 minimal captured-source rendering with Shell v0.1 after foundation/facade; richer report/Web UX later; no re-research |
+| Human-facing explanation/citation reports | PLANNED / BOUNDED SLICE | DEF-054 minimal captured-source rendering with command-first Shell after A4; richer report/Web UX remains deferred; no re-research |
 | Cross-candidate A3 opportunity comparison/ranking | DEFERRED | DEF-053 A7 evaluation design after stable per-candidate A3/A4 products; A2 ranking remains benchmark |
-| Bounded open-world A4 research loop | IMPLEMENTED / A4.2 ACCEPTANCE CANDIDATE | [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) admits provider-neutral needs, executes at most one existing A3.8 enrichment round, requires normalized source-semantic crosswalk, creates at most one later successor, stops on no information/upstream refresh and replays offline; optional model challenge and public live facade remain absent |
-| TI_SHELL command-first engineering v0.1 | FUTURE | Architecture after facade and before A5 planning; implementation after deterministic A4, preferably before A5; no hard A5 dependency or automatic NLP/model permission |
+| Bounded open-world A4 research loop | IMPLEMENTED / A4 FREEZE READY | [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) admits provider-neutral needs, executes at most one existing A3.8 enrichment round, requires normalized source-semantic crosswalk, creates at most one later successor, stops on no information/upstream refresh and replays offline; optional model challenge and public live facade remain absent |
+| TI_SHELL command-first engineering v0.1 | PLANNED NEXT | Formal local architecture follows A4 closure before A5; expose only governed facade commands/replay/rendering, with no hard A5 dependency or automatic NLP/model permission |
 | Baseline replay / validation | IMPLEMENTED | A2.10 captured-snapshot foundation |
 | Strategy backtest | DEFERRED | Requires strategy/execution model; DEF-025 |
 | Optimization | DEFERRED | Evaluation layer; DEF-024 |

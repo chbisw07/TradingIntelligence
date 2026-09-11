@@ -22,6 +22,9 @@ review where indicated. The [completed consolidation](TIAF_POST_A3_CONSOLIDATION
 retains disposition SPLIT and selects POST_A3_PRE_A4_FOUNDATION next, then narrow
 local facade/lifecycle and deterministic A4. No unrelated TBD
 or infrastructure rollout is authorized by this promotion.
+The [A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) keeps this deployment
+decision unchanged: the next Shell architecture is local/same-process and does
+not justify a service, queue, database, worker, container or cloud runtime.
 
 ## 1. Why this document exists
 

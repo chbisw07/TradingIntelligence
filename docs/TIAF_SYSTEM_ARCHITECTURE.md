@@ -12,7 +12,10 @@ This document governs future boundary decisions. Its narrow same-process facade
 and static capability catalog are now implemented by
 [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md). The bounded
 [A4.1 deterministic runtime](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
-is also implemented; no Shell or Web service exists. Accepted
+and internal [A4.2 Planner bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
+are implemented and jointly reviewed by the
+[A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md); no Shell or Web
+service exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.
@@ -39,8 +42,10 @@ the current transition plan: bounded source foundation, narrow local facade,
 then deterministic A4. The first two steps are now implemented by the additive
 [pre-A4 foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) and
 [local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md). The third step is now
-implemented by [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md), with
-the evidence-acquisition/model lanes still deferred.
+implemented by [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md), and its
+bounded no-model evidence-acquisition lane by
+[A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md). The optional model
+lane remains deferred.
 
 TI serves the user's economic interest through risk-adjusted expected utility:
 evidence, understandable deterministic computation, bounded interpretation,
@@ -288,7 +293,8 @@ The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATI
 is followed by the completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
 The completed [consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
 selected the separate `POST_A3_PRE_A4_FOUNDATION`, local facade and deterministic
-A4 sequence. Those gates are now implemented through A4.1. A4 consumes
+A4 sequence. Those gates are now implemented through A4.2 and accepted by the
+[A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md). A4 consumes
 validated A3.9 intelligence with
 references to the complete captured A3.8 bundle, active/superseded specialist
 opinions, unchanged A2 assessment/evidence and canonical source/confirmation/

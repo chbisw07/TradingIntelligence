@@ -20,6 +20,9 @@ The package is `tiaf.a4_enrichment`, not `tiaf.a4`. This placement keeps A4
 domain contracts independent from Planner, workflow, providers and LangGraph.
 It adds no model, general web-research tool, broker authority, trade expression,
 position action, A5, A6 or A7 behavior.
+The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reviews this
+bridge with A4.1 and finds the bounded no-model A4 layer ready for the
+recommended baseline freeze.
 
 ## Final evidence-need contract
 

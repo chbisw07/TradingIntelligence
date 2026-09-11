@@ -11,10 +11,14 @@ This document governs hosting beneath the authoritative
 and [A4 design](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md).
 Those documents own intelligence meaning; deployment cannot override them.
 Frozen A1/A2/A3 behavior, schemas and fingerprints remain unchanged.
+The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) confirms that
+the implemented in-process A4.1/A4.2 layers fit this Level 1 design without
+creating a service, worker, queue, database or remote interface.
 
 The local target and promotion gates are approved architecture. Level 2/3
 components are conditional options, not approved procurement, infrastructure or
-implementation. No facade, Shell, Web, pre-A4 foundation or A4 runtime is added.
+implementation. This design document adds no facade, Shell, Web, foundation or
+A4 runtime; separately accepted implementation records own those capabilities.
 
 ## 1. Deployment thesis and near-term target
 

@@ -8,6 +8,11 @@ command-first v0.1 follows deterministic A4, preferably before A5 implementation
 but is not its hard dependency. NLP/mixed modes require separate model/interaction
 acceptance. Original suggestions below are an idea cache, not an implementation
 directive or permission to expose every engineering internal.
+The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) has now
+satisfied that timing gate and selects the bounded command-first architecture
+pass as the next milestone. Only accepted facade commands, session semantics,
+replay/explanation projection and minimal captured-source rendering are in that
+planned slice; this TBD still does not authorize implementation.
 
 ## 1. Thesis
 

@@ -7,6 +7,9 @@ narrow Python facade before deterministic A4 and formal local command design to
 Shell review; only remote/service delivery remains conditional at A8. Revisit
 Web at an actual consumer need. Original later-A8 facade timing and "exhaustive"
 language below cannot override this scoped boundary. No product implementation.
+The [A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) now plans the local
+command subset as a separate pre-A5 Shell architecture pass. Web, remote
+transport, and exhaustive internal exposure remain TBD.
 
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  

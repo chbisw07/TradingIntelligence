@@ -9,6 +9,9 @@ A8 binds TM position identity/priority, A9 candidate intake, A10 durable due-wor
 event scheduling and recovery. Calendar/outcome admission precedes unattended
 timing claims. Adaptive cadence and original lifecycle names remain hypotheses;
 source disputes do not implement price-event lifecycle. No monitoring is added.
+The [A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) preserves this timing:
+revisit only the bounded position/mandate contract at A5 entry, after the
+preferred Shell architecture slice; do not pull durable scheduling into Shell.
 
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  

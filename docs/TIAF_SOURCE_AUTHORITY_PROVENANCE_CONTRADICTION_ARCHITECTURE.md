@@ -4,19 +4,21 @@
 
 **Approved semantic architecture, post-A3 pass 2, 2026-09-11 (Asia/Kolkata).**
 Its bounded contracts/projection/replay subset is implemented in the
-[POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md); A4 reasoning is
-still absent.
+[POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md). A4.1/A4.2 now
+consume those semantics without revising them; their integrated boundary is
+accepted by the [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md).
 This is the source-semantics companion to
 [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md). The
 [pass-2 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
 records code findings, hypothesis dispositions and implementation prerequisites.
 
-Normative requirements below apply to the future A4 admission/projection boundary;
-they are not claims that new contracts or algorithms already exist. Accepted A3
-records, enums, hashes, routing policies and specialist outputs remain unchanged.
+Normative requirements below govern the implemented A4 admission/projection
+boundary. Accepted A3 records, enums, hashes, routing policies and specialist
+outputs remain unchanged.
 Current package/schema versions remain separate (`0.1.0` package, A0 `1.0`
 contract). Proposed names are design roles, not importable classes or assigned
-schema versions. No A4 reasoning, new provider, model or citation UI is implemented.
+schema versions. This document itself adds no reasoning, provider, model or
+citation UI; implemented A4 remains in its separately reviewed packages.
 
 ## 1. Two distinct problems
 
