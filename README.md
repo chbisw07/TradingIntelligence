@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A3 baselined; pre-A4 foundation and local facade implemented
+### Present — deterministic A4.1 implemented over the accepted foundation
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -52,10 +52,13 @@ The separate [POST_A3_PRE_A4_FOUNDATION](docs/TIAF_POST_A3_PRE_A4_FOUNDATION.md)
 now implements the bounded source/proposition/authority/dispute contracts,
 deterministic A4 input projection and provider-free replay required before A4.
 The subsequent [narrow local facade](docs/TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md)
-now provides trusted same-process admission/lifecycle, a static six-capability
-catalog and logical-ref captured replay. It adds no live operation, remote API,
-A4 runtime, Shell, provider/model or broker authority; unrelated TBD proposals
-are not automatically approved.
+provides trusted same-process admission/lifecycle and logical-ref captured
+replay. [A4.1 deterministic challenge/arbitration](docs/TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
+now adds immutable thesis/finding/result contracts, eight evidence-linked
+challenge families, explicit non-voting arbitration, known-zero model usage and
+offline replay/verification. Its additive `a4.evaluate` operation makes seven
+static facade capabilities. It adds no live operation, remote API, Shell,
+provider/model, position, option-expression, forecast or broker authority.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.
@@ -166,6 +169,10 @@ Its [user-level acceptance study](docs/STUDY_A3_7_USER_LEVEL_ACCEPTANCE.md)
 records six deterministic black-box scenarios through the public runtime,
 including conflict, avoid-chase, event-risk, insufficient-evidence, and
 cash-only behavior.
+The [A4.1 implementation record](docs/TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
+documents the deterministic no-LLM challenge/arbitration benchmark, and its
+[acceptance study](docs/STUDY_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION_ACCEPTANCE.md)
+maps the required replay, failure, authority and non-action scenarios.
 The associated
 [Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
 is non-authoritative evidence informing that design.

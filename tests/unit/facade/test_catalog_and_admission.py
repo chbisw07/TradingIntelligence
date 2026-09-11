@@ -40,6 +40,7 @@ def list_request() -> CapabilityListRequest:
 def test_catalog_is_explicit_static_safe_and_contains_only_implemented_operations() -> None:
     descriptors = capability_catalog()
     assert tuple(item.capability_id for item in descriptors) == (
+        "a4.evaluate",
         "a4_input.project",
         "baseline.assess",
         "capabilities.list",
@@ -72,7 +73,9 @@ def test_discovery_is_filtered_by_grant_and_engineering_permission() -> None:
 def test_discovery_or_static_descriptor_possession_does_not_grant_invocation() -> None:
     facade = owner(caller_capabilities=("capabilities.list",))
     client = facade.client("caller:test")
-    assert capability_catalog()[1].capability_id == "baseline.assess"
+    assert any(
+        item.capability_id == "baseline.assess" for item in capability_catalog()
+    )
     policy = BaselineEngine().policies()[1]
     request = baseline_request(policy)
     with pytest.raises(FacadeInvocationError) as exc:

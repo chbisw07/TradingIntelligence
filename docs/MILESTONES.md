@@ -90,9 +90,13 @@ semantics, A4 input projection and replay integrity; no A4 runtime.
 
 **POST_A3_PRE_A4_LOCAL_FACADE: COMPLETE / ACCEPTED.** Narrow same-process
 capability catalog, trusted admission/lifecycle and captured replay; no live
-operation, transport, Shell or A4 runtime.
+operation, transport or Shell.
 
-Deterministic A4 implementation is the next separately authorized track.
+**TIAF_A4.1 — Deterministic Challenge / Arbitration: IMPLEMENTED / ACCEPTANCE
+CANDIDATE.** Typed premises/theses/findings, deterministic Challenger and
+Arbitrator, seven non-action dispositions, offline replay/verification and the
+captured-read `a4.evaluate` facade capability. No live/model/acquisition,
+position, expression, forecast or execution authority.
 
 ## Deferral governance
 

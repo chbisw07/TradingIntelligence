@@ -2,20 +2,20 @@
 
 ## Status and authority
 
-**Approved architecture, post-A3 pass 3, 2026-09-11 (Asia/Kolkata).** Runtime
-is not implemented. The prerequisite
-[source-semantic foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is implemented;
-that does not constitute A4 runtime. The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+**Approved architecture, post-A3 pass 3, 2026-09-11 (Asia/Kolkata).** Its first
+runtime slice is now implemented by
+[TIAF_A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md). The prerequisite
+[source-semantic foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) remains a
+separate accepted layer. The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
 records the alternatives, acceptance corpus and foundation gate. This design
 operates beneath [TI_CORE/capability architecture](TIAF_SYSTEM_ARCHITECTURE.md)
 and the approved [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
 It does not replace accepted A2/A3 policies or promote unrelated TBDs.
 
-All type names, modes, categories and limits described as A4 below are proposed
-implementation contracts, not current exports or changes to frozen enums.
-Source-projection implementation must precede A4 runtime, but does not block
-deployment/consolidation design. No provider/model adapter, Shell or execution
-path is delivered by this document.
+The deterministic contracts, taxonomy and default arbitration limits described
+below are implemented in A4.1; optional model and evidence-acquisition passages
+remain future architecture. Frozen A2/A3 enums are unchanged. No provider/model
+adapter, Shell or execution path is delivered by this document or A4.1.
 
 ## 1. Responsibility and intelligence hierarchy
 
@@ -428,19 +428,22 @@ no facade dependency; no remote service is required. Historical pass-3 next-step
 wording is superseded by this transition plan, not rewritten retroactively.
 
 The accepted [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is
-the required package before A4 runtime, not an A4 reasoning sub-milestone. It
+the required package beneath A4 runtime, not an A4 reasoning sub-milestone. It
 delivers only pass-2 source identity/authority, comparability, dispute lifecycle,
 independence, confirmation projection, semantic input/capture and scoped policy
 bindings with deterministic fixtures and replay tests. The separately accepted
-[local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) now exposes its bounded
-projection/replay seam. Neither prerequisite implements A4 roles, Shell,
-adapters, citation UX or source scoring.
+[local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) exposes its bounded
+projection/replay seam and now includes the additive A4.1 `a4.evaluate`
+capability. Neither prerequisite itself implements A4 roles, Shell, adapters,
+citation UX or source scoring.
 
-Subsequent A4 runtime should progress through deterministic contracts/challenge/
-arbitration, bounded Planner integration and replay/failure acceptance. Optional
-model execution is conditional on a separately approved role-aware gateway bridge,
+The [A4.1 implementation](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
+completes deterministic contracts/challenge/arbitration and its bounded replay/
+failure acceptance. Subsequent A4 work may add the separately governed Planner
+evidence-need bridge. Optional model execution is conditional on a separately
+approved role-aware gateway bridge,
 configured adapter/privacy/pricing policy and evaluation; it is not required to
 accept deterministic A4 and does not close DEF-052 merely by defining contracts.
 The [review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
-defines the required design corpus and complexity guardrails. No implementation
-or new dependency is authorized by this architecture pass.
+defines the original design corpus and complexity guardrails. This architecture
+document itself authorizes no implementation or dependency.

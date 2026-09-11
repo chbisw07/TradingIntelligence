@@ -11,6 +11,18 @@ from .enums import (
 
 _CATALOG = (
     CapabilityDescriptor(
+        capability_id="a4.evaluate",
+        interface_level=InterfaceLevel.PUBLIC,
+        request_schema_id="schema:tiaf.facade.a4-evaluate-request",
+        result_schema_id="schema:tiaf.facade.a4-evaluate-result",
+        effect=EffectClass.CAPTURED_READ,
+        deterministic=True,
+        model_supported=False,
+        replay_support=ReplaySupport.DETERMINISTIC,
+        required_authority_scope=FacadeAuthorityScope.EVALUATE_A4,
+        cost_knowledge=CostKnowledge.KNOWN_ZERO,
+    ),
+    CapabilityDescriptor(
         capability_id="a4_input.project",
         interface_level=InterfaceLevel.PUBLIC,
         request_schema_id="schema:tiaf.facade.a4-input-project-request",

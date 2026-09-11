@@ -20,11 +20,12 @@ A4. Its open-world amendment permits model-prior hypotheses and governed evidenc
 needs, never fabricated factual evidence or unbounded research. Use local Python and filesystem
 replay initially; service/worker/shared-store adoption requires concrete triggers,
 not a logical diagram. The separate bounded
-POST_A3_PRE_A4_FOUNDATION and the subsequent narrow local facade/lifecycle are
+POST_A3_PRE_A4_FOUNDATION and the subsequent narrow local facade/lifecycle were
 accepted before A4 runtime; neither adds a numbered major milestone. Citation UX
 remains DEF-054, not part of either prerequisite.
-A3 is frozen at `tiaf-a3-baseline`; A4 implementation has not begun. This design
-sequence does not add or renumber an A-milestone.
+A3 is frozen at `tiaf-a3-baseline`; the first deterministic A4.1 slice is now an
+implementation acceptance candidate. This sequence does not add or renumber an
+A-milestone.
 
 ---
 
@@ -398,14 +399,16 @@ owns final intelligence-aware ranking and recommendation.
 
 # TIAF_A4 — Arbitration and Adversarial Review
 
-**Architecture approved; runtime not implemented.** See the
+**Architecture approved; deterministic A4.1 implemented as an acceptance
+candidate.** See the
 [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md)
 and [pass-3 decision](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md).
 The separate [source-semantic foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is
-implemented and accepted; no numbered A4 runtime is implied. The selected facade
-track is now implemented and accepted as the
-[narrow local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md). It precedes
-deterministic A4 but adds no A4 role, live capability, Shell or service.
+implemented and accepted. The selected facade track is implemented and accepted as the
+[narrow local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md). The bounded
+[A4.1 implementation](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) adds the
+deterministic roles, seven dispositions, replay and `a4.evaluate`; it adds no
+live capability, model, evidence acquisition, Shell or service.
 
 ## Goal
 
@@ -432,7 +435,9 @@ Strong disagreement is itself information. A nominally bullish candidate may be 
 > Every A4 disposition exposes its surviving or rejected thesis, evidence-linked
 > challenges, dissent, invalidation conditions and residual uncertainty. No-LLM
 > execution remains supported; no position/expression/execution authority moves
-> into A4. Acceptance uses the explicit 18-case design corpus and failure/replay gates.
+> into A4. A4.1 acceptance uses the explicit 25-scenario implementation matrix
+> and failure/replay gates; governed evidence acquisition and optional model
+> challenge remain later slices.
 
 ---
 

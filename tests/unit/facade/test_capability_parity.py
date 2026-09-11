@@ -12,9 +12,11 @@ from tiaf.a3_hardening import (
     replay_a3_package,
     verify_a3_package,
 )
+from tiaf.a4 import evaluate_projection
 from tiaf.baseline import BaselineEngine, CandidateClass
 from tiaf.context import AnalysisPurpose
 from tiaf.facade import (
+    A4EvaluateRequest,
     A4InputProjectRequest,
     ArtifactKind,
     BaselineAssessRequest,
@@ -153,6 +155,46 @@ def test_a4_input_project_preserves_optional_missing_evidence_as_gap() -> None:
     result = facade.client("caller:test").invoke(request)
     assert result.projection.gaps == (gap,)
     assert result.metadata.gaps == (gap.code,)
+
+
+def test_a4_evaluate_has_direct_deterministic_parity_and_zero_external_usage() -> None:
+    projection = replay_foundation(content("artifact:foundation-capture"))
+    direct = evaluate_projection(
+        projection,
+        evaluated_at=projection.header.evidence_as_of,
+    )
+    request = A4EvaluateRequest(
+        scope=scope(
+            request_id="facade-a4-evaluate",
+            subject=projection.header.subject,
+            objective=AnalysisPurpose(projection.header.objective),
+            horizon=projection.header.horizon,
+            as_of=projection.header.evidence_as_of,
+            artifacts=("artifact:foundation-capture",),
+        ),
+        projection_capture_ref="artifact:foundation-capture",
+    )
+    result = owner().client("caller:test").invoke(request)
+    assert result.evaluation == direct.result
+    assert result.run_fingerprint == direct.fingerprint
+    assert result.metadata.usage.model_calls == 0
+    assert result.metadata.usage.tool_calls == 0
+    assert "policy" not in A4EvaluateRequest.model_fields
+
+
+def test_a4_evaluate_rejects_unadmitted_projection_capture() -> None:
+    projection = replay_foundation(content("artifact:foundation-capture"))
+    with pytest.raises(ValueError, match="exactly its projection capture"):
+        A4EvaluateRequest(
+            scope=scope(
+                request_id="facade-a4-unadmitted",
+                subject=projection.header.subject,
+                objective=AnalysisPurpose(projection.header.objective),
+                horizon=projection.header.horizon,
+                as_of=projection.header.evidence_as_of,
+            ),
+            projection_capture_ref="artifact:foundation-capture",
+        )
 
 
 @pytest.mark.parametrize(

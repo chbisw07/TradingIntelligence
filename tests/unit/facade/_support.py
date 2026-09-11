@@ -30,6 +30,7 @@ from ..a3_hardening._support import package_for
 from ..source_semantics._support import build_input
 
 ALL_CAPABILITIES = (
+    "a4.evaluate",
     "a4_input.project",
     "baseline.assess",
     "capabilities.list",

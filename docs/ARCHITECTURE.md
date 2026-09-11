@@ -7,13 +7,16 @@ admission. This document remains the accepted implementation-layer overview.
 The [post-A3 pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
 adopts that architecture with revisions. The subsequent
 [narrow local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) implements its trusted
-same-process admission/lifecycle slice, but no Shell or A4 runtime.
+same-process admission/lifecycle slice. The additive
+[A4.1 runtime](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) now exposes its
+deterministic captured-read evaluation; no Shell or remote service exists.
 
 The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 now defines field-scoped authority, proposition comparability, independence,
-revisions and preserved contradictions for future A4 admission. The
+revisions and preserved contradictions for A4 admission. The
 [pass-2 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
-proceeds to pass 3 A4 architecture; the proposed projection is not implemented.
+proceeds to pass 3 A4 architecture; its projection is implemented by the
+accepted pre-A4 foundation.
 
 The approved [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md)
 now defines two bounded roles, deterministic arbitration, optional selective
@@ -28,8 +31,10 @@ The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
 selects the offline POST_A3_PRE_A4_FOUNDATION next, followed by a narrow local
 facade/lifecycle and deterministic A4. Its bounded open-world amendment allows
 model-prior hypotheses to motivate governed research, never canonical facts.
-The source foundation and local facade are now implemented and accepted. A4
-runtime remains unimplemented; no unrelated TBD is promoted.
+The source foundation and local facade are implemented and accepted. A4.1 now
+implements deterministic challenge/arbitration, fingerprints and replay; its
+evidence-acquisition and optional model lanes remain future work. No unrelated
+TBD is promoted.
 
 TIAF is intended to occupy an intelligence boundary between sources of market
 candidates and the system that governs risk and execution:

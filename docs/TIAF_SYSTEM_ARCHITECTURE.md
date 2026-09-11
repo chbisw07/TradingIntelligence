@@ -10,8 +10,9 @@ Accepted runtime baseline: `tiaf-a3-baseline` at
 
 This document governs future boundary decisions. Its narrow same-process facade
 and static capability catalog are now implemented by
-[POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md); no Shell,
-Web service or A4 implementation exists. Accepted
+[POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md). The bounded
+[A4.1 deterministic runtime](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
+is also implemented; no Shell or Web service exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.
@@ -37,8 +38,9 @@ The [post-A3 consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) owns
 the current transition plan: bounded source foundation, narrow local facade,
 then deterministic A4. The first two steps are now implemented by the additive
 [pre-A4 foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) and
-[local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md); A4 runtime remains
-unimplemented.
+[local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md). The third step is now
+implemented by [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md), with
+the evidence-acquisition/model lanes still deferred.
 
 TI serves the user's economic interest through risk-adjusted expected utility:
 evidence, understandable deterministic computation, bounded interpretation,
@@ -63,7 +65,7 @@ TI_SHELL   TI_WEB   scripts   scanners   TradeMonitor   external Agents/apps
                                  |
                             TI_CORE
              evidence / A2 / A3 / replay and audit semantics
-             future A4 challenge / A5 positions / A6 expression / A7 learning
+             A4 challenge / future A5 positions / A6 expression / A7 learning
                                  |
                   controlled provider/model/storage ports
                                  |
@@ -282,8 +284,8 @@ fed the now-approved [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_A
 The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
 is followed by the completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
 The completed [consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
-selects the separate `POST_A3_PRE_A4_FOUNDATION` next, with its
-semantic implementation gate still required before A4 runtime. A4 consumes
+selected the separate `POST_A3_PRE_A4_FOUNDATION`, local facade and deterministic
+A4 sequence. Those gates are now implemented through A4.1. A4 consumes
 validated A3.9 intelligence with
 references to the complete captured A3.8 bundle, active/superseded specialist
 opinions, unchanged A2 assessment/evidence and canonical source/confirmation/

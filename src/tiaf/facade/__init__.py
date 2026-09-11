@@ -1,7 +1,9 @@
-"""Narrow same-process capability facade; no transport, provider or A4 runtime."""
+"""Narrow same-process capability facade; no transport or provider runtime."""
 
 from .capabilities import capability_catalog
 from .contracts import (
+    A4EvaluateRequest,
+    A4EvaluateResult,
     A4InputProjectRequest,
     A4InputProjectResult,
     BaselineAssessRequest,
@@ -43,6 +45,8 @@ from .errors import FacadeInvocationError
 from .runtime import LocalFacadeClient, LocalFacadeOwner, create_local_facade
 
 __all__ = [
+    "A4EvaluateRequest",
+    "A4EvaluateResult",
     "A4InputProjectRequest",
     "A4InputProjectResult",
     "ArtifactKind",

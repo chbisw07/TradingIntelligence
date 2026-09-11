@@ -15,6 +15,11 @@ from tiaf.a3_hardening import (
     replay_a3_package,
     verify_a3_package,
 )
+from tiaf.a4 import (
+    A4EvaluationError,
+    A4InputIntegrityError,
+    evaluate_projection,
+)
 from tiaf.baseline import BaselineEngine, BaselineError
 from tiaf.contracts.common import TIAF_TIMEZONE
 from tiaf.planner.digests import digest
@@ -37,6 +42,8 @@ from .admission import admit, can_discover
 from .artifacts import LocalArtifactStore
 from .capabilities import capability_catalog, descriptor_for
 from .contracts import (
+    A4EvaluateRequest,
+    A4EvaluateResult,
     A4InputProjectRequest,
     A4InputProjectResult,
     BaselineAssessRequest,
@@ -117,6 +124,9 @@ class LocalFacadeClient:
 
     @overload
     def invoke(self, request: A4InputProjectRequest) -> A4InputProjectResult: ...
+
+    @overload
+    def invoke(self, request: A4EvaluateRequest) -> A4EvaluateResult: ...
 
     @overload
     def invoke(self, request: RecordedReplayRequest) -> RecordedReplayResult: ...
@@ -300,6 +310,7 @@ class LocalFacadeOwner:
             "baseline.assess": BaselineAssessRequest,
             "opportunity.assemble": OpportunityAssembleRequest,
             "a4_input.project": A4InputProjectRequest,
+            "a4.evaluate": A4EvaluateRequest,
             "replay.recorded": RecordedReplayRequest,
             "replay.verify": ReplayVerifyRequest,
         }[request.capability_id]
@@ -398,13 +409,27 @@ class LocalFacadeOwner:
                 message="effective invocation budget was exceeded",
                 child_codes=(type(exc).__name__,),
             ) from exc
-        except (A3HardeningError, CaptureIntegrityError, ProjectionIntegrityError) as exc:
+        except (
+            A3HardeningError,
+            A4InputIntegrityError,
+            CaptureIntegrityError,
+            ProjectionIntegrityError,
+        ) as exc:
             raise self._error(
                 request_id=request.scope.request_id,
                 correlation_id=request.scope.correlation_id,
                 capability_id=request.capability_id,
                 status=FacadeStatus.REPLAY_INTEGRITY_ERROR,
                 message="captured artifact failed integrity validation",
+                child_codes=(type(exc).__name__,),
+            ) from exc
+        except A4EvaluationError as exc:
+            raise self._error(
+                request_id=request.scope.request_id,
+                correlation_id=request.scope.correlation_id,
+                capability_id=request.capability_id,
+                status=FacadeStatus.FAILED,
+                message="A4 evaluation failed without exposing internal state",
                 child_codes=(type(exc).__name__,),
             ) from exc
         except (BaselineError, ValidationError, TypeError, ValueError) as exc:
@@ -427,6 +452,49 @@ class LocalFacadeOwner:
         started_at: datetime,
         run_id: str,
     ) -> FacadeResult:
+        if isinstance(request, A4EvaluateRequest):
+            artifact = self._read(request.projection_capture_ref, admission)
+            self._require_kind(artifact, ArtifactKind.FOUNDATION_CAPTURE)
+            projection = replay_foundation(artifact.content)
+            self._match_scope(
+                request.scope,
+                subject=projection.header.subject,
+                objective=projection.header.objective,
+                horizon=projection.header.horizon,
+                as_of=projection.header.evidence_as_of,
+            )
+            a4_record = evaluate_projection(
+                projection,
+                evaluated_at=request.scope.as_of,
+            )
+            return A4EvaluateResult(
+                metadata=self._metadata(
+                    request_id=request.scope.request_id,
+                    run_id=run_id,
+                    correlation_id=request.scope.correlation_id,
+                    scope=request.scope,
+                    admission=admission,
+                    started=started_at,
+                    completed=datetime.now(TIAF_TIMEZONE),
+                    policy_refs=(
+                        (a4_record.policy.policy_id, a4_record.policy.policy_version),
+                        (
+                            a4_record.policy.challenge_policy_id,
+                            a4_record.policy.challenge_policy_version,
+                        ),
+                        (
+                            a4_record.policy.arbitration_policy_id,
+                            a4_record.policy.arbitration_policy_version,
+                        ),
+                    ),
+                    gaps=tuple(
+                        item.consequence_code
+                        for item in a4_record.result.residual_uncertainties
+                    ),
+                ),
+                evaluation=a4_record.result,
+                run_fingerprint=a4_record.fingerprint,
+            )
         if isinstance(request, BaselineAssessRequest):
             assessment = self._baseline.assess(request.baseline_request)
             completed = datetime.now(TIAF_TIMEZONE)

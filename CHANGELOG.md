@@ -4,6 +4,16 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF_A4.1 under `tiaf.a4`: immutable admitted-reference premises,
+  bounded primary/counter theses, eight deterministic challenge families,
+  explicit non-voting arbitration and seven distinct non-action dispositions,
+  typed residual uncertainty/evidence-need placeholders, known-zero model usage,
+  fail-closed integrity, semantic/run fingerprints, recorded replay,
+  deterministic verification and policy comparison. Added the captured-read
+  `a4.evaluate` facade capability with no caller-injected policy. Frozen A2/A3
+  remain unchanged; no provider/model call, acquisition bridge, trade expression,
+  position/forecast behavior, remote service or broker authority was added.
+
 - Added the bounded POST_A3_PRE_A4_LOCAL_FACADE under `tiaf.facade`: explicit
   static capability descriptors, trusted caller/operator admission and budget
   intersection, frozen startup composition, request-local lifecycle metadata,

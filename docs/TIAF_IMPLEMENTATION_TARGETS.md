@@ -395,7 +395,8 @@ implemented merely by being documented.
 
 The separate [A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
 concluded `READY_TO_FREEZE_A3`. Accepted implementation and closure documentation
-are now frozen at `tiaf-a3-baseline` (`e690da2`); A4 has not started.
+are frozen at `tiaf-a3-baseline` (`e690da2`). A4 had not started at that closure;
+the later A4.1 implementation is additive and does not revise it.
 
 The later
 [A3 sub-milestone deferral-discovery audit](STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md)
@@ -430,14 +431,16 @@ Complete / accepted: **POST_A3_PRE_A4_FOUNDATION — Source Semantics,
 A4 Input Projection and Replay Integrity**. See the
 [implementation contract](TIAF_POST_A3_PRE_A4_FOUNDATION.md) and
 [acceptance study](STUDY_POST_A3_PRE_A4_FOUNDATION_ACCEPTANCE.md). Frozen A2/A3
-records remain unchanged and A4 runtime has not begun.
+records remain unchanged; the later A4.1 runtime consumes the foundation
+without editing those records.
 
 Complete / accepted: **POST_A3_PRE_A4_LOCAL_FACADE — Narrow Local Capability
 Facade and Invocation Lifecycle**. See the
 [implementation record](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) and
 [acceptance study](STUDY_POST_A3_PRE_A4_LOCAL_FACADE_ACCEPTANCE.md). The facade
-exposes only four bounded public operations, permission-filtered discovery and
-engineering replay verification. It has no live operation or remote transport;
+now exposes five bounded public operations, permission-filtered discovery and
+engineering replay verification after the additive A4.1 extension. It has no
+live operation or remote transport;
 `opportunity.orchestrate` and `trace.inspect` remain deliberately absent.
 
 Deployment work must not delay the in-process semantic foundation. The separate
@@ -454,13 +457,15 @@ prerequisite package, not a numbered major milestone or an A4 runtime
 sub-milestone. Citation UX, Shell, adapters and another graph/store remain out of
 scope. DEF-054 remains presentation work; no deferral ID/status changed.
 
-After foundation acceptance, A4 runtime can be separately authorized in bounded
-steps: typed thesis/challenge/result contracts; deterministic Challenger and
-Arbitrator; semantic-need integration with the existing Planner; then cumulative
-replay/cost/failure and the 18-case acceptance corpus. Optional model execution
+**TIAF_A4.1 — Deterministic Challenge / Arbitration — IMPLEMENTED / ACCEPTANCE
+CANDIDATE.** The bounded [`tiaf.a4` implementation](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
+delivers typed thesis/challenge/result contracts, the deterministic Challenger
+and Arbitrator, explicit dispositions/failures, cumulative replay/verification/
+comparison and the 25-scenario acceptance matrix. Semantic-need execution through
+the existing Planner remains the next separate integration. Optional model execution
 requires an additive role-aware gateway bridge and approved adapter/configuration,
 privacy/pricing and validation policy; it is not mandatory for deterministic A4
-or an implicit delivery of DEF-052. No code is implemented by these designs.
+or an implicit delivery of DEF-052.
 DEF-003 has separate local and remote delivery tracks under the same stable ID:
 the selected order is foundation -> narrow local facade/lifecycle -> deterministic
 A4. The facade is mandatory before Shell/public consumers, not a dependency of
@@ -485,13 +490,14 @@ acquisition/model/facade/A4 roles/UI/new graph/store are in scope. Run focused
 foundation/current-boundary tests and full pytest/compile/ruff/mypy/diff gates.
 The foundation gate completed as `READY_TO_ACCEPT_POST_A3_PRE_A4_FOUNDATION`.
 The subsequent local facade/lifecycle gate completed as
-`READY_TO_ACCEPT_POST_A3_PRE_A4_LOCAL_FACADE`; deterministic A4 contracts/runtime
-are now the next separately authorized work.
+`READY_TO_ACCEPT_POST_A3_PRE_A4_LOCAL_FACADE`; deterministic A4.1 contracts,
+runtime and facade parity are now implemented as a separate acceptance candidate.
 
-### Subsequent planned tracks (not implemented)
+### Subsequent planned tracks
 
-- A4-D1 typed contracts/policies; D2 deterministic Challenger/Arbitrator;
-  D3 governed evidence-need/successor bridge; D4 replay/cost/failure acceptance.
+- A4-D1 typed contracts/policies, D2 deterministic Challenger/Arbitrator and the
+  bounded D4 replay/cost/failure acceptance are implemented by A4.1. D3 governed
+  evidence-need/successor bridge remains planned.
   Model priors motivate hypotheses only; admitted new evidence follows ordinary
   source/PIT/authority checks and does not alter an old cutoff.
 - Optional model lane after deterministic A4/bridge: role-aware gateway, approved

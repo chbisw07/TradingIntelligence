@@ -5,6 +5,7 @@ from typing import Literal, Self
 from pydantic import Field, model_validator
 
 from tiaf.a3_hardening import A3ReplayResult, A3VerificationResult
+from tiaf.a4 import A4Result as DeterministicA4Result
 from tiaf.baseline import DeterministicBaselineRequest, OpportunityAssessment
 from tiaf.context import AnalysisPurpose
 from tiaf.contracts import ContractModel, Horizon
@@ -186,6 +187,17 @@ class A4InputProjectRequest(FacadeOperationRequest):
         return self
 
 
+class A4EvaluateRequest(FacadeOperationRequest):
+    capability_id: Literal["a4.evaluate"] = "a4.evaluate"
+    projection_capture_ref: QualifiedId
+
+    @model_validator(mode="after")
+    def projection_is_admitted(self) -> Self:
+        if self.scope.admitted_artifact_refs != (self.projection_capture_ref,):
+            raise ValueError("A4 scope must identify exactly its projection capture")
+        return self
+
+
 class RecordedReplayRequest(FacadeOperationRequest):
     capability_id: Literal["replay.recorded"] = "replay.recorded"
     artifact_ref: QualifiedId
@@ -311,6 +323,16 @@ class A4InputProjectResult(ContractModel):
     projection: A4SemanticInputProjection
 
 
+class A4EvaluateResult(ContractModel):
+    schema_id: Literal["tiaf.facade.a4-evaluate-result"] = (
+        "tiaf.facade.a4-evaluate-result"
+    )
+    schema_version: Literal["1.0"] = "1.0"
+    metadata: InvocationMetadata
+    evaluation: DeterministicA4Result
+    run_fingerprint: Sha256
+
+
 class RecordedReplayResult(ContractModel):
     schema_id: Literal["tiaf.facade.recorded-replay-result"] = (
         "tiaf.facade.recorded-replay-result"
@@ -353,6 +375,7 @@ type FacadeRequest = (
     BaselineAssessRequest
     | OpportunityAssembleRequest
     | A4InputProjectRequest
+    | A4EvaluateRequest
     | RecordedReplayRequest
     | ReplayVerifyRequest
 )
@@ -360,6 +383,7 @@ type FacadeResult = (
     BaselineAssessResult
     | OpportunityAssembleResult
     | A4InputProjectResult
+    | A4EvaluateResult
     | RecordedReplayResult
     | ReplayVerifyResult
 )
