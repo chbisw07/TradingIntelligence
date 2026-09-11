@@ -1,5 +1,18 @@
 # Architecture
 
+The authoritative top-level boundary is now
+[TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md): logical TI_CORE,
+curated public/engineering/private interfaces and trusted in-process capability
+admission. This document remains the accepted implementation-layer overview.
+The [post-A3 pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
+adopts that architecture with revisions; it implements no facade, Shell or A4.
+
+The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
+now defines field-scoped authority, proposition comparability, independence,
+revisions and preserved contradictions for future A4 admission. The
+[pass-2 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
+proceeds to pass 3 A4 architecture; the proposed projection is not implemented.
+
 TIAF is intended to occupy an intelligence boundary between sources of market
 candidates and the system that governs risk and execution:
 
@@ -23,10 +36,10 @@ TIAF will produce timestamped, attributable, and evaluable structured
 intelligence. It will not own broker execution authority. TradeMonitor remains
 the governor, while the broker remains the final truth for live state.
 
-A3.1-A3.10 are accepted through `tiaf-a3.10`. The separate
-[A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) concludes
-`READY_TO_FREEZE_A3`; `tiaf-a3-baseline` is the recommended major tag after
-the documentation-only closure changes are reviewed and committed.
+A3.1-A3.10 and the separate
+[A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) are frozen
+at `tiaf-a3-baseline` (`e690da2`). The review's earlier `READY_TO_FREEZE_A3`
+decision remains a historical closure record.
 
 ## Long-term missions
 

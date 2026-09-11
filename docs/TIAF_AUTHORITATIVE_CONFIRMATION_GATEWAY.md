@@ -110,6 +110,16 @@ stop conditions remain versioned policy rather than code branches.
 
 ## Source-quality hierarchy
 
+**Post-A3 semantic boundary:** the following describes accepted route/source
+preference, not a universal truth ordering for A4. The later
+[source semantic architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
+requires field/claim/scope/time-specific authority and comparability before A4
+relies on confirmation. Recorded results remain unchanged; document authority,
+raw field-value equality and strongest-class summaries alone do not establish
+all-field confirmation or independent corroboration. See the
+[pass-2 code findings](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
+for the bounded gateway's current comparison limitations.
+
 The existing qualitative `SourceAuthority` is sufficient. No numeric score is
 introduced. Within a route, deterministic source preference is:
 

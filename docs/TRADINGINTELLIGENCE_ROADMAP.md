@@ -4,6 +4,18 @@
 **Architecture reference:** TIAF — Trading Intelligence Agent Fabric Thesis  
 **Purpose:** Preserve the implementation sequence, milestone boundaries, acceptance gates, integration contracts, and evidence-first progression for TradingIntelligence.
 
+The post-A3 [system architecture](TIAF_SYSTEM_ARCHITECTURE.md) now governs the
+logical TI_CORE and curated capability boundary. Its
+[pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
+is followed by the approved
+[source semantic architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
+[Pass 2](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
+proceeds to pass 3 A4 architecture; a bounded semantic input-projection foundation
+must be accepted before A4 runtime. Citation UX remains DEF-054, not that Core
+prerequisite.
+A3 is frozen at `tiaf-a3-baseline`; A4 implementation has not begun. This design
+sequence does not add or renumber an A-milestone.
+
 ---
 
 ## 1. Roadmap Philosophy
@@ -527,7 +539,10 @@ Connect intelligence to TradeMonitor without transferring authority.
 
 ### Scope
 
-- local service/API boundary
+- consumer integration through the governed capability boundary (DEF-003):
+  local contracts/facade may be established post-A3 before Shell/public use;
+  A8 delivers TM integration and remote service/API transport as required,
+  without a second intelligence implementation
 - opportunity assessment requests
 - adopted-position assessment requests
 - TTL/freshness validation

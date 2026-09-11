@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A3 major closure ready to freeze
+### Present — A3 baselined; post-A3 architecture
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -22,17 +22,24 @@ observational A2/A3 comparison, unknown-safe cost accounting, failure
 degradation and a 14-case synthetic acceptance corpus. The separate
 [A3 major closure review](docs/TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
 classifies every active deferral, reconciles live/non-live claims and concludes
-`READY_TO_FREEZE_A3` without changing runtime semantics. The recommended major
-tag is `tiaf-a3-baseline`; it is not created by the review. A subsequent
+`READY_TO_FREEZE_A3` without changing runtime semantics. The major tag
+`tiaf-a3-baseline` now exists at `e690da2`. A subsequent
 [A3 sub-milestone deferral audit](docs/STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md)
 reconciles four omitted A3-specific governance records without changing that
 freeze decision.
 
-### Future — post-A3 architecture consolidation
+### Next — A4 challenge/arbitration architecture
 
-Before A4, reopen the non-authoritative system, public-capability, Shell,
-source/citation, monitoring and forecasting notes in a dedicated architecture
-consolidation. A4 retains arbitration/recommendations; position,
+The [post-A3 pass-1 review](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
+adopts the revised [TI_CORE/capability architecture](docs/TIAF_SYSTEM_ARCHITECTURE.md).
+[Pass 2](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
+now approves the [source-semantics foundation](docs/TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
+Next is pass 3: A4 Challenge / Arbitration / Higher-Intelligence Agent Architecture.
+The bounded source/comparability/input projection must be implemented before
+A4 runtime, not before that design pass. No facade, source projection, Shell or
+remote API is implemented by these documents; remaining TBD feature proposals
+are not automatically approved.
+A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.
 

@@ -394,9 +394,8 @@ implemented merely by being documented.
     [`TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md`](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md).
 
 The separate [A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
-concludes `READY_TO_FREEZE_A3`, with `tiaf-a3-baseline` as the recommended
-major tag after review and commit. It changes no runtime semantics and does not
-authorize A4.
+concluded `READY_TO_FREEZE_A3`. Accepted implementation and closure documentation
+are now frozen at `tiaf-a3-baseline` (`e690da2`); A4 has not started.
 
 The later
 [A3 sub-milestone deferral-discovery audit](STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md)
@@ -404,6 +403,30 @@ adds stable governance records DEF-052 through DEF-055 for production
 model-backed reasoning, cross-candidate A3 analysis, user-facing citation/report
 rendering and monetary pricing knowledge. These are post-A3 deferrals and do
 not change accepted runtime or freeze readiness.
+
+### Post-A3 deep architecture continuation
+
+[Pass 1 — TI_CORE and capability boundary](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
+concludes `READY_FOR_DEEP_ARCH_PASS_2` with architecture verdict
+`APPROVE_WITH_REVISIONS`. [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md)
+is authoritative for the logical kernel and curated public/engineering/private
+boundary; this is not runtime implementation or a re-freeze of A3.
+
+[Pass 2 — Source Authority / Provenance / Contradiction Semantics](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
+concludes `READY_FOR_DEEP_ARCH_PASS_3` and promotes its
+[semantic architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
+Next: **Post-A3 Deep Architecture Pass 3 — A4 Challenge / Arbitration /
+Higher-Intelligence Agent Architecture**. Before A4 runtime, implement the
+bounded source-identity/scoped-authority, comparability, dispute/independence,
+confirmation and input-projection contracts with captured replay. This is not
+required before pass 3 design and must not expand into citation UX, Shell,
+new providers or a second graph/replay system. DEF-054 remains presentation work;
+no new deferral ID or implemented status is added.
+DEF-003 has separate local and remote delivery tracks under the same stable ID:
+a small local facade/catalog is recommended before A4 and required before its
+Shell/public consumers; remote service/TM delivery remains A8 as required.
+No facade code is required to proceed with the design passes. Microservices, package
+relocation, universal envelopes and dynamic plugin loading are not approved.
 
 A7 is minimally refined to **Evaluation, Forecasting and Learning**. A3 defines
 and consumes calibrated forecast evidence but never asks an LLM to manufacture

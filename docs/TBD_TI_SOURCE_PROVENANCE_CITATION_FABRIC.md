@@ -1,9 +1,18 @@
 # TBD — TI Source, Provenance & Citation Fabric
 
-**Status:** Deferred design note  
+**Status:** Split after post-A3 pass 2: Core semantics promoted with revisions;
+citation/report UX and adapter proposals remain deferred.
 **Prefix meaning:** `TBD_` = intentionally unresolved / to be architected later  
-**Planned revisit:** After A3.7–A3.10 and the formal A3 closure review  
-**Current purpose:** Preserve requirements and architectural invariants while avoiding further disruption to A3 execution
+**Current authority:** [Source semantic architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
+for source/claim identity, scoped authority, comparability, independence,
+confirmation, revisions and contradiction semantics.
+**Remaining purpose:** Preserve later citation UX (DEF-054), source acquisition
+and presentation ideas without treating them as implemented features.
+
+The [pass-2 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
+classifies all 28 sections. Only its explicitly revised Core principles are
+promoted; this entire note is not an authoritative architecture. Examples below
+are design hypotheses, not callable APIs, enabled sources or runtime contracts.
 
 ## 1. Why this exists
 
@@ -21,7 +30,8 @@ A later TI report should answer not only **what is the conclusion?** but also **
 
 The intended spirit is similar to citation-rich research systems: a material conclusion should remain traceable to the evidence and source(s) that support it.
 
-This document records that requirement now, but deliberately defers full architecture and implementation until after A3 is completed.
+This document originally deferred that requirement until A3 closure. Source
+semantics are now designed separately from the still-deferred report UX.
 
 ## 2. Hard invariant
 
@@ -31,7 +41,10 @@ This traceability must remain provider-neutral, replayable where possible, audit
 
 Changing or adding a source must not require redesigning downstream specialist contracts or decision semantics.
 
-## 3. Why defer full architecture until after A3
+## 3. Historical rationale — why full architecture was deferred until after A3
+
+The following sequence describes the original note's context. A3 is now frozen;
+the current sequence is in section 27.
 
 A3.7–A3.10 still need to complete:
 
@@ -228,17 +241,15 @@ Orchestration belongs to TI, not to providers.
 
 ## 8. Source authority model
 
-Likely hierarchy:
+The former global source hierarchy is **rejected** for A4 evidential judgment.
+Use claim/field/domain/subject/time-scoped authority with a captured basis and
+limitations, as defined in the promoted semantic architecture. Company guidance
+is evidence of what was announced, not proof of future realization; an exchange
+link cannot validate a provider-defined valuation formula.
 
-1. exchange/regulator filing
-2. validated official company IR publication
-3. official rating-agency/company disclosure
-4. structured provider carrying original-source reference
-5. reputable secondary financial media
-6. aggregator/reposted source
-7. informal/unverified source
-
-Align with the Authoritative Confirmation Gateway and existing source-quality contracts.
+Current gateway route preference and coarse `SourceAuthority` summaries remain
+accepted acquisition behavior. They are not a universal truth ordering, field
+confirmation or independence proof. Preserve conflicting applicable sources.
 
 ## 9. Claim-to-source traceability
 
@@ -271,7 +282,9 @@ document_id
 content_fingerprint
 ```
 
-Exact contracts are deferred until A3 output shapes stabilize.
+The minimal semantic projection is now designed in the promoted architecture;
+its bounded implementation remains a pre-A4 prerequisite. Original A3 claim and
+evidence IDs must survive. User-facing citation contracts remain deferred.
 
 ## 10. Report-level citation behavior
 
@@ -359,7 +372,10 @@ NSE filing
 
 may all refer to one underlying event.
 
-TI should retain one `MarketIntelligenceEvent` with multiple supporting sources, not five independent bullish events.
+Reuse existing `NormalizedEvent` source records and `EventCluster` identity.
+Retain every observation; one underlying event does not mean five independent
+bullish events, nor does cluster membership prove a common publication origin.
+Source independence needs its own qualified lineage assessment.
 
 ## 14. Source conflicts
 
@@ -524,36 +540,20 @@ Do NOT implement now:
 - full source registry redesign
 - A4/A7 integration
 
-This document only preserves the requirement until the correct architectural point.
+This note preserves remaining UX/adapter hypotheses. The promoted semantic design
+is authoritative for future A4 admission, but no runtime was implemented by it.
 
 ## 27. Planned revisit sequence
 
-```text
-NOW
-  TBD_TI_SOURCE_PROVENANCE_CITATION_FABRIC.md
-
-THEN
-  A3.7
-  A3.8
-  A3.9
-  A3.10
-
-THEN
-  A3 closure
-    - deferred-item burn-down
-    - cumulative A1 + A2 + A3 alignment review
-    - documentation reconciliation
-    - full regression/live acceptance
-    - freeze/tag
-
-THEN
-  reopen this TBD
-  Source / Provenance / Citation Fabric architecture pass
-  implementation pass
-
-THEN
-  return to the regular roadmap
-```
+1. A3 is frozen and pass 1 has settled the TI_CORE/capability boundary.
+2. Pass 2 has approved source authority/provenance/contradiction semantics.
+3. Next: **Post-A3 Deep Architecture Pass 3 — A4 Challenge / Arbitration /
+   Higher-Intelligence Agent Architecture**.
+4. Implement and accept the bounded source-comparability/input-projection
+   foundation before A4 runtime work; it is not a prerequisite for pass 3 design.
+5. Citation numbering, compression, hyperlinks, bibliography and CLI/Web report
+   presentation remain DEF-054. New website/media/model adapters require their
+   own scope/access/retention/budget decisions and are not authorized here.
 
 ## 28. Success criterion
 
