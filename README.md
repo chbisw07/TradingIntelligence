@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A3 baselined; pre-A4 semantic foundation implemented
+### Present — A3 baselined; pre-A4 foundation and local facade implemented
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -51,8 +51,11 @@ by the foundation work.
 The separate [POST_A3_PRE_A4_FOUNDATION](docs/TIAF_POST_A3_PRE_A4_FOUNDATION.md)
 now implements the bounded source/proposition/authority/dispute contracts,
 deterministic A4 input projection and provider-free replay required before A4.
-No facade, A4 runtime, Shell or remote API is implemented; unrelated TBD
-proposals are not automatically approved.
+The subsequent [narrow local facade](docs/TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md)
+now provides trusted same-process admission/lifecycle, a static six-capability
+catalog and logical-ref captured replay. It adds no live operation, remote API,
+A4 runtime, Shell, provider/model or broker authority; unrelated TBD proposals
+are not automatically approved.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.

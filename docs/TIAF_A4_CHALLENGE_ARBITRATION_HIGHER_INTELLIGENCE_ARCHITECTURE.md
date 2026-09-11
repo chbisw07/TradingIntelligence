@@ -431,8 +431,10 @@ The accepted [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is
 the required package before A4 runtime, not an A4 reasoning sub-milestone. It
 delivers only pass-2 source identity/authority, comparability, dispute lifecycle,
 independence, confirmation projection, semantic input/capture and scoped policy
-bindings with deterministic fixtures and replay tests. It does not implement
-A4 roles, public facade, Shell, adapters, citation UX or source scoring.
+bindings with deterministic fixtures and replay tests. The separately accepted
+[local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) now exposes its bounded
+projection/replay seam. Neither prerequisite implements A4 roles, Shell,
+adapters, citation UX or source scoring.
 
 Subsequent A4 runtime should progress through deterministic contracts/challenge/
 arbitration, bounded Planner integration and replay/failure acceptance. Optional

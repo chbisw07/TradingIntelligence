@@ -8,8 +8,10 @@
 Accepted runtime baseline: `tiaf-a3-baseline` at
 `e690da2ce0a1dc0d3eb263c3b9e8e59ad52b6212`.
 
-This document governs future boundary decisions; it does not claim a new facade,
-capability registry, Shell, Web service or A4 implementation exists. Accepted
+This document governs future boundary decisions. Its narrow same-process facade
+and static capability catalog are now implemented by
+[POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md); no Shell,
+Web service or A4 implementation exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.
@@ -25,16 +27,18 @@ A3 records and does not implement citation UX, source adapters or A4 runtime.
 
 The approved [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) governs
 hosting beneath these logical semantics: local Python first, isolated requests,
-filesystem replay and conditional operational boundaries. It implements no
-facade or service and does not promote speculative production infrastructure.
+filesystem replay and conditional operational boundaries. The local facade
+implements that in-process admission/lifecycle slice; no service or speculative
+production infrastructure is introduced.
 
 ## 1. Purpose and system ownership
 
 The [post-A3 consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) owns
 the current transition plan: bounded source foundation, narrow local facade,
-then deterministic A4. The first step is now implemented by the additive
-[pre-A4 foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md); the facade and A4 runtime
-remain unimplemented.
+then deterministic A4. The first two steps are now implemented by the additive
+[pre-A4 foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) and
+[local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md); A4 runtime remains
+unimplemented.
 
 TI serves the user's economic interest through risk-adjusted expected utility:
 evidence, understandable deterministic computation, bounded interpretation,

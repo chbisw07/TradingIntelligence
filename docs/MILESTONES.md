@@ -83,9 +83,16 @@ tag `tiaf-a3.9`.
 **TIAF_A3.10 — Replay / Baseline Comparison / Cost / Failure Hardening:
 COMPLETE / ACCEPTED** at tag `tiaf-a3.10`.
 
-**TIAF_A3 major closure: READY_TO_FREEZE_A3.** Recommended major tag:
-`tiaf-a3-baseline` after review and commit. Post-A3 architecture consolidation
-is next; A4 is not yet authorized.
+**TIAF_A3 major closure: COMPLETE / BASELINED** at tag `tiaf-a3-baseline`.
+
+**POST_A3_PRE_A4_FOUNDATION: COMPLETE / ACCEPTED.** Deterministic source
+semantics, A4 input projection and replay integrity; no A4 runtime.
+
+**POST_A3_PRE_A4_LOCAL_FACADE: COMPLETE / ACCEPTED.** Narrow same-process
+capability catalog, trusted admission/lifecycle and captured replay; no live
+operation, transport, Shell or A4 runtime.
+
+Deterministic A4 implementation is the next separately authorized track.
 
 ## Deferral governance
 

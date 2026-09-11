@@ -369,10 +369,12 @@ compatibility, worker routing and rollback acceptance; it is not required now.
 `POST_A3_PRE_A4_FOUNDATION` is deployment-neutral Core work implemented internally
 in-process: source identity/scope, comparability/disputes/independence, confirmation
 and A4 projection, capture/replay tests. It need not expose every helper publicly
-or wait for a service. A small approved projection/replay capability may later
-sit behind the facade; no second foundation implementation there. DEF-003's
-narrow facade is recommended before A4 and mandatory before Shell/public use;
-it remains a separate delivery track, not new scope forced into source semantics.
+or wait for a service. The separately accepted
+[local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) now exposes a small approved
+projection/replay subset without a second foundation implementation. It uses
+trusted same-process configuration, frozen startup composition, request-local
+state, logical artifact refs and an enforced single-writer marker. It has no
+live capability or transport. DEF-003's remote delivery track remains separate.
 
 The completed [consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
 selects separately authorized bounded foundation -> narrow local facade/lifecycle

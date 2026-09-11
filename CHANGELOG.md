@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Added the bounded POST_A3_PRE_A4_LOCAL_FACADE under `tiaf.facade`: explicit
+  static capability descriptors, trusted caller/operator admission and budget
+  intersection, frozen startup composition, request-local lifecycle metadata,
+  logical-ref artifact authorization, safe operation-specific results/errors,
+  deterministic A2/A3.9/foundation composition, and provider-free recorded
+  replay/verification. No live capability, transport, provider/model, A4 role,
+  Shell, storage service or broker authority was added.
+
 - Implemented the additive POST_A3_PRE_A4_FOUNDATION under
   `tiaf.source_semantics`: distinct source/provider/origin/document/occurrence
   identity, scoped authority, typed propositions/assertions/admissions,

@@ -432,6 +432,14 @@ A4 Input Projection and Replay Integrity**. See the
 [acceptance study](STUDY_POST_A3_PRE_A4_FOUNDATION_ACCEPTANCE.md). Frozen A2/A3
 records remain unchanged and A4 runtime has not begun.
 
+Complete / accepted: **POST_A3_PRE_A4_LOCAL_FACADE — Narrow Local Capability
+Facade and Invocation Lifecycle**. See the
+[implementation record](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) and
+[acceptance study](STUDY_POST_A3_PRE_A4_LOCAL_FACADE_ACCEPTANCE.md). The facade
+exposes only four bounded public operations, permission-filtered discovery and
+engineering replay verification. It has no live operation or remote transport;
+`opportunity.orchestrate` and `trace.inspect` remain deliberately absent.
+
 Deployment work must not delay the in-process semantic foundation. The separate
 DEF-003 local facade/lifecycle slice precedes Shell/public consumers; operational
 TM may later justify a separate local TI host. A8 owns TM/conditional service,
@@ -475,14 +483,13 @@ F01–F16, list/JSON/tuple and aware Asia/Kolkata contracts, typed ID/value/scop
 checks and unchanged parent captures. No live validation is required; no
 acquisition/model/facade/A4 roles/UI/new graph/store are in scope. Run focused
 foundation/current-boundary tests and full pytest/compile/ruff/mypy/diff gates.
-The gate completed as `READY_TO_ACCEPT_POST_A3_PRE_A4_FOUNDATION`; the separately
-governed narrow local facade/lifecycle is next in the selected sequence.
+The foundation gate completed as `READY_TO_ACCEPT_POST_A3_PRE_A4_FOUNDATION`.
+The subsequent local facade/lifecycle gate completed as
+`READY_TO_ACCEPT_POST_A3_PRE_A4_LOCAL_FACADE`; deterministic A4 contracts/runtime
+are now the next separately authorized work.
 
 ### Subsequent planned tracks (not implemented)
 
-- Narrow local facade/lifecycle: captured assembly/projection/replay subset,
-  trusted admission and resource ownership; bounded A3.8 live exposure only with
-  explicit permissions, leaf accounting and lifecycle acceptance.
 - A4-D1 typed contracts/policies; D2 deterministic Challenger/Arbitrator;
   D3 governed evidence-need/successor bridge; D4 replay/cost/failure acceptance.
   Model priors motivate hypotheses only; admitted new evidence follows ordinary
