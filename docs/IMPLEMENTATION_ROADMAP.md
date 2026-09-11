@@ -11,10 +11,11 @@ in `TIAF_A5` and `TIAF_A6`. Evaluation becomes a dedicated capability in
 (`TIAF_A9`). `TIAF_A10` completes production hardening.
 
 After the frozen A4 baseline, the approved
-[command-first TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) defines a
-small unnumbered local engineering-interface implementation before A5. It is
-useful but not an A5 prerequisite and adds no NLP, Web, model, live-acquisition
-or broker authority.
+[command-first TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) is now
+delivered by a
+[small unnumbered local engineering interface](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md)
+before A5. It is useful but not an A5 prerequisite and adds no NLP, Web, model,
+live-acquisition or broker authority.
 
 ## Acceptance philosophy
 

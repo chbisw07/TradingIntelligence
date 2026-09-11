@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — frozen A4 and approved pre-A5 Shell architecture
+### Present — frozen A4 and implemented pre-A5 TI Shell v0.1
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -70,11 +70,12 @@ which accepted the deterministic, bounded and replayable A4 layer now frozen at
 `tiaf-a4-baseline` (`494d968`).
 The optional model-backed Challenger remains deferred. The preferred next slice
 is now approved by the
-[POST_A4_PRE_A5 Shell review](docs/TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
-and [authoritative TI_SHELL architecture](docs/TIAF_TI_SHELL_ARCHITECTURE.md): a
-command-first, same-process mediator over only the seven governed facade
-capabilities. Runtime remains unimplemented. NLP, models, live acquisition,
-remote transport and intelligence policy remain outside v0.1.
+[POST_A4_PRE_A5 Shell review](docs/TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md),
+[authoritative architecture](docs/TIAF_TI_SHELL_ARCHITECTURE.md) and
+[implementation record](docs/TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md): the
+command-first, same-process mediator now exposes only the seven governed facade
+capabilities through `python -m tiaf.shell` and `ti`. NLP, models, live
+acquisition, remote transport and intelligence policy remain outside v0.1.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.
@@ -107,6 +108,22 @@ universe generation to NSE. Override these non-secret settings when needed:
 TIAF_PRIMARY_EXCHANGE=NSE
 TIAF_PRIMARY_FNO_EXCHANGE=NSE
 ```
+
+## Local TI Shell
+
+The bounded command-first engineering Shell runs in the same process as the
+trusted facade. Capability calls require an explicit operator-owned bootstrap;
+there is no implicit config discovery.
+
+```bash
+python -m tiaf.shell --help
+python -m tiaf.shell --config shell-bootstrap.json capabilities list
+python -m tiaf.shell --config shell-bootstrap.json
+```
+
+The final command enters the `TI> ` REPL. See the
+[Shell implementation record](docs/TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) for
+the exact grammar, bootstrap contract and security boundary.
 
 ## Verification
 

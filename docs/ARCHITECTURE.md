@@ -12,13 +12,15 @@ same-process admission/lifecycle slice. The additive
 deterministic captured-read evaluation. The internal
 [A4.2 application bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
 adds one governed A3.8 enrichment/successor cycle without expanding the facade;
-no Shell or remote service exists.
+it exposes no direct live/public command. No remote service exists.
 The [A4 major closure review](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
 audits both slices as one L6 layer, now frozen at `tiaf-a4-baseline` (`494d968`).
 The [POST_A4_PRE_A5 Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
-approves the [command-first local Shell architecture](TIAF_TI_SHELL_ARCHITECTURE.md)
-over the existing facade. Shell runtime and remote service remain absent. Model
-challenge and NLP remain optional/deferred; this is not A4 runtime expansion.
+approves the [command-first local Shell architecture](TIAF_TI_SHELL_ARCHITECTURE.md),
+now delivered by the bounded
+[v0.1 implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) over the existing
+facade. The Shell adds no remote service. Model challenge and NLP remain
+optional/deferred; this is not A4 runtime expansion.
 
 The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 now defines field-scoped authority, proposition comparability, independence,

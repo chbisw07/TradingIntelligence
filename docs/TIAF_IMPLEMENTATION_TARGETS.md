@@ -483,8 +483,9 @@ The [A4 major closure review](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts
 both slices as one baseline now frozen at `tiaf-a4-baseline` (`494d968`), and
 keeps DEF-052/055 deferred. The selected
 [POST_A4_PRE_A5 Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
-now approves the [command-first local architecture](TIAF_TI_SHELL_ARCHITECTURE.md);
-its runtime implementation is next and is not an A5 hard dependency.
+and [command-first local architecture](TIAF_TI_SHELL_ARCHITECTURE.md) now have a
+bounded [v0.1 implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md). It remains
+an unnumbered facade consumer and is not an A5 hard dependency.
 DEF-003 has separate local and remote delivery tracks under the same stable ID:
 the selected order is foundation -> narrow local facade/lifecycle -> deterministic
 A4. The facade is mandatory before Shell/public consumers, not a dependency of
@@ -524,10 +525,10 @@ and jointly reviewed for the A4 baseline freeze.
   adapter, privacy/egress, pricing knowledge, versioned structured prompts/output,
   hypothesis-vs-fact and ID/value rejection, no-LLM control, replay and evaluation.
   DEF-052/055 remain deferred, no mandatory model for deterministic A4.
-- Shell v0.1 implementation after the now-approved architecture: command-first,
-  same-process, facade-only and transient, preferably before A5 implementation
-  but not an A5 hard gate. Minimal captured-source/A4 rendering remains the
-  bounded DEF-054 slice; NLP, Web and rich bibliography remain outside it.
+- Shell v0.1 is implemented after the approved architecture: command-first,
+  same-process, facade-only and transient, before A5 implementation but not an
+  A5 hard gate. Minimal captured-source/A4 rendering is delivered; NLP, Web and
+  rich bibliography remain outside it under the open portion of DEF-054.
 - A5 on-demand positions plus bounded monitoring-contract review; A6 deterministic
   valid candidates; A7 calibration/evaluation/ranking; forecast-enhanced A6 follow-up;
   A8 TM, A9 scanners, A10 production. No renumbering or infrastructure rollout.

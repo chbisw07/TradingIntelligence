@@ -17,8 +17,10 @@ and internal [A4.2 Planner bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRID
 are implemented and jointly reviewed by the
 [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md). The subsequent
 [Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md) approves the
-[command-first local interaction architecture](TIAF_TI_SHELL_ARCHITECTURE.md)
-over that facade; no Shell runtime or Web service exists. Accepted
+[command-first local interaction architecture](TIAF_TI_SHELL_ARCHITECTURE.md),
+now delivered by the bounded
+[v0.1 implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) over that facade.
+No Web service exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.

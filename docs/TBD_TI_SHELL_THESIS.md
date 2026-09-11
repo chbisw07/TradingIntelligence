@@ -1,6 +1,6 @@
 # TI_SHELL Thesis
 
-**Disposition: PARTIALLY_SUPERSEDED_BY_AUTHORITATIVE_ARCHITECTURE (2026-09-11).**
+**Disposition: PARTIALLY_SUPERSEDED_BY_IMPLEMENTED_V0_1 (2026-09-12).**
 The [Shell architecture review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
 classifies all 33 sections and the approved
 [command-first architecture](TIAF_TI_SHELL_ARCHITECTURE.md) now governs v0.1.
@@ -9,9 +9,11 @@ discovery, replay, explain/trace projection, authority and testing principles
 with revisions. It supersedes the earlier broad v0.1 list and rejects
 multi-symbol/private-operation scope for v0.1. NLP, mixed mode, Interaction
 Agent, model laboratory, typed pipes, dry-run/show-plan and richer product ideas
-remain TBD and are not implicitly approved. The historical suggestions below
-are an idea cache, not an implementation directive or permission to expose
-engineering internals.
+remain TBD and are not implicitly approved. The bounded promoted subset is now
+delivered by
+[TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md).
+The historical suggestions below are an idea cache, not an implementation
+directive or permission to expose engineering internals.
 
 ## 1. Thesis
 

@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented the command-first local `TI_SHELL` v0.1 under `tiaf.shell` with
+  shared one-shot/REPL parsing, isolated typed session defaults, exact facade
+  request/result handling, bounded last/refresh state, human and stable JSON
+  rendering, structured explain/trace views, offline replay and
+  engineering-gated verification. The `python -m tiaf.shell` and `ti` entry
+  points expose only the seven accepted facade capabilities. No NLP, model,
+  live provider, remote service, A5-A7 or broker behavior was added.
+
 - Completed the TIAF A4 major milestone closure review across A4.1 and A4.2:
   audited dispositions, thesis/challenge/arbitration semantics, source authority,
   one-round Planner ownership, successor/replay integrity, cost/failure behavior,

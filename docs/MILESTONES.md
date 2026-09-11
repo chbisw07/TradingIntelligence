@@ -98,10 +98,10 @@ non-action dispositions, offline replay and captured-read facade evaluation;
 A4.2 supplies one governed internal enrichment/successor cycle. No public live,
 model, position, expression, forecast or execution authority was added.
 
-**POST_A4_PRE_A5 TI_SHELL: ARCHITECTURE APPROVED / IMPLEMENTATION NEXT.** The
-command-first local design exposes only the governed facade with transient
-session and bounded rendering. No Shell runtime, NLP, Web or new capability is
-implemented by the design pass.
+**POST_A4_PRE_A5 TI_SHELL v0.1: IMPLEMENTED / ACCEPTANCE READY.** The
+command-first local runtime exposes only the governed facade with isolated
+transient session, exact-result JSON and bounded rendering. It adds no NLP,
+Web, model/live access or new intelligence capability.
 
 ## Deferral governance
 

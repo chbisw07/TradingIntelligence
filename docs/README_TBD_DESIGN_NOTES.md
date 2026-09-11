@@ -22,13 +22,15 @@ The authoritative [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md)
 promotes a revised local target and conditional adoption gates, not speculative
 Level 3 infrastructure. The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
 now sets foundation -> narrow local facade/lifecycle -> deterministic A4.
-Shell/other TBD products and deployment runtime remain unimplemented.
+Other TBD products and deployment runtime remain unimplemented.
 The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) selected the
 now-completed [Shell architecture review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md).
 Its [authoritative architecture](TIAF_TI_SHELL_ARCHITECTURE.md) approves only
 governed facade commands plus bounded captured-source/A4 rendering under
 DEF-054; it does not promote NLP, Web, monitoring, forecasting, or deployment
-runtime. Shell implementation remains next.
+runtime. The bounded promoted Shell subset is now implemented by
+[TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md);
+the remaining Shell and Web ideas retain TBD status.
 
 They are intentionally prefixed with `TBD_` so they remain visibly non-authoritative until the relevant milestone revisits and promotes, revises, splits, or rejects them.
 

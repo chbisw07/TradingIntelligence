@@ -3,8 +3,10 @@
 ## Status, decision and compatibility
 
 **Approved architecture for `POST_A4_PRE_A5 — TI_SHELL v0.1`, 2026-09-11
-(Asia/Kolkata). Runtime status: not implemented.** The decision record is the
+(Asia/Kolkata). Runtime status: implemented on 2026-09-12.** The decision record is the
 [POST_A4_PRE_A5 review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md).
+The implementation record is
+[TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md).
 
 The implementation target is a command-first local engineering interface over
 the accepted `tiaf-a4-baseline` (`494d968`). It must not modify A0 contract

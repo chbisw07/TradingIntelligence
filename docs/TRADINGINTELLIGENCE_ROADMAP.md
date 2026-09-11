@@ -29,9 +29,10 @@ evidence-enrichment bridge are implemented, jointly accepted by the
 [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md), and frozen at
 `tiaf-a4-baseline` (`494d968`). The subsequent
 [POST_A4_PRE_A5 Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
-approves a [command-first local architecture](TIAF_TI_SHELL_ARCHITECTURE.md) over
-the existing facade. Shell runtime remains the next unnumbered implementation
-slice; this sequence does not add or renumber an A-milestone.
+approves a [command-first local architecture](TIAF_TI_SHELL_ARCHITECTURE.md), now
+delivered by the bounded
+[v0.1 implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) over the existing
+facade. This unnumbered slice does not add or renumber an A-milestone.
 
 ---
 
@@ -461,8 +462,7 @@ Entry remains accepted A4 and versioned position context, not A6/A7 or a daemon.
 Before implementation, review bounded WatchMandate/lifecycle, evidence-family
 clocks and delta semantics; first delivery can be on-demand. TM owns actual
 position state and operational priority. Durable scheduling remains gated
-separately. The Shell v0.1 architecture is approved and its implementation is
-useful before A5, but it is not a hard dependency.
+separately. Shell v0.1 is implemented, but it is not a hard A5 dependency.
 
 ## Goal
 

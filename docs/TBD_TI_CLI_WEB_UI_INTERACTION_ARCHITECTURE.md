@@ -1,6 +1,6 @@
 # TBD - TI CLI / Web UI / Application Interaction Architecture
 
-**Disposition: SPLIT_LOCAL_COMMANDS; WEB_REMAINS_TBD (2026-09-11).** The
+**Disposition: LOCAL_COMMANDS_IMPLEMENTED; WEB_REMAINS_TBD (2026-09-12).** The
 [Shell architecture review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
 promotes only the local command subset into the authoritative
 [TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md): typed facade operations,
@@ -8,9 +8,10 @@ independent consumers, shared semantic errors and structured output. “Exhausti
 CLI” is revised to mean broad coverage of permitted curated capabilities, never
 private internals. Web workflows, remote transport, browser security,
 visualization, async jobs and multi-user/product choices remain TBD for an actual
-consumer/A8 need. Web must call the governed capability boundary directly; it
-must not invoke Shell or parse its stdout. No Shell or Web runtime is implemented
-by this split.
+consumer/A8 need. The promoted local subset is implemented in
+[TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md).
+Web must call the governed capability boundary directly; it must not invoke
+Shell or parse its stdout. No Web runtime is implemented by this split.
 
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  
