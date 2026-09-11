@@ -1,5 +1,15 @@
 # TBD - TI Forecasting / Ensemble / Calibration / Learning Architecture
 
+**Consolidation disposition: REVISE_AND_KEEP_TBD (2026-09-11).**
+The [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) retains A7
+as the evaluation/forecast overlay after deterministic A6 candidates; its
+admitted forecasts later enable enhanced A6 comparison. Architecture entry needs
+PIT/outcome data rights, deterministic controls, target/horizon/calibration and
+promotion/rollback criteria. Cross-candidate ranking belongs in evaluated A7
+scope. Ensemble hierarchy, model selection and learning algorithms below remain
+hypotheses, not mandatory complexity or implemented accuracy. Model prior
+knowledge is not empirical forecast evidence.
+
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  
 > **Promotion rule:** Before becoming authoritative, this note must be revisited at the relevant milestone, reconciled with the then-current repository architecture, tested against implementation realities, and either promoted, revised, split, or rejected.  

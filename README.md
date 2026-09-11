@@ -28,7 +28,7 @@ classifies every active deferral, reconciles live/non-live claims and concludes
 reconciles four omitted A3-specific governance records without changing that
 freeze decision.
 
-### Next — post-A3 consolidation and replanning
+### Next — bounded pre-A4 source-semantic foundation
 
 The [post-A3 pass-1 review](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
 adopts the revised [TI_CORE/capability architecture](docs/TIAF_SYSTEM_ARCHITECTURE.md).
@@ -41,7 +41,13 @@ The [deployment review](docs/TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md)
 now approves the [bounded hosting architecture](docs/TIAF_DEPLOYMENT_ARCHITECTURE.md):
 local Python first, isolated request state and filesystem replay; service,
 worker and database adoption require concrete operational triggers.
-Next is full post-A3 consolidation and replanning, not a deployment rollout.
+The [completed consolidation](docs/TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+selects POST_A3_PRE_A4_FOUNDATION next, then a narrow local facade/lifecycle and
+deterministic A4. Bounded open-world reasoning permits governed research needs,
+not model memory promoted to evidence. A5–A10 retain their major order; A6 gets
+deterministic candidates first and forecast-enhanced comparison after A7.
+The architecture is ready for a design-only checkpoint/tag after review; no
+tag or runtime implementation is created by these documents.
 The separate POST_A3_PRE_A4_FOUNDATION must precede A4 runtime, not further design.
 No facade, source projection, A4 runtime, Shell or remote API is implemented by
 these documents; unrelated TBD proposals are not automatically approved.

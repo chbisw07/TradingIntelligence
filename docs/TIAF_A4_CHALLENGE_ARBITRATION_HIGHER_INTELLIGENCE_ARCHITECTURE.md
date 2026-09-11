@@ -255,6 +255,22 @@ not an A4 override of the original A2 NO_TRADE.
 
 ## 9. Evidence escalation, budget and information time
 
+**Bounded open-world reasoning:** a model/Agent may identify a material gap,
+formulate a hypothesis and request evidence beyond the initial bundle. Model
+prior knowledge can motivate a question but is not canonical factual evidence.
+Unverified hypotheses must be marked as such, linked to a material question and
+kept separate from premises claiming facts; never invent a source/claim ID to
+make a new hypothesis look evidenced. Unknown/out-of-coverage questions remain
+unmet, not answered from model memory. Existing factual premises still require
+resolvable admitted IDs and typed value/scope validation.
+
+Governed acquisition -> provenance/normalization/authority/entitlement/PIT
+admission -> successor semantic projection -> selective re-challenge/arbitration
+is the only route from newly found information to decision evidence. No model
+or source text acquires directly, executes instructions or raises permissions.
+This amendment makes the existing escalation intent explicit; it does not add
+calls, loosen limits, implement a provider/model, or allow unbounded recursion.
+
 A4 emits semantic needs; A3.8's Planner/application boundary determines whether
 they are applicable, authorized, affordable, satisfiable and worth scheduling.
 Existing gateways/MI choose routes, source validation and normalization. No A4
@@ -378,6 +394,16 @@ uncertainty, evidence state, horizon/objective and replay identity. A4 condition
 are analytical predicates, not position commands or chosen option contracts.
 TradeMonitor retains operational authority; broker state is not inferred from TI.
 
+After A6 candidate contracts and A7 forecast admission/calibration exist, a
+separately versioned higher-order comparison may assess which **A6-produced
+valid candidate** expresses the surviving thesis under admitted forecast/risk
+evidence. A6 retains candidate creation/validation and expression selection
+contracts; A7 retains probabilistic models/calibration; A5/TM retain position
+advice/operational governance. Comparison preserves candidate/forecast IDs,
+assumptions, alternatives and non-action; it cannot synthesize missing contracts,
+compute Greeks/payoffs or invent probabilities. This future A6/A7 seam is not
+initial A4 scope and does not erase any owner or grant broker authority.
+
 A4 can flag forecast-dependent uncertainty. Later A7-supplied forecasts require
 admitted model/target/horizon/availability/calibration provenance and pass-2
 epistemic roles. No A4-generated success probability, forecast distribution,
@@ -392,6 +418,12 @@ handles cross the boundary. Engineering access is explicit and sanitized, not
 permission to rewrite captured evidence or bypass policy.
 
 ## 13. Governance and implementation gate
+
+The [consolidated transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+now defines exact foundation work packages/acceptance and selects foundation ->
+narrow local facade/lifecycle -> deterministic A4. Internal projection work has
+no facade dependency; no remote service is required. Historical pass-3 next-step
+wording is superseded by this transition plan, not rewritten retroactively.
 
 Choose one **POST_A3_PRE_A4_FOUNDATION** implementation package before A4 runtime,
 not an A4 reasoning sub-milestone retroactively described as already begun.

@@ -5,6 +5,11 @@ It is also not an executable public capability registry. Public, engineering
 and private interface rules are defined in the
 [system architecture](TIAF_SYSTEM_ARCHITECTURE.md), with current code seams
 classified in the [post-A3 pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md).
+The [consolidated transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+selects foundation -> narrow local facade/lifecycle -> deterministic A4. All
+three are planned, not implemented by architecture. A7 later informs a separately
+versioned forecast-enhanced A6 follow-up; no major milestone is renumbered.
+
 Statuses describe repository reality:
 
 - **IMPLEMENTED** — accepted code/contracts exist;
@@ -185,7 +190,7 @@ it does not overload corporate-action or earnings-call semantics.
 | A4 source/comparability/independence input projection | PLANNED | Core semantics approved in [post-A3 pass 2](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md); pass 3 assigns the separate POST_A3_PRE_A4_FOUNDATION implementation gate before A4 runtime; not implemented, frozen A3 unchanged, citation rendering remains DEF-054 |
 | Arbitration / adversarial resolution | PLANNED | [A4 architecture approved](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md): unified Challenger plus deterministic Arbitrator; optional model proposals, no votes/averaged confidence, preserved dissent and A2 NO_TRADE; runtime not implemented |
 | Position intelligence | PLANNED | A5 |
-| Option strategy comparison/selection | PLANNED | A6; DEF-006 |
+| Option strategy comparison/selection | PLANNED | A6/DEF-006 deterministic valid candidates first; forecast-enhanced higher-order comparison after admitted A7 evidence; no initial A4 contract selection |
 | Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
 | Scanner intelligence | EXTERNAL/INTEGRATION | A9 scanner boundary |
 
@@ -199,11 +204,13 @@ it does not overload corporate-action or earnings-call semantics.
 | Primary quote/OHLCV/F&O fallback and operational health arbitration | DEFERRED | Dhan data surface; DEF-008/DEF-011. Separate MI evidence fallback is implemented in A3.6.1 |
 | Scanner | EXTERNAL/INTEGRATION | Future TIAF scanner boundary |
 | UI / dashboard | FUTURE | Application layer; service dependency DEF-003 |
-| Governed local capability facade/catalog | PLANNED | DEF-003 local track; narrow Python facade with trusted composition/lifecycle, isolated invocations and single-writer capture recommended before A4, required before Shell/public consumer use; not implemented |
+| Governed local capability facade/catalog | PLANNED | DEF-003 local track; selected after foundation and before deterministic A4, mandatory before Shell/public consumers; trusted composition/lifecycle, isolated invocations and single-writer capture; not implemented |
 | Remote API / service delivery | PLANNED | DEF-003 delivery track; [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) makes local/remote hosting conditional on real consumer/isolation needs; A8 integration, A10 operations; same intelligence path, no service now |
 | Alerts | FUTURE | Application/policy layer; runtime dependency DEF-010 |
-| Human-facing explanation/citation reports | DEFERRED | Internal lineage exists; governed rendering remains DEF-054 |
-| Cross-candidate A3 opportunity comparison/ranking | DEFERRED | Single-subject A3.9 product remains canonical; DEF-053 |
+| Human-facing explanation/citation reports | DEFERRED | DEF-054 minimal captured-source rendering with Shell v0.1 after foundation/facade; richer report/Web UX later; no re-research |
+| Cross-candidate A3 opportunity comparison/ranking | DEFERRED | DEF-053 A7 evaluation design after stable per-candidate A3/A4 products; A2 ranking remains benchmark |
+| Bounded open-world A4 research loop | PLANNED | Typed material hypotheses/needs, future Planner bridge, ordinary source/PIT/authority/entitlement admission and successor projection; model prior is not factual evidence; runtime absent |
+| TI_SHELL command-first engineering v0.1 | FUTURE | Architecture after facade and before A5 planning; implementation after deterministic A4, preferably before A5; no hard A5 dependency or automatic NLP/model permission |
 | Baseline replay / validation | IMPLEMENTED | A2.10 captured-snapshot foundation |
 | Strategy backtest | DEFERRED | Requires strategy/execution model; DEF-025 |
 | Optimization | DEFERRED | Evaluation layer; DEF-024 |

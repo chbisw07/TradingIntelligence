@@ -423,15 +423,17 @@ concludes `READY_FOR_DEPLOYMENT_ARCH_REVIEW` and approves the
 [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md): one trusted local
 Python application runtime, request-local analysis and single-writer filesystem
 replay. Existing adapter-local subprocesses remain; no new service is required.
-Next: **Post-A3 Consolidation and Replanning — Accepted Architecture, TBD
-Dispositions, Deferral Reconciliation and Bounded Implementation Plan**.
+The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+concludes `READY_FOR_POST_A3_FOUNDATION_IMPLEMENTATION` and design-only
+`READY_TO_TAG_POST_A3_ARCHITECTURE` (no tag created).
+Next: **POST_A3_PRE_A4_FOUNDATION — Source Semantics, A4 Input Projection and Replay Integrity**.
 
 Deployment work must not delay the in-process semantic foundation. The separate
 DEF-003 local facade/lifecycle slice precedes Shell/public consumers; operational
 TM may later justify a separate local TI host. A8 owns TM/conditional service,
 A9 scanners and A10 justified durable operations. Multi-writer storage, shared
 quotas, background jobs and remote exposure require their own acceptance gates;
-none is implemented or required for the next design pass.
+none is implemented or required for the next offline semantic package.
 
 Before A4 runtime, separately implement **POST_A3_PRE_A4_FOUNDATION**:
 source identity/scoped authority and bindings; comparability/dispute/independence;
@@ -449,12 +451,45 @@ requires an additive role-aware gateway bridge and approved adapter/configuratio
 privacy/pricing and validation policy; it is not mandatory for deterministic A4
 or an implicit delivery of DEF-052. No code is implemented by these designs.
 DEF-003 has separate local and remote delivery tracks under the same stable ID:
-a small local facade/catalog is recommended before A4 and required before its
-Shell/public consumers; remote service/TM delivery remains A8 as required.
-No facade code is required to proceed with the design passes. Microservices, package
+the selected order is foundation -> narrow local facade/lifecycle -> deterministic
+A4. The facade is mandatory before Shell/public consumers, not a dependency of
+internal foundation projection. Remote service/TM delivery remains A8 as required.
+Microservices, package
 relocation, universal envelopes and dynamic plugin loading are not approved.
 
 A7 is minimally refined to **Evaluation, Forecasting and Learning**. A3 defines
 and consumes calibrated forecast evidence but never asks an LLM to manufacture
 probabilities; A7 owns forecast generation, out-of-sample calibration,
 evaluation, promotion, and rollback.
+
+### Next implementation entry and exit
+
+The consolidation §7 is the authoritative bounded work specification:
+F1 source identity/scoped authority/policy bindings; F2 proposition/comparability,
+independence and append-only disputes; F3 confirmation and A4 semantic input
+projection; F4 additive capture/replay/integrity. Implement deterministic fixtures
+F01–F16, list/JSON/tuple and aware Asia/Kolkata contracts, typed ID/value/scope
+checks and unchanged parent captures. No live validation is required; no
+acquisition/model/facade/A4 roles/UI/new graph/store are in scope. Run focused
+foundation/current-boundary tests and full pytest/compile/ruff/mypy/diff gates.
+Exit only as `READY_TO_ACCEPT_POST_A3_PRE_A4_FOUNDATION` or `FIX_REQUIRED`.
+
+### Subsequent planned tracks (not implemented)
+
+- Narrow local facade/lifecycle: captured assembly/projection/replay subset,
+  trusted admission and resource ownership; bounded A3.8 live exposure only with
+  explicit permissions, leaf accounting and lifecycle acceptance.
+- A4-D1 typed contracts/policies; D2 deterministic Challenger/Arbitrator;
+  D3 governed evidence-need/successor bridge; D4 replay/cost/failure acceptance.
+  Model priors motivate hypotheses only; admitted new evidence follows ordinary
+  source/PIT/authority checks and does not alter an old cutoff.
+- Optional model lane after deterministic A4/bridge: role-aware gateway, approved
+  adapter, privacy/egress, pricing knowledge, versioned structured prompts/output,
+  hypothesis-vs-fact and ID/value rejection, no-LLM control, replay and evaluation.
+  DEF-052/055 remain deferred, no mandatory model for deterministic A4.
+- Shell architecture after facade, before A5 planning; command-first v0.1 after
+  deterministic A4, preferably before A5 implementation, not an A5 hard gate.
+  Minimal captured-source rendering is a separate DEF-054 slice.
+- A5 on-demand positions plus bounded monitoring-contract review; A6 deterministic
+  valid candidates; A7 calibration/evaluation/ranking; forecast-enhanced A6 follow-up;
+  A8 TM, A9 scanners, A10 production. No renumbering or infrastructure rollout.

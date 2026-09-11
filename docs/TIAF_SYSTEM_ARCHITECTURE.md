@@ -29,6 +29,10 @@ facade or service and does not promote speculative production infrastructure.
 
 ## 1. Purpose and system ownership
 
+The [post-A3 consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) owns
+the current transition plan: bounded source foundation, narrow local facade,
+then deterministic A4; all remain unimplemented by these design documents.
+
 TI serves the user's economic interest through risk-adjusted expected utility:
 evidence, understandable deterministic computation, bounded interpretation,
 later challenged conclusions and measured outcomes. This is an objective, not
@@ -186,6 +190,25 @@ CLI” means, at most, broad coverage of approved capabilities, never all intern
 
 ## 7. Shared evidence, isolated analysis
 
+### Bounded open-world reasoning
+
+A4 is not permanently closed over the first captured bundle. A model/Agent may
+identify a material information gap, formulate a research hypothesis and request
+additional evidence through governed capabilities. Model prior knowledge may
+motivate that inquiry; it is not canonical factual evidence. An unverified
+hypothesis does not need fabricated claim/source IDs and cannot substitute for
+an evidence-backed factual premise or upgrade a disposition by itself.
+New information becomes decision evidence only after normal acquisition,
+provenance, semantic normalization, authority, entitlement, PIT and admission
+checks. A4 emits typed needs; the future bridge to A3.8/gateways/MI research owns
+controlled acquisition, then a successor projection permits selective challenge.
+No direct model tools, source instructions, permission increase or recursive
+unbounded loop. Live acquisition after the original cutoff needs a successor
+run/new as-of; replay never acquires. Existing A4 limits and A3 no-LLM controls
+remain binding; this is architecture support, not delivered model integration.
+
+### Reuse boundaries
+
 **Shared Evidence != Shared Analysis State.** Core validates evidence identity,
 source/adapter version, information availability, freshness, PIT eligibility and
 quality. The runtime enforces entitlement/security scope before lookup and
@@ -251,7 +274,8 @@ Its [review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_C
 fed the now-approved [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md).
 The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
 is followed by the completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
-Full post-A3 consolidation/replanning is next, with the separate `POST_A3_PRE_A4_FOUNDATION`
+The completed [consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+selects the separate `POST_A3_PRE_A4_FOUNDATION` next, with its
 semantic implementation gate still required before A4 runtime. A4 consumes
 validated A3.9 intelligence with
 references to the complete captured A3.8 bundle, active/superseded specialist
@@ -261,14 +285,26 @@ Missing full A2 evidence remains explicit; never reconstruct it from a score.
 
 DEF-003 is split into governed local capabilities and later external delivery
 without changing its stable ID or claiming implementation. Architecture is
-settled before A4; a narrow facade/catalog is recommended before consumer work,
+settled before A4; the selected delivery order is foundation, narrow local
+facade/lifecycle, then deterministic A4. The facade is
 mandatory before Shell v0.1 or untrusted/live external access. It need not block
-consolidation or force internal A4 development through HTTP.
+internal semantic work or force A4 development through HTTP.
 A8 retains TM integration and service/remote delivery as required; A10 retains
-production operations. Detailed timing and candidate acceptance criteria are
-in the [pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md).
+production operations. Current timing and bounded acceptance criteria are in
+the consolidation; the [pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
+retains the original boundary rationale.
 
 No microservices, generic plugin loader, new parallel source registry, universal
 dispatcher, event bus, distributed graph/cache or runtime relocation is approved
 by this architecture. Add a boundary only when it hides unstable composition or
 enforces a real consumer contract.
+
+Later A6 owns construction/validation of trade-expression candidates; A7 owns
+forecast generation/calibration and admissible probability evidence. A separately
+versioned higher-order comparison may assess A6 candidates against a surviving
+thesis and admitted A7 evidence, preserving candidate IDs/assumptions and risk.
+It cannot invent a contract, recalculate lower-level facts, fabricate probabilities
+or bypass TM. This is not initial A4 contract selection. A5 remains position advice,
+TM operational governor and broker execution/state truth. The A7 overlay is a
+data dependency for forecast-enhanced A6, not a prerequisite for deterministic
+candidate construction or a renumbering of the A5–A10 roadmap.

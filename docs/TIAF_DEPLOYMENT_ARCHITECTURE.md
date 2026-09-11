@@ -374,8 +374,10 @@ sit behind the facade; no second foundation implementation there. DEF-003's
 narrow facade is recommended before A4 and mandatory before Shell/public use;
 it remains a separate delivery track, not new scope forced into source semantics.
 
-Next is full post-A3 consolidation/replanning, then separately authorized bounded
-foundation, local facade as needed, deterministic A4 and later consumers. Shell
+The completed [consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+selects separately authorized bounded foundation -> narrow local facade/lifecycle
+-> deterministic A4, then later consumers. This is a delivery choice, not a
+technical dependency of internal projection work on a facade. Shell
 is neither required to implement A4 nor permission to implement it now. A8 owns
 TM integration and service transport when justified; A9 owns scanner integration;
 A10 owns production recovery, health/SLOs and durable infrastructure. Minimal

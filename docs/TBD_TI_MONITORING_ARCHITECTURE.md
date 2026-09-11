@@ -1,5 +1,15 @@
 # TBD - TI Monitoring / Watch-Mandate Architecture
 
+**Consolidation disposition: REVISE_AND_KEEP_TBD (2026-09-11).**
+The [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) assigns a
+bounded mandate/lifecycle/evidence-family-clock/delta review before A5
+implementation; on-demand A5 does not require a daemon. TI application
+orchestration owns future monitoring semantics, never specialists or Shell.
+A8 binds TM position identity/priority, A9 candidate intake, A10 durable due-work/
+event scheduling and recovery. Calendar/outcome admission precedes unattended
+timing claims. Adaptive cadence and original lifecycle names remain hypotheses;
+source disputes do not implement price-event lifecycle. No monitoring is added.
+
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  
 > **Promotion rule:** Before becoming authoritative, this note must be revisited at the relevant milestone, reconciled with the then-current repository architecture, tested against implementation realities, and either promoted, revised, split, or rejected.  

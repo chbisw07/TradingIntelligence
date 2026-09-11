@@ -22,7 +22,11 @@ The approved [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) chooses
 one trusted local Python application runtime, isolated invocations and a single
 filesystem writer; existing adapter-local MCP subprocesses remain. Service,
 worker and shared-storage deployment is conditional, not implemented.
-Full post-A3 consolidation is next. The source foundation and A4 runtime
+The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+selects the offline POST_A3_PRE_A4_FOUNDATION next, followed by a narrow local
+facade/lifecycle and deterministic A4. Its bounded open-world amendment allows
+model-prior hypotheses to motivate governed research, never canonical facts.
+The source foundation and A4 runtime
 remain unimplemented; no unrelated TBD is promoted.
 
 TIAF is intended to occupy an intelligence boundary between sources of market

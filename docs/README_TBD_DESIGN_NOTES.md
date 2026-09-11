@@ -1,6 +1,8 @@
 # TBD TI Design Notes — Revised Set
 
-These documents are temporary design notes for the TradingIntelligence project.
+These documents are an **idea cache**: unfinished, non-authoritative thinking
+preserved so useful ideas are not forgotten. Selected principles can be promoted
+without approving an entire note or implementing its proposed product.
 
 Post-A3 pass 1 has now promoted the revised kernel/capability-boundary decisions
 into [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md). The
@@ -18,8 +20,9 @@ Its [decision record](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRA
 selected the now-completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
 The authoritative [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md)
 promotes a revised local target and conditional adoption gates, not speculative
-Level 3 infrastructure. Full consolidation is next; Shell/other TBD products
-and deployment runtime remain unimplemented.
+Level 3 infrastructure. The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+now sets foundation -> narrow local facade/lifecycle -> deterministic A4.
+Shell/other TBD products and deployment runtime remain unimplemented.
 
 They are intentionally prefixed with `TBD_` so they remain visibly non-authoritative until the relevant milestone revisits and promotes, revises, splits, or rejects them.
 
@@ -89,13 +92,13 @@ They should be re-opened at the relevant milestone and reconciled with the then-
 
 | Note | Current disposition |
 |---|---|
-| System architecture thesis | Kernel and curated boundary promoted **with revisions** in the authoritative system document; no package relocation or implementation claim. |
-| Shell thesis | Mediator placement and boundary-before-v0.1 prerequisite adopted; command list, NLP/model modes and implementation timing remain hypotheses. |
-| CLI/Web interaction | Shared semantic boundary and independent consumers adopted; “exhaustive CLI” does not permit exhaustive internal access. UX/transport details remain deferred. |
-| Source/provenance/citation | Pass 2 promotes revised Core semantics and rejects a global source hierarchy. Pass 3 retains POST_A3_PRE_A4_FOUNDATION as a runtime prerequisite; citation UX remains DEF-054. |
-| Monitoring | Shared-evidence/state-isolation and TM authority preserved; mandate/scheduler implementation remains deferred. |
-| Forecasting/ensemble/learning | A7 placement and confidence/calibration distinction preserved; algorithms, model registry and learning implementation remain hypotheses. |
-| Deployment | Revised local Python topology, state/security/replay boundaries and operational adoption gates promoted in TIAF_DEPLOYMENT_ARCHITECTURE.md. Original note remains historical; Level 3 components/profile names remain conditional TBDs. No runtime rollout. |
+| System architecture thesis | SUPERSEDE: system/deployment architecture now governs; preserve rationale, no package relocation. |
+| Shell thesis | PROMOTE_SELECTED_PRINCIPLES: mediator and governed boundary retained. Formal architecture after facade/before A5 planning; command-first v0.1 after deterministic A4, preferably before A5 implementation. NLP/mixed conditional, not approved by mode names. |
+| CLI/Web interaction | REVISE_AND_KEEP_TBD: independent consumers and shared semantics retained. Local command subset at Shell review; Web/transport at actual consumer/A8 need, no exhaustive internals. |
+| Source/provenance/citation | SPLIT: Core semantics are next offline foundation; DEF-054 minimal captured-source renderer with Shell v0.1, richer report/Web later; adapters remain separately deferred. |
+| Monitoring | REVISE_AND_KEEP_TBD: before A5 review bounded mandate/lifecycle/clocks/delta; A8 position binding, A9 intake, A10 durable scheduling. Initial on-demand A5 needs no daemon. |
+| Forecasting/ensemble/learning | REVISE_AND_KEEP_TBD: A7 architecture after deterministic A6 seam, with PIT/outcome/benchmark/calibration prerequisites. Algorithms/ensembles/learning remain hypotheses; A7 then informs enhanced A6. |
+| Deployment | SPLIT: local Python/state/security/replay design promoted; service/production options conditional at A8/A10 or demonstrated operational need. No runtime rollout. |
 
 The [A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
 previously classified all six notes as `REQUIRES_POST_A3_ARCH_CONSOLIDATION`

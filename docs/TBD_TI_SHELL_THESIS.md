@@ -1,5 +1,14 @@
 # TI_SHELL Thesis
 
+**Consolidation disposition: PROMOTE_SELECTED_PRINCIPLES (2026-09-11).**
+Retain mediator/same-process placement and governed typed capabilities, not the
+entire command/model product. Under the [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md),
+review Shell architecture after facade acceptance and before A5 planning;
+command-first v0.1 follows deterministic A4, preferably before A5 implementation
+but is not its hard dependency. NLP/mixed modes require separate model/interaction
+acceptance. Original suggestions below are an idea cache, not an implementation
+directive or permission to expose every engineering internal.
+
 ## 1. Thesis
 
 TI_SHELL should become one of TradingIntelligence's primary engineering and interactive tools.

@@ -427,13 +427,25 @@ same-proposition conflict and request bounded confirmation for material gaps.
 It does not specify A4 Agent roles, ranking weights, voting or arbitration policy.
 
 Any future model must consume only admitted structured evidence; cite resolvable
-claim/evidence IDs; keep facts, inference and hypotheses separate; expose opposing
+claim/evidence IDs for factual premises; keep facts, inference and hypotheses separate; expose opposing
 evidence; and retain uncertainty. It may propose a challenge, not invent a source,
 field, independence relation or resolving document. Source text is untrusted data,
 not instructions or tool authority. Model confidence is not source authority or
 calibrated probability. Preferring other evidence over an applicable authoritative
 field requires a cited, explicit scope/recency/authenticity reason and governed
 review, never intuition. No model can change capture history or increase grants.
+
+This does not forbid bounded open-world inquiry: model prior knowledge may
+motivate a material hypothesis or governed evidence request, but is not itself
+canonical factual evidence. A novel unverified hypothesis must not fabricate
+claim/source IDs or masquerade as an admitted premise. Additional information
+becomes usable only through ordinary acquisition, provenance, normalization,
+authority, entitlement, PIT and admission checks. A4's governed Planner bridge
+may then create a successor projection; post-cutoff acquisition requires a new
+run/as-of, never retroactive insertion. Default no-live/no-LLM and finite A4
+research bounds remain unchanged. Source text is data, not instructions.
+The [consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) specifies the
+offline foundation scope; it does not implement this research loop.
 
 Model-backed integration remains optional and deferred under DEF-052. Recorded
 model outputs are not deterministically regenerated during historical replay.

@@ -1,5 +1,13 @@
 # TBD - TI CLI / Web UI / Application Interaction Architecture
 
+**Consolidation disposition: REVISE_AND_KEEP_TBD (2026-09-11).** Shared semantics
+and independent consumers are approved, not the full UX/command inventory.
+The [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) brings the
+narrow Python facade before deterministic A4 and formal local command design to
+Shell review; only remote/service delivery remains conditional at A8. Revisit
+Web at an actual consumer need. Original later-A8 facade timing and "exhaustive"
+language below cannot override this scoped boundary. No product implementation.
+
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  
 > **Promotion rule:** Before becoming authoritative, this note must be revisited at the relevant milestone, reconciled with the then-current repository architecture, tested against implementation realities, and either promoted, revised, split, or rejected.  

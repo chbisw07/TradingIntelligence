@@ -14,7 +14,10 @@ is followed by the approved [A4 architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGH
 [Pass 3](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
 is followed by the completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md)
 and approved [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md).
-Full post-A3 consolidation/replanning is next. Use local Python and filesystem
+The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+selects bounded source foundation -> narrow local facade/lifecycle -> deterministic
+A4. Its open-world amendment permits model-prior hypotheses and governed evidence
+needs, never fabricated factual evidence or unbounded research. Use local Python and filesystem
 replay initially; service/worker/shared-store adoption requires concrete triggers,
 not a logical diagram. The separate bounded
 POST_A3_PRE_A4_FOUNDATION must be accepted before A4 runtime; it adds no numbered
@@ -397,8 +400,10 @@ owns final intelligence-aware ranking and recommendation.
 **Architecture approved; runtime not implemented.** See the
 [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md)
 and [pass-3 decision](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md).
-The separate source-semantic foundation precedes A4 runtime, not the remaining
-consolidation design review; deployment architecture is now approved without runtime changes.
+The separate source-semantic foundation is the next implementation and must
+precede A4 runtime. Consolidation/deployment design is complete; no runtime change
+is implied. The selected facade track follows foundation and precedes deterministic
+A4; the foundation itself needs neither facade nor service.
 
 ## Goal
 
@@ -430,6 +435,12 @@ Strong disagreement is itself information. A nominally bullish candidate may be 
 ---
 
 # TIAF_A5 — Position Intelligence MVP
+
+Entry remains accepted A4 and versioned position context, not A6/A7 or a daemon.
+Before implementation, review bounded WatchMandate/lifecycle, evidence-family
+clocks and delta semantics; first delivery can be on-demand. TM owns actual
+position state and operational priority. Durable scheduling remains gated
+separately. Shell v0.1 is useful before A5 but not a hard dependency.
 
 ## Goal
 
@@ -476,6 +487,10 @@ Support TradeMonitor's most important generic use case: an existing broker posit
 
 # TIAF_A6 — Option Expression Intelligence
 
+Two delivery tracks under A6/DEF-006: deterministic admissible candidates first;
+forecast-enhanced comparison only after admitted A7 evidence. A5 still precedes
+A6 because existing adopted positions need advice without new option selection.
+
 ## Goal
 
 Translate a validated underlying opportunity into an appropriate option contract.
@@ -491,7 +506,7 @@ Translate a validated underlying opportunity into an appropriate option contract
 - bid/ask spread
 - OI / option volume
 - event exposure
-- expected underlying move vs option cost
+- expected underlying move vs option cost only in the A7-informed follow-up
 - reject unattractive option expression
 
 ### Important separation
@@ -502,9 +517,21 @@ Translate a validated underlying opportunity into an appropriate option contract
 
 > TIAF can recommend a preferred CE/PE option, alternatives, and reasons—or return `NO_OPTION_TRADE`.
 
+Initial deterministic acceptance proves candidate validity, explicit policy/risk/
+liquidity/payoff assumptions and alternatives, not calibrated expected move, POP
+or optimized utility. Later higher-order reasoning may compare only A6-produced
+valid candidate IDs under admitted A7 forecasts; it neither manufactures
+contracts nor moves A6 selection, A7 calibration or TM authority into initial A4.
+
 ---
 
 # TIAF_A7 — Evaluation, Forecasting and Learning
+
+Architecture entry requires stable deterministic A4 and A5/A6 records, outcome
+definitions, permitted PIT datasets and baseline/null-model controls. Keep A7
+after initial deterministic A6; its outputs enable a separately versioned A6
+forecast-enhanced follow-up. Cross-candidate A3/A4 comparison/ranking (DEF-053)
+belongs in this evaluated scope, not an earlier unexplained leaderboard.
 
 ## Goal
 
@@ -531,6 +558,15 @@ TIAF improves decisions instead of merely producing convincing explanations.
 - return/price distributions and threshold probabilities with calibration
 - walk-forward and out-of-sample validation
 - candidate/champion promotion and rollback
+- universe/horizon-compatible cross-candidate comparison with selection-bias,
+  missing-candidate and tie policy; preserve A2 ranking as benchmark
+
+Ensembles/optimization/learning remain conditional on out-of-sample evidence,
+not a mandatory hierarchy. Captured prospective evaluation is valid within its
+scope; it does not close arbitrary historical PIT reconstruction (DEF-049).
+Model-backed Challenger engineering may precede A7 after separate role-aware
+gateway/privacy/pricing/replay/evaluation gates (DEF-052/055); this does not
+generate calibrated forecasts or require models for deterministic A4.
 
 ### Acceptance
 

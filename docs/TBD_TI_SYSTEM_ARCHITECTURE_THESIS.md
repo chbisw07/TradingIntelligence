@@ -1,5 +1,10 @@
 # TI System Architecture Thesis
 
+**Consolidation disposition: SUPERSEDE (2026-09-11).** This retained idea-cache
+document is not the current specification. The authoritative system/source/A4/
+deployment documents and [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
+govern; original examples below do not authorize runtime or product work.
+
 ## Executive thesis
 
 TradingIntelligence (TI) should be organized around a stable architectural center:
