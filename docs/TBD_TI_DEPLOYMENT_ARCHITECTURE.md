@@ -1,9 +1,26 @@
 # TBD — TI Deployment Architecture
 
-**Status:** Deferred design note  
-**Authority:** Non-authoritative / exploratory  
-**Purpose:** Preserve deployment ideas now so they can be reviewed, challenged, expanded, revised, split, promoted or rejected after the current post-A3 deep-architecture work.  
+**Status:** Reviewed; bounded architecture promoted with revisions, 2026-09-11 (Asia/Kolkata)
+
+**Authority:** Historical hypothesis, not a parallel specification
+
+**Purpose:** Preserve the original deployment proposals and their explicit disposition.
+
 **Do not treat this document as an implementation directive.**
+
+The authoritative [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md)
+now selects a trusted local Python runtime, isolated invocation state and
+filesystem replay, with explicit gates for later services/workers/storage.
+The [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md) classifies
+every original section in §4 and concludes `READY_FOR_POST_A3_CONSOLIDATION`.
+Level 3's infrastructure menu and illustrative profile names remain conditional
+TBDs; no service, queue, database, container or cloud runtime is implemented.
+
+Numbered sections below retain the original proposal for traceability. Their
+"future review"/"current decision" wording is historical, superseded by the
+review where indicated. Full post-A3 consolidation is next; the separate
+POST_A3_PRE_A4_FOUNDATION remains required before A4 runtime. No unrelated TBD
+or infrastructure rollout is authorized by this promotion.
 
 ## 1. Why this document exists
 

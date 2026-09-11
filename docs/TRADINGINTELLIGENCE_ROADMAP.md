@@ -10,9 +10,15 @@ logical TI_CORE and curated capability boundary. Its
 is followed by the approved
 [source semantic architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
 [Pass 2](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
-proceeds to pass 3 A4 architecture; a bounded semantic input-projection foundation
-must be accepted before A4 runtime. Citation UX remains DEF-054, not that Core
-prerequisite.
+is followed by the approved [A4 architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md).
+[Pass 3](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+is followed by the completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md)
+and approved [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md).
+Full post-A3 consolidation/replanning is next. Use local Python and filesystem
+replay initially; service/worker/shared-store adoption requires concrete triggers,
+not a logical diagram. The separate bounded
+POST_A3_PRE_A4_FOUNDATION must be accepted before A4 runtime; it adds no numbered
+major milestone. Citation UX remains DEF-054, not that Core prerequisite.
 A3 is frozen at `tiaf-a3-baseline`; A4 implementation has not begun. This design
 sequence does not add or renumber an A-milestone.
 
@@ -388,23 +394,27 @@ owns final intelligence-aware ranking and recommendation.
 
 # TIAF_A4 — Arbitration and Adversarial Review
 
+**Architecture approved; runtime not implemented.** See the
+[A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md)
+and [pass-3 decision](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md).
+The separate source-semantic foundation precedes A4 runtime, not the remaining
+consolidation design review; deployment architecture is now approved without runtime changes.
+
 ## Goal
 
 Prevent a single Agent from becoming an oracle and make disagreement explicit.
 
 ### Scope
 
-- independent bullish case
-- independent bearish/contrarian case
-- risk challenge
-- evidence-quality weighting
-- horizon relevance
-- freshness weighting
-- confidence formation
-- disagreement metric
-- `WAIT` / `NO_TRADE`
-- persistence of specialist opinions
-- unsupported factual-claim downgrading
+- unified Thesis Challenger: counter-thesis, evidence/assumption and risk critique
+- explicit deterministic Arbitrator with optional selective model proposals
+- scoped evidence admission, source independence, horizon and freshness checks
+- argument-based resolution without voting, averaged confidence or source/model prestige
+- separate evidence quality, thesis support, challenge severity and residual uncertainty
+- `SUPPORTIVE`, `WAIT`, `NO_TRADE`, `AVOID`, `CONFLICTED`, `ABSTAIN`, `INSUFFICIENT_EVIDENCE`
+- unchanged A2/A3 records, original A2 NO_TRADE and preserved dissent
+- bounded semantic evidence needs through existing Planner/gateway boundaries
+- recorded model replay, deterministic verification, cost/failure lineage
 
 ### Principle
 
@@ -412,7 +422,10 @@ Strong disagreement is itself information. A nominally bullish candidate may be 
 
 ### Acceptance
 
-> Every final recommendation exposes the evidence, dissent, confidence and freshness behind the decision.
+> Every A4 disposition exposes its surviving or rejected thesis, evidence-linked
+> challenges, dissent, invalidation conditions and residual uncertainty. No-LLM
+> execution remains supported; no position/expression/execution authority moves
+> into A4. Acceptance uses the explicit 18-case design corpus and failure/replay gates.
 
 ---
 
@@ -552,6 +565,12 @@ Connect intelligence to TradeMonitor without transferring authority.
 - TM outcome/execution feedback to evaluation harness
 - source/provenance preservation
 
+Hosting follows the [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md):
+library calls suit trusted prototypes; a separate local TI host is preferred
+for operational TM failure/credential isolation. Remote transport requires a
+cross-host need and security/compatibility acceptance, not merely this milestone.
+TM retains broker credentials and position/restart reconciliation.
+
 ### Authority rule
 
 TIAF never places, modifies or cancels broker orders.
@@ -615,6 +634,12 @@ Make TradingIntelligence a dependable long-running service.
 - historical replay
 - failure injection
 - operational observability
+
+Deliver durable jobs/storage, health/SLOs and recovery where operating requirements
+justify them. Earlier exposed consumers need the minimal admission, lifecycle,
+security and publication gates first; this does not move the entire A10 stack
+before A4. No mandatory database vendor, distributed topology, Docker or
+Kubernetes is selected by the deployment review.
 
 ### Acceptance
 

@@ -28,17 +28,23 @@ classifies every active deferral, reconciles live/non-live claims and concludes
 reconciles four omitted A3-specific governance records without changing that
 freeze decision.
 
-### Next — A4 challenge/arbitration architecture
+### Next — post-A3 consolidation and replanning
 
 The [post-A3 pass-1 review](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
 adopts the revised [TI_CORE/capability architecture](docs/TIAF_SYSTEM_ARCHITECTURE.md).
 [Pass 2](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
 now approves the [source-semantics foundation](docs/TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
-Next is pass 3: A4 Challenge / Arbitration / Higher-Intelligence Agent Architecture.
-The bounded source/comparability/input projection must be implemented before
-A4 runtime, not before that design pass. No facade, source projection, Shell or
-remote API is implemented by these documents; remaining TBD feature proposals
-are not automatically approved.
+[Pass 3](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+approves the [A4 challenge/arbitration architecture](docs/TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md):
+two bounded roles, deterministic arbitration and optional selective challenge.
+The [deployment review](docs/TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md)
+now approves the [bounded hosting architecture](docs/TIAF_DEPLOYMENT_ARCHITECTURE.md):
+local Python first, isolated request state and filesystem replay; service,
+worker and database adoption require concrete operational triggers.
+Next is full post-A3 consolidation and replanning, not a deployment rollout.
+The separate POST_A3_PRE_A4_FOUNDATION must precede A4 runtime, not further design.
+No facade, source projection, A4 runtime, Shell or remote API is implemented by
+these documents; unrelated TBD proposals are not automatically approved.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.

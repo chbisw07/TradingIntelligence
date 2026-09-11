@@ -22,6 +22,11 @@ Post-A3 pass 2 promotes the companion
 It governs the future A4 semantic projection; it changes no frozen A3 records
 and does not implement citation UX or source adapters.
 
+The approved [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) governs
+hosting beneath these logical semantics: local Python first, isolated requests,
+filesystem replay and conditional operational boundaries. It implements no
+facade or service and does not promote speculative production infrastructure.
+
 ## 1. Purpose and system ownership
 
 TI serves the user's economic interest through risk-adjusted expected utility:
@@ -243,8 +248,12 @@ instrument identity; provider identity remains legitimate provenance.
 
 Pass 2 has settled source authority, provenance and contradiction semantics.
 Its [review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
-proceeds to pass 3 A4 architecture, with a bounded semantic projection required
-before A4 runtime implementation. A4 should consume validated A3.9 intelligence with
+fed the now-approved [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md).
+The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+is followed by the completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
+Full post-A3 consolidation/replanning is next, with the separate `POST_A3_PRE_A4_FOUNDATION`
+semantic implementation gate still required before A4 runtime. A4 consumes
+validated A3.9 intelligence with
 references to the complete captured A3.8 bundle, active/superseded specialist
 opinions, unchanged A2 assessment/evidence and canonical source/confirmation/
 conflict summaries. A3.9 alone is not a substitute for its supporting audit.
@@ -254,7 +263,7 @@ DEF-003 is split into governed local capabilities and later external delivery
 without changing its stable ID or claiming implementation. Architecture is
 settled before A4; a narrow facade/catalog is recommended before consumer work,
 mandatory before Shell v0.1 or untrusted/live external access. It need not block
-the next architecture pass or force internal A4 development through HTTP.
+consolidation or force internal A4 development through HTTP.
 A8 retains TM integration and service/remote delivery as required; A10 retains
 production operations. Detailed timing and candidate acceptance criteria are
 in the [pass-1 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md).

@@ -13,6 +13,14 @@ into [source authority/provenance/contradiction architecture](TIAF_SOURCE_AUTHOR
 Its [section dispositions and prerequisites](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
 keep citation UX under DEF-054 and do not implement A4 or new source adapters.
 
+Pass 3 approves the [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md).
+Its [decision record](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+selected the now-completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
+The authoritative [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md)
+promotes a revised local target and conditional adoption gates, not speculative
+Level 3 infrastructure. Full consolidation is next; Shell/other TBD products
+and deployment runtime remain unimplemented.
+
 They are intentionally prefixed with `TBD_` so they remain visibly non-authoritative until the relevant milestone revisits and promotes, revises, splits, or rejects them.
 
 ## Documents
@@ -65,6 +73,12 @@ They are intentionally prefixed with `TBD_` so they remain visibly non-authorita
    - Common semantic error/version/auth models
    - Headless TI core and external visualization
 
+7. `TBD_TI_DEPLOYMENT_ARCHITECTURE.md`
+   - logical boundaries versus hosting/process topology
+   - shared evidence, isolated request state, authority and replay
+   - revised local target and adoption gates promoted; no deployment implementation
+   - all 16 original sections classified in the deployment review; production details remain conditional
+
 ## Authority
 
 These notes do not override the accepted repository architecture, contracts, tests, milestone documents, or tagged baselines.
@@ -78,9 +92,10 @@ They should be re-opened at the relevant milestone and reconciled with the then-
 | System architecture thesis | Kernel and curated boundary promoted **with revisions** in the authoritative system document; no package relocation or implementation claim. |
 | Shell thesis | Mediator placement and boundary-before-v0.1 prerequisite adopted; command list, NLP/model modes and implementation timing remain hypotheses. |
 | CLI/Web interaction | Shared semantic boundary and independent consumers adopted; “exhaustive CLI” does not permit exhaustive internal access. UX/transport details remain deferred. |
-| Source/provenance/citation | Pass 2 promotes revised Core semantics and rejects a global source hierarchy. All 28 sections are classified in its review; citation UX remains DEF-054. Next is pass 3 A4 architecture, with bounded semantic-projection implementation required before A4 runtime. |
+| Source/provenance/citation | Pass 2 promotes revised Core semantics and rejects a global source hierarchy. Pass 3 retains POST_A3_PRE_A4_FOUNDATION as a runtime prerequisite; citation UX remains DEF-054. |
 | Monitoring | Shared-evidence/state-isolation and TM authority preserved; mandate/scheduler implementation remains deferred. |
 | Forecasting/ensemble/learning | A7 placement and confidence/calibration distinction preserved; algorithms, model registry and learning implementation remain hypotheses. |
+| Deployment | Revised local Python topology, state/security/replay boundaries and operational adoption gates promoted in TIAF_DEPLOYMENT_ARCHITECTURE.md. Original note remains historical; Level 3 components/profile names remain conditional TBDs. No runtime rollout. |
 
 The [A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
 previously classified all six notes as `REQUIRES_POST_A3_ARCH_CONSOLIDATION`

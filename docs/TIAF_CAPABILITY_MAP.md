@@ -182,8 +182,8 @@ it does not overload corporate-action or earnings-call semantics.
 | Instrument-aware Planner / orchestration | ACCEPTED / `tiaf-a3.8` | [A3.8 implementation](TIAF_A3_8_PLANNER_SPECIALIST_ORCHESTRATION.md): capability/dependency policy, bounded parallelism, shared evidence/budget reservations, selective enrichment/confirmation/research and reruns, partial stops, isolated LangGraph and replay; [offline acceptance](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md); no investment-decision authority |
 | Structured underlying opportunity intelligence | ACCEPTED / `tiaf-a3.9` | [A3.9 design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md): captured A3.8 input, typed contributions and qualified bias, explicit observation state, preserved A2/conflicts/gaps, separate confidence, cited reasons and pure assembly replay; cross-candidate analysis/ranking remains DEF-053 and report rendering DEF-054 |
 | Agent replay / A2 comparison / cost/failure hardening | ACCEPTED / `tiaf-a3.10` | [A3.10 implementation](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md): content-addressed capture, explicit replay modes, observational comparison, unknown-cost semantics, lossless failures, 14-case synthetic corpus and closure-readiness seam; monetary pricing knowledge remains DEF-055; [study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md) |
-| A4 source/comparability/independence input projection | PLANNED | Core semantics approved in [post-A3 pass 2](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md); bounded implementation required before A4 runtime; frozen A3 records unchanged, citation rendering remains DEF-054 |
-| Arbitration / adversarial resolution | PLANNED | A4; next design is post-A3 pass 3, consuming the approved source semantics |
+| A4 source/comparability/independence input projection | PLANNED | Core semantics approved in [post-A3 pass 2](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md); pass 3 assigns the separate POST_A3_PRE_A4_FOUNDATION implementation gate before A4 runtime; not implemented, frozen A3 unchanged, citation rendering remains DEF-054 |
+| Arbitration / adversarial resolution | PLANNED | [A4 architecture approved](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md): unified Challenger plus deterministic Arbitrator; optional model proposals, no votes/averaged confidence, preserved dissent and A2 NO_TRADE; runtime not implemented |
 | Position intelligence | PLANNED | A5 |
 | Option strategy comparison/selection | PLANNED | A6; DEF-006 |
 | Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
@@ -199,8 +199,8 @@ it does not overload corporate-action or earnings-call semantics.
 | Primary quote/OHLCV/F&O fallback and operational health arbitration | DEFERRED | Dhan data surface; DEF-008/DEF-011. Separate MI evidence fallback is implemented in A3.6.1 |
 | Scanner | EXTERNAL/INTEGRATION | Future TIAF scanner boundary |
 | UI / dashboard | FUTURE | Application layer; service dependency DEF-003 |
-| Governed local capability facade/catalog | PLANNED | DEF-003 local track; architecture settled post-A3, narrow implementation recommended before A4 and required before Shell/public consumer use; not implemented by the design pass |
-| Remote API / service delivery | PLANNED | DEF-003 delivery track; A8 integration as required, A10 operations; same intelligence path |
+| Governed local capability facade/catalog | PLANNED | DEF-003 local track; narrow Python facade with trusted composition/lifecycle, isolated invocations and single-writer capture recommended before A4, required before Shell/public consumer use; not implemented |
+| Remote API / service delivery | PLANNED | DEF-003 delivery track; [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) makes local/remote hosting conditional on real consumer/isolation needs; A8 integration, A10 operations; same intelligence path, no service now |
 | Alerts | FUTURE | Application/policy layer; runtime dependency DEF-010 |
 | Human-facing explanation/citation reports | DEFERRED | Internal lineage exists; governed rendering remains DEF-054 |
 | Cross-candidate A3 opportunity comparison/ranking | DEFERRED | Single-subject A3.9 product remains canonical; DEF-053 |

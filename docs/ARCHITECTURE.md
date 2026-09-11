@@ -13,6 +13,18 @@ revisions and preserved contradictions for future A4 admission. The
 [pass-2 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
 proceeds to pass 3 A4 architecture; the proposed projection is not implemented.
 
+The approved [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md)
+now defines two bounded roles, deterministic arbitration, optional selective
+challenge, preserved dissent and explicit non-action dispositions. The
+[pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+led to the [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
+The approved [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) chooses
+one trusted local Python application runtime, isolated invocations and a single
+filesystem writer; existing adapter-local MCP subprocesses remain. Service,
+worker and shared-storage deployment is conditional, not implemented.
+Full post-A3 consolidation is next. The source foundation and A4 runtime
+remain unimplemented; no unrelated TBD is promoted.
+
 TIAF is intended to occupy an intelligence boundary between sources of market
 candidates and the system that governs risk and execution:
 

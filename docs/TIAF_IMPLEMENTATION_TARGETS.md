@@ -415,13 +415,39 @@ boundary; this is not runtime implementation or a re-freeze of A3.
 [Pass 2 — Source Authority / Provenance / Contradiction Semantics](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
 concludes `READY_FOR_DEEP_ARCH_PASS_3` and promotes its
 [semantic architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
-Next: **Post-A3 Deep Architecture Pass 3 — A4 Challenge / Arbitration /
-Higher-Intelligence Agent Architecture**. Before A4 runtime, implement the
-bounded source-identity/scoped-authority, comparability, dispute/independence,
-confirmation and input-projection contracts with captured replay. This is not
-required before pass 3 design and must not expand into citation UX, Shell,
-new providers or a second graph/replay system. DEF-054 remains presentation work;
-no new deferral ID or implemented status is added.
+[Pass 3 — A4 Challenge / Arbitration / Higher-Intelligence Agents](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+concludes `READY_FOR_DEPLOYMENT_ARCH_REVIEW` and approves the
+[A4 architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md).
+[Deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md) concludes
+`READY_FOR_POST_A3_CONSOLIDATION` and approves the bounded
+[deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md): one trusted local
+Python application runtime, request-local analysis and single-writer filesystem
+replay. Existing adapter-local subprocesses remain; no new service is required.
+Next: **Post-A3 Consolidation and Replanning — Accepted Architecture, TBD
+Dispositions, Deferral Reconciliation and Bounded Implementation Plan**.
+
+Deployment work must not delay the in-process semantic foundation. The separate
+DEF-003 local facade/lifecycle slice precedes Shell/public consumers; operational
+TM may later justify a separate local TI host. A8 owns TM/conditional service,
+A9 scanners and A10 justified durable operations. Multi-writer storage, shared
+quotas, background jobs and remote exposure require their own acceptance gates;
+none is implemented or required for the next design pass.
+
+Before A4 runtime, separately implement **POST_A3_PRE_A4_FOUNDATION**:
+source identity/scoped authority and bindings; comparability/dispute/independence;
+confirmation and semantic input projection; and captured replay/contract tests.
+This is a bounded prerequisite implementation package, not a new numbered major
+milestone or implemented first A4 sub-milestone. It does not block further design
+and must not expand into citation UX, Shell, adapters or a second graph/replay
+system. DEF-054 remains presentation work; no deferral ID/status is changed.
+
+After foundation acceptance, A4 runtime can be separately authorized in bounded
+steps: typed thesis/challenge/result contracts; deterministic Challenger and
+Arbitrator; semantic-need integration with the existing Planner; then cumulative
+replay/cost/failure and the 18-case acceptance corpus. Optional model execution
+requires an additive role-aware gateway bridge and approved adapter/configuration,
+privacy/pricing and validation policy; it is not mandatory for deterministic A4
+or an implicit delivery of DEF-052. No code is implemented by these designs.
 DEF-003 has separate local and remote delivery tracks under the same stable ID:
 a small local facade/catalog is recommended before A4 and required before its
 Shell/public consumers; remote service/TM delivery remains A8 as required.
