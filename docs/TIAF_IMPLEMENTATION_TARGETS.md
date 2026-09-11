@@ -426,7 +426,11 @@ replay. Existing adapter-local subprocesses remain; no new service is required.
 The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
 concludes `READY_FOR_POST_A3_FOUNDATION_IMPLEMENTATION` and design-only
 `READY_TO_TAG_POST_A3_ARCHITECTURE` (no tag created).
-Next: **POST_A3_PRE_A4_FOUNDATION — Source Semantics, A4 Input Projection and Replay Integrity**.
+Complete / accepted: **POST_A3_PRE_A4_FOUNDATION — Source Semantics,
+A4 Input Projection and Replay Integrity**. See the
+[implementation contract](TIAF_POST_A3_PRE_A4_FOUNDATION.md) and
+[acceptance study](STUDY_POST_A3_PRE_A4_FOUNDATION_ACCEPTANCE.md). Frozen A2/A3
+records remain unchanged and A4 runtime has not begun.
 
 Deployment work must not delay the in-process semantic foundation. The separate
 DEF-003 local facade/lifecycle slice precedes Shell/public consumers; operational
@@ -435,13 +439,12 @@ A9 scanners and A10 justified durable operations. Multi-writer storage, shared
 quotas, background jobs and remote exposure require their own acceptance gates;
 none is implemented or required for the next offline semantic package.
 
-Before A4 runtime, separately implement **POST_A3_PRE_A4_FOUNDATION**:
-source identity/scoped authority and bindings; comparability/dispute/independence;
-confirmation and semantic input projection; and captured replay/contract tests.
-This is a bounded prerequisite implementation package, not a new numbered major
-milestone or implemented first A4 sub-milestone. It does not block further design
-and must not expand into citation UX, Shell, adapters or a second graph/replay
-system. DEF-054 remains presentation work; no deferral ID/status is changed.
+The accepted **POST_A3_PRE_A4_FOUNDATION** provides source identity/scoped
+authority and bindings; comparability/dispute/independence; confirmation and
+semantic input projection; and captured replay/contract tests. It is a bounded
+prerequisite package, not a numbered major milestone or an A4 runtime
+sub-milestone. Citation UX, Shell, adapters and another graph/store remain out of
+scope. DEF-054 remains presentation work; no deferral ID/status changed.
 
 After foundation acceptance, A4 runtime can be separately authorized in bounded
 steps: typed thesis/challenge/result contracts; deterministic Challenger and
@@ -462,7 +465,7 @@ and consumes calibrated forecast evidence but never asks an LLM to manufacture
 probabilities; A7 owns forecast generation, out-of-sample calibration,
 evaluation, promotion, and rollback.
 
-### Next implementation entry and exit
+### Completed foundation entry and exit
 
 The consolidation §7 is the authoritative bounded work specification:
 F1 source identity/scoped authority/policy bindings; F2 proposition/comparability,
@@ -472,7 +475,8 @@ F01–F16, list/JSON/tuple and aware Asia/Kolkata contracts, typed ID/value/scop
 checks and unchanged parent captures. No live validation is required; no
 acquisition/model/facade/A4 roles/UI/new graph/store are in scope. Run focused
 foundation/current-boundary tests and full pytest/compile/ruff/mypy/diff gates.
-Exit only as `READY_TO_ACCEPT_POST_A3_PRE_A4_FOUNDATION` or `FIX_REQUIRED`.
+The gate completed as `READY_TO_ACCEPT_POST_A3_PRE_A4_FOUNDATION`; the separately
+governed narrow local facade/lifecycle is next in the selected sequence.
 
 ### Subsequent planned tracks (not implemented)
 

@@ -20,7 +20,7 @@ A4. Its open-world amendment permits model-prior hypotheses and governed evidenc
 needs, never fabricated factual evidence or unbounded research. Use local Python and filesystem
 replay initially; service/worker/shared-store adoption requires concrete triggers,
 not a logical diagram. The separate bounded
-POST_A3_PRE_A4_FOUNDATION must be accepted before A4 runtime; it adds no numbered
+POST_A3_PRE_A4_FOUNDATION is accepted before A4 runtime; it adds no numbered
 major milestone. Citation UX remains DEF-054, not that Core prerequisite.
 A3 is frozen at `tiaf-a3-baseline`; A4 implementation has not begun. This design
 sequence does not add or renumber an A-milestone.
@@ -400,9 +400,9 @@ owns final intelligence-aware ranking and recommendation.
 **Architecture approved; runtime not implemented.** See the
 [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md)
 and [pass-3 decision](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md).
-The separate source-semantic foundation is the next implementation and must
-precede A4 runtime. Consolidation/deployment design is complete; no runtime change
-is implied. The selected facade track follows foundation and precedes deterministic
+The separate [source-semantic foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is
+implemented and accepted; no numbered A4 runtime is implied. The selected facade
+track follows the foundation and precedes deterministic
 A4; the foundation itself needs neither facade nor service.
 
 ## Goal

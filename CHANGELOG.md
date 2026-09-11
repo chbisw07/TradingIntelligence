@@ -4,6 +4,15 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented the additive POST_A3_PRE_A4_FOUNDATION under
+  `tiaf.source_semantics`: distinct source/provider/origin/document/occurrence
+  identity, scoped authority, typed propositions/assertions/admissions,
+  deterministic comparison and append-only disputes, dimensioned independence,
+  field-level confirmation projection, captured A4 semantic input projection,
+  policy comparison and offline successor replay. Frozen A2/A3 schemas and
+  hashes remain unchanged; no A4 runtime, provider, model or execution authority
+  was added.
+
 - Audited all accepted A3 sub-milestone records for deferred capabilities that
   predated stable governance IDs. Added DEF-052 through DEF-055 for production
   model-backed reasoning, cross-candidate A3 opportunity analysis, user-facing

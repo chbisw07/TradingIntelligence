@@ -3,7 +3,9 @@
 ## Status and authority
 
 **Approved architecture, post-A3 pass 3, 2026-09-11 (Asia/Kolkata).** Runtime
-is not implemented. The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+is not implemented. The prerequisite
+[source-semantic foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is implemented;
+that does not constitute A4 runtime. The [pass-3 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
 records the alternatives, acceptance corpus and foundation gate. This design
 operates beneath [TI_CORE/capability architecture](TIAF_SYSTEM_ARCHITECTURE.md)
 and the approved [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
@@ -425,9 +427,9 @@ narrow local facade/lifecycle -> deterministic A4. Internal projection work has
 no facade dependency; no remote service is required. Historical pass-3 next-step
 wording is superseded by this transition plan, not rewritten retroactively.
 
-Choose one **POST_A3_PRE_A4_FOUNDATION** implementation package before A4 runtime,
-not an A4 reasoning sub-milestone retroactively described as already begun.
-It delivers only pass-2 source identity/authority, comparability, dispute lifecycle,
+The accepted [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) is
+the required package before A4 runtime, not an A4 reasoning sub-milestone. It
+delivers only pass-2 source identity/authority, comparability, dispute lifecycle,
 independence, confirmation projection, semantic input/capture and scoped policy
 bindings with deterministic fixtures and replay tests. It does not implement
 A4 roles, public facade, Shell, adapters, citation UX or source scoring.

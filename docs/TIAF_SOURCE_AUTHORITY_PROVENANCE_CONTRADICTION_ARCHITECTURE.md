@@ -3,6 +3,9 @@
 ## Status and authority
 
 **Approved semantic architecture, post-A3 pass 2, 2026-09-11 (Asia/Kolkata).**
+Its bounded contracts/projection/replay subset is implemented in the
+[POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md); A4 reasoning is
+still absent.
 This is the source-semantics companion to
 [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md). The
 [pass-2 review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
@@ -371,8 +374,10 @@ cannot support fabricated corroboration or resolution.
 
 Approve an additive, deterministic `A4SemanticInputProjection` design role.
 A3.9 alone is too compact for general source-aware challenge; the complete A3.8/
-A3.10 capture plus a typed projection avoids changing frozen A3.9. This is not
-the universal public capability envelope and is not implemented now.
+A3.10 capture plus a typed projection avoids changing frozen A3.9. The bounded
+projection is now implemented by
+[POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md); it is not the
+universal public capability envelope or an A4 runtime.
 
 | Component | Minimum content and admission rule |
 |---|---|
@@ -396,8 +401,9 @@ excuse to infer authoritative support.
 
 ## 14. Replay and policy comparison
 
-Reuse A3.10 content-addressed capture/integrity and recorded-versus-deterministic-
-verification patterns. A future A4 parent capture must reference the unchanged
+The foundation reuses A3.10 content-addressed capture/integrity and
+recorded-versus-deterministic-verification patterns. A future A4 parent capture
+must reference the unchanged
 A3 package and persist its own projection, authority/comparison/independence/
 materiality policies, eligible revisions, confirmation and dispute-state snapshot.
 Do not insert fields into frozen A3.10 schema `1.0` or alter child hashes. A4

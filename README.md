@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A3 baselined; post-A3 architecture
+### Present — A3 baselined; pre-A4 semantic foundation implemented
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -28,7 +28,7 @@ classifies every active deferral, reconciles live/non-live claims and concludes
 reconciles four omitted A3-specific governance records without changing that
 freeze decision.
 
-### Next — bounded pre-A4 source-semantic foundation
+### Pre-A4 source-semantic foundation
 
 The [post-A3 pass-1 review](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
 adopts the revised [TI_CORE/capability architecture](docs/TIAF_SYSTEM_ARCHITECTURE.md).
@@ -46,11 +46,13 @@ selects POST_A3_PRE_A4_FOUNDATION next, then a narrow local facade/lifecycle and
 deterministic A4. Bounded open-world reasoning permits governed research needs,
 not model memory promoted to evidence. A5–A10 retain their major order; A6 gets
 deterministic candidates first and forecast-enhanced comparison after A7.
-The architecture is ready for a design-only checkpoint/tag after review; no
-tag or runtime implementation is created by these documents.
-The separate POST_A3_PRE_A4_FOUNDATION must precede A4 runtime, not further design.
-No facade, source projection, A4 runtime, Shell or remote API is implemented by
-these documents; unrelated TBD proposals are not automatically approved.
+The architecture checkpoint precedes this implementation; no new tag is created
+by the foundation work.
+The separate [POST_A3_PRE_A4_FOUNDATION](docs/TIAF_POST_A3_PRE_A4_FOUNDATION.md)
+now implements the bounded source/proposition/authority/dispute contracts,
+deterministic A4 input projection and provider-free replay required before A4.
+No facade, A4 runtime, Shell or remote API is implemented; unrelated TBD
+proposals are not automatically approved.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.

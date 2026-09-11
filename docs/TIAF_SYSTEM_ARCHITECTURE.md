@@ -19,8 +19,9 @@ the [roadmap](TRADINGINTELLIGENCE_ROADMAP.md) owns delivery sequence and the
 
 Post-A3 pass 2 promotes the companion
 [source authority/provenance/contradiction architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
-It governs the future A4 semantic projection; it changes no frozen A3 records
-and does not implement citation UX or source adapters.
+Its bounded semantics are implemented by the additive
+[pre-A4 foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md), which changes no frozen
+A3 records and does not implement citation UX, source adapters or A4 runtime.
 
 The approved [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) governs
 hosting beneath these logical semantics: local Python first, isolated requests,
@@ -31,7 +32,9 @@ facade or service and does not promote speculative production infrastructure.
 
 The [post-A3 consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) owns
 the current transition plan: bounded source foundation, narrow local facade,
-then deterministic A4; all remain unimplemented by these design documents.
+then deterministic A4. The first step is now implemented by the additive
+[pre-A4 foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md); the facade and A4 runtime
+remain unimplemented.
 
 TI serves the user's economic interest through risk-adjusted expected utility:
 evidence, understandable deterministic computation, bounded interpretation,
