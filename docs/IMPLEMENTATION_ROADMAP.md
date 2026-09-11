@@ -10,6 +10,12 @@ in `TIAF_A5` and `TIAF_A6`. Evaluation becomes a dedicated capability in
 `TIAF_A7` before external integration with TradeMonitor (`TIAF_A8`) and scanners
 (`TIAF_A9`). `TIAF_A10` completes production hardening.
 
+After the frozen A4 baseline, the approved
+[command-first TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) defines a
+small unnumbered local engineering-interface implementation before A5. It is
+useful but not an A5 prerequisite and adds no NLP, Web, model, live-acquisition
+or broker authority.
+
 ## Acceptance philosophy
 
 Every milestone should have explicit contracts, representative tests, and

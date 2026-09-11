@@ -14,11 +14,15 @@ Frozen A1/A2/A3 behavior, schemas and fingerprints remain unchanged.
 The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) confirms that
 the implemented in-process A4.1/A4.2 layers fit this Level 1 design without
 creating a service, worker, queue, database or remote interface.
+The approved [TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) now fixes
+the next consumer placement at Level 1: same-process, caller-bound and transient,
+with no new transport or runtime implementation in the architecture pass.
 
 The local target and promotion gates are approved architecture. Level 2/3
 components are conditional options, not approved procurement, infrastructure or
-implementation. This design document adds no facade, Shell, Web, foundation or
-A4 runtime; separately accepted implementation records own those capabilities.
+implementation. This design document adds no facade, Shell runtime, Web,
+foundation or A4 runtime; separately accepted implementation records own those
+capabilities.
 
 ## 1. Deployment thesis and near-term target
 
@@ -70,13 +74,15 @@ in a host name or transport.
 
 ## 3. Consumer placement and process criteria
 
-**TI_SHELL:** initially in the same trusted application process as facade/Core,
-when separately implemented. Session context is application-owned memory:
-current symbol, last-result reference, preferences and interaction history.
+**TI_SHELL:** the approved v0.1 architecture places it in the same trusted
+application process as facade/Core when separately implemented. Session context
+is application-owned memory: requested typed defaults, one exact last result
+and a bounded redacted invocation ledger.
 Each invocation materializes a fresh typed subject/objective/horizon/as-of and
 rechecks grants. Session defaults and an Interaction Agent cannot self-grant
 live/model/admin access. User/developer modes are presentation, not authorization.
-Engineering trace/replay is an explicitly admitted subset. Optional persisted
+v0.1 has command mode only; engineering replay verification is explicitly
+admitted and trace is limited to safe returned facade metadata. Optional persisted
 preferences must not restore expired grants or promote an old result to fresh
 evidence. Shell crash may lose the session/in-flight request; completed captures
 survive if successfully stored. A later remote Shell keeps the same semantics.

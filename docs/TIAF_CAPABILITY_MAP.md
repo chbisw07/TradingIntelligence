@@ -9,7 +9,9 @@ The [consolidated transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
 selected foundation -> narrow local facade/lifecycle -> deterministic A4. All
 three are implemented, and the
 [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) finds the combined
-A4.1/A4.2 layer freeze-ready. A7 later informs a separately
+A4.1/A4.2 layer frozen at `tiaf-a4-baseline`. The approved
+[TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) is the next local
+consumer boundary; its runtime is not implemented. A7 later informs a separately
 versioned forecast-enhanced A6 follow-up; no major milestone is renumbered.
 
 Statuses describe repository reality:
@@ -213,7 +215,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Human-facing explanation/citation reports | PLANNED / BOUNDED SLICE | DEF-054 minimal captured-source rendering with command-first Shell after A4; richer report/Web UX remains deferred; no re-research |
 | Cross-candidate A3 opportunity comparison/ranking | DEFERRED | DEF-053 A7 evaluation design after stable per-candidate A3/A4 products; A2 ranking remains benchmark |
 | Bounded open-world A4 research loop | IMPLEMENTED / A4 FREEZE READY | [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) admits provider-neutral needs, executes at most one existing A3.8 enrichment round, requires normalized source-semantic crosswalk, creates at most one later successor, stops on no information/upstream refresh and replays offline; optional model challenge and public live facade remain absent |
-| TI_SHELL command-first engineering v0.1 | PLANNED NEXT | Formal local architecture follows A4 closure before A5; expose only governed facade commands/replay/rendering, with no hard A5 dependency or automatic NLP/model permission |
+| TI_SHELL command-first engineering v0.1 | ARCHITECTURE APPROVED / IMPLEMENTATION NEXT | [Authoritative design](TIAF_TI_SHELL_ARCHITECTURE.md): same-process command adapter over the seven governed facade capabilities, transient session, exact JSON, bounded explain/trace and no A5 dependency, NLP/model/live/private/broker access or remote transport; no runtime yet |
 | Baseline replay / validation | IMPLEMENTED | A2.10 captured-snapshot foundation |
 | Strategy backtest | DEFERRED | Requires strategy/execution model; DEF-025 |
 | Optimization | DEFERRED | Evaluation layer; DEF-024 |

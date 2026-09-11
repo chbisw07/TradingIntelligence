@@ -1,18 +1,17 @@
 # TI_SHELL Thesis
 
-**Consolidation disposition: PROMOTE_SELECTED_PRINCIPLES (2026-09-11).**
-Retain mediator/same-process placement and governed typed capabilities, not the
-entire command/model product. Under the [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md),
-review Shell architecture after facade acceptance and before A5 planning;
-command-first v0.1 follows deterministic A4, preferably before A5 implementation
-but is not its hard dependency. NLP/mixed modes require separate model/interaction
-acceptance. Original suggestions below are an idea cache, not an implementation
-directive or permission to expose every engineering internal.
-The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) has now
-satisfied that timing gate and selects the bounded command-first architecture
-pass as the next milestone. Only accepted facade commands, session semantics,
-replay/explanation projection and minimal captured-source rendering are in that
-planned slice; this TBD still does not authorize implementation.
+**Disposition: PARTIALLY_SUPERSEDED_BY_AUTHORITATIVE_ARCHITECTURE (2026-09-11).**
+The [Shell architecture review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
+classifies all 33 sections and the approved
+[command-first architecture](TIAF_TI_SHELL_ARCHITECTURE.md) now governs v0.1.
+It promotes the local mediator, typed facade boundary, transient context,
+discovery, replay, explain/trace projection, authority and testing principles
+with revisions. It supersedes the earlier broad v0.1 list and rejects
+multi-symbol/private-operation scope for v0.1. NLP, mixed mode, Interaction
+Agent, model laboratory, typed pipes, dry-run/show-plan and richer product ideas
+remain TBD and are not implicitly approved. The historical suggestions below
+are an idea cache, not an implementation directive or permission to expose
+engineering internals.
 
 ## 1. Thesis
 

@@ -1,15 +1,16 @@
 # TBD - TI CLI / Web UI / Application Interaction Architecture
 
-**Consolidation disposition: REVISE_AND_KEEP_TBD (2026-09-11).** Shared semantics
-and independent consumers are approved, not the full UX/command inventory.
-The [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) brings the
-narrow Python facade before deterministic A4 and formal local command design to
-Shell review; only remote/service delivery remains conditional at A8. Revisit
-Web at an actual consumer need. Original later-A8 facade timing and "exhaustive"
-language below cannot override this scoped boundary. No product implementation.
-The [A4 closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) now plans the local
-command subset as a separate pre-A5 Shell architecture pass. Web, remote
-transport, and exhaustive internal exposure remain TBD.
+**Disposition: SPLIT_LOCAL_COMMANDS; WEB_REMAINS_TBD (2026-09-11).** The
+[Shell architecture review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
+promotes only the local command subset into the authoritative
+[TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md): typed facade operations,
+independent consumers, shared semantic errors and structured output. “Exhaustive
+CLI” is revised to mean broad coverage of permitted curated capabilities, never
+private internals. Web workflows, remote transport, browser security,
+visualization, async jobs and multi-user/product choices remain TBD for an actual
+consumer/A8 need. Web must call the governed capability boundary directly; it
+must not invoke Shell or parse its stdout. No Shell or Web runtime is implemented
+by this split.
 
 > **Status:** TBD / temporary exploratory design note  
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  

@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — A4 freeze readiness and the pre-A5 Shell boundary
+### Present — frozen A4 and approved pre-A5 Shell architecture
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -66,12 +66,15 @@ not published through the facade. Neither slice adds a remote API, Shell, model,
 position, option-expression, forecast or broker authority.
 A4.1 and A4.2 are reviewed together in the
 [A4 major milestone closure](docs/TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md),
-which finds the deterministic, bounded and replayable A4 layer ready for the
-recommended `tiaf-a4-baseline` tag after a separately authorized commit/tag.
+which accepted the deterministic, bounded and replayable A4 layer now frozen at
+`tiaf-a4-baseline` (`494d968`).
 The optional model-backed Challenger remains deferred. The preferred next slice
-is a command-first local TI_SHELL architecture pass before A5; it may expose
-only the already governed facade and does not add NLP, remote transport or
-intelligence policy.
+is now approved by the
+[POST_A4_PRE_A5 Shell review](docs/TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
+and [authoritative TI_SHELL architecture](docs/TIAF_TI_SHELL_ARCHITECTURE.md): a
+command-first, same-process mediator over only the seven governed facade
+capabilities. Runtime remains unimplemented. NLP, models, live acquisition,
+remote transport and intelligence policy remain outside v0.1.
 A4 retains arbitration/recommendations; position,
 option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.

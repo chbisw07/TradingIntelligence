@@ -92,11 +92,16 @@ semantics, A4 input projection and replay integrity; no A4 runtime.
 capability catalog, trusted admission/lifecycle and captured replay; no live
 operation, transport or Shell.
 
-**TIAF_A4.1 — Deterministic Challenge / Arbitration: IMPLEMENTED / ACCEPTANCE
-CANDIDATE.** Typed premises/theses/findings, deterministic Challenger and
-Arbitrator, seven non-action dispositions, offline replay/verification and the
-captured-read `a4.evaluate` facade capability. No live/model/acquisition,
-position, expression, forecast or execution authority.
+**TIAF_A4 — Challenge / Arbitration: COMPLETE / BASELINED** at tag
+`tiaf-a4-baseline`. A4.1 supplies deterministic premises/theses/findings,
+non-action dispositions, offline replay and captured-read facade evaluation;
+A4.2 supplies one governed internal enrichment/successor cycle. No public live,
+model, position, expression, forecast or execution authority was added.
+
+**POST_A4_PRE_A5 TI_SHELL: ARCHITECTURE APPROVED / IMPLEMENTATION NEXT.** The
+command-first local design exposes only the governed facade with transient
+session and bounded rendering. No Shell runtime, NLP, Web or new capability is
+implemented by the design pass.
 
 ## Deferral governance
 
@@ -315,7 +320,7 @@ records are `TIAF_A2_FOUNDATION_BASELINE.md` and
 
 **Acceptance:** reproducible non-AI rankings exist as a benchmark the Agent system must later beat.
 
-## TIAF_A3 — Specialist Intelligence — Ready to Freeze
+## TIAF_A3 — Specialist Intelligence — Complete / Baselined
 
 Accepted bounded capabilities include Technical/Market Structure,
 Fundamental/Company Quality, News/Catalyst/Event, Relative, Sector/Rotation,
@@ -360,9 +365,8 @@ see [`TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md`](TIAF_A3_6_1_MARKET_IN
 A3.6.2 through A3.10 are accepted at their corresponding tags. The separate
 [A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reconciles
 the full inventory, live/non-live evidence and all active deferrals, and
-concludes `READY_TO_FREEZE_A3`. The recommended major tag is
-`tiaf-a3-baseline`; post-A3 architecture consolidation, not A4 implementation,
-is the next review.
+concludes `READY_TO_FREEZE_A3`. The major baseline is frozen at
+`tiaf-a3-baseline`; later foundation, facade and A4 work remain additive.
 
 **Acceptance:** a bounded A2-screened set can produce zero or more replayable,
 cited underlying-opportunity records with separate specialist opinions,
@@ -372,15 +376,18 @@ emit `CE`/`PE`; A6 owns option expression.
 
 ## TIAF_A4 — Arbitration and Adversarial Review
 
-- independent bull/bear challenge
-- disagreement visibility
-- evidence-quality weighting
-- freshness-aware arbitration
-- confidence calibration foundation
-- explicit `WAIT` / `NO_TRADE`
-- persistent specialist opinions for later scoring
+- deterministic primary/counter thesis construction
+- evidence-linked challenge and non-voting arbitration
+- preserved disagreement, gaps and residual uncertainty
+- explicit non-action dispositions
+- governed one-round A3.8 evidence enrichment and successor projection
+- exact offline replay, fingerprints and known-zero model usage
 
-**Acceptance:** no single fluent Agent becomes an oracle; final recommendations expose consensus, disagreement and evidence.
+**Acceptance:** A4.1/A4.2 are complete and frozen at `tiaf-a4-baseline`; no
+single fluent Agent becomes an oracle, and dispositions expose surviving
+theses, disagreement and evidence. Optional model challenge remains deferred.
+The approved pre-A5 [TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) is an
+unnumbered consumer slice, not A4 expansion or an A5 dependency.
 
 ## TIAF_A5 — Position Intelligence MVP
 

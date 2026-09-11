@@ -14,10 +14,11 @@ deterministic captured-read evaluation. The internal
 adds one governed A3.8 enrichment/successor cycle without expanding the facade;
 no Shell or remote service exists.
 The [A4 major closure review](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
-audits both slices as one L6 layer and finds them ready for the recommended
-`tiaf-a4-baseline` freeze. Model challenge remains optional/deferred; the next
-preferred boundary is a command-first local Shell architecture pass, not A4
-runtime expansion.
+audits both slices as one L6 layer, now frozen at `tiaf-a4-baseline` (`494d968`).
+The [POST_A4_PRE_A5 Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
+approves the [command-first local Shell architecture](TIAF_TI_SHELL_ARCHITECTURE.md)
+over the existing facade. Shell runtime and remote service remain absent. Model
+challenge and NLP remain optional/deferred; this is not A4 runtime expansion.
 
 The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 now defines field-scoped authority, proposition comparability, independence,

@@ -5,8 +5,9 @@
 **Authoritative top-level architecture, post-A3 design pass 1, 2026-09-11
 (Asia/Kolkata).** Adopted with the revisions and evidence recorded in the
 [capability-boundary review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md).
-Accepted runtime baseline: `tiaf-a3-baseline` at
-`e690da2ce0a1dc0d3eb263c3b9e8e59ad52b6212`.
+Accepted major runtime baselines include `tiaf-a3-baseline` at
+`e690da2ce0a1dc0d3eb263c3b9e8e59ad52b6212` and `tiaf-a4-baseline` at
+`494d968`.
 
 This document governs future boundary decisions. Its narrow same-process facade
 and static capability catalog are now implemented by
@@ -14,8 +15,10 @@ and static capability catalog are now implemented by
 [A4.1 deterministic runtime](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
 and internal [A4.2 Planner bridge](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
 are implemented and jointly reviewed by the
-[A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md); no Shell or Web
-service exists. Accepted
+[A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md). The subsequent
+[Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md) approves the
+[command-first local interaction architecture](TIAF_TI_SHELL_ARCHITECTURE.md)
+over that facade; no Shell runtime or Web service exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.
@@ -189,12 +192,14 @@ own their work. Interaction Agents belong to Shell/Web applications and only
 translate/compose permitted capabilities; external Agents are consumers. Model
 choice does not determine an Agent's layer or give it evidence authority.
 
-TI_SHELL is a stateful interactive mediator over the curated boundary. It owns
-session context, command interpretation and rendering, not canonical analysis.
-Its optional Interaction Agent has the caller's bounded authority. Selected
-engineering operations require developer authorization. The small capability
-boundary needed by Shell must exist before Shell v0.1; an exhaustive facade and
-remote service need not. Primary integration must not shell out to smoke scripts.
+TI_SHELL is a stateful interactive mediator over the curated boundary. The
+approved v0.1 architecture is command-only, same-process and transient; it owns
+session context, closed command parsing and allowlisted rendering, not canonical
+analysis. Its future optional Interaction Agent remains separately gated and can
+have no more than the caller's bounded authority. Selected engineering
+operations require facade authorization. The existing seven-capability boundary
+is sufficient; an exhaustive facade and remote service are not. Primary
+integration must not shell out to smoke scripts.
 
 TI_WEB calls capabilities directly; it does not call Shell. Shell does not
 call Web. TM, scanners and external apps need neither. Scripts can use a Python

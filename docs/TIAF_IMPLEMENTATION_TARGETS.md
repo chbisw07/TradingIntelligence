@@ -480,9 +480,11 @@ projection/A4 review and zero-live replay. It stops rather than patching A2/A3
 when lower-layer refresh is required. The facade remains captured-read-only;
 model-backed challenge, Shell, A5/A6/A7 and broker authority remain out of scope.
 The [A4 major closure review](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts
-both slices as one freeze-ready baseline, recommends `tiaf-a4-baseline` after a
-reviewed commit, keeps DEF-052/055 deferred, and selects a bounded command-first
-Shell architecture pass before A5.
+both slices as one baseline now frozen at `tiaf-a4-baseline` (`494d968`), and
+keeps DEF-052/055 deferred. The selected
+[POST_A4_PRE_A5 Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md)
+now approves the [command-first local architecture](TIAF_TI_SHELL_ARCHITECTURE.md);
+its runtime implementation is next and is not an A5 hard dependency.
 DEF-003 has separate local and remote delivery tracks under the same stable ID:
 the selected order is foundation -> narrow local facade/lifecycle -> deterministic
 A4. The facade is mandatory before Shell/public consumers, not a dependency of
@@ -522,9 +524,10 @@ and jointly reviewed for the A4 baseline freeze.
   adapter, privacy/egress, pricing knowledge, versioned structured prompts/output,
   hypothesis-vs-fact and ID/value rejection, no-LLM control, replay and evaluation.
   DEF-052/055 remain deferred, no mandatory model for deterministic A4.
-- Shell architecture after facade, before A5 planning; command-first v0.1 after
-  deterministic A4, preferably before A5 implementation, not an A5 hard gate.
-  Minimal captured-source rendering is a separate DEF-054 slice.
+- Shell v0.1 implementation after the now-approved architecture: command-first,
+  same-process, facade-only and transient, preferably before A5 implementation
+  but not an A5 hard gate. Minimal captured-source/A4 rendering remains the
+  bounded DEF-054 slice; NLP, Web and rich bibliography remain outside it.
 - A5 on-demand positions plus bounded monitoring-contract review; A6 deterministic
   valid candidates; A7 calibration/evaluation/ranking; forecast-enhanced A6 follow-up;
   A8 TM, A9 scanners, A10 production. No renumbering or infrastructure rollout.

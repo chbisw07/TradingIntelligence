@@ -23,11 +23,12 @@ promotes a revised local target and conditional adoption gates, not speculative
 Level 3 infrastructure. The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
 now sets foundation -> narrow local facade/lifecycle -> deterministic A4.
 Shell/other TBD products and deployment runtime remain unimplemented.
-The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) now selects a
-small command-first local Shell architecture pass before A5. This plans only
-governed facade commands plus minimal captured-source/A4 rendering under
+The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) selected the
+now-completed [Shell architecture review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md).
+Its [authoritative architecture](TIAF_TI_SHELL_ARCHITECTURE.md) approves only
+governed facade commands plus bounded captured-source/A4 rendering under
 DEF-054; it does not promote NLP, Web, monitoring, forecasting, or deployment
-proposals.
+runtime. Shell implementation remains next.
 
 They are intentionally prefixed with `TBD_` so they remain visibly non-authoritative until the relevant milestone revisits and promotes, revises, splits, or rejects them.
 
@@ -98,8 +99,8 @@ They should be re-opened at the relevant milestone and reconciled with the then-
 | Note | Current disposition |
 |---|---|
 | System architecture thesis | SUPERSEDE: system/deployment architecture now governs; preserve rationale, no package relocation. |
-| Shell thesis | PLANNED_NEXT: retain mediator and governed boundary. Formalize a command-first local interface over accepted facade capabilities before A5; NLP/mixed remains separately gated. |
-| CLI/Web interaction | REVISE_AND_KEEP_TBD: promote only the local command subset with Shell; Web/transport waits for an actual consumer/A8 need, with no exhaustive internals. |
+| Shell thesis | PARTIALLY_SUPERSEDED: its 33 sections are classified in the Shell review; command-first local v0.1 is authoritative, while NLP/mixed/model/product ideas remain TBD. Runtime is not implemented. |
+| CLI/Web interaction | SPLIT: local commands are governed by the Shell architecture; Web/transport remains TBD for an actual consumer/A8 need, with no exhaustive internals or Shell-out integration. |
 | Source/provenance/citation | SPLIT: Core semantics are implemented; DEF-054 now plans minimal captured-source/A4 rendering with Shell, while rich report/Web UX and adapters remain deferred. |
 | Monitoring | REVISE_AND_KEEP_TBD: review bounded mandate/lifecycle/clocks/delta at A5 entry; A8 position binding, A9 intake and A10 durable scheduling remain later. Initial on-demand A5 needs no daemon. |
 | Forecasting/ensemble/learning | REVISE_AND_KEEP_TBD: A7 architecture after deterministic A6 seam, with PIT/outcome/benchmark/calibration prerequisites. Algorithms/ensembles/learning remain hypotheses; A7 then informs enhanced A6. |
