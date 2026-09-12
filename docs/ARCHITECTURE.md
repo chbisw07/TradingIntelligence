@@ -29,8 +29,9 @@ TM/broker position snapshot and immutable A4 result, separates operational state
 from analytical posture/thesis health/recommendation, emits only non-executable
 advice and monitoring intent, and preserves captured replay. Its
 [review](TIAF_A5_ARCHITECTURE_REVIEW.md) approves A5.1 contracts plus a
-deterministic single-position baseline; no A5 runtime, scheduler, TM integration,
-multi-leg policy or Shell command exists yet.
+deterministic single-position baseline, now implemented by
+[A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md). No scheduler, TM
+integration, multi-leg policy, facade descriptor or Shell command exists yet.
 
 The authoritative [source-semantics companion](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 now defines field-scoped authority, proposition comparability, independence,

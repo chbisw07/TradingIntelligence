@@ -13,7 +13,8 @@ A4.1/A4.2 layer frozen at `tiaf-a4-baseline`. The approved
 [TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) is implemented as the
 current local consumer boundary. The
 [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) is approved,
-but its runtime is not implemented. A7 later informs a separately
+and its bounded A5.1 internal runtime is implemented without facade/Shell
+publication. A7 later informs a separately
 versioned forecast-enhanced A6 follow-up; no major milestone is renumbered.
 
 Statuses describe repository reality:
@@ -196,7 +197,7 @@ it does not overload corporate-action or earnings-call semantics.
 | A4 source/comparability/independence input projection | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) adds immutable source/proposition/authority/dispute/independence contracts, field confirmation, deterministic projection, successor semantics and offline replay over unchanged A2/A3; citation rendering remains absent |
 | Narrow local capability facade and lifecycle | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) now exposes seven explicit same-process capabilities, including A4.1 `a4.evaluate`, with trusted admission, budget/authority intersection, frozen composition, safe logical artifact refs and offline replay; no live operation, remote transport or broker authority |
 | Deterministic arbitration / adversarial resolution | IMPLEMENTED / A4 FREEZE READY | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts the combined no-model boundary |
-| Position intelligence | ARCHITECTURE APPROVED / IMPLEMENTATION NEXT | [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md): supplied position truth, deterministic advisory posture/thesis/recommendation, monitoring intent and replay; A5.1 remains unimplemented |
+| Position intelligence | IMPLEMENTED / A5.1 ACCEPTANCE READY | [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md): captured supplied position truth, deterministic single-position posture/thesis/recommendation, monitoring intent and exact replay; no facade/TM/broker/multi-leg runtime |
 | Option strategy comparison/selection | PLANNED | A6/DEF-006 deterministic valid candidates first; forecast-enhanced higher-order comparison after admitted A7 evidence; no initial A4 contract selection |
 | Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
 | Scanner intelligence | EXTERNAL/INTEGRATION | A9 scanner boundary |
@@ -206,7 +207,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Capability | Status | Placement |
 |---|---|---|
 | Read-only console diagnostics | IMPLEMENTED | Milestone smoke scripts |
-| Position monitoring-intent contract | ARCHITECTURE APPROVED / UNIMPLEMENTED | A5 immutable `WatchMandate`/refresh needs only; no scheduling guarantee |
+| Position monitoring-intent contract | IMPLEMENTED / A5.1 | Immutable `WatchMandate`/`MonitoringNeed` values only; no scheduling guarantee or runtime |
 | Monitoring daemon / intelligence OS | DEFERRED | Runtime scheduling, queue, retry/recovery and calendars; DEF-007/010, A10 |
 | Persistent/distributed data runtime | DEFERRED | Storage and operations boundary; DEF-009 |
 | Primary quote/OHLCV/F&O fallback and operational health arbitration | DEFERRED | Dhan data surface; DEF-008/DEF-011. Separate MI evidence fallback is implemented in A3.6.1 |

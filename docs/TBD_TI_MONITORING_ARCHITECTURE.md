@@ -10,6 +10,10 @@ calendars, queueing, dispatch, retry/recovery, adaptive budgets, operational
 telemetry and durable state remain TBD. A mandate is not a job; a due hint is not
 a scheduling guarantee. A8 binds TM, A9 candidate intake and A10 operationalizes
 durable monitoring. No monitoring runtime is added by the review.
+The subsequent
+[A5.1 implementation](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md)
+implements the promoted immutable `MonitoringNeed`/`WatchMandate` subset and
+pure construction only; all scheduler/runtime content in this note stays TBD.
 
 > **Status:** PARTIALLY PROMOTED / remaining content is a TBD exploratory note
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  

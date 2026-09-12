@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF A5.1 under `tiaf.a5`: immutable position/signal/result/
+  mandate/capture contracts, strict snapshot/A4 lineage and freshness checks,
+  deterministic posture/thesis/recommendation policy, non-executable protection
+  and expression-refresh intent, expiry/time-risk handling, successor records,
+  content-addressed offline replay/verification and policy comparison. Multi-leg
+  input fails explicitly. No facade/Shell capability, provider/model/broker/TM
+  call, scheduler, A6/A7 behavior, remote service or database was added.
+
 - Approved the documentation-only TIAF A5 Position Intelligence architecture:
   versioned supplied position truth, separate analytical risk posture/thesis
   health/recommendation, non-executable protection advice, bounded immutable

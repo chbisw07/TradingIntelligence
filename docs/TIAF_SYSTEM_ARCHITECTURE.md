@@ -22,9 +22,10 @@ now delivered by the bounded
 [v0.1 implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) over that facade.
 The subsequent
 [A5 position-intelligence architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md)
-is approved for a bounded A5.1 implementation: supplied position truth,
-deterministic single-position advice, monitoring intent and replay. It adds no
-runtime or operational authority. No Web service exists. Accepted
+is realized by the bounded
+[A5.1 deterministic implementation](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md):
+supplied position truth, single-position advice, monitoring intent and replay.
+It adds no operational authority. No Web service exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.

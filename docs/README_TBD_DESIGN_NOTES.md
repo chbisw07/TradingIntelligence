@@ -36,7 +36,8 @@ monitoring note: its minimal immutable active-position mandate/refresh-intent
 subset is authoritative in
 [the A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md). Candidate
 lifecycle, calendars, cadence, schedulers/queues, retry/recovery and operational
-state remain TBD.
+state remain TBD. A5.1 now implements only the promoted immutable contract/pure-
+construction subset.
 
 They are intentionally prefixed with `TBD_` so they remain visibly non-authoritative until the relevant milestone revisits and promotes, revises, splits, or rejects them.
 

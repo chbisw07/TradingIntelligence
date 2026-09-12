@@ -5,6 +5,9 @@
 **Authoritative architecture; approved for bounded A5.1 implementation,
 2026-09-12 (Asia/Kolkata).** The evidence and complexity review are recorded in
 [the A5 architecture review](TIAF_A5_ARCHITECTURE_REVIEW.md).
+The bounded contract/deterministic/replay slice is now implemented by
+[TIAF A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md); later seams and
+operational exclusions in this document remain authoritative.
 
 This document defines contracts and ownership. It does not implement A5,
 TradeMonitor integration, monitoring workers, scheduling, broker access, A6,

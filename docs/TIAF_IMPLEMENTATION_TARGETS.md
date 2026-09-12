@@ -533,7 +533,7 @@ and jointly reviewed for the A4 baseline freeze.
   valid candidates; A7 calibration/evaluation/ranking; forecast-enhanced A6 follow-up;
   A8 TM, A9 scanners, A10 production. No renumbering or infrastructure rollout.
 
-### TIAF_A5 architecture — Complete / A5.1 implementation ready
+### TIAF_A5 architecture and A5.1 — Complete / acceptance ready
 
 The [authoritative A5 design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and
 [review](TIAF_A5_ARCHITECTURE_REVIEW.md) approve an additive position-intelligence
@@ -541,11 +541,12 @@ boundary. A5 consumes a current authorized TM/broker snapshot and immutable A4
 result, keeps operational state separate from analytical posture/thesis health/
 recommendation, emits non-executable advice and immutable monitoring intent, and
 supports captured replay. `FREE` is rejected as ambiguous; trailing is advice,
-not lifecycle. No runtime or deferral is completed by this design pass.
+not lifecycle. The bounded runtime is documented by
+[A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md).
 
-**Next target — TIAF_A5.1.** Implement frozen input/result/mandate/capture
-contracts, strict identity/freshness/A4-lineage checks, a transparent
-deterministic single-open-position policy, monitoring-need output, exact offline
-replay/verification/comparison and the architecture acceptance corpus. Keep
-multi-leg interpretation, facade/Shell publication, TM/broker access, scheduling,
-A6, A7, providers/models and remote/durable infrastructure out of scope.
+**Delivered A5.1 target.** Frozen input/result/mandate/capture contracts, strict
+identity/freshness/A4-lineage checks, a transparent deterministic single-open-
+position policy, monitoring-need output, exact offline replay/verification/
+comparison and the architecture acceptance corpus. Multi-leg interpretation,
+facade/Shell publication, TM/broker access, scheduling, A6, A7, providers/models
+and remote/durable infrastructure remain out of scope.

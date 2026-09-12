@@ -81,12 +81,13 @@ option-expression, forecast and execution authority remain outside A3. TI is
 an intelligence and decision-support system, not an execution system.
 
 The [A5 architecture](docs/TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md),
-supported by its [review](docs/TIAF_A5_ARCHITECTURE_REVIEW.md), now approves a
-bounded A5.1 implementation: additive immutable position contracts, a
-deterministic single-open-position advisory baseline, monitoring-intent output,
-and offline replay. TM/broker position truth, multi-leg interpretation,
-scheduling, execution, A6/A7 and Shell exposure remain outside A5.1. No A5
-runtime is implemented by this architecture pass.
+supported by its [review](docs/TIAF_A5_ARCHITECTURE_REVIEW.md), is now realized
+by the bounded
+[A5.1 implementation](docs/TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md):
+additive immutable position contracts, a deterministic single-open-position
+advisory baseline, monitoring-intent output, and offline replay. TM/broker
+position truth, multi-leg interpretation, scheduling, execution, A6/A7 and
+facade/Shell exposure remain outside A5.1.
 
 ## Layout
 

@@ -107,7 +107,13 @@ Web, model/live access or new intelligence capability.
 [authoritative design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) fixes the
 position-truth/TM authority boundary, additive contracts, analytical posture,
 thesis health, recommendations, bounded monitoring intent and replay. No A5
-runtime or scheduler has been implemented.
+operational authority or scheduler is introduced.
+
+**TIAF_A5.1 — Deterministic Single-Position Baseline: IMPLEMENTED / ACCEPTANCE
+READY.** The [bounded runtime](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md)
+implements immutable contracts, strict freshness/A4 lineage, deterministic
+advice, monitoring intent and offline replay without facade/Shell publication or
+live dependencies.
 
 ## Deferral governance
 
@@ -397,7 +403,7 @@ unnumbered consumer slice, not A4 expansion or an A5 dependency.
 
 ## TIAF_A5 — Position Intelligence MVP
 
-Architecture is complete; implementation has not begun. A5 consumes an
+Architecture and the bounded A5.1 implementation are complete. A5 consumes an
 explicitly supplied current TM/broker snapshot and linked accepted A4 result,
 then emits evidence-linked advice without operational authority. Operational
 state, analytical risk posture, thesis health, recommendation and monitoring
@@ -408,9 +414,10 @@ exposure remain later work.
 
 **Acceptance:** the accepted
 [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and
-[review](TIAF_A5_ARCHITECTURE_REVIEW.md) define the implementation gate;
-runtime acceptance will require fail-closed freshness/identity semantics,
-preserved A4 lineage and exact offline replay with no external call.
+[review](TIAF_A5_ARCHITECTURE_REVIEW.md) define the boundary, while
+[A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md) implements and tests
+fail-closed freshness/identity semantics, preserved A4 lineage and exact offline
+replay with no external call.
 
 ## TIAF_A6 — Option Expression Intelligence
 
