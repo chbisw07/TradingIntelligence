@@ -236,6 +236,14 @@ invalidation and hedge semantics without moving structure construction from A6.
 
 ## 7. Bounded monitoring contract
 
+The later [TI Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) is
+authoritative for future subscriber-driven runtime admission. It preserves this
+A5 contract and normalizes its source advice into a distinct MonitoringMandate,
+retaining immutable source identity/hash and requiring explicit subscriber,
+lifetime and policy admission. A5 ACTIVE_POSITION/INACTIVE remains advisory;
+runtime lifecycle is separate. No scheduler, automatic registration/renewal or
+live TM binding is added to A5 by architectural promotion.
+
 Monitoring in A5 means immutable intent, not continuous execution. A
 `WatchMandate` is a versioned advisory contract with only:
 

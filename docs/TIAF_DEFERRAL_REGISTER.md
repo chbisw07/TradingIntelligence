@@ -446,3 +446,28 @@ forecast delivery are not pre-freeze requirements. R1 is now closed and A5 is
 ready for final documentation and freeze; A5 stays untagged pending consolidation
 and a final tag-readiness check. Its earlier closure remains a historical scoped
 finding.
+
+## Post-R1 monitoring architecture reconciliation
+
+The [TI Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) promotes the
+subscriber-driven design, not runtime delivery. A5 advisory intent stays accepted;
+future MonitoringMandates normalize it without changing its schema. Both TBD
+monitoring notes retain their historical content with complete dispositions.
+
+| Existing record | Continuing obligation after architectural promotion |
+|---|---|
+| DEF-003 / DEF-004 | Remote delivery if justified / A8 TM subscriber integration; no TI execution authority. |
+| DEF-007 | Approved exchange/session calendars before calendar-sensitive cadence or trading-day promises. |
+| DEF-009 / DEF-011 | Scoped sharing/hosting, provider health, quota and entitlement governance, including audit R7. |
+| DEF-010 | Actual recurring scheduler, bounded event ingress, retries, notification delivery and operational monitoring remain deferred. |
+| DEF-049 / DEF-051 | Historical PIT and scheduled outcome evaluation; missed-run replay cannot backdate new live evidence. |
+| DEF-050 | Durable database/distributed replay infrastructure remains deferred; a first local monitor still needs separately tested single-writer recovery. |
+| DEF-055 / DEF-057 / DEF-058 | Unknown monetary costs remain honest; no HOT delivery or new peer/projection/capability implementation. |
+
+The architecture resolves ownership and basic execution semantics, not these
+implementation obligations. No new DEF ID or status change is warranted. Totals
+remain 58: 45 DEFERRED, 4 PLANNED, 4 IMPLEMENTED, 3 REJECTED, 2 SUPERSEDED.
+R2–R5 monitoring prerequisites/useful refinements are assessed in the architecture;
+none becomes a retroactive A5 freeze blocker. A8 TM, A9 scanner intake and A10
+runtime placement remain unchanged, with any earlier minimum slice separately
+gated. Documentation consolidation and final A5 tag-readiness remain next.

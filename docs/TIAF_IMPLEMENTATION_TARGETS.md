@@ -598,3 +598,21 @@ This is not A5.x or A6. Only R1 is implemented. New contributor
 publication/projection is deferred until a concrete peer is approved (DEF-058);
 HOT remains DEF-057. Sector Rotation, Signal Qualification, forecasting, shared
 live hosting and remote transport remain separately gated. A6 is not next yet.
+
+### Post-R1 Monitoring Architecture — reconciled, not implemented
+
+The [authoritative future design](TIAF_MONITORING_ARCHITECTURE.md) selects
+subscriber-owned optional watchlists and normalized MonitoringMandates, with no
+separate initial subscription or lease contract. It preserves A5 advisory
+WatchMandate/MonitoringNeed values, R1 stable required scope, capability admission,
+TM authority and immutable child replay hashes. Both historical TBD monitoring
+notes now carry section dispositions; their original bodies are not competing
+runtime specifications.
+
+A8 owns TM subscriber integration, A9 scanner/candidate intake, and A10 recurring
+runtime/durability/recovery operations. Earlier recurring execution requires its
+own bounded acceptance gate, including fresh-input admission rather than calling
+captured reads a live monitor. R2–R5 remain non-blocking for A5 freeze and are not
+implemented here. P4 remains next:
+`TIAF POST-R1 — DOCUMENTATION CONSOLIDATION AND SYNCHRONIZATION`, then final A5
+tag-readiness review. No milestones are renumbered or runtime deferrals closed.

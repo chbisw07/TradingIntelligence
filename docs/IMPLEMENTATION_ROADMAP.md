@@ -42,6 +42,15 @@ A5 policy changed. R2–R5 remain separately bounded pre-A6 work and are not A5
 freeze requirements. A6 has not begun; this workstream does not renumber
 milestones or implement a plugin framework.
 
+The post-R1 [Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) reconciles
+future subscriber-driven mandates without changing accepted A5 intent or
+implementing a runtime. A8 retains TM integration, A9 scanner/candidate intake,
+and A10 durable monitoring operationalization. A separately approved minimum
+runtime slice may accompany earlier integration only with its admission/replay/
+budget/recovery gates; it is not automatically next. The next prompt remains
+`TIAF POST-R1 — DOCUMENTATION CONSOLIDATION AND SYNCHRONIZATION`, followed by
+the final A5 tag-readiness check. No R2–R5 implementation or A6 work is added.
+
 ## Acceptance philosophy
 
 Every milestone should have explicit contracts, representative tests, and

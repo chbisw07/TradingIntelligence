@@ -417,3 +417,21 @@ semantic output; and no broker/model/live access occurs in recorded replay.
 Multi-writer recovery, multi-user security and cross-process quota tests become
 mandatory only before promising those capabilities. These are proposed gates,
 not tests of a service that does not exist.
+
+## Monitoring reconciliation — architecture only
+
+The [TI Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) specializes
+these gates for subscriber-driven recurring work: optional external group refs,
+finite admitted mandate lifetimes, no mandatory initial subscription/lease
+resource, at-least-once due delivery with idempotent run/attempt lineage, and
+coalesce-to-latest missed-run behavior. Start with a bounded local single-writer
+periodic slice only when separately authorized. Filesystem durability requires a
+tested admission/reservation/publication/recovery protocol; existing artifacts
+do not supply transactional scheduling guarantees. No DB/queue/service is added.
+
+Cross-subscriber live reuse must satisfy R7 entitlement, quota and reservation
+gates; shared evidence never implies shared analysis or authority. Current facade
+CAPTURED_READ operations cannot be presented as live refresh. R2–R5 minimum
+monitor-compatibility/pinning/COLD composition needs are distinguished from full
+remediation in that design, without changing their non-blocking A5 disposition.
+A8/A9 integration does not silently deliver A10 durability or multi-user hosting.

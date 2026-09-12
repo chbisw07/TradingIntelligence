@@ -225,7 +225,8 @@ it does not overload corporate-action or earnings-call semantics.
 |---|---|---|
 | Read-only console diagnostics | IMPLEMENTED | Milestone smoke scripts |
 | Position monitoring-intent contract | IMPLEMENTED / A5.1 | Immutable `WatchMandate`/`MonitoringNeed` values only; no scheduling guarantee or runtime |
-| Monitoring daemon / intelligence OS | DEFERRED | Runtime scheduling, queue, retry/recovery and calendars; DEF-007/010, A10 |
+| Subscriber-driven monitoring design | ARCHITECTURE ONLY | [TI Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md): optional subscriber-owned groups, normalized independent mandates, capability consumption, scoped evidence sharing and replay; no recurring runtime |
+| Monitoring daemon / intelligence OS | DEFERRED | [Reconciled runtime boundary](TIAF_MONITORING_ARCHITECTURE.md): admission, periodic/event scheduling, retry/recovery and calendars; DEF-007/009/010/011/050/051, A10; A8 TM and A9 scanner intake remain separate |
 | Persistent/distributed data runtime | DEFERRED | Storage and operations boundary; DEF-009 |
 | Primary quote/OHLCV/F&O fallback and operational health arbitration | DEFERRED | Dhan data surface; DEF-008/DEF-011. Separate MI evidence fallback is implemented in A3.6.1 |
 | Scanner | EXTERNAL/INTEGRATION | Future TIAF scanner boundary |
@@ -240,7 +241,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Baseline replay / validation | IMPLEMENTED | A2.10 captured-snapshot foundation |
 | Strategy backtest | DEFERRED | Requires strategy/execution model; DEF-025 |
 | Optimization | DEFERRED | Evaluation layer; DEF-024 |
-| Watchlists | EXTERNAL/INTEGRATION | Input source consumed through A1 |
+| Watchlists | EXTERNAL/INTEGRATION | Subscriber-owned optional business groups/input sources; future TI monitoring accepts governed mandates with opaque refs, not watchlist CRUD |
 
 ## Governance and execution
 

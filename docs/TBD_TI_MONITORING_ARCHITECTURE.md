@@ -1,5 +1,43 @@
 # TBD - TI Monitoring / Watch-Mandate Architecture
 
+## Post-R1 reconciliation disposition — 2026-09-12
+
+The [TI Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) now governs
+future monitoring. The original body below, including earlier A5 dispositions,
+is preserved as historical rationale, not competing authority. PROMOTED means
+architecture only unless explicitly identified as delivered A5 intent; no
+scheduler/runtime was implemented. Every original numbered section is covered:
+
+| Original section | Disposition | Reconciled meaning / authoritative section |
+|---|---|---|
+| 1 Purpose | REVISED | Subscriber owns watchlists; TI admits mandates (§2). |
+| 2 Lifecycle | REVISED | Purpose/position linkage, runtime lifecycle and UI colors are separate (§5); colors as domain states REJECTED. |
+| 3 Instrument vs mandate | PROMOTED | Multiple independent scopes per instrument (§3); A5 remains position-specific. |
+| 4 Orthogonal dimensions | PROMOTED | Horizon, cadence, freshness, lifetime and run state stay distinct (§4–5). |
+| 5 WatchMandate concept | REVISED | Preserve A5 schema; normalize separate runtime mandate; embedded mutable runtime state REJECTED (§3–5). |
+| 6 Horizon/objective | PARTIALLY_PROMOTED | Versioned scope/profile intent promoted; illustrative schedules are not accepted defaults (§4,6). |
+| 7 Evidence clocks | PROMOTED | Per-family freshness distinct from cadence (§4,9). |
+| 8 Scheduled/event | PARTIALLY_PROMOTED | Periodic minimum; event/hybrid needs separate bounded ingress acceptance (§8). |
+| 9 Refresh/reanalysis | PROMOTED | Separate acquisition, analysis and notification (§9). |
+| 10 Incremental recalculation | KEEP_TBD | No second dependency model or incremental engine; reuse Planner (§6,9). |
+| 11 Shared evidence | PROMOTED | Only compatible rights/PIT/semantics/freshness; analysis scope independent (§9). |
+| 12 Scheduler | REVISED | Runtime owns slots; A5 next-due is only intent; at-least-once recovery (§8,10). |
+| 13 Priority | REVISED | Policy-bounded preference, no absolute position-first starvation or authority (§11). |
+| 14 Adaptive cadence | KEEP_TBD | Future captured/versioned policy; not implemented (§12). |
+| 15 Profiles | PROMOTED | Trusted versioned COLD configuration (§6). |
+| 16 Budgets | PROMOTED | Existing reservation/usage lineage and honest unknown costs (§11). |
+| 17 Calendars | KEEP_TBD | DEF-007 gates session-sensitive scheduling, not wall-clock intervals (§4,12). |
+| 18 TM | PROMOTED | TM owns operational truth/action; inactivation is not closure (§5). |
+| 19 Agents | PROMOTED | Specialists do not poll; runtime is a capability consumer (§6). |
+| 20 Audit | PROMOTED | Immutable run/attempt/evidence/composition lineage (§10). |
+| 21 Failure | REVISED | Transient failure preserves intent, but revocation/integrity/termination deny or end work (§7–8). |
+| 22 Performance | PARTIALLY_PROMOTED | Bounded reuse/backpressure promoted; broad incremental/adaptive optimization deferred (§8–12). |
+| 23 Roadmap | PROMOTED | A5 intent, A8 TM, A9 scanner intake, A10 runtime (§13). |
+| 24 Open questions | REVISED | Ownership, identity, lifecycle and basic scheduling resolved; operational mechanisms remain gated (§2–13). |
+| 25 Working principle | REVISED | Subscriber watchlists optionally reference TI mandates, not watchlist-owned TI state (§2–3). |
+
+## Historical note (preserved)
+
 **A5 review disposition: SPLIT (2026-09-12).** The
 [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) promotes only
 immutable position-linked mandate identity, `ACTIVE_POSITION`/`INACTIVE`, typed

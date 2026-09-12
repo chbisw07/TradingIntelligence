@@ -355,3 +355,13 @@ Operational state, action-time freshness and execution remain TM/broker-owned.
 An A5 `WatchMandate` is immutable intent only—never a scheduled job. Durable
 dispatch, retry/recovery, calendars and worker state remain later operational
 concerns.
+
+The [TI Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) now defines
+the future runtime as a governed recurring/event-driven capability consumer for
+authorized subscriber apps. Watchlists stay subscriber-owned and optional; TI
+admits independent MonitoringMandate revisions and owns scheduling, scoped
+evidence reuse, budgets, failure isolation and replay lineage. These future
+mandates normalize A5 advice without renaming its contracts or transferring TM
+authority. Current captured-read capabilities do not acquire fresh live inputs.
+This is architecture only: A8 owns TM intake, A9 scanner intake and A10 runtime
+operationalization; any earlier minimum slice requires separate acceptance.
