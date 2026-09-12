@@ -2,12 +2,15 @@
 
 ## Status
 
-**Authoritative architecture; approved for bounded A5.1 implementation,
+**Authoritative architecture; implemented and ready for A5 baseline freeze,
 2026-09-12 (Asia/Kolkata).** The evidence and complexity review are recorded in
 [the A5 architecture review](TIAF_A5_ARCHITECTURE_REVIEW.md).
 The bounded contract/deterministic/replay slice is now implemented by
 [TIAF A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md); later seams and
 operational exclusions in this document remain authoritative.
+The combined [A5 closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+accepts A5.1 plus A5.2 and recommends, but does not create,
+`tiaf-a5-baseline`.
 
 This document defines contracts and ownership. It does not implement A5,
 TradeMonitor integration, monitoring workers, scheduling, broker access, A6,
@@ -455,6 +458,7 @@ not silently redefined. A5 uses new versioned contracts. Any consumer projection
 back to A0 requires an explicit, tested mapping and cannot erase A5 uncertainty
 or authority semantics.
 
-The exact next prompt title after A5.2 is:
+The closure review has completed the former next prompt. The exact next prompt
+title after the A5 baseline freeze is:
 
-**`TIAF_A5 — MAJOR MILESTONE CLOSURE REVIEW`**
+**`TIAF_A6 — OPTION EXPRESSION INTELLIGENCE ARCHITECTURE PASS`**

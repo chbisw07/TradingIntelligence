@@ -533,7 +533,7 @@ and jointly reviewed for the A4 baseline freeze.
   valid candidates; A7 calibration/evaluation/ranking; forecast-enhanced A6 follow-up;
   A8 TM, A9 scanners, A10 production. No renumbering or infrastructure rollout.
 
-### TIAF_A5 architecture, A5.1 and A5.2 — Complete / acceptance ready
+### TIAF_A5 architecture, A5.1 and A5.2 — Complete / ready to freeze
 
 The [authoritative A5 design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and
 [review](TIAF_A5_ARCHITECTURE_REVIEW.md) approve an additive position-intelligence
@@ -556,3 +556,9 @@ are documented in
 [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md). Multi-leg interpretation,
 TM/broker access, scheduling, A6, A7, providers/models and remote/durable
 infrastructure remain out of scope.
+
+The [A5 major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts
+these slices as one coherent milestone, records the remaining boundaries under
+stable deferral governance, and recommends—but does not create—the
+`tiaf-a5-baseline` tag. The exact next architecture prompt is
+`TIAF_A6 — OPTION EXPRESSION INTELLIGENCE ARCHITECTURE PASS`.

@@ -14,6 +14,11 @@ The subsequent
 [A5.1 implementation](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md)
 implements the promoted immutable `MonitoringNeed`/`WatchMandate` subset and
 pure construction only; all scheduler/runtime content in this note stays TBD.
+The [A5 major closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) confirms the
+same boundary: position identity/lineage is `PROMOTED`; lifecycle, needs and
+timing fields are `PARTIALLY_PROMOTED` as advisory intent; TM binding returns at
+A8, candidate intake at A9, and all durable scheduling/queue/retry/telemetry at
+A10. It promotes no additional runtime behavior.
 
 > **Status:** PARTIALLY PROMOTED / remaining content is a TBD exploratory note
 > **Authority:** This document is **not yet part of the accepted TI architecture**. It captures an agreed design direction for later formal review.  

@@ -1,7 +1,7 @@
 """Captured, attributable A4.2 fixtures; no live providers or models."""
 
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import datetime
 from functools import lru_cache
 
 from scripts._a3_8_fixtures import (
@@ -76,7 +76,7 @@ def grant(
     tool_calls: int = 1,
     provider_calls: int = 1,
     authority: bool = True,
-    deadline: datetime = LATER + timedelta(days=1),
+    deadline: datetime | None = None,
     dedupe: bool = False,
     resolved: bool = False,
 ) -> EvidenceBridgeGrant:

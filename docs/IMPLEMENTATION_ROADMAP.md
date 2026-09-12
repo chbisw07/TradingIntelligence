@@ -26,6 +26,10 @@ and captured replay. The additive
 through position-scoped logical-artifact admission and the bounded Shell. It
 still does not include live TM/broker integration, multi-leg interpretation,
 scheduling, A6/A7 or remote transport.
+The [A5 major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reviews
+both slices together and concludes `READY_TO_FREEZE_A5`; it recommends but does
+not create `tiaf-a5-baseline`. The next bounded work is the A6 Option Expression
+Intelligence architecture pass.
 
 ## Acceptance philosophy
 

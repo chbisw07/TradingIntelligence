@@ -6,6 +6,13 @@
 **Promotion rule:** Before any part becomes authoritative, it must be revisited against the then-current TI architecture, implementation, data availability, cost constraints, replay/PIT requirements, A5/A6/A7/A9 ownership, and empirical evidence.  
 **Implementation status:** Not implemented by this document.
 
+**A5 closure interaction (2026-09-12):** The
+[A5 major closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) does not promote
+this note. Accepted A5 can later consume admitted, versioned sector-tailwind
+evidence through a separately reviewed policy, but current A5 neither calculates
+Sector Rotation nor maps it to position advice. This TBD work is not an A5
+freeze blocker.
+
 ---
 
 # 1. Why this deserves its own workstream

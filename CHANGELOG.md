@@ -4,6 +4,17 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Completed the documentation-only TIAF A5 major milestone closure review over
+  accepted A5.1 and A5.2. The review finds the deterministic single-position,
+  governed captured-read facade/Python/Shell, replay, failure and authority
+  boundaries ready for the recommended `tiaf-a5-baseline` freeze; adds DEF-056
+  for explicit multi-leg interpretation; classifies monitoring and Sector
+  Rotation TBD implications; and preserves TM integration, monitoring runtime,
+  live broker ingestion, A6/A7 and execution as separate boundaries. No runtime
+  semantics or tag were changed. Removed an expired fixed default deadline from
+  the synthetic A4.2 test support so the existing deadline tests remain explicit
+  and the full suite remains wall-clock independent.
+
 - Implemented TIAF A5.2 governed publication of the accepted A5.1 baseline:
   static `position.assess` captured-read capability, position-specific
   authority/entitlement and logical-artifact checks, canonical A5 result parity,

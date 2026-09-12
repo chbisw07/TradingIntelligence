@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — frozen A4 and governed A5.2 position intelligence
+### Present — frozen A4 and A5 position intelligence ready to freeze
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -92,6 +92,11 @@ facade/Shell exposure remain outside A5.1 itself. The additive
 exposes an authority-scoped captured-read `position.assess` facade capability
 and bounded `position assess --snapshot` Shell command. It adds no live broker
 lookup, execution, scheduler, A6/A7 behavior or remote service.
+The combined [A5 major closure review](docs/TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
+finds the deterministic single-position layer ready for the recommended
+`tiaf-a5-baseline` freeze. The tag is not created by that review. Multi-leg
+interpretation, TradeMonitor transport, durable monitoring and live broker
+ingestion remain explicit deferrals rather than accepted A5 behavior.
 
 ## Layout
 

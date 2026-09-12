@@ -469,6 +469,10 @@ execution. [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) adds governed
 local facade/Shell publication over authorized captures. Durable scheduling,
 multi-leg policy, live TM/broker integration and remote transport remain
 separately gated.
+The [A5 major closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reviews both
+slices as one layer and concludes `READY_TO_FREEZE_A5`, recommending but not
+creating `tiaf-a5-baseline`. A6 Option Expression architecture is next; the open
+A5 boundaries do not block it.
 
 ## Goal
 

@@ -121,6 +121,12 @@ adds position-scoped captured-read admission, canonical A5 parity, generic A5
 recorded replay and read-only `position assess`; no broker lookup, execution,
 scheduler, A6/A7 or remote service.
 
+**TIAF_A5 — Position Intelligence MVP: COMPLETE / READY TO FREEZE.** The
+[major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts A5.1
+and A5.2 together and recommends `tiaf-a5-baseline` without creating it.
+Multi-leg interpretation, live TM/broker integration and monitoring runtime
+remain explicitly deferred.
+
 ## Deferral governance
 
 Intentional deferrals are retained under stable IDs in
@@ -409,7 +415,8 @@ unnumbered consumer slice, not A4 expansion or an A5 dependency.
 
 ## TIAF_A5 — Position Intelligence MVP
 
-Architecture and the bounded A5.1 implementation are complete. A5 consumes an
+Architecture, the bounded A5.1 implementation and A5.2 publication are complete
+and jointly reviewed as `READY_TO_FREEZE_A5`. A5 consumes an
 explicitly supplied current TM/broker snapshot and linked accepted A4 result,
 then emits evidence-linked advice without operational authority. Operational
 state, analytical risk posture, thesis health, recommendation and monitoring
@@ -423,7 +430,9 @@ later work. A5.2 now provides only governed local facade/Shell exposure.
 [review](TIAF_A5_ARCHITECTURE_REVIEW.md) define the boundary, while
 [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md) implements and tests
 fail-closed freshness/identity semantics, preserved A4 lineage and exact offline
-replay with no external call.
+replay with no external call. The
+[closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) records the full
+semantic, monitoring, deferral, live-truth and quality-gate audit.
 
 ## TIAF_A6 — Option Expression Intelligence
 
