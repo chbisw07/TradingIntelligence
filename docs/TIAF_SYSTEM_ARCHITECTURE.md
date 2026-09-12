@@ -2,6 +2,12 @@
 
 ## Status and scope
 
+The [Trading Ecosystem Architecture](TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md)
+now governs cross-system candidate sources, TM action/adoption, monitoring and
+interaction ownership. This document retains authority over TI's internal
+capability boundary. Ecosystem interfaces are normative future design, not
+implemented scanner/TM/remote services or permission to bypass local admission.
+
 **Authoritative top-level architecture, post-A3 design pass 1, 2026-09-11
 (Asia/Kolkata).** Adopted with the revisions and evidence recorded in the
 [capability-boundary review](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md).

@@ -2,6 +2,12 @@
 
 ## Reading map and current status
 
+For the cross-system view, start with the
+[Trading Ecosystem Architecture](TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md):
+scanners propose, TI advises, TI Monitoring reevaluates, TM authorizes and
+coordinates, and brokers execute. It defines candidate/position/action ownership
+and future Sheets/Cockpit boundaries without implementing integration or A6.
+
 Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
 [DEPLOYMENT](TIAF_DEPLOYMENT_ARCHITECTURE.md) →
 [PLUGGABILITY](TIAF_PLUGGABILITY_ARCHITECTURE.md) →

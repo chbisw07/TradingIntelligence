@@ -2,6 +2,12 @@
 
 ## 1. Authority, scope and current implementation
 
+The [Trading Ecosystem Architecture](TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md)
+places TI intelligence reevaluation alongside separate scanner discovery refresh
+and TM operational monitoring. It formalizes subscriber/action/adoption/UI
+boundaries; this document continues to own normalized mandate and future runtime
+semantics. Neither architecture implements recurring work or changes A5 intent.
+
 **Architecture promoted: 2026-09-12. Runtime not implemented.** This is the
 authoritative future monitoring design following A5 and accepted pluggability
 R1. It reconciles the two historical

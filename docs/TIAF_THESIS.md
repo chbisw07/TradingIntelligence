@@ -139,6 +139,12 @@ promotion—not retrospective selection of persuasive explanations.
 
 ## TI, TM and broker boundaries; future work
 
+The [Trading Ecosystem Architecture](TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md)
+is the normative basis for a later big-picture ecosystem thesis. It defines the
+candidate-to-advice-to-authorized-action chain, separate monitoring roles and
+replaceable interaction clients; concrete integration and deferred operational
+choices must not be presented as implemented in that thesis.
+
 Scanners are discovery/sensors. TI is intelligence/advice. TM is governor of
 risk, authority, operational lifecycle and execution coordination. The broker
 is final live-state/execution truth. **TI never places, modifies or cancels
