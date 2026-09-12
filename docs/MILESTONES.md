@@ -98,37 +98,37 @@ non-action dispositions, offline replay and captured-read facade evaluation;
 A4.2 supplies one governed internal enrichment/successor cycle. No public live,
 model, position, expression, forecast or execution authority was added.
 
-**POST_A4_PRE_A5 TI_SHELL v0.1: IMPLEMENTED / ACCEPTANCE READY.** The
+**POST_A4_PRE_A5 TI_SHELL v0.1: IMPLEMENTED / ACCEPTED.** The
 command-first local runtime exposes only the governed facade with isolated
 transient session, exact-result JSON and bounded rendering. It adds no NLP,
 Web, model/live access or new intelligence capability.
 
-**TIAF_A5 ARCHITECTURE: COMPLETE / READY TO IMPLEMENT A5.1.** The
+**TIAF_A5 ARCHITECTURE: COMPLETE / A5.1 AND A5.2 IMPLEMENTED.** The
 [authoritative design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) fixes the
 position-truth/TM authority boundary, additive contracts, analytical posture,
 thesis health, recommendations, bounded monitoring intent and replay. No A5
 operational authority or scheduler is introduced.
 
-**TIAF_A5.1 — Deterministic Single-Position Baseline: IMPLEMENTED / ACCEPTANCE
-READY.** The [bounded runtime](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md)
+**TIAF_A5.1 — Deterministic Single-Position Baseline: IMPLEMENTED / ACCEPTED.**
+The [bounded runtime](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md)
 implements immutable contracts, strict freshness/A4 lineage, deterministic
 advice, monitoring intent and offline replay without facade/Shell publication or
 live dependencies.
 
-**TIAF_A5.2 — Governed Position Facade + Bounded Shell: IMPLEMENTED / ACCEPTANCE
-READY.** The [publication slice](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md)
+**TIAF_A5.2 — Governed Position Facade + Bounded Shell: IMPLEMENTED / ACCEPTED.**
+The [publication slice](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md)
 adds position-scoped captured-read admission, canonical A5 parity, generic A5
 recorded replay and read-only `position assess`; no broker lookup, execution,
 scheduler, A6/A7 or remote service.
 
 **TIAF_A5 — Position Intelligence MVP: RUNTIME ACCEPTED / TAG PENDING
-PLUGGABILITY REMEDIATION.** The
+FINAL FREEZE CHECK.** The
 [major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts A5.1
 and A5.2 together and recommends `tiaf-a5-baseline` without creating it.
 Multi-leg interpretation, live TM/broker integration and monitoring runtime
 remain explicitly deferred.
 
-**TI PLUGGABILITY — R1 CLOSED / A5 DOCUMENTATION CONSOLIDATION NEXT.**
+**TI PLUGGABILITY — R1 CLOSED / A5 DOCUMENTATION SYNCHRONIZED.**
 The [audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) returns
 `READY_FOR_PLUGGABILITY_REMEDIATION` and identified its single pre-freeze item
 R1. The bounded
@@ -138,9 +138,19 @@ membership, including legacy replay. The
 [acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
 `A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
-`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. Next is documentation consolidation followed
-by a final A5 tag-readiness check. No A5 policy was retuned, A6 is not started,
-and R2–R5 remain separate pre-A6 improvements.
+`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. Documentation consolidation is complete;
+next is `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. No A5 policy was retuned,
+A6 is not started, and R2–R5 remain separate pre-A6 improvements.
+
+The [A4 detailed roadmap](TIAF_A4_DETAILED_ROADMAP.md) and
+[A5 detailed roadmap](TIAF_A5_DETAILED_ROADMAP.md) now index each complete
+architecture/implementation/acceptance/closure set. The
+[Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) is promoted future
+design only: A5 advisory intent, A8 TM integration, A9 scanner intake, A10 runtime.
+After separately authorized A5 freeze, R2–R5 precede A6; deterministic A6 precedes
+the A7 forecasting/evaluation overlay and a possible forecast-enhanced A6 return.
+Sector Rotation placement relative to A7/A8 remains TBD; Signal Qualification is
+intended after its review. Neither is delivered or renumbers A8/A9/A10.
 
 ## Deferral governance
 

@@ -361,7 +361,8 @@ Adaptive policies, exchange calendars, distributed runtime, optional subscriptio
 lease semantics, notification transports and sector/signal capabilities remain
 separately gated; no deferral is marked implemented here.
 
-**Next prompt: `TIAF POST-R1 — DOCUMENTATION CONSOLIDATION AND SYNCHRONIZATION`.**
-The next pass synchronizes accepted A4/A5 and top-level documentation before the
-final A5 tag-readiness check. This review does not perform that wider pass, begin
-A6 or implement monitoring, and does not commit, tag or push.
+**Subsequent status:** the [post-R1 documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+has now synchronized accepted A4/A5 and top-level documentation. Its next prompt
+is `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. This supersedes the monitoring
+review's then-next consolidation prompt, not its architecture decisions. No A6,
+monitoring runtime, R2–R5 implementation, commit, tag or push is performed here.

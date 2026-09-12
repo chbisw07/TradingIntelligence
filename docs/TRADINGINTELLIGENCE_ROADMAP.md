@@ -1,7 +1,8 @@
 # TradingIntelligence Development Roadmap
 
 **Status:** Canonical development map  
-**Architecture reference:** TIAF — Trading Intelligence Agent Fabric Thesis  
+**Architecture reference:** [TIAF thesis](TIAF_THESIS.md) and [system architecture](TIAF_SYSTEM_ARCHITECTURE.md); DOCX companions are non-normative.
+
 **Purpose:** Preserve the implementation sequence, milestone boundaries, acceptance gates, integration contracts, and evidence-first progression for TradingIntelligence.
 
 The post-A3 [system architecture](TIAF_SYSTEM_ARCHITECTURE.md) now governs the
@@ -23,7 +24,8 @@ not a logical diagram. The separate bounded
 POST_A3_PRE_A4_FOUNDATION and the subsequent narrow local facade/lifecycle were
 accepted before A4 runtime; neither adds a numbered major milestone. Citation UX
 remains separately tracked by DEF-054 and is not part of either prerequisite;
-its minimal Shell slice is planned only after A4 closure.
+its minimal Shell slice was delivered separately after A4 closure, while rich
+bibliography/Web remains deferred.
 A3 is frozen at `tiaf-a3-baseline`; deterministic A4.1 and its bounded A4.2
 evidence-enrichment bridge are implemented, jointly accepted by the
 [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md), and frozen at
@@ -33,6 +35,29 @@ approves a [command-first local architecture](TIAF_TI_SHELL_ARCHITECTURE.md), no
 delivered by the bounded
 [v0.1 implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) over the existing
 facade. This unnumbered slice does not add or renumber an A-milestone.
+
+**Post-R1 current status:** A5.1/A5.2 and R1 are accepted; the
+[documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+is complete. A5 is untagged and documentation-ready for
+`TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. Detailed
+[A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
+now provide milestone-level navigation. Monitoring is authoritative future
+architecture, not delivered runtime.
+
+### Current sequence and explicit ordering uncertainty
+
+Final A5 freeze check / separately authorized tag → bounded R2–R5 before A6 →
+A6 architecture and deterministic expression implementation → A7 forecasting/
+evaluation overlay → separately versioned forecast-enhanced A6 when supported.
+A8 TM integration, A9 scanner/candidate intake and A10 monitoring operationalization/
+production hardening retain their numbered ownership.
+
+Sector Rotation needs a separate architecture/workstream decision; its exact
+position relative to A7/A8 remains TBD. Signal Qualification is intended after
+Sector Rotation review unless explicitly reordered. The idea note's proposed
+A7.0/A7.x or SR milestones are not authoritative. Neither capability is callable
+or required for A5 freeze. Do not infer a mandatory linear dependency from these
+future design examples.
 
 ---
 
@@ -56,7 +81,9 @@ The progression is deliberate:
 
 This order reflects the architecture:
 
-> First establish stable contracts and factual evidence, then deterministic baselines, then AI reasoning, then measurement, and only then operational integration.
+> First establish contracts/evidence, then deterministic baselines, then bounded
+> specialist/challenge reasoning (currently deterministic), measurement and
+> operational integration. Model-backed reasoning is optional future work.
 
 ### Governing principles
 
@@ -482,7 +509,7 @@ explicit absence plus legacy replay. The
 [acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 returns `READY_TO_CLOSE_PLUGGABILITY_R1` and
 `A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`. A5 stays untagged pending the
-specified documentation consolidation and final tag-readiness check. R2–R5 are
+final freeze/tag-readiness check; documentation consolidation is complete. R2–R5 are
 not A5 freeze requirements and remain pre-A6 improvements. A6 remains unstarted
 and the major order is unchanged.
 
@@ -506,6 +533,9 @@ Support TradeMonitor's most important generic use case: an existing broker posit
 - A5.1 single-leg baseline with explicit unsupported multi-leg behavior.
 
 ### Reassessment triggers
+
+These are future integration/monitoring intents, not installed detectors or
+scheduling promises. A5 presently evaluates supplied signals and emits advice.
 
 - elapsed time
 - price milestone
@@ -734,7 +764,12 @@ The intended funnel is:
 
 The same principle applies to open positions:
 
-`continuous deterministic monitoring → meaningful trigger → Agent reassessment`
+`future governed monitoring → admitted trigger → bounded capability reassessment`
+
+The [Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) governs this future
+path: subscriber-owned optional groups, independent mandates, compatible shared
+evidence, finite admission and replay/cost/failure lineage. A5's advisory need
+construction and current captured reads do not implement continuous monitoring.
 
 This preserves cost, latency and provider limits while focusing AI effort where judgment adds value.
 

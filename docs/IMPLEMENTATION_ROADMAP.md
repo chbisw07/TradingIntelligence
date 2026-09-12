@@ -36,8 +36,10 @@ coverage. The bounded [R1 remediation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLI
 now preserves stable declared scope, explicit absence, and old/new capture
 compatibility. The subsequent
 [acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
-closes R1 and finds A5 ready for final documentation and freeze. A5 remains
-untagged pending documentation consolidation and a final tag-readiness check. No
+closes R1 and finds A5 ready for final documentation and freeze. The
+[post-R1 consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+now completes documentation synchronization. A5 remains untagged pending the
+final freeze/tag-readiness check. No
 A5 policy changed. R2–R5 remain separately bounded pre-A6 work and are not A5
 freeze requirements. A6 has not begun; this workstream does not renumber
 milestones or implement a plugin framework.
@@ -47,9 +49,29 @@ future subscriber-driven mandates without changing accepted A5 intent or
 implementing a runtime. A8 retains TM integration, A9 scanner/candidate intake,
 and A10 durable monitoring operationalization. A separately approved minimum
 runtime slice may accompany earlier integration only with its admission/replay/
-budget/recovery gates; it is not automatically next. The next prompt remains
-`TIAF POST-R1 — DOCUMENTATION CONSOLIDATION AND SYNCHRONIZATION`, followed by
-the final A5 tag-readiness check. No R2–R5 implementation or A6 work is added.
+budget/recovery gates; it is not automatically next. Detailed milestone coverage
+is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
+[A5](TIAF_A5_DETAILED_ROADMAP.md). No runtime or R2–R5 work is added.
+
+## Current forward sequence
+
+1. `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`; then A5 freeze/tag only under
+   separate explicit authorization against the reviewed candidate tree.
+2. Bounded R2–R5 pluggability hardening before A6: descriptors/dependencies,
+   additive composition/pinned verification, optional import isolation and trusted
+   COLD ownership. These remain SHOULD_FIX_BEFORE_A6, not A5 freeze requirements.
+3. A6 architecture/implementation: deterministic valid expressions first.
+4. A7 forecasting/evaluation overlay; calibrated inputs may then support a
+   separately versioned forecast-enhanced A6 follow-up.
+5. A8 TM integration, A9 scanner/candidate intake, A10 monitoring operationalization
+   and production hardening; preserve admission, authority and delivery gates.
+
+**Adjacent workstream ordering remains explicit TBD:** Sector Rotation needs its
+own architecture/acceptance after the relevant deterministic/PIT/evaluation seams;
+Signal Qualification is intended after Sector Rotation review unless explicitly
+reordered. Placement relative to A7/A8 is not yet authoritative. Do not promote
+the exploratory A7.0/A7.x/SR labels or silently insert an implementation into the
+numbered sequence. Neither workstream is an A5 freeze blocker or callable now.
 
 ## Acceptance philosophy
 

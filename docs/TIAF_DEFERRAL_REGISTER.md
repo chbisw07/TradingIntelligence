@@ -81,7 +81,7 @@ continue to govern those boundaries.
 | DEF-004 | TradeMonitor intelligence integration | A0; clarified A5 architecture/A5 closure | DEPENDENCY_DEFERRAL | Integration must preserve TradeMonitor risk, lifecycle, and authority. | Stable assessments, freshness/degradation, and evaluation feedback | HIGH | A8 | PLANNED | A5 implements the versioned immutable snapshot/advice result and governed local publication but no TM transport or action. Roadmap A8 owns real integration without authority transfer. |
 | DEF-005 | Broker order placement/modification/cancellation by TIAF | A0; reaffirmed A1-A2.8 and A5/A5.1 | INTENTIONAL_NON_GOAL | TIAF intelligence never owns broker execution authority. | None; TradeMonitor remains authority owner | HIGH | FUTURE | REJECTED | A5.1 emits `executable=false` advice/reference levels and no broker import. Rejected from TIAF scope; TM retains action authority. |
 | DEF-006 | Option-expression selection and strategy templates | A0; reaffirmed A2.7/A2.8 | CAPABILITY_DEFERRAL | Factual underlying/chain evidence must precede contract and strategy choice. | Accepted opportunity view, option evidence, risk and liquidity policy | HIGH | A6 / A7 FOLLOW-UP | PLANNED | A6 first delivers deterministic valid candidates and explicit constraints; forecast-enhanced expression/comparison follows admitted A7 evidence. A6 retains contract selection and may return no option trade; higher-order comparison cannot invent candidates or bypass TM. |
-| DEF-007 | Market-calendar-aware source-observation recency | A1; reviewed A5 architecture | DEPENDENCY_DEFERRAL | Wall-time age alone cannot determine closed-market observation acceptability. | Exchange calendar/session contract | HIGH | BEFORE SCHEDULED MONITORING | DEFERRED | A5 may evaluate an explicit age policy and emit freshness intent, but preserves observation/acquisition time separately and makes no calendar/session claim. |
+| DEF-007 | Market-calendar-aware source-observation recency | A1; reviewed A5 architecture | DEPENDENCY_DEFERRAL | Wall-time age alone cannot determine closed-market observation acceptability. | Exchange calendar/session contract | HIGH | BEFORE SESSION-SENSITIVE MONITORING | DEFERRED | A5 may evaluate an explicit age policy and emit freshness intent, but preserves observation/acquisition time separately and makes no calendar/session claim. |
 | DEF-008 | Primary market-data fallback and Zerodha integration | A1/A1.5/A1.6 | CAPABILITY_DEFERRAL | Accepted A1 has one live quote/OHLCV/derivatives provider and no fallback arbitration for that surface. | Second primary market-data adapter, identity mapping, health and conflict policy | HIGH | FUTURE | DEFERRED | Dhan remains the only live primary market-data adapter. A3.6.1 separately implements Tapetide/Yahoo market-intelligence evidence fallback; that does not supply quote/OHLCV/F&O fallback and must not be reported as closing this record. |
 | DEF-009 | Persistent/distributed cache and telemetry | A1/A1.6; reviewed A5 architecture | CAPABILITY_DEFERRAL | Current cache, metrics, scheduler, and single-flight state are process-local. | Operational evidence, storage/retention model, distributed consistency | MEDIUM | OPERATIONAL NEED / A10 | DEFERRED | A5 mandate/result contracts add no mutable or durable runtime state. Redis/database/distributed-lock, durable sparse Evidence Graph storage, and Prometheus-style concerns remain conditional on justified operations. |
 | DEF-010 | Deferred-work retry orchestration and continuous runtime queues | A1/A1.7; clarified A3.8 and A5 closure | CAPABILITY_DEFERRAL | A1 reports scheduler deferral truthfully and A3.8 is bounded in-process orchestration; neither owns durable long-running work. | Runtime queue, retry/backoff, idempotency, checkpoint/resume, restart and late-work/preemption policy | HIGH | A10 RUNTIME | DEFERRED | A5 implements immutable mandate/trigger/next-due intent and remains on-demand. Dispatch, durable scheduling, retry, checkpoint/resume, adaptive cadence and triggered jobs remain A10 or an explicitly gated operational slice. A due hint is not a job guarantee. |
@@ -132,7 +132,7 @@ continue to govern those boundaries.
 | DEF-055 | Provider/model monetary pricing catalog and cost attribution | A3.10 | DEPENDENCY_DEFERRAL | A3.10 correctly represents absent price knowledge as UNKNOWN/UNPRICED; configured cost units cannot establish billed monetary cost. | Versioned provider/model price sources, currency/effective-time semantics, billable-unit mapping and auditable attribution policy | MEDIUM | OPTIONAL MODEL GATE / A10 | DEFERRED | A bounded auditable price/currency/effective-time and billable-unit slice is required before claiming strict monetary caps for optional models; production catalog/attribution remains A10. UNKNOWN/UNPRICED is not zero or an invented nonzero estimate. Original billed usage, held unknown and replay usage stay separate; no pricing integration is implemented. |
 | DEF-056 | Multi-leg A5 position interpretation | A5 architecture/A5 closure | CAPABILITY_DEFERRAL | A5.1/A5.2 deliberately preserve and reject multi-leg shape rather than flattening it; combined-premium, hedge, leg-dependency, partial-fill and aggregate-risk semantics are not accepted. | Concrete multi-leg consumer need; immutable leg/relationship truth; versioned combined-risk, invalidation and protection policy; replay corpus | MEDIUM | BOUNDED A5 EXTENSION / BEFORE MULTI-LEG CONSUMPTION | DEFERRED | The accepted A5 baseline remains single equity, future or single-leg option. Multi-leg input returns `UNSUPPORTED_SHAPE` and is never partially assessed. A later additive A5 policy may implement it without blocking A6 architecture, TM integration, or the single-position freeze. |
 | DEF-057 | Governed HOT capability-composition transitions | TI Pluggability architecture | DEPENDENCY_DEFERRAL | Runtime replacement has no demonstrated need over trusted COLD startup composition and requires stronger correctness guarantees. | Operational justification; equivalent COLD path; immutable generation pinning, activation/quiescence, state/cache ownership, safe retirement, compatible rollback and replay acceptance | MEDIUM | JUSTIFIED HOT NEED / DEPLOYMENT REVIEW | DEFERRED | [Pluggability architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) §14 defines the safety gate, not implementation. No family is approved for HOT in this pass. Existing fallback across startup-pinned routes is not HOT composition; no registry mutation, loader or service is introduced. |
-| DEF-058 | New peer-intelligence contributor publication and projection | TI Pluggability A1–A5 audit | DEPENDENCY_DEFERRAL | Existing specialist IDs, Planner membership and A3.9 detail mappings are closed; registering a new kind of contributor alone cannot make consumers interpret it. | Separately approved peer capability; typed input/output and dependency descriptor; versioned projection/admission policy; preserved baseline and replay | MEDIUM | BEFORE FIRST NEW PEER CONTRIBUTOR | DEFERRED | [Compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) F7/R6: extend only the necessary trusted ID/mapping and optional public operation when justified. No Sector Rotation, Signal Qualification, forecast, generic registry or A4/A5 redesign is delivered. Existing required-scope omission is immediate R1 remediation, not this deferral and not grounds to make all specialists optional. |
+| DEF-058 | New peer-intelligence contributor publication and projection | TI Pluggability A1–A5 audit | DEPENDENCY_DEFERRAL | Existing specialist IDs, Planner membership and A3.9 detail mappings are closed; registering a new kind of contributor alone cannot make consumers interpret it. | Separately approved peer capability; typed input/output and dependency descriptor; versioned projection/admission policy; preserved baseline and replay | MEDIUM | BEFORE FIRST NEW PEER CONTRIBUTOR | DEFERRED | [Compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) F7/R6: extend only the necessary trusted ID/mapping and optional public operation when justified. No Sector Rotation, Signal Qualification, forecast, generic registry or A4/A5 redesign is delivered. Required-scope omission is resolved by accepted R1, not this deferral and not grounds to make all specialists optional. |
 
 ## Immediate milestone work deliberately not registered
 
@@ -443,9 +443,9 @@ within DEF-009/011 and related deployment work. No existing status changes;
 current totals are 58 stable records with 45 DEFERRED, 4 PLANNED, 4 IMPLEMENTED,
 3 REJECTED and 2 SUPERSEDED. HOT, Sector Rotation, Signal Qualification and
 forecast delivery are not pre-freeze requirements. R1 is now closed and A5 is
-ready for final documentation and freeze; A5 stays untagged pending consolidation
-and a final tag-readiness check. Its earlier closure remains a historical scoped
-finding.
+ready for final documentation and freeze; A5 remained untagged pending
+consolidation and a final tag-readiness check at that review. Subsequent
+documentation consolidation is recorded below; earlier findings stay historical.
 
 ## Post-R1 monitoring architecture reconciliation
 
@@ -470,4 +470,37 @@ remain 58: 45 DEFERRED, 4 PLANNED, 4 IMPLEMENTED, 3 REJECTED, 2 SUPERSEDED.
 R2–R5 monitoring prerequisites/useful refinements are assessed in the architecture;
 none becomes a retroactive A5 freeze blocker. A8 TM, A9 scanner intake and A10
 runtime placement remain unchanged, with any earlier minimum slice separately
-gated. Documentation consolidation and final A5 tag-readiness remain next.
+gated. That review selected documentation consolidation before final A5 readiness.
+
+## Post-R1 documentation consolidation — current disposition
+
+The [consolidation record](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+synchronizes accepted A4/A5, R1, monitoring and current roadmaps. Documentation
+is ready for the final A5 freeze/tag-readiness check; no runtime deferral closes.
+Main register IDs/statuses remain stable: 58 records, 45 DEFERRED, 4 PLANNED,
+4 IMPLEMENTED, 3 REJECTED and 2 SUPERSEDED. Earlier 55/56-record closure totals
+remain historical inventories, not inconsistent current counts.
+
+- A4: DEF-003/052/055 retain remote/live publication, optional model and pricing
+  gates; DEF-049/050/051 preserve historical PIT, replay operations and outcomes.
+- A5: DEF-004/006/056 retain TM integration, A6 expression and multi-leg policy;
+  DEF-005 remains REJECTED. DEF-054 is still PLANNED for rich reporting beyond
+  implemented Shell/A5 rendering.
+- Monitoring: DEF-007/009/010/011/050/051 retain calendars, sharing, scheduling,
+  health, durability and outcome-acquisition obligations. Architecture promotion
+  does not make any of them IMPLEMENTED.
+- Pluggability: R1 is accepted remediation, not a duplicate deferral. R2–R5 keep
+  their audit identities as bounded pre-A6 work, not new A5 freeze blockers.
+  DEF-057 retains HOT; DEF-058 retains new peer publication/projection prerequisites.
+- Forecasting: A7 owns evaluation/calibration, with existing DEF-024/044/049/051/053
+  optimization/probability/PIT/outcome/ranking prerequisites. No calibrated forecast
+  is delivered.
+- Sector Rotation and Signal Qualification remain idea-cache workstreams. Their
+  implementation is not promoted by DEF-058, which governs publication prerequisites
+  rather than defining either engine. No duplicate speculative DEF is created;
+  future approved workstreams must establish bounded scope and acceptance.
+
+Two main-row wording clarifications preserve statuses: DEF-007 now specifies the
+calendar gate for session-sensitive promises rather than any fixed wall-clock
+periodic slice; DEF-058 acknowledges accepted R1 instead of calling it immediate
+unresolved remediation. Neither is implementation burn-down.

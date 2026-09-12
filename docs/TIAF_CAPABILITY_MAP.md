@@ -26,6 +26,7 @@ Statuses describe repository reality:
 - **DEFERRED** — recorded with an unresolved prerequisite in the
   [deferral register](TIAF_DEFERRAL_REGISTER.md);
 - **FUTURE** — recognized capability without a committed near-term milestone;
+- **ARCHITECTURE ONLY** — authoritative design, not an implemented runtime;
 - **EXTERNAL/INTEGRATION** — owned by or dependent on another system boundary.
 
 The [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) now
@@ -40,8 +41,31 @@ pre-A6 improvements. HOT transitions remain deferred (DEF-057). Future `sector.r
 public capabilities. Their typed publication/projection readiness is DEF-058.
 The [R1 acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 finds R2–R5 unnecessary for A5 freeze and A5 ready for final documentation and
-freeze. A5 stays untagged pending documentation consolidation and the final
-tag-readiness check; facade behavior is unchanged.
+freeze. Documentation consolidation is complete; A5 stays untagged pending the
+final freeze/tag-readiness check. Facade behavior is unchanged. The detailed
+[A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
+link implementation, acceptance and outstanding boundaries.
+
+## Current public/engineering catalog versus future designs
+
+This exact eight-operation inventory mirrors the static local facade catalog;
+it is not a new registry or permission grant. All reads remain captured/local.
+
+| Capability ID | Interface / effect |
+|---|---|
+| `baseline.assess` | PUBLIC / PURE |
+| `opportunity.assemble` | PUBLIC / CAPTURED_READ |
+| `a4_input.project` | PUBLIC / CAPTURED_READ |
+| `a4.evaluate` | PUBLIC / CAPTURED_READ |
+| `position.assess` | PUBLIC / CAPTURED_READ |
+| `replay.recorded` | PUBLIC / CAPTURED_READ |
+| `capabilities.list` | PUBLIC / PURE |
+| `replay.verify` | ENGINEERING / CAPTURED_READ |
+
+No LIVE_READ facade operation exists. A4.2's governed internal acquisition bridge
+is not a public endpoint. Future `sector.rotation`, `signal.qualify` and
+`forecast.return` are design examples only; A6 trade expression, recurring
+monitoring, TM/scanner runtime and remote transport are not callable capabilities.
 
 ## Data and evidence
 
@@ -91,7 +115,9 @@ tag-readiness check; facade behavior is unchanged.
 | Bid/ask spread primitives | IMPLEMENTED | A2.7 ATM contract facts |
 | Explicit-benchmark relative strength | IMPLEMENTED | A2.8 exact aligned returns/ATR facts |
 | Automatic benchmark / sector mapping | DEFERRED | Classification evidence; DEF-047 |
-| Sector rotation | IMPLEMENTED | A3.6 cautious multi-period interpretation over explicit mapping/evidence; automatic mapping remains DEF-047 |
+| Sector-context interpretation | IMPLEMENTED | A3.6 cautious multi-period interpretation over explicit mapping/evidence; not the future Sector Rotation engine; automatic mapping remains DEF-047 |
+| Sector Rotation engine / `sector.rotation` | FUTURE | Non-authoritative idea cache; cross-sectional rotation/ranking and publication need separate architecture/PIT/DEF-058 acceptance; ordering relative to A7/A8 TBD |
+| Signal Qualification / `signal.qualify` | FUTURE | Intended after Sector Rotation review; no qualified-signal engine, probability guarantee or public operation implemented |
 | Ordered multi-timeframe context | IMPLEMENTED | A2.8 independent FeatureBundle evidence |
 | Multi-timeframe factual fractions | IMPLEMENTED | A2.8 valid-contributor aggregation |
 | Multi-timeframe indicator aggregation | DEFERRED | Explicit indicator-context contract; DEF-048 |

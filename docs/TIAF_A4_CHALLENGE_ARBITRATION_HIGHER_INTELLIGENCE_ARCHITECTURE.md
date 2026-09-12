@@ -2,6 +2,10 @@
 
 ## Status and authority
 
+The [A4 detailed roadmap](TIAF_A4_DETAILED_ROADMAP.md) is the consolidated
+navigation for architecture, implemented A4.1/A4.2, acceptance and frozen closure.
+Later A5/R1/monitoring work does not expand this deterministic A4 baseline.
+
 **Approved architecture, post-A3 pass 3, 2026-09-11 (Asia/Kolkata).** Its first
 runtime slice is now implemented by
 [TIAF_A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md). The prerequisite

@@ -563,7 +563,7 @@ stable deferral governance, and recommends—but does not create—the
 `tiaf-a5-baseline` tag. A subsequent cross-cutting gate now precedes tagging
 and A6, as described below; the closure's runtime finding remains historical.
 
-### TI Pluggability — R1 closed / documentation consolidation next
+### TI Pluggability — R1 closed / documentation consolidation complete
 
 The authoritative [design](TIAF_PLUGGABILITY_ARCHITECTURE.md) adopts nested
 HOT ⇒ COLD ⇒ STRUCTURAL guarantees, separate scoped requirements/traits,
@@ -582,9 +582,11 @@ composition manifest and baseline-preserving replay.
   It returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
   `A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
   `R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`.
-- P4 next: save R1/acceptance, consolidate A4/A5/top-level documentation, then
-  perform the final A5 tag-readiness check. No tag is created here and no A5
-  policy change is prescribed.
+- P4 complete: [post-R1 documentation synchronization](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md),
+  including detailed [A4](TIAF_A4_DETAILED_ROADMAP.md) and
+  [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps. Next is
+  `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. No tag is created here and no
+  A5 policy change is prescribed.
 
 Separately bounded SHOULD_FIX_BEFORE_A6 slices from the audit:
 
@@ -613,6 +615,16 @@ A8 owns TM subscriber integration, A9 scanner/candidate intake, and A10 recurrin
 runtime/durability/recovery operations. Earlier recurring execution requires its
 own bounded acceptance gate, including fresh-input admission rather than calling
 captured reads a live monitor. R2–R5 remain non-blocking for A5 freeze and are not
-implemented here. P4 remains next:
-`TIAF POST-R1 — DOCUMENTATION CONSOLIDATION AND SYNCHRONIZATION`, then final A5
-tag-readiness review. No milestones are renumbered or runtime deferrals closed.
+implemented here. P4 documentation consolidation is now complete; the final A5
+freeze/tag-readiness review remains next. No milestones are renumbered or runtime
+deferrals closed.
+
+### Current forward sequence and adjacent TBDs
+
+After the separately authorized A5 freeze: bounded R2–R5 before A6 architecture/
+deterministic implementation; then A7 forecasting/evaluation and an optional
+A7-informed A6 follow-up; A8 TM, A9 scanner intake and A10 monitoring/runtime
+production hardening. Sector Rotation is a future dedicated review/workstream
+whose precise A7/A8 placement remains TBD. Signal Qualification is intended after
+Sector Rotation review unless explicitly reordered. No future capability is
+registered merely because its name appears in a design or descriptor example.

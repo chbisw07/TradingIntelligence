@@ -25,7 +25,9 @@ The subsequent
 is realized by the bounded
 [A5.1 deterministic implementation](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md):
 supplied position truth, single-position advice, monitoring intent and replay.
-It adds no operational authority. No Web service exists. Accepted
+The additive [A5.2 publication](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md)
+exposes it through position-scoped captured reads and the bounded Shell. It adds
+no operational authority, live TM binding or scheduler. No Web service exists. Accepted
 A1-A3 milestone contracts, formulas, policies and capture formats remain binding
 for current behavior. A conflict requiring runtime change needs a separately
 accepted implementation/version transition, not reinterpretation of old captures.
@@ -52,10 +54,14 @@ makes governed pluggability a first-order invariant: HOT ⇒ COLD ⇒ STRUCTURAL
 separate scoped optionality, baseline-preserving peer composition and pinned
 replay. It governs future changes, not current A1–A5 compliance or a new runtime
 framework. Required safety semantics and this document's authority boundaries
-remain binding; the dedicated compliance audit is next, before A5 tagging.
+remain binding. The [compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
+and [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+are complete: declared required scope no longer shrinks with registry absence.
+R2–R5 remain pending before A6 and do not block A5 freeze. Current navigation and
+documentation readiness are in the [architecture index](ARCHITECTURE.md).
 
 The [post-A3 consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) owns
-the current transition plan: bounded source foundation, narrow local facade,
+the historical post-A3 transition plan: bounded source foundation, narrow local facade,
 then deterministic A4. The first two steps are now implemented by the additive
 [pre-A4 foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md) and
 [local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md). The third step is now

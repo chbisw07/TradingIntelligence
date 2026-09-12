@@ -1,5 +1,12 @@
 # Post-A3 Consolidation and Replanning
 
+**Subsequent status / historical scope:** the transition below completed through
+source foundation, local facade and frozen A4. A5.1/A5.2 and R1 are now accepted.
+This record's next-step instructions, counts and architecture-entry evidence
+remain historical. The [post-R1 consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+and [current roadmap](IMPLEMENTATION_ROADMAP.md) own today's documentation status
+and final A5 freeze check; they do not alter this record's accepted principles.
+
 ## 1. Decision, authority and verified entry
 
 **Decision: `READY_FOR_POST_A3_FOUNDATION_IMPLEMENTATION`.**

@@ -12,6 +12,11 @@ The combined [A5 closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
 accepts A5.1 plus A5.2 and recommends, but does not create,
 `tiaf-a5-baseline`.
 
+The [A5 detailed roadmap](TIAF_A5_DETAILED_ROADMAP.md) now links both delivered
+slices and acceptance studies, accepted R1 and the later monitoring design.
+Post-R1 documentation is synchronized; the final freeze/tag-readiness check is
+next, with no tag created here. R2–R5 are not A5 freeze requirements.
+
 This document defines contracts and ownership. It does not implement A5,
 TradeMonitor integration, monitoring workers, scheduling, broker access, A6,
 A7, a remote service or durable storage. Accepted A0-A4 contracts and captures

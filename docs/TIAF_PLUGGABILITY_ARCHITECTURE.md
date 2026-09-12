@@ -3,7 +3,17 @@
 ## Status, authority and boundary
 
 Authoritative cross-cutting architecture, 2026-09-12 (Asia/Kolkata).
-Decision: **READY_FOR_PLUGGABILITY_COMPLIANCE_AUDIT**.
+Original architecture decision: **READY_FOR_PLUGGABILITY_COMPLIANCE_AUDIT**.
+
+**Current post-R1 status:** the [audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
+and [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+are complete. Required scope/explicit absence is implemented; R2–R5 remain pending
+pre-A6 and are not A5 freeze blockers. The
+[documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+is complete, with final A5 freeze/tag-readiness next. Sections 16–18 retain the
+original audit brief/delivery decision, not an instruction to rerun completed R1.
+[Monitoring architecture](TIAF_MONITORING_ARCHITECTURE.md) applies these future
+composition constraints without implementing a scheduler, new registry or HOT.
 
 Review entry: clean tree at `5d31a9d`, following A5 closure `e19059c`.
 A1–A4 remain frozen; A5.1/A5.2 and the A5 closure are accepted, but no

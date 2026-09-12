@@ -1,123 +1,47 @@
-# TBD TI Design Notes — Revised Set
+# TBD TI Design Notes — Idea Cache and Promotion Index
 
-These documents are an **idea cache**: unfinished, non-authoritative thinking
-preserved so useful ideas are not forgotten. Selected principles can be promoted
-without approving an entire note or implementing its proposed product.
+TBD documents preserve unfinished, non-authoritative thinking. They can contain
+speculation, rejected/revised concepts, design questions and historical rationale.
+Promotion of selected principles does not approve the entire note or implement
+its product. Accepted Markdown architecture/contracts remain normative; studies
+and milestone reviews describe their historical scope.
 
-Post-A3 pass 1 has now promoted the revised kernel/capability-boundary decisions
-into [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md). The
-[pass-1 decision record](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
-owns the hypothesis-by-hypothesis disposition. The original TBD files remain
-historical proposals, not parallel authoritative specifications.
+The table is the current post-R1/post-monitoring disposition, superseding this
+index's older post-A3-only status summary. It does not rewrite original notes.
+PROMOTED/PARTIALLY_PROMOTED below refers to design, with implementation stated
+separately. ACTIVE_TBD and REVISIT_LATER do not create callable capabilities.
 
-Pass 2 has separately promoted the revised Core principles from the source note
-into [source authority/provenance/contradiction architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
-Its [section dispositions and prerequisites](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
-keep citation UX under DEF-054 and do not implement A4 or new source adapters.
+## Complete major-note inventory
 
-Pass 3 approves the [A4 challenge/arbitration architecture](TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md).
-Its [decision record](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
-selected the now-completed [deployment review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md).
-The authoritative [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md)
-promotes a revised local target and conditional adoption gates, not speculative
-Level 3 infrastructure. The [completed consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
-now sets foundation -> narrow local facade/lifecycle -> deterministic A4.
-Other TBD products and deployment runtime remain unimplemented.
-The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) selected the
-now-completed [Shell architecture review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md).
-Its [authoritative architecture](TIAF_TI_SHELL_ARCHITECTURE.md) approves only
-governed facade commands plus bounded captured-source/A4 rendering under
-DEF-054; it does not promote NLP, Web, monitoring, forecasting, or deployment
-runtime. The bounded promoted Shell subset is now implemented by
-[TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md);
-the remaining Shell and Web ideas retain TBD status.
-The [A5 architecture review](TIAF_A5_ARCHITECTURE_REVIEW.md) has now split the
-monitoring note: its minimal immutable active-position mandate/refresh-intent
-subset is authoritative in
-[the A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md). Candidate
-lifecycle, calendars, cadence, schedulers/queues, retry/recovery and operational
-state remain TBD. A5.1 now implements only the promoted immutable contract/pure-
-construction subset.
+| Note | Current classification | Authority / delivered subset / residual scope |
+|---|---|---|
+| [System thesis](TBD_TI_SYSTEM_ARCHITECTURE_THESIS.md) | SUPERSEDED / HISTORICAL_IDEA_CACHE | Revised kernel/capability decisions governed by [system architecture](TIAF_SYSTEM_ARCHITECTURE.md) and [pass 1](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md); preserve original rationale. |
+| [Shell thesis](TBD_TI_SHELL_THESIS.md) | PARTIALLY_PROMOTED / HISTORICAL_IDEA_CACHE | [Shell review](TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md) classifies all 33 sections. Command-first local [v0.1](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) and A5.2 position exposure are implemented; NLP/mixed/model/product ideas remain TBD. |
+| [CLI/Web interaction](TBD_TI_CLI_WEB_UI_INTERACTION_ARCHITECTURE.md) | PARTIALLY_PROMOTED / REVISIT_LATER | Governed local commands implemented through [Shell architecture](TIAF_TI_SHELL_ARCHITECTURE.md); Web/remote transport needs an actual consumer and DEF-003/054 gates. |
+| [Source/provenance/citation](TBD_TI_SOURCE_PROVENANCE_CITATION_FABRIC.md) | PARTIALLY_PROMOTED / HISTORICAL_IDEA_CACHE | [Source architecture](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md) and [pass 2](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md) govern Core semantics, implemented by the foundation. Bounded Shell rendering exists; rich citation/bibliography/Web remains DEF-054. |
+| [Deployment](TBD_TI_DEPLOYMENT_ARCHITECTURE.md) | PARTIALLY_PROMOTED / HISTORICAL_IDEA_CACHE | [Deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) and [review](TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md) govern local hosting and conditional adoption gates; no service/queue/DB rollout is implied. |
+| [Original monitoring](TBD_TI_MONITORING_ARCHITECTURE.md) | PARTIALLY_PROMOTED / HISTORICAL_IDEA_CACHE | [Monitoring architecture](TIAF_MONITORING_ARCHITECTURE.md) reconciles all 25 sections. A5 advisory intent is implemented; future subscriber mandates, lifecycle and scheduling design do not deliver runtime. |
+| [Subscriber monitoring v2](TBD_TI_MONITORING_ARCHITECTURE_V2.md) | PARTIALLY_PROMOTED / HISTORICAL_IDEA_CACHE | All 49 sections classified under the same authoritative monitoring design. Required subscription hierarchy and scope-erasing availability intersection rejected/revised; leases/adaptive/event mechanisms remain gated. |
+| [Pluggability](TBD_TI_PLUGGABILITY_ARCHITECTURE.md) | PARTIALLY_PROMOTED / HISTORICAL_IDEA_CACHE | [Pluggability architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) governs HOT ⇒ COLD ⇒ STRUCTURAL. Audit/R1 accepted; R2–R5 pending and HOT remains DEF-057. No universal registry delivered. |
+| [Forecasting/ensemble/learning](TBD_TI_FORECASTING_ENSEMBLE_LEARNING_ARCHITECTURE.md) | ACTIVE_TBD / REVISIT_LATER | A7 architecture after the deterministic A6 seam; PIT/outcome/calibration/null-model gates remain. No calibrated forecaster, ensemble or autonomous learning system implemented. |
+| [Sector Rotation](TBD_TI_SECTOR_ROTATION_INTELLIGENCE_ARCHITECTURE.md) | ACTIVE_TBD / REVISIT_LATER | Future cross-sectional engine, not existing A3.6 sector-context interpretation. Exact milestone placement remains TBD; proposed A7.0/A7.x/SR labels are not authoritative. |
+| [Signal Qualification](TBD_TI_SIGNAL_QUALIFICATION_FALSE_SIGNAL_SUPPRESSION_ARCHITECTURE.md) | ACTIVE_TBD / REVISIT_LATER | Intended revisit after Sector Rotation review unless explicitly reordered. Proposed thresholds/probability objectives are unvalidated; signal.qualify is not callable. |
 
-They are intentionally prefixed with `TBD_` so they remain visibly non-authoritative until the relevant milestone revisits and promotes, revises, splits, or rejects them.
+## Revisit and authority rules
 
-## Documents
+Reopen a note at its owning milestone or a separately approved bounded review.
+Reconcile it with current contracts, architecture, source rights, replay, budgets,
+authority and implementation evidence. Record promoted, revised, rejected and
+remaining ideas explicitly; retain historical bodies and acceptance findings.
 
-1. `TBD_TI_SYSTEM_ARCHITECTURE_THESIS.md`
-   - TI_CORE as an intelligence kernel
-   - curated, typed, versioned public capability boundary
-   - replaceable application, model, provider, and integration adapters
-   - logical modularity without premature microservices
+The post-A3 [consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md),
+[pass 3](TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
+and later A4/A5 closures remain historical transition records, not instructions
+to restart completed work. Current scheduling belongs to the
+[implementation roadmap](IMPLEMENTATION_ROADMAP.md), with details in the
+[A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps.
+Stable obligations remain in the [deferral register](TIAF_DEFERRAL_REGISTER.md);
+a non-authoritative idea alone does not justify a duplicate DEF record.
 
-2. `TBD_TI_SHELL_THESIS.md`
-   - stateful engineering mediator over typed TI capabilities
-   - native deterministic commands plus explicitly gated NLP
-   - no shell-out-as-domain-API and no intelligence ownership
-
-3. `TBD_TI_SOURCE_PROVENANCE_CITATION_FABRIC.md`
-   - material claim-to-evidence/source traceability
-   - source authority, contradiction and citation presentation
-   - point-in-time replay and provider-neutral source governance
-
-4. `TBD_TI_MONITORING_ARCHITECTURE.md`
-   - partially promoted; consult the A5 architecture/review for authoritative
-     position-monitoring contract semantics
-   - Semantic lifecycle states instead of color-named domain states
-   - Instrument vs WatchMandate
-   - Independent cadence/evidence clocks
-   - Scheduled + event-driven monitoring
-   - Incremental/delta-aware recalculation
-   - Shared evidence and deduplication
-   - Priority, adaptive cadence, budget-aware scheduling
-   - TradeMonitor authority boundary
-
-5. `TBD_TI_FORECASTING_ENSEMBLE_LEARNING_ARCHITECTURE.md`
-   - Forecast task/method/regime/ensemble separation
-   - Config-driven pluggable forecasting methods
-   - Hierarchical/funnel ensembles
-   - Reality-based scorecards and calibration
-   - Champion/challenger lifecycle
-   - Point-in-time validation discipline
-   - Batch and cross-sectional forecasting
-   - Headless structured output
-   - Feedback learning with controlled promotion
-
-6. `TBD_TI_CLI_WEB_UI_INTERACTION_ARCHITECTURE.md`
-   - UFW/GUFW-inspired design
-   - Semantic typed commands/requests
-   - Exhaustive CLI, selective Web UI
-   - No GUI parity rush
-   - Equivalent CLI representation
-   - Shared service/application layer
-   - Async/long-running operation preparation
-   - Common semantic error/version/auth models
-   - Headless TI core and external visualization
-
-7. `TBD_TI_DEPLOYMENT_ARCHITECTURE.md`
-   - logical boundaries versus hosting/process topology
-   - shared evidence, isolated request state, authority and replay
-   - revised local target and adoption gates promoted; no deployment implementation
-   - all 16 original sections classified in the deployment review; production details remain conditional
-
-## Authority
-
-These notes do not override the accepted repository architecture, contracts, tests, milestone documents, or tagged baselines.
-
-They should be re-opened at the relevant milestone and reconciled with the then-current implementation before becoming authoritative.
-
-## Current post-A3 dispositions
-
-| Note | Current disposition |
-|---|---|
-| System architecture thesis | SUPERSEDE: system/deployment architecture now governs; preserve rationale, no package relocation. |
-| Shell thesis | PARTIALLY_SUPERSEDED: its 33 sections are classified in the Shell review; command-first local v0.1 is authoritative, while NLP/mixed/model/product ideas remain TBD. Runtime is not implemented. |
-| CLI/Web interaction | SPLIT: local commands are governed by the Shell architecture; Web/transport remains TBD for an actual consumer/A8 need, with no exhaustive internals or Shell-out integration. |
-| Source/provenance/citation | SPLIT: Core semantics are implemented; DEF-054 now plans minimal captured-source/A4 rendering with Shell, while rich report/Web UX and adapters remain deferred. |
-| Monitoring | REVISE_AND_KEEP_TBD: review bounded mandate/lifecycle/clocks/delta at A5 entry; A8 position binding, A9 intake and A10 durable scheduling remain later. Initial on-demand A5 needs no daemon. |
-| Forecasting/ensemble/learning | REVISE_AND_KEEP_TBD: A7 architecture after deterministic A6 seam, with PIT/outcome/benchmark/calibration prerequisites. Algorithms/ensembles/learning remain hypotheses; A7 then informs enhanced A6. |
-| Deployment | SPLIT: local Python/state/security/replay design promoted; service/production options conditional at A8/A10 or demonstrated operational need. No runtime rollout. |
-
-The [A3 major closure review](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
-previously classified all six notes as `REQUIRES_POST_A3_ARCH_CONSOLIDATION`
-and found no A3 blocker. The table above records the subsequent bounded
-consolidation; it does not retroactively change that closure review.
+No idea-cache body or DOCX companion is deleted or rewritten by this index
+refresh. The [architecture index](ARCHITECTURE.md) leads to normative documents.

@@ -15,8 +15,10 @@ The [A4 major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) confirms that
 the implemented in-process A4.1/A4.2 layers fit this Level 1 design without
 creating a service, worker, queue, database or remote interface.
 The approved [TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) now fixes
-the next consumer placement at Level 1: same-process, caller-bound and transient,
-with no new transport or runtime implementation in the architecture pass.
+the consumer placement at Level 1: same-process, caller-bound and transient.
+[Shell v0.1](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) and
+[A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) now implement that bounded
+consumer path, without remote transport or monitoring runtime.
 
 The local target and promotion gates are approved architecture. Level 2/3
 components are conditional options, not approved procurement, infrastructure or
@@ -31,8 +33,12 @@ cross-cutting composition contract: COLD is the default target, trusted startup
 bindings remain distinct from request-time routing, and HOT requires pinned
 generations, quiescence, state ownership and rollback proof. HOT is deferred
 (DEF-057); no live loader, new host or service boundary is introduced. Existing
-local deployment and replay guarantees are unchanged and await the separate
-pluggability compliance audit, not presumed compliance from this design.
+local deployment and replay guarantees are unchanged. The
+[compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) and
+[R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) are
+complete; R2–R5 remain pending, not presumed compliant from this design. See the
+[current roadmap](IMPLEMENTATION_ROADMAP.md) for the post-documentation freeze
+check and subsequent work; no remote/live hosting is accepted by consolidation.
 
 **One trusted Python application runtime, direct typed capabilities, isolated
 invocations and filesystem replay. Split processes only for demonstrated needs.**

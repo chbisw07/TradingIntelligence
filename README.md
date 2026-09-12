@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — frozen A4, accepted A5, pluggability R1 remediated
+### Present — frozen A4, accepted A5, R1 closed, documentation synchronized
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -68,8 +68,8 @@ A4.1 and A4.2 are reviewed together in the
 [A4 major milestone closure](docs/TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md),
 which accepted the deterministic, bounded and replayable A4 layer now frozen at
 `tiaf-a4-baseline` (`494d968`).
-The optional model-backed Challenger remains deferred. The preferred next slice
-is now approved by the
+The optional model-backed Challenger remains deferred. The subsequent Shell slice
+was approved by the
 [POST_A4_PRE_A5 Shell review](docs/TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md),
 [authoritative architecture](docs/TIAF_TI_SHELL_ARCHITECTURE.md) and
 [implementation record](docs/TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md): the
@@ -111,9 +111,23 @@ explicit absence, and preserves legacy `1.0` replay semantics. The subsequent
 [acceptance closure](docs/TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
 `A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
-`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. A5 remains untagged pending documentation
-consolidation and a final tag-readiness check. R2–R5 and A6 have not started;
+`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. Documentation consolidation is now complete;
+A5 remains untagged pending a final freeze/tag-readiness check. R2–R5 and A6 have not started;
 Sector Rotation and Signal Qualification remain future thought experiments.
+
+Start with the [modernized thesis](docs/TIAF_THESIS.md) and
+[architecture reading map](docs/ARCHITECTURE.md). Detailed
+[A4](docs/TIAF_A4_DETAILED_ROADMAP.md) and [A5](docs/TIAF_A5_DETAILED_ROADMAP.md)
+roadmaps link architecture, implementation, acceptance and deferrals. The
+[Monitoring Architecture](docs/TIAF_MONITORING_ARCHITECTURE.md) is authoritative
+future subscriber-driven design—not a scheduler or live monitor. Current
+captured-read facade operations cannot acquire fresh live evidence.
+
+Next: `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`, then separately authorized
+freeze/tag and bounded R2–R5 before A6. See the
+[consolidation record](docs/TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+for documentation validation and the [roadmap](docs/IMPLEMENTATION_ROADMAP.md)
+for explicitly unresolved Sector Rotation/Signal Qualification placement.
 
 ## Layout
 

@@ -1,8 +1,40 @@
 # Architecture
 
+## Reading map and current status
+
+Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
+[DEPLOYMENT](TIAF_DEPLOYMENT_ARCHITECTURE.md) →
+[PLUGGABILITY](TIAF_PLUGGABILITY_ARCHITECTURE.md) →
+[SOURCE SEMANTICS](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md) →
+[A4](TIAF_A4_DETAILED_ROADMAP.md) → [A5](TIAF_A5_DETAILED_ROADMAP.md) →
+[MONITORING](TIAF_MONITORING_ARCHITECTURE.md) →
+[ROADMAP](IMPLEMENTATION_ROADMAP.md).
+
+| Reader question | Authoritative navigation |
+|---|---|
+| What exists and what is next? | [Capability map](TIAF_CAPABILITY_MAP.md), [milestones](MILESTONES.md), [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md), [targets](TIAF_IMPLEMENTATION_TARGETS.md). |
+| What was accepted? | A4/A5 detailed roadmaps link each architecture, implementation, study and closure; historical counts are not current test runs. |
+| What is unresolved? | [Deferral register](TIAF_DEFERRAL_REGISTER.md) and [TBD index](README_TBD_DESIGN_NOTES.md); idea notes are not runtime specifications. |
+| How do consumers access TI? | [Local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md), [Shell](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md); no remote/live public operation. |
+| What did this consolidation change? | [Post-R1 record](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md). |
+
+A1–A4 are frozen. A5.1/A5.2 and R1 are accepted; documentation is ready for the
+final A5 freeze/tag-readiness check, but `tiaf-a5-baseline` does not yet exist.
+R2–R5 are pending pre-A6 work, not A5 freeze blockers. Monitoring is authoritative
+future architecture, not runtime. Sector Rotation, Signal Qualification, A6/A7,
+TM/scanner runtime integration and remote transport remain unimplemented.
+
+Markdown architecture is normative. The [Fabric thesis](TIAF_Trading_Intelligence_Agent_Fabric_Thesis.docx),
+[Hierarchy thesis](TI_Intelligence_Hierarchy_Thesis.docx) and
+[Monitoring thesis](TI_Monitoring_Architecture_Thesis.docx) are unchanged,
+non-normative human-readable companions.
+
+## Implementation-layer overview
+
 The authoritative [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md)
 now governs cross-cutting composition and replay invariants. It is architecture
-only; A1–A5 compliance audit and any justified remediation remain separate.
+only; the separate A1–A5 audit and bounded R1 acceptance are complete. Their
+findings do not imply that R2–R5 or all target composition guarantees exist.
 
 The authoritative top-level boundary is now
 [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md): logical TI_CORE,
@@ -28,7 +60,7 @@ optional/deferred; this is not A4 runtime expansion.
 
 The authoritative
 [A5 Position Intelligence architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md)
-now defines the next bounded semantic layer. It consumes an explicitly supplied
+defines the implemented bounded position layer. It consumes an explicitly supplied
 TM/broker position snapshot and immutable A4 result, separates operational state
 from analytical posture/thesis health/recommendation, emits only non-executable
 advice and monitoring intent, and preserves captured replay. Its
@@ -216,6 +248,6 @@ gateways; they do not recalculate A2 facts or receive arbitrary browser, shell,
 database, broker, or execution access. An instrument-aware Planner selects
 bounded specialists and reasoning depth under explicit token, tool, latency,
 specialist, and cost budgets. A3 preserves individual cited opinions and
-disagreement. A4 later arbitrates them, A5 manages adopted positions, A6 chooses
-option expression, A7 evaluates and calibrates intelligence, and A8 integrates
-with TradeMonitor without transferring authority.
+disagreement. Accepted A4 arbitrates them and A5 advises on supplied adopted
+positions. Future A6 chooses option expression, A7 evaluates/calibrates as an
+overlay, and A8 integrates with TM without transferring authority.
