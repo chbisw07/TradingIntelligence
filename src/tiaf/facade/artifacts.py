@@ -5,6 +5,17 @@ from collections.abc import Mapping
 from typing import Any
 
 from tiaf.a3_hardening import exact_bytes_checksum, load_package_json
+from tiaf.a5 import (
+    A5Capture,
+    PositionIntelligenceRequest,
+    deterministic_policy,
+)
+from tiaf.a5 import (
+    validate_capture as validate_a5_capture,
+)
+from tiaf.a5 import (
+    validate_request as validate_a5_request,
+)
 from tiaf.source_semantics import (
     FoundationCapture,
     ProjectionBuildInput,
@@ -56,6 +67,14 @@ def validate_trusted_artifact(artifact: TrustedArtifact) -> TrustedArtifact:
         ProjectionBuildInput.model_validate_json(artifact.content)
     elif artifact.kind is ArtifactKind.FOUNDATION_CAPTURE:
         validate_foundation_capture(FoundationCapture.model_validate_json(artifact.content))
+    elif artifact.kind is ArtifactKind.A5_POSITION_REQUEST:
+        request = PositionIntelligenceRequest.model_validate_json(artifact.content)
+        validate_a5_request(
+            request,
+            deterministic_policy(version=request.policy_version),
+        )
+    elif artifact.kind is ArtifactKind.A5_CAPTURE:
+        validate_a5_capture(A5Capture.model_validate_json(artifact.content))
     return artifact
 
 
@@ -89,4 +108,3 @@ class LocalArtifactStore:
         ):
             raise PermissionError("artifact entitlement is not effective for this invocation")
         return artifact
-

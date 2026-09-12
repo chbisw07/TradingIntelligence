@@ -20,7 +20,19 @@ from tiaf.a4 import (
     A4InputIntegrityError,
     evaluate_projection,
 )
+from tiaf.a5 import (
+    A5Capture,
+    A5InputIntegrityError,
+    A5ReplayIntegrityError,
+    PositionIntelligenceRequest,
+    deterministic_policy,
+    evaluate_position,
+)
+from tiaf.a5 import (
+    replay_recorded as replay_a5,
+)
 from tiaf.baseline import BaselineEngine, BaselineError
+from tiaf.context import AnalysisPurpose
 from tiaf.contracts.common import TIAF_TIMEZONE
 from tiaf.planner.digests import digest
 from tiaf.service.opportunity_intelligence import (
@@ -62,6 +74,8 @@ from .contracts import (
     InvocationUsage,
     OpportunityAssembleRequest,
     OpportunityAssembleResult,
+    PositionAssessRequest,
+    PositionAssessResult,
     RecordedReplayRequest,
     RecordedReplayResult,
     ReplayVerifyRequest,
@@ -127,6 +141,9 @@ class LocalFacadeClient:
 
     @overload
     def invoke(self, request: A4EvaluateRequest) -> A4EvaluateResult: ...
+
+    @overload
+    def invoke(self, request: PositionAssessRequest) -> PositionAssessResult: ...
 
     @overload
     def invoke(self, request: RecordedReplayRequest) -> RecordedReplayResult: ...
@@ -311,6 +328,7 @@ class LocalFacadeOwner:
             "opportunity.assemble": OpportunityAssembleRequest,
             "a4_input.project": A4InputProjectRequest,
             "a4.evaluate": A4EvaluateRequest,
+            "position.assess": PositionAssessRequest,
             "replay.recorded": RecordedReplayRequest,
             "replay.verify": ReplayVerifyRequest,
         }[request.capability_id]
@@ -412,6 +430,7 @@ class LocalFacadeOwner:
         except (
             A3HardeningError,
             A4InputIntegrityError,
+            A5ReplayIntegrityError,
             CaptureIntegrityError,
             ProjectionIntegrityError,
         ) as exc:
@@ -430,6 +449,15 @@ class LocalFacadeOwner:
                 capability_id=request.capability_id,
                 status=FacadeStatus.FAILED,
                 message="A4 evaluation failed without exposing internal state",
+                child_codes=(type(exc).__name__,),
+            ) from exc
+        except A5InputIntegrityError as exc:
+            raise self._error(
+                request_id=request.scope.request_id,
+                correlation_id=request.scope.correlation_id,
+                capability_id=request.capability_id,
+                status=FacadeStatus.FAILED,
+                message="position assessment failed safe integrity validation",
                 child_codes=(type(exc).__name__,),
             ) from exc
         except (BaselineError, ValidationError, TypeError, ValueError) as exc:
@@ -544,6 +572,49 @@ class LocalFacadeOwner:
                 run_fingerprint=record.fingerprint,
                 capture_checksum=record.request.capture_checksum,
             )
+        if isinstance(request, PositionAssessRequest):
+            artifact = self._read(request.position_request_ref, admission)
+            self._require_kind(artifact, ArtifactKind.A5_POSITION_REQUEST)
+            position_request = PositionIntelligenceRequest.model_validate_json(
+                artifact.content
+            )
+            if admission.effective_authority_ref not in position_request.authority_refs:
+                raise PermissionError("position request authority is not effective")
+            if admission.effective_authority_ref not in position_request.snapshot.authority_refs:
+                raise PermissionError("position snapshot authority is not effective")
+            self._match_scope(
+                request.scope,
+                subject=position_request.snapshot.underlying,
+                objective=AnalysisPurpose.POSITION,
+                horizon=position_request.horizon,
+                as_of=position_request.as_of,
+            )
+            policy = deterministic_policy(version=position_request.policy_version)
+            position_record = evaluate_position(
+                position_request,
+                policy=policy,
+                evaluated_at=position_request.as_of,
+            )
+            position_result = position_record.result
+            return PositionAssessResult(
+                metadata=self._metadata(
+                    request_id=request.scope.request_id,
+                    run_id=run_id,
+                    correlation_id=request.scope.correlation_id,
+                    scope=request.scope,
+                    admission=admission,
+                    started=started_at,
+                    completed=datetime.now(TIAF_TIMEZONE),
+                    policy_refs=(
+                        (position_result.policy_id, position_result.policy_version),
+                    ),
+                    warnings=("ADVISORY_MONITORING_INTENT_ONLY_NOT_SCHEDULED",),
+                    gaps=position_result.gaps,
+                ),
+                assessment=position_result,
+                run_fingerprint=position_record.fingerprint,
+                position_request_checksum=artifact.checksum,
+            )
         if isinstance(request, A4InputProjectRequest):
             artifact = self._read(request.build_input_ref, admission)
             self._require_kind(artifact, ArtifactKind.FOUNDATION_BUILD_INPUT)
@@ -582,9 +653,44 @@ class LocalFacadeOwner:
             )
         if isinstance(request, RecordedReplayRequest):
             artifact = self._read(request.artifact_ref, admission)
+            if artifact.kind is ArtifactKind.A5_CAPTURE:
+                a5_replay_result = replay_a5(
+                    A5Capture.model_validate_json(artifact.content),
+                    replayed_at=request.scope.as_of,
+                )
+                a5_record = a5_replay_result.record
+                self._match_scope(
+                    request.scope,
+                    subject=a5_record.request.snapshot.underlying,
+                    objective=AnalysisPurpose.POSITION,
+                    horizon=a5_record.request.horizon,
+                    as_of=a5_record.request.as_of,
+                )
+                return RecordedReplayResult(
+                    metadata=self._metadata(
+                        request_id=request.scope.request_id,
+                        run_id=run_id,
+                        correlation_id=request.scope.correlation_id,
+                        scope=request.scope,
+                        admission=admission,
+                        started=started_at,
+                        completed=datetime.now(TIAF_TIMEZONE),
+                        policy_refs=(
+                            (
+                                a5_record.result.policy_id,
+                                a5_record.result.policy_version,
+                            ),
+                        ),
+                        gaps=a5_record.result.gaps,
+                    ),
+                    kind=ReplayResultKind.A5_RECORDED,
+                    a5_replay=a5_replay_result,
+                )
             if artifact.kind is ArtifactKind.A3_PACKAGE:
                 package = load_package_json(artifact.content)
-                replay = replay_a3_package(package, replayed_at=request.scope.as_of)
+                a3_replay_result = replay_a3_package(
+                    package, replayed_at=request.scope.as_of
+                )
                 self._match_scope(
                     request.scope,
                     subject=package.manifest.subject,
@@ -603,7 +709,7 @@ class LocalFacadeOwner:
                         completed=datetime.now(TIAF_TIMEZONE),
                     ),
                     kind=ReplayResultKind.A3_RECORDED,
-                    a3_replay=replay,
+                    a3_replay=a3_replay_result,
                 )
             if artifact.kind is ArtifactKind.FOUNDATION_CAPTURE:
                 projection = replay_foundation(artifact.content)

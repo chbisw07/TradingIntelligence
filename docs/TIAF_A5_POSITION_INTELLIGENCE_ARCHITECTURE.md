@@ -333,24 +333,24 @@ closed.
 
 ## 10. Facade, Shell and integration seams
 
-No capability is added by this architecture pass. After A5.1 acceptance, the
-candidate public capability is `position.assess` with `CAPTURED_READ` effect.
-`position.replay` may follow as a recorded-read capability, and deterministic
-verification remains engineering-gated. A separate `position.explain`
-capability is unnecessary initially: the Shell may project a bounded structured
-result already returned to the same caller, following the existing explain
-boundary.
+The architecture pass itself added no capability. The separately accepted
+[A5.2 slice](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) now publishes
+`position.assess` with the proposed `CAPTURED_READ` effect and dedicated
+position authority. Generic `replay.recorded` handles authorized A5 captures;
+no redundant `position.replay` was needed. A separate `position.explain`
+capability remains unnecessary because the Shell projects the bounded structured
+result already returned to the same caller.
 
-Only after typed facade descriptors are accepted may the Shell activate:
+The Shell now activates only:
 
 ```text
 position assess
-position explain
-position trace
+explain last
+trace last
 ```
 
-Until then `position ...` remains reserved and unavailable. Shell does not
-discover broker state, schedule monitoring or call private A5 objects.
+Shell does not discover broker state, schedule monitoring or call private A5
+objects. Execution-like position verbs remain unavailable.
 
 The future TM handoff is versioned and idempotent by advice identity. TM supplies
 or authorizes the snapshot, checks action-time freshness, and may reject, adapt
@@ -443,8 +443,8 @@ facade-independent. Do not add Shell commands in A5.1. Avoid trading thresholds
 not already supplied by versioned policy/evidence. Preserve `ABSTAIN`, conflict
 and insufficient evidence.
 
-Later separately accepted slices may add richer position shapes/protection,
-facade/Shell exposure, TM integration, or runtime monitoring. Durable queues,
+The separately accepted A5.2 slice adds governed facade/Shell exposure. Later
+slices may add richer position shapes/protection, TM integration, or runtime monitoring. Durable queues,
 calendar-aware dispatch, adaptive cadence, retry/recovery, remote service and
 distributed persistence remain A10/explicit operational work.
 
@@ -455,6 +455,6 @@ not silently redefined. A5 uses new versioned contracts. Any consumer projection
 back to A0 requires an explicit, tested mapping and cannot erase A5 uncertainty
 or authority semantics.
 
-The exact next implementation prompt title is:
+The exact next prompt title after A5.2 is:
 
-**`TIAF_A5.1 — POSITION INTELLIGENCE CONTRACTS + DETERMINISTIC SINGLE-POSITION BASELINE IMPLEMENTATION`**
+**`TIAF_A5 — MAJOR MILESTONE CLOSURE REVIEW`**

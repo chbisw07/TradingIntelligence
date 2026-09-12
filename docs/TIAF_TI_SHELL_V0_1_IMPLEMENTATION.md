@@ -14,7 +14,7 @@ The implementation preserves four separate version concepts:
 - existing facade/domain capability and contract versions, unchanged.
 
 There is no NLP, Interaction Agent, LLM, live acquisition, provider client,
-remote service, durable session, position intelligence, option selection,
+remote service, durable session, live position lookup, option selection,
 forecasting or broker operation in this slice.
 
 ## Placement and call boundary
@@ -98,6 +98,7 @@ baseline assess --request-file RELATIVE_JSON [SCOPE_ASSERTIONS]
 opportunity assemble --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 a4 project --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 a4 evaluate --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
+position assess --snapshot QUALIFIED_ID [SCOPE_OPTIONS]
 replay recorded --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 replay verify --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 
@@ -132,6 +133,7 @@ command arguments. It has no evaluation, import, subprocess or shell escape.
 | `opportunity assemble` | `opportunity.assemble` | authorized logical A3.8 capture ref |
 | `a4 project` | `a4_input.project` | authorized logical foundation-input ref |
 | `a4 evaluate` | `a4.evaluate` | authorized logical projection-capture ref |
+| `position assess` | `position.assess` | authorized logical complete A5 position-request ref |
 | `replay recorded` | `replay.recorded` | authorized logical captured-artifact ref |
 | `replay verify` | `replay.verify` | authorized engineering logical-artifact ref |
 
@@ -176,7 +178,9 @@ The reason, gap, contradiction and evidence views read only known structured
 fields for the accepted result types. `explain last` assembles existing
 structured facts; for A4 it preserves primary/counter theses, challenge and
 arbitration findings, disposition, residual uncertainties, evidence needs,
-invalidation conditions and evidence references. It performs no new reasoning.
+invalidation conditions and evidence references. For A5 it preserves posture,
+thesis health, recommendation, protection and monitoring intent, gaps,
+contradictions, A4 linkage and invalidation refs. It performs no new reasoning.
 
 `trace last` exposes only allowlisted Shell/facade identities, status/effect,
 usage/cost knowledge, admitted logical refs, policy refs and timestamps. Its
@@ -211,7 +215,7 @@ Future NLP/mixed interaction may translate into the same closed `ShellCommand`
 union and dispatcher only after a separately accepted Interaction-Agent,
 privacy, model-budget and evaluation design. Rich citation numbering,
 bibliographies, hyperlinks, Web UI, remote APIs, multi-user persistence,
-batching, plugins and A5-A7 operations remain deferred. A Web consumer must call
+batching, plugins and A6-A7 operations remain deferred. A Web consumer must call
 the governed facade directly; it must not run the Shell or parse its output.
 
 Acceptance evidence is recorded in

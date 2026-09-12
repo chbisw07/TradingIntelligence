@@ -150,8 +150,10 @@ already supplies a useful captured-input seam. A3.8 live composition needs a
 facade that retains service configuration on the trusted side. Verification,
 policy comparison and raw lineage inspection default to engineering; a public
 replay operation must state whether it reconstructs records or recomputes them.
-Future arbitration, position intelligence, option expression and forecasting
-remain unavailable until their own milestones. A2 ranking does not imply A3
+Deterministic A4 arbitration and governed captured-read A5 position assessment
+are now available through their accepted local facade slices. Live position
+lookup, option expression and forecasting remain unavailable until their own
+milestones. A2 ranking does not imply A3
 cross-candidate ranking (DEF-053).
 
 A small reviewed catalog is useful; automatic export/reflection is not.

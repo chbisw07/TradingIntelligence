@@ -462,10 +462,13 @@ Strong disagreement is itself information. A nominally bullish candidate may be 
 The [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and
 [review](TIAF_A5_ARCHITECTURE_REVIEW.md) are approved. Entry remains accepted A4
 and an explicitly supplied versioned position snapshot, not A6/A7 or a daemon.
-A5.1 is now implemented as an on-demand, deterministic single-position slice. It implements immutable
-position/result/mandate/capture contracts and replay; TM owns actual position
-state, operational lifecycle, action-time freshness and execution. Durable
-scheduling, multi-leg policy and Shell exposure remain separately gated.
+A5.1 is implemented as an on-demand, deterministic single-position slice. It
+implements immutable position/result/mandate/capture contracts and replay; TM
+owns actual position state, operational lifecycle, action-time freshness and
+execution. [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) adds governed
+local facade/Shell publication over authorized captures. Durable scheduling,
+multi-leg policy, live TM/broker integration and remote transport remain
+separately gated.
 
 ## Goal
 

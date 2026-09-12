@@ -115,6 +115,12 @@ implements immutable contracts, strict freshness/A4 lineage, deterministic
 advice, monitoring intent and offline replay without facade/Shell publication or
 live dependencies.
 
+**TIAF_A5.2 — Governed Position Facade + Bounded Shell: IMPLEMENTED / ACCEPTANCE
+READY.** The [publication slice](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md)
+adds position-scoped captured-read admission, canonical A5 parity, generic A5
+recorded replay and read-only `position assess`; no broker lookup, execution,
+scheduler, A6/A7 or remote service.
+
 ## Deferral governance
 
 Intentional deferrals are retained under stable IDs in
@@ -409,8 +415,8 @@ then emits evidence-linked advice without operational authority. Operational
 state, analytical risk posture, thesis health, recommendation and monitoring
 lifecycle stay separate. A5.1 is restricted to deterministic single-open-
 position assessment, immutable monitoring intent, capture and offline replay.
-Multi-leg policy, scheduler/runtime monitoring, TM integration, A6/A7 and Shell
-exposure remain later work.
+Multi-leg policy, scheduler/runtime monitoring, TM integration and A6/A7 remain
+later work. A5.2 now provides only governed local facade/Shell exposure.
 
 **Acceptance:** the accepted
 [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and

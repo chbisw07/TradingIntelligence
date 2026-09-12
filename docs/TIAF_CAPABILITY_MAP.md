@@ -13,8 +13,8 @@ A4.1/A4.2 layer frozen at `tiaf-a4-baseline`. The approved
 [TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) is implemented as the
 current local consumer boundary. The
 [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) is approved,
-and its bounded A5.1 internal runtime is implemented without facade/Shell
-publication. A7 later informs a separately
+its bounded A5.1 runtime is implemented, and A5.2 adds governed local
+facade/Shell publication. A7 later informs a separately
 versioned forecast-enhanced A6 follow-up; no major milestone is renumbered.
 
 Statuses describe repository reality:
@@ -197,7 +197,7 @@ it does not overload corporate-action or earnings-call semantics.
 | A4 source/comparability/independence input projection | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) adds immutable source/proposition/authority/dispute/independence contracts, field confirmation, deterministic projection, successor semantics and offline replay over unchanged A2/A3; citation rendering remains absent |
 | Narrow local capability facade and lifecycle | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) now exposes seven explicit same-process capabilities, including A4.1 `a4.evaluate`, with trusted admission, budget/authority intersection, frozen composition, safe logical artifact refs and offline replay; no live operation, remote transport or broker authority |
 | Deterministic arbitration / adversarial resolution | IMPLEMENTED / A4 FREEZE READY | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts the combined no-model boundary |
-| Position intelligence | IMPLEMENTED / A5.1 ACCEPTANCE READY | [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md): captured supplied position truth, deterministic single-position posture/thesis/recommendation, monitoring intent and exact replay; no facade/TM/broker/multi-leg runtime |
+| Position intelligence | IMPLEMENTED / A5.2 ACCEPTANCE READY | [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md) deterministic baseline plus [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) governed facade/Shell publication; no live TM/broker/multi-leg runtime |
 | Option strategy comparison/selection | PLANNED | A6/DEF-006 deterministic valid candidates first; forecast-enhanced higher-order comparison after admitted A7 evidence; no initial A4 contract selection |
 | Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
 | Scanner intelligence | EXTERNAL/INTEGRATION | A9 scanner boundary |
@@ -219,7 +219,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Human-facing explanation/citation reports | PLANNED / BOUNDED SLICE | DEF-054 minimal captured-source rendering with command-first Shell after A4; richer report/Web UX remains deferred; no re-research |
 | Cross-candidate A3 opportunity comparison/ranking | DEFERRED | DEF-053 A7 evaluation design after stable per-candidate A3/A4 products; A2 ranking remains benchmark |
 | Bounded open-world A4 research loop | IMPLEMENTED / A4 FREEZE READY | [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) admits provider-neutral needs, executes at most one existing A3.8 enrichment round, requires normalized source-semantic crosswalk, creates at most one later successor, stops on no information/upstream refresh and replays offline; optional model challenge and public live facade remain absent |
-| TI_SHELL command-first engineering v0.1 | IMPLEMENTED / ACCEPTANCE READY | [Implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md): same-process command adapter over the seven governed facade capabilities, transient isolated session, exact-result JSON, bounded explain/trace, offline replay and engineering-gated verification; no A5 dependency, NLP/model/live/private/broker access or remote transport |
+| TI_SHELL command-first engineering v0.1 | IMPLEMENTED / A5.2 ADDITIVE EXPOSURE | [Implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md): same-process command adapter over governed facade capabilities, including bounded `position assess`; transient isolated session, exact-result JSON, bounded explain/trace, offline replay and engineering-gated verification; no NLP/model/live/private/broker access or remote transport |
 | Baseline replay / validation | IMPLEMENTED | A2.10 captured-snapshot foundation |
 | Strategy backtest | DEFERRED | Requires strategy/execution model; DEF-025 |
 | Optimization | DEFERRED | Evaluation layer; DEF-024 |

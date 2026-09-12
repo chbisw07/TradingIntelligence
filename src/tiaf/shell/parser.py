@@ -93,7 +93,12 @@ def _safe_token(value: str) -> str:
     return token
 
 
-def _add_scope(parser: argparse.ArgumentParser, *, baseline: bool = False) -> None:
+def _add_scope(
+    parser: argparse.ArgumentParser,
+    *,
+    baseline: bool = False,
+    artifact_option: str = "--artifact-ref",
+) -> None:
     parser.add_argument("--subject", type=_symbol)
     parser.add_argument("--objective", type=_objective)
     parser.add_argument("--horizon", type=_horizon)
@@ -104,7 +109,12 @@ def _add_scope(parser: argparse.ArgumentParser, *, baseline: bool = False) -> No
     if baseline:
         parser.add_argument("--request-file", required=True, type=Path)
     else:
-        parser.add_argument("--artifact-ref", required=True, type=_safe_token)
+        parser.add_argument(
+            artifact_option,
+            dest="artifact_ref",
+            required=True,
+            type=_safe_token,
+        )
 
 
 def _build_parser() -> _Parser:
@@ -163,6 +173,13 @@ def _build_parser() -> _Parser:
     _add_scope(a4_project)
     a4_evaluate = a4_sub.add_parser("evaluate", add_help=False, allow_abbrev=False)
     _add_scope(a4_evaluate)
+
+    position = commands.add_parser("position", add_help=False, allow_abbrev=False)
+    position_sub = position.add_subparsers(dest="position_action", required=True)
+    position_assess = position_sub.add_parser(
+        "assess", add_help=False, allow_abbrev=False
+    )
+    _add_scope(position_assess, artifact_option="--snapshot")
 
     replay = commands.add_parser("replay", add_help=False, allow_abbrev=False)
     replay_sub = replay.add_subparsers(dest="replay_action", required=True)
@@ -297,6 +314,12 @@ def parse_tokens(tokens: Sequence[str]) -> ParsedCommand:
             else OperationKind.A4_EVALUATE
         )
         command = OperationCommand(kind, _scope(namespace), artifact_ref=namespace.artifact_ref)
+    elif verb == "position":
+        command = OperationCommand(
+            OperationKind.POSITION_ASSESS,
+            _scope(namespace),
+            artifact_ref=namespace.artifact_ref,
+        )
     elif verb == "replay":
         kind = (
             OperationKind.REPLAY_RECORDED

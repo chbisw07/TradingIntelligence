@@ -155,14 +155,14 @@ def test_a5_has_no_provider_model_broker_sdk_a6_a7_or_remote_imports() -> None:
     assert not any("providers" in name or "transport" in name for name in imported_modules)
 
 
-def test_a5_does_not_mutate_a4_or_publish_facade_shell_capability() -> None:
+def test_a5_does_not_mutate_a4_and_a5_2_publishes_separate_facade_capability() -> None:
     value = request()
     assert value.a4_result is not None
     before = value.a4_result.model_dump_json()
     result = evaluate_position(value).result
     assert value.a4_result.model_dump_json() == before
     assert result.linked_a4_fingerprint == value.a4_result.semantic_fingerprint
-    assert "position.assess" not in {item.capability_id for item in capability_catalog()}
+    assert "position.assess" in {item.capability_id for item in capability_catalog()}
 
 
 def test_result_has_no_a6_selection_or_a7_probability_fields() -> None:

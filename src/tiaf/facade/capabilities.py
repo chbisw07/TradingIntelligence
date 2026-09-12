@@ -71,6 +71,18 @@ _CATALOG = (
         cost_knowledge=CostKnowledge.KNOWN_ZERO,
     ),
     CapabilityDescriptor(
+        capability_id="position.assess",
+        interface_level=InterfaceLevel.PUBLIC,
+        request_schema_id="schema:tiaf.facade.position-assess-request",
+        result_schema_id="schema:tiaf.facade.position-assess-result",
+        effect=EffectClass.CAPTURED_READ,
+        deterministic=True,
+        model_supported=False,
+        replay_support=ReplaySupport.DETERMINISTIC,
+        required_authority_scope=FacadeAuthorityScope.ASSESS_POSITION,
+        cost_knowledge=CostKnowledge.KNOWN_ZERO,
+    ),
+    CapabilityDescriptor(
         capability_id="replay.recorded",
         interface_level=InterfaceLevel.PUBLIC,
         request_schema_id="schema:tiaf.facade.recorded-replay-request",

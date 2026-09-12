@@ -11,6 +11,11 @@ A5.1 is a local, deterministic, captured-input advisory capability. It adds no
 facade descriptor, Shell command, provider/model/broker call, TM transport,
 scheduler, A6/A7 logic, remote service, or durable database.
 
+The later additive
+[A5.2 publication slice](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) exposes
+this unchanged baseline through the governed facade and bounded Shell; that
+publication is not retroactively part of A5.1.
+
 ## 1. Package
 
 The provider- and broker-neutral implementation is under `src/tiaf/a5/`:

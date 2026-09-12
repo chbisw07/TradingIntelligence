@@ -26,6 +26,7 @@ from tiaf.facade import (
     InvocationScope,
     LocalFacadeClient,
     OpportunityAssembleRequest,
+    PositionAssessRequest,
     RecordedReplayRequest,
     ReplayVerifyRequest,
 )
@@ -89,6 +90,7 @@ capabilities list | capabilities describe CAPABILITY_ID
 baseline assess --request-file RELATIVE_JSON [scope options]
 opportunity assemble --artifact-ref QUALIFIED_ID [scope options]
 a4 project|evaluate --artifact-ref QUALIFIED_ID [scope options]
+position assess --snapshot QUALIFIED_ID [scope options]
 replay recorded|verify --artifact-ref QUALIFIED_ID [scope options]
 show last [--json|--reasons|--gaps|--contradictions|--evidence]
 explain last | trace last [--cost|--evidence|--timing] | refresh last
@@ -322,9 +324,28 @@ class ShellDispatcher:
         if command.kind is not OperationKind.BASELINE_ASSESS:
             if command.artifact_ref is None:
                 raise shell_error(ShellErrorCode.CONTEXT_ERROR, "artifact reference is required")
+            resolved = self._resolve_scope(command)
+            if command.kind is OperationKind.POSITION_ASSESS:
+                if (
+                    resolved.position_context_ref is not None
+                    and resolved.position_context_ref != command.artifact_ref
+                ):
+                    raise shell_error(
+                        ShellErrorCode.CONTEXT_ERROR,
+                        "position-context-ref must match the logical snapshot reference",
+                    )
+                resolved = ResolvedScope(
+                    subject=resolved.subject,
+                    objective=resolved.objective,
+                    horizon=resolved.horizon,
+                    as_of=resolved.as_of,
+                    profile_ref=resolved.profile_ref,
+                    authority_ref=resolved.authority_ref,
+                    position_context_ref=command.artifact_ref,
+                )
             return InvocationPlan(
                 kind=command.kind,
-                scope=self._resolve_scope(command),
+                scope=resolved,
                 artifact_ref=command.artifact_ref,
             )
 
@@ -449,6 +470,12 @@ class ShellDispatcher:
             request = A4EvaluateRequest(
                 scope=facade_scope,
                 projection_capture_ref=plan.artifact_ref,
+            )
+        elif plan.kind is OperationKind.POSITION_ASSESS:
+            assert plan.artifact_ref is not None
+            request = PositionAssessRequest(
+                scope=facade_scope,
+                position_request_ref=plan.artifact_ref,
             )
         elif plan.kind is OperationKind.REPLAY_RECORDED:
             assert plan.artifact_ref is not None

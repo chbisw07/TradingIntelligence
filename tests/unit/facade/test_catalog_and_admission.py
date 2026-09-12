@@ -45,6 +45,7 @@ def test_catalog_is_explicit_static_safe_and_contains_only_implemented_operation
         "baseline.assess",
         "capabilities.list",
         "opportunity.assemble",
+        "position.assess",
         "replay.recorded",
         "replay.verify",
     )

@@ -4,6 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 from tiaf.a3_hardening import load_package_json
+from tiaf.a5 import PositionIntelligenceRequest
 from tiaf.baseline import BaselineEngine, DeterministicBaselineRequest
 from tiaf.context import AnalysisPurpose
 from tiaf.contracts import Horizon
@@ -58,6 +59,20 @@ def defaults(*, full_context: bool = True) -> SessionDefaults:
     )
 
 
+def position_defaults() -> SessionDefaults:
+    request = PositionIntelligenceRequest.model_validate_json(
+        artifact_content("artifact:position-request")
+    )
+    return SessionDefaults(
+        subject=request.snapshot.underlying,
+        objective=AnalysisPurpose.POSITION,
+        horizon=request.horizon,
+        as_of=request.as_of,
+        profile_ref=PROFILE,
+        authority_ref=AUTHORITY,
+    )
+
+
 def write_baseline(root: Path, *, name: str = "baseline.json") -> DeterministicBaselineRequest:
     engine = BaselineEngine()
     policy = next(item for item in engine.policies() if item.trade_style.value == "POSITIONAL")
@@ -81,6 +96,17 @@ def runtime(
         history_limit=history_limit,
     )
     return ShellRuntime(dispatcher)
+
+
+def position_runtime(root: Path) -> ShellRuntime:
+    facade_owner = owner()
+    return ShellRuntime(
+        ShellDispatcher(
+            facade_owner.client("caller:test"),
+            baseline_request_root=root,
+            defaults=position_defaults(),
+        )
+    )
 
 
 def a4_state_runtime(root: Path, package_name: str) -> tuple[ShellRuntime, str]:

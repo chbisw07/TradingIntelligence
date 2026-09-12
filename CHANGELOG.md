@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF A5.2 governed publication of the accepted A5.1 baseline:
+  static `position.assess` captured-read capability, position-specific
+  authority/entitlement and logical-artifact checks, canonical A5 result parity,
+  A5 support in generic recorded replay, and bounded one-shot/REPL
+  `position assess --snapshot` with structured explain/trace. Monitoring remains
+  advisory only, TradeMonitor/broker authority is unchanged, and no live lookup,
+  execution, A6/A7, model, scheduler or remote service was added.
+
 - Implemented TIAF A5.1 under `tiaf.a5`: immutable position/signal/result/
   mandate/capture contracts, strict snapshot/A4 lineage and freshness checks,
   deterministic posture/thesis/recommendation policy, non-executable protection

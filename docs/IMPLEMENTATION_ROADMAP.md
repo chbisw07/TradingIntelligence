@@ -21,8 +21,11 @@ The [A5 architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) is now
 implemented by the bounded
 [A5.1 baseline](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md): immutable
 additive contracts, deterministic single-open-position advice, monitoring intent
-and captured replay. It does not include live TM/broker integration, multi-leg
-interpretation, scheduling, A6/A7 or facade/Shell exposure.
+and captured replay. The additive
+[A5.2 publication slice](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) exposes it
+through position-scoped logical-artifact admission and the bounded Shell. It
+still does not include live TM/broker integration, multi-leg interpretation,
+scheduling, A6/A7 or remote transport.
 
 ## Acceptance philosophy
 

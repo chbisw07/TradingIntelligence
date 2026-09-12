@@ -11,6 +11,7 @@ from tiaf.facade import (
     CapabilityDescriptor,
     CapabilityListResult,
     OpportunityAssembleResult,
+    PositionAssessResult,
     RecordedReplayResult,
     ReplayVerifyResult,
 )
@@ -119,6 +120,38 @@ def _summary(result: ShellFacadeResult) -> dict[str, Any]:
             run_fingerprint=result.run_fingerprint,
             semantic_fingerprint=evaluation.semantic_fingerprint,
         )
+    elif isinstance(result, PositionAssessResult):
+        position_assessment = result.assessment
+        expression_note = None
+        if (
+            position_assessment.protection_intent.kind.value
+            == "EXPRESSION_REFRESH_REQUIRED"
+        ):
+            expression_note = "expression refresh required; no replacement selected"
+        base.update(
+            position_id=position_assessment.position_id,
+            snapshot_id=position_assessment.snapshot_id,
+            snapshot_at=position_assessment.snapshot_at.isoformat(),
+            freshness=position_assessment.effective_freshness.value,
+            execution_status=position_assessment.status.value,
+            posture=position_assessment.posture.value,
+            thesis_health=position_assessment.thesis_health.value,
+            recommendation=position_assessment.recommendation.value,
+            protection_intent=position_assessment.protection_intent.kind.value,
+            remaining_opportunity=position_assessment.remaining_opportunity.value,
+            monitoring_needs=[
+                item.need_id for item in position_assessment.monitoring_needs
+            ],
+            monitoring_statement=result.monitoring_statement,
+            reasons=list(position_assessment.reason_codes),
+            result_gaps=list(position_assessment.gaps),
+            linked_a4_result_id=position_assessment.linked_a4_result_id,
+            run_fingerprint=result.run_fingerprint,
+            semantic_fingerprint=position_assessment.semantic_fingerprint,
+            replay_identity=position_assessment.replay_identity,
+            authority_statement=position_assessment.authority_statement,
+            expression_refresh_note=expression_note,
+        )
     elif isinstance(result, RecordedReplayResult):
         base["replay_kind"] = result.kind.value
         if result.a3_replay is not None:
@@ -131,6 +164,14 @@ def _summary(result: ShellFacadeResult) -> dict[str, Any]:
             base.update(
                 projection_id=result.foundation_projection.projection_id,
                 replay_fingerprint=result.foundation_projection.semantic_fingerprint,
+            )
+        if result.a5_replay is not None:
+            base.update(
+                replay_id=result.a5_replay.replay_id,
+                replay_fingerprint=result.a5_replay.fingerprint,
+                position_semantic_fingerprint=(
+                    result.a5_replay.record.result.semantic_fingerprint
+                ),
             )
     elif isinstance(result, ReplayVerifyResult):
         base["verification"] = result.verification.model_dump(mode="json")
@@ -168,6 +209,17 @@ def _reasons(result: ShellFacadeResult) -> dict[str, Any]:
             challenge_reason_codes=[item.reason_code for item in evaluation.challenge_findings],
             arbitration_reason_codes=[
                 item.reason_code for item in evaluation.arbitration_findings
+            ],
+        )
+    elif isinstance(result, PositionAssessResult):
+        payload.update(
+            reason_codes=list(result.assessment.reason_codes),
+            freshness_reasons=list(result.assessment.freshness_reasons),
+            protection_reason_codes=list(
+                result.assessment.protection_intent.reason_codes
+            ),
+            monitoring_reason_codes=[
+                item.reason_code for item in result.assessment.monitoring_needs
             ],
         )
     return payload
@@ -214,10 +266,16 @@ def _gaps(result: ShellFacadeResult) -> dict[str, Any]:
             evidence_needs=[item.model_dump(mode="json") for item in evaluation.evidence_needs],
             failures=[item.model_dump(mode="json") for item in evaluation.failures],
         )
+    elif isinstance(result, PositionAssessResult):
+        payload.update(
+            position_gaps=list(result.assessment.gaps),
+            failure_codes=[item.value for item in result.assessment.failure_codes],
+        )
     return payload
 
 
 def _contradictions(result: ShellFacadeResult) -> dict[str, Any]:
+    values: list[Any]
     if isinstance(result, OpportunityAssembleResult):
         values = [item.model_dump(mode="json") for item in result.intelligence.contradictions]
     elif isinstance(result, A4InputProjectResult):
@@ -239,6 +297,8 @@ def _contradictions(result: ShellFacadeResult) -> dict[str, Any]:
                 ],
             }
         ]
+    elif isinstance(result, PositionAssessResult):
+        values = list(result.assessment.contradictions)
     else:
         values = []
     return {"contradictions": values}
@@ -294,6 +354,16 @@ def _evidence(result: ShellFacadeResult) -> dict[str, Any]:
             "invalidation_conditions": [
                 item.model_dump(mode="json") for item in evaluation.invalidation_conditions
             ],
+        }
+    if isinstance(result, PositionAssessResult):
+        return {
+            "evidence_refs": list(result.assessment.evidence_refs),
+            "linked_a4_result_id": result.assessment.linked_a4_result_id,
+            "linked_a4_fingerprint": result.assessment.linked_a4_fingerprint,
+            "linked_thesis_refs": list(result.assessment.linked_thesis_refs),
+            "invalidation_condition_refs": list(
+                result.assessment.invalidation_condition_refs
+            ),
         }
     return {"admitted_artifact_refs": list(result.metadata.admitted_artifact_refs)}
 
@@ -369,6 +439,27 @@ def _explain(result: ShellFacadeResult) -> dict[str, Any]:
             ],
             "evidence": _evidence(result),
         }
+    if isinstance(result, PositionAssessResult):
+        assessment = result.assessment
+        return {
+            "schema_id": "tiaf.shell.explanation",
+            "schema_version": "1.0",
+            "capability_id": result.metadata.capability_id,
+            "summary": _summary(result),
+            "reasons": _reasons(result),
+            "gaps": _gaps(result),
+            "contradictions": _contradictions(result),
+            "evidence": _evidence(result),
+            "protection_intent": assessment.protection_intent.model_dump(mode="json"),
+            "monitoring_needs": [
+                item.model_dump(mode="json") for item in assessment.monitoring_needs
+            ],
+            "monitoring_statement": result.monitoring_statement,
+            "invalidation_condition_refs": list(
+                assessment.invalidation_condition_refs
+            ),
+            "authority_statement": assessment.authority_statement,
+        }
     raise shell_error(
         ShellErrorCode.EXPLANATION_UNAVAILABLE,
         "structured explanation is unavailable for this result type",
@@ -400,6 +491,17 @@ def _trace(invocation: SuccessfulInvocation, view: TraceView) -> dict[str, Any]:
         common["policy_refs"] = [list(item) for item in metadata.policy_refs]
         common["warnings"] = list(metadata.warnings)
         common["gaps"] = list(metadata.gaps)
+        if isinstance(invocation.result, PositionAssessResult):
+            assessment = invocation.result.assessment
+            common.update(
+                position_request_ref=metadata.position_context_ref,
+                snapshot_id=assessment.snapshot_id,
+                linked_a4_result_id=assessment.linked_a4_result_id,
+                linked_a4_fingerprint=assessment.linked_a4_fingerprint,
+                a5_run_fingerprint=invocation.result.run_fingerprint,
+                semantic_fingerprint=assessment.semantic_fingerprint,
+                replay_identity=assessment.replay_identity,
+            )
     if view in {TraceView.ALL, TraceView.TIMING}:
         common["created_at"] = metadata.created_at.isoformat()
         common["started_at"] = metadata.started_at.isoformat()

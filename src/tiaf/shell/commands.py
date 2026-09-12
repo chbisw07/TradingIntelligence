@@ -34,6 +34,7 @@ class OperationKind(StrEnum):
     OPPORTUNITY_ASSEMBLE = "opportunity.assemble"
     A4_INPUT_PROJECT = "a4_input.project"
     A4_EVALUATE = "a4.evaluate"
+    POSITION_ASSESS = "position.assess"
     REPLAY_RECORDED = "replay.recorded"
     REPLAY_VERIFY = "replay.verify"
 

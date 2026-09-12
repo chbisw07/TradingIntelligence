@@ -533,7 +533,7 @@ and jointly reviewed for the A4 baseline freeze.
   valid candidates; A7 calibration/evaluation/ranking; forecast-enhanced A6 follow-up;
   A8 TM, A9 scanners, A10 production. No renumbering or infrastructure rollout.
 
-### TIAF_A5 architecture and A5.1 — Complete / acceptance ready
+### TIAF_A5 architecture, A5.1 and A5.2 — Complete / acceptance ready
 
 The [authoritative A5 design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) and
 [review](TIAF_A5_ARCHITECTURE_REVIEW.md) approve an additive position-intelligence
@@ -547,6 +547,12 @@ not lifecycle. The bounded runtime is documented by
 **Delivered A5.1 target.** Frozen input/result/mandate/capture contracts, strict
 identity/freshness/A4-lineage checks, a transparent deterministic single-open-
 position policy, monitoring-need output, exact offline replay/verification/
-comparison and the architecture acceptance corpus. Multi-leg interpretation,
-facade/Shell publication, TM/broker access, scheduling, A6, A7, providers/models
-and remote/durable infrastructure remain out of scope.
+comparison and the architecture acceptance corpus.
+
+**Delivered A5.2 target.** The governed `position.assess` captured-read facade
+capability, position-specific artifact authorization, generic A5 recorded replay,
+bounded `position assess` Shell command and structured explain/trace projections
+are documented in
+[A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md). Multi-leg interpretation,
+TM/broker access, scheduling, A6, A7, providers/models and remote/durable
+infrastructure remain out of scope.

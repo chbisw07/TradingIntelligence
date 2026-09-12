@@ -6,6 +6,7 @@ from pydantic import Field, model_validator
 
 from tiaf.a3_hardening import A3ReplayResult, A3VerificationResult
 from tiaf.a4 import A4Result as DeterministicA4Result
+from tiaf.a5 import A5ReplayResult, PositionIntelligenceResult
 from tiaf.baseline import DeterministicBaselineRequest, OpportunityAssessment
 from tiaf.context import AnalysisPurpose
 from tiaf.contracts import ContractModel, Horizon
@@ -198,6 +199,21 @@ class A4EvaluateRequest(FacadeOperationRequest):
         return self
 
 
+class PositionAssessRequest(FacadeOperationRequest):
+    """Assess one authorized, captured A5 request through its logical reference."""
+
+    capability_id: Literal["position.assess"] = "position.assess"
+    position_request_ref: QualifiedId
+
+    @model_validator(mode="after")
+    def position_request_is_admitted(self) -> Self:
+        if self.scope.admitted_artifact_refs != (self.position_request_ref,):
+            raise ValueError("position scope must identify exactly its request artifact")
+        if self.scope.position_context_ref != self.position_request_ref:
+            raise ValueError("position context must be the admitted logical request reference")
+        return self
+
+
 class RecordedReplayRequest(FacadeOperationRequest):
     capability_id: Literal["replay.recorded"] = "replay.recorded"
     artifact_ref: QualifiedId
@@ -333,6 +349,20 @@ class A4EvaluateResult(ContractModel):
     run_fingerprint: Sha256
 
 
+class PositionAssessResult(ContractModel):
+    schema_id: Literal["tiaf.facade.position-assess-result"] = (
+        "tiaf.facade.position-assess-result"
+    )
+    schema_version: Literal["1.0"] = "1.0"
+    metadata: InvocationMetadata
+    assessment: PositionIntelligenceResult
+    run_fingerprint: Sha256
+    position_request_checksum: Sha256
+    monitoring_statement: Literal["ADVISORY_MONITORING_INTENT_ONLY_NOT_SCHEDULED"] = (
+        "ADVISORY_MONITORING_INTENT_ONLY_NOT_SCHEDULED"
+    )
+
+
 class RecordedReplayResult(ContractModel):
     schema_id: Literal["tiaf.facade.recorded-replay-result"] = (
         "tiaf.facade.recorded-replay-result"
@@ -342,10 +372,12 @@ class RecordedReplayResult(ContractModel):
     kind: ReplayResultKind
     a3_replay: A3ReplayResult | None = None
     foundation_projection: A4SemanticInputProjection | None = None
+    a5_replay: A5ReplayResult | None = None
 
     @model_validator(mode="after")
     def exactly_one_result(self) -> Self:
-        if (self.a3_replay is None) == (self.foundation_projection is None):
+        values = (self.a3_replay, self.foundation_projection, self.a5_replay)
+        if sum(item is not None for item in values) != 1:
             raise ValueError("recorded replay requires exactly one typed result")
         return self
 
@@ -376,6 +408,7 @@ type FacadeRequest = (
     | OpportunityAssembleRequest
     | A4InputProjectRequest
     | A4EvaluateRequest
+    | PositionAssessRequest
     | RecordedReplayRequest
     | ReplayVerifyRequest
 )
@@ -384,6 +417,7 @@ type FacadeResult = (
     | OpportunityAssembleResult
     | A4InputProjectResult
     | A4EvaluateResult
+    | PositionAssessResult
     | RecordedReplayResult
     | ReplayVerifyResult
 )

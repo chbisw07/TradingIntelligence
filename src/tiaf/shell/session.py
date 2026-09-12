@@ -16,6 +16,7 @@ from tiaf.facade import (
     BaselineAssessResult,
     CapabilityListResult,
     OpportunityAssembleResult,
+    PositionAssessResult,
     RecordedReplayResult,
     ReplayVerifyResult,
 )
@@ -27,6 +28,7 @@ type ShellFacadeResult = (
     CapabilityListResult
     | BaselineAssessResult
     | OpportunityAssembleResult
+    | PositionAssessResult
     | A4InputProjectResult
     | A4EvaluateResult
     | RecordedReplayResult

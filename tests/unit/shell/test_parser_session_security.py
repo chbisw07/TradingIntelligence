@@ -50,7 +50,6 @@ def test_provider_specific_or_path_subject_is_rejected(subject: str) -> None:
         ["broker", "order"],
         ["order", "buy"],
         ["ask", "analyze"],
-        ["position", "assess"],
         ["option", "select"],
         ["rank", "all"],
     ),

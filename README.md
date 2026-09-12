@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — frozen A4, implemented TI Shell v0.1, and approved A5 architecture
+### Present — frozen A4 and governed A5.2 position intelligence
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -73,7 +73,7 @@ is now approved by the
 [POST_A4_PRE_A5 Shell review](docs/TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md),
 [authoritative architecture](docs/TIAF_TI_SHELL_ARCHITECTURE.md) and
 [implementation record](docs/TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md): the
-command-first, same-process mediator now exposes only the seven governed facade
+command-first, same-process mediator exposes governed local facade
 capabilities through `python -m tiaf.shell` and `ti`. NLP, models, live
 acquisition, remote transport and intelligence policy remain outside v0.1.
 A4 retains arbitration/recommendations; position,
@@ -87,7 +87,11 @@ by the bounded
 additive immutable position contracts, a deterministic single-open-position
 advisory baseline, monitoring-intent output, and offline replay. TM/broker
 position truth, multi-leg interpretation, scheduling, execution, A6/A7 and
-facade/Shell exposure remain outside A5.1.
+facade/Shell exposure remain outside A5.1 itself. The additive
+[A5.2 publication slice](docs/TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) now
+exposes an authority-scoped captured-read `position.assess` facade capability
+and bounded `position assess --snapshot` Shell command. It adds no live broker
+lookup, execution, scheduler, A6/A7 behavior or remote service.
 
 ## Layout
 

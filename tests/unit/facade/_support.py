@@ -10,6 +10,13 @@ from tiaf.a3_hardening import (
     package_blob,
     package_json,
 )
+from tiaf.a5 import (
+    capture_json as capture_a5_json,
+)
+from tiaf.a5 import (
+    capture_run,
+    evaluate_position,
+)
 from tiaf.context import AnalysisPurpose
 from tiaf.contracts import Horizon
 from tiaf.facade import (
@@ -24,9 +31,11 @@ from tiaf.facade import (
     TrustedFacadeConfig,
     create_local_facade,
 )
-from tiaf.source_semantics import capture_json, capture_projection
+from tiaf.source_semantics import capture_json as capture_foundation_json
+from tiaf.source_semantics import capture_projection
 
 from ..a3_hardening._support import package_for
+from ..a5._support import request as a5_request
 from ..source_semantics._support import build_input
 
 ALL_CAPABILITIES = (
@@ -35,23 +44,31 @@ ALL_CAPABILITIES = (
     "baseline.assess",
     "capabilities.list",
     "opportunity.assemble",
+    "position.assess",
     "replay.recorded",
     "replay.verify",
 )
 ALL_SCOPES = tuple(FacadeAuthorityScope)
 AUTHORITY = "authority:facade-default"
 ENTITLEMENT = "entitlement:captured-market-data"
+POSITION_ENTITLEMENT = "entitlement:position-synthetic-one"
 PROFILE = "profile:deterministic"
 
 
-def artifact(ref: str, kind: ArtifactKind, content: str) -> TrustedArtifact:
+def artifact(
+    ref: str,
+    kind: ArtifactKind,
+    content: str,
+    *,
+    entitlement_refs: tuple[str, ...] = (ENTITLEMENT,),
+) -> TrustedArtifact:
     return TrustedArtifact(
         artifact_ref=ref,
         kind=kind,
         content=content,
         checksum=exact_bytes_checksum(content),
         required_authority_refs=(AUTHORITY,),
-        required_entitlement_refs=(ENTITLEMENT,),
+        required_entitlement_refs=entitlement_refs,
     )
 
 
@@ -64,6 +81,23 @@ def captured_artifacts() -> tuple[TrustedArtifact, ...]:
         foundation_input,
         captured_at=foundation_input.header.evidence_as_of,
     )
+    position_request = a5_request()
+    position_request = position_request.model_copy(
+        update={
+            "snapshot": position_request.snapshot.model_copy(
+                update={"authority_refs": (AUTHORITY,)}
+            ),
+            "authority_refs": (AUTHORITY,),
+        }
+    )
+    position_record = evaluate_position(
+        position_request,
+        evaluated_at=position_request.as_of,
+    )
+    position_capture = capture_run(
+        position_record,
+        captured_at=position_request.as_of,
+    )
     return (
         artifact("artifact:a38", ArtifactKind.A38_CAPTURE, a38),
         artifact("artifact:a3-package", ArtifactKind.A3_PACKAGE, package_json(package)),
@@ -75,7 +109,19 @@ def captured_artifacts() -> tuple[TrustedArtifact, ...]:
         artifact(
             "artifact:foundation-capture",
             ArtifactKind.FOUNDATION_CAPTURE,
-            capture_json(foundation_capture),
+            capture_foundation_json(foundation_capture),
+        ),
+        artifact(
+            "artifact:position-request",
+            ArtifactKind.A5_POSITION_REQUEST,
+            canonical_json(position_request),
+            entitlement_refs=(POSITION_ENTITLEMENT,),
+        ),
+        artifact(
+            "artifact:a5-capture",
+            ArtifactKind.A5_CAPTURE,
+            capture_a5_json(position_capture),
+            entitlement_refs=(POSITION_ENTITLEMENT,),
         ),
     )
 
@@ -84,7 +130,7 @@ def config(
     *,
     caller_capabilities: tuple[str, ...] = ALL_CAPABILITIES,
     caller_scopes: tuple[FacadeAuthorityScope, ...] = ALL_SCOPES,
-    caller_entitlements: tuple[str, ...] = (ENTITLEMENT,),
+    caller_entitlements: tuple[str, ...] = (ENTITLEMENT, POSITION_ENTITLEMENT),
     engineering: bool = True,
 ) -> TrustedFacadeConfig:
     budget = InvocationBudget(max_elapsed_seconds=30)
@@ -105,7 +151,7 @@ def config(
         allowed_capabilities=ALL_CAPABILITIES,
         authority_scopes=ALL_SCOPES,
         authority_refs=(AUTHORITY,),
-        entitlement_refs=(ENTITLEMENT,),
+        entitlement_refs=(ENTITLEMENT, POSITION_ENTITLEMENT),
         allowed_profiles=(PROFILE,),
         engineering_enabled=True,
         budget_ceiling=budget,
@@ -122,7 +168,7 @@ def owner(
     *,
     caller_capabilities: tuple[str, ...] = ALL_CAPABILITIES,
     caller_scopes: tuple[FacadeAuthorityScope, ...] = ALL_SCOPES,
-    caller_entitlements: tuple[str, ...] = (ENTITLEMENT,),
+    caller_entitlements: tuple[str, ...] = (ENTITLEMENT, POSITION_ENTITLEMENT),
     engineering: bool = True,
 ) -> LocalFacadeOwner:
     return create_local_facade(

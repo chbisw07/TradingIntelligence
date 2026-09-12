@@ -384,7 +384,8 @@ Future commands are added capability-first:
 
 | Reserved family | Earliest owner | v0.1 behavior |
 |---|---|---|
-| `position ...` | Approved [A5 position-intelligence architecture](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md); descriptor/runtime not implemented | unknown/unavailable command |
+| `position assess` | [A5.2 governed publication](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) | authorized captured-read command; no broker lookup/execution |
+| other `position ...` | A5/TM/A6 as applicable | unknown/unavailable command |
 | `option ...` | A6 expression/selection | unknown/unavailable command |
 | `evaluate ...`, `rank ...` | A7 evaluation/forecasting and DEF-053 resolution | unknown/unavailable command |
 | `ask ...` | separately accepted Interaction Agent | unknown/unavailable command |
