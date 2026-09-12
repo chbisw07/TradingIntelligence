@@ -131,6 +131,8 @@ continue to govern those boundaries.
 | DEF-054 | User-facing explanation, source-citation and report rendering fabric | A3.9; reaffirmed A3 closure; clarified post-A3 pass 2, A4 closure, Shell implementation and A5.2 | CAPABILITY_DEFERRAL | The bounded Shell now renders admitted identifiers, reasons, gaps, contradictions plus A4/A5 lineage, but citation numbering, hyperlinks, bibliography, compression, source labels and Web/rich-report projection remain separate presentation work. | Accepted Core source semantics, A4/A5 lineage, governed local facade, and a bounded redaction/presentation policy | HIGH | LATER REPORT / WEB | PLANNED | Split within this stable ID. [Shell v0.1](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) and [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) implement only deterministic allowlisted human/JSON, explain and trace projection without re-research. Rich bibliography/hyperlinks/report/Web work stays deferred; preserve scoped authority and original lineage. |
 | DEF-055 | Provider/model monetary pricing catalog and cost attribution | A3.10 | DEPENDENCY_DEFERRAL | A3.10 correctly represents absent price knowledge as UNKNOWN/UNPRICED; configured cost units cannot establish billed monetary cost. | Versioned provider/model price sources, currency/effective-time semantics, billable-unit mapping and auditable attribution policy | MEDIUM | OPTIONAL MODEL GATE / A10 | DEFERRED | A bounded auditable price/currency/effective-time and billable-unit slice is required before claiming strict monetary caps for optional models; production catalog/attribution remains A10. UNKNOWN/UNPRICED is not zero or an invented nonzero estimate. Original billed usage, held unknown and replay usage stay separate; no pricing integration is implemented. |
 | DEF-056 | Multi-leg A5 position interpretation | A5 architecture/A5 closure | CAPABILITY_DEFERRAL | A5.1/A5.2 deliberately preserve and reject multi-leg shape rather than flattening it; combined-premium, hedge, leg-dependency, partial-fill and aggregate-risk semantics are not accepted. | Concrete multi-leg consumer need; immutable leg/relationship truth; versioned combined-risk, invalidation and protection policy; replay corpus | MEDIUM | BOUNDED A5 EXTENSION / BEFORE MULTI-LEG CONSUMPTION | DEFERRED | The accepted A5 baseline remains single equity, future or single-leg option. Multi-leg input returns `UNSUPPORTED_SHAPE` and is never partially assessed. A later additive A5 policy may implement it without blocking A6 architecture, TM integration, or the single-position freeze. |
+| DEF-057 | Governed HOT capability-composition transitions | TI Pluggability architecture | DEPENDENCY_DEFERRAL | Runtime replacement has no demonstrated need over trusted COLD startup composition and requires stronger correctness guarantees. | Operational justification; equivalent COLD path; immutable generation pinning, activation/quiescence, state/cache ownership, safe retirement, compatible rollback and replay acceptance | MEDIUM | JUSTIFIED HOT NEED / DEPLOYMENT REVIEW | DEFERRED | [Pluggability architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) §14 defines the safety gate, not implementation. No family is approved for HOT in this pass. Existing fallback across startup-pinned routes is not HOT composition; no registry mutation, loader or service is introduced. |
+| DEF-058 | New peer-intelligence contributor publication and projection | TI Pluggability A1–A5 audit | DEPENDENCY_DEFERRAL | Existing specialist IDs, Planner membership and A3.9 detail mappings are closed; registering a new kind of contributor alone cannot make consumers interpret it. | Separately approved peer capability; typed input/output and dependency descriptor; versioned projection/admission policy; preserved baseline and replay | MEDIUM | BEFORE FIRST NEW PEER CONTRIBUTOR | DEFERRED | [Compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) F7/R6: extend only the necessary trusted ID/mapping and optional public operation when justified. No Sector Rotation, Signal Qualification, forecast, generic registry or A4/A5 redesign is delivered. Existing required-scope omission is immediate R1 remediation, not this deferral and not grounds to make all specialists optional. |
 
 ## Immediate milestone work deliberately not registered
 
@@ -162,8 +164,11 @@ closure review changes DEF-002 from PLANNED to IMPLEMENTED, producing 39
 DEFERRED, 3 PLANNED, 4 IMPLEMENTED, 3 REJECTED, and 2 SUPERSEDED. The later A3
 sub-milestone discovery audit adds DEF-052 through DEF-055, and the A5 major
 closure adds DEF-056. A4 subsequently moved DEF-054 from `DEFERRED` to
-`PLANNED`. Current totals are therefore 56 records: 43 DEFERRED, 4 PLANNED, 4
-IMPLEMENTED, 3 REJECTED, and 2 SUPERSEDED.
+`PLANNED`. At A5 closure totals were 56 records: 43 DEFERRED, 4 PLANNED, 4
+IMPLEMENTED, 3 REJECTED, and 2 SUPERSEDED. The subsequent pluggability
+architecture adds DEF-057 (HOT transitions), and the compliance audit adds
+DEF-058 (future peer publication/projection). Current totals are 58 records:
+45 DEFERRED, 4 PLANNED, 4 IMPLEMENTED, 3 REJECTED, and 2 SUPERSEDED.
 
 The A2 closure disposition is: 0 IMPLEMENT NOW, 3 IMPLEMENTED ALREADY, 43
 CARRY TO A3+, 3 REJECT, and 2 SUPERSEDE. `PLANNED` remains the register status
@@ -398,6 +403,41 @@ Planning classifications refine, but do not replace, the stable register status.
 | DEF-054 | PARTIALLY_IMPLEMENTED / SPLIT_WITHIN_STABLE_ID | Bounded A5 explain/trace is implemented; rich citation/report/Web output remains open. | Later report/Web |
 | DEF-056 | KEEP_DEFERRED | Multi-leg shape is preserved and explicitly unsupported; combined-risk and hedge semantics need a separate versioned extension. | Bounded A5 extension when justified |
 
-No existing status changes. DEF-056 adds one `DEFERRED` record. Current totals
+No existing status changes. DEF-056 adds one `DEFERRED` record. A5-closure totals
 are 56 records: 43 `DEFERRED`, 4 `PLANNED`, 4 `IMPLEMENTED`, 3 `REJECTED`, and
 2 `SUPERSEDED`. None is `MUST_FIX_BEFORE_A5_FREEZE`.
+
+## Subsequent TI Pluggability architecture disposition
+
+The [authoritative architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) adds only
+DEF-057; no earlier ID changes status. Its then-selected next step was the dedicated
+**TI PLUGGABILITY — A1–A5 COMPLIANCE AUDIT**, not a deferral or completed audit.
+Concrete descriptor/availability/dependency/manifest work is conditional on
+that audit and separately approved remediation; do not pre-approve a generic
+framework. A5 tagging is pending the new audit gate even though the earlier
+closure found no blocker within its then-reviewed scope.
+
+HOT engineering is deferred, not an A5 freeze prerequisite. Remote discovery
+transport remains DEF-003, production models DEF-052, pricing DEF-055 and
+durable/distributed operations under their existing IDs. Sector Rotation and
+Signal Qualification remain future capability-design work, not promoted by a
+pluggability thought experiment. No unrelated deferral is burned down here.
+
+## TI Pluggability A1–A5 audit disposition
+
+The [completed audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) returns
+`READY_FOR_PLUGGABILITY_REMEDIATION` and
+`A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION`. One immediate pre-freeze
+item R1 separates required specialist scope from installed registry membership
+and preserves explicit absence into completeness/captures. It is planned next
+in implementation targets, not deferred or implemented. R2–R5 are separately
+bounded pre-A6 improvements; their missing metadata does not by itself block
+the bounded A5 baseline.
+
+DEF-058 retains future peer-ID/projection/publication work (R6) until an approved
+new contributor needs it. Existing shared-cache/hosting obligations (R7) remain
+within DEF-009/011 and related deployment work. No existing status changes;
+current totals are 58 stable records with 45 DEFERRED, 4 PLANNED, 4 IMPLEMENTED,
+3 REJECTED and 2 SUPERSEDED. HOT, Sector Rotation, Signal Qualification and
+forecast delivery are not pre-freeze requirements. A5 stays untagged pending
+R1 acceptance; its earlier closure remains a historical scoped finding.

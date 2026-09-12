@@ -21,6 +21,15 @@ governed captured-read facade/Python/Shell exposure, replay, failure, and
 authority boundaries are accepted; multi-leg interpretation, live TM/broker
 integration, and monitoring runtime remain deferred.
 
+Subsequent governance addendum (2026-09-12): the
+[TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) inserts a
+dedicated A1–A5 compliance audit before A5 tagging. This review's
+`READY_TO_FREEZE_A5` remains the historical A5 runtime finding; it is not a
+pluggability compliance verdict. A5 remains untagged pending that audit and any
+required bounded remediation/acceptance. The current next prompt is
+**TI PLUGGABILITY — A1–A5 COMPLIANCE AUDIT**, superseding this review's earlier
+A6-next recommendation without changing accepted A5 behavior.
+
 ## 1. North-star alignment and delivered scope
 
 A5 acts in the user's economic interest by making current-position truth a hard

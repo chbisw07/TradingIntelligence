@@ -471,8 +471,15 @@ multi-leg policy, live TM/broker integration and remote transport remain
 separately gated.
 The [A5 major closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reviews both
 slices as one layer and concludes `READY_TO_FREEZE_A5`, recommending but not
-creating `tiaf-a5-baseline`. A6 Option Expression architecture is next; the open
-A5 boundaries do not block it.
+creating `tiaf-a5-baseline`. The subsequent
+[TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) adds a
+cross-cutting gate. The [completed compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
+returns `READY_FOR_PLUGGABILITY_REMEDIATION` and
+`A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION`: required specialist scope
+must not shrink silently with registry absence. Next is **TI PLUGGABILITY —
+BOUNDED REMEDIATION: REQUIRED SCOPE AND EXPLICIT ABSENCE** (R1), not A5 retuning.
+A5 stays untagged until this bounded fix and compatibility/regression acceptance;
+R2–R5 are pre-A6 improvements. A6 remains unstarted, major order unchanged.
 
 ## Goal
 

@@ -1,9 +1,31 @@
 # TBD — TI Pluggability Architecture
 
-**Status:** Deferred / exploratory architecture note  
+**Status:** PARTIALLY PROMOTED / retained exploratory history
+
 **Authority:** Non-authoritative idea cache  
 **Purpose:** Preserve the philosophy, terminology, architectural invariants and future work needed to make pluggability a first-order property of TradingIntelligence (TI).  
 **Implementation status:** Not implemented by this document.
+
+## Promotion disposition — 2026-09-12
+
+The authoritative [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md)
+now governs this topic. The numbered sections below remain idea history, not
+competing authority or current implementation claims.
+
+| Disposition | Idea-cache sections | Resolution |
+|---|---|---|
+| PROMOTED | 1, 5–8, 10–18, 22, 28–32, 35 | First-order baseline invariant, governed dependencies/composition, separate Agent/model roles, failure/authority/cost boundaries and no generic plugin framework; refined by the authoritative document. |
+| PROMOTED WITH REVISION | 2–4, 9, 21, 23–25, 27 | Nested HOT ⇒ COLD ⇒ STRUCTURAL; no STATIC enum; REQUIRED/OPTIONAL scoped presence plus independent traits; descriptor separated from scoped availability; immutable composition and distinct run fingerprints. |
+| THOUGHT EXPERIMENT ONLY | 19–20 | Sector Rotation and Signal Qualification test future pluggability, not implemented or promoted capability designs. |
+| PLANNED NEXT, NOT PERFORMED | 33, 36 | Dedicated A1–A5 compliance audit precedes conditional remediation and regression/composition/replay acceptance. Audit classifications are separate axes, not the original mixed enum. |
+| REMAINS TBD | 26, 34, detailed 24–25 | Scientific metrics/calibration, concrete schemas/migration and audit-proven remediation; HOT runtime engineering requires a demonstrated need (DEF-057). |
+| REVISED / REJECTED | 2–3, 9, 21, 30, 37 | No exception to HOT implying COLD; no overlapping lifecycle/role enums, mutable descriptor health, installed-equals-usable claim or automatic public export. Architecture promotion is not implementation/compliance acceptance. Remote transport stays separate. |
+
+Governance policy never becomes consumer-modifiable through configuration.
+Required safety dependencies are not optional; a failed capability has no market
+stance. Historical replay never adopts later-installed contributors. These
+resolved decisions supersede tentative wording below. No runtime framework,
+compliance audit, A5 freeze or A6 work is delivered by this promotion.
 
 ## 1. Executive thesis
 
@@ -640,4 +662,6 @@ Before this TBD becomes authoritative, settle:
 
 If a capability exists and is usable, it can contribute. If it does not exist or cannot safely participate, TI continues honestly without pretending that intelligence was available.
 
-This remains a non-authoritative `TBD_` idea cache until a dedicated architecture pass promotes or revises it.
+This remains a non-authoritative `TBD_` idea cache. The promotion disposition
+above identifies the ideas now governed by the authoritative architecture and
+the implementation, audit and capability designs still deferred.

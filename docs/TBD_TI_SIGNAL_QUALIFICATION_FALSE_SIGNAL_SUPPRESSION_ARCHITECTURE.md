@@ -6,6 +6,11 @@
 **Planned revisit:** After Sector Rotation deep work, unless roadmap review promotes it earlier.  
 **Implementation status:** Not implemented by this document.
 
+The [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) uses
+`signal.qualify` only as a future conformance thought experiment. This note's
+qualification design, thresholds, probability objectives and implementation
+remain non-authoritative and unpromoted.
+
 ## 1. Executive thesis
 
 Mechanical strategies such as SuperTrend, Momentum, EMA crossovers and breakouts inevitably produce false signals.

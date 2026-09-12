@@ -28,8 +28,15 @@ still does not include live TM/broker integration, multi-leg interpretation,
 scheduling, A6/A7 or remote transport.
 The [A5 major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) reviews
 both slices together and concludes `READY_TO_FREEZE_A5`; it recommends but does
-not create `tiaf-a5-baseline`. The next bounded work is the A6 Option Expression
-Intelligence architecture pass.
+not create `tiaf-a5-baseline`. The subsequent
+[TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) is complete
+as architecture only. The [completed compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
+finds one pre-freeze issue: registry absence silently shrinks required specialist
+coverage. Next is **TI PLUGGABILITY — BOUNDED REMEDIATION: REQUIRED SCOPE AND
+EXPLICIT ABSENCE** (R1), including old/new capture compatibility and regression
+acceptance. A5 remains untagged pending that fix; no A5 policy change is required.
+R2–R5 are separately bounded pre-A6 work. A6 has not begun; this cross-cutting
+workstream does not renumber milestones or implement a plugin framework.
 
 ## Acceptance philosophy
 

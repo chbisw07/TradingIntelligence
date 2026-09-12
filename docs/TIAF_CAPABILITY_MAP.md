@@ -28,6 +28,17 @@ Statuses describe repository reality:
 - **FUTURE** — recognized capability without a committed near-term milestone;
 - **EXTERNAL/INTEGRATION** — owned by or dependent on another system boundary.
 
+The [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) now
+governs first-order composition. Its nine-family target matrix (§13) is not
+an A1–A5 compliance classification. The [completed audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
+provides the evidence-backed 43-row classification: R1 (stable required scope /
+explicit absence) is a pre-freeze fix; descriptor/readiness, manifest/pinning,
+adapter import isolation and COLD ownership are pre-A6 improvements, not yet
+implemented. HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
+`signal.qualify` and `forecast.return` discovery examples are not implemented
+public capabilities. Their typed publication/projection readiness is DEF-058.
+A5 stays untagged pending R1 acceptance; the existing facade behavior is unchanged.
+
 ## Data and evidence
 
 | Capability | Status | Placement |

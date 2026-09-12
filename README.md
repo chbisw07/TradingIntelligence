@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — frozen A4 and A5 position intelligence ready to freeze
+### Present — frozen A4, accepted A5, bounded pluggability remediation next
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -97,6 +97,17 @@ finds the deterministic single-position layer ready for the recommended
 `tiaf-a5-baseline` freeze. The tag is not created by that review. Multi-leg
 interpretation, TradeMonitor transport, durable monitoring and live broker
 ingestion remain explicit deferrals rather than accepted A5 behavior.
+
+The subsequent [TI Pluggability Architecture](docs/TIAF_PLUGGABILITY_ARCHITECTURE.md)
+establishes `HOT ⇒ COLD ⇒ STRUCTURAL`, governed optional composition and
+baseline-preserving replay. This is architecture only, not a plugin framework
+or an A1–A5 compliance certification. The subsequent
+[compliance audit](docs/TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) concludes
+`READY_FOR_PLUGGABILITY_REMEDIATION`: removing a required specialist can silently
+shrink reported required coverage. A5 stays untagged pending the bounded
+required-scope/explicit-absence fix and acceptance. No A5 policy change is
+prescribed. A6 has not started; Sector Rotation and Signal Qualification remain
+future thought experiments, not installed capabilities.
 
 ## Layout
 

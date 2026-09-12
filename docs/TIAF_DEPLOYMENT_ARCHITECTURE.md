@@ -26,6 +26,14 @@ capabilities.
 
 ## 1. Deployment thesis and near-term target
 
+The [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) adds the
+cross-cutting composition contract: COLD is the default target, trusted startup
+bindings remain distinct from request-time routing, and HOT requires pinned
+generations, quiescence, state ownership and rollback proof. HOT is deferred
+(DEF-057); no live loader, new host or service boundary is introduced. Existing
+local deployment and replay guarantees are unchanged and await the separate
+pluggability compliance audit, not presumed compliance from this design.
+
 **One trusted Python application runtime, direct typed capabilities, isolated
 invocations and filesystem replay. Split processes only for demonstrated needs.**
 One logical box is not one process. Moving Python calls to IPC or a remote

@@ -47,6 +47,13 @@ production infrastructure is introduced.
 
 ## 1. Purpose and system ownership
 
+The companion [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md)
+makes governed pluggability a first-order invariant: HOT ⇒ COLD ⇒ STRUCTURAL,
+separate scoped optionality, baseline-preserving peer composition and pinned
+replay. It governs future changes, not current A1–A5 compliance or a new runtime
+framework. Required safety semantics and this document's authority boundaries
+remain binding; the dedicated compliance audit is next, before A5 tagging.
+
 The [post-A3 consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) owns
 the current transition plan: bounded source foundation, narrow local facade,
 then deterministic A4. The first two steps are now implemented by the additive

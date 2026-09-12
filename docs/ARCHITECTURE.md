@@ -1,5 +1,9 @@
 # Architecture
 
+The authoritative [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md)
+now governs cross-cutting composition and replay invariants. It is architecture
+only; A1–A5 compliance audit and any justified remediation remain separate.
+
 The authoritative top-level boundary is now
 [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md): logical TI_CORE,
 curated public/engineering/private interfaces and trusted in-process capability

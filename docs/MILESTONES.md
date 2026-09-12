@@ -121,11 +121,22 @@ adds position-scoped captured-read admission, canonical A5 parity, generic A5
 recorded replay and read-only `position assess`; no broker lookup, execution,
 scheduler, A6/A7 or remote service.
 
-**TIAF_A5 — Position Intelligence MVP: COMPLETE / READY TO FREEZE.** The
+**TIAF_A5 — Position Intelligence MVP: RUNTIME ACCEPTED / TAG PENDING
+PLUGGABILITY REMEDIATION.** The
 [major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts A5.1
 and A5.2 together and recommends `tiaf-a5-baseline` without creating it.
 Multi-leg interpretation, live TM/broker integration and monitoring runtime
 remain explicitly deferred.
+
+**TI PLUGGABILITY — ARCHITECTURE AND AUDIT COMPLETE / REMEDIATION PENDING.**
+The [audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) returns
+`READY_FOR_PLUGGABILITY_REMEDIATION` and
+`A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION`. Its single pre-freeze
+item R1 preserves required scope and explicit absence independently of registry
+membership. Next: **TI PLUGGABILITY — BOUNDED REMEDIATION: REQUIRED SCOPE AND
+EXPLICIT ABSENCE**. No remediation is implemented here, no A5 policy retuning
+is prescribed, and A6 is not started. R2–R5 are separate pre-A6 improvements;
+future sector/forecast/HOT capabilities do not block A5 freeze.
 
 ## Deferral governance
 
