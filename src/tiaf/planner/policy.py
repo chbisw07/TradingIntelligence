@@ -1,5 +1,7 @@
 """Pure bounded workflow policy. No source selection or investment ranking."""
 
+from typing import Literal
+
 from tiaf.agents import AgentBudget, AgentEvidenceReference, AgentRegistry, SpecialistId
 from tiaf.contracts import TradeStyle
 from tiaf.data import InstrumentType
@@ -7,6 +9,9 @@ from tiaf.market_intelligence import ResearchDepth
 
 from .digests import digest
 from .models import (
+    DECLARED_SPECIALISTS_V1_1,
+    OPTIONAL_SPECIALISTS_V1_1,
+    REQUIRED_SPECIALISTS_V1_1,
     AnalysisPlan,
     Disposition,
     EvidenceTaskPlan,
@@ -18,15 +23,11 @@ from .models import (
 )
 
 DOWNSTREAM = (SpecialistId.OPPORTUNITY_QUALITY, SpecialistId.OPPORTUNITY_RISK)
-IMPLEMENTED = tuple(
-    s
-    for s in SpecialistId
-    if s
-    not in {
-        SpecialistId.CONTRARIAN_HYPOTHESIS,
-        SpecialistId.FORECAST_INTERPRETATION,
-    }
-)
+IMPLEMENTED = DECLARED_SPECIALISTS_V1_1
+REQUIRED_BY_DEFAULT = REQUIRED_SPECIALISTS_V1_1
+OPTIONAL_BY_DEFAULT = OPTIONAL_SPECIALISTS_V1_1
+
+type PlannerPolicyVersion = Literal["1.0", "1.1"]
 
 
 def invocation_digest(
@@ -63,12 +64,20 @@ def consumption_digest(
     return invocation_digest(request, spec, normalized)
 
 
-def dependencies(registry: AgentRegistry) -> tuple[SpecialistDependencySpec, ...]:
+def dependencies(
+    registry: AgentRegistry,
+    *,
+    policy_version: PlannerPolicyVersion = "1.1",
+) -> tuple[SpecialistDependencySpec, ...]:
+    """Describe bound implementations without defining the declared scope."""
     result = []
-    available = tuple(c.specialist for c in registry.capabilities() if c.specialist in IMPLEMENTED)
-    for cap in registry.capabilities():
-        if cap.specialist not in IMPLEMENTED:
-            continue
+    capabilities = tuple(
+        capability
+        for capability in registry.capabilities()
+        if capability.specialist in IMPLEMENTED
+    )
+    available = tuple(capability.specialist for capability in capabilities)
+    for cap in capabilities:
         upstream = (
             tuple(s for s in available if s not in DOWNSTREAM)
             if (cap.specialist in DOWNSTREAM)
@@ -78,11 +87,13 @@ def dependencies(registry: AgentRegistry) -> tuple[SpecialistDependencySpec, ...
             upstream = tuple(s for s in upstream if s is not SpecialistId.RELATIVE_STRENGTH)
         result.append(
             SpecialistDependencySpec(
+                schema_version=policy_version,
                 capability=cap,
+                policy_version=policy_version,
                 hard_evidence=cap.required_evidence_types,
                 optional_evidence=cap.optional_evidence_types,
                 upstream=upstream,
-                required=cap.specialist is not SpecialistId.MACRO,
+                required=cap.specialist in REQUIRED_BY_DEFAULT,
                 include_baseline_facts=cap.specialist
                 not in {
                     SpecialistId.FUNDAMENTAL,
@@ -112,7 +123,10 @@ def build_plan(
     specs: tuple[SpecialistDependencySpec, ...],
     *,
     version: int = 1,
+    policy_version: PlannerPolicyVersion = "1.1",
 ) -> AnalysisPlan:
+    if any(spec.policy_version != policy_version for spec in specs):
+        raise ValueError("dependency specification and planner policy versions differ")
     selected: list[SpecialistDependencySpec] = []
     skipped: list[SkippedSpecialist] = []
     instrument = request.instrument.underlying_type or request.instrument.instrument_type
@@ -138,9 +152,33 @@ def build_plan(
         elif len(selected) >= request.bounds.max_specialists:
             reason, unresolved = "SPECIALIST_CAP", True
         if reason is not None:
-            skipped.append(SkippedSpecialist(specialist=sid, reason=reason, unresolved=unresolved))
+            skipped.append(
+                SkippedSpecialist(
+                    schema_version=policy_version,
+                    specialist=sid,
+                    reason=reason,
+                    unresolved=unresolved,
+                    required=spec.required if policy_version == "1.1" else None,
+                )
+            )
         else:
             selected.append(spec)
+    if policy_version == "1.1":
+        bound = {spec.capability.specialist for spec in specs}
+        for sid in IMPLEMENTED:
+            if sid in bound:
+                continue
+            reason, unresolved = _unbound_disposition(request, sid)
+            skipped.append(
+                SkippedSpecialist(
+                    schema_version=policy_version,
+                    specialist=sid,
+                    reason=reason,
+                    unresolved=unresolved,
+                    required=sid in REQUIRED_BY_DEFAULT,
+                )
+            )
+        skipped.sort(key=lambda item: item.specialist.value)
     selected_ids = {s.capability.specialist for s in selected}
     nodes = tuple(
         PlanNode(
@@ -205,10 +243,13 @@ def build_plan(
             ),
         )
     return AnalysisPlan(
+        schema_version=policy_version,
         plan_id=f"{request.run_id}:plan:{version}",
         version=version,
         parent_version=version - 1 if version > 1 else None,
         request_digest=digest(request),
+        planner_version=policy_version,
+        policy_version=policy_version,
         registry=specs,
         nodes=nodes,
         skipped=tuple(skipped),
@@ -217,6 +258,27 @@ def build_plan(
         evidence_tasks=evidence_tasks,
         specialist_budget=AgentBudget(max_elapsed_seconds=request.budget.max_elapsed_seconds),
     )
+
+
+def _unbound_disposition(
+    request: OrchestrationRequest,
+    specialist: SpecialistId,
+) -> tuple[str, bool]:
+    """Classify an absent declared binding without changing semantic scope."""
+    instrument = request.instrument.underlying_type or request.instrument.instrument_type
+    if specialist is SpecialistId.MACRO and not request.include_macro:
+        return "MACRO_NOT_REQUESTED", False
+    if specialist is SpecialistId.FUNDAMENTAL and request.trade_style is TradeStyle.DAY:
+        return "DAY_SHALLOW_COMPANY_SCOPE", False
+    if specialist is SpecialistId.DERIVATIVES_CONTEXT and (
+        instrument is InstrumentType.EQUITY and request.instrument.fno_eligible is not True
+    ):
+        if request.instrument.fno_eligible is None:
+            return "UNKNOWN_FNO_ELIGIBILITY", True
+        return "ATTRIBUTED_NON_FNO", False
+    if specialist in OPTIONAL_BY_DEFAULT:
+        return "OPTIONAL_NOT_REGISTERED", False
+    return "NOT_REGISTERED", True
 
 
 def missing_disposition(

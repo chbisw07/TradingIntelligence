@@ -30,6 +30,21 @@ required bounded remediation/acceptance. The current next prompt is
 **TI PLUGGABILITY — A1–A5 COMPLIANCE AUDIT**, superseding this review's earlier
 A6-next recommendation without changing accepted A5 behavior.
 
+Second governance addendum (2026-09-12): the bounded
+[R1 remediation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+reports `READY_TO_ACCEPT_PLUGGABILITY_R1` and
+`A5_FREEZE_BLOCKER_R1_RESOLVED`. It changes upstream Planner/A3.9 completeness,
+not A5 policy or runtime dependencies. A5 remains untagged until the recommended
+short R1 acceptance and A5 freeze-readiness closure makes the tag decision.
+
+Third governance addendum (2026-09-12): that
+[acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
+`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
+`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. The required next order is to save R1 and
+acceptance, consolidate documentation, then perform the final A5 tag-readiness
+check. This pass still does not create the tag.
+
 ## 1. North-star alignment and delivered scope
 
 A5 acts in the user's economic interest by making current-position truth a hard

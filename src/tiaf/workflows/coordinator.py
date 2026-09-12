@@ -140,7 +140,11 @@ class OrchestrationCoordinator:
         for skipped in self.plans[0].skipped:
             self.decide("SKIP", skipped.reason, (skipped.specialist.value,))
             if skipped.unresolved:
-                self.gaps.add(skipped.reason)
+                self.gaps.add(
+                    f"{skipped.specialist.value}:{skipped.reason}"
+                    if skipped.reason == "NOT_REGISTERED"
+                    else skipped.reason
+                )
         if request.instrument.benchmark_reference is None:
             self.gaps.add("MISSING_BENCHMARK_MAPPING")
         if request.instrument.sector_reference is None:
@@ -645,7 +649,14 @@ class OrchestrationCoordinator:
                     break
             return False
         self.round += 1
-        self.plans.append(build_plan(self.request, self.plans[0].registry, version=self.round + 1))
+        self.plans.append(
+            build_plan(
+                self.request,
+                self.plans[0].registry,
+                version=self.round + 1,
+                policy_version=self.plans[0].policy_version,
+            )
+        )
         self.decide("REPLAN", "admitted consumed evidence changed")
         return True
 

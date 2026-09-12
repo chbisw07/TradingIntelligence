@@ -8,6 +8,18 @@ Audit date: 2026-09-12 (Asia/Kolkata).
 
 **A5 freeze impact: A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION**
 
+Post-audit remediation addendum, 2026-09-12: the bounded
+[R1 implementation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+corrects F1 with Planner schema/policy `1.1`, explicit required/optional absence,
+stable A3.9 completeness, and a legacy `1.0` compatibility path. Its current
+implementation decision was `READY_TO_ACCEPT_PLUGGABILITY_R1` and
+`A5_FREEZE_BLOCKER_R1_RESOLVED`. The subsequent
+[acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+returns `READY_TO_CLOSE_PLUGGABILITY_R1` and
+`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`. The two lines above remain the
+original audit verdict rather than a claim that the defect is still present.
+A5 remains untagged pending consolidation and a final tag-readiness check.
+
 One bounded pre-freeze issue is demonstrated: the A3 Planner derives required
 participation from the installed registry. Removing a required specialist can
 silently remove that requirement and its missingness from A3.9 completeness for
@@ -491,11 +503,15 @@ remain in the non-authoritative idea cache; no signal capability is promoted.
 Rows 24 and 26 expose the same blocker, not two distinct mandatory remediations.
 No additional runtime failure is inferred merely from missing generic metadata.
 
-## 13. Bounded remediation plan — not implemented
+## 13. Bounded remediation plan and subsequent R1 disposition
 
 ### MUST_FIX_BEFORE_A5_FREEZE
 
 **R1 — Stable required/optional scope and explicit absence (F1).**
+
+Implemented by the bounded [R1 remediation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md).
+The audit plan below is retained as the historical requirement; R2–R5 remain
+unimplemented.
 
 - Problem/files: `planner/models.py`, `planner/policy.py`,
   `workflows/coordinator.py`, `workflows/records.py`, A3.9

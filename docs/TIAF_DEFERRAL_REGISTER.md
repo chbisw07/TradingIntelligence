@@ -425,19 +425,24 @@ pluggability thought experiment. No unrelated deferral is burned down here.
 
 ## TI Pluggability A1–A5 audit disposition
 
-The [completed audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) returns
-`READY_FOR_PLUGGABILITY_REMEDIATION` and
-`A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION`. One immediate pre-freeze
-item R1 separates required specialist scope from installed registry membership
-and preserves explicit absence into completeness/captures. It is planned next
-in implementation targets, not deferred or implemented. R2–R5 are separately
-bounded pre-A6 improvements; their missing metadata does not by itself block
-the bounded A5 baseline.
+The [completed audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) returned
+`READY_FOR_PLUGGABILITY_REMEDIATION` and identified one immediate pre-freeze
+item. The bounded [R1 remediation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+now separates required specialist scope from installed registry membership and
+preserves explicit absence through completeness and captures. R1 is implemented,
+not a deferral; it reports `A5_FREEZE_BLOCKER_R1_RESOLVED`. R2–R5 remain
+separately bounded pre-A6 improvements; their missing metadata does not by itself
+block the bounded A5 baseline. The subsequent
+[R1 acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+returns `R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`; it does not alter their pre-A6
+disposition or implement them.
 
 DEF-058 retains future peer-ID/projection/publication work (R6) until an approved
 new contributor needs it. Existing shared-cache/hosting obligations (R7) remain
 within DEF-009/011 and related deployment work. No existing status changes;
 current totals are 58 stable records with 45 DEFERRED, 4 PLANNED, 4 IMPLEMENTED,
 3 REJECTED and 2 SUPERSEDED. HOT, Sector Rotation, Signal Qualification and
-forecast delivery are not pre-freeze requirements. A5 stays untagged pending
-R1 acceptance; its earlier closure remains a historical scoped finding.
+forecast delivery are not pre-freeze requirements. R1 is now closed and A5 is
+ready for final documentation and freeze; A5 stays untagged pending consolidation
+and a final tag-readiness check. Its earlier closure remains a historical scoped
+finding.

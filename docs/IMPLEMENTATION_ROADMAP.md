@@ -31,12 +31,16 @@ both slices together and concludes `READY_TO_FREEZE_A5`; it recommends but does
 not create `tiaf-a5-baseline`. The subsequent
 [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) is complete
 as architecture only. The [completed compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
-finds one pre-freeze issue: registry absence silently shrinks required specialist
-coverage. Next is **TI PLUGGABILITY — BOUNDED REMEDIATION: REQUIRED SCOPE AND
-EXPLICIT ABSENCE** (R1), including old/new capture compatibility and regression
-acceptance. A5 remains untagged pending that fix; no A5 policy change is required.
-R2–R5 are separately bounded pre-A6 work. A6 has not begun; this cross-cutting
-workstream does not renumber milestones or implement a plugin framework.
+found one pre-freeze issue: registry absence silently shrank required specialist
+coverage. The bounded [R1 remediation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+now preserves stable declared scope, explicit absence, and old/new capture
+compatibility. The subsequent
+[acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+closes R1 and finds A5 ready for final documentation and freeze. A5 remains
+untagged pending documentation consolidation and a final tag-readiness check. No
+A5 policy changed. R2–R5 remain separately bounded pre-A6 work and are not A5
+freeze requirements. A6 has not begun; this workstream does not renumber
+milestones or implement a plugin framework.
 
 ## Acceptance philosophy
 

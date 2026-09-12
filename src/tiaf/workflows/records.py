@@ -42,6 +42,13 @@ class OrchestrationRunRecord(ContractModel):
 
     def semantic_payload(self) -> Any:
         data = self.model_dump(mode="json", exclude={"fingerprint"})
+        for plan in data["plans"]:
+            if plan["policy_version"] == "1.0":
+                for skipped in plan["skipped"]:
+                    skipped.pop("required", None)
+        if data["plans"] and data["plans"][-1]["policy_version"] == "1.0":
+            for skipped in data["result"]["skipped"]:
+                skipped.pop("required", None)
         data["artifacts"] = [
             {
                 "artifact_id": a.artifact_id,
@@ -56,10 +63,16 @@ class OrchestrationRunRecord(ContractModel):
     def validate_record(self) -> Self:
         if digest(self.semantic_payload()) != self.fingerprint:
             raise ValueError("orchestration semantic fingerprint mismatch")
-        if tuple(p.version for p in self.plans) != tuple(range(1, len(self.plans) + 1)):
-            raise ValueError("missing or reordered plan versions")
         if not self.plans or not self.inventories:
             raise ValueError("missing captured plans/inventory")
+        if tuple(p.version for p in self.plans) != tuple(range(1, len(self.plans) + 1)):
+            raise ValueError("missing or reordered plan versions")
+        if any(
+            (plan.planner_version, plan.policy_version)
+            != (self.plans[0].planner_version, self.plans[0].policy_version)
+            for plan in self.plans
+        ):
+            raise ValueError("planner/policy version changed within one run")
         if any(p.request_digest != digest(self.request) for p in self.plans):
             raise ValueError("plan/request digest mismatch")
         if any(i.a2_pack != self.request.inventory.a2_pack for i in self.inventories):

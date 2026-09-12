@@ -476,9 +476,10 @@ def test_complete_workflow_keeps_separate_opinions_and_sufficiency_stop() -> Non
         )
     )
     record = run_serial(request(), registry)
-    assert record.result.status == "COMPLETE"
+    assert record.result.status == "PARTIAL"
     assert len(record.result.opinions) == 2
-    assert StopReason.EVIDENCE_SUFFICIENT in record.result.stop_reasons
+    assert StopReason.UNSUPPORTED_REMAINING in record.result.stop_reasons
+    assert "TECHNICAL:NOT_REGISTERED" in record.result.gaps
     assert record.result.usage_is_complete
 
 

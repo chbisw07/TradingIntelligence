@@ -563,25 +563,28 @@ stable deferral governance, and recommends—but does not create—the
 `tiaf-a5-baseline` tag. A subsequent cross-cutting gate now precedes tagging
 and A6, as described below; the closure's runtime finding remains historical.
 
-### TI Pluggability — architecture and audit complete / remediation pending
+### TI Pluggability — R1 closed / documentation consolidation next
 
 The authoritative [design](TIAF_PLUGGABILITY_ARCHITECTURE.md) adopts nested
 HOT ⇒ COLD ⇒ STRUCTURAL guarantees, separate scoped requirements/traits,
 request-specific availability, typed peer composition, a proposed immutable
-composition manifest and baseline-preserving replay. No new runtime schema,
-registry, loader, facade behavior or A1–A5 refactoring is implemented.
+composition manifest and baseline-preserving replay.
 
 - P0: architecture complete; `READY_FOR_PLUGGABILITY_COMPLIANCE_AUDIT`.
 - P1: [compliance audit complete](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md);
   `READY_FOR_PLUGGABILITY_REMEDIATION`. One material issue: required specialist
   coverage silently shrinks with registry absence for the same request.
-- P2 next: **TI PLUGGABILITY — BOUNDED REMEDIATION: REQUIRED SCOPE AND EXPLICIT ABSENCE**.
-  Implement only audit R1 plus necessary old/new capture/handoff compatibility.
-  Separate requirement profile from actual bindings, retain explicit missing/
-  disabled outcomes and preserve request-specific applicability/A2 identity.
-- P3: regression/composition/replay acceptance for any remediation; explicitly
-  revisit `A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION` after R1.
-  No A5 tag is created here and no A5 policy change is prescribed.
+- P2: [bounded R1 remediation complete](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md).
+  Planner policy/schema `1.1` separates the stable requirement profile from
+  actual bindings, records required/optional absence, and preserves `1.0`
+  capture/fingerprint/completeness semantics.
+- P3: [R1 acceptance and A5 freeze-readiness closure complete](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md).
+  It returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
+  `A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
+  `R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`.
+- P4 next: save R1/acceptance, consolidate A4/A5/top-level documentation, then
+  perform the final A5 tag-readiness check. No tag is created here and no A5
+  policy change is prescribed.
 
 Separately bounded SHOULD_FIX_BEFORE_A6 slices from the audit:
 
@@ -591,7 +594,7 @@ Separately bounded SHOULD_FIX_BEFORE_A6 slices from the audit:
 - R4: isolate optional provider package imports without changing adapters.
 - R5: trusted COLD binding snapshots/freeze, not HOT mutation.
 
-This is not A5.x or A6. Remediation is planned, not implemented. New contributor
+This is not A5.x or A6. Only R1 is implemented. New contributor
 publication/projection is deferred until a concrete peer is approved (DEF-058);
 HOT remains DEF-057. Sector Rotation, Signal Qualification, forecasting, shared
 live hosting and remote transport remain separately gated. A6 is not next yet.

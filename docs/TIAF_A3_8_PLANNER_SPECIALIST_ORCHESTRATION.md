@@ -18,6 +18,14 @@ optional pinned framework dependency, not a new provider, specialist policy,
 model call or live market request. See the
 [user-level study](STUDY_A3_8_USER_LEVEL_ACCEPTANCE.md) for current gate results.
 
+Post-A5 compatibility addendum: bounded
+[Pluggability R1](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md) adds
+Planner schema/policy `1.1`. Its stable declared specialist profile owns
+required/optional scope independently of `AgentRegistry`; each declared role is
+selected or explicitly skipped, and skipped entries record requiredness. Legacy
+`1.0` plans and fingerprints retain the registry-derived historical semantics.
+This does not change specialist policies, evidence acquisition, or A2 meaning.
+
 ## 1. Ownership and scope
 
 **The Planner owns workflow decisions, not investment decisions.** It chooses
@@ -91,8 +99,9 @@ changes rather than relying on shallow `frozen=True` for deep immutability.
 Canonical timestamps use `ZoneInfo("Asia/Kolkata")`, reject naive datetimes,
 normalize other aware zones, and serialize with `+05:30`. No naive `now()` or
 manual offset arithmetic. Package version `0.1.0`, base contract schema `1.0`,
-existing `AgentOpinionV2` schema `2.0`, and planner/policy versions are distinct;
-this design changes none of them.
+existing `AgentOpinionV2` schema `2.0`, and planner/policy versions are distinct.
+The original A3.8 release used Planner schema/policy `1.0`; R1 adds compatible
+Planner schema/policy `1.1` without changing package or base contract versions.
 
 ## 3. Plan and record contracts
 

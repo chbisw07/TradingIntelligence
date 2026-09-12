@@ -61,7 +61,8 @@ def replay_recorded(content: str) -> OrchestrationRunRecord:
 
 def verify_deterministic(content: str, registry: AgentRegistry) -> OrchestrationRunRecord:
     record = replay_recorded(content)
-    specs = dependencies(registry)
+    policy_version = record.plans[0].policy_version
+    specs = dependencies(registry, policy_version=policy_version)
     ledger = ReservationLedger(record.request.budget, record.request.bounds.max_provider_calls)
     for entry in record.reservations:
         if not ledger.reserve(entry.accounting_id, entry.budget, entry.provider_calls):
@@ -71,7 +72,12 @@ def verify_deterministic(content: str, registry: AgentRegistry) -> Orchestration
     if ledger.entries() != record.reservations:
         raise ValueError("reservation reconciliation mismatch")
     for plan in record.plans:
-        if plan != build_plan(record.request, specs, version=plan.version):
+        if plan != build_plan(
+            record.request,
+            specs,
+            version=plan.version,
+            policy_version=policy_version,
+        ):
             raise ValueError("planner/dependency version or deterministic plan mismatch")
     for attempt in record.attempts:
         captured = attempt.record

@@ -128,15 +128,19 @@ and A5.2 together and recommends `tiaf-a5-baseline` without creating it.
 Multi-leg interpretation, live TM/broker integration and monitoring runtime
 remain explicitly deferred.
 
-**TI PLUGGABILITY — ARCHITECTURE AND AUDIT COMPLETE / REMEDIATION PENDING.**
+**TI PLUGGABILITY — R1 CLOSED / A5 DOCUMENTATION CONSOLIDATION NEXT.**
 The [audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) returns
-`READY_FOR_PLUGGABILITY_REMEDIATION` and
-`A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION`. Its single pre-freeze
-item R1 preserves required scope and explicit absence independently of registry
-membership. Next: **TI PLUGGABILITY — BOUNDED REMEDIATION: REQUIRED SCOPE AND
-EXPLICIT ABSENCE**. No remediation is implemented here, no A5 policy retuning
-is prescribed, and A6 is not started. R2–R5 are separate pre-A6 improvements;
-future sector/forecast/HOT capabilities do not block A5 freeze.
+`READY_FOR_PLUGGABILITY_REMEDIATION` and identified its single pre-freeze item
+R1. The bounded
+[R1 remediation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+preserves required scope and explicit absence independently of registry
+membership, including legacy replay. The
+[acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
+`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
+`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. Next is documentation consolidation followed
+by a final A5 tag-readiness check. No A5 policy was retuned, A6 is not started,
+and R2–R5 remain separate pre-A6 improvements.
 
 ## Deferral governance
 

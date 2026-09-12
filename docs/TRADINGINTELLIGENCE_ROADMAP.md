@@ -474,12 +474,17 @@ slices as one layer and concludes `READY_TO_FREEZE_A5`, recommending but not
 creating `tiaf-a5-baseline`. The subsequent
 [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) adds a
 cross-cutting gate. The [completed compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
-returns `READY_FOR_PLUGGABILITY_REMEDIATION` and
-`A5_FREEZE_BLOCKED_PENDING_PLUGGABILITY_REMEDIATION`: required specialist scope
-must not shrink silently with registry absence. Next is **TI PLUGGABILITY —
-BOUNDED REMEDIATION: REQUIRED SCOPE AND EXPLICIT ABSENCE** (R1), not A5 retuning.
-A5 stays untagged until this bounded fix and compatibility/regression acceptance;
-R2–R5 are pre-A6 improvements. A6 remains unstarted, major order unchanged.
+returned `READY_FOR_PLUGGABILITY_REMEDIATION` and identified the required-scope
+freeze blocker. The bounded
+[R1 implementation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+now prevents registry absence from shrinking semantic scope and preserves
+explicit absence plus legacy replay. The
+[acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+returns `READY_TO_CLOSE_PLUGGABILITY_R1` and
+`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`. A5 stays untagged pending the
+specified documentation consolidation and final tag-readiness check. R2–R5 are
+not A5 freeze requirements and remain pre-A6 improvements. A6 remains unstarted
+and the major order is unchanged.
 
 ## Goal
 

@@ -16,6 +16,14 @@ implemented after A3.9; the later separate A3 closure review concludes
 `READY_TO_FREEZE_A3`. No architectural detour into TI
 Shell or the post-A3 Source/Provenance/Citation Fabric is introduced.
 
+Post-A5 compatibility addendum: bounded
+[Pluggability R1](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+projects Planner `1.1` required absence as applicable-but-unusable, so an absent
+required binding remains in A3.9's required denominator and missing set. Optional
+absence remains visible without entering that denominator. Captured Planner
+`1.0` runs retain their historical projection and fingerprint semantics; the
+A3.9 synthesis policy itself remains `1.0`.
+
 ## 1. Ownership: classification, not arbitration
 
 A3.8 owns **which evidence/specialists run**. A3.9 owns a **structured description

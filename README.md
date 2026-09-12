@@ -14,7 +14,7 @@ A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
 structured opportunity intelligence at `tiaf-a3.9`. See the
 [detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
 
-### Present — frozen A4, accepted A5, bounded pluggability remediation next
+### Present — frozen A4, accepted A5, pluggability R1 remediated
 
 [A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
 is accepted with content-addressed cumulative A3 capture, offline replay,
@@ -102,12 +102,18 @@ The subsequent [TI Pluggability Architecture](docs/TIAF_PLUGGABILITY_ARCHITECTUR
 establishes `HOT ⇒ COLD ⇒ STRUCTURAL`, governed optional composition and
 baseline-preserving replay. This is architecture only, not a plugin framework
 or an A1–A5 compliance certification. The subsequent
-[compliance audit](docs/TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) concludes
-`READY_FOR_PLUGGABILITY_REMEDIATION`: removing a required specialist can silently
-shrink reported required coverage. A5 stays untagged pending the bounded
-required-scope/explicit-absence fix and acceptance. No A5 policy change is
-prescribed. A6 has not started; Sector Rotation and Signal Qualification remain
-future thought experiments, not installed capabilities.
+[compliance audit](docs/TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) identified
+one pre-freeze defect: removing a required specialist could silently shrink
+reported required coverage. The bounded
+[R1 remediation](docs/TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
+now separates versioned declared scope from bound implementations, captures
+explicit absence, and preserves legacy `1.0` replay semantics. The subsequent
+[acceptance closure](docs/TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
+`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
+`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. A5 remains untagged pending documentation
+consolidation and a final tag-readiness check. R2–R5 and A6 have not started;
+Sector Rotation and Signal Qualification remain future thought experiments.
 
 ## Layout
 

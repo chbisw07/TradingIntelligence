@@ -250,13 +250,31 @@ def project_contributions(
                     ),
                 )
             )
+    explicit_scope = record.plans[-1].policy_version == "1.1"
     for skipped in record.result.skipped:
+        required_absence = explicit_scope and skipped.required is True and skipped.reason in {
+            "NOT_REGISTERED",
+            "NO_LLM_UNSUPPORTED",
+            "PERMISSION_DENIED",
+            "SPECIALIST_CAP",
+        }
+        optional_absence = (
+            explicit_scope
+            and skipped.required is False
+            and skipped.reason == "OPTIONAL_NOT_REGISTERED"
+        )
         result.append(
             SpecialistContribution(
                 specialist=skipped.specialist,
                 role="DOWNSTREAM_SUMMARY" if skipped.specialist in DOWNSTREAM else "FIRST_ORDER",
-                applicability="UNKNOWN" if skipped.unresolved else "NOT_APPLICABLE",
-                required=skipped.unresolved,
+                applicability=(
+                    "APPLICABLE"
+                    if required_absence or optional_absence
+                    else "UNKNOWN"
+                    if skipped.unresolved
+                    else "NOT_APPLICABLE"
+                ),
+                required=required_absence,
                 outcome="SKIPPED",
                 reason=skipped.reason,
             )

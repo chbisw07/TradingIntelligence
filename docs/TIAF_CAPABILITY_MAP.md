@@ -31,13 +31,17 @@ Statuses describe repository reality:
 The [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) now
 governs first-order composition. Its nine-family target matrix (§13) is not
 an A1–A5 compliance classification. The [completed audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
-provides the evidence-backed 43-row classification: R1 (stable required scope /
-explicit absence) is a pre-freeze fix; descriptor/readiness, manifest/pinning,
-adapter import isolation and COLD ownership are pre-A6 improvements, not yet
-implemented. HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
+provides the evidence-backed 43-row classification. The bounded
+[R1 correction](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md) now
+implements stable required scope and explicit absence. Descriptor/readiness,
+manifest/pinning, adapter import isolation and COLD ownership remain unimplemented
+pre-A6 improvements. HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
 `signal.qualify` and `forecast.return` discovery examples are not implemented
 public capabilities. Their typed publication/projection readiness is DEF-058.
-A5 stays untagged pending R1 acceptance; the existing facade behavior is unchanged.
+The [R1 acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
+finds R2–R5 unnecessary for A5 freeze and A5 ready for final documentation and
+freeze. A5 stays untagged pending documentation consolidation and the final
+tag-readiness check; facade behavior is unchanged.
 
 ## Data and evidence
 

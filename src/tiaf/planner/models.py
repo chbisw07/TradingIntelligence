@@ -28,6 +28,24 @@ from .digests import digest
 
 Sha256 = Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
 
+DECLARED_SPECIALISTS_V1_1 = (
+    SpecialistId.TECHNICAL,
+    SpecialistId.FUNDAMENTAL,
+    SpecialistId.NEWS_EVENT,
+    SpecialistId.RELATIVE_STRENGTH,
+    SpecialistId.SECTOR,
+    SpecialistId.MACRO,
+    SpecialistId.DERIVATIVES_CONTEXT,
+    SpecialistId.OPPORTUNITY_QUALITY,
+    SpecialistId.OPPORTUNITY_RISK,
+)
+OPTIONAL_SPECIALISTS_V1_1 = (SpecialistId.MACRO,)
+REQUIRED_SPECIALISTS_V1_1 = tuple(
+    specialist
+    for specialist in DECLARED_SPECIALISTS_V1_1
+    if specialist not in OPTIONAL_SPECIALISTS_V1_1
+)
+
 
 class Intent(StrEnum):
     LIVE = "LIVE"
@@ -188,8 +206,9 @@ class OrchestrationRequest(ContractModel):
 
 
 class SpecialistDependencySpec(ContractModel):
+    schema_version: Literal["1.0", "1.1"] = "1.0"
     capability: SpecialistCapability
-    policy_version: Literal["1.0"] = "1.0"
+    policy_version: Literal["1.0", "1.1"] = "1.0"
     hard_evidence: tuple[EvidenceType, ...]
     optional_evidence: tuple[EvidenceType, ...] = ()
     upstream: tuple[SpecialistId, ...] = ()
@@ -197,6 +216,12 @@ class SpecialistDependencySpec(ContractModel):
     include_baseline_facts: bool = True
     required_metrics: tuple[NonEmptyStr, ...] = ()
     required_metadata: tuple[NonEmptyStr, ...] = ()
+
+    @model_validator(mode="after")
+    def versioned_policy(self) -> Self:
+        if self.schema_version != self.policy_version:
+            raise ValueError("dependency schema and policy versions must match")
+        return self
 
 
 class PlanNode(ContractModel):
@@ -208,9 +233,17 @@ class PlanNode(ContractModel):
 
 
 class SkippedSpecialist(ContractModel):
+    schema_version: Literal["1.0", "1.1"] = "1.0"
     specialist: SpecialistId
     reason: NonEmptyStr
     unresolved: bool = False
+    required: bool | None = None
+
+    @model_validator(mode="after")
+    def versioned_requirement(self) -> Self:
+        if (self.schema_version == "1.1") != (self.required is not None):
+            raise ValueError("skipped requirement classification must use schema 1.1")
+        return self
 
 
 class EvidenceTaskPlan(ContractModel):
@@ -224,12 +257,13 @@ class EvidenceTaskPlan(ContractModel):
 
 
 class AnalysisPlan(ContractModel):
+    schema_version: Literal["1.0", "1.1"] = "1.0"
     plan_id: NonEmptyStr
     version: int = Field(ge=1)
     parent_version: int | None = None
     request_digest: Sha256
-    planner_version: Literal["1.0"] = "1.0"
-    policy_version: Literal["1.0"] = "1.0"
+    planner_version: Literal["1.0", "1.1"] = "1.0"
+    policy_version: Literal["1.0", "1.1"] = "1.0"
     registry: tuple[SpecialistDependencySpec, ...]
     nodes: tuple[PlanNode, ...]
     skipped: tuple[SkippedSpecialist, ...]
@@ -240,11 +274,49 @@ class AnalysisPlan(ContractModel):
 
     @model_validator(mode="after")
     def valid_dag(self) -> Self:
+        if not (
+            self.schema_version == self.planner_version == self.policy_version
+        ):
+            raise ValueError("plan schema, planner and policy versions must match")
         ids = tuple(n.node_id for n in self.nodes)
         if len(set(ids)) != len(ids):
             raise ValueError("duplicate node ID")
         if self.parent_version != (self.version - 1 if self.version > 1 else None):
             raise ValueError("invalid plan lineage")
+        skipped_ids = tuple(item.specialist for item in self.skipped)
+        if len(set(skipped_ids)) != len(skipped_ids):
+            raise ValueError("duplicate skipped specialist")
+        if self.policy_version == "1.1" and any(
+            item.required is None for item in self.skipped
+        ):
+            raise ValueError("planner policy 1.1 must classify skipped requirement scope")
+        if any(
+            item.schema_version != self.policy_version for item in self.skipped
+        ) or any(
+            item.schema_version != self.policy_version for item in self.registry
+        ):
+            raise ValueError("plan and nested policy schemas must match")
+        node_specialists = tuple(item.specialist for item in self.nodes)
+        if len(set(node_specialists)) != len(node_specialists):
+            raise ValueError("duplicate node specialist")
+        if set(node_specialists) & set(skipped_ids):
+            raise ValueError("specialist cannot be both selected and skipped")
+        if self.policy_version == "1.1" and set((*node_specialists, *skipped_ids)) != set(
+            DECLARED_SPECIALISTS_V1_1
+        ):
+            raise ValueError("planner policy 1.1 must preserve its complete declared scope")
+        if self.policy_version == "1.1" and (
+            any(
+                node.required != (node.specialist in REQUIRED_SPECIALISTS_V1_1)
+                for node in self.nodes
+            )
+            or any(
+                skipped.required
+                != (skipped.specialist in REQUIRED_SPECIALISTS_V1_1)
+                for skipped in self.skipped
+            )
+        ):
+            raise ValueError("planner policy 1.1 requirement classification mismatch")
         flat = tuple(n for wave in self.waves for n in wave)
         if len(flat) != len(ids) or set(flat) != set(ids):
             raise ValueError("waves must contain every node exactly once")
