@@ -1,0 +1,81 @@
+{
+  "schema_id": "tiaf.a6.acceptance-public-goldens",
+  "schema_version": "1.0",
+  "policy_profile": "a6-policy:deterministic-long-option@1.0-draft/a6-profile:baseline",
+  "fingerprint_expectation": "EXACT_MATCH_TO_RECORDED_CAPTURE",
+  "required_invalidation_conditions": [
+    "CONTRACT_AVAILABILITY_CHANGES",
+    "DERIVATIVES_COVERAGE_CHANGES",
+    "EVENT_EVIDENCE_CHANGES",
+    "EXPIRY_CUSHION_THRESHOLD_CROSSED",
+    "HOLDING_TARGET_CHANGES",
+    "POLICY_OR_PROFILE_CHANGES",
+    "QUOTE_FRESHNESS_EXPIRES",
+    "SPREAD_LIMIT_BREACHED",
+    "UNDERLYING_FRESHNESS_EXPIRES",
+    "UPSTREAM_THESIS_CHANGES"
+  ],
+  "cases": [
+    {
+      "artifact_ref": "artifact:a6-available",
+      "disposition": "EXPRESSION_AVAILABLE",
+      "preferred_candidate_ref": "a6-candidate:1765cf50a73654f032aab060",
+      "alternative_candidate_refs": [
+        "a6-candidate:6a21daa3f4fcdb8358ac8fb4",
+        "a6-candidate:ae162e4bdc3b8cf6175b7382"
+      ],
+      "disposition_reason_codes": ["ELIGIBLE_CANDIDATE_SELECTED"],
+      "rank_difference_dimensions": ["MONEYNESS_PREFERENCE"],
+      "required_candidate_rejection_reasons": [],
+      "blockers": [],
+      "required_gaps": ["EVENT_COVERAGE_NOT_SUPPLIED_OPTIONAL"]
+    },
+    {
+      "artifact_ref": "artifact:a6-no-option-trade",
+      "disposition": "NO_OPTION_TRADE",
+      "preferred_candidate_ref": null,
+      "alternative_candidate_refs": [],
+      "disposition_reason_codes": ["NO_CANDIDATE_PASSED_ALL_HARD_GATES"],
+      "rank_difference_dimensions": [],
+      "required_candidate_rejection_reasons": ["NON_POSITIVE_TOP_QUANTITY"],
+      "blockers": ["NON_POSITIVE_TOP_QUANTITY"],
+      "required_gaps": ["EVENT_COVERAGE_NOT_SUPPLIED_OPTIONAL"]
+    },
+    {
+      "artifact_ref": "artifact:a6-wait",
+      "disposition": "WAIT_FOR_EXPRESSION",
+      "preferred_candidate_ref": null,
+      "alternative_candidate_refs": [],
+      "disposition_reason_codes": ["A4_CONFLICTED"],
+      "rank_difference_dimensions": [],
+      "required_candidate_rejection_reasons": [],
+      "blockers": ["A4_CONFLICTED"],
+      "required_gaps": []
+    },
+    {
+      "artifact_ref": "artifact:a6-insufficient",
+      "disposition": "INSUFFICIENT_EVIDENCE",
+      "preferred_candidate_ref": null,
+      "alternative_candidate_refs": [],
+      "disposition_reason_codes": ["REQUIRED_CANDIDATE_EVIDENCE_UNKNOWN"],
+      "rank_difference_dimensions": [],
+      "required_candidate_rejection_reasons": [],
+      "blockers": [],
+      "required_gaps": [
+        "EVENT_COVERAGE_NOT_SUPPLIED_OPTIONAL",
+        "MISSING_BID_OR_ASK"
+      ]
+    },
+    {
+      "artifact_ref": "artifact:a6-unsupported",
+      "disposition": "UNSUPPORTED",
+      "preferred_candidate_ref": null,
+      "alternative_candidate_refs": [],
+      "disposition_reason_codes": ["HORIZON_OUTSIDE_V1"],
+      "rank_difference_dimensions": [],
+      "required_candidate_rejection_reasons": [],
+      "blockers": [],
+      "required_gaps": ["HORIZON_OUTSIDE_V1"]
+    }
+  ]
+}

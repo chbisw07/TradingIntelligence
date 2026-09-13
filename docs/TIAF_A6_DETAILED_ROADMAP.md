@@ -4,7 +4,8 @@
 
 2026-09-14 (Asia/Kolkata): **A5 FROZEN; R1–R5 ACCEPTED / DONE;
 A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT; `expression.assess` PUBLISHED.**
+A6.1–A6.4 ACCEPTED / DONE; A6 FROZEN at `tiaf-a6-baseline`;
+`expression.assess` PUBLISHED; A7 ACTIVE / NEXT — NOT_IMPLEMENTED.**
 
 The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines
 the proposed policy and boundaries; the [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md)
@@ -15,11 +16,13 @@ implementation. Its first gate is:
 Architecture + thesis reconciliation + acceptance (complete)
   → A6.1 contracts / admission / policy foundation (accepted / done)
   → A6.2 evaluation / ranking / replay (accepted / done)
-  → A6.3 facade / Shell (accepted / done) → A6.4 (active / next) → A7 → A8 → A9 → A10
+  → A6.3 facade / Shell (accepted / done) → A6.4 (accepted / done)
+  → A6 frozen (`tiaf-a6-baseline`) → A7 active / next → A8 → A9 → A10
 ```
 
 The [architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
-approves A6.1 as the next slice. Do not freeze architecture now or begin A7.
+approved A6.1 as the first slice. The completed implementation is frozen at the
+A6 baseline; A7 architecture is the next separate milestone.
 Numeric defaults remain
 the unchanged versioned engineering baseline for independent review, not
 calibrated trading policy. Full-window evidence coverage is retained; TF-05's
@@ -76,7 +79,7 @@ Exit achieved: contracts and admission accepted; this is not a claim of complete
 Implemented by
 [TIAF A6.2 — Candidate Evaluation, Ranking & Replay](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md).
 Its [independent acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md)
-closes the internal evaluator; publication remains the active A6.3 gate.
+closes the internal evaluator; the later A6.3 publication gate is also closed.
 
 Deliver the one-to-three-expiry, at-most-nine-candidate evaluator with listed
 ATM/ITM1/OTM1 geometry; exact expiry fit, liquidity/freshness, premium/event
@@ -111,6 +114,8 @@ no public live-acquisition, forecast, broker or Shell authority introduced.
 Implemented by [TIAF A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) and closed by
 its [independent acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
 The delivered path is captured-read only and leaves A6.4 unchanged.
+The subsequent A6.4 pass hardened and accepted this path without changing its
+captured-read semantics.
 
 Publish `expression.assess` only once callable, with a dedicated authority scope,
 logical request artifact, versioned descriptor/schemas, CAPTURED_READ effect,
@@ -136,6 +141,11 @@ Exit: bounded local captured-input capability and Shell path accepted. This
 contributes to TI_SHELL v1.0; it does not claim full conversational/Web delivery.
 
 ### A6.4 — Integrated hardening, acceptance and freeze readiness
+
+Completed by the
+[A6.4 final hardening and acceptance record](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md).
+Its 93-case manifest and five public goldens close the bounded implementation
+and establish the evidence used to freeze the A6 baseline.
 
 Audit core + facade + Shell as one path. Reconcile docs and every deferral. Prove
 zero A6 model calls/input-output tokens/model cost, provider calls and broker
@@ -186,4 +196,4 @@ fourteen decisions, deferred TF-05 optimization, empty-scope proof and context-o
 trading-cutoff treatment. A handbook example is not policy authority. Acquisition-
 qualified policies remain unapproved. Do not hide these choices in implementation.
 
-**Next prompt:** `TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS`.
+**Next prompt:** `TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS`.

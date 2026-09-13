@@ -91,9 +91,8 @@ is not a public endpoint. Future `sector.rotation`, `signal.qualify` and
 `forecast.return` are design examples only; recurring monitoring, TM/scanner
 runtime and remote transport are not callable capabilities.
 
-A6 is **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT;
-`expression.assess` PUBLISHED**. The
+A6 is **FROZEN at `tiaf-a6-baseline`; A6.1–A6.4 ACCEPTED / DONE;
+`expression.assess` PUBLISHED. A7 is ACTIVE / NEXT — NOT_IMPLEMENTED**. The
 [A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines the
 advisory, captured-input, deterministic long single-leg CE/PE assessment now
 published by [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) and closed by its
@@ -105,6 +104,9 @@ add no operation; facade/Shell publication remains A6.3.
 The [A6.2 internal evaluator](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md)
 is [accepted](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md); A6.3
 publishes it without adding live acquisition and is accepted/done.
+The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+records the explicit 93-case corpus, public disposition goldens and final
+freeze-readiness result without adding another capability.
 
 ## Data and evidence
 

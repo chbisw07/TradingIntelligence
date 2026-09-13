@@ -14,7 +14,8 @@ A5: FROZEN (`tiaf-a5-baseline`)
   → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED)
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
-  → A6.3 FACADE / SHELL ACCEPTED / DONE → A6.4 ACTIVE / NEXT → A7 → A8 → A9 → A10
+  → A6.3 FACADE / SHELL ACCEPTED / DONE → A6.4 ACCEPTED / DONE
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ACTIVE / NEXT → A8 → A9 → A10
 ```
 
 R1 is ACCEPTED. [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md)
@@ -80,8 +81,9 @@ and [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) are independently
 [accepted](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md);
 A6.1 is [accepted and done](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
 A6.2 is [accepted and done](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md),
-A6.3 is [ACCEPTED / DONE](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md), A6.4 is ACTIVE / NEXT and
-`expression.assess` is PUBLISHED as captured-read only. See the
+A6.3 is [ACCEPTED / DONE](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md),
+A6.4 is [ACCEPTED / DONE](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md),
+A6 is FROZEN at `tiaf-a6-baseline`, and `expression.assess` is PUBLISHED as captured-read only. See the
 [A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md).
 The [thesis creation record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves history; the [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
@@ -98,14 +100,14 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. **TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
-2. Then A7; A8; A9; A10,
+1. **TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
+2. Then A8; A9; A10,
    as proposed in the [A6 roadmap](TIAF_A6_DETAILED_ROADMAP.md).
 
 Initial A6 is long single-leg CE/PE only, non-executable, with explicit absence.
-SigmaDSL is not an A6 dependency. The current gate is
-A6.2 acceptance covers the internal deterministic evaluator; A6.3 publication
-is accepted. A6 remains unfrozen pending A6.4.
+SigmaDSL is not an A6 dependency. A6.2 acceptance covers the internal
+deterministic evaluator, A6.3 publication is accepted, and A6.4 hardening is
+accepted. The deterministic A6 baseline is frozen; A7 remains unimplemented.
 
 R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
 additive composition/pinned verification, optional import isolation and trusted

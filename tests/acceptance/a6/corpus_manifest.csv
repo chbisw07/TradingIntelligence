@@ -1,0 +1,94 @@
+corpus_case_id,scenario,expected_result,policy_profile,fixture_artifact,test_location,coverage_category
+A6C-001,A4 supportive admissible bullish,ADMITTED,a6-baseline,a6_context-bullish,tests/unit/a6/test_admission_replay.py::test_complete_supportive_supported_primary_is_admitted,UPSTREAM_ADMISSION
+A6C-002,A4 supportive admissible bearish,ADMITTED_BEARISH,a6-baseline,a6_context-bearish,tests/unit/a6/test_admission_replay.py::test_negative_supported_thesis_resolves_to_bearish,UPSTREAM_ADMISSION
+A6C-003,A4 no trade,NO_OPTION_TRADE,a6-baseline,a4-no-trade,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_upstream_no_trade_and_conflict_preserve_precedence,UPSTREAM_ADMISSION
+A6C-004,A4 avoid,REJECTED_UPSTREAM,a6-baseline,a4-avoid,tests/unit/a6/test_admission_replay.py::test_a4_gate_rejects_non_admissible_states,UPSTREAM_ADMISSION
+A6C-005,A4 conflicted,WAIT_FOR_EXPRESSION,a6-baseline,artifact:a6-wait,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_upstream_no_trade_and_conflict_preserve_precedence,UPSTREAM_ADMISSION
+A6C-006,Incomplete A4 state,INSUFFICIENT_EVIDENCE,a6-baseline,a4-partial,tests/unit/a6/test_admission_replay.py::test_partial_a4_execution_is_insufficient,UPSTREAM_ADMISSION
+A6C-007,Unsupported thesis shape,REJECTED_UPSTREAM,a6-baseline,a4-unsupported-shape,tests/unit/a6/test_admission_replay.py::test_a4_gate_rejects_non_admissible_states,UPSTREAM_ADMISSION
+A6C-008,Unresolved direction,REJECTED_UPSTREAM,a6-baseline,a4-unresolved-direction,tests/unit/a6/test_admission_replay.py::test_a4_gate_rejects_non_admissible_states,UPSTREAM_ADMISSION
+A6C-009,Authoritative observation time and fresh quote,EXPRESSION_AVAILABLE,a6-baseline,artifact:a6-available,tests/unit/facade/test_expression_capability.py::test_expression_facade_returns_exact_replayed_a6_assessment,TIMING_FRESHNESS
+A6C-010,Acquisition-only timestamp,INSUFFICIENT_EVIDENCE,a6-baseline,a6-acquisition-only,tests/unit/a6/test_admission_replay.py::test_acquisition_only_quote_time_is_insufficient_for_admission,TIMING_FRESHNESS
+A6C-011,Stale quote,INSUFFICIENT_EVIDENCE,a6-baseline,a6-stale-quote,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_stale_or_acquisition_only_timing_fails_closed,TIMING_FRESHNESS
+A6C-012,Naive or invalid timestamp,VALIDATION_ERROR,a6-baseline,a6-naive-time,tests/unit/a6/test_contracts_timing.py::test_horizon_rejects_naive_nonpositive_and_inexact_values,TIMING_FRESHNESS
+A6C-013,Date-only expiry without qualified instant,INSUFFICIENT_EVIDENCE,a6-baseline,a6-date-only-expiry,tests/unit/a6/test_candidate_evaluation_universe.py::test_date_only_expiry_maps_admission_to_insufficient_without_candidates,TIMING_FRESHNESS
+A6C-014,Qualified expiration instant,EXPRESSION_AVAILABLE,a6-baseline,artifact:a6-available,tests/unit/a6/test_candidate_evaluation_universe.py::test_residual_life_equality_is_eligible,TIMING_FRESHNESS
+A6C-015,Invalid time ordering,VALIDATION_ERROR,a6-baseline,a6-invalid-order,tests/unit/a6/test_contracts_timing.py::test_acquisition_only_is_not_qualified_and_invalid_order_rejected,TIMING_FRESHNESS
+A6C-016,Evaluation cutoff event boundary,EXPRESSION_AVAILABLE,a6-baseline,a64-event-at-cutoff,tests/unit/a6/test_a64_acceptance_edges.py::test_event_holding_window_boundaries_are_explicit,TIMING_FRESHNESS
+A6C-017,Holding target event boundary,WAIT_FOR_EXPRESSION,a6-baseline,a64-event-at-target,tests/unit/a6/test_a64_acceptance_edges.py::test_event_holding_window_boundaries_are_explicit,TIMING_FRESHNESS
+A6C-018,Present complete coverage,PRESENT_COMPLETE,a6-baseline,a6-coverage-present,tests/unit/a6/test_evidence_and_coverage.py::test_all_coverage_states_are_explicit,COVERAGE
+A6C-019,Qualified confirmed empty coverage,NO_OPTION_TRADE,a6-baseline,a6-coverage-confirmed-empty,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_confirmed_empty_scope_proves_no_listed_expiries,COVERAGE
+A6C-020,Partial coverage,INSUFFICIENT_EVIDENCE,a6-baseline,a6-coverage-partial,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_nonqualified_capture_coverage_never_becomes_no_trade,COVERAGE
+A6C-021,Unavailable coverage,INSUFFICIENT_EVIDENCE,a6-baseline,a6-coverage-unavailable,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_nonqualified_capture_coverage_never_becomes_no_trade,COVERAGE
+A6C-022,Unknown coverage,INSUFFICIENT_EVIDENCE,a6-baseline,a6-coverage-unknown,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_nonqualified_capture_coverage_never_becomes_no_trade,COVERAGE
+A6C-023,Empty provider response without absence proof,NOT_CONFIRMED_EMPTY,a6-baseline,a6-empty-unknown,tests/unit/a6/test_evidence_and_coverage.py::test_empty_response_does_not_prove_confirmed_empty,COVERAGE
+A6C-024,Regular strike grid,ATM_ITM1_OTM1,a6-baseline,a6-grid-regular,tests/unit/a6/test_candidate_evaluation_universe.py::test_bullish_builds_only_long_ce_listed_candidates,CANDIDATE_GEOMETRY
+A6C-025,Irregular strike grid,ACTUAL_LISTED_NEIGHBORS,a6-baseline,a6-grid-irregular,tests/unit/a6/test_policy_and_spread.py::test_moneyness_geometry_uses_lower_tie_and_actual_neighbors,CANDIDATE_GEOMETRY
+A6C-026,ATM exact midpoint lower strike tie,LOWER_LISTED_STRIKE,a6-baseline,a6-midpoint-tie,tests/unit/a6/test_candidate_evaluation_universe.py::test_exact_atm_midpoint_tie_uses_lower_listed_strike,CANDIDATE_GEOMETRY
+A6C-027,Missing ITM neighbor,NO_FABRICATION,a6-baseline,a64-missing-itm,tests/unit/a6/test_a64_acceptance_edges.py::test_missing_itm_and_otm_neighbors_are_not_fabricated,CANDIDATE_GEOMETRY
+A6C-028,Missing OTM neighbor,NO_FABRICATION,a6-baseline,a64-missing-otm,tests/unit/a6/test_a64_acceptance_edges.py::test_missing_itm_and_otm_neighbors_are_not_fabricated,CANDIDATE_GEOMETRY
+A6C-029,CE orientation,LONG_CE,a6-baseline,a6_context-bullish,tests/unit/a6/test_candidate_evaluation_universe.py::test_bullish_builds_only_long_ce_listed_candidates,CANDIDATE_GEOMETRY
+A6C-030,PE orientation,LONG_PE,a6-baseline,a6_context-bearish,tests/unit/a6/test_candidate_evaluation_universe.py::test_bearish_builds_only_long_pe_with_correct_geometry,CANDIDATE_GEOMETRY
+A6C-031,Duplicate contract identity,VALIDATION_ERROR,a6-baseline,a64-duplicate-contract,tests/unit/a6/test_a64_acceptance_edges.py::test_duplicate_contract_identity_is_rejected_even_with_distinct_quote_ids,CANDIDATE_GEOMETRY
+A6C-032,Expiry mismatch between chain and contract,VALIDATION_ERROR,a6-baseline,a6-expiry-mismatch,tests/unit/a6/test_evidence_and_coverage.py::test_quote_expiration_timing_must_match_its_chain,CANDIDATE_GEOMETRY
+A6C-033,Valid quote,ELIGIBLE,a6-baseline,artifact:a6-available,tests/unit/a6/test_candidate_evaluation_universe.py::test_bullish_builds_only_long_ce_listed_candidates,LIQUIDITY_QUOTE_QUALITY
+A6C-034,Missing bid,INSUFFICIENT_EVIDENCE,a6-baseline,a6-missing-bid,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_missing_book_is_insufficient_not_illiquid,LIQUIDITY_QUOTE_QUALITY
+A6C-035,Missing ask,INSUFFICIENT_EVIDENCE,a6-baseline,a6-missing-ask,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_missing_book_is_insufficient_not_illiquid,LIQUIDITY_QUOTE_QUALITY
+A6C-036,Crossed quote,KNOWN_REJECTION,a6-baseline,a6-crossed-book,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_crossed_book_is_known_rejection,LIQUIDITY_QUOTE_QUALITY
+A6C-037,Zero bid depth,NO_OPTION_TRADE,a6-baseline,a64-zero-bid-depth,tests/unit/a6/test_a64_acceptance_edges.py::test_each_zero_top_depth_side_is_a_factual_rejection,LIQUIDITY_QUOTE_QUALITY
+A6C-038,Zero ask depth,NO_OPTION_TRADE,a6-baseline,a64-zero-ask-depth,tests/unit/a6/test_a64_acceptance_edges.py::test_each_zero_top_depth_side_is_a_factual_rejection,LIQUIDITY_QUOTE_QUALITY
+A6C-039,Spread exactly at hard limit,ELIGIBLE_TIER_1,a6-baseline,a6-spread-500bps,tests/unit/a6/test_policy_and_spread.py::test_spread_boundaries_are_exact,LIQUIDITY_QUOTE_QUALITY
+A6C-040,Spread just over hard limit,INELIGIBLE_501BPS,a6-baseline,a64-spread-501bps,tests/unit/a6/test_a64_acceptance_edges.py::test_spread_just_over_hard_limit_is_exactly_ineligible,LIQUIDITY_QUOTE_QUALITY
+A6C-041,Spread tier boundary,EXACT_TIER_ASSIGNMENT,a6-baseline,a6-spread-tier-boundary,tests/unit/a6/test_policy_and_spread.py::test_spread_boundaries_are_exact,LIQUIDITY_QUOTE_QUALITY
+A6C-042,Zero open interest,FACTUAL_ZERO_NOT_GATE,a6-baseline,a6-zero-oi,tests/unit/a6/test_evidence_and_coverage.py::test_zero_oi_and_volume_are_facts_missing_book_is_distinct,LIQUIDITY_QUOTE_QUALITY
+A6C-043,Zero volume,FACTUAL_ZERO_NOT_GATE,a6-baseline,a6-zero-volume,tests/unit/a6/test_evidence_and_coverage.py::test_zero_oi_and_volume_are_facts_missing_book_is_distinct,LIQUIDITY_QUOTE_QUALITY
+A6C-044,Missing open interest and volume,OPTIONAL_NOT_GATE,a6-baseline,a64-missing-oi-volume,tests/unit/a6/test_a64_acceptance_edges.py::test_missing_optional_oi_and_volume_do_not_become_a_hidden_gate,LIQUIDITY_QUOTE_QUALITY
+A6C-045,LTP only without bid or ask,INSUFFICIENT_EVIDENCE,a6-baseline,a6-ltp-only,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_missing_book_is_insufficient_not_illiquid,LIQUIDITY_QUOTE_QUALITY
+A6C-046,Premium below cap,EXPRESSION_AVAILABLE,a6-baseline,a6-premium-below-cap,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_premium_cap_uses_captured_ask_per_unit,PREMIUM
+A6C-047,Premium exactly at cap,EXPRESSION_AVAILABLE,a6-baseline,a6-premium-at-cap,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_premium_cap_uses_captured_ask_per_unit,PREMIUM
+A6C-048,Premium above cap,NO_OPTION_TRADE,a6-baseline,a6-premium-above-cap,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_premium_cap_uses_captured_ask_per_unit,PREMIUM
+A6C-049,Missing premium cap basis,INSUFFICIENT_EVIDENCE,a6-baseline,a6-premium-missing-ask,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_missing_ask_for_requested_cap_is_insufficient,PREMIUM
+A6C-050,Qualified no blocking event,EXPRESSION_AVAILABLE,a6-baseline,a6-event-clear,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_qualified_event_clear_proceeds_and_unknown_is_optional_by_default,EVENTS
+A6C-051,Known blocking event,WAIT_FOR_EXPRESSION,a6-baseline,a6-event-blocker,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_known_event_is_wait_even_when_quote_scope_is_stale,EVENTS
+A6C-052,Unknown event coverage,OPTIONAL_GAP_OR_INSUFFICIENT,a6-baseline,a6-event-unknown,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_event_clear_preference_with_unknown_coverage_is_insufficient,EVENTS
+A6C-053,Partial event window coverage,INSUFFICIENT_EVIDENCE,a6-baseline,a6-event-partial-window,tests/unit/a6/test_candidate_gates_and_dispositions.py::test_event_clear_preference_requires_full_holding_window,EVENTS
+A6C-054,Blocking event at target boundary,WAIT_FOR_EXPRESSION,a6-baseline,a64-event-at-target,tests/unit/a6/test_a64_acceptance_edges.py::test_event_holding_window_boundaries_are_explicit,EVENTS
+A6C-055,Blocking event before or after holding window,EXPRESSION_AVAILABLE_WITH_GAP,a6-baseline,a64-event-outside-window,tests/unit/a6/test_a64_acceptance_edges.py::test_event_holding_window_boundaries_are_explicit,EVENTS
+A6C-056,Moneyness preference decides,MONEYNESS_PREFERENCE,a6-baseline,a6-ranking-moneyness,tests/unit/a6/test_ranking_explanation_replay.py::test_request_moneyness_order_restricts_and_reorders_candidates,RANKING
+A6C-057,Spread tier decides,SPREAD_TIER,a6-baseline,a6-ranking-spread-tier,tests/unit/a6/test_ranking_explanation_replay.py::test_spread_tier_precedes_moneyness_preference,RANKING
+A6C-058,Expiry cushion decides,EXPIRY_CUSHION_EXCESS,a6-baseline,a6-ranking-expiry,tests/unit/a6/test_ranking_explanation_replay.py::test_rank_uses_smallest_sufficient_cushion_not_longest_expiry,RANKING
+A6C-059,Exact spread decides engineered prior tie,EXACT_SPREAD_BPS,a6-baseline,a64-ranking-exact-spread,tests/unit/a6/test_a64_acceptance_edges.py::test_final_rank_dimensions_total_order_engineered_ties,RANKING
+A6C-060,Canonical key decides engineered prior tie,CANONICAL_CONTRACT_KEY,a6-baseline,a64-ranking-canonical-key,tests/unit/a6/test_a64_acceptance_edges.py::test_final_rank_dimensions_total_order_engineered_ties,RANKING
+A6C-061,Equivalent input ordering,IDENTICAL_ASSESSMENT,a6-baseline,a6-reordered-rows,tests/unit/a6/test_ranking_explanation_replay.py::test_input_order_invariance_for_equivalent_captured_rows,RANKING
+A6C-062,Cheapest candidate is not preferred merely because cheapest,NOT_CHEAPEST_FIRST,a6-baseline,a6-ranking-price-counterexample,tests/unit/a6/test_ranking_explanation_replay.py::test_rank_is_not_cheapest_first,RANKING
+A6C-063,Longest expiry is not preferred merely because longest,NOT_LONGEST_FIRST,a6-baseline,a6-ranking-expiry-counterexample,tests/unit/a6/test_ranking_explanation_replay.py::test_rank_uses_smallest_sufficient_cushion_not_longest_expiry,RANKING
+A6C-064,Expression available disposition,EXPRESSION_AVAILABLE,a6-baseline,artifact:a6-available,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,DISPOSITIONS
+A6C-065,No option trade disposition,NO_OPTION_TRADE,a6-baseline,artifact:a6-no-option-trade,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,DISPOSITIONS
+A6C-066,Wait for expression disposition,WAIT_FOR_EXPRESSION,a6-baseline,artifact:a6-wait,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,DISPOSITIONS
+A6C-067,Insufficient evidence disposition,INSUFFICIENT_EVIDENCE,a6-baseline,artifact:a6-insufficient,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,DISPOSITIONS
+A6C-068,Unsupported disposition,UNSUPPORTED,a6-baseline,artifact:a6-unsupported,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,DISPOSITIONS
+A6C-069,One surviving candidate,PREFERRED_ONLY,a6-baseline,a64-survivors-one,tests/unit/a6/test_a64_acceptance_edges.py::test_survivor_counts_preserve_one_preferred_and_at_most_two_alternatives,ALTERNATIVES
+A6C-070,Two surviving candidates,PREFERRED_PLUS_ONE,a6-baseline,a64-survivors-two,tests/unit/a6/test_a64_acceptance_edges.py::test_survivor_counts_preserve_one_preferred_and_at_most_two_alternatives,ALTERNATIVES
+A6C-071,Three or more survivors,PREFERRED_PLUS_MAX_TWO,a6-baseline,a64-survivors-three,tests/unit/a6/test_a64_acceptance_edges.py::test_survivor_counts_preserve_one_preferred_and_at_most_two_alternatives,ALTERNATIVES
+A6C-072,All bounded candidate evaluations retained,ALL_EVALUATIONS_RETAINED,a6-baseline,a6-default-three,tests/unit/a6/test_ranking_explanation_replay.py::test_default_rank_selects_atm_and_retains_all_evaluations,ALTERNATIVES
+A6C-073,Exact recorded replay,EXACT_MATCH,a6-baseline,artifact:a6-available,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_recorded_replay_matches_golden,REPLAY_INTEGRITY
+A6C-074,Assessment fingerprint mismatch,REPLAY_INTEGRITY_ERROR,a6-baseline,a6-tampered-assessment,tests/unit/a6/test_ranking_explanation_replay.py::test_tampered_assessment_fingerprint_is_rejected,REPLAY_INTEGRITY
+A6C-075,Tampered trusted artifact,STARTUP_REJECTION,a6-baseline,artifact:a6-tampered,tests/unit/facade/test_expression_capability.py::test_tampered_recorded_assessment_is_rejected_at_startup,REPLAY_INTEGRITY
+A6C-076,Composition pin mismatch,REPLAY_INTEGRITY_ERROR,a6-baseline,a6-composition-mismatch,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_composition_pin_mismatch_fails_exact_replay,REPLAY_INTEGRITY
+A6C-077,Network socket denied,EXACT_OFFLINE_REPLAY,a6-baseline,artifact:a6-available,tests/unit/facade/test_expression_capability.py::test_expression_assessment_and_replay_open_no_network_socket,REPLAY_INTEGRITY
+A6C-078,Registry and environment expansion after capture,EXACT_CAPTURED_RESULT,a6-baseline,artifact:a6-available,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_fixed_capture_replay_is_hash_seed_and_environment_independent,REPLAY_INTEGRITY
+A6C-079,Input quote row reordering,IDENTICAL_FINGERPRINT,a6-baseline,a6-reordered-quotes,tests/unit/a6/test_ranking_explanation_replay.py::test_input_order_invariance_for_equivalent_captured_rows,REPLAY_INTEGRITY
+A6C-080,Expiry chain ordering change,IDENTICAL_FINGERPRINT,a6-baseline,a6-reordered-chains,tests/unit/a6/test_ranking_explanation_replay.py::test_input_order_invariance_for_equivalent_captured_rows,REPLAY_INTEGRITY
+A6C-081,One-shot Shell available result,EXPRESSION_AVAILABLE,a6-baseline,artifact:a6-available,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,PUBLIC_SURFACE
+A6C-082,REPL available result,EXPRESSION_AVAILABLE,a6-baseline,artifact:a6-available,tests/unit/shell/test_expression_commands.py::test_expression_one_shot_and_repl_share_parser_and_semantics,PUBLIC_SURFACE
+A6C-083,One-shot and REPL parity,IDENTICAL_SEMANTICS,a6-baseline,artifact:a6-available,tests/unit/shell/test_expression_commands.py::test_expression_one_shot_and_repl_share_parser_and_semantics,PUBLIC_SURFACE
+A6C-084,Human rendering,DISPOSITION_AWARE_CONCISE,a6-baseline,artifact:a6-all-five,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,PUBLIC_SURFACE
+A6C-085,JSON rendering,EXACT_TYPED_ROUND_TRIP,a6-baseline,artifact:a6-all-five,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_golden_expression_cases,PUBLIC_SURFACE
+A6C-086,Explain last,STRUCTURED_EXPLANATION,a6-baseline,artifact:a6-available,tests/unit/shell/test_expression_commands.py::test_expression_explain_trace_and_replay_preserve_lineage,PUBLIC_SURFACE
+A6C-087,Trace last,COMPLETE_LINEAGE,a6-baseline,artifact:a6-available,tests/unit/shell/test_expression_commands.py::test_expression_explain_trace_and_replay_preserve_lineage,PUBLIC_SURFACE
+A6C-088,Recorded replay through Shell,A6_RECORDED,a6-baseline,artifact:a6-available,tests/acceptance/a6/test_a6_acceptance_corpus.py::test_public_recorded_replay_matches_golden,PUBLIC_SURFACE
+A6C-089,Malformed artifact reference,SYNTAX_ERROR,a6-baseline,not-qualified,tests/unit/shell/test_expression_commands.py::test_expression_input_rejects_malformed_artifact_reference,PUBLIC_SURFACE
+A6C-090,Unsafe path or URL,SYNTAX_ERROR,a6-baseline,path-and-url,tests/unit/shell/test_expression_commands.py::test_expression_input_rejects_paths_and_urls,PUBLIC_SURFACE
+A6C-091,Missing capability permission,PERMISSION_DENIED,a6-baseline,artifact:a6-available,tests/unit/facade/test_expression_capability.py::test_expression_authority_and_scope_fail_closed,PUBLIC_SURFACE
+A6C-092,Unavailable authorized artifact,UNAVAILABLE,a6-baseline,artifact:a6-unavailable,tests/unit/facade/test_expression_capability.py::test_expression_unavailable_artifact_is_reported_without_path_leakage,PUBLIC_SURFACE
+A6C-093,Input-only capture requested as recorded replay,FAILED_NOT_RECORDED,a6-baseline,artifact:a6-input-only,tests/unit/facade/test_expression_capability.py::test_input_only_envelope_assesses_but_is_not_a_recorded_replay,PUBLIC_SURFACE

@@ -2,23 +2,24 @@
 
 ## Status and authority
 
-2026-09-14, Asia/Kolkata. **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION / A6.1–A6.3 ACCEPTED / DONE / A6.4 ACTIVE / NEXT.
-`expression.assess`:
-PUBLISHED. A5: FROZEN. R1–R5: ACCEPTED / DONE.**
+2026-09-14, Asia/Kolkata. **A6.1–A6.4 ACCEPTED / DONE; A6 FROZEN at
+`tiaf-a6-baseline`; `expression.assess` PUBLISHED; A7 ACTIVE / NEXT —
+NOT_IMPLEMENTED. A5: FROZEN. R1–R5: ACCEPTED / DONE.**
 
-This is the reconciled design authority; A6.3 implementation acceptance is
-recorded separately.
+This is the reconciled design authority; implementation acceptance is recorded
+separately for A6.1–A6.4.
 Inherited system boundaries remain authoritative; the
 new A6 choices below were independently accepted in the
 [architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md).
 The completed
 non-normative thesis and all fourteen findings have been reconciled in the
 [finding decision record](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md).
-Accepted does not mean implemented or frozen. The gated sequence is now:
+Architecture acceptance alone did not imply implementation or freeze. The gated
+sequence is now:
 
 ```text
-A6.1 accepted → A6.2 accepted → A6.3 accepted → A6.4 active → A7 → A8 → A9 → A10
+A6.1 accepted → A6.2 accepted → A6.3 accepted → A6.4 accepted
+  → A6 frozen (`tiaf-a6-baseline`) → A7 active / next → A8 → A9 → A10
 ```
 
 See the [source/reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) and
@@ -735,4 +736,6 @@ A6.2 is now [accepted](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.
 [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) publishes the captured-read local
 facade/Shell path and is closed by its
 [independent acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
-Next: **TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
+The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+records the 93-case corpus used to freeze the baseline. Next:
+**TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.

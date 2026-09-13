@@ -1,6 +1,6 @@
 """Trusted synthetic facade composition over already-captured fixtures."""
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 from functools import lru_cache
 
@@ -36,7 +36,11 @@ from tiaf.facade import (
 )
 from tiaf.source_semantics import capture_json as capture_foundation_json
 from tiaf.source_semantics import capture_projection
-from tiaf.trade_expression import admit_request, evaluate_trade_expression
+from tiaf.trade_expression import (
+    TradeExpressionRequest,
+    admit_request,
+    evaluate_trade_expression,
+)
 
 from ..a3_hardening._support import package_for
 from ..a4._support import with_unresolved_conflict
@@ -127,6 +131,22 @@ def captured_artifacts() -> tuple[TrustedArtifact, ...]:
         evaluated_at=conflict_projection.header.evidence_as_of,
     ).result
     a6_variants["wait"] = a6_context(a4=conflict_a4)
+    supported_request, supported_a4, supported_evidence, supported_policy, supported_admission = (
+        a6_context()
+    )
+    unsupported_payload = supported_request.model_dump(mode="python")
+    unsupported_payload["horizon"] = {
+        **supported_request.horizon.model_dump(mode="python"),
+        "target_end_at": supported_request.evaluation_cutoff + timedelta(days=91),
+        "exact_duration_seconds": 91 * 24 * 60 * 60,
+    }
+    a6_variants["unsupported"] = (
+        TradeExpressionRequest.model_validate(unsupported_payload),
+        supported_a4,
+        supported_evidence,
+        supported_policy,
+        supported_admission,
+    )
     for name, values in a6_variants.items():
         a6_request, a4, evidence, policy, _ = values
         a6_request = a6_request.model_copy(update={"authority_refs": (AUTHORITY,)})

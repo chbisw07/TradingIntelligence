@@ -136,6 +136,7 @@ assert main([*position, "position", "assess", "--snapshot", "artifact:position-r
 assert main([*position, "replay", "recorded", "--artifact-ref", "artifact:a5-capture"]) == 0
 assert main([*expression, "capabilities", "describe", "expression.assess"]) == 0
 assert main([*expression, "expression", "assess", "--input", "artifact:a6-available"]) == 0
+assert main([*expression, "replay", "recorded", "--artifact-ref", "artifact:a6-available"]) == 0
 assert not OPTIONAL_ROOTS.intersection(sys.modules)
 """
     )

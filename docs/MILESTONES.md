@@ -25,6 +25,7 @@ work; FUTURE/TBD indicate later/unresolved scope; NOT_IMPLEMENTED means no runti
 | A4 | FROZEN | `tiaf-a4-baseline` | [Closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [slice map](TIAF_A4_DETAILED_ROADMAP.md) |
 | TI_SHELL v0.1 | FROZEN | `tiaf-a4.91-shell-v0.1` | [Local command implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) |
 | A5 | FROZEN | `tiaf-a5-baseline` | [Closure: READY_TO_FREEZE_A5](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [final check: READY_TO_TAG_A5](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) |
+| A6 | FROZEN | `tiaf-a6-baseline` | [A6.4 freeze readiness](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md); final tag closure verified |
 
 ### Accepted submilestones and intervening gates
 
@@ -88,7 +89,8 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
-  → A6.3 ACCEPTED / DONE → A6.4 ACTIVE / NEXT → A7 → A8 → A9 → A10
+  → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ACTIVE / NEXT → A8 → A9 → A10
 ```
 
 ## Future / parallel workstreams
@@ -97,8 +99,8 @@ A5 FROZEN (`tiaf-a5-baseline`)
 |---|---|---|
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
-| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1–A6.3 ACCEPTED / DONE | [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md) ACCEPTED / DONE; A6.4 ACTIVE / NEXT; `expression.assess` PUBLISHED |
-| A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
+| A6 | FROZEN; A6.1–A6.4 ACCEPTED / DONE | `tiaf-a6-baseline`; [A6.4](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md) closes the 93-case corpus; `expression.assess` PUBLISHED |
+| A7 forecasting / evaluation | ACTIVE / NEXT — NOT_IMPLEMENTED | Architecture pass after the deterministic A6 baseline; optional later A6 overlay |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
 | A8 TM / A9 Scanner | FUTURE; runtime integration NOT_IMPLEMENTED | Existing major milestone ownership retained |
@@ -423,9 +425,8 @@ semantic, monitoring, deferral, live-truth and quality-gate audit.
 
 ## TIAF_A6 — Option Expression Intelligence
 
-**2026-09-14 (Asia/Kolkata): ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION; A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT;
-`expression.assess` PUBLISHED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
+**2026-09-14 (Asia/Kolkata): FROZEN at `tiaf-a6-baseline`;
+A6.1–A6.4 ACCEPTED / DONE; `expression.assess` PUBLISHED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [reconciliation](TIAF_A6_RECONCILIATION_RECORD.md) and
 [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) preserve A5 and accepted R1–R5.
 
@@ -452,7 +453,9 @@ delivers only the internal deterministic evaluation slice and is closed by its
 
 The [A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) is closed by
 its [independent acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
-Next: **TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
+The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+records the explicit 93-case acceptance corpus and recommends the baseline.
+Next: **TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
 

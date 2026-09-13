@@ -22,8 +22,8 @@ closed before A6. This changes project status only, not the ecosystem design.
 [reconciliation architecture draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
 preserves this ownership model and proposes long single-leg CE/PE v1, with no
 SigmaDSL dependency. Status is ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION / A6.1–A6.3 ACCEPTED / DONE / A6.4 ACTIVE / NEXT;
-`expression.assess` is
+NON-NORMATIVE COMPANION / A6.1–A6.4 ACCEPTED / DONE / A6 FROZEN at
+`tiaf-a6-baseline`; `expression.assess` is
 PUBLISHED as captured-read only. The
 [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 is complete, and the [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
@@ -36,6 +36,9 @@ closes the internal evaluator. The subsequent
 [A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) publishes it
 without changing those boundaries and is closed by its
 [acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
+The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+records the 93-case corpus and readiness result without changing ownership or
+expanding the frozen A6 scope. A7 is ACTIVE / NEXT — NOT_IMPLEMENTED.
 
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
@@ -49,7 +52,7 @@ version `0.1.0` / A0 schema version `1.0`.
 Current public TI operations are local PURE/CAPTURED_READ capabilities. Repeating
 a captured request does not acquire fresh live evidence. A4.2's internal bounded
 acquisition is not a public pre-trade API. Scanner runtime, live TM integration,
-Monitoring Runtime, A6.4, A7, Sector Rotation, Signal Qualification, remote APIs,
+Monitoring Runtime, A7, Sector Rotation, Signal Qualification, remote APIs,
 Sheets connectors and Web Cockpit remain unimplemented by this design. No broker
 order operation may be introduced into TI.
 

@@ -47,8 +47,8 @@ closing the R1–R5 pre-A6 track. Monitoring is authoritative
 future architecture, not runtime. Sector Rotation, Signal Qualification, A7,
 TM/scanner runtime integration and remote transport remain unimplemented.
 
-A6 is now **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT; `expression.assess` PUBLISHED**:
+A6 is **FROZEN at `tiaf-a6-baseline`; A6.1–A6.4 ACCEPTED / DONE;
+`expression.assess` PUBLISHED. A7 is ACTIVE / NEXT — NOT_IMPLEMENTED**:
 [Trade Expression Intelligence architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md), and
 [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md). The bounded A6.1
@@ -58,6 +58,9 @@ the [A6.2 evaluator](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md) is
 [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) publishes it through governed
 captured-read facade/Shell paths without changing ecosystem authority and is
 [independently accepted](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
+The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+records the 93-case acceptance corpus and freeze-readiness decision without
+creating a commit or baseline tag.
 
 The non-normative [A6 user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx),
 [PDF preview](TI_Trade_Expression_Intelligence_Thesis.pdf) and
@@ -67,7 +70,7 @@ resolves all fourteen findings and updates the normative Markdown. The
 [independent architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1. The
 unchanged thesis retains its dated source snapshot and then-next wording.
-Next: **TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
+Next: **TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
 
 Markdown architecture is normative. The [Fabric thesis](TIAF_Trading_Intelligence_Agent_Fabric_Thesis.docx),
 [Hierarchy thesis](TI_Intelligence_Hierarchy_Thesis.docx) and

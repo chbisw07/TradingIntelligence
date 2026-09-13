@@ -4,6 +4,21 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Prepared the accepted A6.1–A6.4 repository state for the
+  `tiaf-a6-baseline` freeze: current-status documentation now records A6 as the
+  frozen deterministic captured-read long single-leg CE/PE baseline and moves
+  A7 architecture to active/next while retaining NOT_IMPLEMENTED. This closure
+  adds no A7 runtime or A6 semantic change; commit, tag and push remain separate
+  user-authorized Git operations.
+
+- Completed TIAF A6.4 final hardening with an explicit 93-case acceptance
+  manifest, five public disposition goldens, fixed-capture subprocess replay,
+  boundary tests and current-state documentation reconciliation. Shell now
+  rejects malformed unqualified artifact IDs before facade invocation and human
+  output explains all five dispositions without changing canonical JSON. A6 is
+  READY_TO_FREEZE; no threshold, ranking, schema, provider/model/broker behavior,
+  commit, tag or push is included.
+
 - Accepted and closed TIAF A6.3 after independent catalog, discovery, captured
   facade, authority, Shell parity, rendering, JSON, explain/trace, replay,
   import-isolation, COLD-ownership and frozen-A5 review. The accepted cleanup

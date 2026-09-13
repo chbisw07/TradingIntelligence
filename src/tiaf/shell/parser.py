@@ -13,6 +13,7 @@ from pydantic import TypeAdapter, ValidationError
 from tiaf.context import AnalysisPurpose
 from tiaf.contracts import Horizon
 from tiaf.contracts.common import TiafDateTime
+from tiaf.source_semantics.contracts import QualifiedId
 
 from .commands import (
     CapabilitiesDescribeCommand,
@@ -41,6 +42,7 @@ from .commands import (
 from .errors import ShellError, ShellErrorCode, shell_error
 
 _DATETIME_ADAPTER = TypeAdapter(TiafDateTime)
+_QUALIFIED_ID_ADAPTER = TypeAdapter(QualifiedId)
 
 
 class _Parser(argparse.ArgumentParser):
@@ -93,6 +95,14 @@ def _safe_token(value: str) -> str:
     return token
 
 
+def _qualified_id(value: str) -> str:
+    token = _safe_token(value)
+    try:
+        return _QUALIFIED_ID_ADAPTER.validate_python(token)
+    except ValidationError as exc:
+        raise argparse.ArgumentTypeError("expected a qualified logical identifier") from exc
+
+
 def _add_scope(
     parser: argparse.ArgumentParser,
     *,
@@ -113,7 +123,7 @@ def _add_scope(
             artifact_option,
             dest="artifact_ref",
             required=True,
-            type=_safe_token,
+            type=_qualified_id,
         )
 
 

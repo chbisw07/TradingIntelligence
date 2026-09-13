@@ -65,6 +65,7 @@ def _request(
         ("artifact:a6-no-option-trade", ExpressionDisposition.NO_OPTION_TRADE),
         ("artifact:a6-wait", ExpressionDisposition.WAIT_FOR_EXPRESSION),
         ("artifact:a6-insufficient", ExpressionDisposition.INSUFFICIENT_EVIDENCE),
+        ("artifact:a6-unsupported", ExpressionDisposition.UNSUPPORTED),
     ),
 )
 def test_expression_facade_returns_exact_replayed_a6_assessment(
@@ -174,6 +175,21 @@ def test_expression_authority_and_scope_fail_closed() -> None:
     with pytest.raises(FacadeInvocationError) as identity:
         owner().client("caller:test").invoke(mismatched)
     assert identity.value.record.status is FacadeStatus.FAILED
+
+
+def test_expression_unavailable_artifact_is_reported_without_path_leakage() -> None:
+    missing_ref = "artifact:a6-unavailable"
+    base = _request(request_id="facade-expression-unavailable")
+    request = ExpressionAssessRequest(
+        scope=base.scope.model_copy(
+            update={"admitted_artifact_refs": (missing_ref,)}
+        ),
+        expression_input_ref=missing_ref,
+    )
+    with pytest.raises(FacadeInvocationError) as unavailable:
+        owner().client("caller:test").invoke(request)
+    assert unavailable.value.record.status is FacadeStatus.UNAVAILABLE
+    assert missing_ref not in unavailable.value.record.message
 
 
 def test_tampered_recorded_assessment_is_rejected_at_startup() -> None:

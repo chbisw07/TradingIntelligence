@@ -156,6 +156,24 @@ def _summary(result: ShellFacadeResult) -> dict[str, Any]:
         )
     elif isinstance(result, ExpressionAssessResult):
         expression_assessment = result.assessment
+        interpretation = {
+            "EXPRESSION_AVAILABLE": (
+                "A supported candidate exists within this captured scope; "
+                "the result remains advisory."
+            ),
+            "NO_OPTION_TRADE": (
+                "Captured evidence is conclusive: no candidate passed every hard gate."
+            ),
+            "WAIT_FOR_EXPRESSION": (
+                "A known temporary blocker applies; reassess only with a newly admitted capture."
+            ),
+            "INSUFFICIENT_EVIDENCE": (
+                "Evidence or qualification is missing; this is not a negative market opinion."
+            ),
+            "UNSUPPORTED": (
+                "The request is outside supported A6 v1 scope; this is not a market view."
+            ),
+        }[expression_assessment.disposition.value]
         preferred = next(
             (
                 item
@@ -167,6 +185,7 @@ def _summary(result: ShellFacadeResult) -> dict[str, Any]:
         )
         base.update(
             disposition=expression_assessment.disposition.value,
+            interpretation=interpretation,
             direction=(
                 expression_assessment.direction.value
                 if expression_assessment.direction
@@ -186,6 +205,10 @@ def _summary(result: ShellFacadeResult) -> dict[str, Any]:
             preferred_reasons=list(
                 expression_assessment.explanation.preferred_reason_codes
             ),
+            rank_differences=[
+                item.model_dump(mode="json")
+                for item in expression_assessment.explanation.rank_differences
+            ],
             rejected_candidates=[
                 {
                     "candidate_ref": item.candidate.candidate_id,
@@ -629,6 +652,7 @@ def _trace(invocation: SuccessfulInvocation, view: TraceView) -> dict[str, Any]:
                 admission_fingerprint=expression_assessment.admission_fingerprint,
                 a4_result_fingerprint=expression_assessment.a4_result_fingerprint,
                 evidence_fingerprint=expression_assessment.evidence_fingerprint,
+                composition_refs=list(expression_assessment.composition_refs),
                 semantic_fingerprint=expression_assessment.semantic_fingerprint,
                 input_integrity_verified=invocation.result.input_integrity_verified,
             )

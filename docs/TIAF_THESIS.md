@@ -14,9 +14,9 @@ This is the current philosophy after accepted A4, A5 and pluggability R1.
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns the capability boundary;
 the [architecture index](ARCHITECTURE.md) links normative designs, implemented
 slices and historical evidence. A1–A5 are frozen; A5 is tagged at
-`tiaf-a5-baseline`. R1–R5 are accepted/done; A6.1–A6.2 are accepted/done and
-A6.3 is accepted/done with captured-read `expression.assess`. A6.4 is active/
-next; later future design remains unimplemented and is
+`tiaf-a5-baseline`. R1–R5 and A6.1–A6.4 are accepted/done; captured-read
+`expression.assess` is published and A6 is frozen at `tiaf-a6-baseline`.
+A7 is active/next as an architecture pass but remains unimplemented; later design is
 not an implemented product.
 
 ## Intelligence hierarchy
@@ -30,7 +30,7 @@ not an implemented product.
 | L4 | A3 specialists | Bounded attributable interpretation, explicit gaps and disagreement; accepted path is deterministic/no-LLM. |
 | L5 | A3.9 structured opportunity intelligence | One underlying product, not an unexplained rank or execution instruction. |
 | L6 | A4 challenge/arbitration | Deterministic challenged theses, dissent, non-action dispositions and governed one-round evidence enrichment. |
-| L7 | A5 position / A6 trade-expression intelligence | A5 single-position advice is accepted; A6 expression construction/selection remains future. |
+| L7 | A5 position / A6 trade-expression intelligence | A5 single-position advice and deterministic captured-read A6 long single-leg CE/PE expression assessment are frozen baselines. |
 | A7 overlay | Forecasting, evaluation and future learning | Future calibrated evidence and empirical controls across layers; not a forced extra rung or prerequisite to the initial deterministic A6 slice. |
 
 The layers own different questions, not successively more authoritative opinions.

@@ -18,6 +18,7 @@ from ._support import expression_runtime
         ("artifact:a6-no-option-trade", "NO_OPTION_TRADE"),
         ("artifact:a6-wait", "WAIT_FOR_EXPRESSION"),
         ("artifact:a6-insufficient", "INSUFFICIENT_EVIDENCE"),
+        ("artifact:a6-unsupported", "UNSUPPORTED"),
     ),
 )
 def test_expression_assess_renders_each_deterministic_disposition(
@@ -36,15 +37,26 @@ def test_expression_assess_renders_each_deterministic_disposition(
     assert facade_result.metadata.usage.tool_calls == 0
     assert facade_result.metadata.usage.model_calls == 0
     assert f"Disposition: {disposition}" in result.stdout
+    assert "Interpretation:" in result.stdout
     assert "Policy Refs:" in result.stdout
     assert len(facade_result.assessment.alternative_candidate_refs) <= 2
     assert "ADVISORY_ONLY_TM_RETAINS_ACTION_AUTHORITY" in result.stdout
+    if disposition == "EXPRESSION_AVAILABLE":
+        assert "Rank Differences:" in result.stdout
+        assert "MONEYNESS_PREFERENCE" in result.stdout
     if disposition == "NO_OPTION_TRADE":
         assert "Rejected Candidates:" in result.stdout
         assert "NON_POSITIVE_TOP_QUANTITY" in result.stdout
+        assert "no candidate passed every hard gate" in result.stdout
+    if disposition == "WAIT_FOR_EXPRESSION":
+        assert "known temporary blocker" in result.stdout
     if disposition == "INSUFFICIENT_EVIDENCE":
         assert "Uncertain Candidates:" in result.stdout
         assert "MISSING_BID_OR_ASK" in result.stdout
+        assert "not a negative market opinion" in result.stdout
+    if disposition == "UNSUPPORTED":
+        assert "HORIZON_OUTSIDE_V1" in result.stdout
+        assert "not a market view" in result.stdout
 
 
 def test_expression_json_is_complete_exact_facade_result(tmp_path: Path) -> None:
@@ -92,6 +104,7 @@ def test_expression_explain_trace_and_replay_preserve_lineage(tmp_path: Path) ->
     assert explanation["invalidation_conditions"]
     assert trace["expression_input_ref"] == "artifact:a6-available"
     assert trace["input_integrity_verified"] is True
+    assert trace["composition_refs"] == ["composition:a6.2"]
     assert trace["semantic_fingerprint"]
     assert trace["usage"]["model_calls"] == trace["usage"]["tool_calls"] == 0
 
@@ -127,6 +140,11 @@ def test_expression_one_shot_and_repl_share_parser_and_semantics(tmp_path: Path)
 def test_expression_input_rejects_paths_and_urls(unsafe: str) -> None:
     with pytest.raises(ShellError):
         parse_tokens(["expression", "assess", "--input", unsafe])
+
+
+def test_expression_input_rejects_malformed_artifact_reference() -> None:
+    with pytest.raises(ShellError):
+        parse_tokens(["expression", "assess", "--input", "not-qualified"])
 
 
 @pytest.mark.parametrize(

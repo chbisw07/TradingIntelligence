@@ -22,8 +22,8 @@ remaining high-priority deferrals. See
 
 Current gate (2026-09-14, Asia/Kolkata): A5 FROZEN at `tiaf-a5-baseline`;
 R1–R5 are ACCEPTED / DONE; A6 architecture and non-normative thesis are ACCEPTED;
-A6.1–A6.3 are ACCEPTED / DONE, A6.4 is ACTIVE / NEXT and
-`expression.assess` is PUBLISHED.
+A6.1–A6.4 are ACCEPTED / DONE, A6 is FROZEN at `tiaf-a6-baseline`,
+`expression.assess` is PUBLISHED, and A7 is ACTIVE / NEXT — NOT_IMPLEMENTED.
 
 ```text
 A5 FROZEN → R2 ACCEPTED
@@ -31,7 +31,8 @@ A5 FROZEN → R2 ACCEPTED
   → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED)
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
-  → A6.3 ACCEPTED / DONE → A6.4 ACTIVE / NEXT → A7 → A8 → A9 → A10
+  → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ACTIVE / NEXT → A8 → A9 → A10
 ```
 
 R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
@@ -653,16 +654,15 @@ milestones are renumbered or runtime deferrals closed.
 
 ### Current forward sequence and adjacent TBDs
 
-A5 is FROZEN and R1–R5 are closed. A6 architecture/thesis and A6.1–A6.2 are
-accepted; A6.3 is accepted/done, followed by the remaining A6 slice;
-then A7 forecasting/evaluation and an optional
+A5 and A6 are FROZEN and R1–R5 are closed. A6.1–A6.4 are accepted/done;
+A7 forecasting/evaluation architecture is active/next, followed by an optional
 A7-informed A6 follow-up; A8 TM, A9 scanner intake and A10 monitoring/runtime
 production hardening. Sector Rotation is a future dedicated review/workstream
 whose precise A7/A8 placement remains TBD. Signal Qualification is intended after
 Sector Rotation review unless explicitly reordered. No future capability is
 registered merely because its name appears in a design or descriptor example.
 
-### A6 — A6.1–A6.3 accepted; A6.4 active/next
+### A6 — A6.1–A6.4 accepted; frozen baseline
 
 The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) and
 [reconciliation matrix/source record](TIAF_A6_RECONCILIATION_RECORD.md) distinguish
@@ -675,10 +675,12 @@ date-only expiry cannot silently satisfy the proposed strict timing policy.
 The [A6.1 foundation](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
 implements immutable contracts, qualification, pinned policy and deterministic
 A4 admission and is [accepted](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
-The [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) retains A6.2
-evaluation/ranking/replay; A6.3 COLD facade/Shell publication; A6.4 hardening
-and acceptance. A6.3 now delivers the ninth captured-read capability; A6.4,
-SigmaDSL, multi-leg/short strategies and A7 remain outside this slice.
+The [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) records A6.2
+evaluation/ranking/replay, A6.3 COLD facade/Shell publication and A6.4 hardening
+and acceptance. A6.3 delivers the ninth captured-read capability; the
+[A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+adds the 93-case corpus used to freeze `tiaf-a6-baseline`. SigmaDSL,
+multi-leg/short strategies and A7 remain outside delivered v1.
 TM retains authority/risk/capital/quantity/execution; A5 refresh stays advisory.
 The [A6.2 implementation](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md)
 supplies the bounded internal candidate engine and replay and is closed by its
@@ -691,5 +693,5 @@ The [thesis record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 links the DOCX/PDF, sources, document validation and fourteen classified findings.
 The [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1 after the fourteen-finding reconciliation.
-Next: **TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
-A6.3 changes no thesis artifact and does not begin A6.4.
+Next: **TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
+A6.4 changes no thesis artifact.

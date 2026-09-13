@@ -28,8 +28,8 @@ Status checked **2026-09-14 (Asia/Kolkata)**. The
 | R3 | ACCEPTED / DONE | Immutable per-run composition envelope and exact pinned verifier | Preserve capture/verifier baseline |
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
-| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1–A6.3 ACCEPTED / DONE | Governed captured-read `expression.assess` PUBLISHED; A6.4 ACTIVE / NEXT | A6.4 final hardening, acceptance corpus and freeze readiness |
-| A7 | PLANNED / NOT_IMPLEMENTED | Forecasting, evaluation and learning | After A6 |
+| A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
+| A7 | ACTIVE / NEXT — NOT_IMPLEMENTED | Forecasting, evaluation and learning architecture is next; no runtime exists | Architecture pass |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
 | A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |
 | A10 | PLANNED / NOT_IMPLEMENTED | Production hardening + Monitoring Runtime operationalization | After A9 |
@@ -42,7 +42,8 @@ work, TBD unresolved placement/design, and NOT_IMPLEMENTED absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
-**R1–R5 ACCEPTED / DONE; A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION; A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT; `expression.assess` PUBLISHED.** The bounded
+**R1–R5 ACCEPTED / DONE; A6 FROZEN at `tiaf-a6-baseline`;
+`expression.assess` PUBLISHED; A7 ACTIVE / NEXT — NOT_IMPLEMENTED.** The bounded
 [R2 implementation](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) and
 [acceptance](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
 complete. R2 adds typed, permission-filtered declarations without granting
@@ -71,6 +72,10 @@ accepted versioned policy defaults bound A6.1 and the A6.2 evaluator; the
 its captured-read facade/Shell path without live or execution authority; its
 [independent acceptance](docs/TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md)
 closes the publication slice without freezing A6.
+The [A6.4 final hardening and acceptance record](docs/TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+adds the explicit 93-case corpus, closes the bounded implementation, and finds
+A6 ready to freeze. The final closure freezes that accepted A6.1–A6.4 state at
+`tiaf-a6-baseline` without changing its semantics.
 
 The [complete user-reference thesis](docs/TI_Trade_Expression_Intelligence_Thesis.docx)
 and [PDF preview](docs/TI_Trade_Expression_Intelligence_Thesis.pdf) are now created.
@@ -107,15 +112,16 @@ A6.1 CONTRACTS / ADMISSION / POLICY — ACCEPTED / DONE
   ↓
 A6.2 EVALUATION / RANKING / REPLAY — ACCEPTED / DONE
   ↓
-A6.3 FACADE / SHELL — ACCEPTED / DONE → A6.4 ACTIVE / NEXT → A7 → A8 → A9 → A10
+A6.3 FACADE / SHELL — ACCEPTED / DONE → A6.4 ACCEPTED / DONE
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ACTIVE / NEXT → A8 → A9 → A10
 ```
 
 Forward sequence: `A6.1 → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10`.
 
 ## NEXT STEPS
 
-1. **TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
-2. Preserve A6.1–A6.3 and frozen A5 semantics while reviewing A6 end-to-end.
+1. **TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
+2. Preserve the deterministic A6 baseline; A7 is not implemented yet.
 
 ## Parallel / Future Workstreams
 

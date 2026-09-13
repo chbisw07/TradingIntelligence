@@ -58,7 +58,8 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED)
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
-  → A6.3 ACCEPTED / DONE → A6.4 ACTIVE / NEXT → A7 → A8 → A9 → A10
+  → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ACTIVE / NEXT → A8 → A9 → A10
 ```
 
 R1 and [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md)
@@ -591,9 +592,8 @@ scheduling promises. A5 presently evaluates supplied signals and emits advice.
 
 # TIAF_A6 — Option Expression Intelligence
 
-**ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT;
-`expression.assess` PUBLISHED.** See the
+**A6.1–A6.4 ACCEPTED / DONE; A6 FROZEN at `tiaf-a6-baseline`;
+`expression.assess` PUBLISHED; A7 ACTIVE / NEXT — NOT_IMPLEMENTED.** See the
 [reconciled architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [source record](TIAF_A6_RECONCILIATION_RECORD.md) and
 [four-slice roadmap](TIAF_A6_DETAILED_ROADMAP.md). The
@@ -608,11 +608,13 @@ adds deterministic internal evaluation/ranking/replay and is closed by its
 [A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) publishes it as a
 governed captured-read facade/Shell capability and is closed by its
 [acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
+The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
+records the explicit 93-case corpus used to freeze the deterministic baseline.
 
 The non-normative [thesis and findings record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves the handbook step. The [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 updates normative Markdown, not thesis artifacts or runtime. Next:
-**TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
+**TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
 
 Two delivery tracks under A6/DEF-006: deterministic admissible candidates first;
 forecast-enhanced comparison only after admitted A7 evidence. A5 still precedes
