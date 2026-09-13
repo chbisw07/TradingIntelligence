@@ -3,7 +3,8 @@
 ## Current gate
 
 2026-09-13 (Asia/Kolkata): **A5 FROZEN; R1–R5 ACCEPTED / DONE;
-A6 ARCHITECTURE RECONCILED / THESIS RECONCILED / ACCEPTANCE NEXT;
+A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
+A6.1 ACTIVE / NEXT;
 A6 RUNTIME NOT_IMPLEMENTED.**
 
 The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines
@@ -12,13 +13,13 @@ records inherited decisions and conflicts. This roadmap does not authorize
 implementation. Its first gate is:
 
 ```text
-Architecture draft + thesis + thesis/architecture reconciliation (complete)
-  → explicit architecture acceptance
-  → A6.1
+Architecture + thesis reconciliation + acceptance (complete)
+  → A6.1 contracts / admission / policy foundation (next)
 ```
 
-The [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
-is complete. Do not freeze architecture now or begin A7. Numeric defaults remain
+The [architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+approves A6.1 as the next slice. Do not freeze architecture now or begin A7.
+Numeric defaults remain
 the unchanged versioned engineering baseline for independent review, not
 calibrated trading policy. Full-window evidence coverage is retained; TF-05's
 candidate short-circuit proposal is deferred.
@@ -172,4 +173,4 @@ fourteen decisions, deferred TF-05 optimization, empty-scope proof and context-o
 trading-cutoff treatment. A handbook example is not policy authority. Acquisition-
 qualified policies remain unapproved. Do not hide these choices in implementation.
 
-**Next prompt:** `TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE`.
+**Next prompt:** `TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION`.

@@ -3,13 +3,14 @@
 ## Current successor review
 
 The original architecture-pass evidence below is a historical snapshot. The
+[independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+now records **READY_TO_IMPLEMENT_A6_1**: A6 architecture accepted, thesis accepted
+as non-normative companion, A6.1 active/next, runtime NOT_IMPLEMENTED. The
 [thesis/architecture reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
-now accounts for all fourteen findings and updates the normative architecture
-and roadmap. **A6 ARCHITECTURE RECONCILED; THESIS RECONCILED; ACCEPTANCE NEXT;
-RUNTIME NOT_IMPLEMENTED.** A5 remains FROZEN; R1–R5 ACCEPTED / DONE.
-Decision: **READY_FOR_A6_ARCHITECTURE_ACCEPTANCE**, not implementation readiness.
-The prior READY_FOR_A6_THESIS decision and then-next instructions below are dated
-history. Next: **TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
+accounts for all fourteen findings. A5 remains FROZEN; R1–R5 ACCEPTED / DONE.
+The intermediate READY_FOR_A6_ARCHITECTURE_ACCEPTANCE and earlier
+READY_FOR_A6_THESIS decisions below are dated history. Current next:
+**TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
 
 ## Review scope and baseline
 

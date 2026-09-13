@@ -90,13 +90,14 @@ is not a public endpoint. Future `sector.rotation`, `signal.qualify` and
 `forecast.return` are design examples only; A6 trade expression, recurring
 monitoring, TM/scanner runtime and remote transport are not callable capabilities.
 
-A6 is **ARCHITECTURE RECONCILED / THESIS RECONCILED; ACCEPTANCE NEXT;
+A6 is **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
+A6.1 ACTIVE / NEXT;
 RUNTIME NOT_IMPLEMENTED**. The
 [A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) recommends the
 future `expression.assess` capability: advisory, captured-input, deterministic
 long single-leg CE/PE assessment. It is not a ninth registered operation today.
-The [thesis reconciliation is complete](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md);
-independent architecture acceptance must precede A6.1.
+The [independent acceptance is complete](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md),
+but A6.1 must not register the operation; facade/Shell publication remains A6.3.
 
 ## Data and evidence
 

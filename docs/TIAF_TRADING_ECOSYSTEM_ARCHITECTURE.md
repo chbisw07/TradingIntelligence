@@ -21,11 +21,12 @@ closed before A6. This changes project status only, not the ecosystem design.
 **A6 design follow-up (2026-09-13):** the
 [reconciliation architecture draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
 preserves this ownership model and proposes long single-leg CE/PE v1, with no
-SigmaDSL dependency. Status is ARCHITECTURE RECONCILED / THESIS RECONCILED /
-ACCEPTANCE NEXT; A6 runtime is NOT_IMPLEMENTED. The
+SigmaDSL dependency. Status is ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
+NON-NORMATIVE COMPANION / A6.1 ACTIVE / NEXT; runtime is NOT_IMPLEMENTED. The
 [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
-is complete. Numeric policy and detailed contracts still require independent
-architecture acceptance; this navigation update changes no ecosystem ownership.
+is complete, and the [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+records READY_TO_IMPLEMENT_A6_1. This navigation update changes no ecosystem
+ownership and publishes no capability.
 
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)

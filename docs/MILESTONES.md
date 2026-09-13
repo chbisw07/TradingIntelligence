@@ -85,8 +85,8 @@ duplicate DEF IDs. HOT and future peer publication remain DEF-057/058.
 ```text
 A5 FROZEN (`tiaf-a5-baseline`)
   → R2 ACCEPTED → R3 ACCEPTED → R4 ACCEPTED → R5 ACCEPTED
-  → A6 ARCHITECTURE RECONCILED / THESIS RECONCILED (RUNTIME NOT_IMPLEMENTED)
-  → ARCHITECTURE ACCEPTANCE NEXT
+  → A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED (RUNTIME NOT_IMPLEMENTED)
+  → A6.1 CONTRACTS / ADMISSION / POLICY ACTIVE / NEXT
 ```
 
 ## Future / parallel workstreams
@@ -95,7 +95,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
 |---|---|---|
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
-| A6 | ARCHITECTURE RECONCILED / THESIS RECONCILED; RUNTIME NOT_IMPLEMENTED | Independent architecture acceptance before A6.1 |
+| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; RUNTIME NOT_IMPLEMENTED | A6.1 contracts/admission/policy active/next |
 | A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
@@ -421,8 +421,8 @@ semantic, monitoring, deferral, live-truth and quality-gate audit.
 
 ## TIAF_A6 — Option Expression Intelligence
 
-**2026-09-13 (Asia/Kolkata): ARCHITECTURE RECONCILED / THESIS RECONCILED;
-ACCEPTANCE NEXT;
+**2026-09-13 (Asia/Kolkata): ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
+NON-NORMATIVE COMPANION; A6.1 ACTIVE / NEXT;
 RUNTIME NOT_IMPLEMENTED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [reconciliation](TIAF_A6_RECONCILIATION_RECORD.md) and
 [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) preserve A5 and accepted R1–R5.
@@ -438,11 +438,12 @@ wait, insufficient-evidence or unsupported outcome, with attributable reasons.
 No runtime acceptance is claimed now. The
 [complete user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx)
 is created; its [fourteen findings are reconciled](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md).
-Independent architecture acceptance must precede A6.1. Four proposed
+The [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+records READY_TO_IMPLEMENT_A6_1. Four bounded
 slices are contracts/admission; evaluation/ranking/replay; facade/Shell; and
 hardening/acceptance. No tag is created by this architecture pass.
 
-Next: **TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
+Next: **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
 

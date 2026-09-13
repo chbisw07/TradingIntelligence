@@ -2,19 +2,21 @@
 
 ## Status and authority
 
-2026-09-13, Asia/Kolkata. **ARCHITECTURE RECONCILED / THESIS RECONCILED /
-ACCEPTANCE NEXT. A6 runtime:
+2026-09-13, Asia/Kolkata. **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
+NON-NORMATIVE COMPANION / A6.1 ACTIVE / NEXT. A6 runtime:
 NOT_IMPLEMENTED. A5: FROZEN. R1–R5: ACCEPTED / DONE.**
 
 This is a reconciled design proposal, not an implementation acceptance or a
 published capability. Inherited system boundaries remain authoritative; the
-new A6 choices below require independent architecture acceptance. The completed
+new A6 choices below were independently accepted in the
+[architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md).
+The completed
 non-normative thesis and all fourteen findings have been reconciled in the
 [finding decision record](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md).
-Reconciled does not mean accepted or frozen. Implementation is blocked until:
+Accepted does not mean implemented or frozen. The gated sequence is now:
 
 ```text
-architecture + thesis reconciliation complete → independent acceptance → A6.1
+architecture accepted → A6.1 contracts/admission/policy foundation
 ```
 
 See the [source/reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) and
@@ -717,5 +719,6 @@ treatment; event uncertainty and interaction boundaries. A6.1 must specify/test
 qualified timing and absence-proof contracts before A6.2 candidate evaluation.
 Actual live source availability remains unproven, not an implied capability.
 
-**Decision: READY_FOR_A6_ARCHITECTURE_ACCEPTANCE.** Architecture is not frozen.
-Next: **TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
+**Decision: READY_TO_IMPLEMENT_A6_1.** Architecture is accepted, not frozen;
+runtime remains NOT_IMPLEMENTED. The thesis is accepted as its non-normative
+companion. Next: **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.

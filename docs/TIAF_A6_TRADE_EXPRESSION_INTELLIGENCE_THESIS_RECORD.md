@@ -2,14 +2,16 @@
 
 ## Status and decision
 
-Current successor status: **A6 ARCHITECTURE RECONCILED / THESIS RECONCILED /
-ACCEPTANCE NEXT; RUNTIME NOT_IMPLEMENTED**. The
+Current successor status: **A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
+NON-NORMATIVE COMPANION / A6.1 ACTIVE / NEXT; RUNTIME NOT_IMPLEMENTED**. The
+[independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+records **READY_TO_IMPLEMENT_A6_1**. The prior
 [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
-records **READY_FOR_A6_ARCHITECTURE_ACCEPTANCE**. Ten clarifications adopted;
+records ten clarifications adopted;
 TF-05 coverage relaxation deferred, existing shortlist retained, rendering
 assigned to implementation and future scope still deferred. A5 remains FROZEN;
-R1–R5 ACCEPTED / DONE. Next: **TIAF A6 — TRADE EXPRESSION INTELLIGENCE
-ARCHITECTURE ACCEPTANCE**.
+R1–R5 ACCEPTED / DONE. Current next:
+**TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
 
 The remainder is the historical creation record. Its hashes identify the
 architecture snapshot used to write the thesis, not today's revised Markdown.

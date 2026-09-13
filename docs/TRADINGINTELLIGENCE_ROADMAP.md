@@ -55,8 +55,8 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → R2 ACCEPTED / DONE
   → R3 ACCEPTED / DONE → R4 ACCEPTED / DONE
   → R5 (ACCEPTED / DONE — BEFORE_A6)
-  → A6 (ARCHITECTURE RECONCILED / THESIS RECONCILED — RUNTIME NOT_IMPLEMENTED)
-  → ARCHITECTURE ACCEPTANCE NEXT
+  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED — RUNTIME NOT_IMPLEMENTED)
+  → A6.1 CONTRACTS / ADMISSION / POLICY ACTIVE / NEXT
 ```
 
 R1 and [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md)
@@ -589,18 +589,19 @@ scheduling promises. A5 presently evaluates supplied signals and emits advice.
 
 # TIAF_A6 — Option Expression Intelligence
 
-**ARCHITECTURE RECONCILED / THESIS RECONCILED; ACCEPTANCE NEXT;
+**ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
+A6.1 ACTIVE / NEXT;
 RUNTIME NOT_IMPLEMENTED.** See the
 [reconciled architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [source record](TIAF_A6_RECONCILIATION_RECORD.md) and
-[four-slice roadmap](TIAF_A6_DETAILED_ROADMAP.md). Draft and thesis reconciliation
-are complete; independent architecture acceptance → A6.1 remains gated.
-Architecture is not frozen by this pass.
+[four-slice roadmap](TIAF_A6_DETAILED_ROADMAP.md). The
+[independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+records READY_TO_IMPLEMENT_A6_1. Architecture is accepted but not frozen.
 
 The non-normative [thesis and findings record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves the handbook step. The [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 updates normative Markdown, not thesis artifacts or runtime. Next:
-**TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
+**TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
 
 Two delivery tracks under A6/DEF-006: deterministic admissible candidates first;
 forecast-enhanced comparison only after admitted A7 evidence. A5 still precedes

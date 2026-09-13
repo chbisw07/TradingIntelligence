@@ -2,6 +2,12 @@
 
 ## Decision and scope
 
+Successor decision: the
+[independent architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+records **READY_TO_IMPLEMENT_A6_1**. A6 architecture is accepted; the thesis is
+accepted as non-normative companion; A6.1 is active/next; runtime remains
+NOT_IMPLEMENTED. This record's READY_FOR decision below is the completed prior gate.
+
 2026-09-13, Asia/Kolkata: **READY_FOR_A6_ARCHITECTURE_ACCEPTANCE**.
 
 ```text
@@ -285,4 +291,6 @@ schema and event qualification path in A6.1. No production source feasibility,
 economic calibration, NLP/Web runtime or acquisition-qualified profile is
 claimed. Any rejected design choice returns to reconciliation before A6.1.
 
-**Next prompt:** `TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE`.
+Historical next prompt at this checkpoint:
+`TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE`.
+Current next prompt is recorded by the successor acceptance document.

@@ -11,8 +11,8 @@ A5: FROZEN (`tiaf-a5-baseline`)
   → R2 (ACCEPTED / DONE)
   → R3 (ACCEPTED / DONE) → R4 (ACCEPTED / DONE)
   → R5 (ACCEPTED / DONE — BEFORE_A6)
-  → A6 (ARCHITECTURE RECONCILED / THESIS RECONCILED — RUNTIME NOT_IMPLEMENTED)
-  → ARCHITECTURE ACCEPTANCE NEXT
+  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED — RUNTIME NOT_IMPLEMENTED)
+  → A6.1 CONTRACTS / ADMISSION / POLICY ACTIVE / NEXT
 ```
 
 R1 is ACCEPTED. [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md)
@@ -73,9 +73,10 @@ milestones or implement a plugin framework. R4 is now
 R5 is [implemented](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md) and
 [accepted](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md).
 The R1–R5 hardening track is closed. The
-[A6 architecture draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
-and [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) are complete for
-independent architecture acceptance; runtime remains NOT_IMPLEMENTED.
+[A6 architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
+and [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) are independently
+[accepted](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md);
+A6.1 is active/next and runtime remains NOT_IMPLEMENTED.
 The [thesis creation record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves history; the [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 now updates the normative draft. Thesis artifacts remain unchanged.
@@ -91,14 +92,14 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. **TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
-2. Only after acceptance: A6.1 contracts/admission; A6.2 evaluation/ranking/replay; A6.3 facade/Shell;
+1. **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
+2. Then A6.2 evaluation/ranking/replay; A6.3 facade/Shell;
    A6.4 hardening/acceptance, as proposed in the [A6 roadmap](TIAF_A6_DETAILED_ROADMAP.md).
 
 Initial A6 is long single-leg CE/PE only, non-executable, with explicit absence.
 SigmaDSL is not an A6 dependency. The current gate is
-READY_FOR_A6_ARCHITECTURE_ACCEPTANCE, not permission to implement A6.1
-or freeze its draft engineering policy.
+READY_TO_IMPLEMENT_A6_1, not permission to implement A6.2, publish the capability
+or freeze its engineering policy.
 
 R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
 additive composition/pinned verification, optional import isolation and trusted
