@@ -4,6 +4,18 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented TIAF Pluggability R4 optional adapter import isolation. Dhan,
+  official HTTP, Yahoo/Tapetide MCP and LangGraph implementations now load only
+  after explicit selection; missing SDKs fail through a scoped typed error while
+  core imports, Shell/facade operations, serial workflow and replay remain usable.
+  Integration SDKs moved from mandatory dependencies to documented extras. R2/R3
+  schemas, the eight-operation catalog, provider semantics and frozen A4/A5 are
+  unchanged; R5 configuration ownership remains pending.
+  The independent acceptance pass closes R4 after verifying absent-SDK startup,
+  lazy selection, typed failure taxonomy, catalog stability, offline replay,
+  truthful extras, R1–R3 compatibility and frozen A4/A5 parity. R5 is now the
+  active/next bounded work and remains unimplemented.
+
 - Completed the documentation-only TIAF A5 major milestone closure review over
   accepted A5.1 and A5.2. The review finds the deterministic single-position,
   governed captured-read facade/Python/Shell, replay, failure and authority

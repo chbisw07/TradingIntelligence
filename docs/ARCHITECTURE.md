@@ -39,8 +39,9 @@ Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
 | What did this consolidation change? | [Post-R1 record](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md). |
 
 A1–A5 are FROZEN; A5 is tagged at `tiaf-a5-baseline`. R1 is ACCEPTED / DONE.
-R2 Discovery Metadata is ACCEPTED / DONE; R3 is ACTIVE / NEXT and R4–R5 are
-pending pre-A6 work, not A5 scope. Monitoring is authoritative
+R2 Discovery Metadata and R3 Composition/Pinned Verification are ACCEPTED / DONE.
+R4 Optional Adapter Import Isolation is ACCEPTED / DONE; R5 is active/next
+pre-A6 work, not A5 scope. Monitoring is authoritative
 future architecture, not runtime. Sector Rotation, Signal Qualification, A6/A7,
 TM/scanner runtime integration and remote transport remain unimplemented.
 

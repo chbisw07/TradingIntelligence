@@ -507,8 +507,9 @@ remains; never continue until a desired market stance appears.
 Select LangGraph as the execution adapter, not a contract language. Proposed
 placement is `tiaf.planner` for contracts/pure policy/dependency logic and
 `tiaf.workflows` for the application coordinator, reference runner and a thin
-`langgraph_adapter` infrastructure module. Framework dependencies are imported
-only there (and at explicit composition roots), never by `tiaf.contracts`,
+`langgraph_adapter` infrastructure module. Since R4, framework dependencies are
+resolved inside `run_langgraph` only after explicit invocation, never by
+`tiaf.contracts`,
 `tiaf.agents`/specialists, canonical evidence, or deterministic calculators.
 
 Minimal serializable domain state: request/plan version references; admitted
@@ -728,7 +729,8 @@ the subsequent runtime. The implementation-pass gates are in the linked study.
 
 Install `.[dev,orchestration]` for the whole acceptance suite. The optional extra
 pins `langgraph==1.2.11`; serial execution and recorded replay need only ordinary
-TIAF runtime dependencies. `tiaf.workflows` does not import the adapter eagerly.
+TIAF core dependencies. `tiaf.workflows` does not import the adapter eagerly,
+and importing `langgraph_adapter` itself is safe without the framework SDKs.
 The adapter follows the documented
 [StateGraph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api).
 Tracing is explicitly disabled and no checkpointer/network exporter is attached.

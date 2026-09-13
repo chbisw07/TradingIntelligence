@@ -12,8 +12,10 @@ are complete. Required scope/explicit absence is implemented. The bounded
 and [acceptance](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
 complete. The bounded
 [R3 Composition Envelope / Pinned Verifier](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md)
-is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md);
-R4 is ACTIVE / NEXT and R5 remains pending pre-A6. None is an A5
+is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md).
+[R4 Optional Adapter Import Isolation](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md)
+is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md);
+R5 is active/next pre-A6. None is an A5
 freeze blocker. The
 [documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
 and final A5 readiness are complete. A5 is FROZEN at `tiaf-a5-baseline`; R2 is
@@ -35,7 +37,9 @@ ideas from the [pluggability idea cache](TBD_TI_PLUGGABILITY_ARCHITECTURE.md).
 This architecture document itself did not implement descriptors, availability
 resolution, a manifest, discovery APIs or plugin loading. Subsequent bounded R1,
 R2 and R3 passes implemented the linked portions under separately versioned
-contracts. R4/R5, generic plugin loading and HOT composition remain absent.
+contracts. R4 now isolates optional adapter imports and package extras without
+selecting them. R5 trusted COLD ownership, generic plugin loading and HOT
+composition remain absent.
 
 ## 1. First-order invariant
 
@@ -576,9 +580,10 @@ proved necessary by that audit; P3 is regression/composition/replay acceptance
 of those changes, if any. Revisit A5 freeze readiness explicitly after the audit
 and any required remediation. This is a cross-cutting workstream, not A5.x or A6.
 
-Subsequent bounded work delivered the R2 descriptor and R3 composition-envelope
-schemas after the audit. Still deferred/pending: HOT engineering until
-demonstrated need (DEF-057); R4/R5 import/configuration ownership; production model
+Subsequent bounded work delivered the R2 descriptor, R3 composition-envelope
+and R4 import-isolation slices after the audit. R4 is accepted/done. Still
+deferred/pending: HOT engineering until demonstrated need (DEF-057); active/next
+R5 configuration ownership; production model
 integration (DEF-052); remote discovery/transport (DEF-003); monetary pricing
 (DEF-055); distributed persistence/monitoring under existing deferrals. Sector
 Rotation and Signal Qualification require separate architecture and acceptance.

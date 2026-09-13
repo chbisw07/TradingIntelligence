@@ -36,8 +36,8 @@ generations, quiescence, state ownership and rollback proof. HOT is deferred
 local deployment and replay guarantees are unchanged. The
 [compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) and
 [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) are
-complete; R2 is accepted while R3 is ACTIVE / NEXT and R4–R5 remain pending, not
-presumed compliant from this design. See the
+complete; R2, R3 and R4 are accepted while R5 is active/next, not presumed
+compliant from this design. See the
 [current roadmap](IMPLEMENTATION_ROADMAP.md) for the post-documentation freeze
 check and subsequent work; no remote/live hosting is accepted by consolidation.
 

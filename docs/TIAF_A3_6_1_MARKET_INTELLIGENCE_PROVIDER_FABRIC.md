@@ -249,6 +249,10 @@ The provider registry resolves adapter identity and capability declarations. It
 does not expose transport objects, credentials, or a catch-all tool invocation.
 Duplicate provider IDs or incompatible declaration versions fail registration.
 Disabled optional adapters must not be imported during core package import.
+The bounded
+[R4 implementation](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md)
+now enforces this rule for official HTTP and Yahoo/Tapetide MCP connectors while
+retaining existing provider-neutral contracts and routing semantics.
 
 Each `ProviderCapabilityDeclaration` should preserve:
 

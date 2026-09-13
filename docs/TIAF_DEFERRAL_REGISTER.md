@@ -450,6 +450,17 @@ is [accepted](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTAN
 It adds no DEF ID and does not change DEF-057 HOT-composition or DEF-058 future
 peer-publication status. R4 is ACTIVE / NEXT and R5 remains pending before A6.
 
+Post-A5 R4 update (2026-09-13): bounded
+[Optional Adapter Import Isolation](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md)
+is IMPLEMENTED / READY_FOR_ACCEPTANCE. It changes no DEF status, capability
+placement or HOT policy. R5 trusted COLD ownership is pending/next before A6;
+DEF-057/058 remain unchanged.
+
+Post-A5 R4 acceptance update (2026-09-13): the bounded implementation is
+[accepted](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md).
+R4 is ACCEPTED / DONE and R5 is ACTIVE / NEXT. This closure changes no DEF ID,
+status, capability placement or HOT policy; DEF-057/058 remain unchanged.
+
 DEF-058 retains future peer-ID/projection/publication work (R6) until an approved
 new contributor needs it. Existing shared-cache/hosting obligations (R7) remain
 within DEF-009/011 and related deployment work. No existing status changes;

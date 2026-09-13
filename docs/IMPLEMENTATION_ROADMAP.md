@@ -9,7 +9,8 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 ```text
 A5: FROZEN (`tiaf-a5-baseline`)
   → R2 (ACCEPTED / DONE)
-  → R3 (ACCEPTED / DONE) → R4 (ACTIVE / NEXT) → R5 (PENDING — BEFORE_A6)
+  → R3 (ACCEPTED / DONE) → R4 (ACCEPTED / DONE)
+  → R5 (ACTIVE / NEXT — BEFORE_A6)
   → A6 (NOT_IMPLEMENTED)
 ```
 
@@ -63,9 +64,12 @@ now completes documentation synchronization. The subsequent
 [final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) returned
 `READY_TO_TAG_A5`; documentation commit `167c51d` and annotated tag
 `tiaf-a5-baseline` were then pushed. A5 is FROZEN. No
-A5 policy changed. R2–R5 remain separately bounded pre-A6 work and are not A5
+A5 policy changed. R2–R5 are separately bounded pre-A6 work and are not A5
 freeze requirements. A6 has not begun; this workstream does not renumber
-milestones or implement a plugin framework.
+milestones or implement a plugin framework. R4 is now
+[implemented](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md) and
+[accepted](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md);
+R5 is active/next but remains unimplemented.
 
 The post-R1 [Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) reconciles
 future subscriber-driven mandates without changing accepted A5 intent or
@@ -78,9 +82,8 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. ACTIVE / NEXT: R4 optional adapter import isolation.
-2. R5 trusted COLD ownership/configuration.
-3. A6 architecture/implementation: deterministic valid expressions first.
+1. ACTIVE / NEXT: R5 trusted COLD ownership/configuration.
+2. A6 architecture/implementation: deterministic valid expressions first.
 
 R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
 additive composition/pinned verification, optional import isolation and trusted

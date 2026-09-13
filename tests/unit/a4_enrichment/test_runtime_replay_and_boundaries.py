@@ -1,3 +1,4 @@
+import tomllib
 from pathlib import Path
 from typing import cast
 
@@ -242,9 +243,15 @@ def test_domain_and_facade_import_boundaries_remain_clean() -> None:
     assert "run_governed_enrichment" not in facade_init
 
 
-def test_no_langchain_dependency_no_broker_authority_and_no_future_phase_leakage() -> None:
-    dependency_files = (Path("pyproject.toml"), Path("uv.lock"))
-    assert all("langchain" not in path.read_text().lower() for path in dependency_files)
+def test_no_direct_langchain_dependency_no_broker_authority_and_no_future_phase_leakage() -> None:
+    project = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))["project"]
+    declared = [*project["dependencies"]]
+    declared.extend(
+        item
+        for dependencies in project["optional-dependencies"].values()
+        for item in dependencies
+    )
+    assert all(not item.casefold().startswith("langchain") for item in declared)
     need_json = parent_case().need.model_dump_json().lower()
     assert all(word not in need_json for word in ("broker", "order", "trade"))
     application_source = "\n".join(

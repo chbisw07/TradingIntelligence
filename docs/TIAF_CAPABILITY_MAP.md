@@ -36,8 +36,9 @@ provides the evidence-backed 43-row classification. The bounded
 [R1 correction](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md) now
 implements stable required scope and explicit absence. Descriptor/readiness,
 R2 discovery metadata and the R3 per-run composition envelope/pinned verifier are
-implemented; adapter import isolation and COLD ownership remain unimplemented
-pre-A6 improvements. R3 adds no public operation to the eight-operation catalog.
+implemented; R4 adapter import isolation is accepted/done, while R5 COLD
+ownership is active/next and remains unimplemented. Neither adds a public operation
+to the eight-operation catalog.
 HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
 `signal.qualify` and `forecast.return` discovery examples are not implemented
 public capabilities. Their typed publication/projection readiness is DEF-058.
@@ -55,7 +56,11 @@ without changing facade operation IDs or invocation behavior. The
 adds versioned run participation to A3.8 captures and exact pinned deterministic
 verification without granting authority or adding LIVE_READ; its
 [acceptance](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md)
-is complete. R4 is ACTIVE / NEXT and adds no capability until implemented. The detailed
+is complete. The
+[R4 implementation](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md)
+and [acceptance](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md)
+isolate optional implementation imports without adding a capability; R5 is
+active/next. The detailed
 [A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
 link implementation, acceptance and outstanding boundaries.
 

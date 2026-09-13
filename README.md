@@ -26,8 +26,8 @@ Status checked **2026-09-13 (Asia/Kolkata)**. The
 | R1 | ACCEPTED / DONE | Required scope and explicit absence fixed | Preserve old/new replay |
 | R2 | ACCEPTED / DONE | Typed discovery metadata; cross-cutting hardening, not A5.x | Preserve discovery baseline |
 | R3 | ACCEPTED / DONE | Immutable per-run composition envelope and exact pinned verifier | Preserve capture/verifier baseline |
-| R4 | ACTIVE / NEXT | Optional adapter import isolation | Implement and accept before A6 |
-| R5 | PENDING — BEFORE_A6 | Trusted COLD ownership / configuration | After R4 |
+| R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
+| R5 | ACTIVE / NEXT — BEFORE_A6 | Trusted COLD ownership / configuration | Implement bounded R5 |
 | A6 | NOT_IMPLEMENTED | Deterministic option expression; not started | After R2–R5 acceptance |
 
 FROZEN means an existing accepted tag; ACCEPTED means reviewed bounded scope;
@@ -38,7 +38,7 @@ work, TBD unresolved placement/design, and NOT_IMPLEMENTED absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
-**ACTIVE / NEXT: R4 — Optional Adapter Import Isolation.** The bounded
+**R4 ACCEPTED / DONE; R5 ACTIVE / NEXT.** The bounded
 [R2 implementation](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) and
 [acceptance](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
 complete. R2 adds typed, permission-filtered declarations without granting
@@ -47,7 +47,12 @@ authority or claiming live readiness. The
 and [acceptance](docs/TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md)
 are complete. R3 records exact run participation and makes deterministic
 verification resolve only pinned compatible implementations. Recorded replay
-remains registry-free. R4 has not started in this pass.
+remains registry-free. The
+[R4 implementation](docs/TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md)
+and [acceptance](docs/TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md)
+place optional provider/workflow imports behind explicit selection and move
+integration SDKs into named extras. R5 is now the active/next bounded work; its
+implementation has not started.
 
 ### Current Active Path
 
@@ -56,16 +61,15 @@ A5 ── FROZEN (`tiaf-a5-baseline`)
   ↓
 R2 ── ACCEPTED / DONE
   ↓
-R3 ── ACCEPTED / DONE → R4 ── ACTIVE / NEXT → R5 ── PENDING
+R3 ── ACCEPTED / DONE → R4 ── ACCEPTED / DONE → R5 ── ACTIVE / NEXT
   ↓
 A6 ── NOT_IMPLEMENTED
 ```
 
 ## NEXT STEPS
 
-1. R4 — Optional Adapter Import Isolation.
-2. R5 — COLD Ownership / Configuration.
-3. A6 — architecture, then deterministic supported single-leg CE/PE expression.
+1. R5 — COLD Ownership / Configuration implementation.
+2. A6 — architecture, then deterministic supported single-leg CE/PE expression.
 
 ## Parallel / Future Workstreams
 
@@ -141,10 +145,13 @@ Python 3.12 or newer is required. From a virtual environment:
 python -m pip install -e '.[dev,orchestration]'
 ```
 
-For runtime dependencies only, use `python -m pip install -e .`.
-The optional `orchestration` extra pins LangGraph for the A3.8 adapter; serial
-execution and offline captures do not require it. Run the offline public matrix
-with `python scripts/a3_8_user_acceptance.py` (or `--adapter serial`).
+For the provider-free core runtime, use `python -m pip install -e .`. Named R4
+extras are `data-provider-dhan`, `market-intelligence-http`,
+`market-intelligence-mcp`, `providers`, and `orchestration`; see the
+[R4 implementation record](docs/TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md).
+The `orchestration` extra pins LangGraph for the A3.8 adapter; serial execution
+and offline captures do not require it. Run the offline public matrix with
+`python scripts/a3_8_user_acceptance.py` (or `--adapter serial`).
 
 The current India deployment defaults symbol-only cash resolution and F&O
 universe generation to NSE. Override these non-secret settings when needed:
