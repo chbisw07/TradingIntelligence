@@ -181,6 +181,13 @@ def _build_parser() -> _Parser:
     )
     _add_scope(position_assess, artifact_option="--snapshot")
 
+    expression = commands.add_parser("expression", add_help=False, allow_abbrev=False)
+    expression_sub = expression.add_subparsers(dest="expression_action", required=True)
+    expression_assess = expression_sub.add_parser(
+        "assess", add_help=False, allow_abbrev=False
+    )
+    _add_scope(expression_assess, artifact_option="--input")
+
     replay = commands.add_parser("replay", add_help=False, allow_abbrev=False)
     replay_sub = replay.add_subparsers(dest="replay_action", required=True)
     replay_recorded = replay_sub.add_parser("recorded", add_help=False, allow_abbrev=False)
@@ -317,6 +324,12 @@ def parse_tokens(tokens: Sequence[str]) -> ParsedCommand:
     elif verb == "position":
         command = OperationCommand(
             OperationKind.POSITION_ASSESS,
+            _scope(namespace),
+            artifact_ref=namespace.artifact_ref,
+        )
+    elif verb == "expression":
+        command = OperationCommand(
+            OperationKind.EXPRESSION_ASSESS,
             _scope(namespace),
             artifact_ref=namespace.artifact_ref,
         )

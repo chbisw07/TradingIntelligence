@@ -8,6 +8,12 @@
 The implementation record is
 [TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md).
 
+**A6.3 evolution note (2026-09-13):** the shared closed grammar now additively
+includes `expression assess --input QUALIFIED_ID`, mapped only to the governed
+captured-read `expression.assess` facade capability. The original v0.1 exclusion
+of then-future A6 described repository state at v0.1 delivery; A6.3 supersedes
+that status without adding NLP, live acquisition, execution, or remote transport.
+
 The implementation target is a command-first local engineering interface over
 the accepted `tiaf-a4-baseline` (`494d968`). It must not modify A0 contract
 schema `1.0`, package version `0.1.0`, existing capability versions, canonical
@@ -385,8 +391,9 @@ Future commands are added capability-first:
 | Reserved family | Earliest owner | v0.1 behavior |
 |---|---|---|
 | `position assess` | [A5.2 governed publication](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) | authorized captured-read command; no broker lookup/execution |
+| `expression assess` | [A6.3 governed publication](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) | authorized captured-read command; no provider lookup/execution |
 | other `position ...` | A5/TM/A6 as applicable | unknown/unavailable command |
-| `option ...` | A6 expression/selection | unknown/unavailable command |
+| other `expression ...` / `option ...` | A6 expression/selection | unknown/unavailable command |
 | `evaluate ...`, `rank ...` | A7 evaluation/forecasting and DEF-053 resolution | unknown/unavailable command |
 | `ask ...` | separately accepted Interaction Agent | unknown/unavailable command |
 

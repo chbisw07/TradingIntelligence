@@ -15,6 +15,13 @@ from tiaf.planner.models import Sha256
 from tiaf.service.opportunity_intelligence import StructuredOpportunityIntelligence
 from tiaf.source_semantics import A4SemanticInputProjection
 from tiaf.source_semantics.contracts import QualifiedId
+from tiaf.trade_expression import (
+    AdmissionResult,
+    ExpressionEvidenceBundle,
+    TradeExpressionAssessment,
+    TradeExpressionPolicy,
+    TradeExpressionRequest,
+)
 
 from .enums import (
     ArtifactKind,
@@ -278,6 +285,43 @@ class PositionAssessRequest(FacadeOperationRequest):
         return self
 
 
+class ExpressionAssessInput(ContractModel):
+    """Complete accepted A6 captured-input envelope; never a live lookup request."""
+
+    schema_id: Literal["tiaf.facade.expression-assess-input"] = (
+        "tiaf.facade.expression-assess-input"
+    )
+    schema_version: Literal["1.0"] = "1.0"
+    request: TradeExpressionRequest
+    a4_result: DeterministicA4Result
+    evidence: ExpressionEvidenceBundle
+    policy: TradeExpressionPolicy
+    admission: AdmissionResult
+    recorded_assessment: TradeExpressionAssessment | None = None
+    composition_refs: tuple[QualifiedId, ...] = ()
+
+    @model_validator(mode="after")
+    def canonical_composition_refs(self) -> Self:
+        if self.composition_refs != tuple(sorted(set(self.composition_refs))):
+            raise ValueError("expression composition refs must be unique and sorted")
+        return self
+
+
+class ExpressionAssessRequest(FacadeOperationRequest):
+    """Assess one authorized, captured A6 envelope through its logical reference."""
+
+    capability_id: Literal["expression.assess"] = "expression.assess"
+    expression_input_ref: QualifiedId
+
+    @model_validator(mode="after")
+    def expression_input_is_admitted(self) -> Self:
+        if self.scope.admitted_artifact_refs != (self.expression_input_ref,):
+            raise ValueError("expression scope must identify exactly its input reference")
+        if self.scope.position_context_ref is not None:
+            raise ValueError("expression assessment does not accept position context")
+        return self
+
+
 class RecordedReplayRequest(FacadeOperationRequest):
     capability_id: Literal["replay.recorded"] = "replay.recorded"
     artifact_ref: QualifiedId
@@ -453,6 +497,20 @@ class PositionAssessResult(ContractModel):
     )
 
 
+class ExpressionAssessResult(ContractModel):
+    schema_id: Literal["tiaf.facade.expression-assess-result"] = (
+        "tiaf.facade.expression-assess-result"
+    )
+    schema_version: Literal["1.0"] = "1.0"
+    metadata: InvocationMetadata
+    assessment: TradeExpressionAssessment
+    input_checksum: Sha256
+    input_integrity_verified: Literal[True] = True
+    authority_statement: Literal["ADVISORY_ONLY_TM_RETAINS_ACTION_AUTHORITY"] = (
+        "ADVISORY_ONLY_TM_RETAINS_ACTION_AUTHORITY"
+    )
+
+
 class RecordedReplayResult(ContractModel):
     schema_id: Literal["tiaf.facade.recorded-replay-result"] = (
         "tiaf.facade.recorded-replay-result"
@@ -463,10 +521,16 @@ class RecordedReplayResult(ContractModel):
     a3_replay: A3ReplayResult | None = None
     foundation_projection: A4SemanticInputProjection | None = None
     a5_replay: A5ReplayResult | None = None
+    a6_assessment: TradeExpressionAssessment | None = None
 
     @model_validator(mode="after")
     def exactly_one_result(self) -> Self:
-        values = (self.a3_replay, self.foundation_projection, self.a5_replay)
+        values = (
+            self.a3_replay,
+            self.foundation_projection,
+            self.a5_replay,
+            self.a6_assessment,
+        )
         if sum(item is not None for item in values) != 1:
             raise ValueError("recorded replay requires exactly one typed result")
         return self
@@ -499,6 +563,7 @@ type FacadeRequest = (
     | A4InputProjectRequest
     | A4EvaluateRequest
     | PositionAssessRequest
+    | ExpressionAssessRequest
     | RecordedReplayRequest
     | ReplayVerifyRequest
 )
@@ -508,6 +573,7 @@ type FacadeResult = (
     | A4InputProjectResult
     | A4EvaluateResult
     | PositionAssessResult
+    | ExpressionAssessResult
     | RecordedReplayResult
     | ReplayVerifyResult
 )

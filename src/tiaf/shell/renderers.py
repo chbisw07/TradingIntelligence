@@ -11,6 +11,7 @@ from tiaf.facade import (
     CapabilityDescriptor,
     CapabilityDiscoveryDescriptor,
     CapabilityListResult,
+    ExpressionAssessResult,
     OpportunityAssembleResult,
     PositionAssessResult,
     RecordedReplayResult,
@@ -153,6 +154,59 @@ def _summary(result: ShellFacadeResult) -> dict[str, Any]:
             authority_statement=position_assessment.authority_statement,
             expression_refresh_note=expression_note,
         )
+    elif isinstance(result, ExpressionAssessResult):
+        expression_assessment = result.assessment
+        preferred = next(
+            (
+                item
+                for item in expression_assessment.candidate_evaluations
+                if item.candidate.candidate_id
+                == expression_assessment.preferred_candidate_ref
+            ),
+            None,
+        )
+        base.update(
+            disposition=expression_assessment.disposition.value,
+            direction=(
+                expression_assessment.direction.value
+                if expression_assessment.direction
+                else None
+            ),
+            expression_horizon=expression_assessment.horizon.horizon_class.value,
+            preferred_contract=(
+                preferred.candidate.contract.model_dump(mode="json")
+                if preferred is not None
+                else None
+            ),
+            alternatives=list(expression_assessment.alternative_candidate_refs[:2]),
+            policy_refs=[list(item) for item in metadata.policy_refs],
+            blockers=list(expression_assessment.blockers),
+            result_gaps=list(expression_assessment.gaps),
+            reasons=list(expression_assessment.explanation.disposition_reason_codes),
+            preferred_reasons=list(
+                expression_assessment.explanation.preferred_reason_codes
+            ),
+            rejected_candidates=[
+                {
+                    "candidate_ref": item.candidate.candidate_id,
+                    "reasons": list(item.rejection_reason_codes),
+                }
+                for item in expression_assessment.candidate_evaluations
+                if item.rejection_reason_codes
+            ],
+            uncertain_candidates=[
+                {
+                    "candidate_ref": item.candidate.candidate_id,
+                    "reasons": list(item.uncertainty_reason_codes),
+                }
+                for item in expression_assessment.candidate_evaluations
+                if item.uncertainty_reason_codes
+            ],
+            invalidation_conditions=list(expression_assessment.invalidation_conditions),
+            semantic_fingerprint=expression_assessment.semantic_fingerprint,
+            input_integrity_verified=result.input_integrity_verified,
+            authority_statement=result.authority_statement,
+        )
     elif isinstance(result, RecordedReplayResult):
         base["replay_kind"] = result.kind.value
         if result.a3_replay is not None:
@@ -172,6 +226,13 @@ def _summary(result: ShellFacadeResult) -> dict[str, Any]:
                 replay_fingerprint=result.a5_replay.fingerprint,
                 position_semantic_fingerprint=(
                     result.a5_replay.record.result.semantic_fingerprint
+                ),
+            )
+        if result.a6_assessment is not None:
+            base.update(
+                expression_disposition=result.a6_assessment.disposition.value,
+                expression_semantic_fingerprint=(
+                    result.a6_assessment.semantic_fingerprint
                 ),
             )
     elif isinstance(result, ReplayVerifyResult):
@@ -223,6 +284,16 @@ def _reasons(result: ShellFacadeResult) -> dict[str, Any]:
                 item.reason_code for item in result.assessment.monitoring_needs
             ],
         )
+    elif isinstance(result, ExpressionAssessResult):
+        payload.update(
+            disposition_reason_codes=list(
+                result.assessment.explanation.disposition_reason_codes
+            ),
+            preferred_reason_codes=list(
+                result.assessment.explanation.preferred_reason_codes
+            ),
+            blockers=list(result.assessment.blockers),
+        )
     return payload
 
 
@@ -271,6 +342,16 @@ def _gaps(result: ShellFacadeResult) -> dict[str, Any]:
         payload.update(
             position_gaps=list(result.assessment.gaps),
             failure_codes=[item.value for item in result.assessment.failure_codes],
+        )
+    elif isinstance(result, ExpressionAssessResult):
+        payload.update(
+            expression_gaps=list(result.assessment.gaps),
+            blockers=list(result.assessment.blockers),
+            unknown_candidates=[
+                item.candidate.candidate_id
+                for item in result.assessment.candidate_evaluations
+                if item.uncertainty_reason_codes
+            ],
         )
     return payload
 
@@ -365,6 +446,19 @@ def _evidence(result: ShellFacadeResult) -> dict[str, Any]:
             "invalidation_condition_refs": list(
                 result.assessment.invalidation_condition_refs
             ),
+        }
+    if isinstance(result, ExpressionAssessResult):
+        return {
+            "request_fingerprint": result.assessment.request_fingerprint,
+            "admission_fingerprint": result.assessment.admission_fingerprint,
+            "a4_result_fingerprint": result.assessment.a4_result_fingerprint,
+            "evidence_fingerprint": result.assessment.evidence_fingerprint,
+            "candidate_evidence_refs": {
+                item.candidate.candidate_id: list(item.evidence_refs)
+                for item in result.assessment.candidate_evaluations
+            },
+            "composition_refs": list(result.assessment.composition_refs),
+            "input_checksum": result.input_checksum,
         }
     return {"admitted_artifact_refs": list(result.metadata.admitted_artifact_refs)}
 
@@ -461,6 +555,29 @@ def _explain(result: ShellFacadeResult) -> dict[str, Any]:
             ),
             "authority_statement": assessment.authority_statement,
         }
+    if isinstance(result, ExpressionAssessResult):
+        expression_assessment = result.assessment
+        return {
+            "schema_id": "tiaf.shell.explanation",
+            "schema_version": "1.0",
+            "capability_id": result.metadata.capability_id,
+            "summary": _summary(result),
+            "reasons": _reasons(result),
+            "gaps": _gaps(result),
+            "evidence": _evidence(result),
+            "candidate_evaluations": [
+                item.model_dump(mode="json")
+                for item in expression_assessment.candidate_evaluations
+            ],
+            "rank_differences": [
+                item.model_dump(mode="json")
+                for item in expression_assessment.explanation.rank_differences
+            ],
+            "invalidation_conditions": list(
+                expression_assessment.invalidation_conditions
+            ),
+            "authority_statement": result.authority_statement,
+        }
     raise shell_error(
         ShellErrorCode.EXPLANATION_UNAVAILABLE,
         "structured explanation is unavailable for this result type",
@@ -502,6 +619,18 @@ def _trace(invocation: SuccessfulInvocation, view: TraceView) -> dict[str, Any]:
                 a5_run_fingerprint=invocation.result.run_fingerprint,
                 semantic_fingerprint=assessment.semantic_fingerprint,
                 replay_identity=assessment.replay_identity,
+            )
+        if isinstance(invocation.result, ExpressionAssessResult):
+            expression_assessment = invocation.result.assessment
+            common.update(
+                expression_input_ref=metadata.admitted_artifact_refs[0],
+                input_checksum=invocation.result.input_checksum,
+                request_fingerprint=expression_assessment.request_fingerprint,
+                admission_fingerprint=expression_assessment.admission_fingerprint,
+                a4_result_fingerprint=expression_assessment.a4_result_fingerprint,
+                evidence_fingerprint=expression_assessment.evidence_fingerprint,
+                semantic_fingerprint=expression_assessment.semantic_fingerprint,
+                input_integrity_verified=invocation.result.input_integrity_verified,
             )
     if view in {TraceView.ALL, TraceView.TIMING}:
         common["created_at"] = metadata.created_at.isoformat()

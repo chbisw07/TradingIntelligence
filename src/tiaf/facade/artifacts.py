@@ -21,9 +21,10 @@ from tiaf.source_semantics import (
     ProjectionBuildInput,
     validate_foundation_capture,
 )
+from tiaf.trade_expression import verify_admission_replay, verify_trade_expression_replay
 from tiaf.workflows import replay_recorded as replay_orchestration
 
-from .contracts import EffectiveAdmission, TrustedArtifact
+from .contracts import EffectiveAdmission, ExpressionAssessInput, TrustedArtifact
 from .enums import ArtifactKind
 
 _SECRET_KEYS = {
@@ -75,6 +76,25 @@ def validate_trusted_artifact(artifact: TrustedArtifact) -> TrustedArtifact:
         )
     elif artifact.kind is ArtifactKind.A5_CAPTURE:
         validate_a5_capture(A5Capture.model_validate_json(artifact.content))
+    elif artifact.kind is ArtifactKind.A6_EXPRESSION_CAPTURE:
+        capture = ExpressionAssessInput.model_validate_json(artifact.content)
+        verify_admission_replay(
+            capture.admission,
+            capture.request,
+            capture.a4_result,
+            capture.evidence,
+            capture.policy,
+        )
+        if capture.recorded_assessment is not None:
+            verify_trade_expression_replay(
+                capture.recorded_assessment,
+                capture.request,
+                capture.a4_result,
+                capture.evidence,
+                capture.policy,
+                capture.admission,
+                composition_refs=capture.composition_refs,
+            )
     return artifact
 
 

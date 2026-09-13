@@ -457,8 +457,9 @@ path. Installing a model does not automatically replace a specialist.
 The existing [local facade catalog](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) is the
 natural public discovery seam. Future Shell, Python and remote consumers can
 read permission-filtered descriptor/availability projections there; internal
-provider and Agent registries retain their jobs. Current catalog behavior and
-its eight capabilities are unchanged. Future examples such as `sector.rotation`
+provider and Agent registries retain their jobs. A6.3 additively publishes the
+ninth captured-read capability without changing this discovery seam. Future
+examples such as `sector.rotation`
 NOT_INSTALLED, `signal.qualify` DISABLED or `forecast.return` DEGRADED are not
 claims about today's published API. A discovered capability need not have a
 Shell grammar/rendering adapter; unsupported versions fail safely, never become

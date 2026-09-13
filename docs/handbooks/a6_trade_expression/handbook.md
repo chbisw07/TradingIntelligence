@@ -368,13 +368,13 @@ Provenance survives through native observation, connector/adapter normalization 
 
 The same assessment should mean the same thing whether a trader uses a command, a form or a future language interface. Otherwise each surface becomes its own undocumented policy. The proposed common boundary is expression.assess through the governed facade; the surface translates intent and renders the returned canonical result.
 
-The current repository does not publish expression.assess or an A6 Shell command. The examples here are mock interactions only. Even the structured command needs a logical artifact containing admitted upstream analysis and evidence; it does not obtain fresh authority or a thesis by parsing a symbol.
+The current repository publishes the captured-read expression.assess capability and A6 Shell command through A6.3. Even the structured command needs a trusted logical artifact containing admitted upstream analysis and evidence; it does not obtain fresh authority, live data or a thesis by parsing a symbol. The plain-English, convenience, Web and remote examples remain future mock interactions.
 
-:::figure 14 Interaction mockups—future design, not runnable today
+:::figure 14 Interaction surfaces—only the structured captured-read Shell row is runnable today
 | Surface | Example | Boundary |
 | --- | --- | --- |
 | Plain English | “Find a bullish KAYNES expression for three weeks.” | Resolve intent; show exact duration interpretation; obtain admitted references. |
-| Structured Shell / REPL | expression assess --request artifact:admitted-kaynes-expression-request | Same parser/facade semantics in both modes; no direct provider calls. |
+| Structured Shell / REPL | expression assess --input artifact:admitted-kaynes-expression-input | Same parser/facade semantics in both modes; no direct provider calls. |
 | Convenience syntax, future | expression assess KAYNES --direction bullish --horizon 3w | Not sufficient alone; must resolve to the same fully admitted request. |
 | Web form | Subject, direction constraint, target, preferences, evidence reference; “Review assessment” | No quantity/order button masquerading as A6 analysis. |
 | Python / future API | Typed intent plus permitted expression_request_ref | No private provider/router handles, raw paths or policy objects. |

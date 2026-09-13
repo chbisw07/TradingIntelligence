@@ -1,6 +1,7 @@
 """Trusted synthetic facade composition over already-captured fixtures."""
 
 from datetime import datetime
+from decimal import Decimal
 from functools import lru_cache
 
 from tiaf.a3_hardening import (
@@ -10,6 +11,7 @@ from tiaf.a3_hardening import (
     package_blob,
     package_json,
 )
+from tiaf.a4 import evaluate_projection
 from tiaf.a5 import (
     capture_json as capture_a5_json,
 )
@@ -22,6 +24,7 @@ from tiaf.contracts import Horizon
 from tiaf.facade import (
     ArtifactKind,
     CallerGrant,
+    ExpressionAssessInput,
     FacadeAuthorityScope,
     InvocationBudget,
     InvocationScope,
@@ -33,9 +36,13 @@ from tiaf.facade import (
 )
 from tiaf.source_semantics import capture_json as capture_foundation_json
 from tiaf.source_semantics import capture_projection
+from tiaf.trade_expression import admit_request, evaluate_trade_expression
 
 from ..a3_hardening._support import package_for
+from ..a4._support import with_unresolved_conflict
 from ..a5._support import request as a5_request
+from ..a6._a62_support import context as a6_context
+from ..a6._a62_support import option_chain
 from ..source_semantics._support import build_input
 
 ALL_CAPABILITIES = (
@@ -43,6 +50,7 @@ ALL_CAPABILITIES = (
     "a4_input.project",
     "baseline.assess",
     "capabilities.list",
+    "expression.assess",
     "opportunity.assemble",
     "position.assess",
     "replay.recorded",
@@ -98,6 +106,56 @@ def captured_artifacts() -> tuple[TrustedArtifact, ...]:
         position_record,
         captured_at=position_request.as_of,
     )
+    expression_artifacts: list[TrustedArtifact] = []
+    a6_variants = {
+        "available": a6_context(),
+        "no-option-trade": a6_context(
+            chains=(
+                option_chain(
+                    bid_quantities=(Decimal(0),) * 3,
+                    ask_quantities=(Decimal(0),) * 3,
+                ),
+            )
+        ),
+        "insufficient": a6_context(
+            chains=(option_chain(bids=(None,) * 3, asks=(None,) * 3),)
+        ),
+    }
+    conflict_projection = with_unresolved_conflict()
+    conflict_a4 = evaluate_projection(
+        conflict_projection,
+        evaluated_at=conflict_projection.header.evidence_as_of,
+    ).result
+    a6_variants["wait"] = a6_context(a4=conflict_a4)
+    for name, values in a6_variants.items():
+        a6_request, a4, evidence, policy, _ = values
+        a6_request = a6_request.model_copy(update={"authority_refs": (AUTHORITY,)})
+        a6_admission = admit_request(a6_request, a4, evidence, policy)
+        composition_refs = ("composition:a6.2",)
+        assessment = evaluate_trade_expression(
+            a6_request,
+            a4,
+            evidence,
+            policy,
+            a6_admission,
+            composition_refs=composition_refs,
+        )
+        capture = ExpressionAssessInput(
+            request=a6_request,
+            a4_result=a4,
+            evidence=evidence,
+            policy=policy,
+            admission=a6_admission,
+            recorded_assessment=assessment,
+            composition_refs=composition_refs,
+        )
+        expression_artifacts.append(
+            artifact(
+                f"artifact:a6-{name}",
+                ArtifactKind.A6_EXPRESSION_CAPTURE,
+                canonical_json(capture),
+            )
+        )
     return (
         artifact("artifact:a38", ArtifactKind.A38_CAPTURE, a38),
         artifact("artifact:a3-package", ArtifactKind.A3_PACKAGE, package_json(package)),
@@ -123,6 +181,7 @@ def captured_artifacts() -> tuple[TrustedArtifact, ...]:
             capture_a5_json(position_capture),
             entitlement_refs=(POSITION_ENTITLEMENT,),
         ),
+        *expression_artifacts,
     )
 
 

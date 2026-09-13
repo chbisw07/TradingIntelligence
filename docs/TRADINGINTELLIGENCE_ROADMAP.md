@@ -58,7 +58,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED)
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
-  → A6.3 ACTIVE / NEXT → A6.4 NOT_IMPLEMENTED → A7 → A8 → A9 → A10
+  → A6.3 ACCEPTED / DONE → A6.4 ACTIVE / NEXT → A7 → A8 → A9 → A10
 ```
 
 R1 and [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md)
@@ -592,8 +592,8 @@ scheduling promises. A5 presently evaluates supplied signals and emits advice.
 # TIAF_A6 — Option Expression Intelligence
 
 **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED;
-`expression.assess` NOT_PUBLISHED.** See the
+A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT;
+`expression.assess` PUBLISHED.** See the
 [reconciled architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [source record](TIAF_A6_RECONCILIATION_RECORD.md) and
 [four-slice roadmap](TIAF_A6_DETAILED_ROADMAP.md). The
@@ -603,14 +603,16 @@ records READY_TO_IMPLEMENT_A6_1. The
 now supplies the contracts/admission/policy foundation without publication and
 is closed by its [acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
 The [A6.2 implementation](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md)
-adds deterministic internal evaluation/ranking/replay without publication and
-is closed by its
-[acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md).
+adds deterministic internal evaluation/ranking/replay and is closed by its
+[acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md). The
+[A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) publishes it as a
+governed captured-read facade/Shell capability and is closed by its
+[acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
 
 The non-normative [thesis and findings record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves the handbook step. The [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 updates normative Markdown, not thesis artifacts or runtime. Next:
-**TIAF A6.3 — FACADE & TI_SHELL EXPOSURE**.
+**TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
 
 Two delivery tracks under A6/DEF-006: deterministic admissible candidates first;
 forecast-enhanced comparison only after admitted A7 evidence. A5 still precedes

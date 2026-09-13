@@ -67,7 +67,7 @@ from tiaf.market_intelligence.providers import FixtureMarketIntelligenceProvider
 from tiaf.optional_adapters import optional_adapter_catalog
 assert DhanInstrumentType.EQUITY.value == "EQUITY"
 assert FixtureMarketIntelligenceProvider.__name__ == "FixtureMarketIntelligenceProvider"
-assert len(capability_catalog()) == 8
+assert len(capability_catalog()) == 9
 assert len(optional_adapter_catalog()) == 5
 assert callable(tiaf.workflows.run_serial)
 assert not OPTIONAL_ROOTS.intersection(sys.modules)
@@ -94,7 +94,7 @@ def test_shell_discovery_baseline_and_position_continue_without_optional_sdks(
     from tiaf.shell import SessionDefaults, ShellBootstrapConfig
 
     from .facade._support import AUTHORITY, PROFILE, config
-    from .shell._support import position_defaults, write_baseline
+    from .shell._support import expression_defaults, position_defaults, write_baseline
 
     write_baseline(tmp_path)
     baseline_bootstrap = ShellBootstrapConfig(
@@ -111,20 +111,31 @@ def test_shell_discovery_baseline_and_position_continue_without_optional_sdks(
             update={"profile_ref": PROFILE, "authority_ref": AUTHORITY}
         ),
     )
+    expression_bootstrap = ShellBootstrapConfig(
+        facade=config(),
+        caller_id="caller:test",
+        baseline_request_root=str(tmp_path),
+        defaults=expression_defaults(),
+    )
     baseline_path = tmp_path / "baseline-shell.json"
     position_path = tmp_path / "position-shell.json"
+    expression_path = tmp_path / "expression-shell.json"
     baseline_path.write_text(baseline_bootstrap.model_dump_json(), encoding="utf-8")
     position_path.write_text(position_bootstrap.model_dump_json(), encoding="utf-8")
+    expression_path.write_text(expression_bootstrap.model_dump_json(), encoding="utf-8")
     result = _isolated(
         f"""
 from tiaf.shell.cli import main
 baseline = ["--config", {str(baseline_path)!r}, "--output", "json"]
 position = ["--config", {str(position_path)!r}, "--output", "json"]
+expression = ["--config", {str(expression_path)!r}, "--output", "json"]
 assert main([*baseline, "capabilities", "list"]) == 0
 assert main([*baseline, "capabilities", "describe", "baseline.assess"]) == 0
 assert main([*baseline, "baseline", "assess", "--request-file", "baseline.json"]) == 0
 assert main([*position, "position", "assess", "--snapshot", "artifact:position-request"]) == 0
 assert main([*position, "replay", "recorded", "--artifact-ref", "artifact:a5-capture"]) == 0
+assert main([*expression, "capabilities", "describe", "expression.assess"]) == 0
+assert main([*expression, "expression", "assess", "--input", "artifact:a6-available"]) == 0
 assert not OPTIONAL_ROOTS.intersection(sys.modules)
 """
     )
@@ -133,6 +144,7 @@ assert not OPTIONAL_ROOTS.intersection(sys.modules)
     assert '"command_name":"capabilities describe"' in result.stdout
     assert '"capability_id":"baseline.assess"' in result.stdout
     assert '"capability_id":"position.assess"' in result.stdout
+    assert '"capability_id":"expression.assess"' in result.stdout
     assert '"capability_id":"replay.recorded"' in result.stdout
 
 

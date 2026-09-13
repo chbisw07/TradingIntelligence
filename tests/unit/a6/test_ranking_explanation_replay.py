@@ -223,8 +223,8 @@ def test_assessment_has_no_execution_authority_or_usage() -> None:
     assert result.input_tokens == result.output_tokens == result.model_cost_units == 0
 
 
-def test_a6_2_does_not_publish_facade_or_shell_capability() -> None:
+def test_a6_3_publishes_expression_capability_without_changing_assessment_shape() -> None:
     capabilities = tuple(item.capability_id for item in capability_catalog())
-    assert len(capabilities) == 8
-    assert "expression.assess" not in capabilities
+    assert len(capabilities) == 9
+    assert "expression.assess" in capabilities
     assert "score" not in TradeExpressionAssessment.model_fields

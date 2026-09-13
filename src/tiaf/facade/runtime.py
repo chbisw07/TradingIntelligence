@@ -33,6 +33,7 @@ from tiaf.a5 import (
 )
 from tiaf.baseline import BaselineEngine, BaselineError
 from tiaf.context import AnalysisPurpose
+from tiaf.contracts import Horizon
 from tiaf.contracts.common import TIAF_TIMEZONE
 from tiaf.planner.digests import digest
 from tiaf.service.opportunity_intelligence import (
@@ -49,6 +50,12 @@ from tiaf.source_semantics import (
 from tiaf.source_semantics import (
     replay_recorded as replay_foundation,
 )
+from tiaf.trade_expression import (
+    A6ContractError,
+    A6ReplayIntegrityError,
+    evaluate_trade_expression,
+    verify_trade_expression_replay,
+)
 
 from .admission import admit, can_discover
 from .artifacts import LocalArtifactStore
@@ -64,6 +71,9 @@ from .contracts import (
     CapabilityListRequest,
     CapabilityListResult,
     EffectiveAdmission,
+    ExpressionAssessInput,
+    ExpressionAssessRequest,
+    ExpressionAssessResult,
     FacadeErrorRecord,
     FacadeOperationRequest,
     FacadeRequest,
@@ -150,6 +160,9 @@ class LocalFacadeClient:
 
     @overload
     def invoke(self, request: PositionAssessRequest) -> PositionAssessResult: ...
+
+    @overload
+    def invoke(self, request: ExpressionAssessRequest) -> ExpressionAssessResult: ...
 
     @overload
     def invoke(self, request: RecordedReplayRequest) -> RecordedReplayResult: ...
@@ -347,6 +360,7 @@ class LocalFacadeOwner:
             "a4_input.project": A4InputProjectRequest,
             "a4.evaluate": A4EvaluateRequest,
             "position.assess": PositionAssessRequest,
+            "expression.assess": ExpressionAssessRequest,
             "replay.recorded": RecordedReplayRequest,
             "replay.verify": ReplayVerifyRequest,
         }[request.capability_id]
@@ -451,6 +465,7 @@ class LocalFacadeOwner:
             A5ReplayIntegrityError,
             CaptureIntegrityError,
             ProjectionIntegrityError,
+            A6ReplayIntegrityError,
         ) as exc:
             raise self._error(
                 request_id=request.scope.request_id,
@@ -476,6 +491,15 @@ class LocalFacadeOwner:
                 capability_id=request.capability_id,
                 status=FacadeStatus.FAILED,
                 message="position assessment failed safe integrity validation",
+                child_codes=(type(exc).__name__,),
+            ) from exc
+        except A6ContractError as exc:
+            raise self._error(
+                request_id=request.scope.request_id,
+                correlation_id=request.scope.correlation_id,
+                capability_id=request.capability_id,
+                status=FacadeStatus.FAILED,
+                message="trade-expression assessment failed safe integrity validation",
                 child_codes=(type(exc).__name__,),
             ) from exc
         except (BaselineError, ValidationError, TypeError, ValueError) as exc:
@@ -633,6 +657,46 @@ class LocalFacadeOwner:
                 run_fingerprint=position_record.fingerprint,
                 position_request_checksum=artifact.checksum,
             )
+        if isinstance(request, ExpressionAssessRequest):
+            artifact = self._read(request.expression_input_ref, admission)
+            self._require_kind(artifact, ArtifactKind.A6_EXPRESSION_CAPTURE)
+            capture = ExpressionAssessInput.model_validate_json(artifact.content)
+            if admission.effective_authority_ref not in capture.request.authority_refs:
+                raise PermissionError("expression request authority is not effective")
+            expression_horizon = Horizon(
+                label=capture.request.horizon.horizon_class.value
+            )
+            self._match_scope(
+                request.scope,
+                subject=capture.request.subject,
+                objective=AnalysisPurpose.OPPORTUNITY,
+                horizon=expression_horizon,
+                as_of=capture.request.evaluation_cutoff,
+            )
+            expression_assessment = evaluate_trade_expression(
+                capture.request,
+                capture.a4_result,
+                capture.evidence,
+                capture.policy,
+                capture.admission,
+                composition_refs=capture.composition_refs,
+            )
+            return ExpressionAssessResult(
+                metadata=self._metadata(
+                    request_id=request.scope.request_id,
+                    run_id=run_id,
+                    correlation_id=request.scope.correlation_id,
+                    scope=request.scope,
+                    admission=admission,
+                    started=started_at,
+                    completed=datetime.now(TIAF_TIMEZONE),
+                    policy_refs=((capture.policy.policy_id, capture.policy.policy_version),),
+                    warnings=("ADVISORY_ONLY_TM_RETAINS_ACTION_AUTHORITY",),
+                    gaps=expression_assessment.gaps,
+                ),
+                assessment=expression_assessment,
+                input_checksum=artifact.checksum,
+            )
         if isinstance(request, A4InputProjectRequest):
             artifact = self._read(request.build_input_ref, admission)
             self._require_kind(artifact, ArtifactKind.FOUNDATION_BUILD_INPUT)
@@ -671,6 +735,46 @@ class LocalFacadeOwner:
             )
         if isinstance(request, RecordedReplayRequest):
             artifact = self._read(request.artifact_ref, admission)
+            if artifact.kind is ArtifactKind.A6_EXPRESSION_CAPTURE:
+                capture = ExpressionAssessInput.model_validate_json(artifact.content)
+                if capture.recorded_assessment is None:
+                    raise ValueError(
+                        "A6 recorded replay requires a recorded assessment"
+                    )
+                expression_horizon = Horizon(
+                    label=capture.request.horizon.horizon_class.value
+                )
+                self._match_scope(
+                    request.scope,
+                    subject=capture.request.subject,
+                    objective=AnalysisPurpose.OPPORTUNITY,
+                    horizon=expression_horizon,
+                    as_of=capture.request.evaluation_cutoff,
+                )
+                expression_assessment = verify_trade_expression_replay(
+                    capture.recorded_assessment,
+                    capture.request,
+                    capture.a4_result,
+                    capture.evidence,
+                    capture.policy,
+                    capture.admission,
+                    composition_refs=capture.composition_refs,
+                )
+                return RecordedReplayResult(
+                    metadata=self._metadata(
+                        request_id=request.scope.request_id,
+                        run_id=run_id,
+                        correlation_id=request.scope.correlation_id,
+                        scope=request.scope,
+                        admission=admission,
+                        started=started_at,
+                        completed=datetime.now(TIAF_TIMEZONE),
+                        policy_refs=((capture.policy.policy_id, capture.policy.policy_version),),
+                        gaps=expression_assessment.gaps,
+                    ),
+                    kind=ReplayResultKind.A6_RECORDED,
+                    a6_assessment=expression_assessment,
+                )
             if artifact.kind is ArtifactKind.A5_CAPTURE:
                 a5_replay_result = replay_a5(
                     A5Capture.model_validate_json(artifact.content),

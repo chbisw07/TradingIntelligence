@@ -37,8 +37,8 @@ provides the evidence-backed 43-row classification. The bounded
 implements stable required scope and explicit absence. Descriptor/readiness,
 R2 discovery metadata and the R3 per-run composition envelope/pinned verifier are
 implemented; R4 adapter import isolation and R5 COLD ownership are accepted/done.
-Neither adds a public operation
-to the eight-operation catalog.
+Neither added a public operation at the time; A6.3 now adds the separately
+governed ninth operation.
 HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
 `signal.qualify` and `forecast.return` discovery examples are not implemented
 public capabilities. Their typed publication/projection readiness is DEF-058.
@@ -69,7 +69,7 @@ link implementation, acceptance and outstanding boundaries.
 
 ## Current public/engineering catalog versus future designs
 
-This exact eight-operation inventory mirrors the static local facade catalog;
+This exact nine-operation inventory mirrors the static local facade catalog;
 it is not a new registry or permission grant. All reads remain captured/local.
 `REQUIRES_RUNTIME_CHECK` means discovery does not assert request readiness,
 authority, dependency availability, health or fresh data.
@@ -80,6 +80,7 @@ authority, dependency availability, health or fresh data.
 | `a4_input.project` | PUBLIC / CAPTURED_READ | CHALLENGE_ARBITRATION | STRUCTURAL | SEMANTICALLY_REPEATABLE | REQUIRES_RUNTIME_CHECK |
 | `baseline.assess` | PUBLIC / PURE | BASELINE | STRUCTURAL | SEMANTICALLY_REPEATABLE | REQUIRES_RUNTIME_CHECK |
 | `capabilities.list` | PUBLIC / PURE | CAPABILITY_DISCOVERY | STRUCTURAL | NOT_MONITORABLE | REQUIRES_RUNTIME_CHECK |
+| `expression.assess` | PUBLIC / CAPTURED_READ | TRADE_EXPRESSION_INTELLIGENCE | STRUCTURAL | MONITORING_FUTURE | REQUIRES_RUNTIME_CHECK |
 | `opportunity.assemble` | PUBLIC / CAPTURED_READ | OPPORTUNITY_INTELLIGENCE | STRUCTURAL | SEMANTICALLY_REPEATABLE | REQUIRES_RUNTIME_CHECK |
 | `position.assess` | PUBLIC / CAPTURED_READ | POSITION_INTELLIGENCE | STRUCTURAL | MONITORING_FUTURE | REQUIRES_RUNTIME_CHECK |
 | `replay.recorded` | PUBLIC / CAPTURED_READ | REPLAY | STRUCTURAL | NOT_MONITORABLE | REQUIRES_RUNTIME_CHECK |
@@ -87,22 +88,23 @@ authority, dependency availability, health or fresh data.
 
 No LIVE_READ facade operation exists. A4.2's governed internal acquisition bridge
 is not a public endpoint. Future `sector.rotation`, `signal.qualify` and
-`forecast.return` are design examples only; A6 trade expression, recurring
-monitoring, TM/scanner runtime and remote transport are not callable capabilities.
+`forecast.return` are design examples only; recurring monitoring, TM/scanner
+runtime and remote transport are not callable capabilities.
 
 A6 is **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED;
-`expression.assess` NOT_PUBLISHED**. The
-[A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) recommends the
-future `expression.assess` capability: advisory, captured-input, deterministic
-long single-leg CE/PE assessment. It is not a ninth registered operation today.
+A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT;
+`expression.assess` PUBLISHED**. The
+[A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines the
+advisory, captured-input, deterministic long single-leg CE/PE assessment now
+published by [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) and closed by its
+[independent acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
 The [independent architecture acceptance is complete](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md).
 The [A6.1 implementation](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
 and [acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md)
 add no operation; facade/Shell publication remains A6.3.
 The [A6.2 internal evaluator](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md)
-is [accepted](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md), adds
-no operation and performs no live acquisition.
+is [accepted](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md); A6.3
+publishes it without adding live acquisition and is accepted/done.
 
 ## Data and evidence
 
@@ -282,7 +284,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Structured underlying opportunity intelligence | ACCEPTED / `tiaf-a3.9` | [A3.9 design](TIAF_A3_9_STRUCTURED_OPPORTUNITY_INTELLIGENCE_MVP.md): captured A3.8 input, typed contributions and qualified bias, explicit observation state, preserved A2/conflicts/gaps, separate confidence, cited reasons and pure assembly replay; cross-candidate analysis/ranking remains DEF-053 and report rendering DEF-054 |
 | Agent replay / A2 comparison / cost/failure hardening | ACCEPTED / `tiaf-a3.10` | [A3.10 implementation](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md): content-addressed capture, explicit replay modes, observational comparison, unknown-cost semantics, lossless failures, 14-case synthetic corpus and closure-readiness seam; monetary pricing knowledge remains DEF-055; [study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md) |
 | A4 source/comparability/independence input projection | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) adds immutable source/proposition/authority/dispute/independence contracts, field confirmation, deterministic projection, successor semantics and offline replay over unchanged A2/A3; citation rendering remains absent |
-| Narrow local capability facade and lifecycle | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) plus A4.1/A5.2 now expose eight explicit same-process capabilities, including `a4.evaluate` and `position.assess`, with trusted admission, budget/authority intersection, frozen composition, safe logical artifact refs and offline replay; no live operation, remote transport or broker authority |
+| Narrow local capability facade and lifecycle | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) plus A4.1/A5.2/A6.3 now expose nine explicit same-process capabilities, including `a4.evaluate`, `position.assess` and `expression.assess`, with trusted admission, budget/authority intersection, frozen composition, safe logical artifact refs and offline replay; no live operation, remote transport or broker authority |
 | Deterministic arbitration / adversarial resolution | IMPLEMENTED / FROZEN at `tiaf-a4-baseline` | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts the combined no-model boundary |
 | Position intelligence | IMPLEMENTED / FROZEN at `tiaf-a5-baseline` | [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md) deterministic baseline plus [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) governed facade/Shell publication and [closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); no live TM/broker/multi-leg runtime |
 | Option strategy comparison/selection | PLANNED | A6/DEF-006 deterministic valid candidates first; forecast-enhanced higher-order comparison after admitted A7 evidence; no initial A4 contract selection |
@@ -301,7 +303,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Primary quote/OHLCV/F&O fallback and operational health arbitration | DEFERRED | Dhan data surface; DEF-008/DEF-011. Separate MI evidence fallback is implemented in A3.6.1 |
 | Scanner | EXTERNAL/INTEGRATION | Future TIAF scanner boundary |
 | UI / dashboard | FUTURE | Application layer; service dependency DEF-003 |
-| Governed local capability facade/catalog | IMPLEMENTED / ACCEPTED | [Local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) with A4.1/A5.2 additions: static eight-capability catalog, trusted same-process admission/lifecycle, request isolation, logical-ref captured reads and single-writer configuration; the facade itself owns no Shell or transport, while the separate v0.1 Shell now consumes it |
+| Governed local capability facade/catalog | IMPLEMENTED / ACCEPTED | [Local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) with A4.1/A5.2/A6.3 additions: static nine-capability catalog, trusted same-process admission/lifecycle, request isolation, logical-ref captured reads and single-writer configuration; the facade itself owns no Shell or transport, while the separate Shell consumes it |
 | Remote API / service delivery | PLANNED | DEF-003 delivery track; [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md) makes local/remote hosting conditional on real consumer/isolation needs; A8 integration, A10 operations; same intelligence path, no service now |
 | Alerts | FUTURE | Application/policy layer; runtime dependency DEF-010 |
 | Human-facing explanation/citation reports | PLANNED / BOUNDED SLICE | DEF-054 minimal captured-source rendering with command-first Shell after A4; richer report/Web UX remains deferred; no re-research |

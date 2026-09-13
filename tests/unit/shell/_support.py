@@ -8,7 +8,7 @@ from tiaf.a5 import PositionIntelligenceRequest
 from tiaf.baseline import BaselineEngine, DeterministicBaselineRequest
 from tiaf.context import AnalysisPurpose
 from tiaf.contracts import Horizon
-from tiaf.facade import ArtifactKind, create_local_facade
+from tiaf.facade import ArtifactKind, ExpressionAssessInput, create_local_facade
 from tiaf.shell import SessionDefaults, ShellDispatcher, ShellRuntime
 from tiaf.source_semantics import (
     A4SemanticInputProjection,
@@ -70,6 +70,29 @@ def position_defaults() -> SessionDefaults:
         as_of=request.as_of,
         profile_ref=PROFILE,
         authority_ref=AUTHORITY,
+    )
+
+
+def expression_defaults(ref: str = "artifact:a6-available") -> SessionDefaults:
+    capture = ExpressionAssessInput.model_validate_json(artifact_content(ref))
+    return SessionDefaults(
+        subject=capture.request.subject,
+        objective=AnalysisPurpose.OPPORTUNITY,
+        horizon=Horizon(label=capture.request.horizon.horizon_class.value),
+        as_of=capture.request.evaluation_cutoff,
+        profile_ref=PROFILE,
+        authority_ref=AUTHORITY,
+    )
+
+
+def expression_runtime(root: Path, ref: str = "artifact:a6-available") -> ShellRuntime:
+    facade_owner = owner()
+    return ShellRuntime(
+        ShellDispatcher(
+            facade_owner.client("caller:test"),
+            baseline_request_root=root,
+            defaults=expression_defaults(ref),
+        )
     )
 
 

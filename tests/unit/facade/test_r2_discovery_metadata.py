@@ -36,6 +36,7 @@ EXPECTED_IDS = (
     "a4_input.project",
     "baseline.assess",
     "capabilities.list",
+    "expression.assess",
     "opportunity.assemble",
     "position.assess",
     "replay.recorded",
@@ -88,12 +89,13 @@ def test_discovery_descriptors_and_nested_dependencies_are_immutable() -> None:
 def test_roles_effects_and_structural_claims_cover_exact_legacy_catalog() -> None:
     legacy = capability_catalog()
     discovery = capability_discovery_catalog()
-    assert len(legacy) == len(discovery) == 8
+    assert len(legacy) == len(discovery) == 9
     assert {item.capability_id: item.semantic_role.value for item in discovery} == {
         "a4.evaluate": "CHALLENGE_ARBITRATION",
         "a4_input.project": "CHALLENGE_ARBITRATION",
         "baseline.assess": "BASELINE",
         "capabilities.list": "CAPABILITY_DISCOVERY",
+        "expression.assess": "TRADE_EXPRESSION_INTELLIGENCE",
         "opportunity.assemble": "OPPORTUNITY_INTELLIGENCE",
         "position.assess": "POSITION_INTELLIGENCE",
         "replay.recorded": "REPLAY",
@@ -120,6 +122,7 @@ def test_required_and_optional_dependencies_are_explicit_disjoint_and_stable() -
         "a4_input.project": ("contract:tiaf.source-semantics.projection-build-input",),
         "baseline.assess": ("contract:tiaf.baseline.deterministic-baseline-request",),
         "capabilities.list": (),
+        "expression.assess": ("contract:tiaf.facade.expression-assess-input",),
         "opportunity.assemble": ("contract:tiaf.a3-hardening.orchestration-capture",),
         "position.assess": ("contract:tiaf.a5.position-intelligence-request",),
         "replay.recorded": ("contract:tiaf.facade.trusted-replay-artifact",),
@@ -156,6 +159,7 @@ def test_monitoring_compatibility_is_semantic_not_runtime_availability() -> None
         for item in capability_discovery_catalog()
     }
     assert compatibility["position.assess"] is MonitoringCompatibility.MONITORING_FUTURE
+    assert compatibility["expression.assess"] is MonitoringCompatibility.MONITORING_FUTURE
     assert compatibility["baseline.assess"] is MonitoringCompatibility.SEMANTICALLY_REPEATABLE
     assert compatibility["a4.evaluate"] is MonitoringCompatibility.SEMANTICALLY_REPEATABLE
     assert compatibility["capabilities.list"] is MonitoringCompatibility.NOT_MONITORABLE

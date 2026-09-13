@@ -44,6 +44,7 @@ def test_catalog_is_explicit_static_safe_and_contains_only_implemented_operation
         "a4_input.project",
         "baseline.assess",
         "capabilities.list",
+        "expression.assess",
         "opportunity.assemble",
         "position.assess",
         "replay.recorded",

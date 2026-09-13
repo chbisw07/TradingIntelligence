@@ -35,6 +35,7 @@ class OperationKind(StrEnum):
     A4_INPUT_PROJECT = "a4_input.project"
     A4_EVALUATE = "a4.evaluate"
     POSITION_ASSESS = "position.assess"
+    EXPRESSION_ASSESS = "expression.assess"
     REPLAY_RECORDED = "replay.recorded"
     REPLAY_VERIFY = "replay.verify"
 

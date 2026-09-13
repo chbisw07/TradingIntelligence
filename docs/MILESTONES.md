@@ -88,7 +88,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
-  → A6.3 ACTIVE / NEXT → A6.4 NOT_IMPLEMENTED → A7 → A8 → A9 → A10
+  → A6.3 ACCEPTED / DONE → A6.4 ACTIVE / NEXT → A7 → A8 → A9 → A10
 ```
 
 ## Future / parallel workstreams
@@ -97,7 +97,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
 |---|---|---|
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
-| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1–A6.2 ACCEPTED / DONE | A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED; `expression.assess` NOT_PUBLISHED |
+| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1–A6.3 ACCEPTED / DONE | [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md) ACCEPTED / DONE; A6.4 ACTIVE / NEXT; `expression.assess` PUBLISHED |
 | A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
@@ -423,10 +423,9 @@ semantic, monitoring, deferral, live-truth and quality-gate audit.
 
 ## TIAF_A6 — Option Expression Intelligence
 
-**2026-09-13 (Asia/Kolkata): ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION; A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT;
-A6.4 NOT_IMPLEMENTED;
-`expression.assess` NOT_PUBLISHED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
+**2026-09-14 (Asia/Kolkata): ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
+NON-NORMATIVE COMPANION; A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT;
+`expression.assess` PUBLISHED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [reconciliation](TIAF_A6_RECONCILIATION_RECORD.md) and
 [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) preserve A5 and accepted R1–R5.
 
@@ -438,8 +437,8 @@ multi-leg/short-option strategy engine, account sizing or execution authority.
 
 **A6.2 acceptance:** suitable expression/alternatives or explicit no-trade,
 wait, insufficient-evidence or unsupported outcome are deterministic and
-attributable. The internal evaluator is accepted; no facade runtime or public
-capability is claimed. The
+attributable. The internal evaluator is accepted. A6.3 now publishes that
+evaluator through a governed captured-read facade/Shell path. The
 [complete user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx)
 is created; its [fourteen findings are reconciled](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md).
 The [independent architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
@@ -451,7 +450,9 @@ The [A6.2 implementation](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md)
 delivers only the internal deterministic evaluation slice and is closed by its
 [independent acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md).
 
-Next: **TIAF A6.3 — FACADE & TI_SHELL EXPOSURE**.
+The [A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) is closed by
+its [independent acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
+Next: **TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS**.
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
 

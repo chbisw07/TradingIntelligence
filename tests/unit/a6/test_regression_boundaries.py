@@ -3,10 +3,10 @@ from pathlib import Path
 from tiaf.facade import capability_catalog
 
 
-def test_capability_catalog_remains_eight_and_expression_unpublished() -> None:
+def test_a6_3_catalog_contains_ninth_published_expression_capability() -> None:
     capabilities = tuple(item.capability_id for item in capability_catalog())
-    assert len(capabilities) == 8
-    assert "expression.assess" not in capabilities
+    assert len(capabilities) == 9
+    assert "expression.assess" in capabilities
 
 
 def test_trade_expression_boundary_has_no_provider_model_broker_or_specialist_imports() -> None:

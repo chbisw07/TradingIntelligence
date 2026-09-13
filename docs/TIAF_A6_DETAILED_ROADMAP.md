@@ -2,10 +2,9 @@
 
 ## Current gate
 
-2026-09-13 (Asia/Kolkata): **A5 FROZEN; R1–R5 ACCEPTED / DONE;
+2026-09-14 (Asia/Kolkata): **A5 FROZEN; R1–R5 ACCEPTED / DONE;
 A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED;
-`expression.assess` NOT_PUBLISHED.**
+A6.1–A6.3 ACCEPTED / DONE; A6.4 ACTIVE / NEXT; `expression.assess` PUBLISHED.**
 
 The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines
 the proposed policy and boundaries; the [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md)
@@ -16,7 +15,7 @@ implementation. Its first gate is:
 Architecture + thesis reconciliation + acceptance (complete)
   → A6.1 contracts / admission / policy foundation (accepted / done)
   → A6.2 evaluation / ranking / replay (accepted / done)
-  → A6.3 facade / Shell (active / next) → A6.4 (not implemented) → A7 → A8 → A9 → A10
+  → A6.3 facade / Shell (accepted / done) → A6.4 (active / next) → A7 → A8 → A9 → A10
 ```
 
 The [architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
@@ -109,6 +108,10 @@ no public live-acquisition, forecast, broker or Shell authority introduced.
 
 ### A6.3 — Governed facade, COLD composition and bounded TI Shell
 
+Implemented by [TIAF A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) and closed by
+its [independent acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
+The delivered path is captured-read only and leaves A6.4 unchanged.
+
 Publish `expression.assess` only once callable, with a dedicated authority scope,
 logical request artifact, versioned descriptor/schemas, CAPTURED_READ effect,
 zero-external-call cost and explicit boundedness/replay metadata. Reuse existing
@@ -183,4 +186,4 @@ fourteen decisions, deferred TF-05 optimization, empty-scope proof and context-o
 trading-cutoff treatment. A handbook example is not policy authority. Acquisition-
 qualified policies remain unapproved. Do not hide these choices in implementation.
 
-**Next prompt:** `TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION`.
+**Next prompt:** `TIAF A6.4 — FINAL HARDENING, ACCEPTANCE CORPUS & FREEZE READINESS`.

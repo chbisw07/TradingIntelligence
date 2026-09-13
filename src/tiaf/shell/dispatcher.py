@@ -20,6 +20,7 @@ from tiaf.facade import (
     CapabilityDiscoveryDescriptor,
     CapabilityListRequest,
     CapabilityListResult,
+    ExpressionAssessRequest,
     FacadeInvocationError,
     FacadeOperationRequest,
     FacadeStatus,
@@ -97,6 +98,7 @@ baseline assess --request-file RELATIVE_JSON [scope options]
 opportunity assemble --artifact-ref QUALIFIED_ID [scope options]
 a4 project|evaluate --artifact-ref QUALIFIED_ID [scope options]
 position assess --snapshot QUALIFIED_ID [scope options]
+expression assess --input QUALIFIED_ID [scope options]
 replay recorded|verify --artifact-ref QUALIFIED_ID [scope options]
 show last [--json|--reasons|--gaps|--contradictions|--evidence]
 explain last | trace last [--cost|--evidence|--timing] | refresh last
@@ -482,6 +484,12 @@ class ShellDispatcher:
             request = PositionAssessRequest(
                 scope=facade_scope,
                 position_request_ref=plan.artifact_ref,
+            )
+        elif plan.kind is OperationKind.EXPRESSION_ASSESS:
+            assert plan.artifact_ref is not None
+            request = ExpressionAssessRequest(
+                scope=facade_scope,
+                expression_input_ref=plan.artifact_ref,
             )
         elif plan.kind is OperationKind.REPLAY_RECORDED:
             assert plan.artifact_ref is not None

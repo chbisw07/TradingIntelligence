@@ -358,7 +358,7 @@ def test_r2_and_r3_stay_unchanged_and_replay_opens_no_socket(
     assert replay_recorded(capture_json(actual)) == actual
     assert verify_deterministic(capture_json(actual), default_registry()) == actual
     assert capability_discovery_catalog() == before
-    assert len(before) == 8
+    assert len(before) == 9
     assert "startup_fingerprint" not in actual.model_dump(mode="json")
 
 

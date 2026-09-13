@@ -67,6 +67,18 @@ _CATALOG = (
         cost_knowledge=CostKnowledge.KNOWN_ZERO,
     ),
     CapabilityDescriptor(
+        capability_id="expression.assess",
+        interface_level=InterfaceLevel.PUBLIC,
+        request_schema_id="schema:tiaf.facade.expression-assess-request",
+        result_schema_id="schema:tiaf.facade.expression-assess-result",
+        effect=EffectClass.CAPTURED_READ,
+        deterministic=True,
+        model_supported=False,
+        replay_support=ReplaySupport.DETERMINISTIC,
+        required_authority_scope=FacadeAuthorityScope.ASSESS_EXPRESSION,
+        cost_knowledge=CostKnowledge.KNOWN_ZERO,
+    ),
+    CapabilityDescriptor(
         capability_id="opportunity.assemble",
         interface_level=InterfaceLevel.PUBLIC,
         request_schema_id="schema:tiaf.facade.opportunity-assemble-request",
@@ -200,6 +212,23 @@ _DISCOVERY_CATALOG = (
         limitations=(
             "limitation:discovery-does-not-grant-authority",
             "limitation:no-runtime-health-assertion",
+        ),
+    ),
+    _discovery(
+        "expression.assess",
+        semantic_role=CapabilitySemanticRole.TRADE_EXPRESSION_INTELLIGENCE,
+        required_dependencies=(
+            _input_contract("contract:tiaf.facade.expression-assess-input"),
+        ),
+        required_entitlements=(CapabilityEntitlement.CAPTURED_EVIDENCE,),
+        monitoring_compatibility=MonitoringCompatibility.MONITORING_FUTURE,
+        limitations=(
+            "limitation:advisory-only",
+            "limitation:captured-input-only",
+            "limitation:discovery-does-not-grant-authority",
+            "limitation:no-execution-authority",
+            "limitation:no-live-freshness",
+            "limitation:no-monitoring-runtime",
         ),
     ),
     _discovery(

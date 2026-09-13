@@ -22,9 +22,9 @@ closed before A6. This changes project status only, not the ecosystem design.
 [reconciliation architecture draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
 preserves this ownership model and proposes long single-leg CE/PE v1, with no
 SigmaDSL dependency. Status is ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION / A6.1–A6.2 ACCEPTED / DONE / A6.3 ACTIVE / NEXT /
-A6.4 NOT_IMPLEMENTED; `expression.assess` is
-NOT_PUBLISHED. The
+NON-NORMATIVE COMPANION / A6.1–A6.3 ACCEPTED / DONE / A6.4 ACTIVE / NEXT;
+`expression.assess` is
+PUBLISHED as captured-read only. The
 [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 is complete, and the [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1. The subsequent
@@ -32,8 +32,10 @@ records READY_TO_IMPLEMENT_A6_1. The subsequent
 closes the foundation. These navigation updates change no ecosystem ownership
 and publish no capability. The subsequent
 [A6.2 acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md)
-closes the internal evaluator and makes A6.3 active/next without changing those
-boundaries.
+closes the internal evaluator. The subsequent
+[A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) publishes it
+without changing those boundaries and is closed by its
+[acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
 
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
@@ -47,7 +49,7 @@ version `0.1.0` / A0 schema version `1.0`.
 Current public TI operations are local PURE/CAPTURED_READ capabilities. Repeating
 a captured request does not acquire fresh live evidence. A4.2's internal bounded
 acquisition is not a public pre-trade API. Scanner runtime, live TM integration,
-Monitoring Runtime, A6, A7, Sector Rotation, Signal Qualification, remote APIs,
+Monitoring Runtime, A6.4, A7, Sector Rotation, Signal Qualification, remote APIs,
 Sheets connectors and Web Cockpit remain unimplemented by this design. No broker
 order operation may be introduced into TI.
 

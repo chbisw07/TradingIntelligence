@@ -17,6 +17,13 @@ There is no NLP, Interaction Agent, LLM, live acquisition, provider client,
 remote service, durable session, live position lookup, option selection,
 forecasting or broker operation in this slice.
 
+**A6.3 evolution note (2026-09-13):**
+[TIAF A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) additively publishes the
+already accepted deterministic A6.2 assessment through this same parser,
+dispatcher, renderer and caller-bound facade seam. It adds no live option
+lookup or execution behavior; `--input` is a trusted logical captured-artifact
+reference.
+
 ## Placement and call boundary
 
 Post-A5 [R5 COLD startup](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md)
@@ -108,6 +115,7 @@ opportunity assemble --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 a4 project --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 a4 evaluate --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 position assess --snapshot QUALIFIED_ID [SCOPE_OPTIONS]
+expression assess --input QUALIFIED_ID [SCOPE_OPTIONS]
 replay recorded --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 replay verify --artifact-ref QUALIFIED_ID [SCOPE_OPTIONS]
 
@@ -143,6 +151,7 @@ command arguments. It has no evaluation, import, subprocess or shell escape.
 | `a4 project` | `a4_input.project` | authorized logical foundation-input ref |
 | `a4 evaluate` | `a4.evaluate` | authorized logical projection-capture ref |
 | `position assess` | `position.assess` | authorized logical complete A5 position-request ref |
+| `expression assess` | `expression.assess` | authorized logical complete A6 expression-capture ref |
 | `replay recorded` | `replay.recorded` | authorized logical captured-artifact ref |
 | `replay verify` | `replay.verify` | authorized engineering logical-artifact ref |
 

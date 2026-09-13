@@ -4,6 +4,23 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Accepted and closed TIAF A6.3 after independent catalog, discovery, captured
+  facade, authority, Shell parity, rendering, JSON, explain/trace, replay,
+  import-isolation, COLD-ownership and frozen-A5 review. The accepted cleanup
+  only makes policy/version and the two-alternative display bound explicit and
+  corrects two stale test names; canonical A6 evaluation/replay semantics are
+  unchanged. A6.4 is now active/next. No live call, commit, tag or push occurred.
+
+- Implemented TIAF A6.3 governed publication of the accepted A6.2 evaluator.
+  The ninth static facade capability, `expression.assess`, consumes a trusted
+  captured A6 envelope through a logical artifact reference, rechecks authority
+  and exact replay, and returns the full advisory assessment with known-zero
+  provider/model cost. TI Shell adds shared one-shot/REPL
+  `expression assess --input QUALIFIED_ID` plus human, JSON, explain, trace,
+  refresh and recorded-replay views. No live acquisition, execution, A7, HOT
+  mutation, policy retuning, A5 change, commit, tag or push is included; A6.4
+  remains the separate hardening/acceptance/freeze-readiness boundary.
+
 - Accepted and closed TIAF A6.2 after independent universe, gate, disposition,
   ranking, explanation, replay, compatibility and boundary review. A6.3 is now
   active/next while `expression.assess` remains unpublished; no runtime code,
