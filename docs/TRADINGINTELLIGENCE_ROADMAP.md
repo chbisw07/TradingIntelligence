@@ -55,8 +55,10 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → R2 ACCEPTED / DONE
   → R3 ACCEPTED / DONE → R4 ACCEPTED / DONE
   → R5 (ACCEPTED / DONE — BEFORE_A6)
-  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED — RUNTIME NOT_IMPLEMENTED)
-  → A6.1 CONTRACTS / ADMISSION / POLICY ACTIVE / NEXT
+  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED)
+  → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
+  → A6.2 EVALUATION / RANKING / REPLAY ACTIVE / NEXT
+  → A6.3 → A6.4 → A7 → A8 → A9 → A10
 ```
 
 R1 and [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md)
@@ -590,18 +592,21 @@ scheduling promises. A5 presently evaluates supplied signals and emits advice.
 # TIAF_A6 — Option Expression Intelligence
 
 **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1 ACTIVE / NEXT;
-RUNTIME NOT_IMPLEMENTED.** See the
+A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT;
+`expression.assess` NOT_PUBLISHED.** See the
 [reconciled architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [source record](TIAF_A6_RECONCILIATION_RECORD.md) and
 [four-slice roadmap](TIAF_A6_DETAILED_ROADMAP.md). The
 [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
-records READY_TO_IMPLEMENT_A6_1. Architecture is accepted but not frozen.
+records READY_TO_IMPLEMENT_A6_1. The
+[A6.1 implementation](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
+now supplies the contracts/admission/policy foundation without publication and
+is closed by its [acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
 
 The non-normative [thesis and findings record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves the handbook step. The [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 updates normative Markdown, not thesis artifacts or runtime. Next:
-**TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
+**TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
 
 Two delivery tracks under A6/DEF-006: deterministic admissible candidates first;
 forecast-enhanced comparison only after admitted A7 evidence. A5 still precedes

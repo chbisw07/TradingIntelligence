@@ -1,0 +1,106 @@
+"""Closed A6.1 vocabularies; none grant execution authority."""
+
+from enum import StrEnum
+
+
+class ExpressionDirection(StrEnum):
+    BULLISH = "BULLISH"
+    BEARISH = "BEARISH"
+
+
+class ExpressionHorizonClass(StrEnum):
+    DAY = "DAY"
+    POSITIONAL = "POSITIONAL"
+
+
+class EvaluationIntent(StrEnum):
+    CAPTURED = "CAPTURED"
+    REPLAY = "REPLAY"
+
+
+class SubjectClass(StrEnum):
+    EQUITY = "EQUITY"
+    INDEX = "INDEX"
+
+
+class MoneynessLabel(StrEnum):
+    ATM = "ATM"
+    ITM1 = "ITM1"
+    OTM1 = "OTM1"
+
+
+class TimingQualification(StrEnum):
+    QUALIFIED = "QUALIFIED"
+    UNQUALIFIED = "UNQUALIFIED"
+    UNKNOWN = "UNKNOWN"
+
+
+class FreshnessBasis(StrEnum):
+    MARKET_OBSERVATION_TIME = "MARKET_OBSERVATION_TIME"
+    ACQUISITION_TIME_ONLY = "ACQUISITION_TIME_ONLY"
+    UNKNOWN = "UNKNOWN"
+
+
+class ExpirationQualification(StrEnum):
+    QUALIFIED_INSTANT = "QUALIFIED_INSTANT"
+    DATE_ONLY = "DATE_ONLY"
+    UNKNOWN = "UNKNOWN"
+
+
+class CoverageState(StrEnum):
+    PRESENT = "PRESENT"
+    CONFIRMED_EMPTY = "CONFIRMED_EMPTY"
+    PARTIAL = "PARTIAL"
+    UNAVAILABLE = "UNAVAILABLE"
+    UNKNOWN = "UNKNOWN"
+
+
+class EventEvidenceState(StrEnum):
+    KNOWN_BLOCKER = "KNOWN_BLOCKER"
+    QUALIFIED_NO_INTERSECTING_EVENT = "QUALIFIED_NO_INTERSECTING_EVENT"
+    UNKNOWN = "UNKNOWN"
+
+
+class EventMateriality(StrEnum):
+    MATERIAL = "MATERIAL"
+    NOT_MATERIAL = "NOT_MATERIAL"
+    UNKNOWN = "UNKNOWN"
+
+
+class EventRelevance(StrEnum):
+    RELEVANT = "RELEVANT"
+    NOT_RELEVANT = "NOT_RELEVANT"
+    UNKNOWN = "UNKNOWN"
+
+
+class AdmissionOutcome(StrEnum):
+    ADMITTED = "ADMITTED"
+    REJECTED_UPSTREAM = "REJECTED_UPSTREAM"
+    INSUFFICIENT_EVIDENCE = "INSUFFICIENT_EVIDENCE"
+    UNSUPPORTED = "UNSUPPORTED"
+    INVALID_REQUEST = "INVALID_REQUEST"
+
+
+class SpreadEligibility(StrEnum):
+    ELIGIBLE = "ELIGIBLE"
+    INELIGIBLE = "INELIGIBLE"
+    UNKNOWN = "UNKNOWN"
+
+
+class SpreadQualityTier(StrEnum):
+    TIER_0 = "TIER_0"
+    TIER_1 = "TIER_1"
+    NOT_ELIGIBLE = "NOT_ELIGIBLE"
+    UNKNOWN = "UNKNOWN"
+
+
+class A6ErrorCode(StrEnum):
+    INVALID_REQUEST_SCHEMA = "INVALID_REQUEST_SCHEMA"
+    INVALID_HORIZON = "INVALID_HORIZON"
+    UNSUPPORTED_PREFERENCE = "UNSUPPORTED_PREFERENCE"
+    UNKNOWN_POLICY_VERSION = "UNKNOWN_POLICY_VERSION"
+    MALFORMED_QUOTE = "MALFORMED_QUOTE"
+    INVALID_TIMING_RELATION = "INVALID_TIMING_RELATION"
+    INVALID_COVERAGE = "INVALID_COVERAGE"
+    UNSUPPORTED_SUBJECT = "UNSUPPORTED_SUBJECT"
+    INCOMPATIBLE_EVIDENCE_VERSION = "INCOMPATIBLE_EVIDENCE_VERSION"

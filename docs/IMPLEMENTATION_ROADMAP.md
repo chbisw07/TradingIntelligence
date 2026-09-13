@@ -11,8 +11,10 @@ A5: FROZEN (`tiaf-a5-baseline`)
   → R2 (ACCEPTED / DONE)
   → R3 (ACCEPTED / DONE) → R4 (ACCEPTED / DONE)
   → R5 (ACCEPTED / DONE — BEFORE_A6)
-  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED — RUNTIME NOT_IMPLEMENTED)
-  → A6.1 CONTRACTS / ADMISSION / POLICY ACTIVE / NEXT
+  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED)
+  → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
+  → A6.2 EVALUATION / RANKING / REPLAY ACTIVE / NEXT
+  → A6.3 FACADE / SHELL → A6.4 HARDENING → A7 → A8 → A9 → A10
 ```
 
 R1 is ACCEPTED. [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md)
@@ -66,7 +68,7 @@ now completes documentation synchronization. The subsequent
 `READY_TO_TAG_A5`; documentation commit `167c51d` and annotated tag
 `tiaf-a5-baseline` were then pushed. A5 is FROZEN. No
 A5 policy changed. R2–R5 are separately bounded pre-A6 work and are not A5
-freeze requirements. A6 runtime has not begun; this workstream does not renumber
+freeze requirements. A6.2 evaluation runtime has not begun; this workstream does not renumber
 milestones or implement a plugin framework. R4 is now
 [implemented](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md) and
 [accepted](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md);
@@ -76,7 +78,8 @@ The R1–R5 hardening track is closed. The
 [A6 architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
 and [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) are independently
 [accepted](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md);
-A6.1 is active/next and runtime remains NOT_IMPLEMENTED.
+A6.1 is [accepted and done](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
+A6.2 is ACTIVE / NEXT and `expression.assess` remains NOT_PUBLISHED.
 The [thesis creation record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves history; the [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 now updates the normative draft. Thesis artifacts remain unchanged.
@@ -92,14 +95,14 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
-2. Then A6.2 evaluation/ranking/replay; A6.3 facade/Shell;
-   A6.4 hardening/acceptance, as proposed in the [A6 roadmap](TIAF_A6_DETAILED_ROADMAP.md).
+1. **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
+2. Then A6.3 facade/Shell; A6.4 hardening/acceptance; A7; A8; A9; A10,
+   as proposed in the [A6 roadmap](TIAF_A6_DETAILED_ROADMAP.md).
 
 Initial A6 is long single-leg CE/PE only, non-executable, with explicit absence.
 SigmaDSL is not an A6 dependency. The current gate is
-READY_TO_IMPLEMENT_A6_1, not permission to implement A6.2, publish the capability
-or freeze its engineering policy.
+A6.1 acceptance activates only the bounded A6.2 slice; it is not permission to
+publish the capability or freeze A6 as a whole.
 
 R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
 additive composition/pinned verification, optional import isolation and trusted

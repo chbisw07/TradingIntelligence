@@ -4,8 +4,8 @@
 
 2026-09-13 (Asia/Kolkata): **A5 FROZEN; R1–R5 ACCEPTED / DONE;
 A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1 ACTIVE / NEXT;
-A6 RUNTIME NOT_IMPLEMENTED.**
+A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT;
+`expression.assess` NOT_PUBLISHED.**
 
 The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines
 the proposed policy and boundaries; the [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md)
@@ -14,7 +14,9 @@ implementation. Its first gate is:
 
 ```text
 Architecture + thesis reconciliation + acceptance (complete)
-  → A6.1 contracts / admission / policy foundation (next)
+  → A6.1 contracts / admission / policy foundation (accepted / done)
+  → A6.2 evaluation / ranking / replay (active / next)
+  → A6.3 facade / Shell → A6.4 hardening → A7 → A8 → A9 → A10
 ```
 
 The [architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
@@ -33,8 +35,9 @@ a usable deterministic core. Acceptance is demonstrated behavior, not scaffoldin
 
 ### A6.1 — Contracts, admission and deterministic policy foundation
 
-Deliver additive immutable request/intent, admitted-input capture, candidate,
-gate, assessment and run/policy contracts. Implement strict upstream admission,
+Deliver additive immutable request/intent, admitted-input capture, timing,
+identity, evidence, coverage, event, spread-foundation and policy contracts.
+Implement strict upstream admission,
 closed A2-direction mapping, Horizon resolution validation, schema/units/time
 rules, fixed engineering-policy identity and separate operational failures.
 Define canonical identity/fingerprint projections without a self-hash cycle.
@@ -65,7 +68,9 @@ Acceptance evidence:
   unavailable/partial data, nonempty duplicate-free preferences, unsupported
   cheapest/longest ranking, and one-preferred/two-alternative schema limits.
 
-Exit: review/accept contracts and admission; not a claim of complete selection.
+Implemented by [TIAF A6.1](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
+and closed by its [independent acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
+Exit achieved: contracts and admission accepted; this is not a claim of complete selection.
 
 ### A6.2 — Bounded evaluation, ranking, explanations and replay
 

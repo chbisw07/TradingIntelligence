@@ -28,7 +28,11 @@ Status checked **2026-09-13 (Asia/Kolkata)**. The
 | R3 | ACCEPTED / DONE | Immutable per-run composition envelope and exact pinned verifier | Preserve capture/verifier baseline |
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
-| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED | Runtime NOT_IMPLEMENTED; deterministic advisory single-leg CE/PE design | A6.1 contracts/admission/policy |
+| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1 ACCEPTED / DONE | Contracts/admission/policy only; `expression.assess` NOT_PUBLISHED | A6.2 active / next |
+| A7 | PLANNED / NOT_IMPLEMENTED | Forecasting, evaluation and learning | After A6 |
+| A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
+| A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |
+| A10 | PLANNED / NOT_IMPLEMENTED | Production hardening + Monitoring Runtime operationalization | After A9 |
 
 FROZEN means an existing accepted tag; ACCEPTED means reviewed bounded scope;
 DONE means its bounded remediation is closed. READY_FOR_ACCEPTANCE means the
@@ -38,7 +42,7 @@ work, TBD unresolved placement/design, and NOT_IMPLEMENTED absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
-**R1–R5 ACCEPTED / DONE; A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION; A6.1 ACTIVE / NEXT; runtime NOT_IMPLEMENTED.** The bounded
+**R1–R5 ACCEPTED / DONE; A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION; A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT; `expression.assess` NOT_PUBLISHED.** The bounded
 [R2 implementation](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) and
 [acceptance](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
 complete. R2 adds typed, permission-filtered declarations without granting
@@ -70,7 +74,13 @@ The [thesis record](docs/TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves the creation checkpoint. The [fourteen-finding reconciliation](docs/TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 adopts clarifications, defers the coverage relaxation and retains the versioned
 numeric defaults. The [independent acceptance](docs/TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
-records READY_TO_IMPLEMENT_A6_1. No runtime or capability is implemented.
+records READY_TO_IMPLEMENT_A6_1. The subsequent
+[A6.1 foundation](docs/TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
+implements only immutable contracts, captured-evidence qualification, pinned
+policy, deterministic A4 admission and replay-safe fingerprints. It publishes no
+capability and performs no candidate selection. Its
+[independent acceptance](docs/TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md)
+closes A6.1 without expanding the eight-operation catalog.
 
 ### Current Active Path
 
@@ -81,15 +91,21 @@ R2 ── ACCEPTED / DONE
   ↓
 R3 ── ACCEPTED / DONE → R4 ── ACCEPTED / DONE → R5 ── ACCEPTED / DONE
   ↓
-A6 ── ARCHITECTURE ACCEPTED / THESIS ACCEPTED — RUNTIME NOT_IMPLEMENTED
+A6 ── ARCHITECTURE ACCEPTED / THESIS ACCEPTED
   ↓
-A6.1 CONTRACTS / ADMISSION / POLICY — ACTIVE / NEXT
+A6.1 CONTRACTS / ADMISSION / POLICY — ACCEPTED / DONE
+  ↓
+A6.2 EVALUATION / RANKING / REPLAY — ACTIVE / NEXT
+  ↓
+A6.3 FACADE / SHELL → A6.4 HARDENING → A7 → A8 → A9 → A10
 ```
+
+Forward sequence: `A6.1 → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10`.
 
 ## NEXT STEPS
 
-1. **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
-2. Preserve the four bounded slices in the [A6 roadmap](docs/TIAF_A6_DETAILED_ROADMAP.md); do not publish `expression.assess` before A6.3.
+1. **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
+2. Preserve the remaining bounded slices in the [A6 roadmap](docs/TIAF_A6_DETAILED_ROADMAP.md); do not publish `expression.assess` before A6.3.
 
 ## Parallel / Future Workstreams
 

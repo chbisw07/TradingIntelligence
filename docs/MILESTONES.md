@@ -85,8 +85,10 @@ duplicate DEF IDs. HOT and future peer publication remain DEF-057/058.
 ```text
 A5 FROZEN (`tiaf-a5-baseline`)
   → R2 ACCEPTED → R3 ACCEPTED → R4 ACCEPTED → R5 ACCEPTED
-  → A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED (RUNTIME NOT_IMPLEMENTED)
-  → A6.1 CONTRACTS / ADMISSION / POLICY ACTIVE / NEXT
+  → A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED
+  → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
+  → A6.2 EVALUATION / RANKING / REPLAY ACTIVE / NEXT
+  → A6.3 → A6.4 → A7 → A8 → A9 → A10
 ```
 
 ## Future / parallel workstreams
@@ -95,7 +97,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
 |---|---|---|
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
-| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; RUNTIME NOT_IMPLEMENTED | A6.1 contracts/admission/policy active/next |
+| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1 ACCEPTED / DONE | A6.2 ACTIVE / NEXT; `expression.assess` NOT_PUBLISHED |
 | A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
@@ -422,8 +424,8 @@ semantic, monitoring, deferral, live-truth and quality-gate audit.
 ## TIAF_A6 — Option Expression Intelligence
 
 **2026-09-13 (Asia/Kolkata): ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION; A6.1 ACTIVE / NEXT;
-RUNTIME NOT_IMPLEMENTED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
+NON-NORMATIVE COMPANION; A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT;
+`expression.assess` NOT_PUBLISHED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [reconciliation](TIAF_A6_RECONCILIATION_RECORD.md) and
 [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) preserve A5 and accepted R1–R5.
 
@@ -438,12 +440,13 @@ wait, insufficient-evidence or unsupported outcome, with attributable reasons.
 No runtime acceptance is claimed now. The
 [complete user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx)
 is created; its [fourteen findings are reconciled](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md).
-The [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
-records READY_TO_IMPLEMENT_A6_1. Four bounded
+The [independent architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
+records READY_TO_IMPLEMENT_A6_1. The [A6.1 implementation](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
+is closed by its [independent acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md). Four bounded
 slices are contracts/admission; evaluation/ranking/replay; facade/Shell; and
 hardening/acceptance. No tag is created by this architecture pass.
 
-Next: **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
+Next: **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
 

@@ -91,13 +91,15 @@ is not a public endpoint. Future `sector.rotation`, `signal.qualify` and
 monitoring, TM/scanner runtime and remote transport are not callable capabilities.
 
 A6 is **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1 ACTIVE / NEXT;
-RUNTIME NOT_IMPLEMENTED**. The
+A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT;
+`expression.assess` NOT_PUBLISHED**. The
 [A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) recommends the
 future `expression.assess` capability: advisory, captured-input, deterministic
 long single-leg CE/PE assessment. It is not a ninth registered operation today.
-The [independent acceptance is complete](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md),
-but A6.1 must not register the operation; facade/Shell publication remains A6.3.
+The [independent architecture acceptance is complete](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md).
+The [A6.1 implementation](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
+and [acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md)
+add no operation; facade/Shell publication remains A6.3.
 
 ## Data and evidence
 

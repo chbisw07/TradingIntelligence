@@ -21,14 +21,17 @@ remaining high-priority deferrals. See
 ## Accepted foundation
 
 Current gate (2026-09-13, Asia/Kolkata): A5 FROZEN at `tiaf-a5-baseline`;
-R1–R5 are ACCEPTED / DONE; A6 architecture and non-normative thesis are ACCEPTED,
-A6.1 is ACTIVE / NEXT and runtime remains NOT_IMPLEMENTED.
+R1–R5 are ACCEPTED / DONE; A6 architecture and non-normative thesis are ACCEPTED;
+A6.1 is ACCEPTED / DONE, A6.2 is ACTIVE / NEXT and
+`expression.assess` is NOT_PUBLISHED.
 
 ```text
 A5 FROZEN → R2 ACCEPTED
   → R3 ACCEPTED → R4 ACCEPTED → R5 ACCEPTED / DONE
-  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED — RUNTIME NOT_IMPLEMENTED)
-  → A6.1 CONTRACTS / ADMISSION / POLICY ACTIVE / NEXT
+  → A6 (ARCHITECTURE ACCEPTED / THESIS ACCEPTED)
+  → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
+  → A6.2 EVALUATION / RANKING / REPLAY ACTIVE / NEXT
+  → A6.3 → A6.4 → A7 → A8 → A9 → A10
 ```
 
 R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
@@ -650,8 +653,8 @@ milestones are renumbered or runtime deferrals closed.
 
 ### Current forward sequence and adjacent TBDs
 
-A5 is FROZEN and R1–R5 are closed. A6 architecture/thesis are accepted; current
-queue is A6.1 contracts/admission/policy, then remaining deterministic A6 slices;
+A5 is FROZEN and R1–R5 are closed. A6 architecture/thesis and A6.1 are accepted;
+A6.2 is active/next, followed by the remaining deterministic A6 slices;
 then A7 forecasting/evaluation and an optional
 A7-informed A6 follow-up; A8 TM, A9 scanner intake and A10 monitoring/runtime
 production hardening. Sector Rotation is a future dedicated review/workstream
@@ -659,7 +662,7 @@ whose precise A7/A8 placement remains TBD. Signal Qualification is intended afte
 Sector Rotation review unless explicitly reordered. No future capability is
 registered merely because its name appears in a design or descriptor example.
 
-### A6 — architecture/thesis accepted, A6.1 active/next
+### A6 — architecture/thesis and A6.1 accepted; A6.2 active/next
 
 The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) and
 [reconciliation matrix/source record](TIAF_A6_RECONCILIATION_RECORD.md) distinguish
@@ -669,9 +672,11 @@ strike/expiry scope, exact horizon fit, qualified timing/liquidity, transparent
 ranking, explicit absence and offline replay. Acquisition-only quote time and
 date-only expiry cannot silently satisfy the proposed strict timing policy.
 
-The [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) proposes four slices after
-A6.1 contracts/admission;
-A6.2 evaluation/ranking/replay; A6.3 COLD facade/Shell publication; A6.4 hardening
+The [A6.1 foundation](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
+implements immutable contracts, qualification, pinned policy and deterministic
+A4 admission and is [accepted](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
+The [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) retains A6.2
+evaluation/ranking/replay; A6.3 COLD facade/Shell publication; A6.4 hardening
 and acceptance. No runtime, ninth public capability, new R-series item or tag is
 delivered here. SigmaDSL, multi-leg/short strategies and A7 are not prerequisites.
 TM retains authority/risk/capital/quantity/execution; A5 refresh stays advisory.
@@ -680,5 +685,5 @@ The [thesis record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 links the DOCX/PDF, sources, document validation and fourteen classified findings.
 The [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1 after the fourteen-finding reconciliation.
-Next: **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**. No runtime or
-thesis artifact is delivered by the acceptance pass.
+Next: **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
+A6.2/runtime publication and thesis-artifact changes are not delivered here.

@@ -3,8 +3,8 @@
 ## Status and authority
 
 2026-09-13, Asia/Kolkata. **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION / A6.1 ACTIVE / NEXT. A6 runtime:
-NOT_IMPLEMENTED. A5: FROZEN. R1–R5: ACCEPTED / DONE.**
+NON-NORMATIVE COMPANION / A6.1 ACCEPTED / DONE / A6.2 ACTIVE / NEXT.
+`expression.assess`: NOT_PUBLISHED. A5: FROZEN. R1–R5: ACCEPTED / DONE.**
 
 This is a reconciled design proposal, not an implementation acceptance or a
 published capability. Inherited system boundaries remain authoritative; the
@@ -16,7 +16,7 @@ non-normative thesis and all fourteen findings have been reconciled in the
 Accepted does not mean implemented or frozen. The gated sequence is now:
 
 ```text
-architecture accepted → A6.1 contracts/admission/policy foundation
+A6.1 accepted → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10
 ```
 
 See the [source/reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) and
@@ -103,6 +103,12 @@ Source IDs refer to the [inspected-source inventory](TIAF_A6_RECONCILIATION_RECO
 | Replay / provenance | ALREADY_DECIDED | S09/S11: exact capture, pinned verification | Compatible | Captured-only replay and explicit version-unavailable refusal | A6 / replay | Yes |
 
 ## 3. Bounded v1 and explicit exclusions
+
+Implementation cross-reference: the bounded contracts/admission/policy subset is
+now implemented by [TIAF A6.1](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
+and closed by its [independent acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
+Candidate evaluation/ranking remains A6.2; `expression.assess` remains
+unpublished until A6.3.
 
 The proposed v1 supports one underlying, one admitted directional thesis and
 one requested horizon per run. It evaluates **buy-to-open analytical long CE or
@@ -719,6 +725,7 @@ treatment; event uncertainty and interaction boundaries. A6.1 must specify/test
 qualified timing and absence-proof contracts before A6.2 candidate evaluation.
 Actual live source availability remains unproven, not an implied capability.
 
-**Decision: READY_TO_IMPLEMENT_A6_1.** Architecture is accepted, not frozen;
-runtime remains NOT_IMPLEMENTED. The thesis is accepted as its non-normative
-companion. Next: **TIAF A6.1 — CONTRACTS, ADMISSION & POLICY FOUNDATION**.
+The architecture-pass decision was **READY_TO_IMPLEMENT_A6_1**. A6.1 is now
+[accepted](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md), A6
+as a whole is not frozen, and the thesis remains its non-normative companion.
+Next: **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.

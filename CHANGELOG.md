@@ -4,6 +4,22 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Accepted and closed TIAF A6.1 after independent contract, admission, replay,
+  compatibility and deferral review. The closure makes A6.2 active/next while
+  keeping `expression.assess` unpublished. It also makes admitted IV units and
+  provenance explicit, preserves A4-first admission precedence, and prevents
+  qualified confirmed-empty event coverage from being mislabeled unknown.
+
+- Implemented TIAF A6.1 contracts, admission and policy foundation under
+  `tiaf.trade_expression`: immutable exact-horizon request contracts, distinct
+  market/acquisition/expiry timing authority, provider-neutral option identity,
+  Decimal quote/chain evidence, explicit coverage and event-absence proof,
+  pinned deterministic policy, A4 COMPLETE/SUPPORTIVE admission, exact spread
+  and listed-strike geometry primitives, content-addressed results and offline
+  admission replay. Candidate ranking/selection, `expression.assess`, Shell,
+  live acquisition, TM/broker authority and A7 remain unimplemented. R1–R5,
+  the eight-operation capability catalog and frozen A5 semantics are unchanged.
+
 - Implemented bounded R5 COLD ownership/configuration: one trusted bootstrap
   owner, explicit config-over-default precedence, registered ID/version selection,
   typed required/optional import resolution, immutable secret-free startup identity
