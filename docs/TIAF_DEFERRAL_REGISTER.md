@@ -444,6 +444,12 @@ accepted. It does not create or close a DEF ID.
 R3–R5 retain their audit identities and pre-A6 disposition; DEF-057/058 remain
 unchanged.
 
+Post-A5 R3 update (2026-09-13): the bounded
+[R3 Composition Envelope / Pinned Verifier](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md)
+is [accepted](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md).
+It adds no DEF ID and does not change DEF-057 HOT-composition or DEF-058 future
+peer-publication status. R4 is ACTIVE / NEXT and R5 remains pending before A6.
+
 DEF-058 retains future peer-ID/projection/publication work (R6) until an approved
 new contributor needs it. Existing shared-cache/hosting obligations (R7) remain
 within DEF-009/011 and related deployment work. No existing status changes;

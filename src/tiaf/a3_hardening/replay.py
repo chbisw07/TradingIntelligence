@@ -16,7 +16,7 @@ from tiaf.service.opportunity_intelligence import (
     replay_intelligence,
     verify_intelligence,
 )
-from tiaf.workflows import default_registry
+from tiaf.workflows import PinnedVerificationError, default_registry
 from tiaf.workflows.replay import replay_recorded, verify_deterministic
 
 from .contracts import (
@@ -153,6 +153,15 @@ def verify_a3_package(
                     recorded_fingerprint=a38.fingerprint,
                     verified_fingerprint=verified38.fingerprint,
                     match=verified38.fingerprint == a38.fingerprint,
+                )
+            )
+        except PinnedVerificationError as exc:
+            components.append(
+                VerificationComponent(
+                    component="A3_8_ORCHESTRATION_SPECIALISTS",
+                    disposition=VerificationDisposition.UNVERIFIABLE,
+                    recorded_fingerprint=a38.fingerprint,
+                    reason=f"PINNED_COMPOSITION:{exc.failure.value}",
                 )
             )
         except ValueError as exc:

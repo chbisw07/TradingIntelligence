@@ -1,7 +1,7 @@
 """Portable captures: no workflow framework or provider required to deserialize."""
 
 import json
-from typing import Any, Self
+from typing import Any, Literal, Self
 
 from pydantic import model_validator
 
@@ -22,10 +22,12 @@ from tiaf.planner.models import (
 )
 from tiaf.planner.projection import SpecialistOutputProjection
 
+from .composition import CompositionEnvelope, build_orchestration_composition
 from .ledger import add_usage, reserved_usage
 
 
 class OrchestrationRunRecord(ContractModel):
+    schema_version: Literal["1.0", "1.1"] = "1.1"
     request: OrchestrationRequest
     plans: tuple[AnalysisPlan, ...]
     inventories: tuple[EvidenceInventory, ...]
@@ -38,10 +40,14 @@ class OrchestrationRunRecord(ContractModel):
     started_at: TiafDateTime
     completed_at: TiafDateTime
     runtime_adapter: str
+    composition: CompositionEnvelope | None = None
     fingerprint: Sha256
 
     def semantic_payload(self) -> Any:
-        data = self.model_dump(mode="json", exclude={"fingerprint"})
+        excluded = {"fingerprint"}
+        if self.schema_version == "1.0":
+            excluded.add("composition")
+        data = self.model_dump(mode="json", exclude=excluded)
         for plan in data["plans"]:
             if plan["policy_version"] == "1.0":
                 for skipped in plan["skipped"]:
@@ -61,6 +67,8 @@ class OrchestrationRunRecord(ContractModel):
 
     @model_validator(mode="after")
     def validate_record(self) -> Self:
+        if (self.schema_version == "1.1") != (self.composition is not None):
+            raise ValueError("orchestration schema 1.1 requires exactly one R3 composition")
         if digest(self.semantic_payload()) != self.fingerprint:
             raise ValueError("orchestration semantic fingerprint mismatch")
         if not self.plans or not self.inventories:
@@ -130,6 +138,36 @@ class OrchestrationRunRecord(ContractModel):
             raise ValueError("decision audit sequence mismatch")
         if self.completed_at < self.started_at:
             raise ValueError("invalid run time interval")
+        if self.composition is not None:
+            if (
+                self.composition.policy_version != self.plans[0].policy_version
+                or self.composition.planner_version != self.plans[0].planner_version
+            ):
+                raise ValueError("composition policy mismatch")
+            expected = build_orchestration_composition(
+                self.request,
+                self.plans,
+                self.attempts,
+                self.result,
+                parent_composition_fingerprint=(
+                    self.composition.parent_composition_fingerprint
+                ),
+                baseline_composition_fingerprint=(
+                    self.composition.baseline_composition_fingerprint
+                ),
+            )
+            if any(
+                actual.output_ref != pinned.output_ref
+                or actual.output_fingerprint != pinned.output_fingerprint
+                for actual, pinned in zip(
+                    expected.participants,
+                    self.composition.participants,
+                    strict=True,
+                )
+            ):
+                raise ValueError("composition output fingerprint mismatch")
+            if expected != self.composition:
+                raise ValueError("captured composition contradicts orchestration record")
         return self
 
     @classmethod

@@ -15,6 +15,16 @@ or intelligence-policy change. It does not perform the A3 deferral burn-down,
 closure, commit, tag, or push. Post-A3 system/Shell/source-fabric/monitoring/
 forecasting documents remain deferred and were not reopened.
 
+**Post-A5 R3 compatibility note (2026-09-13):** new A3.8 orchestration schema
+`1.1` records carry the immutable per-run
+[R3 composition envelope](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md).
+Recorded A3.10 replay remains registry-free. Deterministic verification now
+reduces any supplied resolver to the exact captured specialist/dependency set,
+requires exact versions, ignores later registry expansion, and fails closed with
+typed pinned-composition reasons. Legacy orchestration schema `1.0` packages
+retain the original compatible-registry verification path. The A3.10 package
+schema and A3.9/A4/A5 domain semantics are unchanged.
+
 ## 1. Purpose and ownership
 
 A3.10 proves that accepted A3 intelligence is reproducible, comparable with the

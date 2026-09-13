@@ -74,7 +74,10 @@ def validate_handoff(request: OpportunityIntelligenceRequest) -> OrchestrationRu
         if request.capture_checksum != capture["checksum"]:
             raise ValueError("request/capture checksum mismatch")
         record = replay_recorded(request.capture_json)
-        if record.schema_version != "1.0" or record.result.schema_version != "1.0":
+        if (
+            record.schema_version not in {"1.0", "1.1"}
+            or record.result.schema_version != "1.0"
+        ):
             raise ValueError("unsupported orchestration schema")
         subject = record.request.subject
         instrument = (

@@ -25,8 +25,8 @@ Status checked **2026-09-13 (Asia/Kolkata)**. The
 | A5 | FROZEN | Single-position Position Intelligence frozen at `tiaf-a5-baseline` | Preserve baseline |
 | R1 | ACCEPTED / DONE | Required scope and explicit absence fixed | Preserve old/new replay |
 | R2 | ACCEPTED / DONE | Typed discovery metadata; cross-cutting hardening, not A5.x | Preserve discovery baseline |
-| R3 | ACTIVE / NEXT | Composition envelope / pinned verifier | Implement and accept before A6 |
-| R4 | PENDING — BEFORE_A6 | Optional adapter import isolation | After R3 |
+| R3 | ACCEPTED / DONE | Immutable per-run composition envelope and exact pinned verifier | Preserve capture/verifier baseline |
+| R4 | ACTIVE / NEXT | Optional adapter import isolation | Implement and accept before A6 |
 | R5 | PENDING — BEFORE_A6 | Trusted COLD ownership / configuration | After R4 |
 | A6 | NOT_IMPLEMENTED | Deterministic option expression; not started | After R2–R5 acceptance |
 
@@ -38,11 +38,16 @@ work, TBD unresolved placement/design, and NOT_IMPLEMENTED absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
-**ACTIVE / NEXT: R3 — Composition Envelope / Pinned Verifier.** The bounded
+**ACTIVE / NEXT: R4 — Optional Adapter Import Isolation.** The bounded
 [R2 implementation](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) and
 [acceptance](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
 complete. R2 adds typed, permission-filtered declarations without granting
-authority or claiming live readiness. R3 has not started in this pass.
+authority or claiming live readiness. The
+[R3 implementation](docs/TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md)
+and [acceptance](docs/TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md)
+are complete. R3 records exact run participation and makes deterministic
+verification resolve only pinned compatible implementations. Recorded replay
+remains registry-free. R4 has not started in this pass.
 
 ### Current Active Path
 
@@ -51,17 +56,16 @@ A5 ── FROZEN (`tiaf-a5-baseline`)
   ↓
 R2 ── ACCEPTED / DONE
   ↓
-R3 ── ACTIVE / NEXT → R4 ── PENDING → R5 ── PENDING
+R3 ── ACCEPTED / DONE → R4 ── ACTIVE / NEXT → R5 ── PENDING
   ↓
 A6 ── NOT_IMPLEMENTED
 ```
 
 ## NEXT STEPS
 
-1. R3 — Composition Envelope / Pinned Verifier.
-2. R4 — Optional Adapter Import Isolation.
-3. R5 — COLD Ownership / Configuration.
-4. A6 — architecture, then deterministic supported single-leg CE/PE expression.
+1. R4 — Optional Adapter Import Isolation.
+2. R5 — COLD Ownership / Configuration.
+3. A6 — architecture, then deterministic supported single-leg CE/PE expression.
 
 ## Parallel / Future Workstreams
 

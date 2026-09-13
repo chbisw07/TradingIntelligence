@@ -55,6 +55,7 @@ from tiaf.planner.policy import (
 )
 from tiaf.planner.projection import SpecialistOutputProjection, project_opinion
 
+from .composition import build_orchestration_composition
 from .ledger import ReservationLedger, add_usage, reserved_usage
 from .records import OrchestrationRunRecord
 from .services import ControlledServices, normalized_references
@@ -904,19 +905,32 @@ class OrchestrationCoordinator:
                 ]
             ),
         )
+        fields = {
+            "request": self.request,
+            "plans": tuple(self.plans),
+            "inventories": tuple(self.inventories),
+            "decisions": tuple(self.decisions),
+            "attempts": tuple(self.attempts),
+            "projections": tuple(self.projections),
+            "reservations": self.ledger.entries(),
+            "artifacts": tuple(self.artifacts),
+            "result": result,
+            "started_at": self.started_at,
+            "completed_at": self.wall_clock(),
+            "runtime_adapter": adapter,
+        }
+        if self.plans[0].policy_version == "1.0":
+            return OrchestrationRunRecord.seal(schema_version="1.0", **fields)
+        composition = build_orchestration_composition(
+            self.request,
+            tuple(self.plans),
+            tuple(self.attempts),
+            result,
+        )
         return OrchestrationRunRecord.seal(
-            request=self.request,
-            plans=tuple(self.plans),
-            inventories=tuple(self.inventories),
-            decisions=tuple(self.decisions),
-            attempts=tuple(self.attempts),
-            projections=tuple(self.projections),
-            reservations=self.ledger.entries(),
-            artifacts=tuple(self.artifacts),
-            result=result,
-            started_at=self.started_at,
-            completed_at=self.wall_clock(),
-            runtime_adapter=adapter,
+            schema_version="1.1",
+            composition=composition,
+            **fields,
         )
 
 

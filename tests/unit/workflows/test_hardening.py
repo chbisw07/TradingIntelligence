@@ -43,9 +43,13 @@ from tiaf.planner.digests import digest
 from tiaf.planner.models import NodeStatus, StopReason
 from tiaf.planner.projection import project_opinion
 from tiaf.workflows import (
+    CompositionParticipantStatus,
+    CompositionUsageKnowledge,
     ControlledServices,
     EvidenceRevision,
     OrchestrationCoordinator,
+    PinnedVerificationError,
+    PinnedVerificationFailure,
     capture_json,
     default_registry,
     replay_recorded,
@@ -337,6 +341,13 @@ def test_timeout_is_partial_and_keeps_unreported_reservation(
     assert record.result.status == "PARTIAL"
     assert any(r.state == "UNKNOWN" for r in record.reservations)
     assert any(a.status is NodeStatus.TIMED_OUT for a in record.attempts)
+    assert record.composition is not None
+    unresolved = next(
+        item
+        for item in record.composition.participants
+        if item.status is CompositionParticipantStatus.FAILED and item.usage is None
+    )
+    assert unresolved.usage_knowledge is CompositionUsageKnowledge.UNKNOWN
     sleep(0.1)  # Settle fixture threads, not a claim that arbitrary Python was cancelled.
 
 
@@ -558,8 +569,9 @@ def test_duplicate_semantic_acquisition_ids_share_one_call() -> None:
 
 def test_deterministic_replay_rejects_changed_registry() -> None:
     record = run_serial(request(), default_registry())
-    with pytest.raises(ValueError, match="planner/dependency version"):
+    with pytest.raises(PinnedVerificationError) as exc:
         verify_deterministic(capture_json(record), AgentRegistry((OpportunityRiskSpecialist(),)))
+    assert exc.value.failure is PinnedVerificationFailure.REQUIRED_PARTICIPANT_UNRESOLVED
 
 
 @pytest.mark.parametrize(

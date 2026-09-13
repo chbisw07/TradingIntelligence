@@ -35,8 +35,10 @@ an A1–A5 compliance classification. The [completed audit](TIAF_PLUGGABILITY_A1
 provides the evidence-backed 43-row classification. The bounded
 [R1 correction](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md) now
 implements stable required scope and explicit absence. Descriptor/readiness,
-manifest/pinning, adapter import isolation and COLD ownership remain unimplemented
-pre-A6 improvements. HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
+R2 discovery metadata and the R3 per-run composition envelope/pinned verifier are
+implemented; adapter import isolation and COLD ownership remain unimplemented
+pre-A6 improvements. R3 adds no public operation to the eight-operation catalog.
+HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
 `signal.qualify` and `forecast.return` discovery examples are not implemented
 public capabilities. Their typed publication/projection readiness is DEF-058.
 The [R1 acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
@@ -48,7 +50,12 @@ FROZEN; [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) is
 [ACCEPTED / DONE](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md). The
 [milestone ledger](MILESTONES.md)
 owns current project status. R2 now adds typed, non-binding discovery metadata
-without changing facade operation IDs or invocation behavior. The detailed
+without changing facade operation IDs or invocation behavior. The
+[R3 implementation](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md)
+adds versioned run participation to A3.8 captures and exact pinned deterministic
+verification without granting authority or adding LIVE_READ; its
+[acceptance](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md)
+is complete. R4 is ACTIVE / NEXT and adds no capability until implemented. The detailed
 [A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
 link implementation, acceptance and outstanding boundaries.
 

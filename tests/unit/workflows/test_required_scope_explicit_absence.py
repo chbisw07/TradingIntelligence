@@ -198,8 +198,8 @@ def test_new_capture_replay_is_offline_and_scope_is_registry_independent() -> No
 
     assert replay_recorded(content) == record
     assert verify_deterministic(content, reduced) == record
-    with pytest.raises(ValueError, match="planner/dependency version"):
-        verify_deterministic(content, default_registry())
+    # A later resolver expansion is ignored because it was absent from this run.
+    assert verify_deterministic(content, default_registry()) == record
     assert _coverage(replay_recorded(content)).denominator == 8
 
 
@@ -225,6 +225,8 @@ def test_legacy_policy_capture_remains_readable_and_verifiable(
 
     monkeypatch.setattr(coordinator_module, "build_plan", legacy_plan)
     legacy = run_serial(request(), reduced)
+    assert legacy.schema_version == "1.0"
+    assert legacy.composition is None
     assert legacy.plans[0].schema_version == "1.0"
     assert legacy.plans[0].planner_version == "1.0"
     assert legacy.plans[0].policy_version == "1.0"

@@ -10,12 +10,15 @@ and [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 are complete. Required scope/explicit absence is implemented. The bounded
 [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) implementation
 and [acceptance](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
-complete; R3 is ACTIVE / NEXT and R4–R5 remain pending pre-A6. None is an A5
+complete. The bounded
+[R3 Composition Envelope / Pinned Verifier](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md)
+is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md);
+R4 is ACTIVE / NEXT and R5 remains pending pre-A6. None is an A5
 freeze blocker. The
 [documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
 and final A5 readiness are complete. A5 is FROZEN at `tiaf-a5-baseline`; R2 is
 ACCEPTED / DONE. Sections 16–18 retain the original audit brief/delivery decision,
-not an instruction to rerun completed R1 or R2.
+not an instruction to rerun completed R1/R2 or undo the R3 implementation.
 [Monitoring architecture](TIAF_MONITORING_ARCHITECTURE.md) applies these future
 composition constraints without implementing a scheduler, new registry or HOT.
 
@@ -29,10 +32,10 @@ This document governs future composition under the
 [system architecture](TIAF_SYSTEM_ARCHITECTURE.md) and
 [deployment architecture](TIAF_DEPLOYMENT_ARCHITECTURE.md). It promotes selected
 ideas from the [pluggability idea cache](TBD_TI_PLUGGABILITY_ARCHITECTURE.md).
-It does not implement descriptors, availability resolution, a new manifest,
-discovery APIs or plugin loading; nor does it certify current A1–A5 compliance.
-Existing contracts, capture formats, policies and runtime behavior remain binding.
-Any implementation change requires a separately approved, versioned transition.
+This architecture document itself did not implement descriptors, availability
+resolution, a manifest, discovery APIs or plugin loading. Subsequent bounded R1,
+R2 and R3 passes implemented the linked portions under separately versioned
+contracts. R4/R5, generic plugin loading and HOT composition remain absent.
 
 ## 1. First-order invariant
 
@@ -298,6 +301,15 @@ this lineage; observational differences alone prove no causal economic benefit.
 
 ## 9. Composition manifest and fingerprints
 
+R3 now implements the minimum per-run subset of this target as an immutable
+`CompositionEnvelope` attached to new A3.8 orchestration schema `1.1` captures.
+It pins policy/planner identity, R1 required/optional scope, exact specialist and
+dependency versions, run participation, input/output identities, usage knowledge,
+and optional parent/baseline lineage. See the
+[R3 implementation record](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md).
+The broader availability-transition/configuration-generation manifest described
+below remains architecture for later bounded work; R3 does not claim R4/R5/HOT.
+
 Design a versioned immutable semantic manifest as an additive parent of existing
 captures, not a rewrite of A1–A5 child records. This is not a storage/transport
 selection. Capture the relevant dependency closure, not an unrestricted machine
@@ -321,14 +333,15 @@ by permitted fallback retains both attempts. Every selected capability has a
 terminal disposition or explicit incomplete/unknown outcome. Skipped records
 explain cost, deadline, sufficiency, non-applicability or policy denial.
 
-Define two distinct hashes: the **composition fingerprint** binds the resolved
-descriptor/dependency/policy set, request-specific requirements and selection
-policy before dispatch; the **run semantic fingerprint** additionally binds the
-admitted input/baseline, availability affecting execution, actual participation,
-failures, outputs, provenance and meaningful usage/stop decisions. Same
-composition can produce different runs. Unknown cost/status remains semantic
-unknown, not zero. This distinction prevents a failed and successful run from
-being mislabeled equivalent merely because they share installed components.
+R3 defines the **composition fingerprint** as the exact per-run policy, scope,
+version and actual participation identity, including input/output identities and
+failure/non-participation status. The **run semantic fingerprint** additionally
+binds the full orchestration record and domain content. If later R5 work needs a
+pre-dispatch installed/binding-generation identity, it must use a separately
+named and versioned fingerprint rather than weakening or overloading the R3
+composition fingerprint. Unknown cost/status remains unknown, not zero. This
+prevents a failed and successful run from being mislabeled equivalent merely
+because they share installed components.
 
 Canonicalization must sort true sets by stable identity, retain meaningful
 policy/attempt order, normalize typed values and hash transitively referenced
@@ -563,8 +576,9 @@ proved necessary by that audit; P3 is regression/composition/replay acceptance
 of those changes, if any. Revisit A5 freeze readiness explicitly after the audit
 and any required remediation. This is a cross-cutting workstream, not A5.x or A6.
 
-Deferred: concrete descriptor/manifest schemas and migration/code changes until
-audit; HOT engineering until demonstrated need (DEF-057); production model
+Subsequent bounded work delivered the R2 descriptor and R3 composition-envelope
+schemas after the audit. Still deferred/pending: HOT engineering until
+demonstrated need (DEF-057); R4/R5 import/configuration ownership; production model
 integration (DEF-052); remote discovery/transport (DEF-003); monetary pricing
 (DEF-055); distributed persistence/monitoring under existing deferrals. Sector
 Rotation and Signal Qualification require separate architecture and acceptance.

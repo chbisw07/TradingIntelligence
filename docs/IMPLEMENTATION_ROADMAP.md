@@ -9,7 +9,7 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 ```text
 A5: FROZEN (`tiaf-a5-baseline`)
   → R2 (ACCEPTED / DONE)
-  → R3 (ACTIVE / NEXT) → R4 → R5 (PENDING — BEFORE_A6)
+  → R3 (ACCEPTED / DONE) → R4 (ACTIVE / NEXT) → R5 (PENDING — BEFORE_A6)
   → A6 (NOT_IMPLEMENTED)
 ```
 
@@ -78,10 +78,9 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. ACTIVE / NEXT: R3 additive composition envelope and pinned verifier binding resolution.
-2. R4 optional adapter import isolation.
-3. R5 trusted COLD ownership/configuration.
-4. A6 architecture/implementation: deterministic valid expressions first.
+1. ACTIVE / NEXT: R4 optional adapter import isolation.
+2. R5 trusted COLD ownership/configuration.
+3. A6 architecture/implementation: deterministic valid expressions first.
 
 R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
 additive composition/pinned verification, optional import isolation and trusted
