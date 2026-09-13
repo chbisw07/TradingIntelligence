@@ -36,10 +36,13 @@ generations, quiescence, state ownership and rollback proof. HOT is deferred
 local deployment and replay guarantees are unchanged. The
 [compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) and
 [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) are
-complete; R2, R3 and R4 are accepted while R5 is active/next, not presumed
-compliant from this design. See the
-[current roadmap](IMPLEMENTATION_ROADMAP.md) for the post-documentation freeze
-check and subsequent work; no remote/live hosting is accepted by consolidation.
+complete; R2, R3 and R4 are accepted. The bounded
+[R5 implementation](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md), now
+[accepted](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md),
+owns explicit startup selection, deterministic configuration precedence and
+binding freeze above the local facade. The R1–R5 hardening track is closed. See the
+[current roadmap](IMPLEMENTATION_ROADMAP.md) for subsequent work; no remote/live
+hosting is accepted by consolidation.
 
 **One trusted Python application runtime, direct typed capabilities, isolated
 invocations and filesystem replay. Split processes only for demonstrated needs.**

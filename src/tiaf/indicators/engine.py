@@ -32,7 +32,7 @@ class IndicatorEngine:
     """Calculate registered indicators uniformly from one immutable context."""
 
     def __init__(self, registry: IndicatorRegistry) -> None:
-        self._registry = registry
+        self._registry = registry.frozen_copy()
 
     def definitions(self) -> tuple[IndicatorDefinition, ...]:
         """Return stable discoverable definitions."""

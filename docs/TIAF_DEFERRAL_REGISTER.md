@@ -461,6 +461,19 @@ Post-A5 R4 acceptance update (2026-09-13): the bounded implementation is
 R4 is ACCEPTED / DONE and R5 is ACTIVE / NEXT. This closure changes no DEF ID,
 status, capability placement or HOT policy; DEF-057/058 remain unchanged.
 
+Post-A5 R5 implementation update (2026-09-13):
+[COLD Ownership / Configuration](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md)
+is IMPLEMENTED / READY_FOR_ACCEPTANCE. It delivers trusted explicit startup
+selection, immutable startup identity and binding freeze under the existing R5
+audit item. No DEF ID or status changes; HOT (DEF-057), future peer publication
+(DEF-058), live sharing (DEF-009/011) and production models (DEF-052) remain gated.
+
+Post-A5 R5 acceptance update (2026-09-13): the bounded implementation is
+[accepted](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md).
+R5 is ACCEPTED / DONE and the R1–R5 pre-A6 hardening track is closed. This
+closure changes no DEF ID or status; DEF-057/058 and all live/remote/model
+boundaries above remain unchanged.
+
 DEF-058 retains future peer-ID/projection/publication work (R6) until an approved
 new contributor needs it. Existing shared-cache/hosting obligations (R7) remain
 within DEF-009/011 and related deployment work. No existing status changes;

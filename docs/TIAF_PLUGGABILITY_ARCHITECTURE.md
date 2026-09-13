@@ -15,7 +15,9 @@ complete. The bounded
 is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md).
 [R4 Optional Adapter Import Isolation](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md)
 is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md);
-R5 is active/next pre-A6. None is an A5
+[R5 COLD Ownership / Configuration](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md)
+is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md)
+pre-A6. None is an A5
 freeze blocker. The
 [documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
 and final A5 readiness are complete. A5 is FROZEN at `tiaf-a5-baseline`; R2 is
@@ -38,8 +40,8 @@ This architecture document itself did not implement descriptors, availability
 resolution, a manifest, discovery APIs or plugin loading. Subsequent bounded R1,
 R2 and R3 passes implemented the linked portions under separately versioned
 contracts. R4 now isolates optional adapter imports and package extras without
-selecting them. R5 trusted COLD ownership, generic plugin loading and HOT
-composition remain absent.
+selecting them. R5 now implements trusted startup selection, binding freeze and
+separate startup identity. Generic plugin loading and HOT composition remain absent.
 
 ## 1. First-order invariant
 
@@ -340,10 +342,9 @@ explain cost, deadline, sufficiency, non-applicability or policy denial.
 R3 defines the **composition fingerprint** as the exact per-run policy, scope,
 version and actual participation identity, including input/output identities and
 failure/non-participation status. The **run semantic fingerprint** additionally
-binds the full orchestration record and domain content. If later R5 work needs a
-pre-dispatch installed/binding-generation identity, it must use a separately
-named and versioned fingerprint rather than weakening or overloading the R3
-composition fingerprint. Unknown cost/status remains unknown, not zero. This
+binds the full orchestration record and domain content. R5 uses separately named
+and versioned `configuration_fingerprint` and `startup_fingerprint` identities,
+preserving the R3 per-run composition fingerprint. Unknown cost/status remains unknown, not zero. This
 prevents a failed and successful run from being mislabeled equivalent merely
 because they share installed components.
 
@@ -581,9 +582,9 @@ of those changes, if any. Revisit A5 freeze readiness explicitly after the audit
 and any required remediation. This is a cross-cutting workstream, not A5.x or A6.
 
 Subsequent bounded work delivered the R2 descriptor, R3 composition-envelope
-and R4 import-isolation slices after the audit. R4 is accepted/done. Still
-deferred/pending: HOT engineering until demonstrated need (DEF-057); active/next
-R5 configuration ownership; production model
+and R4 import-isolation slices after the audit. R4 and R5 trusted startup
+ownership are accepted/done, closing the R1–R5 track. Still deferred/pending:
+HOT engineering until demonstrated need (DEF-057); production model
 integration (DEF-052); remote discovery/transport (DEF-003); monetary pricing
 (DEF-055); distributed persistence/monitoring under existing deferrals. Sector
 Rotation and Signal Qualification require separate architecture and acceptance.

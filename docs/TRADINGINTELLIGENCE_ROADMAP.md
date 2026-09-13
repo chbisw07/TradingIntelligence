@@ -54,15 +54,17 @@ architecture, not delivered runtime.
 A5 FROZEN (`tiaf-a5-baseline`)
   → R2 ACCEPTED / DONE
   → R3 ACCEPTED / DONE → R4 ACCEPTED / DONE
-  → R5 (ACTIVE / NEXT — BEFORE_A6)
-  → A6 architecture / deterministic expression (NOT_IMPLEMENTED)
+  → R5 (ACCEPTED / DONE — BEFORE_A6)
+  → A6 architecture / deterministic expression (ACTIVE / NEXT — NOT_IMPLEMENTED)
 ```
 
 R1 and [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md)
 are ACCEPTED. [R3](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md)
 is [accepted](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md).
-R4 is [implemented and ready for acceptance](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md);
-R5 is pending/next. R1–R5 are the
+R4 is [accepted](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md);
+R5 is [implemented](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md) and
+[accepted](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md).
+R1–R5 are the
 **cross-cutting pluggability remediation / hardening track**, not Position
 Intelligence submilestones. R2–R5 do not block
 A5 freeze; their scope is indexed in the [ledger](MILESTONES.md) and the
@@ -537,7 +539,7 @@ explicit absence plus legacy replay. The
 returns `READY_TO_CLOSE_PLUGGABILITY_R1` and
 `A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`. The later final readiness check
 returned `READY_TO_TAG_A5`, and `tiaf-a5-baseline` now freezes the accepted A5
-scope. R2, R3 and R4 are ACCEPTED / DONE; R5 is active/next pre-A6. They were
+scope. R2, R3, R4 and R5 are ACCEPTED / DONE. They were
 not A5 freeze requirements. A6 remains unstarted and the
 major order is unchanged.
 

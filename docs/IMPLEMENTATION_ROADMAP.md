@@ -10,8 +10,8 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 A5: FROZEN (`tiaf-a5-baseline`)
   → R2 (ACCEPTED / DONE)
   → R3 (ACCEPTED / DONE) → R4 (ACCEPTED / DONE)
-  → R5 (ACTIVE / NEXT — BEFORE_A6)
-  → A6 (NOT_IMPLEMENTED)
+  → R5 (ACCEPTED / DONE — BEFORE_A6)
+  → A6 (ACTIVE / NEXT — NOT_IMPLEMENTED)
 ```
 
 R1 is ACCEPTED. [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md)
@@ -69,7 +69,9 @@ freeze requirements. A6 has not begun; this workstream does not renumber
 milestones or implement a plugin framework. R4 is now
 [implemented](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md) and
 [accepted](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md);
-R5 is active/next but remains unimplemented.
+R5 is [implemented](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md) and
+[accepted](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md).
+The R1–R5 hardening track is closed; A6 remains unimplemented until its architecture pass.
 
 The post-R1 [Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) reconciles
 future subscriber-driven mandates without changing accepted A5 intent or
@@ -82,8 +84,8 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. ACTIVE / NEXT: R5 trusted COLD ownership/configuration.
-2. A6 architecture/implementation: deterministic valid expressions first.
+1. A6 Trade Expression Intelligence architecture pass.
+2. A6 bounded implementation: deterministic valid expressions first.
 
 R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
 additive composition/pinned verification, optional import isolation and trusted

@@ -49,7 +49,7 @@ Historical descriptions below retain milestone-local live/offline qualifications
 This is a **cross-cutting pluggability remediation / hardening track** across
 A1–A5, never A5.3/A5.4. The audit's SHOULD_FIX_BEFORE_A6 classification is the
 current BEFORE_A6 queue, not a new A5 freeze requirement. R2–R5 do not block A5
-freeze; R2, R3 and R4 are accepted, and R5 is active/next.
+freeze; R2, R3, R4 and R5 are accepted/done. The pre-A6 R-series is closed.
 
 | Item | Purpose | Status | Blocks A5 freeze? | Required before A6? | Key doc |
 |---|---|---|---|---|---|
@@ -57,7 +57,7 @@ freeze; R2, R3 and R4 are accepted, and R5 is active/next.
 | R2 | Versioned discovery / dependency metadata | ACCEPTED / DONE | No | Yes — satisfied | [Acceptance](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) |
 | R3 | Additive composition envelope / pinned verifier | ACCEPTED / DONE | No | Yes — satisfied | [Implementation](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER.md), [acceptance](TIAF_PLUGGABILITY_R3_COMPOSITION_ENVELOPE_PINNED_VERIFIER_ACCEPTANCE.md) |
 | R4 | Optional adapter import isolation | ACCEPTED / DONE — BEFORE_A6 | No | Yes — satisfied | [Implementation](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md), [acceptance](TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md) |
-| R5 | Trusted COLD ownership / configuration | ACTIVE / NEXT — BEFORE_A6 | No | Yes | [Audit R5](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
+| R5 | Trusted COLD ownership / configuration | ACCEPTED / DONE — BEFORE_A6 | No | Yes — satisfied | [Implementation](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md), [acceptance](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md) |
 
 R2–R5 retain their audit identities; the
 [deferral register](TIAF_DEFERRAL_REGISTER.md) cross-references them without
@@ -79,11 +79,12 @@ duplicate DEF IDs. HOT and future peer publication remain DEF-057/058.
 8. R3 Composition Envelope / Pinned Verifier is accepted and
    `READY_TO_CLOSE_PLUGGABILITY_R3`.
 9. R4 Optional Adapter Import Isolation is accepted and
-   `READY_TO_CLOSE_PLUGGABILITY_R4`; R5 is active/next before A6.
+   `READY_TO_CLOSE_PLUGGABILITY_R4`.
+10. R5 COLD Ownership / Configuration is accepted/done; the R1–R5 track is closed.
 
 ```text
 A5 FROZEN (`tiaf-a5-baseline`)
-  → R2 ACCEPTED → R3 ACCEPTED → R4 ACCEPTED → R5 ACTIVE / NEXT → A6 NOT_IMPLEMENTED
+  → R2 ACCEPTED → R3 ACCEPTED → R4 ACCEPTED → R5 ACCEPTED → A6 ACTIVE / NEXT (NOT_IMPLEMENTED)
 ```
 
 ## Future / parallel workstreams
@@ -92,7 +93,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
 |---|---|---|
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
-| A6 | NOT_IMPLEMENTED / not started | After A5 tag and R2–R5 |
+| A6 | ACTIVE / NEXT; NOT_IMPLEMENTED / not started | Architecture pass after closed R1–R5 |
 | A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |

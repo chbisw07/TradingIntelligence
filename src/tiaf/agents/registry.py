@@ -1,5 +1,7 @@
 """Caller-populated registry for independently extensible specialists."""
 
+from tiaf.cold_bindings import FrozenBindingsError
+
 from .enums import SpecialistId
 from .errors import AgentNotRegisteredError, AgentOutputValidationError
 from .models import SpecialistCapability
@@ -10,12 +12,15 @@ class AgentRegistry:
     """Register and discover specialists without central runtime branching."""
 
     def __init__(self, specialists: tuple[SpecialistAgent, ...] = ()) -> None:
+        self._frozen = False
         self._specialists: dict[SpecialistId, SpecialistAgent] = {}
         for specialist in specialists:
             self.register(specialist)
 
     def register(self, specialist: SpecialistAgent) -> None:
         """Register one protocol-conforming specialist and reject duplicates."""
+        if self._frozen:
+            raise FrozenBindingsError()
         if not isinstance(specialist, SpecialistAgent):
             raise AgentOutputValidationError(
                 "specialist does not satisfy SpecialistAgent protocol"
@@ -36,6 +41,13 @@ class AgentRegistry:
                 f"duplicate specialist ID: {specialist_id.value}"
             )
         self._specialists[specialist_id] = specialist
+
+    def frozen_copy(self) -> "AgentRegistry":
+        """Pin membership without freezing or retaining the caller's binding map."""
+        snapshot = AgentRegistry()
+        snapshot._specialists = self._specialists.copy()
+        snapshot._frozen = True
+        return snapshot
 
     def get(self, specialist_id: SpecialistId) -> SpecialistAgent:
         """Return one specialist or raise a typed lookup error."""

@@ -27,8 +27,8 @@ Status checked **2026-09-13 (Asia/Kolkata)**. The
 | R2 | ACCEPTED / DONE | Typed discovery metadata; cross-cutting hardening, not A5.x | Preserve discovery baseline |
 | R3 | ACCEPTED / DONE | Immutable per-run composition envelope and exact pinned verifier | Preserve capture/verifier baseline |
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
-| R5 | ACTIVE / NEXT — BEFORE_A6 | Trusted COLD ownership / configuration | Implement bounded R5 |
-| A6 | NOT_IMPLEMENTED | Deterministic option expression; not started | After R2–R5 acceptance |
+| R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
+| A6 | ACTIVE / NEXT — NOT_IMPLEMENTED | Deterministic option expression; not started | Architecture pass |
 
 FROZEN means an existing accepted tag; ACCEPTED means reviewed bounded scope;
 DONE means its bounded remediation is closed. READY_FOR_ACCEPTANCE means the
@@ -38,7 +38,7 @@ work, TBD unresolved placement/design, and NOT_IMPLEMENTED absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
-**R4 ACCEPTED / DONE; R5 ACTIVE / NEXT.** The bounded
+**R1–R5 ACCEPTED / DONE; A6 ACTIVE / NEXT and NOT_IMPLEMENTED.** The bounded
 [R2 implementation](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) and
 [acceptance](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
 complete. R2 adds typed, permission-filtered declarations without granting
@@ -51,8 +51,12 @@ remains registry-free. The
 [R4 implementation](docs/TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION.md)
 and [acceptance](docs/TIAF_PLUGGABILITY_R4_OPTIONAL_ADAPTER_IMPORT_ISOLATION_ACCEPTANCE.md)
 place optional provider/workflow imports behind explicit selection and move
-integration SDKs into named extras. R5 is now the active/next bounded work; its
-implementation has not started.
+integration SDKs into named extras. The
+[R5 implementation](docs/TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md)
+adds one trusted startup owner, explicit configuration precedence, secret-free
+startup identity and frozen binding snapshots. The independent
+[R5 acceptance](docs/TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md)
+closes the cross-cutting pre-A6 hardening track without adding HOT behavior.
 
 ### Current Active Path
 
@@ -61,15 +65,15 @@ A5 ── FROZEN (`tiaf-a5-baseline`)
   ↓
 R2 ── ACCEPTED / DONE
   ↓
-R3 ── ACCEPTED / DONE → R4 ── ACCEPTED / DONE → R5 ── ACTIVE / NEXT
+R3 ── ACCEPTED / DONE → R4 ── ACCEPTED / DONE → R5 ── ACCEPTED / DONE
   ↓
-A6 ── NOT_IMPLEMENTED
+A6 ── ACTIVE / NEXT — NOT_IMPLEMENTED
 ```
 
 ## NEXT STEPS
 
-1. R5 — COLD Ownership / Configuration implementation.
-2. A6 — architecture, then deterministic supported single-leg CE/PE expression.
+1. A6 — Trade Expression Intelligence architecture pass.
+2. A6 — bounded deterministic supported single-leg CE/PE implementation after architecture acceptance.
 
 ## Parallel / Future Workstreams
 

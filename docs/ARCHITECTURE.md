@@ -40,8 +40,10 @@ Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
 
 A1–A5 are FROZEN; A5 is tagged at `tiaf-a5-baseline`. R1 is ACCEPTED / DONE.
 R2 Discovery Metadata and R3 Composition/Pinned Verification are ACCEPTED / DONE.
-R4 Optional Adapter Import Isolation is ACCEPTED / DONE; R5 is active/next
-pre-A6 work, not A5 scope. Monitoring is authoritative
+R4 Optional Adapter Import Isolation is ACCEPTED / DONE;
+[R5 COLD Ownership / Configuration](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md)
+is [ACCEPTED / DONE](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION_ACCEPTANCE.md),
+closing the R1–R5 pre-A6 track. Monitoring is authoritative
 future architecture, not runtime. Sector Rotation, Signal Qualification, A6/A7,
 TM/scanner runtime integration and remote transport remain unimplemented.
 
@@ -53,9 +55,9 @@ non-normative human-readable companions.
 ## Implementation-layer overview
 
 The authoritative [TI Pluggability Architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md)
-now governs cross-cutting composition and replay invariants. It is architecture
-only; the separate A1–A5 audit and bounded R1 acceptance are complete. Their
-findings do not imply that R2–R5 or all target composition guarantees exist.
+now governs cross-cutting composition and replay invariants. The architecture
+itself remains a design record; the separate A1–A5 audit and bounded R1–R5
+implementation/acceptance passes establish the delivered guarantees they tested.
 
 The authoritative top-level boundary is now
 [TIAF_SYSTEM_ARCHITECTURE.md](TIAF_SYSTEM_ARCHITECTURE.md): logical TI_CORE,

@@ -7,7 +7,8 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
-from tiaf.facade import TrustedFacadeConfig, create_local_facade
+from tiaf.bootstrap import ColdStartupConfig, StartupError, create_cold_runtime
+from tiaf.facade import TrustedFacadeConfig
 
 from .commands import HelpCommand, ShellOutputMode
 from .dispatcher import HELP_TEXT, ShellDispatcher
@@ -30,6 +31,7 @@ class ShellBootstrapConfig(BaseModel):
     baseline_request_root: str
     defaults: SessionDefaults = Field(default_factory=SessionDefaults)
     history_limit: int = Field(default=32, ge=1, le=64)
+    cold_startup: ColdStartupConfig = Field(default_factory=ColdStartupConfig)
 
 
 def load_bootstrap(path: Path) -> ShellBootstrapConfig:
@@ -109,7 +111,7 @@ def main(argv: list[str] | None = None) -> int:
                 "--config is required for REPL or capability execution",
             )
         bootstrap = load_bootstrap(config_path)
-        owner = create_local_facade(bootstrap.facade)
+        owner = create_cold_runtime(bootstrap.facade, explicit=bootstrap.cold_startup)
         try:
             root = Path(bootstrap.baseline_request_root)
             if not root.is_absolute():
@@ -136,6 +138,11 @@ def main(argv: list[str] | None = None) -> int:
             return result.exit_code
         finally:
             owner.shutdown()
+    except StartupError as exc:
+        failure = shell_error(ShellErrorCode.INPUT_SAFETY_ERROR, str(exc))
+        json_mode = "--output" in args and "json" in args
+        _write(sys.stdout if json_mode else sys.stderr, render_error(failure, json_mode=json_mode))
+        return failure.exit_code
     except ShellError as exc:
         json_mode = "--output" in args and "json" in args
         rendered = render_error(exc, json_mode=json_mode)

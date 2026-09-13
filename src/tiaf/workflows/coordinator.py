@@ -75,8 +75,8 @@ class OrchestrationCoordinator:
         elapsed_clock: Callable[[], float] = monotonic,
         wall_clock: Callable[[], datetime] = lambda: datetime.now(TIAF_TIMEZONE),
     ) -> None:
-        self.registry = registry
-        self.services = services or ControlledServices()
+        self.registry = registry.frozen_copy()
+        self.services = (services or ControlledServices()).frozen_copy()
         self.parallel = parallel
         self.elapsed_clock = elapsed_clock
         self.wall_clock = wall_clock

@@ -2,6 +2,7 @@
 
 from typing import Protocol, runtime_checkable
 
+from tiaf.cold_bindings import FrozenBindingsError
 from tiaf.context import AnalysisContext
 from tiaf.indicators.errors import IndicatorDefinitionError, IndicatorNotRegisteredError
 from tiaf.indicators.models import IndicatorDefinition, IndicatorRequest, IndicatorResult
@@ -33,6 +34,7 @@ class IndicatorRegistry:
         *,
         version: str = "1.0",
     ) -> None:
+        self._frozen = False
         if not version.strip():
             raise IndicatorDefinitionError("registry version must be non-empty")
         self._version = version.strip()
@@ -47,6 +49,8 @@ class IndicatorRegistry:
 
     def register(self, calculator: IndicatorCalculator) -> None:
         """Register one calculator and reject duplicate IDs."""
+        if self._frozen:
+            raise FrozenBindingsError()
         if not isinstance(calculator, IndicatorCalculator):
             raise IndicatorDefinitionError(
                 "calculator does not satisfy IndicatorCalculator"
@@ -57,6 +61,12 @@ class IndicatorRegistry:
                 f"duplicate indicator ID: {definition.indicator_id}"
             )
         self._calculators[definition.indicator_id] = calculator
+
+    def frozen_copy(self) -> "IndicatorRegistry":
+        snapshot = IndicatorRegistry(version=self._version)
+        snapshot._calculators = self._calculators.copy()
+        snapshot._frozen = True
+        return snapshot
 
     def get_calculator(self, indicator_id: str) -> IndicatorCalculator:
         """Return one calculator or raise a typed lookup error."""

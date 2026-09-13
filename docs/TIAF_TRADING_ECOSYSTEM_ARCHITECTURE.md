@@ -15,9 +15,8 @@ TM responsibilities here are integration requirements, not a certification of a
 TM repository or broker implementation inspected in this pass.
 
 **Post-tag update (2026-09-13, Asia/Kolkata):** A5 is now FROZEN at
-`tiaf-a5-baseline`. R2, R3 and R4 are ACCEPTED / DONE; R5 is active/next before
-A6. This changes project
-status only, not the ecosystem design.
+`tiaf-a5-baseline`. R2, R3, R4 and R5 are ACCEPTED / DONE; the R-series is
+closed before A6. This changes project status only, not the ecosystem design.
 
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)

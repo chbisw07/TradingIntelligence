@@ -2,6 +2,7 @@
 
 from typing import Protocol, runtime_checkable
 
+from tiaf.cold_bindings import FrozenBindingsError
 from tiaf.context import AnalysisContext
 from tiaf.features.errors import FeatureDefinitionError, FeatureNotRegisteredError
 from tiaf.features.models import FeatureDefinition, FeatureRequest, FeatureResult
@@ -28,12 +29,15 @@ class FeatureRegistry:
     """Caller-populated calculator registry with deterministic snapshots."""
 
     def __init__(self, calculators: tuple[FeatureCalculator, ...] = ()) -> None:
+        self._frozen = False
         self._calculators: dict[str, FeatureCalculator] = {}
         for calculator in calculators:
             self.register(calculator)
 
     def register(self, calculator: FeatureCalculator) -> None:
         """Register one calculator and reject duplicate feature IDs."""
+        if self._frozen:
+            raise FrozenBindingsError()
         if not isinstance(calculator, FeatureCalculator):
             raise FeatureDefinitionError("calculator does not satisfy FeatureCalculator")
         definition = calculator.definition()
@@ -41,6 +45,12 @@ class FeatureRegistry:
         if feature_id in self._calculators:
             raise FeatureDefinitionError(f"duplicate feature ID: {feature_id}")
         self._calculators[feature_id] = calculator
+
+    def frozen_copy(self) -> "FeatureRegistry":
+        snapshot = FeatureRegistry()
+        snapshot._calculators = self._calculators.copy()
+        snapshot._frozen = True
+        return snapshot
 
     def get_calculator(self, feature_id: str) -> FeatureCalculator:
         """Return a calculator or raise a typed registry error."""

@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Implemented bounded R5 COLD ownership/configuration: one trusted bootstrap
+  owner, explicit config-over-default precedence, registered ID/version selection,
+  typed required/optional import resolution, immutable secret-free startup identity
+  and offline metadata replay. Shell bootstrap uses the owner; registry/service
+  bindings are pinned at construction/admission. R1–R4, public catalog, A2/A4/A5
+  semantics and existing replay identities are preserved. Independent acceptance
+  closes R5 and the R1–R5 pre-A6 hardening track; HOT remains unimplemented.
+
 - Implemented TIAF Pluggability R4 optional adapter import isolation. Dhan,
   official HTTP, Yahoo/Tapetide MCP and LangGraph implementations now load only
   after explicit selection; missing SDKs fail through a scoped typed error while

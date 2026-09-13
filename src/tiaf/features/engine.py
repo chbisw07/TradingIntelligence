@@ -64,7 +64,7 @@ class DeterministicFeatureEngine:
     """Compute ordered features from one immutable AnalysisContext only."""
 
     def __init__(self, registry: FeatureRegistry) -> None:
-        self._registry = registry
+        self._registry = registry.frozen_copy()
 
     def definitions(self) -> tuple[FeatureDefinition, ...]:
         """Return the registry's deterministic immutable definition snapshot."""

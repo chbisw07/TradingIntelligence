@@ -1,12 +1,15 @@
 """Controlled composition of existing MI/confirmation/research seams; no transports."""
 
 from concurrent.futures import Future
+from copy import copy
 from threading import RLock
+from typing import Any
 
 from pydantic import Field
 
 from tiaf.agents import AgentBudget, AgentEvidenceReference, AgentRunRecord
 from tiaf.agents.evidence import EvidenceFact, EvidenceFactKind, EvidenceFactParameter
+from tiaf.cold_bindings import FrozenBindingsError
 from tiaf.context import EvidenceStatus
 from tiaf.contracts import ContractModel, DataQuality, EvidenceSource, EvidenceType, FreshnessState
 from tiaf.market_intelligence import (
@@ -49,6 +52,17 @@ class EvidenceRevision(ContractModel):
 
 class ControlledServices:
     """Caller-configured capabilities; cache futures also deduplicate in-flight work."""
+
+    def __setattr__(self, name: str, value: Any) -> None:
+        if getattr(self, "_configuration_frozen", False):
+            raise FrozenBindingsError()
+        object.__setattr__(self, name, value)
+
+    def frozen_copy(self) -> "ControlledServices":
+        """Pin service references at admission, preserving existing cache/lock ownership."""
+        snapshot = copy(self)
+        object.__setattr__(snapshot, "_configuration_frozen", True)
+        return snapshot
 
     def __init__(
         self,

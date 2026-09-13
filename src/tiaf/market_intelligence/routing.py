@@ -40,7 +40,7 @@ from .registry import MarketIntelligenceRegistry
 
 class MarketIntelligenceRouter:
     def __init__(self, registry: MarketIntelligenceRegistry) -> None:
-        self._registry = registry
+        self._registry = registry.frozen_copy()
 
     def execute(
         self,

@@ -19,6 +19,15 @@ forecasting or broker operation in this slice.
 
 ## Placement and call boundary
 
+Post-A5 [R5 COLD startup](TIAF_PLUGGABILITY_R5_COLD_OWNERSHIP_CONFIGURATION.md)
+adds an optional `cold_startup` object to the existing trusted `--config` file.
+Old files use the defaults. Bootstrap now constructs a `ColdRuntimeOwner`, then
+passes only its caller-bound facade client to the Shell. Explicit trusted fields
+override code defaults centrally; environment variables and Shell commands cannot
+select implementations. The trusted Python owner can inspect/serialize its
+immutable `composition`; no grammar or public operation was added. Typed startup
+failures are rendered safely before capability execution.
+
 The package is `tiaf.shell`, with both entry points sharing one parser,
 dispatcher and renderer:
 
