@@ -37,6 +37,32 @@ def test_capability_discovery_and_describe_use_filtered_facade_result(
     assert described.exit_code == 0
     assert "a4.evaluate" in described.stdout
     assert "CAPTURED_READ" in described.stdout
+    assert "CHALLENGE_ARBITRATION" in described.stdout
+    assert "STRUCTURAL" in described.stdout
+    assert "DISCOVERABLE" in described.stdout
+    assert "REQUIRES_RUNTIME_CHECK" in described.stdout
+
+
+def test_capability_describe_json_exposes_r2_metadata_without_binding_or_secret(
+    tmp_path: Path,
+) -> None:
+    result = runtime(tmp_path).execute_tokens(
+        ["--output", "json", "capabilities", "describe", "position.assess"]
+    )
+    assert result.exit_code == 0
+    payload = json.loads(result.stdout)["selected_descriptor"]
+    assert payload["descriptor_schema_version"] == "1.0"
+    assert payload["descriptor_id"] == "descriptor:position.assess/1.0"
+    assert payload["semantic_role"] == "POSITION_INTELLIGENCE"
+    assert payload["effect"] == "CAPTURED_READ"
+    assert payload["pluggability_level"] == "STRUCTURAL"
+    assert payload["monitoring_compatibility"] == "MONITORING_FUTURE"
+    assert payload["readiness_state"] == "REQUIRES_RUNTIME_CHECK"
+    assert payload["discovery_state"] == "DISCOVERABLE"
+    assert payload["required_entitlements"] == ["POSITION_DATA"]
+    assert "callable" not in payload
+    assert "binding" not in payload
+    assert "token" not in json.dumps(payload).casefold()
 
 
 def test_describe_cannot_reveal_filtered_engineering_capability(tmp_path: Path) -> None:

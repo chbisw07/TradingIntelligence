@@ -8,12 +8,15 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 
 ```text
 A5: FROZEN (`tiaf-a5-baseline`)
-  → R2 (ACTIVE / NEXT) → R3 → R4 → R5 (PENDING — BEFORE_A6)
+  → R2 (ACCEPTED / DONE)
+  → R3 (ACTIVE / NEXT) → R4 → R5 (PENDING — BEFORE_A6)
   → A6 (NOT_IMPLEMENTED)
 ```
 
-R1 is ACCEPTED. R1–R5 form the **cross-cutting pluggability remediation /
-hardening track**, not A5.x. R2–R5 do not block A5 freeze. See the
+R1 is ACCEPTED. [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md)
+is [accepted](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md). R1–R5 form the
+**cross-cutting pluggability remediation / hardening track**, not A5.x. R2–R5
+do not block A5 freeze. See the
 [R-series ledger](MILESTONES.md#cross-cutting-pluggability-remediation-track-r1r5)
 for scope and evidence. This queue is intended execution order, not a claim of
 new technical dependencies between all R items.
@@ -75,11 +78,10 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. ACTIVE / NEXT: R2 discovery/dependency metadata.
-2. R3 additive composition envelope and pinned verifier binding resolution.
-3. R4 optional adapter import isolation.
-4. R5 trusted COLD ownership/configuration.
-5. A6 architecture/implementation: deterministic valid expressions first.
+1. ACTIVE / NEXT: R3 additive composition envelope and pinned verifier binding resolution.
+2. R4 optional adapter import isolation.
+3. R5 trusted COLD ownership/configuration.
+4. A6 architecture/implementation: deterministic valid expressions first.
 
 R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
 additive composition/pinned verification, optional import isolation and trusted

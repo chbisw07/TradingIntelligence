@@ -49,13 +49,13 @@ Historical descriptions below retain milestone-local live/offline qualifications
 This is a **cross-cutting pluggability remediation / hardening track** across
 A1–A5, never A5.3/A5.4. The audit's SHOULD_FIX_BEFORE_A6 classification is the
 current BEFORE_A6 queue, not a new A5 freeze requirement. R2–R5 do not block A5
-freeze; all four remain unimplemented.
+freeze; R2 is accepted and R3–R5 remain unimplemented.
 
 | Item | Purpose | Status | Blocks A5 freeze? | Required before A6? | Key doc |
 |---|---|---|---|---|---|
 | R1 | Policy-owned required scope and explicit absence | ACCEPTED / DONE | No — former blocker resolved | Yes — satisfied | [Acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) |
-| R2 | Versioned discovery / dependency metadata | ACTIVE / NEXT | No | Yes | [Audit R2](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
-| R3 | Additive composition envelope / pinned verifier | PENDING — BEFORE_A6 | No | Yes | [Audit R3](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
+| R2 | Versioned discovery / dependency metadata | ACCEPTED / DONE | No | Yes — satisfied | [Acceptance](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) |
+| R3 | Additive composition envelope / pinned verifier | ACTIVE / NEXT — BEFORE_A6 | No | Yes | [Audit R3](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
 | R4 | Optional adapter import isolation | PENDING — BEFORE_A6 | No | Yes | [Audit R4](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
 | R5 | Trusted COLD ownership / configuration | PENDING — BEFORE_A6 | No | Yes | [Audit R5](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
 
@@ -75,11 +75,12 @@ duplicate DEF IDs. HOT and future peer publication remain DEF-057/058.
    `READY_TO_TAG_A5`.
 6. Final documentation was committed at `167c51d`; annotated tag
    `tiaf-a5-baseline` was created and pushed on that exact commit.
-7. ACTIVE / NEXT: R2 Discovery Metadata. R3–R5 remain pending before A6.
+7. R2 Discovery Metadata is accepted and `READY_TO_CLOSE_PLUGGABILITY_R2`;
+   R3 is ACTIVE / NEXT. R4–R5 remain pending before A6.
 
 ```text
 A5 FROZEN (`tiaf-a5-baseline`)
-  → R2 ACTIVE / NEXT → R3 → R4 → R5 → A6 NOT_IMPLEMENTED
+  → R2 ACCEPTED → R3 ACTIVE / NEXT → R4 → R5 → A6 NOT_IMPLEMENTED
 ```
 
 ## Future / parallel workstreams

@@ -52,7 +52,7 @@ from tiaf.source_semantics import (
 
 from .admission import admit, can_discover
 from .artifacts import LocalArtifactStore
-from .capabilities import capability_catalog, descriptor_for
+from .capabilities import capability_catalog, capability_discovery_catalog, descriptor_for
 from .contracts import (
     A4EvaluateRequest,
     A4EvaluateResult,
@@ -83,7 +83,13 @@ from .contracts import (
     TrustedArtifact,
     TrustedFacadeConfig,
 )
-from .enums import ArtifactKind, FacadeStatus, LifecycleState, ReplayResultKind
+from .enums import (
+    ArtifactKind,
+    CapabilityDiscoveryState,
+    FacadeStatus,
+    LifecycleState,
+    ReplayResultKind,
+)
 from .errors import FacadeInvocationError
 
 _SECRET_KEYS = {
@@ -294,6 +300,14 @@ class LocalFacadeOwner:
                     authority_ref=request.requested_authority_ref,
                 )
             )
+            visible_ids = {item.capability_id for item in visible}
+            discovery_metadata = tuple(
+                item.model_copy(
+                    update={"discovery_state": CapabilityDiscoveryState.DISCOVERABLE}
+                )
+                for item in capability_discovery_catalog()
+                if item.capability_id in visible_ids
+            )
             now = datetime.now(TIAF_TIMEZONE)
             metadata = self._metadata(
                 request_id=request.request_id,
@@ -304,7 +318,11 @@ class LocalFacadeOwner:
                 started=now,
                 completed=now,
             )
-            return CapabilityListResult(metadata=metadata, capabilities=visible)
+            return CapabilityListResult(
+                metadata=metadata,
+                capabilities=visible,
+                discovery_metadata=discovery_metadata,
+            )
         finally:
             with self._lock:
                 self._active.discard(run_id)

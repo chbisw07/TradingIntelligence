@@ -12,8 +12,9 @@ then-next prompts below remain historical.
 
 Post-tag update (2026-09-13, Asia/Kolkata): documentation commit `167c51d` and
 annotated tag `tiaf-a5-baseline` were subsequently pushed. A5 is now FROZEN;
-R1 remains ACCEPTED / DONE. R2 Discovery Metadata is ACTIVE / NEXT, while
-R3–R5 remain pending before A6. The original R1 verdict is unchanged.
+R1 remains ACCEPTED / DONE. R2 Discovery Metadata is now ACCEPTED / DONE; R3 is
+ACTIVE / NEXT while R4–R5 remain pending before A6. The original R1 verdict is
+unchanged.
 
 ## Decisions and scope
 

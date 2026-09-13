@@ -437,6 +437,13 @@ block the bounded A5 baseline. The subsequent
 returns `R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`; it does not alter their pre-A6
 disposition or implement them.
 
+Post-A5 R2 update (2026-09-13): the bounded
+[R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md)
+adds typed declarations to the existing eight-operation facade catalog and is
+accepted. It does not create or close a DEF ID.
+R3–R5 retain their audit identities and pre-A6 disposition; DEF-057/058 remain
+unchanged.
+
 DEF-058 retains future peer-ID/projection/publication work (R6) until an approved
 new contributor needs it. Existing shared-cache/hosting obligations (R7) remain
 within DEF-009/011 and related deployment work. No existing status changes;

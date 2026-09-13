@@ -17,6 +17,7 @@ from tiaf.facade import (
     A4InputProjectRequest,
     BaselineAssessRequest,
     CapabilityDescriptor,
+    CapabilityDiscoveryDescriptor,
     CapabilityListRequest,
     CapabilityListResult,
     FacadeInvocationError,
@@ -67,7 +68,12 @@ _DATETIME_ADAPTER = TypeAdapter(TiafDateTime)
 _MAX_BASELINE_REQUEST_BYTES = 8 * 1024 * 1024
 
 type ShellValue = (
-    str | SessionDefaults | CapabilityDescriptor | SuccessfulInvocation | ShellFacadeResult
+    str
+    | SessionDefaults
+    | CapabilityDescriptor
+    | CapabilityDiscoveryDescriptor
+    | SuccessfulInvocation
+    | ShellFacadeResult
 )
 
 
@@ -186,7 +192,7 @@ class ShellDispatcher:
             descriptor = next(
                 (
                     item
-                    for item in invocation.result.capabilities
+                    for item in invocation.result.discovery_metadata
                     if item.capability_id == command.capability_id
                 ),
                 None,

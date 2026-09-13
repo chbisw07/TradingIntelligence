@@ -7,12 +7,15 @@ Original architecture decision: **READY_FOR_PLUGGABILITY_COMPLIANCE_AUDIT**.
 
 **Current post-R1 status:** the [audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
 and [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
-are complete. Required scope/explicit absence is implemented; R2–R5 remain pending
-pre-A6 and are not A5 freeze blockers. The
+are complete. Required scope/explicit absence is implemented. The bounded
+[R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) implementation
+and [acceptance](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
+complete; R3 is ACTIVE / NEXT and R4–R5 remain pending pre-A6. None is an A5
+freeze blocker. The
 [documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
-and final A5 readiness are complete. A5 is FROZEN at `tiaf-a5-baseline`; R2
-Discovery Metadata is ACTIVE / NEXT. Sections 16–18 retain the original audit
-brief/delivery decision, not an instruction to rerun completed R1.
+and final A5 readiness are complete. A5 is FROZEN at `tiaf-a5-baseline`; R2 is
+ACCEPTED / DONE. Sections 16–18 retain the original audit brief/delivery decision,
+not an instruction to rerun completed R1 or R2.
 [Monitoring architecture](TIAF_MONITORING_ARCHITECTURE.md) applies these future
 composition constraints without implementing a scheduler, new registry or HOT.
 

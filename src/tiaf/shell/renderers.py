@@ -9,6 +9,7 @@ from tiaf.facade import (
     A4InputProjectResult,
     BaselineAssessResult,
     CapabilityDescriptor,
+    CapabilityDiscoveryDescriptor,
     CapabilityListResult,
     OpportunityAssembleResult,
     PositionAssessResult,
@@ -510,7 +511,11 @@ def _trace(invocation: SuccessfulInvocation, view: TraceView) -> dict[str, Any]:
     return common
 
 
-def _descriptor(descriptor: CapabilityDescriptor) -> dict[str, Any]:
+def _descriptor(
+    descriptor: CapabilityDescriptor | CapabilityDiscoveryDescriptor,
+) -> dict[str, Any]:
+    if isinstance(descriptor, CapabilityDiscoveryDescriptor):
+        return descriptor.model_dump(mode="json")
     return {
         "capability_id": descriptor.capability_id,
         "capability_version": descriptor.capability_version,
@@ -553,7 +558,7 @@ def render_json(outcome: DispatchOutcome) -> str:
         )
     if outcome.invocation is not None:
         payload = _facade_envelope(outcome.invocation)
-        if isinstance(outcome.value, CapabilityDescriptor):
+        if isinstance(outcome.value, CapabilityDescriptor | CapabilityDiscoveryDescriptor):
             payload["selected_descriptor"] = _descriptor(outcome.value)
         return _json(payload)
     if isinstance(outcome.value, SessionDefaults):
@@ -588,7 +593,7 @@ def render_human(outcome: DispatchOutcome) -> str:
     if isinstance(outcome.command, ShowLastCommand):
         assert isinstance(outcome.value, SuccessfulInvocation)
         return _human_mapping(_last_view(outcome.value.result, outcome.command.view))
-    if isinstance(outcome.value, CapabilityDescriptor):
+    if isinstance(outcome.value, CapabilityDescriptor | CapabilityDiscoveryDescriptor):
         return _human_mapping(_descriptor(outcome.value))
     if isinstance(outcome.value, SessionDefaults):
         return _human_mapping(outcome.value.model_dump(mode="json"))

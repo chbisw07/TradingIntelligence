@@ -57,8 +57,9 @@ All earlier verdicts, counts and then-next prompts below remain historical.
 
 Post-tag update (2026-09-13, Asia/Kolkata): final documentation commit `167c51d`
 and annotated tag `tiaf-a5-baseline` were created and pushed after the readiness
-review. A5 is now FROZEN. R2 Discovery Metadata is ACTIVE / NEXT; R3–R5 remain
-pending before A6. This update does not alter the original closure verdict.
+review. A5 is now FROZEN. R2 Discovery Metadata is now ACCEPTED / DONE; R3 is
+ACTIVE / NEXT and R4–R5 remain pending before A6. This update does not alter the
+original closure verdict.
 
 ## 1. North-star alignment and delivered scope
 

@@ -44,9 +44,11 @@ finds R2–R5 unnecessary for A5 freeze and A5 ready for final documentation and
 freeze. Documentation consolidation, the
 [final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md), documentation
 commit `167c51d` and annotated tag `tiaf-a5-baseline` are complete. A5 is
-FROZEN; R2 Discovery Metadata is ACTIVE / NEXT. The [milestone ledger](MILESTONES.md)
-owns current project status. Facade behavior
-and the eight-operation inventory below are unchanged. The detailed
+FROZEN; [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) is
+[ACCEPTED / DONE](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md). The
+[milestone ledger](MILESTONES.md)
+owns current project status. R2 now adds typed, non-binding discovery metadata
+without changing facade operation IDs or invocation behavior. The detailed
 [A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
 link implementation, acceptance and outstanding boundaries.
 
@@ -54,17 +56,19 @@ link implementation, acceptance and outstanding boundaries.
 
 This exact eight-operation inventory mirrors the static local facade catalog;
 it is not a new registry or permission grant. All reads remain captured/local.
+`REQUIRES_RUNTIME_CHECK` means discovery does not assert request readiness,
+authority, dependency availability, health or fresh data.
 
-| Capability ID | Interface / effect |
-|---|---|
-| `baseline.assess` | PUBLIC / PURE |
-| `opportunity.assemble` | PUBLIC / CAPTURED_READ |
-| `a4_input.project` | PUBLIC / CAPTURED_READ |
-| `a4.evaluate` | PUBLIC / CAPTURED_READ |
-| `position.assess` | PUBLIC / CAPTURED_READ |
-| `replay.recorded` | PUBLIC / CAPTURED_READ |
-| `capabilities.list` | PUBLIC / PURE |
-| `replay.verify` | ENGINEERING / CAPTURED_READ |
+| Capability ID | Interface / effect | Semantic role | Pluggability | Monitoring | Readiness |
+|---|---|---|---|---|---|
+| `a4.evaluate` | PUBLIC / CAPTURED_READ | CHALLENGE_ARBITRATION | STRUCTURAL | SEMANTICALLY_REPEATABLE | REQUIRES_RUNTIME_CHECK |
+| `a4_input.project` | PUBLIC / CAPTURED_READ | CHALLENGE_ARBITRATION | STRUCTURAL | SEMANTICALLY_REPEATABLE | REQUIRES_RUNTIME_CHECK |
+| `baseline.assess` | PUBLIC / PURE | BASELINE | STRUCTURAL | SEMANTICALLY_REPEATABLE | REQUIRES_RUNTIME_CHECK |
+| `capabilities.list` | PUBLIC / PURE | CAPABILITY_DISCOVERY | STRUCTURAL | NOT_MONITORABLE | REQUIRES_RUNTIME_CHECK |
+| `opportunity.assemble` | PUBLIC / CAPTURED_READ | OPPORTUNITY_INTELLIGENCE | STRUCTURAL | SEMANTICALLY_REPEATABLE | REQUIRES_RUNTIME_CHECK |
+| `position.assess` | PUBLIC / CAPTURED_READ | POSITION_INTELLIGENCE | STRUCTURAL | MONITORING_FUTURE | REQUIRES_RUNTIME_CHECK |
+| `replay.recorded` | PUBLIC / CAPTURED_READ | REPLAY | STRUCTURAL | NOT_MONITORABLE | REQUIRES_RUNTIME_CHECK |
+| `replay.verify` | ENGINEERING / CAPTURED_READ | ENGINEERING | STRUCTURAL | NOT_MONITORABLE | REQUIRES_RUNTIME_CHECK |
 
 No LIVE_READ facade operation exists. A4.2's governed internal acquisition bridge
 is not a public endpoint. Future `sector.rotation`, `signal.qualify` and

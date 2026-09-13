@@ -14,8 +14,9 @@ This is the current philosophy after accepted A4, A5 and pluggability R1.
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns the capability boundary;
 the [architecture index](ARCHITECTURE.md) links normative designs, implemented
 slices and historical evidence. A1–A5 are frozen; A5 is tagged at
-`tiaf-a5-baseline`. R1 is accepted, R2 Discovery Metadata is ACTIVE / NEXT, and
-R3–R5 remain pending before A6. Future design is not an implemented product.
+`tiaf-a5-baseline`. R1 and R2 Discovery Metadata are accepted; R3 is ACTIVE /
+NEXT and R4–R5 remain pending before A6. Future design is not an implemented
+product.
 
 ## Intelligence hierarchy
 

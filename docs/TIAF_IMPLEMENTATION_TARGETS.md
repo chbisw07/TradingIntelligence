@@ -21,11 +21,11 @@ remaining high-priority deferrals. See
 ## Accepted foundation
 
 Current gate (2026-09-13, Asia/Kolkata): A5 FROZEN at `tiaf-a5-baseline`;
-R2 Discovery Metadata is ACTIVE / NEXT.
+R2 Discovery Metadata is ACCEPTED / DONE and R3 is ACTIVE / NEXT.
 
 ```text
-A5 FROZEN → R2 ACTIVE / NEXT
-  → R3 → R4 → R5 (PENDING — BEFORE_A6) → A6 (NOT_IMPLEMENTED)
+A5 FROZEN → R2 ACCEPTED
+  → R3 ACTIVE / NEXT → R4 → R5 (PENDING — BEFORE_A6) → A6 (NOT_IMPLEMENTED)
 ```
 
 R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
@@ -612,8 +612,9 @@ Separately bounded SHOULD_FIX_BEFORE_A6 slices from the audit:
 - R4: isolate optional provider package imports without changing adapters.
 - R5: trusted COLD binding snapshots/freeze, not HOT mutation.
 
-This is not A5.x or A6. R1 is implemented; R2 is ACTIVE / NEXT and not yet
-implemented. New contributor
+This is not A5.x or A6. R1 and the versioned R2
+[discovery metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
+accepted. R3 is ACTIVE / NEXT. New contributor
 publication/projection is deferred until a concrete peer is approved (DEF-058);
 HOT remains DEF-057. Sector Rotation, Signal Qualification, forecasting, shared
 live hosting and remote transport remain separately gated. A6 is not next yet.
@@ -633,12 +634,12 @@ runtime/durability/recovery operations. Earlier recurring execution requires its
 own bounded acceptance gate, including fresh-input admission rather than calling
 captured reads a live monitor. R2–R5 remain non-blocking for A5 freeze and are not
 implemented here. P4 documentation consolidation, P5 final readiness and P6 A5
-tag creation are complete. R2 is now ACTIVE / NEXT. No milestones are renumbered
-or runtime deferrals closed.
+tag creation and R2 acceptance are complete. R3–R5 remain unimplemented. No
+milestones are renumbered or runtime deferrals closed.
 
 ### Current forward sequence and adjacent TBDs
 
-A5 is FROZEN. Current queue: R2 → R3 → R4 → R5 before A6 architecture/
+A5 is FROZEN. Current queue: R3 → R4 → R5 before A6 architecture/
 deterministic implementation; then A7 forecasting/evaluation and an optional
 A7-informed A6 follow-up; A8 TM, A9 scanner intake and A10 monitoring/runtime
 production hardening. Sector Rotation is a future dedicated review/workstream

@@ -19,11 +19,19 @@ from tiaf.source_semantics.contracts import QualifiedId
 from .enums import (
     ArtifactKind,
     CapabilityAvailability,
+    CapabilityDependencyKind,
+    CapabilityDiscoveryState,
+    CapabilityEntitlement,
+    CapabilityReadinessState,
+    CapabilityRegistrationState,
+    CapabilitySemanticRole,
     CostKnowledge,
     EffectClass,
     FacadeAuthorityScope,
     FacadeStatus,
     InterfaceLevel,
+    MonitoringCompatibility,
+    PluggabilityLevel,
     ReplayResultKind,
     ReplaySupport,
 )
@@ -71,6 +79,62 @@ class CapabilityDescriptor(ContractModel):
     def replacement_rules(self) -> Self:
         if self.deprecated != (self.replacement_capability_id is not None):
             raise ValueError("deprecated capability requires exactly one replacement")
+        return self
+
+
+class CapabilityDependency(ContractModel):
+    dependency_id: QualifiedId
+    kind: CapabilityDependencyKind
+    version_specifier: NonEmptyStr
+
+
+class CapabilityDiscoveryDescriptor(CapabilityDescriptor):
+    """Versioned, non-binding discovery declaration for one facade capability."""
+
+    descriptor_schema_version: Literal["1.0"] = "1.0"
+    descriptor_id: QualifiedId
+    semantic_role: CapabilitySemanticRole
+    pluggability_level: PluggabilityLevel
+    replaceable: bool
+    composable: bool
+    required_dependencies: tuple[CapabilityDependency, ...] = ()
+    optional_dependencies: tuple[CapabilityDependency, ...] = ()
+    required_authorities: tuple[FacadeAuthorityScope, ...]
+    required_entitlements: tuple[CapabilityEntitlement, ...] = ()
+    registration_state: CapabilityRegistrationState = CapabilityRegistrationState.REGISTERED
+    discovery_state: CapabilityDiscoveryState = CapabilityDiscoveryState.REGISTERED
+    readiness_state: CapabilityReadinessState = (
+        CapabilityReadinessState.REQUIRES_RUNTIME_CHECK
+    )
+    monitoring_compatibility: MonitoringCompatibility
+    limitations: tuple[QualifiedId, ...]
+
+    @model_validator(mode="after")
+    def deterministic_discovery_identity(self) -> Self:
+        expected_id = f"descriptor:{self.capability_id}/{self.capability_version}"
+        if self.descriptor_id != expected_id:
+            raise ValueError("descriptor ID must match capability identity and version")
+        if self.required_authorities != (self.required_authority_scope,):
+            raise ValueError("discovery authority metadata must match invocation scope")
+        required = tuple(
+            (item.kind.value, item.dependency_id, item.version_specifier)
+            for item in self.required_dependencies
+        )
+        optional = tuple(
+            (item.kind.value, item.dependency_id, item.version_specifier)
+            for item in self.optional_dependencies
+        )
+        if required != tuple(sorted(set(required))):
+            raise ValueError("required dependencies must be unique and sorted")
+        if optional != tuple(sorted(set(optional))):
+            raise ValueError("optional dependencies must be unique and sorted")
+        if set(required) & set(optional):
+            raise ValueError("a dependency cannot be both required and optional")
+        entitlements = tuple(item.value for item in self.required_entitlements)
+        if entitlements != tuple(sorted(set(entitlements))):
+            raise ValueError("required entitlements must be unique and sorted")
+        if self.limitations != tuple(sorted(set(self.limitations))):
+            raise ValueError("limitations must be unique and sorted")
         return self
 
 
@@ -305,9 +369,35 @@ class CapabilityListResult(ContractModel):
     schema_id: Literal["tiaf.facade.capability-list-result"] = (
         "tiaf.facade.capability-list-result"
     )
-    schema_version: Literal["1.0"] = "1.0"
+    schema_version: Literal["1.0", "1.1"] = "1.1"
     metadata: InvocationMetadata
     capabilities: tuple[CapabilityDescriptor, ...]
+    discovery_metadata: tuple[CapabilityDiscoveryDescriptor, ...] = ()
+
+    @model_validator(mode="after")
+    def discovery_matches_legacy_catalog(self) -> Self:
+        capability_ids = tuple(item.capability_id for item in self.capabilities)
+        if capability_ids != tuple(sorted(set(capability_ids))):
+            raise ValueError("capabilities must be unique and sorted")
+        discovery_ids = tuple(item.capability_id for item in self.discovery_metadata)
+        if self.schema_version == "1.0":
+            if discovery_ids:
+                raise ValueError("legacy capability-list result cannot contain R2 metadata")
+            return self
+        if discovery_ids != capability_ids:
+            raise ValueError("R2 discovery metadata must exactly cover visible capabilities")
+        for descriptor, discovery in zip(
+            self.capabilities, self.discovery_metadata, strict=True
+        ):
+            discovery_only = set(CapabilityDiscoveryDescriptor.model_fields) - set(
+                CapabilityDescriptor.model_fields
+            )
+            legacy = discovery.model_dump(exclude=discovery_only)
+            if CapabilityDescriptor.model_validate(legacy) != descriptor:
+                raise ValueError("R2 discovery metadata must preserve legacy descriptor fields")
+            if discovery.discovery_state is not CapabilityDiscoveryState.DISCOVERABLE:
+                raise ValueError("visible R2 metadata must be marked DISCOVERABLE")
+        return self
 
 
 class BaselineAssessResult(ContractModel):
