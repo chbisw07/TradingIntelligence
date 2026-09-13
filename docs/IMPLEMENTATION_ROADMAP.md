@@ -1,5 +1,24 @@
 # Implementation Roadmap
 
+This is the **near-term forward queue**, subordinate to the intended major order
+in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
+[milestone ledger](MILESTONES.md) owns actual status/tags and the
+[README](../README.md) is the executive dashboard. Status: 2026-09-13
+(Asia/Kolkata); historical reviews retain their original then-next decisions.
+
+```text
+A5: ACCEPTED / FREEZE_READY; READY_TO_TAG_A5 check completed
+  → review/save final docs → separately authorized commit/push + A5 tag
+  → R2 → R3 → R4 → R5 (PENDING — BEFORE_A6)
+  → A6 (NOT_IMPLEMENTED)
+```
+
+R1 is ACCEPTED. R1–R5 form the **cross-cutting pluggability remediation /
+hardening track**, not A5.x. R2–R5 do not block A5 freeze. See the
+[R-series ledger](MILESTONES.md#cross-cutting-pluggability-remediation-track-r1r5)
+for scope and evidence. This queue is intended execution order, not a claim of
+new technical dependencies between all R items.
+
 TIAF evolves through small, gated increments. `TIAF_TGT0` establishes the
 engineering baseline. `TIAF_A0` and `TIAF_A1` then define contracts and trusted
 data before `TIAF_A2` supplies a deterministic reference implementation.
@@ -38,8 +57,9 @@ compatibility. The subsequent
 [acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 closes R1 and finds A5 ready for final documentation and freeze. The
 [post-R1 consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
-now completes documentation synchronization. A5 remains untagged pending the
-final freeze/tag-readiness check. No
+now completes documentation synchronization. The subsequent
+[final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) returned
+`READY_TO_TAG_A5`; A5 remains untagged pending separately authorized tag action. No
 A5 policy changed. R2–R5 remain separately bounded pre-A6 work and are not A5
 freeze requirements. A6 has not begun; this workstream does not renumber
 milestones or implement a plugin framework.
@@ -55,8 +75,9 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`; then A5 freeze/tag only under
-   separate explicit authorization against the reviewed candidate tree.
+1. Save/review final documentation; A5 freeze/tag only under separate explicit
+   authorization against the reviewed candidate tree. The final readiness
+   check is completed, not a pending runtime acceptance gate.
 2. Bounded R2–R5 pluggability hardening before A6: descriptors/dependencies,
    additive composition/pinned verification, optional import isolation and trusted
    COLD ownership. These remain SHOULD_FIX_BEFORE_A6, not A5 freeze requirements.

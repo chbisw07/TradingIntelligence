@@ -2,6 +2,20 @@
 
 ## Reading map and current status
 
+Project control starts at the [README dashboard](../README.md) →
+[milestone ledger](MILESTONES.md) → [roadmap](TRADINGINTELLIGENCE_ROADMAP.md).
+The ledger owns historical/current acceptance and tag status; roadmaps own
+intended order, not retrospective rewrites. From there read
+[THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
+[PLUGGABILITY](TIAF_PLUGGABILITY_ARCHITECTURE.md) →
+[MONITORING](TIAF_MONITORING_ARCHITECTURE.md) →
+[ECOSYSTEM](TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md) →
+[A4](TIAF_A4_DETAILED_ROADMAP.md) / [A5](TIAF_A5_DETAILED_ROADMAP.md).
+The README's documentation map defines the shared taxonomy: normative Markdown
+architecture, implementation inventory (capability map), postponed work (deferral
+register), non-authoritative TBD ideas, dated STUDY/ACCEPTANCE evidence and
+non-normative DOCX/PDF companions. Accepted architecture is not runtime acceptance.
+
 For the cross-system view, start with the
 [Trading Ecosystem Architecture](TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md):
 scanners propose, TI advises, TI Monitoring reevaluates, TM authorizes and
@@ -24,8 +38,9 @@ Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
 | How do consumers access TI? | [Local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md), [Shell](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md); no remote/live public operation. |
 | What did this consolidation change? | [Post-R1 record](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md). |
 
-A1–A4 are frozen. A5.1/A5.2 and R1 are accepted; documentation is ready for the
-final A5 freeze/tag-readiness check, but `tiaf-a5-baseline` does not yet exist.
+A1–A4 are FROZEN. A5.1/A5.2 and R1 are ACCEPTED. The
+[final A5 readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) returned
+`READY_TO_TAG_A5`; A5 is FREEZE_READY but `tiaf-a5-baseline` does not yet exist.
 R2–R5 are pending pre-A6 work, not A5 freeze blockers. Monitoring is authoritative
 future architecture, not runtime. Sector Rotation, Signal Qualification, A6/A7,
 TM/scanner runtime integration and remote transport remain unimplemented.

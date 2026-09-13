@@ -1,156 +1,108 @@
 # Milestones
 
-The canonical roadmap is maintained in `TRADINGINTELLIGENCE_ROADMAP.md`. The
-repository also retains the original companion
-`TradingIntelligence_TIAF_Implementation_Roadmap.docx`; milestone status follows
-the Markdown source and the closure records below.
-
-The initial repository bootstrap milestone `TIAF_TGT0` is complete and frozen. The active development sequence now proceeds through the TIAF implementation roadmap.
+This is the **canonical historical and current milestone ledger**. The
+[README](../README.md) is the executive dashboard; the
+[major roadmap](TRADINGINTELLIGENCE_ROADMAP.md) owns intended milestone order,
+the [forward queue](IMPLEMENTATION_ROADMAP.md) owns near-term gates, and
+[engineering targets](TIAF_IMPLEMENTATION_TARGETS.md) carry detailed scope.
+DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-**TIAF_TGT0 — Initial Project Baseline: COMPLETE / FROZEN**
+Verified 2026-09-13 (Asia/Kolkata), repository HEAD `fe8c528`.
+FROZEN means an existing tag; ACCEPTED means reviewed scope; FREEZE_READY means
+accepted and ready for separate tag authorization, not already tagged.
+ACTIVE is current work; PENDING is the queue; DEFERRED is registered postponed
+work; FUTURE/TBD indicate later/unresolved scope; NOT_IMPLEMENTED means no runtime.
 
-- Professional Python project skeleton created
-- `tiaf` package established
-- baseline configuration, documentation, tests, linting and typing checks added
-- no trading logic, broker integration, LLM calls, or agent workflows introduced
-- tag: `tiaf-tgt0`
+| Milestone | State | Existing tag / pending action | Closure / scope record |
+|---|---|---|---|
+| TGT0 | FROZEN | `tiaf-tgt0` | Python repository bootstrap |
+| A0 | FROZEN | `tiaf-a0` | Immutable contracts; aware Asia/Kolkata timestamps |
+| A1 | FROZEN | `tiaf-a1-baseline` | [Foundation](TIAF_A1_FOUNDATION_BASELINE.md), [acceptance](TIAF_A1_ACCEPTANCE_REPORT.md) |
+| A2 | FROZEN | `tiaf-a2-baseline` | [Foundation](TIAF_A2_FOUNDATION_BASELINE.md), [acceptance](TIAF_A2_ACCEPTANCE_REPORT.md) |
+| A3 | FROZEN | `tiaf-a3-baseline` | [Closure: READY_TO_FREEZE_A3](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) |
+| A4 | FROZEN | `tiaf-a4-baseline` | [Closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [slice map](TIAF_A4_DETAILED_ROADMAP.md) |
+| TI_SHELL v0.1 | FROZEN | `tiaf-a4.91-shell-v0.1` | [Local command implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) |
+| A5 | ACCEPTED / FREEZE_READY | Proposed `tiaf-a5-baseline` **absent** | [Closure: READY_TO_FREEZE_A5](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [final check: READY_TO_TAG_A5](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) |
 
-**TIAF_A1 — Data Foundation: COMPLETE / BASELINED** at tag `tiaf-a1-baseline`.
+### Accepted submilestones and intervening gates
 
-**TIAF_A2 — Deterministic Baseline: COMPLETE / BASELINED** at tag
-`tiaf-a2-baseline`. Final accepted sub-milestone tag: `tiaf-a2.10`.
+| Track | Accepted slices / actual tags | Evidence index / qualification |
+|---|---|---|
+| A1 | `tiaf-a1.1`, `tiaf-a1.2`, `tiaf-a1.3`, `tiaf-a1.4`, `tiaf-a1.5`, `tiaf-a1.6`, `tiaf-a1.7` | [Acceptance](TIAF_A1_ACCEPTANCE_REPORT.md); scope below |
+| A2 | `tiaf-a2.1`, `tiaf-a2.2`, `tiaf-a2.3`, `tiaf-a2.4`, `tiaf-a2.5`, `tiaf-a2.6`, `tiaf-a2.7`, `tiaf-a2.8`, `tiaf-a2.9`, `tiaf-a2.10` | [Acceptance](TIAF_A2_ACCEPTANCE_REPORT.md); deterministic benchmark, not final recommendation engine |
+| A3 | `tiaf-a3.1`, `tiaf-a3.2`, `tiaf-a3.3`, `tiaf-a3.4`, `tiaf-a3.5`, `tiaf-a3.6`, `tiaf-a3.6.1`, `tiaf-a3.6.2`, `tiaf-a3.7`, `tiaf-a3.8`, `tiaf-a3.9`, `tiaf-a3.10` | [Detailed roadmap](TIAF_A3_DETAILED_ROADMAP.md) and dated live/offline evidence |
+| Architecture checkpoints | `tiaf-a3-arch`, `tiaf-a3.6.1-arch`, `tiaf-a3.10-arch`, `tiaf-post-a3-architecture` | Accepted design checkpoints, not standalone runtime claims |
+| Pre-A4 foundation / facade | ACCEPTED; no standalone tag | [Source foundation](TIAF_POST_A3_PRE_A4_FOUNDATION.md), [local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) |
+| A4.1 / A4.2 | ACCEPTED within A4 baseline; no standalone slice tags | [Detailed roadmap](TIAF_A4_DETAILED_ROADMAP.md): deterministic arbitration / bounded internal evidence bridge |
+| A5.1 / A5.2 | ACCEPTED; no standalone slice tags | [Detailed roadmap](TIAF_A5_DETAILED_ROADMAP.md): deterministic single-position advice / governed captured-read facade and Shell |
 
-**TIAF_A2.1:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.1`.
+Acceptance is bounded, not universal live-provider certification. A3.6.1's
+standalone exact-current Tapetide matrix retained a quota HOLD; separate Yahoo
+and A3.6.2 integrated matrices passed. A3.7 Dhan acquisition failed before
+option-chain evidence, so no live specialist result is claimed there.
+Historical descriptions below retain milestone-local live/offline qualifications.
 
-**TIAF_A2.2:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.2`.
+## Cross-Cutting Pluggability Remediation Track (R1–R5)
 
-**TIAF_A2.3:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.3`.
+This is a **cross-cutting pluggability remediation / hardening track** across
+A1–A5, never A5.3/A5.4. The audit's SHOULD_FIX_BEFORE_A6 classification is the
+current BEFORE_A6 queue, not a new A5 freeze requirement. R2–R5 do not block A5
+freeze; all four remain unimplemented.
 
-**TIAF_A2.4:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.4`.
+| Item | Purpose | Status | Blocks A5 freeze? | Required before A6? | Key doc |
+|---|---|---|---|---|---|
+| R1 | Policy-owned required scope and explicit absence | ACCEPTED | No — former blocker resolved | Yes — satisfied | [Acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) |
+| R2 | Versioned discovery / dependency metadata | PENDING — BEFORE_A6 | No | Yes | [Audit R2](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
+| R3 | Additive composition envelope / pinned verifier | PENDING — BEFORE_A6 | No | Yes | [Audit R3](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
+| R4 | Optional adapter import isolation | PENDING — BEFORE_A6 | No | Yes | [Audit R4](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
+| R5 | Trusted COLD ownership / configuration | PENDING — BEFORE_A6 | No | Yes | [Audit R5](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
 
-**TIAF_A2.5:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.5`.
+R2–R5 retain their audit identities; the
+[deferral register](TIAF_DEFERRAL_REGISTER.md) cross-references them without
+duplicate DEF IDs. HOT and future peer publication remain DEF-057/058.
 
-**TIAF_A2.6:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.6`.
+## A5 closure chronology and current gate
 
-**TIAF_A2.7:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.7`.
+1. A5.1 and A5.2 accepted; major closure: `READY_TO_FREEZE_A5`.
+2. First-order pluggability promoted before tagging; audit introduced R1 as a
+   temporary pre-freeze blocker.
+3. R1 resolved and accepted; R2–R5 classified as non-blocking for A5, before A6.
+4. [Documentation consolidated](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md);
+   monitoring and ecosystem ownership designs accepted without runtime expansion.
+5. [Final readiness](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md), 2026-09-13:
+   `READY_TO_TAG_A5`. This check is completed; the tag is still absent.
+6. ACTIVE: documentation/navigation closeout and handoff. Save/review these docs;
+   separately authorize commit/push and the proposed A5 tag. No tag is made here.
 
-**TIAF_A2.8:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.8`.
+```text
+READY_TO_TAG_A5 (done) → reviewed docs / authorized A5 tag
+  → R2 → R3 → R4 → R5 → A6 (NOT_IMPLEMENTED)
+```
 
-**TIAF_A2.9:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.9`.
+## Future / parallel workstreams
 
-**TIAF_A2.10:** COMPLETE / LIVE VALIDATED at tag `tiaf-a2.10`.
+| Workstream | Design versus runtime | Intended placement |
+|---|---|---|
+| Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
+| Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
+| A6 | NOT_IMPLEMENTED / not started | After A5 tag and R2–R5 |
+| A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
+| Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
+| Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
+| A8 TM / A9 Scanner | FUTURE; runtime integration NOT_IMPLEMENTED | Existing major milestone ownership retained |
+| A10 production hardening | FUTURE; full operational runtime NOT_IMPLEMENTED | Admission, budgets, recovery and durability gates |
+| Web / multi-console Cockpit | Accepted ecosystem ownership; detailed UI TBD, NOT_IMPLEMENTED | FUTURE; delivery placement TBD |
 
-**TIAF_A3_ARCH — COMPLETE / ACCEPTED** at tag `tiaf-a3-arch`.
-
-**TIAF_A3.1 — Agent Contracts and Runtime Foundation: COMPLETE / ACCEPTED** at
-tag `tiaf-a3.1`.
-
-**TIAF_A3.2 — Controlled Gateways and Budgets: COMPLETE / ACCEPTED** at tag
-`tiaf-a3.2`.
-
-**TIAF_A3.3 — Technical / Market-Structure Specialist: COMPLETE / ACCEPTED** at
-tag `tiaf-a3.3`.
-
-**TIAF_A3.4 — Fundamental / Company-Quality Intelligence: COMPLETE / ACCEPTED**
-at tag `tiaf-a3.4`.
-
-**TIAF_A3.5 — News / Catalyst / Event Intelligence: COMPLETE / ACCEPTED** at
-tag `tiaf-a3.5`.
-
-**TIAF_A3.6 — Relative / Sector / Macro Context Intelligence: COMPLETE /
-ACCEPTED** at tag `tiaf-a3.6`.
-
-**TIAF_A3.6.1 — Market Intelligence Provider Fabric + Deep Research
-Foundation: COMPLETE / ACCEPTED** at tag `tiaf-a3.6.1`. The standalone
-exact-current Tapetide matrix retained a provider-quota `HOLD`; separate Yahoo
-fallback and A3.6.2 integrated bounded-live matrices passed.
-
-**TIAF_A3.6.2 — Market Intelligence / Deep Research Integration: COMPLETE /
-ACCEPTED** at tag `tiaf-a3.6.2`.
-
-**TIAF_A3.7 — Derivatives / Opportunity Quality / Opportunity Risk: COMPLETE /
-ACCEPTED** at tag `tiaf-a3.7`; bounded Dhan live acquisition failed before
-option-chain evidence, so no live specialist result is claimed.
-
-**TIAF_A3.8 — Planner / Specialist Orchestration: COMPLETE / ACCEPTED** at tag
-`tiaf-a3.8`.
-
-**TIAF_A3.9 — Structured Opportunity Intelligence: COMPLETE / ACCEPTED** at
-tag `tiaf-a3.9`.
-
-**TIAF_A3.10 — Replay / Baseline Comparison / Cost / Failure Hardening:
-COMPLETE / ACCEPTED** at tag `tiaf-a3.10`.
-
-**TIAF_A3 major closure: COMPLETE / BASELINED** at tag `tiaf-a3-baseline`.
-
-**POST_A3_PRE_A4_FOUNDATION: COMPLETE / ACCEPTED.** Deterministic source
-semantics, A4 input projection and replay integrity; no A4 runtime.
-
-**POST_A3_PRE_A4_LOCAL_FACADE: COMPLETE / ACCEPTED.** Narrow same-process
-capability catalog, trusted admission/lifecycle and captured replay; no live
-operation, transport or Shell.
-
-**TIAF_A4 — Challenge / Arbitration: COMPLETE / BASELINED** at tag
-`tiaf-a4-baseline`. A4.1 supplies deterministic premises/theses/findings,
-non-action dispositions, offline replay and captured-read facade evaluation;
-A4.2 supplies one governed internal enrichment/successor cycle. No public live,
-model, position, expression, forecast or execution authority was added.
-
-**POST_A4_PRE_A5 TI_SHELL v0.1: IMPLEMENTED / ACCEPTED.** The
-command-first local runtime exposes only the governed facade with isolated
-transient session, exact-result JSON and bounded rendering. It adds no NLP,
-Web, model/live access or new intelligence capability.
-
-**TIAF_A5 ARCHITECTURE: COMPLETE / A5.1 AND A5.2 IMPLEMENTED.** The
-[authoritative design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md) fixes the
-position-truth/TM authority boundary, additive contracts, analytical posture,
-thesis health, recommendations, bounded monitoring intent and replay. No A5
-operational authority or scheduler is introduced.
-
-**TIAF_A5.1 — Deterministic Single-Position Baseline: IMPLEMENTED / ACCEPTED.**
-The [bounded runtime](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md)
-implements immutable contracts, strict freshness/A4 lineage, deterministic
-advice, monitoring intent and offline replay without facade/Shell publication or
-live dependencies.
-
-**TIAF_A5.2 — Governed Position Facade + Bounded Shell: IMPLEMENTED / ACCEPTED.**
-The [publication slice](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md)
-adds position-scoped captured-read admission, canonical A5 parity, generic A5
-recorded replay and read-only `position assess`; no broker lookup, execution,
-scheduler, A6/A7 or remote service.
-
-**TIAF_A5 — Position Intelligence MVP: RUNTIME ACCEPTED / TAG PENDING
-FINAL FREEZE CHECK.** The
-[major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts A5.1
-and A5.2 together and recommends `tiaf-a5-baseline` without creating it.
-Multi-leg interpretation, live TM/broker integration and monitoring runtime
-remain explicitly deferred.
-
-**TI PLUGGABILITY — R1 CLOSED / A5 DOCUMENTATION SYNCHRONIZED.**
-The [audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) returns
-`READY_FOR_PLUGGABILITY_REMEDIATION` and identified its single pre-freeze item
-R1. The bounded
-[R1 remediation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
-preserves required scope and explicit absence independently of registry
-membership, including legacy replay. The
-[acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
-returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
-`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
-`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. Documentation consolidation is complete;
-next is `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. No A5 policy was retuned,
-A6 is not started, and R2–R5 remain separate pre-A6 improvements.
-
-The [A4 detailed roadmap](TIAF_A4_DETAILED_ROADMAP.md) and
-[A5 detailed roadmap](TIAF_A5_DETAILED_ROADMAP.md) now index each complete
-architecture/implementation/acceptance/closure set. The
-[Monitoring Architecture](TIAF_MONITORING_ARCHITECTURE.md) is promoted future
-design only: A5 advisory intent, A8 TM integration, A9 scanner intake, A10 runtime.
-After separately authorized A5 freeze, R2–R5 precede A6; deterministic A6 precedes
-the A7 forecasting/evaluation overlay and a possible forecast-enhanced A6 return.
-Sector Rotation placement relative to A7/A8 remains TBD; Signal Qualification is
-intended after its review. Neither is delivered or renumbers A8/A9/A10.
+Navigation continues through [ROADMAP](TRADINGINTELLIGENCE_ROADMAP.md) →
+[THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
+[PLUGGABILITY](TIAF_PLUGGABILITY_ARCHITECTURE.md) →
+[MONITORING](TIAF_MONITORING_ARCHITECTURE.md) →
+[ECOSYSTEM](TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md) →
+[A4](TIAF_A4_DETAILED_ROADMAP.md) / [A5](TIAF_A5_DETAILED_ROADMAP.md).
+The remaining sections retain detailed delivered scope and future milestone
+charters; a charter is not an implementation claim.
 
 ## Deferral governance
 

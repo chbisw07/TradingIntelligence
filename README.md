@@ -1,141 +1,128 @@
 # TradingIntelligence
 
-TradingIntelligence is the repository for **TIAF — Trading Intelligence Agent
-Fabric**, a planned reusable market-intelligence service. Its long-term role is
-to turn scanner, watchlist, manual, and third-party inputs into structured,
-attributable intelligence for consumers such as TradeMonitor.
+TradingIntelligence implements **TIAF — Trading Intelligence Agent Fabric**:
+reusable, evidence-linked market and position intelligence. Today it is a
+governed local Python facade and command-first Shell, not a deployed trading
+service or execution engine.
 
-## Current stage
+## North Star
 
-### Past — accepted foundations
+Turn scanner, watchlist, manual and third-party inputs into explainable,
+replayable decision support. Preserve deterministic baselines, uncertainty,
+disagreement and `NO_TRADE`. Intelligence is pluggable; TradeMonitor retains
+risk/capital/action authority and the broker retains execution truth.
 
-A0/TGT0, A1 and A2 are frozen. A3.1-A3.10 are accepted through
-`tiaf-a3.10`; A3.8 bounded orchestration is frozen at `tiaf-a3.8` and A3.9
-structured opportunity intelligence at `tiaf-a3.9`. See the
-[detailed roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md).
+## Current Project Status
 
-### Present — frozen A4, accepted A5, R1 closed, documentation synchronized
+Status checked **2026-09-13 (Asia/Kolkata)**. The
+[milestone ledger](docs/MILESTONES.md) owns history, tags and closure evidence.
 
-[A3.10](docs/TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md)
-is accepted with content-addressed cumulative A3 capture, offline replay,
-observational A2/A3 comparison, unknown-safe cost accounting, failure
-degradation and a 14-case synthetic acceptance corpus. The separate
-[A3 major closure review](docs/TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
-classifies every active deferral, reconciles live/non-live claims and concludes
-`READY_TO_FREEZE_A3` without changing runtime semantics. The major tag
-`tiaf-a3-baseline` now exists at `e690da2`. A subsequent
-[A3 sub-milestone deferral audit](docs/STUDY_A3_SUBMILESTONE_DEFERRAL_DISCOVERY_AUDIT.md)
-reconciles four omitted A3-specific governance records without changing that
-freeze decision.
+| Workstream | State | Meaning | Next step |
+|---|---|---|---|
+| TGT0 / A0 | FROZEN | Repository and contract foundations | Preserve |
+| A1 / A2 / A3 / A4 | FROZEN | Data, deterministic benchmark, specialists, arbitration | Preserve baselines |
+| TI_SHELL v0.1 | FROZEN | Governed local command client | Preserve boundary |
+| A5 | ACCEPTED / FREEZE_READY | Single-position advice; final check: `READY_TO_TAG_A5`; tag absent | Save reviewed docs and separately authorize tag |
+| R1 | ACCEPTED | Required scope and explicit absence fixed | Preserve old/new replay |
+| R2 / R3 / R4 / R5 | PENDING — BEFORE_A6 | Cross-cutting pluggability remediation / hardening track; not A5.x | After A5 tag; does not block it |
+| A6 | NOT_IMPLEMENTED | Deterministic option expression; not started | After R2–R5 acceptance |
 
-### Pre-A4 source-semantic foundation
+FROZEN means an existing accepted tag; ACCEPTED means reviewed bounded scope;
+FREEZE_READY is not a tag. ACTIVE names the current task, PENDING the gated
+queue, DEFERRED registered postponed work, FUTURE later work, TBD unresolved
+placement/design, and NOT_IMPLEMENTED absence of runtime.
 
-The [post-A3 pass-1 review](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_1_CORE_CAPABILITY_BOUNDARY.md)
-adopts the revised [TI_CORE/capability architecture](docs/TIAF_SYSTEM_ARCHITECTURE.md).
-[Pass 2](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_2_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION.md)
-now approves the [source-semantics foundation](docs/TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md).
-[Pass 3](docs/TIAF_POST_A3_DEEP_ARCHITECTURE_PASS_3_A4_CHALLENGE_ARBITRATION_AGENTS.md)
-approves the [A4 challenge/arbitration architecture](docs/TIAF_A4_CHALLENGE_ARBITRATION_HIGHER_INTELLIGENCE_ARCHITECTURE.md):
-two bounded roles, deterministic arbitration and optional selective challenge.
-The [deployment review](docs/TIAF_POST_A3_DEPLOYMENT_ARCHITECTURE_REVIEW.md)
-now approves the [bounded hosting architecture](docs/TIAF_DEPLOYMENT_ARCHITECTURE.md):
-local Python first, isolated request state and filesystem replay; service,
-worker and database adoption require concrete operational triggers.
-The [completed consolidation](docs/TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md)
-selected POST_A3_PRE_A4_FOUNDATION, then a narrow local facade/lifecycle and
-deterministic A4. Bounded open-world reasoning permits governed research needs,
-not model memory promoted to evidence. A5–A10 retain their major order; A6 gets
-deterministic candidates first and forecast-enhanced comparison after A7.
-The architecture checkpoint precedes this implementation; no new tag is created
-by the foundation work.
-The separate [POST_A3_PRE_A4_FOUNDATION](docs/TIAF_POST_A3_PRE_A4_FOUNDATION.md)
-now implements the bounded source/proposition/authority/dispute contracts,
-deterministic A4 input projection and provider-free replay required before A4.
-The subsequent [narrow local facade](docs/TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md)
-provides trusted same-process admission/lifecycle and logical-ref captured
-replay. [A4.1 deterministic challenge/arbitration](docs/TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
-now adds immutable thesis/finding/result contracts, eight evidence-linked
-challenge families, explicit non-voting arbitration, known-zero model usage and
-offline replay/verification. Its additive `a4.evaluate` operation makes seven
-static facade capabilities. The internal
-[A4.2 governed evidence bridge](docs/TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
-now admits material semantic needs, delegates one bounded round to A3.8, captures
-normalized successor evidence, applies upstream-refresh/no-information stops and
-replays the complete chain offline. Its `LIVE_READ` lifecycle is intentionally
-not published through the facade. Neither slice adds a remote API, Shell, model,
-position, option-expression, forecast or broker authority.
-A4.1 and A4.2 are reviewed together in the
-[A4 major milestone closure](docs/TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md),
-which accepted the deterministic, bounded and replayable A4 layer now frozen at
-`tiaf-a4-baseline` (`494d968`).
-The optional model-backed Challenger remains deferred. The subsequent Shell slice
-was approved by the
-[POST_A4_PRE_A5 Shell review](docs/TIAF_POST_A4_PRE_A5_TI_SHELL_ARCHITECTURE_REVIEW.md),
-[authoritative architecture](docs/TIAF_TI_SHELL_ARCHITECTURE.md) and
-[implementation record](docs/TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md): the
-command-first, same-process mediator exposes governed local facade
-capabilities through `python -m tiaf.shell` and `ti`. NLP, models, live
-acquisition, remote transport and intelligence policy remain outside v0.1.
-A4 retains arbitration/recommendations; position,
-option-expression, forecast and execution authority remain outside A3. TI is
-an intelligence and decision-support system, not an execution system.
+## CURRENT ACTIVE WORKSTREAM
 
-The [A5 architecture](docs/TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md),
-supported by its [review](docs/TIAF_A5_ARCHITECTURE_REVIEW.md), is now realized
-by the bounded
-[A5.1 implementation](docs/TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md):
-additive immutable position contracts, a deterministic single-open-position
-advisory baseline, monitoring-intent output, and offline replay. TM/broker
-position truth, multi-leg interpretation, scheduling, execution, A6/A7 and
-facade/Shell exposure remain outside A5.1 itself. The additive
-[A5.2 publication slice](docs/TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) now
-exposes an authority-scoped captured-read `position.assess` facade capability
-and bounded `position assess --snapshot` Shell command. It adds no live broker
-lookup, execution, scheduler, A6/A7 behavior or remote service.
-The combined [A5 major closure review](docs/TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
-finds the deterministic single-position layer ready for the recommended
-`tiaf-a5-baseline` freeze. The tag is not created by that review. Multi-leg
-interpretation, TradeMonitor transport, durable monitoring and live broker
-ingestion remain explicit deferrals rather than accepted A5 behavior.
+**ACTIVE: A5 documentation/navigation closeout and tag handoff.** The
+[final readiness review](docs/TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
+already returned `READY_TO_TAG_A5` at `fe8c528`; that check is not pending.
+The remaining action is to review/save the final readiness and navigation docs,
+then separately authorize commit/push and creation/push of the proposed
+`tiaf-a5-baseline` tag against the reviewed tree. No such action is performed
+by this documentation pass.
 
-The subsequent [TI Pluggability Architecture](docs/TIAF_PLUGGABILITY_ARCHITECTURE.md)
-establishes `HOT ⇒ COLD ⇒ STRUCTURAL`, governed optional composition and
-baseline-preserving replay. This is architecture only, not a plugin framework
-or an A1–A5 compliance certification. The subsequent
-[compliance audit](docs/TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) identified
-one pre-freeze defect: removing a required specialist could silently shrink
-reported required coverage. The bounded
-[R1 remediation](docs/TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md)
-now separates versioned declared scope from bound implementations, captures
-explicit absence, and preserves legacy `1.0` replay semantics. The subsequent
-[acceptance closure](docs/TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
-returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
-`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`, and
-`R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`. Documentation consolidation is now complete;
-A5 remains untagged pending a final freeze/tag-readiness check. R2–R5 and A6 have not started;
-Sector Rotation and Signal Qualification remain future thought experiments.
+### Current Active Path
 
-Start with the [modernized thesis](docs/TIAF_THESIS.md) and
-[architecture reading map](docs/ARCHITECTURE.md). Detailed
-[A4](docs/TIAF_A4_DETAILED_ROADMAP.md) and [A5](docs/TIAF_A5_DETAILED_ROADMAP.md)
-roadmaps link architecture, implementation, acceptance and deferrals. The
-[Monitoring Architecture](docs/TIAF_MONITORING_ARCHITECTURE.md) is authoritative
-future subscriber-driven design—not a scheduler or live monitor. Current
-captured-read facade operations cannot acquire fresh live evidence.
+```text
+Final A5 readiness: READY_TO_TAG_A5 (done)
+  → save/review documentation → authorized commit/push + A5 tag
+  → R2 → R3 → R4 → R5 (bounded pre-A6 hardening queue)
+  → A6 architecture / deterministic expression
+```
 
-Next: `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`, then separately authorized
-freeze/tag and bounded R2–R5 before A6. See the
-[consolidation record](docs/TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
-for documentation validation and the [roadmap](docs/IMPLEMENTATION_ROADMAP.md)
-for explicitly unresolved Sector Rotation/Signal Qualification placement.
+## NEXT STEPS
 
-## Layout
+1. Review the final documentation-only diff and save the readiness record.
+2. Separately authorize documentation commit/push and `tiaf-a5-baseline` tag.
+3. Execute and accept bounded R2–R5 hardening; preserve A1–A5 semantics.
+4. Begin A6 architecture, then deterministic supported single-leg CE/PE expression.
 
-- `src/tiaf/` — application package and future capability namespaces
-- `tests/` — unit, integration, and replay test suites
-- `docs/` — architecture, principles, thesis, and milestone plan
-- `examples/` — future usage examples
-- `scripts/` — future development and operational helpers
+## Parallel / Future Workstreams
+
+Accepted design does **not** imply implemented runtime. These are not additional
+A5 tag gates or an instruction to start parallel implementation.
+
+| Workstream | Architecture accepted? | Implementation started? | Placement |
+|---|---|---|---|
+| TI Monitoring | Yes | Runtime: NOT_IMPLEMENTED; A5 intent exists | A8/A9 integration; A10 operations |
+| Trading Ecosystem | Yes, responsibility model | Integration: NOT_IMPLEMENTED | A8/A9/A10 |
+| Forecasting / evaluation | A7 roadmap; detailed design future | NOT_IMPLEMENTED | A7 after initial A6 |
+| Sector Rotation | No; TBD idea note | NOT_IMPLEMENTED | FUTURE; relative to A7/A8 TBD |
+| Signal Qualification | No; TBD idea note | NOT_IMPLEMENTED | FUTURE; intended after Sector Rotation review, A7/A8 placement TBD |
+| TM / Scanner integration | Ecosystem boundaries accepted | NOT_IMPLEMENTED | A8 / A9 respectively |
+| Web / multi-console Cockpit | Ownership model accepted; UI design TBD | NOT_IMPLEMENTED | FUTURE; delivery placement TBD |
+| Runtime / production hardening | Monitoring/deployment boundaries accepted | Full operational runtime NOT_IMPLEMENTED | A10 |
+
+The [forward roadmap](docs/IMPLEMENTATION_ROADMAP.md) owns the intended queue
+and explicitly unresolved ordering; A7 is not required for initial A6.
+
+## Architecture at a Glance
+
+```text
+Scanner: discover/propose → TI: assess/advise → TM: authorize/coordinate → Broker: execute
+                                ↑                    │                       │
+                     TI Monitoring: reevaluate ← supplied position truth ←──┘
+Clients (Shell / future Sheets, Web, Cockpit): project results and scoped requests
+```
+
+The loop is accepted **future integration design**, not a running monitor.
+Current facade access is PURE/CAPTURED_READ only: no public LIVE_READ, broker
+operation or recurring scheduler. See the
+[ecosystem ownership model](docs/TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md).
+
+## Documentation Map
+
+| Document family | Authority / purpose |
+|---|---|
+| This README | Executive dashboard: now, next and navigation |
+| [MILESTONES](docs/MILESTONES.md) | Canonical historical/current ledger and actual tags |
+| [Major roadmap](docs/TRADINGINTELLIGENCE_ROADMAP.md), [forward queue](docs/IMPLEMENTATION_ROADMAP.md), [targets](docs/TIAF_IMPLEMENTATION_TARGETS.md) | Intended order, gates and engineering scope |
+| [Thesis](docs/TIAF_THESIS.md), [architecture index](docs/ARCHITECTURE.md) | Conceptual introduction and normative Markdown design map |
+| [System](docs/TIAF_SYSTEM_ARCHITECTURE.md), [pluggability](docs/TIAF_PLUGGABILITY_ARCHITECTURE.md), [monitoring](docs/TIAF_MONITORING_ARCHITECTURE.md), [ecosystem](docs/TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md) | Normative boundaries; implementation status remains separate |
+| [Deferral register](docs/TIAF_DEFERRAL_REGISTER.md) | Explicit postponed work under stable IDs |
+| [Capability map](docs/TIAF_CAPABILITY_MAP.md) | Implemented/exposed versus planned; not an executable registry |
+| [TBD index](docs/README_TBD_DESIGN_NOTES.md) | Non-authoritative ideas and future design notes |
+| [A4](docs/TIAF_A4_DETAILED_ROADMAP.md) / [A5](docs/TIAF_A5_DETAILED_ROADMAP.md) detailed maps | Implementation, dated STUDY/ACCEPTANCE evidence and historical closures |
+| Thesis DOCX/PDF companions | Human-readable teaching material, not normative design or acceptance |
+
+Suggested route: README → [MILESTONES](docs/MILESTONES.md) →
+[ROADMAP](docs/TRADINGINTELLIGENCE_ROADMAP.md) →
+[THESIS](docs/TIAF_THESIS.md) → [SYSTEM](docs/TIAF_SYSTEM_ARCHITECTURE.md) →
+[PLUGGABILITY](docs/TIAF_PLUGGABILITY_ARCHITECTURE.md) →
+[MONITORING](docs/TIAF_MONITORING_ARCHITECTURE.md) →
+[ECOSYSTEM](docs/TIAF_TRADING_ECOSYSTEM_ARCHITECTURE.md) →
+[A4](docs/TIAF_A4_DETAILED_ROADMAP.md) / [A5](docs/TIAF_A5_DETAILED_ROADMAP.md).
+After each acceptance/tag, update the dashboard, ledger and forward queue
+together; preserve earlier studies as dated evidence.
+
+## Repository Layout
+
+- `src/tiaf/` — implemented capability packages and governed local interfaces
+- `tests/` — unit, integration and replay suites
+- `docs/` — design, ledger, roadmap, deferrals and acceptance evidence
+- `examples/` — usage examples
+- `scripts/` — bounded diagnostics and helpers; see [script usage](scripts/README.md)
 
 ## Installation
 
@@ -183,162 +170,10 @@ ruff check src tests
 mypy src tests
 ```
 
-## Milestone philosophy
+### Read-only diagnostics and replay
 
-Capabilities are introduced only when their contracts, boundaries, and tests
-are ready. Each milestone should produce a small, independently verifiable
-increment. Deterministic computation stays deterministic; judgment-oriented AI
-capabilities will be introduced deliberately and remain subordinate to the
-centralized authority and risk controls of TradeMonitor.
-
-See the [A1 foundation baseline](docs/TIAF_A1_FOUNDATION_BASELINE.md),
-[A1 acceptance report](docs/TIAF_A1_ACCEPTANCE_REPORT.md), and
-[implementation roadmap](docs/TRADINGINTELLIGENCE_ROADMAP.md). The
-[capability map](docs/TIAF_CAPABILITY_MAP.md) shows where implemented and future
-platform capabilities belong.
-
-The complete deterministic platform and closure evidence are recorded in the
-[A2 foundation baseline](docs/TIAF_A2_FOUNDATION_BASELINE.md) and
-[A2 acceptance report](docs/TIAF_A2_ACCEPTANCE_REPORT.md). The
-[A3 entry conditions](docs/TIAF_A3_ENTRY_CONDITIONS.md) bind future Agents to
-the frozen A2 evidence and replay benchmark. The authoritative
-[A3 architecture](docs/TIAF_A3_ARCHITECTURE.md) and
-[detailed A3 roadmap](docs/TIAF_A3_DETAILED_ROADMAP.md) define the specialist,
-evidence, budget, failure, and milestone boundaries. The
-[A3.1 technical record](docs/TIAF_A3_1_AGENT_FOUNDATION.md) documents the
-accepted provider-neutral contract and runtime foundation. The
-[A3.2 gateway and budget record](docs/TIAF_A3_2_GATEWAYS_BUDGETS.md) documents
-least-privilege evidence access, A2 reuse, optional model tiers, no-LLM mode,
-budget enforcement, structured-output validation, and audit records.
-The [A3.3 technical specialist record](docs/TIAF_A3_3_TECHNICAL_SPECIALIST.md)
-documents its immutable A2 fact projections, deterministic interpretation
-policy, cited claims, zero-LLM behavior, and live-validation status. The
-[A3.4 fundamental intelligence record](docs/TIAF_A3_4_FUNDAMENTAL_INTELLIGENCE.md)
-documents point-in-time company facts, period-safe metrics, the controlled
-fundamental gateway, cited company-quality interpretation, and source limits.
-The [A3.5 news/event intelligence record](docs/TIAF_A3_5_NEWS_EVENT_INTELLIGENCE.md)
-documents event identity and information time, revisions, conservative
-clustering, controlled news/filing reads, cited catalyst interpretation,
-zero-LLM behavior, and production-source limits.
-The [A3.6 contextual intelligence record](docs/TIAF_A3_6_RELATIVE_SECTOR_MACRO_INTELLIGENCE.md)
-documents the three-specialist separation, explicit benchmark/sector/sensitivity
-mappings, controlled sector/macro reads, shared context reuse, deterministic
-cited interpretation, point-in-time rules, and production-source limits.
-The [A3.6.1 provider-fabric record](docs/TIAF_A3_6_1_MARKET_INTELLIGENCE_PROVIDER_FABRIC.md)
-documents the implemented per-capability provider declarations/routing,
-progressive evidence enrichment, native-semantic normalization, contradiction
-preservation, sparse research memory, and structured deep-research boundaries.
-The [authoritative-confirmation gateway architecture](docs/TIAF_AUTHORITATIVE_CONFIRMATION_GATEWAY.md)
-defines selective material-claim confirmation, official-source document and
-revision evidence, conservative extraction, and claim-to-confirmation lineage
-without exposing exchange transports to specialists. Its
-[bounded live acceptance](docs/STUDY_Authoritative_Confirmation_Gateway_Live_Acceptance.md)
-acquired and replayed official NSE/BSE evidence while preserving a typed
-not-found company-IR result.
-The [A3.6.2 integration record](docs/TIAF_A3_6_2_MARKET_INTELLIGENCE_DEEP_RESEARCH_INTEGRATION.md)
-documents multi-capability planning, progressive enrichment, authoritative
-linkage, sparse evidence-graph updates, deterministic research outputs,
-epistemic enforcement, and provider-free replay. Its
-[bounded live study](docs/STUDY_A3_6_2_Deep_Research_Live_Acceptance.md) covers
-RELIANCE, HDFCBANK, KAYNES, and ATHERENERG without adding a provider or model
-call.
-The [A3.7 specialist record](docs/TIAF_A3_7_DERIVATIVES_OPPORTUNITY_RISK.md)
-documents the three independent deterministic specialists, implemented A2.7
-evidence surface, non-oracle IV/PCR/OI rules, grouped confidence, instrument and
-horizon handling, abstention, A2 comparison, ownership exclusions, exact
-replay, and truthful live-acquisition status.
-Its [user-level acceptance study](docs/STUDY_A3_7_USER_LEVEL_ACCEPTANCE.md)
-records six deterministic black-box scenarios through the public runtime,
-including conflict, avoid-chase, event-risk, insufficient-evidence, and
-cash-only behavior.
-The [A4.1 implementation record](docs/TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md)
-documents the deterministic no-LLM challenge/arbitration benchmark, and its
-[acceptance study](docs/STUDY_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION_ACCEPTANCE.md)
-maps the required replay, failure, authority and non-action scenarios.
-The [A4.2 implementation record](docs/TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md)
-and [acceptance study](docs/STUDY_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE_ACCEPTANCE.md)
-cover governed admission, the existing A3.8 workflow bridge, one later
-source-semantic successor, selective finding lineage and zero-live replay.
-The [A4 major closure review](docs/TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md)
-audits both slices, records the live-validation truth table and deferral
-burn-down, and defines the scope of the recommended A4 baseline tag.
-The associated
-[Tapetide forensic study](docs/STUDY_Tapetide_Forensic_Validation_Report_Phase1.md)
-is non-authoritative evidence informing that design.
-
-Intentional future work and architectural non-goals are tracked under stable
-IDs in the [deferral register](docs/TIAF_DEFERRAL_REGISTER.md). Deferrals are
-reviewed collectively at major milestone closures rather than interrupting
-each sub-milestone.
-
-The A2.8 formulas, alignment rules, denominator semantics, live
-observations, and explicit deferrals are recorded in the
-[A2.8 technical note](docs/TIAF_A2_8_RELATIVE_STRENGTH_MTF.md).
-
-The A2.9 policies, exact transforms, quality gates, candidate classes, ranking
-tie rules, live record, and non-AI benchmark role are documented in the
-[A2.9 technical note](docs/TIAF_A2_9_DETERMINISTIC_BASELINE.md).
-
-The snapshot fingerprint, offline replay, outcome separation, MFE/MAE,
-append-only corpus, regression, and anti-lookahead rules are documented in the
-[A2.10 technical note](docs/TIAF_A2_10_REPLAY_VALIDATION_EVALUATION.md).
-
-For a read-only A2.7 option-chain feature smoke, first obtain an active expiry
-with `scripts/dhan_option_chain_smoke.py`, then run:
-
-```bash
-python scripts/feature_engine_smoke.py \
-  --symbol RELIANCE \
-  --purpose OPTION_EXPRESSION \
-  --include-derivatives \
-  --expiry YYYY-MM-DD \
-  --derivatives
-```
-
-The expiry is explicit, the feature calculations use the chain snapshot's own
-underlying LTP, and the command never places trades.
-
-For an explicit-benchmark A2.8 comparison, pass both identities and the
-caller-declared benchmark role:
-
-```bash
-python scripts/relative_strength_smoke.py \
-  --symbol RELIANCE \
-  --benchmark NIFTY \
-  --benchmark-type INDEX \
-  --benchmark-role MARKET \
-  --history-interval 1d \
-  --lookback-days 180
-```
-
-For ordered multi-timeframe evidence from separate provider histories:
-
-```bash
-python scripts/multi_timeframe_smoke.py \
-  --symbol RELIANCE \
-  --timeframes 1d,1h,15m \
-  --lookback-days 180
-```
-
-Dhan intraday retrieval has an accepted 90-day single-request limit. The
-multi-timeframe smoke reports its effective per-interval lookbacks and does not
-resample or fabricate bars. Both commands are read-only factual diagnostics;
-they do not select benchmarks, score candidates, or make recommendations.
-
-For the separate read-only A2.9 synthesis smoke:
-
-```bash
-python scripts/baseline_opportunity_smoke.py \
-  --symbols RELIANCE,HDFCBANK,KAYNES \
-  --horizon POSITIONAL \
-  --benchmark NIFTY \
-  --benchmark-map HDFCBANK=BANKNIFTY \
-  --timeframes 1d,1h,15m \
-  --rank
-```
-
-The benchmark and any override mapping are explicit caller inputs. Ranking
-never fills requested slots with `NO_TRADE` candidates.
+See [scripts/README.md](scripts/README.md) for option-chain, feature, relative-strength,
+MTF and baseline smoke commands, prerequisites and bounded live-call behavior.
 
 Capture normalized evidence once, then replay it without network access:
 

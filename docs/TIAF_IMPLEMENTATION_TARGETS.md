@@ -3,8 +3,10 @@
 This document is the detailed, evolving engineering continuation map beneath
 the stable project roadmap. Status must describe repository reality.
 
-- `MILESTONES.md` is the concise status view.
-- `TRADINGINTELLIGENCE_ROADMAP.md` is the canonical major roadmap.
+- [README](../README.md) is the concise executive dashboard.
+- [MILESTONES](MILESTONES.md) is the canonical historical/current ledger.
+- [TRADINGINTELLIGENCE_ROADMAP](TRADINGINTELLIGENCE_ROADMAP.md) owns intended major
+  order; [IMPLEMENTATION_ROADMAP](IMPLEMENTATION_ROADMAP.md) owns the forward queue.
 - `TIAF_IMPLEMENTATION_TARGETS.md` is the detailed evolving engineering
   continuation map.
 - `TIAF_DEFERRAL_REGISTER.md` owns stable deferred-capability IDs and their
@@ -17,6 +19,18 @@ remaining high-priority deferrals. See
 [`TIAF_DEFERRAL_REGISTER.md`](TIAF_DEFERRAL_REGISTER.md) for the binding policy.
 
 ## Accepted foundation
+
+Current gate (2026-09-13, Asia/Kolkata): A5 ACCEPTED / FREEZE_READY,
+`READY_TO_TAG_A5` review completed, proposed `tiaf-a5-baseline` absent.
+
+```text
+review/save final docs → authorized commit/push + A5 tag
+  → R2 → R3 → R4 → R5 (PENDING — BEFORE_A6) → A6 (NOT_IMPLEMENTED)
+```
+
+R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
+track, not A5.x. R2–R5 do not block A5 freeze; the detailed bounded targets below
+retain the audit's SHOULD_FIX_BEFORE_A6 classification.
 
 ### TIAF_A1 — Complete / Baselined
 
@@ -584,9 +598,10 @@ composition manifest and baseline-preserving replay.
   `R2_R5_NOT_REQUIRED_FOR_A5_FREEZE`.
 - P4 complete: [post-R1 documentation synchronization](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md),
   including detailed [A4](TIAF_A4_DETAILED_ROADMAP.md) and
-  [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps. Next is
-  `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. No tag is created here and no
-  A5 policy change is prescribed.
+  [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps.
+- P5 accepted: [final A5 readiness](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
+  returned `READY_TO_TAG_A5`. Next is reviewed documentation save and separately
+  authorized commit/push/tag. No tag is created here; no A5 policy change is prescribed.
 
 Separately bounded SHOULD_FIX_BEFORE_A6 slices from the audit:
 
@@ -615,9 +630,9 @@ A8 owns TM subscriber integration, A9 scanner/candidate intake, and A10 recurrin
 runtime/durability/recovery operations. Earlier recurring execution requires its
 own bounded acceptance gate, including fresh-input admission rather than calling
 captured reads a live monitor. R2–R5 remain non-blocking for A5 freeze and are not
-implemented here. P4 documentation consolidation is now complete; the final A5
-freeze/tag-readiness review remains next. No milestones are renumbered or runtime
-deferrals closed.
+implemented here. P4 documentation consolidation and P5 final A5 readiness are
+complete; the separately authorized A5 tag remains pending. No milestones are
+renumbered or runtime deferrals closed.
 
 ### Current forward sequence and adjacent TBDs
 

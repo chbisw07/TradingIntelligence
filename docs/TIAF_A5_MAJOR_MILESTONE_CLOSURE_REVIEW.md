@@ -45,6 +45,16 @@ returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
 acceptance, consolidate documentation, then perform the final A5 tag-readiness
 check. This pass still does not create the tag.
 
+Fourth governance addendum (2026-09-13, Asia/Kolkata): documentation
+consolidation and the [final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
+are complete; the latter returns `READY_TO_TAG_A5`. The chronology remains:
+original A5 closure → pluggability promotion → temporary R1 audit blocker →
+R1 accepted → R2–R5 non-blocking for A5, required before A6 → documentation
+consolidation → final readiness. A5 is ACCEPTED / FREEZE_READY, not tagged.
+The [milestone ledger](MILESTONES.md) now owns current status: review/save final
+docs and separately authorize commit/push/tag, then bounded R2–R5 before A6.
+All earlier verdicts, counts and then-next prompts below remain historical.
+
 ## 1. North-star alignment and delivered scope
 
 A5 acts in the user's economic interest by making current-position truth a hard

@@ -2,9 +2,10 @@
 
 ## 1. Status and document map
 
-**A5.1/A5.2 accepted; R1 accepted; documentation ready for final freeze check.**
-The intended tag is `tiaf-a5-baseline`; it does not exist at review entry and is
-not created here. A1–A4 remain frozen. This consolidates delivered scope and
+**2026-09-13: A5.1/A5.2 and R1 ACCEPTED; A5 FREEZE_READY / tag pending.**
+The [final check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) returned
+`READY_TO_TAG_A5`. The proposed tag `tiaf-a5-baseline` does not exist and is not
+created here. A1–A4 remain FROZEN. This consolidates delivered scope and
 future seams without changing accepted policy or historical acceptance records.
 
 | Stage | Governing record | Acceptance / disposition |
@@ -14,7 +15,14 @@ future seams without changing accepted policy or historical acceptance records.
 | A5.2 | [Facade/Shell publication](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) | [Acceptance](STUDY_A5_2_GOVERNED_POSITION_FACADE_SHELL_ACCEPTANCE.md): authorized captured reads and parity. |
 | Closure | [A5 major closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) | Historical READY_TO_FREEZE_A5; no tag created by that review. |
 | R1 | [Implementation](TIAF_PLUGGABILITY_R1_REQUIRED_SCOPE_EXPLICIT_ABSENCE.md), [acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) | Required-scope blocker closed; R2–R5 not required for A5 freeze. |
+| Final readiness | [Final check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) | READY_TO_TAG_A5; separately authorized tag still pending. |
 | Monitoring | [Authoritative architecture](TIAF_MONITORING_ARCHITECTURE.md) | Future admitted runtime mandate, not an A5 scheduler. |
+
+Chronology: A5 closure READY_TO_FREEZE_A5 → pluggability promoted before tagging
+→ R1 temporary audit blocker → R1 accepted → R2–R5 non-blocking for A5,
+required before A6 → documentation consolidated → final READY_TO_TAG_A5.
+The [milestone ledger](MILESTONES.md) owns this history and current tag status;
+the cross-cutting R-series is not A5.3/A5.4.
 
 ## 2. Entry, identity and freshness
 
@@ -142,7 +150,8 @@ not hidden requirements for single-position advice.
 closure, R1 acceptance and monitoring reconciliation. Runtime remains
 single-position, captured-input and advisory.
 
-Next prompt: **`TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`**. Inspect the exact
-candidate tree and acceptance evidence before any separately authorized tag.
-Documentation readiness is not tag creation or permission to implement A6/R2–R5.
+Next prompt: **`TIAF_A5 — SAVE FINAL DOCUMENTATION AND CREATE BASELINE TAG`**,
+requiring separate explicit authorization for commit/push/tag against the reviewed
+tree. The final readiness check is already completed. This documentation pass
+does not grant that authorization or permission to implement A6/R2–R5.
 The [implementation roadmap](IMPLEMENTATION_ROADMAP.md) owns subsequent ordering.

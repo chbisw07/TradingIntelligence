@@ -1,6 +1,8 @@
 # TradingIntelligence Development Roadmap
 
-**Status:** Canonical development map  
+**Status:** Canonical intended major development order; current status/tags belong
+to the [milestone ledger](MILESTONES.md), not historical acceptance narratives.
+
 **Architecture reference:** [TIAF thesis](TIAF_THESIS.md) and [system architecture](TIAF_SYSTEM_ARCHITECTURE.md); DOCX companions are non-normative.
 
 **Purpose:** Preserve the implementation sequence, milestone boundaries, acceptance gates, integration contracts, and evidence-first progression for TradingIntelligence.
@@ -38,17 +40,27 @@ facade. This unnumbered slice does not add or renumber an A-milestone.
 
 **Post-R1 current status:** A5.1/A5.2 and R1 are accepted; the
 [documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
-is complete. A5 is untagged and documentation-ready for
-`TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. Detailed
+is complete. The [final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
+returned `READY_TO_TAG_A5` on 2026-09-13 (Asia/Kolkata). A5 is ACCEPTED /
+FREEZE_READY; the proposed `tiaf-a5-baseline` tag is absent. Detailed
 [A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
 now provide milestone-level navigation. Monitoring is authoritative future
 architecture, not delivered runtime.
 
 ### Current sequence and explicit ordering uncertainty
 
-Final A5 freeze check / separately authorized tag → bounded R2–R5 before A6 →
-A6 architecture and deterministic expression implementation → A7 forecasting/
-evaluation overlay → separately versioned forecast-enhanced A6 when supported.
+```text
+Final A5 readiness (completed) → save/review docs / authorized commit/push + tag
+  → R2 → R3 → R4 → R5 (PENDING — BEFORE_A6)
+  → A6 architecture / deterministic expression (NOT_IMPLEMENTED)
+```
+
+R1 is ACCEPTED. R1–R5 are the **cross-cutting pluggability remediation /
+hardening track**, not Position Intelligence submilestones. R2–R5 do not block
+A5 freeze; their scope is indexed in the [ledger](MILESTONES.md) and the
+[near-term queue](IMPLEMENTATION_ROADMAP.md). Initial A6 precedes the FUTURE A7
+forecasting/evaluation overlay and a separately versioned forecast-enhanced A6
+follow-up when supported.
 A8 TM integration, A9 scanner/candidate intake and A10 monitoring operationalization/
 production hardening retain their numbered ownership.
 
@@ -58,6 +70,13 @@ Sector Rotation review unless explicitly reordered. The idea note's proposed
 A7.0/A7.x or SR milestones are not authoritative. Neither capability is callable
 or required for A5 freeze. Do not infer a mandatory linear dependency from these
 future design examples.
+
+Monitoring and Trading Ecosystem ownership architectures are ACCEPTED designs;
+their recurring/integration runtime is NOT_IMPLEMENTED. Web/multi-console
+Cockpit ownership is covered by the ecosystem design, but detailed UI/delivery
+placement is TBD. These are parallel design tracks, not A5 tag gates. See the
+[dashboard](../README.md#parallel--future-workstreams) for the compact inventory
+and [architecture map](ARCHITECTURE.md) for normative versus historical sources.
 
 ---
 

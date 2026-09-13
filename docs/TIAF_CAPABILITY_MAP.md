@@ -41,8 +41,11 @@ pre-A6 improvements. HOT transitions remain deferred (DEF-057). Future `sector.r
 public capabilities. Their typed publication/projection readiness is DEF-058.
 The [R1 acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 finds R2–R5 unnecessary for A5 freeze and A5 ready for final documentation and
-freeze. Documentation consolidation is complete; A5 stays untagged pending the
-final freeze/tag-readiness check. Facade behavior is unchanged. The detailed
+freeze. Documentation consolidation and the
+[final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) are complete:
+`READY_TO_TAG_A5`. A5 stays untagged pending separate authorization. The
+[milestone ledger](MILESTONES.md) owns current project status. Facade behavior
+and the eight-operation inventory below are unchanged. The detailed
 [A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
 link implementation, acceptance and outstanding boundaries.
 

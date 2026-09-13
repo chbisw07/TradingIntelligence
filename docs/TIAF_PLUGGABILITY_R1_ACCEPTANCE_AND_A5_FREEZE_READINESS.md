@@ -1,5 +1,15 @@
 # TI Pluggability R1 Acceptance and A5 Freeze Readiness
 
+Subsequent status addendum (2026-09-13, Asia/Kolkata): R1 acceptance remains
+closed. Documentation consolidation and the
+[final A5 readiness review](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) are
+complete; `READY_TO_TAG_A5` is the later result, not a rewritten verdict here.
+A5 remains ACCEPTED / FREEZE_READY with its tag pending separate authorization.
+R2–R5 are the cross-cutting pluggability remediation / hardening track's pending
+pre-A6 items, not A5 freeze requirements. See the [milestone ledger](MILESTONES.md)
+for current chronology and next action. Original acceptance evidence and
+then-next prompts below remain historical.
+
 ## Decisions and scope
 
 Acceptance review: 2026-09-12 (Asia/Kolkata).

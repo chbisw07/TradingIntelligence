@@ -1,5 +1,13 @@
 # TI Pluggability — A1–A5 Compliance Audit
 
+Subsequent status addendum (2026-09-13, Asia/Kolkata): this audit's original
+pre-freeze blocker was R1, now resolved and accepted. Documentation consolidation
+and the [final A5 readiness review](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
+are complete: `READY_TO_TAG_A5`. The proposed tag is still absent. R2–R5 remain
+PENDING — BEFORE_A6, not A5 freeze blockers or A5.x scope. The
+[milestone ledger](MILESTONES.md) owns current status/next action; original
+verdicts, evidence and then-next instructions below remain dated audit history.
+
 ## Decision, scope and evidence limits
 
 Audit date: 2026-09-12 (Asia/Kolkata).
