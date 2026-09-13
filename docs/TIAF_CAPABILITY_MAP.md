@@ -90,6 +90,14 @@ is not a public endpoint. Future `sector.rotation`, `signal.qualify` and
 `forecast.return` are design examples only; A6 trade expression, recurring
 monitoring, TM/scanner runtime and remote transport are not callable capabilities.
 
+A6 is **ARCHITECTURE RECONCILED / THESIS RECONCILED; ACCEPTANCE NEXT;
+RUNTIME NOT_IMPLEMENTED**. The
+[A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) recommends the
+future `expression.assess` capability: advisory, captured-input, deterministic
+long single-leg CE/PE assessment. It is not a ninth registered operation today.
+The [thesis reconciliation is complete](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md);
+independent architecture acceptance must precede A6.1.
+
 ## Data and evidence
 
 | Capability | Status | Placement |
@@ -198,16 +206,23 @@ monitoring, TM/scanner runtime and remote transport are not callable capabilitie
 
 ## Option strategy library
 
-All are **PLANNED** under Option Expression Intelligence (DEF-006) rather than A2.4:
-long call, long put, bull call spread, bear put spread, bull put spread, bear
-call spread, straddle, strangle, iron condor, iron butterfly, butterflies,
-calendars, diagonals, ratio spreads, and defined-risk variants.
+The earlier broad library inventory is not an A6 v1 delivery commitment.
+**PLANNED initial A6 / DEF-006:** long call and long put only, as bounded
+single-leg CE/PE analytical expressions. See the
+[reconciled scope](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md#3-bounded-v1-and-explicit-exclusions).
+
+**Deferred beyond v1, requiring separate scope acceptance under DEF-006:** bull
+call spread, bear put spread, bull put spread, bear call spread, straddle,
+strangle, iron condor, iron butterfly, butterflies, calendars, diagonals, ratio
+spreads and other defined-risk/multi-leg variants. Option writing and portfolio/
+margin optimization are not initial A6 obligations. No strategy here is A2.4
+indicator logic or authority to execute.
 
 ## Rule and policy layer
 
 | Capability | Status | Placement |
 |---|---|---|
-| SigmaDSL integration | DEFERRED | Rule/strategy policy boundary; DEF-025 |
+| SigmaDSL integration | DEFERRED | Explicitly outside TI A6 v1; no parser/runtime/compatibility prerequisite. Separate future SigmaTrader programmable-product review; DEF-025 |
 | Strategy entry/exit rules | DEFERRED | Separate from indicator evidence; DEF-025 |
 | Parameter optimization | DEFERRED | Replay/evaluation boundary; DEF-024 |
 

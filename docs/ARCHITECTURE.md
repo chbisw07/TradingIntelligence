@@ -47,6 +47,22 @@ closing the R1–R5 pre-A6 track. Monitoring is authoritative
 future architecture, not runtime. Sector Rotation, Signal Qualification, A6/A7,
 TM/scanner runtime integration and remote transport remain unimplemented.
 
+A6 is now **ARCHITECTURE RECONCILED / THESIS RECONCILED; ACCEPTANCE NEXT;
+RUNTIME NOT_IMPLEMENTED**:
+[Trade Expression Intelligence architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
+[reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md), and
+[detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md). These proposed details await
+independent architecture acceptance before A6.1; they do
+not change accepted ecosystem authority or publish an expression capability.
+
+The non-normative [A6 user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx),
+[PDF preview](TI_Trade_Expression_Intelligence_Thesis.pdf) and
+[findings/validation record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
+are created. The [thesis/architecture reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
+now resolves all fourteen findings and updates the normative Markdown. The
+unchanged thesis retains its dated source snapshot and then-next wording.
+Next: **TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
+
 Markdown architecture is normative. The [Fabric thesis](TIAF_Trading_Intelligence_Agent_Fabric_Thesis.docx),
 [Hierarchy thesis](TI_Intelligence_Hierarchy_Thesis.docx) and
 [Monitoring thesis](TI_Monitoring_Architecture_Thesis.docx) are unchanged,
@@ -165,7 +181,8 @@ The accepted A5 architecture makes this an advisory successor to A4, not an
 operational position store. Broker/TM snapshots remain authoritative; stale or
 incoherent truth fails closed. A5 owns analytical posture, thesis health,
 recommendation and typed refresh needs. TM owns operational lifecycle and action;
-A6 owns executable expression. See the
+A6 owns non-executable analytical expression suitability; TM alone owns
+ExecutionIntent and action authority. See the
 [authoritative design](TIAF_A5_POSITION_INTELLIGENCE_ARCHITECTURE.md).
 
 Evaluate existing or adopted positions prospectively. The trader's original

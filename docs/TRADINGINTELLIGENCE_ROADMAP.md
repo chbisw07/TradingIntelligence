@@ -55,7 +55,8 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → R2 ACCEPTED / DONE
   → R3 ACCEPTED / DONE → R4 ACCEPTED / DONE
   → R5 (ACCEPTED / DONE — BEFORE_A6)
-  → A6 architecture / deterministic expression (ACTIVE / NEXT — NOT_IMPLEMENTED)
+  → A6 (ARCHITECTURE RECONCILED / THESIS RECONCILED — RUNTIME NOT_IMPLEMENTED)
+  → ARCHITECTURE ACCEPTANCE NEXT
 ```
 
 R1 and [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md)
@@ -540,7 +541,7 @@ returns `READY_TO_CLOSE_PLUGGABILITY_R1` and
 `A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`. The later final readiness check
 returned `READY_TO_TAG_A5`, and `tiaf-a5-baseline` now freezes the accepted A5
 scope. R2, R3, R4 and R5 are ACCEPTED / DONE. They were
-not A5 freeze requirements. A6 remains unstarted and the
+not A5 freeze requirements. A6 runtime remains unstarted and the
 major order is unchanged.
 
 ## Goal
@@ -588,27 +589,44 @@ scheduling promises. A5 presently evaluates supplied signals and emits advice.
 
 # TIAF_A6 — Option Expression Intelligence
 
+**ARCHITECTURE RECONCILED / THESIS RECONCILED; ACCEPTANCE NEXT;
+RUNTIME NOT_IMPLEMENTED.** See the
+[reconciled architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
+[source record](TIAF_A6_RECONCILIATION_RECORD.md) and
+[four-slice roadmap](TIAF_A6_DETAILED_ROADMAP.md). Draft and thesis reconciliation
+are complete; independent architecture acceptance → A6.1 remains gated.
+Architecture is not frozen by this pass.
+
+The non-normative [thesis and findings record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
+preserves the handbook step. The [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
+updates normative Markdown, not thesis artifacts or runtime. Next:
+**TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
+
 Two delivery tracks under A6/DEF-006: deterministic admissible candidates first;
 forecast-enhanced comparison only after admitted A7 evidence. A5 still precedes
 A6 because existing adopted positions need advice without new option selection.
 
 ## Goal
 
-Translate a validated underlying opportunity into an appropriate option contract.
+Evaluate which supported non-executable option expression fits an admitted
+underlying thesis and captured evidence, if any. TM retains execution authority.
 
 ### Scope
 
-- select expiry consistent with horizon
-- compare ATM / ITM / OTM
-- delta
-- theta
-- IV
-- liquidity
-- bid/ask spread
-- OI / option volume
-- event exposure
+- initial long single-leg CE/PE only; no broader strategy-library obligation
+- explicit horizon and sourced expiry timing; never nearest expiry by default
+- bounded listed ATM / ITM1 / OTM1 candidates
+- qualified optional delta / theta / IV context, not invented Greeks
+- hard liquidity / bid-ask spread / quote-freshness gates
+- factual OI / option volume, preserving genuine zeros
+- admitted event exposure and explicit unknown coverage
+- transparent deterministic ranking, reasons and captured replay
 - expected underlying move vs option cost only in the A7-informed follow-up
 - reject unattractive option expression
+
+SigmaDSL is not part of TI A6 v1 or a prerequisite; any future programmable
+SigmaTrader strategy product is separate. Multi-leg, option writing, calibrated
+probabilities, account sizing and broker instructions remain outside initial A6.
 
 ### Important separation
 

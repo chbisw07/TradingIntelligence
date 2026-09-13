@@ -63,8 +63,11 @@ framework. Required safety semantics and this document's authority boundaries
 remain binding. The [compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md)
 and [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 are complete: declared required scope no longer shrinks with registry absence.
-R2 is accepted; R3 is ACTIVE / NEXT while R4–R5 remain pending before A6. None
-blocks A5 freeze. Current navigation and
+R1–R5 are now ACCEPTED / DONE; A5 is FROZEN. A6 is
+[ARCHITECTURE RECONCILED](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md), with
+[THESIS RECONCILED / ACCEPTANCE NEXT](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
+and runtime NOT_IMPLEMENTED. Independent architecture acceptance precedes
+A6.1; no new public capability is delivered by the design. Current navigation and
 documentation readiness are in the [architecture index](ARCHITECTURE.md).
 
 The [post-A3 consolidation](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) owns

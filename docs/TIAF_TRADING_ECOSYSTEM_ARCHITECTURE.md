@@ -18,6 +18,15 @@ TM repository or broker implementation inspected in this pass.
 `tiaf-a5-baseline`. R2, R3, R4 and R5 are ACCEPTED / DONE; the R-series is
 closed before A6. This changes project status only, not the ecosystem design.
 
+**A6 design follow-up (2026-09-13):** the
+[reconciliation architecture draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
+preserves this ownership model and proposes long single-leg CE/PE v1, with no
+SigmaDSL dependency. Status is ARCHITECTURE RECONCILED / THESIS RECONCILED /
+ACCEPTANCE NEXT; A6 runtime is NOT_IMPLEMENTED. The
+[fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
+is complete. Numeric policy and detailed contracts still require independent
+architecture acceptance; this navigation update changes no ecosystem ownership.
+
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 owns factual admission; [monitoring](TIAF_MONITORING_ARCHITECTURE.md) and

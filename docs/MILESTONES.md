@@ -84,7 +84,9 @@ duplicate DEF IDs. HOT and future peer publication remain DEF-057/058.
 
 ```text
 A5 FROZEN (`tiaf-a5-baseline`)
-  → R2 ACCEPTED → R3 ACCEPTED → R4 ACCEPTED → R5 ACCEPTED → A6 ACTIVE / NEXT (NOT_IMPLEMENTED)
+  → R2 ACCEPTED → R3 ACCEPTED → R4 ACCEPTED → R5 ACCEPTED
+  → A6 ARCHITECTURE RECONCILED / THESIS RECONCILED (RUNTIME NOT_IMPLEMENTED)
+  → ARCHITECTURE ACCEPTANCE NEXT
 ```
 
 ## Future / parallel workstreams
@@ -93,7 +95,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
 |---|---|---|
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
-| A6 | ACTIVE / NEXT; NOT_IMPLEMENTED / not started | Architecture pass after closed R1–R5 |
+| A6 | ARCHITECTURE RECONCILED / THESIS RECONCILED; RUNTIME NOT_IMPLEMENTED | Independent architecture acceptance before A6.1 |
 | A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
@@ -419,16 +421,28 @@ semantic, monitoring, deferral, live-truth and quality-gate audit.
 
 ## TIAF_A6 — Option Expression Intelligence
 
-- separate underlying view from option-contract selection
-- expiry selection
-- ATM / ITM / OTM comparison
-- delta / theta / IV
-- liquidity / bid-ask spread
-- OI / option volume
-- event exposure
-- reject bad option expressions even when the underlying view is good
+**2026-09-13 (Asia/Kolkata): ARCHITECTURE RECONCILED / THESIS RECONCILED;
+ACCEPTANCE NEXT;
+RUNTIME NOT_IMPLEMENTED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
+[reconciliation](TIAF_A6_RECONCILIATION_RECORD.md) and
+[detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) preserve A5 and accepted R1–R5.
 
-**Acceptance:** TIAF can recommend a suitable CE/PE contract or explicitly return `NO_OPTION_TRADE`.
+Proposed initial scope is deterministic advisory long single-leg CE/PE:
+admitted A4 thesis, listed ATM/ITM1/OTM1 candidates, explicit expiry/horizon fit,
+qualified quote freshness/liquidity, optional IV/Greek/premium context, event
+constraints, transparent ranking and replay. No SigmaDSL, A7 prerequisite,
+multi-leg/short-option strategy engine, account sizing or execution authority.
+
+**Future acceptance:** suitable expression/alternatives or explicit no-trade,
+wait, insufficient-evidence or unsupported outcome, with attributable reasons.
+No runtime acceptance is claimed now. The
+[complete user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx)
+is created; its [fourteen findings are reconciled](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md).
+Independent architecture acceptance must precede A6.1. Four proposed
+slices are contracts/admission; evaluation/ranking/replay; facade/Shell; and
+hardening/acceptance. No tag is created by this architecture pass.
+
+Next: **TIAF A6 — TRADE EXPRESSION INTELLIGENCE ARCHITECTURE ACCEPTANCE**.
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
 
