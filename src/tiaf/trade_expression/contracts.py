@@ -1,4 +1,4 @@
-"""Immutable A6.1 request, evidence, policy, and admission contracts."""
+"""Immutable A6 request, evidence, admission, candidate, and assessment contracts."""
 
 import hashlib
 import json
@@ -24,6 +24,8 @@ from tiaf.source_semantics.contracts import QualifiedId
 from .enums import (
     A6ErrorCode,
     AdmissionOutcome,
+    CandidateEligibility,
+    CandidateGateId,
     CoverageState,
     EvaluationIntent,
     EventEvidenceState,
@@ -31,8 +33,10 @@ from .enums import (
     EventRelevance,
     ExpirationQualification,
     ExpressionDirection,
+    ExpressionDisposition,
     ExpressionHorizonClass,
     FreshnessBasis,
+    GateStatus,
     MoneynessLabel,
     SpreadEligibility,
     SpreadQualityTier,
@@ -517,8 +521,12 @@ class ExpiryChainEvidence(ContractModel):
                 contract.subject != self.subject
                 or contract.subject_class is not self.subject_class
                 or contract.expiry_date != self.expiration.expiry_date
+                or contract.expiration != self.expiration
             ):
                 raise ValueError("quote contract does not belong to its chain")
+        identities = [quote.contract.identity_fingerprint() for quote in self.quotes]
+        if len(identities) != len(set(identities)):
+            raise ValueError("option contract identities must be unique within a chain")
         return self
 
 
@@ -856,6 +864,227 @@ class SpreadAssessment(ContractModel):
     reason_code: NonEmptyStr
 
 
+class TradeExpressionCandidate(ContractModel):
+    schema_id: Literal["tiaf.a6.trade-expression-candidate"] = "tiaf.a6.trade-expression-candidate"
+    schema_version: Literal["1.0"] = "1.0"
+    candidate_id: QualifiedId
+    contract: OptionContractIdentity
+    direction: ExpressionDirection
+    position_side: Literal["LONG"] = "LONG"
+    moneyness: MoneynessLabel
+
+    @model_validator(mode="after")
+    def correct_side(self) -> Self:
+        required = OptionType.CE if self.direction is ExpressionDirection.BULLISH else OptionType.PE
+        if self.contract.option_type is not required:
+            raise ValueError("candidate option side conflicts with admitted direction")
+        return self
+
+
+class CandidateGateAssessment(ContractModel):
+    schema_id: Literal["tiaf.a6.candidate-gate-assessment"] = "tiaf.a6.candidate-gate-assessment"
+    schema_version: Literal["1.0"] = "1.0"
+    gate_id: CandidateGateId
+    status: GateStatus
+    reason_code: NonEmptyStr
+    measured_value: FiniteDecimal | None = None
+    measured_unit: NonEmptyStr | None = None
+    threshold_value: FiniteDecimal | None = None
+    threshold_unit: NonEmptyStr | None = None
+    evidence_refs: tuple[QualifiedId, ...] = ()
+    policy_ref: QualifiedId
+
+    @field_validator("evidence_refs", mode="after")
+    @classmethod
+    def sorted_evidence(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        return _sorted_unique(values, "candidate-gate evidence refs")
+
+    @model_validator(mode="after")
+    def complete_units(self) -> Self:
+        if (self.measured_value is None) != (self.measured_unit is None):
+            raise ValueError("measured value and unit must be supplied together")
+        if (self.threshold_value is None) != (self.threshold_unit is None):
+            raise ValueError("threshold value and unit must be supplied together")
+        return self
+
+
+class CandidateRankingFacts(ContractModel):
+    schema_id: Literal["tiaf.a6.candidate-ranking-facts"] = "tiaf.a6.candidate-ranking-facts"
+    schema_version: Literal["1.0"] = "1.0"
+    spread_tier_rank: Literal[0, 1]
+    requested_moneyness_rank: Annotated[StrictInt, Field(ge=0, le=2)]
+    expiry_cushion_excess_seconds: NonNegativeDecimal
+    exact_spread_bps: NonNegativeDecimal
+    canonical_contract_key: tuple[NonEmptyStr, NonEmptyStr, NonEmptyStr, NonEmptyStr, NonEmptyStr]
+
+
+class ExpressionCandidateEvaluation(ContractModel):
+    schema_id: Literal["tiaf.a6.expression-candidate-evaluation"] = (
+        "tiaf.a6.expression-candidate-evaluation"
+    )
+    schema_version: Literal["1.0"] = "1.0"
+    evaluation_id: QualifiedId
+    candidate: TradeExpressionCandidate
+    quote_ref: QualifiedId
+    evaluated_at: TiafDateTime
+    gates: tuple[CandidateGateAssessment, ...]
+    spread: SpreadAssessment
+    eligibility: CandidateEligibility
+    rejection_reason_codes: tuple[NonEmptyStr, ...] = ()
+    uncertainty_reason_codes: tuple[NonEmptyStr, ...] = ()
+    ranking_facts: CandidateRankingFacts | None = None
+    invalidation_conditions: tuple[NonEmptyStr, ...]
+    evidence_refs: tuple[QualifiedId, ...]
+    policy_fingerprint: Sha256
+    semantic_fingerprint: Sha256
+
+    @field_validator("evidence_refs", "invalidation_conditions", mode="after")
+    @classmethod
+    def sorted_semantic_sets(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if not values:
+            raise ValueError("candidate evaluation requires evidence and invalidations")
+        return _sorted_unique(values, "candidate evaluation semantic values")
+
+    @model_validator(mode="after")
+    def coherent_evaluation(self) -> Self:
+        expected_order = tuple(CandidateGateId)
+        if tuple(item.gate_id for item in self.gates) != expected_order:
+            raise ValueError("candidate gates must use the canonical complete order")
+        has_unknown = any(item.status is GateStatus.UNKNOWN for item in self.gates)
+        has_failure = any(item.status is GateStatus.FAIL for item in self.gates)
+        if self.eligibility is CandidateEligibility.ELIGIBLE:
+            if has_unknown or has_failure or self.ranking_facts is None:
+                raise ValueError("eligible candidate requires all gates and ranking facts")
+            if self.rejection_reason_codes or self.uncertainty_reason_codes:
+                raise ValueError("eligible candidate cannot carry rejection or uncertainty")
+        elif self.eligibility is CandidateEligibility.UNKNOWN:
+            if (
+                not has_unknown
+                or not self.uncertainty_reason_codes
+                or self.ranking_facts is not None
+            ):
+                raise ValueError("unknown candidate requires unknown gates and no rank")
+        elif not has_failure or not self.rejection_reason_codes or self.ranking_facts is not None:
+            raise ValueError("ineligible candidate requires a failed gate and no rank")
+        return self
+
+
+class RankDifference(ContractModel):
+    schema_id: Literal["tiaf.a6.rank-difference"] = "tiaf.a6.rank-difference"
+    schema_version: Literal["1.0"] = "1.0"
+    preferred_candidate_ref: QualifiedId
+    compared_candidate_ref: QualifiedId
+    decisive_dimension: Literal[
+        "SPREAD_TIER",
+        "MONEYNESS_PREFERENCE",
+        "EXPIRY_CUSHION_EXCESS",
+        "EXACT_SPREAD_BPS",
+        "CANONICAL_CONTRACT_KEY",
+    ]
+    preferred_value: NonEmptyStr
+    compared_value: NonEmptyStr
+
+
+class ExpressionExplanation(ContractModel):
+    schema_id: Literal["tiaf.a6.expression-explanation"] = "tiaf.a6.expression-explanation"
+    schema_version: Literal["1.0"] = "1.0"
+    disposition_reason_codes: tuple[NonEmptyStr, ...]
+    preferred_reason_codes: tuple[NonEmptyStr, ...] = ()
+    rank_differences: tuple[RankDifference, ...] = ()
+
+    @field_validator("disposition_reason_codes", mode="after")
+    @classmethod
+    def nonempty_reasons(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if not values:
+            raise ValueError("assessment explanation requires a disposition reason")
+        return values
+
+
+class TradeExpressionAssessment(ContractModel):
+    schema_id: Literal["tiaf.a6.trade-expression-assessment"] = (
+        "tiaf.a6.trade-expression-assessment"
+    )
+    schema_version: Literal["1.0"] = "1.0"
+    result_id: QualifiedId
+    request_id: QualifiedId
+    admission_result_id: QualifiedId
+    subject: Symbol
+    direction: ExpressionDirection | None = None
+    horizon: ExpressionHorizon
+    evaluation_cutoff: TiafDateTime
+    disposition: ExpressionDisposition
+    preferred_candidate_ref: QualifiedId | None = None
+    alternative_candidate_refs: tuple[QualifiedId, ...] = ()
+    candidate_evaluations: tuple[ExpressionCandidateEvaluation, ...] = Field(max_length=9)
+    blockers: tuple[NonEmptyStr, ...] = ()
+    gaps: tuple[NonEmptyStr, ...] = ()
+    explanation: ExpressionExplanation
+    invalidation_conditions: tuple[NonEmptyStr, ...]
+    request_fingerprint: Sha256
+    admission_fingerprint: Sha256
+    a4_result_fingerprint: Sha256
+    evidence_fingerprint: Sha256
+    policy: PolicySelection
+    composition_refs: tuple[QualifiedId, ...] = ()
+    executable: Literal[False] = False
+    provider_calls: Literal[0] = 0
+    model_calls: Literal[0] = 0
+    input_tokens: Literal[0] = 0
+    output_tokens: Literal[0] = 0
+    model_cost_units: Literal[0] = 0
+    semantic_fingerprint: Sha256
+
+    @field_validator("candidate_evaluations", mode="after")
+    @classmethod
+    def canonical_evaluations(
+        cls, values: tuple[ExpressionCandidateEvaluation, ...]
+    ) -> tuple[ExpressionCandidateEvaluation, ...]:
+        ids = [item.candidate.candidate_id for item in values]
+        if len(ids) != len(set(ids)):
+            raise ValueError("candidate evaluations must be unique")
+        return tuple(sorted(values, key=lambda item: item.candidate.candidate_id))
+
+    @field_validator(
+        "blockers",
+        "gaps",
+        "invalidation_conditions",
+        "composition_refs",
+        mode="after",
+    )
+    @classmethod
+    def canonical_sets(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        return _sorted_unique(values, "assessment semantic values")
+
+    @field_validator("alternative_candidate_refs", mode="after")
+    @classmethod
+    def bounded_alternatives(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if len(values) > 2 or len(values) != len(set(values)):
+            raise ValueError("alternatives must be unique and bounded to two")
+        return values
+
+    @model_validator(mode="after")
+    def coherent_selection(self) -> Self:
+        by_id = {item.candidate.candidate_id: item for item in self.candidate_evaluations}
+        eligible = [
+            item
+            for item in self.candidate_evaluations
+            if item.eligibility is CandidateEligibility.ELIGIBLE
+        ]
+        if self.disposition is ExpressionDisposition.EXPRESSION_AVAILABLE:
+            if self.preferred_candidate_ref is None or self.preferred_candidate_ref not in by_id:
+                raise ValueError("available assessment requires a preferred candidate")
+            selected = (self.preferred_candidate_ref, *self.alternative_candidate_refs)
+            if len(selected) != len(set(selected)) or any(
+                by_id[item].eligibility is not CandidateEligibility.ELIGIBLE for item in selected
+            ):
+                raise ValueError("shortlist must contain unique eligible candidates")
+            if len(self.alternative_candidate_refs) != min(2, len(eligible) - 1):
+                raise ValueError("available assessment must expose the bounded alternatives")
+        elif self.preferred_candidate_ref is not None or self.alternative_candidate_refs:
+            raise ValueError("non-available assessment cannot contain a shortlist")
+        return self
+
+
 class AdmissionResult(ContractModel):
     schema_id: Literal["tiaf.a6.admission-result"] = "tiaf.a6.admission-result"
     schema_version: Literal["1.0"] = "1.0"
@@ -911,3 +1140,13 @@ def parse_coverage_proof(value: object) -> CoverageProof:
         return CoverageProof.model_validate(value)
     except ValidationError as exc:
         raise A6ContractError(A6ErrorCode.INVALID_COVERAGE, "invalid A6 coverage proof") from exc
+
+
+def parse_trade_expression_assessment(value: object) -> TradeExpressionAssessment:
+    try:
+        return TradeExpressionAssessment.model_validate(value)
+    except ValidationError as exc:
+        raise A6ContractError(
+            A6ErrorCode.INVALID_ASSESSMENT,
+            "invalid A6 trade-expression assessment",
+        ) from exc

@@ -22,14 +22,18 @@ closed before A6. This changes project status only, not the ecosystem design.
 [reconciliation architecture draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md)
 preserves this ownership model and proposes long single-leg CE/PE v1, with no
 SigmaDSL dependency. Status is ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION / A6.1 ACCEPTED / DONE / A6.2 ACTIVE / NEXT;
-`expression.assess` is NOT_PUBLISHED. The
+NON-NORMATIVE COMPANION / A6.1–A6.2 ACCEPTED / DONE / A6.3 ACTIVE / NEXT /
+A6.4 NOT_IMPLEMENTED; `expression.assess` is
+NOT_PUBLISHED. The
 [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 is complete, and the [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1. The subsequent
 [A6.1 acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md)
 closes the foundation. These navigation updates change no ecosystem ownership
-and publish no capability.
+and publish no capability. The subsequent
+[A6.2 acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md)
+closes the internal evaluator and makes A6.3 active/next without changing those
+boundaries.
 
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)

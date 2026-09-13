@@ -4,7 +4,7 @@
 
 2026-09-13 (Asia/Kolkata): **A5 FROZEN; R1–R5 ACCEPTED / DONE;
 A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT;
+A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED;
 `expression.assess` NOT_PUBLISHED.**
 
 The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines
@@ -15,8 +15,8 @@ implementation. Its first gate is:
 ```text
 Architecture + thesis reconciliation + acceptance (complete)
   → A6.1 contracts / admission / policy foundation (accepted / done)
-  → A6.2 evaluation / ranking / replay (active / next)
-  → A6.3 facade / Shell → A6.4 hardening → A7 → A8 → A9 → A10
+  → A6.2 evaluation / ranking / replay (accepted / done)
+  → A6.3 facade / Shell (active / next) → A6.4 (not implemented) → A7 → A8 → A9 → A10
 ```
 
 The [architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
@@ -73,6 +73,11 @@ and closed by its [independent acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_
 Exit achieved: contracts and admission accepted; this is not a claim of complete selection.
 
 ### A6.2 — Bounded evaluation, ranking, explanations and replay
+
+Implemented by
+[TIAF A6.2 — Candidate Evaluation, Ranking & Replay](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md).
+Its [independent acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md)
+closes the internal evaluator; publication remains the active A6.3 gate.
 
 Deliver the one-to-three-expiry, at-most-nine-candidate evaluator with listed
 ATM/ITM1/OTM1 geometry; exact expiry fit, liquidity/freshness, premium/event

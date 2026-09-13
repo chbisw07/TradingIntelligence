@@ -28,7 +28,7 @@ Status checked **2026-09-13 (Asia/Kolkata)**. The
 | R3 | ACCEPTED / DONE | Immutable per-run composition envelope and exact pinned verifier | Preserve capture/verifier baseline |
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
-| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1 ACCEPTED / DONE | Contracts/admission/policy only; `expression.assess` NOT_PUBLISHED | A6.2 active / next |
+| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT | Internal deterministic evaluation/ranking/replay accepted; `expression.assess` NOT_PUBLISHED | A6.3 facade/Shell exposure |
 | A7 | PLANNED / NOT_IMPLEMENTED | Forecasting, evaluation and learning | After A6 |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
 | A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |
@@ -42,7 +42,7 @@ work, TBD unresolved placement/design, and NOT_IMPLEMENTED absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
-**R1–R5 ACCEPTED / DONE; A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION; A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT; `expression.assess` NOT_PUBLISHED.** The bounded
+**R1–R5 ACCEPTED / DONE; A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION; A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED; `expression.assess` NOT_PUBLISHED.** The bounded
 [R2 implementation](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md) and
 [acceptance](docs/TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA_ACCEPTANCE.md) are
 complete. R2 adds typed, permission-filtered declarations without granting
@@ -66,7 +66,8 @@ The [A6 architecture draft](docs/TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECT
 [reconciliation record](docs/TIAF_A6_RECONCILIATION_RECORD.md) and
 [detailed roadmap](docs/TIAF_A6_DETAILED_ROADMAP.md) now define the proposed
 long single-leg CE/PE boundary. A6 is advisory, needs no SigmaDSL or A7, and is
-not callable. The accepted versioned policy defaults now bound A6.1.
+not callable. The accepted versioned policy defaults bound A6.1 and the
+internal A6.2 evaluator; publication remains deferred to A6.3.
 
 The [complete user-reference thesis](docs/TI_Trade_Expression_Intelligence_Thesis.docx)
 and [PDF preview](docs/TI_Trade_Expression_Intelligence_Thesis.pdf) are now created.
@@ -81,6 +82,12 @@ policy, deterministic A4 admission and replay-safe fingerprints. It publishes no
 capability and performs no candidate selection. Its
 [independent acceptance](docs/TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md)
 closes A6.1 without expanding the eight-operation catalog.
+The [A6.2 implementation](docs/TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md)
+adds the internal bounded candidate evaluator, exact lexicographic selection,
+structured explanations and captured replay. It still publishes no facade or
+Shell capability. Its
+[independent acceptance](docs/TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md)
+closes A6.2 without expanding the catalog.
 
 ### Current Active Path
 
@@ -95,17 +102,17 @@ A6 ── ARCHITECTURE ACCEPTED / THESIS ACCEPTED
   ↓
 A6.1 CONTRACTS / ADMISSION / POLICY — ACCEPTED / DONE
   ↓
-A6.2 EVALUATION / RANKING / REPLAY — ACTIVE / NEXT
+A6.2 EVALUATION / RANKING / REPLAY — ACCEPTED / DONE
   ↓
-A6.3 FACADE / SHELL → A6.4 HARDENING → A7 → A8 → A9 → A10
+A6.3 FACADE / SHELL — ACTIVE / NEXT → A6.4 NOT_IMPLEMENTED → A7 → A8 → A9 → A10
 ```
 
 Forward sequence: `A6.1 → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10`.
 
 ## NEXT STEPS
 
-1. **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
-2. Preserve the remaining bounded slices in the [A6 roadmap](docs/TIAF_A6_DETAILED_ROADMAP.md); do not publish `expression.assess` before A6.3.
+1. **TIAF A6.3 — FACADE & TI_SHELL EXPOSURE**.
+2. Preserve the remaining bounded slices in the [A6 roadmap](docs/TIAF_A6_DETAILED_ROADMAP.md); publication requires A6.3's separate governed acceptance.
 
 ## Parallel / Future Workstreams
 

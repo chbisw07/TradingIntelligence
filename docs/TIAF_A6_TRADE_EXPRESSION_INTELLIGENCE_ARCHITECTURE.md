@@ -3,8 +3,9 @@
 ## Status and authority
 
 2026-09-13, Asia/Kolkata. **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION / A6.1 ACCEPTED / DONE / A6.2 ACTIVE / NEXT.
-`expression.assess`: NOT_PUBLISHED. A5: FROZEN. R1–R5: ACCEPTED / DONE.**
+NON-NORMATIVE COMPANION / A6.1–A6.2 ACCEPTED / DONE / A6.3 ACTIVE / NEXT /
+A6.4 NOT_IMPLEMENTED. `expression.assess`:
+NOT_PUBLISHED. A5: FROZEN. R1–R5: ACCEPTED / DONE.**
 
 This is a reconciled design proposal, not an implementation acceptance or a
 published capability. Inherited system boundaries remain authoritative; the
@@ -16,7 +17,7 @@ non-normative thesis and all fourteen findings have been reconciled in the
 Accepted does not mean implemented or frozen. The gated sequence is now:
 
 ```text
-A6.1 accepted → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10
+A6.1 accepted → A6.2 accepted → A6.3 active/next → A6.4 → A7 → A8 → A9 → A10
 ```
 
 See the [source/reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md) and
@@ -107,8 +108,9 @@ Source IDs refer to the [inspected-source inventory](TIAF_A6_RECONCILIATION_RECO
 Implementation cross-reference: the bounded contracts/admission/policy subset is
 now implemented by [TIAF A6.1](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION.md)
 and closed by its [independent acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md).
-Candidate evaluation/ranking remains A6.2; `expression.assess` remains
-unpublished until A6.3.
+Candidate evaluation/ranking is now implemented by
+[A6.2](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md); `expression.assess`
+remains unpublished until A6.3.
 
 The proposed v1 supports one underlying, one admitted directional thesis and
 one requested horizon per run. It evaluates **buy-to-open analytical long CE or
@@ -728,4 +730,5 @@ Actual live source availability remains unproven, not an implied capability.
 The architecture-pass decision was **READY_TO_IMPLEMENT_A6_1**. A6.1 is now
 [accepted](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md), A6
 as a whole is not frozen, and the thesis remains its non-normative companion.
-Next: **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
+A6.2 is now [accepted](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md).
+Next: **TIAF A6.3 — FACADE & TI_SHELL EXPOSURE**.

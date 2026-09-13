@@ -87,8 +87,8 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → R2 ACCEPTED → R3 ACCEPTED → R4 ACCEPTED → R5 ACCEPTED
   → A6 ARCHITECTURE ACCEPTED / THESIS ACCEPTED
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
-  → A6.2 EVALUATION / RANKING / REPLAY ACTIVE / NEXT
-  → A6.3 → A6.4 → A7 → A8 → A9 → A10
+  → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
+  → A6.3 ACTIVE / NEXT → A6.4 NOT_IMPLEMENTED → A7 → A8 → A9 → A10
 ```
 
 ## Future / parallel workstreams
@@ -97,7 +97,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
 |---|---|---|
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
-| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1 ACCEPTED / DONE | A6.2 ACTIVE / NEXT; `expression.assess` NOT_PUBLISHED |
+| A6 | ARCHITECTURE ACCEPTED / THESIS ACCEPTED; A6.1–A6.2 ACCEPTED / DONE | A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED; `expression.assess` NOT_PUBLISHED |
 | A7 forecasting / evaluation | FUTURE; no forecast runtime | After initial deterministic A6; optional later A6 overlay |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
@@ -424,7 +424,8 @@ semantic, monitoring, deferral, live-truth and quality-gate audit.
 ## TIAF_A6 — Option Expression Intelligence
 
 **2026-09-13 (Asia/Kolkata): ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS
-NON-NORMATIVE COMPANION; A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT;
+NON-NORMATIVE COMPANION; A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT;
+A6.4 NOT_IMPLEMENTED;
 `expression.assess` NOT_PUBLISHED.** The [architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [reconciliation](TIAF_A6_RECONCILIATION_RECORD.md) and
 [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md) preserve A5 and accepted R1–R5.
@@ -435,9 +436,10 @@ qualified quote freshness/liquidity, optional IV/Greek/premium context, event
 constraints, transparent ranking and replay. No SigmaDSL, A7 prerequisite,
 multi-leg/short-option strategy engine, account sizing or execution authority.
 
-**Future acceptance:** suitable expression/alternatives or explicit no-trade,
-wait, insufficient-evidence or unsupported outcome, with attributable reasons.
-No runtime acceptance is claimed now. The
+**A6.2 acceptance:** suitable expression/alternatives or explicit no-trade,
+wait, insufficient-evidence or unsupported outcome are deterministic and
+attributable. The internal evaluator is accepted; no facade runtime or public
+capability is claimed. The
 [complete user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx)
 is created; its [fourteen findings are reconciled](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md).
 The [independent architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
@@ -445,8 +447,11 @@ records READY_TO_IMPLEMENT_A6_1. The [A6.1 implementation](TIAF_A6_1_CONTRACTS_A
 is closed by its [independent acceptance](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md). Four bounded
 slices are contracts/admission; evaluation/ranking/replay; facade/Shell; and
 hardening/acceptance. No tag is created by this architecture pass.
+The [A6.2 implementation](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md)
+delivers only the internal deterministic evaluation slice and is closed by its
+[independent acceptance](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md).
 
-Next: **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
+Next: **TIAF A6.3 — FACADE & TI_SHELL EXPOSURE**.
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
 

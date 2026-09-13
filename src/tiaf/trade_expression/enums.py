@@ -1,4 +1,4 @@
-"""Closed A6.1 vocabularies; none grant execution authority."""
+"""Closed A6 vocabularies; none grant execution authority."""
 
 from enum import StrEnum
 
@@ -81,6 +81,36 @@ class AdmissionOutcome(StrEnum):
     INVALID_REQUEST = "INVALID_REQUEST"
 
 
+class ExpressionDisposition(StrEnum):
+    EXPRESSION_AVAILABLE = "EXPRESSION_AVAILABLE"
+    NO_OPTION_TRADE = "NO_OPTION_TRADE"
+    WAIT_FOR_EXPRESSION = "WAIT_FOR_EXPRESSION"
+    INSUFFICIENT_EVIDENCE = "INSUFFICIENT_EVIDENCE"
+    UNSUPPORTED = "UNSUPPORTED"
+
+
+class CandidateEligibility(StrEnum):
+    ELIGIBLE = "ELIGIBLE"
+    INELIGIBLE = "INELIGIBLE"
+    UNKNOWN = "UNKNOWN"
+
+
+class GateStatus(StrEnum):
+    PASS = "PASS"
+    FAIL = "FAIL"
+    UNKNOWN = "UNKNOWN"
+
+
+class CandidateGateId(StrEnum):
+    IDENTITY_MEMBERSHIP = "IDENTITY_MEMBERSHIP"
+    TIMING_FRESHNESS = "TIMING_FRESHNESS"
+    HORIZON_FIT = "HORIZON_FIT"
+    QUOTE_GEOMETRY = "QUOTE_GEOMETRY"
+    TOP_DEPTH = "TOP_DEPTH"
+    SPREAD = "SPREAD"
+    PREMIUM_CAP = "PREMIUM_CAP"
+
+
 class SpreadEligibility(StrEnum):
     ELIGIBLE = "ELIGIBLE"
     INELIGIBLE = "INELIGIBLE"
@@ -104,3 +134,4 @@ class A6ErrorCode(StrEnum):
     INVALID_COVERAGE = "INVALID_COVERAGE"
     UNSUPPORTED_SUBJECT = "UNSUPPORTED_SUBJECT"
     INCOMPATIBLE_EVIDENCE_VERSION = "INCOMPATIBLE_EVIDENCE_VERSION"
+    INVALID_ASSESSMENT = "INVALID_ASSESSMENT"

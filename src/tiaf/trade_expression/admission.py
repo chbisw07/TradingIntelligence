@@ -329,6 +329,19 @@ def admit_request(
             reason="A4_EVIDENCE_STALE_OR_FUTURE",
             direction=direction,
         )
+    if (
+        evidence.event_evidence is not None
+        and evidence.event_evidence.state is EventEvidenceState.KNOWN_BLOCKER
+    ):
+        return _outcome(
+            request=request,
+            a4_result=a4_result,
+            evidence=evidence,
+            policy=policy,
+            outcome=AdmissionOutcome.ADMITTED,
+            reason="ADMITTED_WITH_KNOWN_EVENT_BLOCKER",
+            direction=direction,
+        )
     if evidence.derivatives.coverage.state not in {
         CoverageState.PRESENT,
         CoverageState.CONFIRMED_EMPTY,
@@ -414,12 +427,7 @@ def admit_request(
         evidence=evidence,
         policy=policy,
         outcome=AdmissionOutcome.ADMITTED,
-        reason=(
-            "ADMITTED_WITH_KNOWN_EVENT_BLOCKER"
-            if evidence.event_evidence is not None
-            and evidence.event_evidence.state is EventEvidenceState.KNOWN_BLOCKER
-            else "ADMITTED_FOR_A6_EVALUATION"
-        ),
+        reason="ADMITTED_FOR_A6_EVALUATION",
         direction=direction,
     )
 

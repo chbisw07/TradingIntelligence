@@ -25,6 +25,7 @@ from tiaf.trade_expression import (
     semantic_fingerprint,
 )
 
+from ._a62_support import option_chain
 from ._support import EXPIRY_DATE, NOW, coverage, derivatives_capture, option_contract, quote
 
 
@@ -92,6 +93,30 @@ def test_crossed_quote_is_invalid_and_zero_depth_is_preserved() -> None:
     )
     assert zero_depth.top_bid_quantity == 0
     assert zero_depth.top_ask_quantity == 0
+
+
+def test_quote_expiration_timing_must_match_its_chain() -> None:
+    chain = option_chain()
+    quote_value = chain.quotes[0]
+    assert quote_value.contract.expiration.expiration_at is not None
+    assert quote_value.contract.expiration.trading_cutoff_at is not None
+    changed_timing = quote_value.contract.expiration.model_copy(
+        update={
+            "expiration_at": quote_value.contract.expiration.expiration_at - timedelta(hours=1),
+            "trading_cutoff_at": quote_value.contract.expiration.trading_cutoff_at
+            - timedelta(hours=1),
+        }
+    )
+    changed_quote = quote_value.model_copy(
+        update={"contract": quote_value.contract.model_copy(update={"expiration": changed_timing})}
+    )
+    with pytest.raises(ValidationError, match="does not belong"):
+        ExpiryChainEvidence.model_validate(
+            {
+                **chain.model_dump(mode="python"),
+                "quotes": (changed_quote, *chain.quotes[1:]),
+            }
+        )
 
 
 @pytest.mark.parametrize(

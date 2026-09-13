@@ -4,6 +4,21 @@ All notable changes to this project will be documented here.
 
 ## Unreleased
 
+- Accepted and closed TIAF A6.2 after independent universe, gate, disposition,
+  ranking, explanation, replay, compatibility and boundary review. A6.3 is now
+  active/next while `expression.assess` remains unpublished; no runtime code,
+  provider/model/broker call, facade or Shell behavior changed in acceptance.
+
+- Implemented TIAF A6.2 deterministic candidate evaluation, ranking and replay.
+  The captured-input engine maps BULLISH to long CE and BEARISH to long PE,
+  retains up to nine ATM/ITM1/OTM1 evaluations, applies complete ordered gates,
+  ranks eligible candidates lexicographically without weights, emits one
+  preferred plus at most two alternatives, preserves structured explanations
+  and invalidations, and reproduces exact assessments offline. Known event
+  blockers retain WAIT precedence and full-window unknown evidence prevents a
+  false selection. No provider/model/broker call, A5 change, facade operation or
+  Shell command was added; `expression.assess` remains unpublished.
+
 - Accepted and closed TIAF A6.1 after independent contract, admission, replay,
   compatibility and deferral review. The closure makes A6.2 active/next while
   keeping `expression.assess` unpublished. It also makes admitted IV units and

@@ -48,12 +48,15 @@ future architecture, not runtime. Sector Rotation, Signal Qualification, A6/A7,
 TM/scanner runtime integration and remote transport remain unimplemented.
 
 A6 is now **ARCHITECTURE ACCEPTED / THESIS ACCEPTED AS NON-NORMATIVE COMPANION;
-A6.1 ACCEPTED / DONE; A6.2 ACTIVE / NEXT; `expression.assess` NOT_PUBLISHED**:
+A6.1–A6.2 ACCEPTED / DONE; A6.3 ACTIVE / NEXT; A6.4 NOT_IMPLEMENTED;
+`expression.assess` NOT_PUBLISHED**:
 [Trade Expression Intelligence architecture](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md),
 [reconciliation record](TIAF_A6_RECONCILIATION_RECORD.md), and
 [detailed roadmap](TIAF_A6_DETAILED_ROADMAP.md). The bounded A6.1
 contracts/admission/policy slice is [accepted](TIAF_A6_1_CONTRACTS_ADMISSION_POLICY_FOUNDATION_ACCEPTANCE.md);
-it does not change accepted ecosystem authority or publish an expression capability.
+the [A6.2 evaluator](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY.md) is
+[accepted](TIAF_A6_2_CANDIDATE_EVALUATION_RANKING_REPLAY_ACCEPTANCE.md), remains
+internal and does not change accepted ecosystem authority or publish a capability.
 
 The non-normative [A6 user-reference thesis](TI_Trade_Expression_Intelligence_Thesis.docx),
 [PDF preview](TI_Trade_Expression_Intelligence_Thesis.pdf) and
@@ -63,7 +66,7 @@ resolves all fourteen findings and updates the normative Markdown. The
 [independent architecture acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1. The
 unchanged thesis retains its dated source snapshot and then-next wording.
-Next: **TIAF A6.2 — CANDIDATE EVALUATION, RANKING & REPLAY**.
+Next: **TIAF A6.3 — FACADE & TI_SHELL EXPOSURE**.
 
 Markdown architecture is normative. The [Fabric thesis](TIAF_Trading_Intelligence_Agent_Fabric_Thesis.docx),
 [Hierarchy thesis](TI_Intelligence_Hierarchy_Thesis.docx) and
