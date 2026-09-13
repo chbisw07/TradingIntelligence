@@ -41,10 +41,11 @@ pre-A6 improvements. HOT transitions remain deferred (DEF-057). Future `sector.r
 public capabilities. Their typed publication/projection readiness is DEF-058.
 The [R1 acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 finds R2–R5 unnecessary for A5 freeze and A5 ready for final documentation and
-freeze. Documentation consolidation and the
-[final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) are complete:
-`READY_TO_TAG_A5`. A5 stays untagged pending separate authorization. The
-[milestone ledger](MILESTONES.md) owns current project status. Facade behavior
+freeze. Documentation consolidation, the
+[final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md), documentation
+commit `167c51d` and annotated tag `tiaf-a5-baseline` are complete. A5 is
+FROZEN; R2 Discovery Metadata is ACTIVE / NEXT. The [milestone ledger](MILESTONES.md)
+owns current project status. Facade behavior
 and the eight-operation inventory below are unchanged. The detailed
 [A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
 link implementation, acceptance and outstanding boundaries.
@@ -242,8 +243,8 @@ it does not overload corporate-action or earnings-call semantics.
 | Agent replay / A2 comparison / cost/failure hardening | ACCEPTED / `tiaf-a3.10` | [A3.10 implementation](TIAF_A3_10_AGENT_REPLAY_BASELINE_COMPARISON_COST_FAILURE_HARDENING.md): content-addressed capture, explicit replay modes, observational comparison, unknown-cost semantics, lossless failures, 14-case synthetic corpus and closure-readiness seam; monetary pricing knowledge remains DEF-055; [study](STUDY_A3_10_USER_LEVEL_ACCEPTANCE.md) |
 | A4 source/comparability/independence input projection | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_FOUNDATION](TIAF_POST_A3_PRE_A4_FOUNDATION.md) adds immutable source/proposition/authority/dispute/independence contracts, field confirmation, deterministic projection, successor semantics and offline replay over unchanged A2/A3; citation rendering remains absent |
 | Narrow local capability facade and lifecycle | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) plus A4.1/A5.2 now expose eight explicit same-process capabilities, including `a4.evaluate` and `position.assess`, with trusted admission, budget/authority intersection, frozen composition, safe logical artifact refs and offline replay; no live operation, remote transport or broker authority |
-| Deterministic arbitration / adversarial resolution | IMPLEMENTED / A4 FREEZE READY | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts the combined no-model boundary |
-| Position intelligence | IMPLEMENTED / A5 FREEZE READY | [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md) deterministic baseline plus [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) governed facade/Shell publication and [closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); no live TM/broker/multi-leg runtime |
+| Deterministic arbitration / adversarial resolution | IMPLEMENTED / FROZEN at `tiaf-a4-baseline` | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts the combined no-model boundary |
+| Position intelligence | IMPLEMENTED / FROZEN at `tiaf-a5-baseline` | [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md) deterministic baseline plus [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) governed facade/Shell publication and [closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); no live TM/broker/multi-leg runtime |
 | Option strategy comparison/selection | PLANNED | A6/DEF-006 deterministic valid candidates first; forecast-enhanced higher-order comparison after admitted A7 evidence; no initial A4 contract selection |
 | Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
 | Scanner intelligence | EXTERNAL/INTEGRATION | A9 scanner boundary |

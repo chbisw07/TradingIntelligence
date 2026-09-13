@@ -20,12 +20,12 @@ remaining high-priority deferrals. See
 
 ## Accepted foundation
 
-Current gate (2026-09-13, Asia/Kolkata): A5 ACCEPTED / FREEZE_READY,
-`READY_TO_TAG_A5` review completed, proposed `tiaf-a5-baseline` absent.
+Current gate (2026-09-13, Asia/Kolkata): A5 FROZEN at `tiaf-a5-baseline`;
+R2 Discovery Metadata is ACTIVE / NEXT.
 
 ```text
-review/save final docs → authorized commit/push + A5 tag
-  → R2 → R3 → R4 → R5 (PENDING — BEFORE_A6) → A6 (NOT_IMPLEMENTED)
+A5 FROZEN → R2 ACTIVE / NEXT
+  → R3 → R4 → R5 (PENDING — BEFORE_A6) → A6 (NOT_IMPLEMENTED)
 ```
 
 R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
@@ -573,9 +573,9 @@ infrastructure remain out of scope.
 
 The [A5 major closure review](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts
 these slices as one coherent milestone, records the remaining boundaries under
-stable deferral governance, and recommends—but does not create—the
-`tiaf-a5-baseline` tag. A subsequent cross-cutting gate now precedes tagging
-and A6, as described below; the closure's runtime finding remains historical.
+stable deferral governance, and historically recommended the now-created
+`tiaf-a5-baseline` tag. The subsequent cross-cutting gate resolved R1 before
+tagging; R2–R5 precede A6 as described below.
 
 ### TI Pluggability — R1 closed / documentation consolidation complete
 
@@ -600,8 +600,9 @@ composition manifest and baseline-preserving replay.
   including detailed [A4](TIAF_A4_DETAILED_ROADMAP.md) and
   [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps.
 - P5 accepted: [final A5 readiness](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
-  returned `READY_TO_TAG_A5`. Next is reviewed documentation save and separately
-  authorized commit/push/tag. No tag is created here; no A5 policy change is prescribed.
+  returned `READY_TO_TAG_A5`.
+- P6 complete: documentation commit `167c51d` and annotated tag
+  `tiaf-a5-baseline` were pushed. A5 is FROZEN; no A5 policy changed.
 
 Separately bounded SHOULD_FIX_BEFORE_A6 slices from the audit:
 
@@ -611,7 +612,8 @@ Separately bounded SHOULD_FIX_BEFORE_A6 slices from the audit:
 - R4: isolate optional provider package imports without changing adapters.
 - R5: trusted COLD binding snapshots/freeze, not HOT mutation.
 
-This is not A5.x or A6. Only R1 is implemented. New contributor
+This is not A5.x or A6. R1 is implemented; R2 is ACTIVE / NEXT and not yet
+implemented. New contributor
 publication/projection is deferred until a concrete peer is approved (DEF-058);
 HOT remains DEF-057. Sector Rotation, Signal Qualification, forecasting, shared
 live hosting and remote transport remain separately gated. A6 is not next yet.
@@ -630,13 +632,13 @@ A8 owns TM subscriber integration, A9 scanner/candidate intake, and A10 recurrin
 runtime/durability/recovery operations. Earlier recurring execution requires its
 own bounded acceptance gate, including fresh-input admission rather than calling
 captured reads a live monitor. R2–R5 remain non-blocking for A5 freeze and are not
-implemented here. P4 documentation consolidation and P5 final A5 readiness are
-complete; the separately authorized A5 tag remains pending. No milestones are
-renumbered or runtime deferrals closed.
+implemented here. P4 documentation consolidation, P5 final readiness and P6 A5
+tag creation are complete. R2 is now ACTIVE / NEXT. No milestones are renumbered
+or runtime deferrals closed.
 
 ### Current forward sequence and adjacent TBDs
 
-After the separately authorized A5 freeze: bounded R2–R5 before A6 architecture/
+A5 is FROZEN. Current queue: R2 → R3 → R4 → R5 before A6 architecture/
 deterministic implementation; then A7 forecasting/evaluation and an optional
 A7-informed A6 follow-up; A8 TM, A9 scanner intake and A10 monitoring/runtime
 production hardening. Sector Rotation is a future dedicated review/workstream

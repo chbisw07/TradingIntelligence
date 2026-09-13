@@ -41,8 +41,9 @@ facade. This unnumbered slice does not add or renumber an A-milestone.
 **Post-R1 current status:** A5.1/A5.2 and R1 are accepted; the
 [documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
 is complete. The [final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
-returned `READY_TO_TAG_A5` on 2026-09-13 (Asia/Kolkata). A5 is ACCEPTED /
-FREEZE_READY; the proposed `tiaf-a5-baseline` tag is absent. Detailed
+returned `READY_TO_TAG_A5` on 2026-09-13 (Asia/Kolkata); documentation commit
+`167c51d` and annotated tag `tiaf-a5-baseline` were subsequently pushed. A5 is
+FROZEN. Detailed
 [A4](TIAF_A4_DETAILED_ROADMAP.md) and [A5](TIAF_A5_DETAILED_ROADMAP.md) roadmaps
 now provide milestone-level navigation. Monitoring is authoritative future
 architecture, not delivered runtime.
@@ -50,8 +51,8 @@ architecture, not delivered runtime.
 ### Current sequence and explicit ordering uncertainty
 
 ```text
-Final A5 readiness (completed) → save/review docs / authorized commit/push + tag
-  → R2 → R3 → R4 → R5 (PENDING — BEFORE_A6)
+A5 FROZEN (`tiaf-a5-baseline`)
+  → R2 ACTIVE / NEXT → R3 → R4 → R5 (PENDING — BEFORE_A6)
   → A6 architecture / deterministic expression (NOT_IMPLEMENTED)
 ```
 
@@ -527,10 +528,10 @@ now prevents registry absence from shrinking semantic scope and preserves
 explicit absence plus legacy replay. The
 [acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 returns `READY_TO_CLOSE_PLUGGABILITY_R1` and
-`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`. A5 stays untagged pending the
-final freeze/tag-readiness check; documentation consolidation is complete. R2–R5 are
-not A5 freeze requirements and remain pre-A6 improvements. A6 remains unstarted
-and the major order is unchanged.
+`A5_READY_FOR_FINAL_DOCUMENTATION_AND_FREEZE`. The later final readiness check
+returned `READY_TO_TAG_A5`, and `tiaf-a5-baseline` now freezes the accepted A5
+scope. R2 is ACTIVE / NEXT; R3–R5 remain pending pre-A6 improvements and were
+not A5 freeze requirements. A6 remains unstarted and the major order is unchanged.
 
 ## Goal
 

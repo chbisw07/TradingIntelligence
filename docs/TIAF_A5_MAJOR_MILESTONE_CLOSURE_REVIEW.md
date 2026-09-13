@@ -45,7 +45,7 @@ returns `READY_TO_CLOSE_PLUGGABILITY_R1`,
 acceptance, consolidate documentation, then perform the final A5 tag-readiness
 check. This pass still does not create the tag.
 
-Fourth governance addendum (2026-09-13, Asia/Kolkata): documentation
+Fourth pre-tag governance addendum (2026-09-13, Asia/Kolkata): documentation
 consolidation and the [final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
 are complete; the latter returns `READY_TO_TAG_A5`. The chronology remains:
 original A5 closure → pluggability promotion → temporary R1 audit blocker →
@@ -54,6 +54,11 @@ consolidation → final readiness. A5 is ACCEPTED / FREEZE_READY, not tagged.
 The [milestone ledger](MILESTONES.md) now owns current status: review/save final
 docs and separately authorize commit/push/tag, then bounded R2–R5 before A6.
 All earlier verdicts, counts and then-next prompts below remain historical.
+
+Post-tag update (2026-09-13, Asia/Kolkata): final documentation commit `167c51d`
+and annotated tag `tiaf-a5-baseline` were created and pushed after the readiness
+review. A5 is now FROZEN. R2 Discovery Metadata is ACTIVE / NEXT; R3–R5 remain
+pending before A6. This update does not alter the original closure verdict.
 
 ## 1. North-star alignment and delivered scope
 

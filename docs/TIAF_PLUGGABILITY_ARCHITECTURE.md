@@ -10,8 +10,9 @@ and [R1 acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 are complete. Required scope/explicit absence is implemented; R2–R5 remain pending
 pre-A6 and are not A5 freeze blockers. The
 [documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
-is complete, with final A5 freeze/tag-readiness next. Sections 16–18 retain the
-original audit brief/delivery decision, not an instruction to rerun completed R1.
+and final A5 readiness are complete. A5 is FROZEN at `tiaf-a5-baseline`; R2
+Discovery Metadata is ACTIVE / NEXT. Sections 16–18 retain the original audit
+brief/delivery decision, not an instruction to rerun completed R1.
 [Monitoring architecture](TIAF_MONITORING_ARCHITECTURE.md) applies these future
 composition constraints without implementing a scheduler, new registry or HOT.
 

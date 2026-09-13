@@ -367,8 +367,12 @@ Adaptive policies, exchange calendars, distributed runtime, optional subscriptio
 lease semantics, notification transports and sector/signal capabilities remain
 separately gated; no deferral is marked implemented here.
 
-**Subsequent status:** the [post-R1 documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
+**Historical subsequent status at architecture acceptance:** the [post-R1 documentation consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
 has now synchronized accepted A4/A5 and top-level documentation. Its next prompt
 is `TIAF_A5 — FINAL FREEZE / TAG READINESS CHECK`. This supersedes the monitoring
 review's then-next consolidation prompt, not its architecture decisions. No A6,
 monitoring runtime, R2–R5 implementation, commit, tag or push is performed here.
+
+**Post-tag update (2026-09-13, Asia/Kolkata):** A5 is now FROZEN at
+`tiaf-a5-baseline`. R2 Discovery Metadata is ACTIVE / NEXT; R3–R5 remain pending
+before A6. Monitoring remains accepted architecture, not implemented runtime.

@@ -7,9 +7,8 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
 ```text
-A5: ACCEPTED / FREEZE_READY; READY_TO_TAG_A5 check completed
-  → review/save final docs → separately authorized commit/push + A5 tag
-  → R2 → R3 → R4 → R5 (PENDING — BEFORE_A6)
+A5: FROZEN (`tiaf-a5-baseline`)
+  → R2 (ACTIVE / NEXT) → R3 → R4 → R5 (PENDING — BEFORE_A6)
   → A6 (NOT_IMPLEMENTED)
 ```
 
@@ -59,7 +58,8 @@ closes R1 and finds A5 ready for final documentation and freeze. The
 [post-R1 consolidation](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md)
 now completes documentation synchronization. The subsequent
 [final readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) returned
-`READY_TO_TAG_A5`; A5 remains untagged pending separately authorized tag action. No
+`READY_TO_TAG_A5`; documentation commit `167c51d` and annotated tag
+`tiaf-a5-baseline` were then pushed. A5 is FROZEN. No
 A5 policy changed. R2–R5 remain separately bounded pre-A6 work and are not A5
 freeze requirements. A6 has not begun; this workstream does not renumber
 milestones or implement a plugin framework.
@@ -75,17 +75,19 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. Save/review final documentation; A5 freeze/tag only under separate explicit
-   authorization against the reviewed candidate tree. The final readiness
-   check is completed, not a pending runtime acceptance gate.
-2. Bounded R2–R5 pluggability hardening before A6: descriptors/dependencies,
-   additive composition/pinned verification, optional import isolation and trusted
-   COLD ownership. These remain SHOULD_FIX_BEFORE_A6, not A5 freeze requirements.
-3. A6 architecture/implementation: deterministic valid expressions first.
-4. A7 forecasting/evaluation overlay; calibrated inputs may then support a
-   separately versioned forecast-enhanced A6 follow-up.
-5. A8 TM integration, A9 scanner/candidate intake, A10 monitoring operationalization
-   and production hardening; preserve admission, authority and delivery gates.
+1. ACTIVE / NEXT: R2 discovery/dependency metadata.
+2. R3 additive composition envelope and pinned verifier binding resolution.
+3. R4 optional adapter import isolation.
+4. R5 trusted COLD ownership/configuration.
+5. A6 architecture/implementation: deterministic valid expressions first.
+
+R2–R5 are bounded pluggability hardening before A6: descriptors/dependencies,
+additive composition/pinned verification, optional import isolation and trusted
+COLD ownership. These remain SHOULD_FIX_BEFORE_A6, not A5 freeze requirements.
+After initial A6, A7 forecasting/evaluation may supply calibrated inputs for a
+separately versioned forecast-enhanced A6 follow-up.
+A8 TM integration, A9 scanner/candidate intake, A10 monitoring operationalization
+and production hardening retain their admission, authority and delivery gates.
 
 **Adjacent workstream ordering remains explicit TBD:** Sector Rotation needs its
 own architecture/acceptance after the relevant deterministic/PIT/evaluation seams;

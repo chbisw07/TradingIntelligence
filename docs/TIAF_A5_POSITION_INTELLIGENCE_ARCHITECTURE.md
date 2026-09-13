@@ -2,8 +2,9 @@
 
 ## Status
 
-**Authoritative architecture; implemented and ready for A5 baseline freeze,
-2026-09-12 (Asia/Kolkata).** The evidence and complexity review are recorded in
+**Authoritative architecture; implemented and FROZEN at `tiaf-a5-baseline`.**
+The original design review was completed 2026-09-12 (Asia/Kolkata); its evidence
+and complexity review are recorded in
 [the A5 architecture review](TIAF_A5_ARCHITECTURE_REVIEW.md).
 The bounded contract/deterministic/replay slice is now implemented by
 [TIAF A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md); later seams and
@@ -14,8 +15,9 @@ accepts A5.1 plus A5.2 and recommends, but does not create,
 
 The [A5 detailed roadmap](TIAF_A5_DETAILED_ROADMAP.md) now links both delivered
 slices and acceptance studies, accepted R1 and the later monitoring design.
-Post-R1 documentation is synchronized; the final freeze/tag-readiness check is
-next, with no tag created here. R2–R5 are not A5 freeze requirements.
+Post-R1 documentation and final readiness are complete; documentation commit
+`167c51d` and annotated tag `tiaf-a5-baseline` were subsequently pushed. R2 is
+ACTIVE / NEXT; R3–R5 remain pre-A6 work and were not A5 freeze requirements.
 
 This document defines contracts and ownership. It does not implement A5,
 TradeMonitor integration, monitoring workers, scheduling, broker access, A6,

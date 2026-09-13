@@ -1,6 +1,6 @@
 # TI Pluggability R1 Acceptance and A5 Freeze Readiness
 
-Subsequent status addendum (2026-09-13, Asia/Kolkata): R1 acceptance remains
+Pre-tag navigation addendum (2026-09-13, Asia/Kolkata): R1 acceptance remains
 closed. Documentation consolidation and the
 [final A5 readiness review](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) are
 complete; `READY_TO_TAG_A5` is the later result, not a rewritten verdict here.
@@ -9,6 +9,11 @@ R2–R5 are the cross-cutting pluggability remediation / hardening track's pendi
 pre-A6 items, not A5 freeze requirements. See the [milestone ledger](MILESTONES.md)
 for current chronology and next action. Original acceptance evidence and
 then-next prompts below remain historical.
+
+Post-tag update (2026-09-13, Asia/Kolkata): documentation commit `167c51d` and
+annotated tag `tiaf-a5-baseline` were subsequently pushed. A5 is now FROZEN;
+R1 remains ACCEPTED / DONE. R2 Discovery Metadata is ACTIVE / NEXT, while
+R3–R5 remain pending before A6. The original R1 verdict is unchanged.
 
 ## Decisions and scope
 

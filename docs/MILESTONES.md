@@ -9,9 +9,9 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-Verified 2026-09-13 (Asia/Kolkata), repository HEAD `fe8c528`.
-FROZEN means an existing tag; ACCEPTED means reviewed scope; FREEZE_READY means
-accepted and ready for separate tag authorization, not already tagged.
+Verified post-tag on 2026-09-13 (Asia/Kolkata), repository commit `167c51d`.
+FROZEN means an existing tag; ACCEPTED means reviewed scope; DONE means the
+bounded remediation is closed.
 ACTIVE is current work; PENDING is the queue; DEFERRED is registered postponed
 work; FUTURE/TBD indicate later/unresolved scope; NOT_IMPLEMENTED means no runtime.
 
@@ -24,7 +24,7 @@ work; FUTURE/TBD indicate later/unresolved scope; NOT_IMPLEMENTED means no runti
 | A3 | FROZEN | `tiaf-a3-baseline` | [Closure: READY_TO_FREEZE_A3](TIAF_A3_MAJOR_MILESTONE_CLOSURE_REVIEW.md) |
 | A4 | FROZEN | `tiaf-a4-baseline` | [Closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [slice map](TIAF_A4_DETAILED_ROADMAP.md) |
 | TI_SHELL v0.1 | FROZEN | `tiaf-a4.91-shell-v0.1` | [Local command implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) |
-| A5 | ACCEPTED / FREEZE_READY | Proposed `tiaf-a5-baseline` **absent** | [Closure: READY_TO_FREEZE_A5](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [final check: READY_TO_TAG_A5](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) |
+| A5 | FROZEN | `tiaf-a5-baseline` | [Closure: READY_TO_FREEZE_A5](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [final check: READY_TO_TAG_A5](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) |
 
 ### Accepted submilestones and intervening gates
 
@@ -53,8 +53,8 @@ freeze; all four remain unimplemented.
 
 | Item | Purpose | Status | Blocks A5 freeze? | Required before A6? | Key doc |
 |---|---|---|---|---|---|
-| R1 | Policy-owned required scope and explicit absence | ACCEPTED | No — former blocker resolved | Yes — satisfied | [Acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) |
-| R2 | Versioned discovery / dependency metadata | PENDING — BEFORE_A6 | No | Yes | [Audit R2](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
+| R1 | Policy-owned required scope and explicit absence | ACCEPTED / DONE | No — former blocker resolved | Yes — satisfied | [Acceptance](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md) |
+| R2 | Versioned discovery / dependency metadata | ACTIVE / NEXT | No | Yes | [Audit R2](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
 | R3 | Additive composition envelope / pinned verifier | PENDING — BEFORE_A6 | No | Yes | [Audit R3](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
 | R4 | Optional adapter import isolation | PENDING — BEFORE_A6 | No | Yes | [Audit R4](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
 | R5 | Trusted COLD ownership / configuration | PENDING — BEFORE_A6 | No | Yes | [Audit R5](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) |
@@ -72,13 +72,14 @@ duplicate DEF IDs. HOT and future peer publication remain DEF-057/058.
 4. [Documentation consolidated](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md);
    monitoring and ecosystem ownership designs accepted without runtime expansion.
 5. [Final readiness](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md), 2026-09-13:
-   `READY_TO_TAG_A5`. This check is completed; the tag is still absent.
-6. ACTIVE: documentation/navigation closeout and handoff. Save/review these docs;
-   separately authorize commit/push and the proposed A5 tag. No tag is made here.
+   `READY_TO_TAG_A5`.
+6. Final documentation was committed at `167c51d`; annotated tag
+   `tiaf-a5-baseline` was created and pushed on that exact commit.
+7. ACTIVE / NEXT: R2 Discovery Metadata. R3–R5 remain pending before A6.
 
 ```text
-READY_TO_TAG_A5 (done) → reviewed docs / authorized A5 tag
-  → R2 → R3 → R4 → R5 → A6 (NOT_IMPLEMENTED)
+A5 FROZEN (`tiaf-a5-baseline`)
+  → R2 ACTIVE / NEXT → R3 → R4 → R5 → A6 NOT_IMPLEMENTED
 ```
 
 ## Future / parallel workstreams

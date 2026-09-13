@@ -1,5 +1,11 @@
 # TIAF A5 Final Freeze / Tag Readiness Check
 
+Post-tag update (2026-09-13, Asia/Kolkata): the final documentation was committed
+at `167c51d`, and annotated tag `tiaf-a5-baseline` was created and pushed on that
+exact commit after this review. A5 is now FROZEN. The original `READY_TO_TAG_A5`
+verdict, entry state, evidence and then-next sequence below remain historical.
+R2 Discovery Metadata is now ACTIVE / NEXT; R3–R5 remain pending before A6.
+
 ## 1. Decision, scope, and reviewed revision
 
 Review date: 2026-09-13 (Asia/Kolkata). The exact reviewed revision is

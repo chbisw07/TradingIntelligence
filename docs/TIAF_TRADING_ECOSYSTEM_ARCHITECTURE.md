@@ -14,6 +14,10 @@ A5.1/A5.2 and R1 are accepted; A5 freeze/tag-readiness remains a separate gate.
 TM responsibilities here are integration requirements, not a certification of a
 TM repository or broker implementation inspected in this pass.
 
+**Post-tag update (2026-09-13, Asia/Kolkata):** A5 is now FROZEN at
+`tiaf-a5-baseline`. R2 Discovery Metadata is ACTIVE / NEXT; R3–R5 remain pending
+before A6. This changes project status only, not the ecosystem design.
+
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
 owns factual admission; [monitoring](TIAF_MONITORING_ARCHITECTURE.md) and
@@ -561,7 +565,8 @@ child hashes. Read-only projections must not manufacture current truth or grants
 Architecture decision: **READY_TO_ACCEPT_TRADING_ECOSYSTEM_ARCHITECTURE**.
 Thesis readiness: **ECOSYSTEM_READY_FOR_THESIS**.
 
-Next architecture prompt: **`TIAF — TRADING ECOSYSTEM THESIS CREATION`**.
-The operational roadmap's A5 final freeze/tag-readiness gate remains separate;
+Historical next architecture prompt: **`TIAF — TRADING ECOSYSTEM THESIS CREATION`**.
+At this design's review, the operational roadmap's A5 final freeze/tag-readiness
+gate remained separate;
 this design does not begin A6, R2–R5, integration or runtime delivery. No commit,
 tag or push is performed by this architecture pass.

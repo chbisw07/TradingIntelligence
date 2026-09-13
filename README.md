@@ -22,41 +22,46 @@ Status checked **2026-09-13 (Asia/Kolkata)**. The
 | TGT0 / A0 | FROZEN | Repository and contract foundations | Preserve |
 | A1 / A2 / A3 / A4 | FROZEN | Data, deterministic benchmark, specialists, arbitration | Preserve baselines |
 | TI_SHELL v0.1 | FROZEN | Governed local command client | Preserve boundary |
-| A5 | ACCEPTED / FREEZE_READY | Single-position advice; final check: `READY_TO_TAG_A5`; tag absent | Save reviewed docs and separately authorize tag |
-| R1 | ACCEPTED | Required scope and explicit absence fixed | Preserve old/new replay |
-| R2 / R3 / R4 / R5 | PENDING — BEFORE_A6 | Cross-cutting pluggability remediation / hardening track; not A5.x | After A5 tag; does not block it |
+| A5 | FROZEN | Single-position Position Intelligence frozen at `tiaf-a5-baseline` | Preserve baseline |
+| R1 | ACCEPTED / DONE | Required scope and explicit absence fixed | Preserve old/new replay |
+| R2 | ACTIVE / NEXT | Discovery metadata; cross-cutting pluggability hardening, not A5.x | Execute and accept R2 |
+| R3 | PENDING — BEFORE_A6 | Composition envelope / pinned verifier | After R2 |
+| R4 | PENDING — BEFORE_A6 | Optional adapter import isolation | After R3 |
+| R5 | PENDING — BEFORE_A6 | Trusted COLD ownership / configuration | After R4 |
 | A6 | NOT_IMPLEMENTED | Deterministic option expression; not started | After R2–R5 acceptance |
 
 FROZEN means an existing accepted tag; ACCEPTED means reviewed bounded scope;
-FREEZE_READY is not a tag. ACTIVE names the current task, PENDING the gated
-queue, DEFERRED registered postponed work, FUTURE later work, TBD unresolved
-placement/design, and NOT_IMPLEMENTED absence of runtime.
+DONE means its bounded remediation is closed. ACTIVE / NEXT names the current
+authorized workstream; PENDING is the gated queue, DEFERRED registered postponed
+work, FUTURE later work, TBD unresolved placement/design, and NOT_IMPLEMENTED
+absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
-**ACTIVE: A5 documentation/navigation closeout and tag handoff.** The
-[final readiness review](docs/TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md)
-already returned `READY_TO_TAG_A5` at `fe8c528`; that check is not pending.
-The remaining action is to review/save the final readiness and navigation docs,
-then separately authorize commit/push and creation/push of the proposed
-`tiaf-a5-baseline` tag against the reviewed tree. No such action is performed
-by this documentation pass.
+**ACTIVE / NEXT: R2 — Discovery Metadata.** A5 is frozen at
+`tiaf-a5-baseline`, and R1 is accepted. R2 is the first remaining bounded item
+in the cross-cutting pluggability remediation / hardening track. This status
+sweep establishes the queue; it does not implement R2.
 
 ### Current Active Path
 
 ```text
-Final A5 readiness: READY_TO_TAG_A5 (done)
-  → save/review documentation → authorized commit/push + A5 tag
-  → R2 → R3 → R4 → R5 (bounded pre-A6 hardening queue)
-  → A6 architecture / deterministic expression
+A5 ── FROZEN (`tiaf-a5-baseline`)
+  ↓
+R2 ── ACTIVE / NEXT
+  ↓
+R3 ── PENDING → R4 ── PENDING → R5 ── PENDING
+  ↓
+A6 ── NOT_IMPLEMENTED
 ```
 
 ## NEXT STEPS
 
-1. Review the final documentation-only diff and save the readiness record.
-2. Separately authorize documentation commit/push and `tiaf-a5-baseline` tag.
-3. Execute and accept bounded R2–R5 hardening; preserve A1–A5 semantics.
-4. Begin A6 architecture, then deterministic supported single-leg CE/PE expression.
+1. R2 — Discovery Metadata.
+2. R3 — Composition Envelope / Pinned Verifier.
+3. R4 — Optional Adapter Import Isolation.
+4. R5 — COLD Ownership / Configuration.
+5. A6 — architecture, then deterministic supported single-leg CE/PE expression.
 
 ## Parallel / Future Workstreams
 

@@ -38,10 +38,9 @@ Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
 | How do consumers access TI? | [Local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md), [Shell](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md); no remote/live public operation. |
 | What did this consolidation change? | [Post-R1 record](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md). |
 
-A1–A4 are FROZEN. A5.1/A5.2 and R1 are ACCEPTED. The
-[final A5 readiness check](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) returned
-`READY_TO_TAG_A5`; A5 is FREEZE_READY but `tiaf-a5-baseline` does not yet exist.
-R2–R5 are pending pre-A6 work, not A5 freeze blockers. Monitoring is authoritative
+A1–A5 are FROZEN; A5 is tagged at `tiaf-a5-baseline`. R1 is ACCEPTED / DONE.
+R2 Discovery Metadata is ACTIVE / NEXT; R3–R5 are pending pre-A6 work, not A5
+scope. Monitoring is authoritative
 future architecture, not runtime. Sector Rotation, Signal Qualification, A6/A7,
 TM/scanner runtime integration and remote transport remain unimplemented.
 
