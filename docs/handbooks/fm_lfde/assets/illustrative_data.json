@@ -1,0 +1,21 @@
+{
+  "status": "ILLUSTRATIVE_INVENTED_NOT_MEASURED_TI_PERFORMANCE",
+  "incremental": {
+    "metric": "Brier loss; lower is better",
+    "arms": ["K", "Z", "K + Z"],
+    "losses": [0.240, 0.248, 0.226],
+    "note": "Invented summaries, not a dataset or computed confidence interval. Acceptance requires paired outcomes and all scientific gates."
+  },
+  "rotation": {
+    "points": [[1, 0], [0, 1], [-1, 0], [0, -1]],
+    "labels": ["P", "Q", "R", "S"],
+    "degrees": 45,
+    "note": "Exact geometric illustration; not learned factors or named economic axes."
+  },
+  "cost": {
+    "dimensions": [8, 32, 64],
+    "inference_ms": [2, 14, 80],
+    "delta_brier": [0.006, 0.008, 0.0085],
+    "note": "Invented independent teaching profile; not measured latency, a default, pricing or a policy choice."
+  }
+}

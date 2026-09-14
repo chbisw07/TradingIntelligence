@@ -9,7 +9,8 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-Verified post-tag on 2026-09-13 (Asia/Kolkata), repository commit `167c51d`.
+Verified on 2026-09-15 (Asia/Kolkata): HEAD and `tiaf-a6-baseline` resolve to
+`6dc2ff304aae0e87540260b092919bb91e4d4189`; A5 remains at `167c51d`.
 FROZEN means an existing tag; ACCEPTED means reviewed scope; DONE means the
 bounded remediation is closed.
 ACTIVE is current work; PENDING is the queue; DEFERRED is registered postponed
@@ -26,6 +27,7 @@ work; FUTURE/TBD indicate later/unresolved scope; NOT_IMPLEMENTED means no runti
 | TI_SHELL v0.1 | FROZEN | `tiaf-a4.91-shell-v0.1` | [Local command implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) |
 | A5 | FROZEN | `tiaf-a5-baseline` | [Closure: READY_TO_FREEZE_A5](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [final check: READY_TO_TAG_A5](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) |
 | A6 | FROZEN | `tiaf-a6-baseline` | [A6.4 freeze readiness](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md); final tag closure verified |
+| A7 | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION NOT_STARTED / RUNTIME NOT_IMPLEMENTED | FF architecture ACCEPTED and A7 integration RECONCILED; A7 architecture ACCEPTED; sequencing/planning NEXT; no A7 tag | [FF-integrated architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md), [17-finding reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md), [thesis record](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md), [integrated stage crosswalk](TIAF_A7_DETAILED_ROADMAP.md) |
 
 ### Accepted submilestones and intervening gates
 
@@ -90,7 +92,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
   → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
-  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ACTIVE / NEXT → A8 → A9 → A10
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION NOT_STARTED → A8 → A9 → A10
 ```
 
 ## Future / parallel workstreams
@@ -100,7 +102,9 @@ A5 FROZEN (`tiaf-a5-baseline`)
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
 | A6 | FROZEN; A6.1–A6.4 ACCEPTED / DONE | `tiaf-a6-baseline`; [A6.4](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md) closes the 93-case corpus; `expression.assess` PUBLISHED |
-| A7 forecasting / evaluation | ACTIVE / NEXT — NOT_IMPLEMENTED | Architecture pass after the deterministic A6 baseline; optional later A6 overlay |
+| A7 forecasting / evaluation | Architecture ACCEPTED / thesis RECONCILED; IMPLEMENTATION NOT_STARTED; RUNTIME NOT_IMPLEMENTED | Completed FF integration; old A7.1–A7.5 mapped to canonical FF stages, no automatic A6 overlay |
+| Forecasting Framework | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION NOT_STARTED / MINIATURE REALIZATION DEFINED / NOT_IMPLEMENTED | FF thesis RECONCILED; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; sequencing/planning NEXT; unnumbered platform design, not implementation acceptance |
+| FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / NOT_IMPLEMENTED | Conditional internal research; not abandoned or required before a simple FF |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
 | A8 TM / A9 Scanner | FUTURE; runtime integration NOT_IMPLEMENTED | Existing major milestone ownership retained |
@@ -455,9 +459,65 @@ The [A6.3 implementation](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) is closed by
 its [independent acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
 The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
 records the explicit 93-case acceptance corpus and recommends the baseline.
-Next: **TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
+The subsequent A7 architecture and thesis are RECONCILED. Their architecture acceptance was paused for FF review; FF acceptance and
+A7 integration are complete. The [independent A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md)
+now accepts the architecture; sequencing/planning is next.
+
+## FM / LFDE — Intervening research architecture
+
+**2026-09-14 (Asia/Kolkata): ADVANCED FORECASTER FAMILY IN FF; THESIS RETAINED;
+RUNTIME NOT_IMPLEMENTED.** The family
+[architecture](TIAF_FM_LFDE_MARKET_STATE_FORECASTING_ARCHITECTURE.md),
+[research reconciliation](TIAF_FM_LFDE_RESEARCH_RECONCILIATION.md),
+[roadmap](TIAF_FM_LFDE_DETAILED_ROADMAP.md) and
+[decision record](TIAF_FM_LFDE_DECISION_RECORD.md) define a bounded numeric
+market-state/latent-representation research path. The non-normative
+[thesis and record](TIAF_FM_LFDE_THESIS_RECORD.md) add 35 chapters, 32 figures,
+10 worked scenarios, 29 FAQ answers and 24 originally unapplied findings. A6 remains FROZEN;
+A7 ARCHITECTURE is ACCEPTED; sequencing/planning is NEXT. No new numbered A7 milestone, model fit,
+runtime capability or deferral closure. The 24 findings are now dispositioned
+in the [FF reconciliation](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md), without
+altering the thesis edition. Shared platform ownership moves to FF below.
+
+## Forecasting Framework — Platform reconciliation
+
+**FORECASTING FRAMEWORK ARCHITECTURE ACCEPTED; FF MINIATURE REALIZATION DEFINED;
+FF THESIS RECONCILED; FF ARCHITECTURE ACCEPTED; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; sequencing/planning NEXT; RUNTIME NOT_IMPLEMENTED.**
+The [architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md),
+[roadmap](TIAF_FORECASTING_FRAMEWORK_DETAILED_ROADMAP.md) and
+[decision](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md) define primitive and
+composite forecasters, typed DAGs, shared truth/ledger, paired evaluation,
+calibration and governed future COLD selection. No model family is the platform.
+Retain the advanced FM/LFDE thesis; the separate platform handbook is CREATED. Next:
+**TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**. A6 remains FROZEN and A7
+ARCHITECTURE ACCEPTED / IMPLEMENTATION NOT_STARTED. FF acceptance closes
+FFA-B01; A7 integration and independent architecture acceptance are complete.
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
+
+**Current state: ARCHITECTURE ACCEPTED / THESIS RECONCILED /
+IMPLEMENTATION NOT_STARTED / RUNTIME NOT_IMPLEMENTED.**
+The [architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md)
+separates forecasting, evaluation and governed learning. Initial proposal:
+one precisely defined next-session-close cash-equity return probability,
+captured PIT data, logistic/held-out calibration, walk-forward controls and
+shadow/advisory-only evidence. A2/A4/A5/A6 stay unchanged and callable without A7.
+The [integrated roadmap](TIAF_A7_DETAILED_ROADMAP.md) contains FF-0…FF-7 under
+A7 and maps the historical five-slice proposal;
+the [original architecture-pass reconciliation](TIAF_A7_RECONCILIATION_RECORD.md)
+preserves its 30 historical findings.
+The [thesis creation record](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md)
+links the unchanged 36-chapter reference. The
+[thesis reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md) resolves all
+seventeen additional findings: eleven clarifications, one constrained population-
+report addition, one implementation detail, three no-change decisions and one
+retained deferral. Its then-recommended next gate was independent architecture
+acceptance, not implementation. The intervening FF review and explicit
+[A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
+are now completed; A7 architecture is accepted; sequencing/planning is next. Original findings and
+thesis editions remain intact, with current ownership/stages in the integrated design.
+
+The following is the broader long-term charter, **not mandatory initial v1**:
 
 - store recommendation before outcome
 - subsequent price-path capture
@@ -472,8 +532,10 @@ Next: **TIAF A7 — FORECASTING, EVALUATION & LEARNING ARCHITECTURE PASS**.
 - walk-forward/out-of-sample calibration
 - candidate/champion promotion and rollback
 
-**Acceptance:** forecast calibration and Agent value versus A2 are measured
-from subsequent outcomes rather than assumed or learned from Agent prose.
+**Eventual acceptance:** forecast calibration and any claimed Agent value
+versus A2 require qualified subsequent outcomes, not Agent prose. Engineering
+acceptance is separate from empirical model approval; rejection of all model
+candidates is valid. No A7 acceptance or measured improvement is claimed now.
 
 ## TIAF_A8 — TradeMonitor Integration
 
@@ -526,3 +588,33 @@ from subsequent outcomes rather than assumed or learned from Agent prose.
 - For adopted positions, TIAF is forward-looking; original entry rationale is
   optional, while A5.1 requires a current accepted A4 thesis/result.
 - TIAF may improve profitability, but account safety must never depend solely on AI.
+
+<a id="forecasting-framework--a7-integrated-architecture-acceptance-next"></a>
+
+## Forecasting Framework and A7 — architecture accepted; sequencing next
+
+The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
+**A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
+A6 FROZEN; FF ARCHITECTURE ACCEPTED; A7 ARCHITECTURE ACCEPTED;
+A7 THESIS RECONCILED AS NEEDED; A7 / FF IMPLEMENTATION NOT_STARTED;
+RUNTIME NOT_IMPLEMENTED. FM/LFDE remains an optional advanced Forecaster family.
+
+A7 is the lifecycle umbrella. FF owns forecasting contracts, typed DAG and
+bounded runtime; Evaluation owns Ground Truth, Outcome Journal, joined Forecast
+Ledger, benchmarks/metrics/calibration qualification/drift; Learning owns
+candidate fits and the single artifact/lifecycle registry. Independent reviewer
+approval and trusted COLD selection stay separate. The
+[A7 roadmap](TIAF_A7_DETAILED_ROADMAP.md) contains FF-0…FF-7 unchanged,
+with the old A7.1…A7.5 crosswalk. FF-0/1 raw research precedes FF-2's calibrated
+miniature; publication is separately accepted, advanced families optional.
+
+The [FF repeat review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
+closed FFA-B01; the [A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
+then reconciled all 17 A7 findings. Original HOLD, correction, repeat acceptance,
+integration and all 28 FF findings remain historical evidence. Their then-next
+language and the Deferral Register's dated A7.x notes are not the current queue.
+All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
+
+Exact next prompt: **TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+This is a planning gate, not implementation readiness or authorization to train,
+approve models, publish capabilities, change frozen A6 or begin A8.

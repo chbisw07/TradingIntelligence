@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><g font-family="DejaVu Sans">
+<rect width="1500" height="800" fill="white"/>
+<text x="55" y="53" font-size="36" fill="#17324D" text-anchor="start">Incremental value: does Z add to the explicit control?</text>
+<text x="55" y="94" font-size="25" fill="#087D83" text-anchor="start">ILLUSTRATIVE • INVENTED DATA • NOT MEASURED TI PERFORMANCE</text>
+<text x="730.0" y="166" font-size="29" fill="#17324D" text-anchor="middle">Brier loss (lower is better)</text>
+<line x1="155" y1="620.0" x2="1305" y2="620.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="139" y="629.0" font-size="26" fill="#17324D" text-anchor="end">0.00</text>
+<line x1="155" y1="552.5" x2="1305" y2="552.5" stroke="#D6E0E7" stroke-width="3"/>
+<text x="139" y="561.5" font-size="26" fill="#17324D" text-anchor="end">0.05</text>
+<line x1="155" y1="485.0" x2="1305" y2="485.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="139" y="494.0" font-size="26" fill="#17324D" text-anchor="end">0.10</text>
+<line x1="155" y1="417.5" x2="1305" y2="417.5" stroke="#D6E0E7" stroke-width="3"/>
+<text x="139" y="426.5" font-size="26" fill="#17324D" text-anchor="end">0.15</text>
+<line x1="155" y1="350.0" x2="1305" y2="350.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="139" y="359.0" font-size="26" fill="#17324D" text-anchor="end">0.20</text>
+<line x1="155" y1="282.5" x2="1305" y2="282.5" stroke="#D6E0E7" stroke-width="3"/>
+<text x="139" y="291.5" font-size="26" fill="#17324D" text-anchor="end">0.25</text>
+<line x1="155" y1="215.0" x2="1305" y2="215.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="139" y="224.0" font-size="26" fill="#17324D" text-anchor="end">0.30</text>
+<line x1="155" y1="215" x2="155" y2="620" stroke="#17324D" stroke-width="3"/>
+<line x1="155" y1="620" x2="1305" y2="620" stroke="#17324D" stroke-width="3"/>
+<rect x="293.66666666666663" y="296.0" width="106" height="324.0" fill="#087D83"/>
+<text x="346.66666666666663" y="282.0" font-size="30" fill="#087D83" text-anchor="middle">0.24</text>
+<text x="346.66666666666663" y="662" font-size="29" fill="#17324D" text-anchor="middle">K</text>
+<rect x="677.0" y="285.2" width="106" height="334.8" fill="#087D83"/>
+<text x="730.0" y="271.2" font-size="30" fill="#087D83" text-anchor="middle">0.248</text>
+<text x="730.0" y="662" font-size="29" fill="#17324D" text-anchor="middle">Z</text>
+<rect x="1060.3333333333335" y="314.9" width="106" height="305.1" fill="#087D83"/>
+<text x="1113.3333333333335" y="300.9" font-size="30" fill="#087D83" text-anchor="middle">0.226</text>
+<text x="1113.3333333333335" y="662" font-size="29" fill="#17324D" text-anchor="middle">K + Z</text>
+<text x="750" y="719" font-size="32" fill="#17324D" text-anchor="middle">Illustrative ΔZ = 0.240 − 0.226 = 0.014</text>
+<text x="55" y="778" font-size="24" fill="#17324D" text-anchor="start">A positive summary is not acceptance: matched outcomes, uncertainty and gates still matter.</text>
+</g></svg>

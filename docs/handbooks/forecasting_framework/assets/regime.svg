@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><g font-family="DejaVu Sans">
+<rect width="1500" height="800" fill="white"/>
+<text x="55" y="53" font-size="35" fill="#17324D" text-anchor="start">A global winner can lose in a smaller regime</text>
+<text x="55" y="96" font-size="26" fill="#087D83" text-anchor="start">ILLUSTRATIVE / INVENTED / NOT MEASURED TI PERFORMANCE</text>
+<line x1="150" y1="620.0" x2="1350" y2="620.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="629.0" font-size="27" fill="#17324D" text-anchor="end">0.000</text>
+<line x1="150" y1="560.0" x2="1350" y2="560.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="569.0" font-size="27" fill="#17324D" text-anchor="end">0.050</text>
+<line x1="150" y1="500.0" x2="1350" y2="500.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="509.0" font-size="27" fill="#17324D" text-anchor="end">0.100</text>
+<line x1="150" y1="440.0" x2="1350" y2="440.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="449.0" font-size="27" fill="#17324D" text-anchor="end">0.150</text>
+<line x1="150" y1="380.0" x2="1350" y2="380.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="389.0" font-size="27" fill="#17324D" text-anchor="end">0.200</text>
+<line x1="150" y1="320.0" x2="1350" y2="320.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="329.0" font-size="27" fill="#17324D" text-anchor="end">0.250</text>
+<line x1="150" y1="260.00000000000006" x2="1350" y2="260.00000000000006" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="269.00000000000006" font-size="27" fill="#17324D" text-anchor="end">0.300</text>
+<line x1="150" y1="200.0" x2="1350" y2="200.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="209.0" font-size="27" fill="#17324D" text-anchor="end">0.350</text>
+<line x1="150" y1="200" x2="150" y2="620" stroke="#17324D" stroke-width="3"/>
+<line x1="150" y1="620" x2="1350" y2="620" stroke="#17324D" stroke-width="3"/>
+<text x="150" y="158" font-size="28" fill="#087D83" text-anchor="start">Logistic: mean Brier</text>
+<rect x="244.0" y="355.99999999999994" width="100.0" height="264.00000000000006" fill="#087D83"/>
+<text x="294.0" y="343.99999999999994" font-size="28" fill="#087D83" text-anchor="middle">0.220</text>
+<rect x="644.0" y="332.0" width="100.0" height="288.0" fill="#087D83"/>
+<text x="694.0" y="320.0" font-size="28" fill="#087D83" text-anchor="middle">0.240</text>
+<rect x="1044.0" y="351.2" width="100.0" height="268.8" fill="#087D83"/>
+<text x="1094.0" y="339.2" font-size="28" fill="#087D83" text-anchor="middle">0.224</text>
+<text x="720" y="158" font-size="28" fill="#B44D29" text-anchor="start">Tree challenger: mean Brier</text>
+<rect x="356.0" y="392.0" width="100.0" height="228.0" fill="#B44D29"/>
+<text x="406.0" y="380.0" font-size="28" fill="#B44D29" text-anchor="middle">0.190</text>
+<rect x="756.0" y="283.99999999999994" width="100.0" height="336.00000000000006" fill="#B44D29"/>
+<text x="806.0" y="271.99999999999994" font-size="28" fill="#B44D29" text-anchor="middle">0.280</text>
+<rect x="1156.0" y="370.4" width="100.0" height="249.60000000000002" fill="#B44D29"/>
+<text x="1206.0" y="358.4" font-size="28" fill="#B44D29" text-anchor="middle">0.208</text>
+<text x="350.0" y="665" font-size="29" fill="#17324D" text-anchor="middle">Trend (800)</text>
+<text x="750.0" y="665" font-size="29" fill="#17324D" text-anchor="middle">Range (200)</text>
+<text x="1150.0" y="665" font-size="29" fill="#17324D" text-anchor="middle">Global (1000)</text>
+<text x="55" y="727" font-size="29" fill="#17324D" text-anchor="start">Global loss uses the invented 800/200 weights; lower is better.</text>
+<text x="55" y="778" font-size="26" fill="#17324D" text-anchor="start">No significance or routing claim. Predefine cohorts; report support and uncertainty.</text>
+</g></svg>

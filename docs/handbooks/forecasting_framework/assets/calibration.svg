@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><g font-family="DejaVu Sans">
+<rect width="1500" height="800" fill="white"/>
+<text x="55" y="53" font-size="35" fill="#17324D" text-anchor="start">Reliability is a population question, not persuasive prose</text>
+<text x="55" y="96" font-size="26" fill="#087D83" text-anchor="start">ILLUSTRATIVE / INVENTED / NOT MEASURED TI PERFORMANCE</text>
+<line x1="170.0" y1="190" x2="170.0" y2="660" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="170" y1="660.0" x2="1080" y2="660.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="170.0" y="698" font-size="25" fill="#17324D" text-anchor="middle">0.0</text>
+<text x="148" y="668.0" font-size="25" fill="#17324D" text-anchor="end">0.0</text>
+<line x1="352.0" y1="190" x2="352.0" y2="660" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="170" y1="566.0" x2="1080" y2="566.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="352.0" y="698" font-size="25" fill="#17324D" text-anchor="middle">0.2</text>
+<text x="148" y="574.0" font-size="25" fill="#17324D" text-anchor="end">0.2</text>
+<line x1="534.0" y1="190" x2="534.0" y2="660" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="170" y1="472.0" x2="1080" y2="472.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="534.0" y="698" font-size="25" fill="#17324D" text-anchor="middle">0.4</text>
+<text x="148" y="480.0" font-size="25" fill="#17324D" text-anchor="end">0.4</text>
+<line x1="716.0" y1="190" x2="716.0" y2="660" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="170" y1="378.0" x2="1080" y2="378.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="716.0" y="698" font-size="25" fill="#17324D" text-anchor="middle">0.6</text>
+<text x="148" y="386.0" font-size="25" fill="#17324D" text-anchor="end">0.6</text>
+<line x1="898.0" y1="190" x2="898.0" y2="660" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="170" y1="284.0" x2="1080" y2="284.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="898.0" y="698" font-size="25" fill="#17324D" text-anchor="middle">0.8</text>
+<text x="148" y="292.0" font-size="25" fill="#17324D" text-anchor="end">0.8</text>
+<line x1="1080.0" y1="190" x2="1080.0" y2="660" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="170" y1="190.0" x2="1080" y2="190.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="1080.0" y="698" font-size="25" fill="#17324D" text-anchor="middle">1.0</text>
+<text x="148" y="198.0" font-size="25" fill="#17324D" text-anchor="end">1.0</text>
+<line x1="170" y1="660" x2="1080" y2="190" stroke="#17324D" stroke-width="4"/>
+<text x="550" y="743" font-size="29" fill="#17324D" text-anchor="middle">Predicted probability</text>
+<text x="170" y="160" font-size="28" fill="#17324D" text-anchor="start">Observed event frequency</text>
+<circle cx="443.0" cy="566.0" r="13" fill="white" stroke="#B44D29" stroke-width="5"/>
+<circle cx="625.0" cy="425.0" r="13" fill="white" stroke="#B44D29" stroke-width="5"/>
+<circle cx="807.0" cy="378.0" r="13" fill="white" stroke="#B44D29" stroke-width="5"/>
+<text x="1130" y="245" font-size="27" fill="#B44D29" text-anchor="start">Raw</text>
+<text x="1130" y="277" font-size="25" fill="#B44D29" text-anchor="start">buckets</text>
+<rect x="344.0" y="558.0" width="16" height="16" fill="#087D83"/>
+<rect x="617.0" y="417.0" width="16" height="16" fill="#087D83"/>
+<rect x="708.0" y="370.0" width="16" height="16" fill="#087D83"/>
+<text x="1130" y="315" font-size="27" fill="#087D83" text-anchor="start">Transformed</text>
+<text x="1130" y="347" font-size="25" fill="#087D83" text-anchor="start">buckets</text>
+<text x="55" y="787" font-size="25" fill="#17324D" text-anchor="start">Invented points, no support/interval estimates; fitting and test data must be separate.</text>
+</g></svg>

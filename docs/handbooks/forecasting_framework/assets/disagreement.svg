@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><g font-family="DejaVu Sans">
+<rect width="1500" height="800" fill="white"/>
+<text x="55" y="53" font-size="35" fill="#17324D" text-anchor="start">Keep the estimates behind the headline mean</text>
+<text x="55" y="96" font-size="26" fill="#087D83" text-anchor="start">ILLUSTRATIVE / INVENTED / NOT MEASURED TI PERFORMANCE</text>
+<line x1="150" y1="620.0" x2="1350" y2="620.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="629.0" font-size="27" fill="#17324D" text-anchor="end">0.00</text>
+<line x1="150" y1="536.0" x2="1350" y2="536.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="545.0" font-size="27" fill="#17324D" text-anchor="end">0.20</text>
+<line x1="150" y1="452.0" x2="1350" y2="452.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="461.0" font-size="27" fill="#17324D" text-anchor="end">0.40</text>
+<line x1="150" y1="368.0" x2="1350" y2="368.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="377.0" font-size="27" fill="#17324D" text-anchor="end">0.60</text>
+<line x1="150" y1="284.0" x2="1350" y2="284.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="293.0" font-size="27" fill="#17324D" text-anchor="end">0.80</text>
+<line x1="150" y1="200.0" x2="1350" y2="200.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="130" y="209.0" font-size="27" fill="#17324D" text-anchor="end">1.00</text>
+<line x1="150" y1="200" x2="150" y2="620" stroke="#17324D" stroke-width="3"/>
+<line x1="150" y1="620" x2="1350" y2="620" stroke="#17324D" stroke-width="3"/>
+<text x="150" y="158" font-size="28" fill="#087D83" text-anchor="start">Low dispersion group</text>
+<rect x="244.0" y="317.6" width="100.0" height="302.4" fill="#087D83"/>
+<text x="294.0" y="305.6" font-size="28" fill="#087D83" text-anchor="middle">0.72</text>
+<rect x="644.0" y="326.0" width="100.0" height="294.0" fill="#087D83"/>
+<text x="694.0" y="314.0" font-size="28" fill="#087D83" text-anchor="middle">0.70</text>
+<rect x="1044.0" y="330.20000000000005" width="100.0" height="289.79999999999995" fill="#087D83"/>
+<text x="1094.0" y="318.20000000000005" font-size="28" fill="#087D83" text-anchor="middle">0.69</text>
+<text x="720" y="158" font-size="28" fill="#B44D29" text-anchor="start">High dispersion group</text>
+<rect x="356.0" y="321.8" width="100.0" height="298.2" fill="#B44D29"/>
+<text x="406.0" y="309.8" font-size="28" fill="#B44D29" text-anchor="middle">0.71</text>
+<rect x="756.0" y="443.6" width="100.0" height="176.4" fill="#B44D29"/>
+<text x="806.0" y="431.6" font-size="28" fill="#B44D29" text-anchor="middle">0.42</text>
+<rect x="1156.0" y="300.8" width="100.0" height="319.2" fill="#B44D29"/>
+<text x="1206.0" y="288.8" font-size="28" fill="#B44D29" text-anchor="middle">0.76</text>
+<text x="350.0" y="665" font-size="29" fill="#17324D" text-anchor="middle">XGB</text>
+<text x="750.0" y="665" font-size="29" fill="#17324D" text-anchor="middle">FM/LFDE</text>
+<text x="1150.0" y="665" font-size="29" fill="#17324D" text-anchor="middle">LLM</text>
+<text x="55" y="724" font-size="29" fill="#17324D" text-anchor="start">Ranges: 0.03 versus 0.34. Means: about 0.7033 versus 0.6300.</text>
+<text x="55" y="778" font-size="26" fill="#17324D" text-anchor="start">Dispersion is not calibrated confidence or an automatic abstention threshold.</text>
+</g></svg>

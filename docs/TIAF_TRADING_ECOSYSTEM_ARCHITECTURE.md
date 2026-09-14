@@ -38,7 +38,21 @@ without changing those boundaries and is closed by its
 [acceptance](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE_ACCEPTANCE.md).
 The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
 records the 93-case corpus and readiness result without changing ownership or
-expanding the frozen A6 scope. A7 is ACTIVE / NEXT — NOT_IMPLEMENTED.
+expanding the frozen A6 scope. A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION NOT_STARTED / RUNTIME NOT_IMPLEMENTED:
+the [forecasting/evaluation/learning design](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md)
+proposes distinct layers and shadow/advisory evidence, not automatic A4/A5/A6
+influence or execution authority. The [roadmap](TIAF_A7_DETAILED_ROADMAP.md)
+is [independently accepted](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md);
+sequencing/planning precedes separately authorized implementation.
+The [A7 thesis creation edition](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md)
+is unchanged; all [17 findings are RECONCILED](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md).
+ARCHITECTURE is ACCEPTED; implementation is NOT_STARTED. An intervening
+[FF platform design](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED with a
+miniature DEFINED; FM/LFDE is an advanced forecaster family and its thesis is
+retained. The separate FF THESIS remains RECONCILED; FF architecture is ACCEPTED; FF ARCHITECTURE
+ACCEPTANCE COMPLETE after the clock correction; A7 integration is reconciled; A7 architecture is accepted; sequencing/planning is next.
+A7 ARCHITECTURE is ACCEPTED; sequencing/planning is NEXT; all forecasting RUNTIME remains NOT_IMPLEMENTED.
+Platform composition does not change TI/TM/broker ownership or consumer authority.
 
 [System architecture](TIAF_SYSTEM_ARCHITECTURE.md) owns TI's curated boundary;
 [source semantics](TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md)
@@ -61,7 +75,7 @@ order operation may be introduced into TI.
 | Owner | Normative responsibility | Must not own |
 |---|---|---|
 | Scanner/source app | Universe/group selection, discovery rules, candidate proposals and discovery refresh. | Broker execution or TI endorsement by assertion. |
-| TI intelligence | Admitted evidence, deterministic baseline, specialist interpretation, challenge/arbitration, position advice and future expression/forecast intelligence. | Account action authority or broker order commands. |
+| TI intelligence | Admitted evidence, deterministic baseline, specialist interpretation, challenge/arbitration, position advice, bounded A6 expression and future forecast intelligence. | Account action authority or broker order commands. |
 | TI Monitoring | Governed recurring/event-driven capability invocation, mandate admission, freshness, budgets, run lineage and failure isolation. | Operational position truth or execution. |
 | TM | Risk/authority/capital/quantity policy, candidate intake, operational position lifecycle, adoption, broker reconciliation and execution coordination. | A second thesis/scoring engine or rewriting TI findings. |
 | Broker | Authoritative acknowledgements, executions/fills and observed live order/position state. | TI analytical conclusions. |
@@ -84,7 +98,7 @@ subscriber groups -> scanners -> Candidates -------> TM
 TI INTELLIGENCE                                 orders / fills / positions
  admission -> A2 -> A3 -> A3.9 -> A4                 | truth
                    A5 position advice               +----------> TM
-                   A6 expression [future]            |
+                   A6 expression [captured-read]     |
                    A7 overlay [future]              | position snapshot/intent
                          ^                          v
 TI ORCHESTRATION / MONITORING [future recurring runtime]
@@ -197,7 +211,7 @@ no independently managed ProposedExpression aggregate and no mandatory TradeInte
 Editing the external expression increments the candidate revision. The proposal
 is preserved byte-/semantically attributable alongside any A6 assessment.
 
-A6's future TradeExpression is a separate immutable analytical result, with
+A6's TradeExpression role is a separate immutable analytical result, with
 source candidate revision, original proposal digest, evaluated alternatives,
 rejected/unsupported reasons, policy, evidence/cutoff and fingerprint. It does
 not mutate the proposal. Reassessment creates a new result/successor; changed
@@ -226,7 +240,7 @@ TM maps multiple fills/orders to broker-reconciled position identity explicitly.
 | Candidate | Source app | Authenticated scanner/manual adapter -> TI/TM | No; proposal only. | Immutable revisions + receipt/discovery events; reconstruct without rescanning. |
 | Nested proposed expression | Source app, within Candidate | Source -> A6/TM | No; source assertion only. | Version with Candidate; no independent lifecycle or mutable shared reference. |
 | Opportunity/Thesis | TI | A2/A3/A3.9/A4 -> apps/A6/TM/A5 | No; advisory. | Preserve respective schemas/captures/policies; successors never rewrite parents. |
-| TradeExpression | TI/A6 | Accepted future A6 evaluator -> TM | No; suitable representation is not permission. | Capture evaluated alternatives/inputs; new identity on changed evaluation. |
+| TradeExpression | TI/A6 | Frozen captured-read A6 evaluator -> future TM integration | No; suitable representation is not permission. | Capture evaluated alternatives/inputs; new identity on changed evaluation. |
 | ExecutionIntent | TM | Authorized TM workflow -> TM broker adapter | Conditionally actionable only through current TM gates. | Durable idempotent action identity, pinned approval and attempts; amendments reauthorized; replay never dispatches. |
 | BrokerOrder | Broker; TM retains reconciled view | Broker -> TM/client projections | Actual broker order state; no UI-authored truth. | Preserve broker IDs, acknowledgements, updates and unknown states; replay events, never resubmit. |
 | Fill | Broker | Broker -> TM reconciliation | Executed fact, not reusable command authority. | Immutable observed fill ID/account/quantity/price/time; corrections append with provenance. |
@@ -246,13 +260,14 @@ No shared database is mandated; each owner persists its own records and links.
 
 Initial A6 scope is **deterministic selection/assessment of supported single-leg
 CE/PE option expressions** over an admitted underlying thesis. It may compare
-expiry/strike/moneyness, supplied liquidity/IV/Greeks and explicit policy/risk
-constraints, retaining alternatives or NO_OPTION_TRADE. It remains future work.
+expiry/strike/moneyness and qualified liquidity under explicit policy/risk
+constraints, retaining alternatives or NO_OPTION_TRADE. This bounded scope is
+frozen; qualified IV/Greeks remain optional supplied context, not ranking inputs.
 No universal cash/future/options/spread optimizer, hedge/roll engine, multi-leg
 policy, calibrated expected move or probability-of-profit is approved here.
 
-Exact eligible instruments, long/short exposure permissions, orderability rules
-and numeric thresholds require A6 architecture/acceptance; unapproved cases are
+Exact eligible instruments, long-only exposure, orderability rules and numeric
+thresholds are pinned by the accepted A6 architecture/policy; unapproved cases are
 unsupported, not inferred permission for short options. Cash/future proposals can
 have their own approved TM/TI validation path, not a false A6 endorsement.
 
@@ -592,3 +607,33 @@ At this design's review, the operational roadmap's A5 final freeze/tag-readiness
 gate remained separate;
 this design does not begin A6, R2–R5, integration or runtime delivery. No commit,
 tag or push is performed by this architecture pass.
+
+<a id="forecasting-framework--a7-integrated-architecture-acceptance-next"></a>
+
+## Forecasting Framework and A7 — architecture accepted; sequencing next
+
+The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
+**A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
+A6 FROZEN; FF ARCHITECTURE ACCEPTED; A7 ARCHITECTURE ACCEPTED;
+A7 THESIS RECONCILED AS NEEDED; A7 / FF IMPLEMENTATION NOT_STARTED;
+RUNTIME NOT_IMPLEMENTED. FM/LFDE remains an optional advanced Forecaster family.
+
+A7 is the lifecycle umbrella. FF owns forecasting contracts, typed DAG and
+bounded runtime; Evaluation owns Ground Truth, Outcome Journal, joined Forecast
+Ledger, benchmarks/metrics/calibration qualification/drift; Learning owns
+candidate fits and the single artifact/lifecycle registry. Independent reviewer
+approval and trusted COLD selection stay separate. The
+[A7 roadmap](TIAF_A7_DETAILED_ROADMAP.md) contains FF-0…FF-7 unchanged,
+with the old A7.1…A7.5 crosswalk. FF-0/1 raw research precedes FF-2's calibrated
+miniature; publication is separately accepted, advanced families optional.
+
+The [FF repeat review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
+closed FFA-B01; the [A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
+then reconciled all 17 A7 findings. Original HOLD, correction, repeat acceptance,
+integration and all 28 FF findings remain historical evidence. Their then-next
+language and the Deferral Register's dated A7.x notes are not the current queue.
+All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
+
+Exact next prompt: **TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+This is a planning gate, not implementation readiness or authorization to train,
+approve models, publish capabilities, change frozen A6 or begin A8.

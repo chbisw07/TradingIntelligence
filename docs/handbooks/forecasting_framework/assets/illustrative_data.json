@@ -1,0 +1,12 @@
+{
+  "status": "ILLUSTRATIVE_INVENTED_NOT_MEASURED_TI_PERFORMANCE",
+  "cost": {"L": 2, "X": 8, "C": 1, "P1": 1, "P2": 1},
+  "calibration": {"raw": [0.30, 0.50, 0.70], "transformed": [0.20, 0.50, 0.60], "frequency": [0.20, 0.50, 0.60]},
+  "regime": {"counts": [800, 200], "logistic": [0.22, 0.24], "tree": [0.19, 0.28]},
+  "contribution": {"arms": ["E", "E minus A", "E minus kNN", "E minus C"], "losses": [0.200, 0.210, 0.190, 0.205]},
+  "disagreement": {"names": ["XGB", "FM/LFDE", "LLM"], "low": [0.72, 0.70, 0.69], "high": [0.71, 0.42, 0.76]},
+  "miniature": {"truth": [1, 0, 1, 0], "base": [0.52, 0.52, 0.52, 0.52], "logistic": [0.60, 0.40, 0.70, 0.50], "tree": [0.70, 0.30, 0.80, 0.40]},
+  "ensemble_help": {"A": [0.90, 0.70, 0.80, 0.40], "B": [0.60, 0.20, 0.50, 0.10]},
+  "ensemble_hurt": {"A": [0.80, 0.20, 0.80, 0.20], "B": [0.60, 0.40, 0.60, 0.40]},
+  "llm": {"truth": [1, 1, 1, 0, 0], "raw": 0.80, "calibrated": 0.60}
+}

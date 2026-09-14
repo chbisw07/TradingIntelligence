@@ -1,5 +1,15 @@
 # TBD - TI Forecasting / Ensemble / Calibration / Learning Architecture
 
+**A7 reconciliation update, 2026-09-14 (Asia/Kolkata):** the
+[A7 architecture RECONCILED](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md),
+[detailed roadmap](TIAF_A7_DETAILED_ROADMAP.md) and
+[original section disposition record](TIAF_A7_RECONCILIATION_RECORD.md#forecasting-idea-note-disposition)
+now govern the proposed bounded continuation. One exact equity endpoint target,
+logistic/held-out calibration and shadow/advisory-only use are proposed; broad
+distributions, ranking and ensemble hierarchies are not mandatory v1. A7 runtime
+remains NOT_IMPLEMENTED and independent architecture acceptance is still pending.
+The exploratory body below is preserved, not promoted wholesale.
+
 **Consolidation disposition: REVISE_AND_KEEP_TBD (2026-09-11).**
 The [transition plan](TIAF_POST_A3_CONSOLIDATION_AND_REPLANNING.md) retains A7
 as the evaluation/forecast overlay after deterministic A6 candidates; its

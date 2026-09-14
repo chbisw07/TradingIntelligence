@@ -153,6 +153,55 @@ labels are not mandatory initial-A6 integration gates. IDs/statuses unchanged.
 | DEF-057 | Governed HOT capability-composition transitions | TI Pluggability architecture | DEPENDENCY_DEFERRAL | Runtime replacement has no demonstrated need over trusted COLD startup composition and requires stronger correctness guarantees. | Operational justification; equivalent COLD path; immutable generation pinning, activation/quiescence, state/cache ownership, safe retirement, compatible rollback and replay acceptance | MEDIUM | JUSTIFIED HOT NEED / DEPLOYMENT REVIEW | DEFERRED | [Pluggability architecture](TIAF_PLUGGABILITY_ARCHITECTURE.md) §14 defines the safety gate, not implementation. No family is approved for HOT in this pass. Existing fallback across startup-pinned routes is not HOT composition; no registry mutation, loader or service is introduced. |
 | DEF-058 | New peer-intelligence contributor publication and projection | TI Pluggability A1–A5 audit | DEPENDENCY_DEFERRAL | Existing specialist IDs, Planner membership and A3.9 detail mappings are closed; registering a new kind of contributor alone cannot make consumers interpret it. | Separately approved peer capability; typed input/output and dependency descriptor; versioned projection/admission policy; preserved baseline and replay | MEDIUM | BEFORE FIRST NEW PEER CONTRIBUTOR | DEFERRED | [Compliance audit](TIAF_PLUGGABILITY_A1_A5_COMPLIANCE_AUDIT.md) F7/R6: extend only the necessary trusted ID/mapping and optional public operation when justified. No Sector Rotation, Signal Qualification, forecast, generic registry or A4/A5 redesign is delivered. Required-scope omission is resolved by accepted R1, not this deferral and not grounds to make all specialists optional. |
 
+## A7 architecture disposition
+
+**2026-09-14 (Asia/Kolkata): A6 FROZEN; A7 ARCHITECTURE RECONCILED;
+A7 THESIS RECONCILED; ARCHITECTURE ACCEPTANCE PENDING; RUNTIME NOT_IMPLEMENTED.** The
+[A7 architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md),
+[reconciliation](TIAF_A7_RECONCILIATION_RECORD.md) and
+[proposed slices](TIAF_A7_DETAILED_ROADMAP.md) define the bounded next design.
+No register row is closed, renumbered or reclassified by this documentation
+pass. The 58 stable entries and their statuses above are unchanged.
+
+| Existing ID / group | A7 disposition / revisit gate |
+|---|---|
+| DEF-007 / DEF-013 / DEF-049 | A7.1 proposes `QualifiedSessionSchedule` with official-origin venue/segment coverage, adjacency and revision proof; existing A6 windows alone are insufficient. Missing qualification blocks both forecast and label admission. This is not a calendar engine, adjusted-history policy or arbitrary historical reconstruction. Qualified captured data, dated universe, action coverage and rights remain independent gates. |
+| DEF-024 | A7.2 evaluates a bounded forecast estimator, not indicator-parameter optimization or changes to frozen A2/A4/A5/A6 weights. Broader optimization remains deferred beyond v1 under a separate objective/PIT/holdout protocol. |
+| DEF-014 / DEF-040–043 | Historical option timing/features/OI/term structure/surfaces are not supplied by a cash-equity endpoint target. Revisit before any expression/path model, not a prerequisite to synthetic v1 contract tests. |
+| DEF-044 | v1 proposes only `P(next-session close > known reference close)`. It cannot estimate expected move, option POP, target-before-stop or expected monetary utility. These remain deferred to independent qualified data/label/model/consumer-policy acceptance. |
+| DEF-053 | Broad A7 still owns evaluated cross-candidate comparison, but initial v1 does not publish rankings or learn A3/A4 weights. Matched observational scorecards retain selection/coverage limits; future ranking requires its own accepted target and cohort/tie policy. |
+| DEF-010 / DEF-050 / DEF-051 | Local immutable journal/evaluation design adds no scheduled acquisition or distributed store. A7 defines outcome/drift needs; Monitoring/A10 or a separately gated operational slice owns durable dispatch/recovery. |
+| DEF-052 / DEF-055 | Local classical forecast models do not implement production LLM-backed reasoning. Resource budgets and known-zero external calls do not establish priced local compute; monetary unknowns remain explicit. |
+| DEF-057 / DEF-058 | No HOT model replacement, generic loader or peer publication. Proposed A7.3 COLD binding and A7.4 capability/projection acceptance must resolve only their concrete seams; all current nine facade IDs stay unchanged now. |
+
+Advanced forecast distributions, path/option targets, ensembles, deep/RL models
+and automated learning are explicitly deferred beyond v1 in the A7 design,
+not newly registered duplicates of existing model/optimization/operational
+obligations or mandatory initial scope. A7 major closure must review these
+carry-forwards explicitly rather than forget the broader milestone charter.
+TM/broker, SigmaDSL, Web/NLP, Sector Rotation and Signal Qualification retain
+their existing separate ownership and placement. The
+[A7 user thesis creation edition](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md)
+is unchanged; its [17 findings are RECONCILED](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md).
+TF-09 adopts an immutable Evaluation-owned population-disposition report **with
+constraints**, assigned to the existing A7.1–A7.4 slices; it adds no journal
+status system, scheduler or public operation. TF-16 retains the advanced-family
+deferral. No canonical ID/status/row is changed and no duplicate deferral is added.
+The A7 reconciliation's then-next independent acceptance is now pending behind
+the intervening [FF platform design](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md),
+FF architecture acceptance and later explicit A7 integration. FM/LFDE is
+retained as an advanced family with an unchanged thesis edition. The
+[FM/LFDE roadmap](TIAF_FM_LFDE_DETAILED_ROADMAP.md#10-existing-deferrals-and-residual-decisions)
+maps existing gates without closing or duplicating any of the 58 canonical
+entries. FM-0–FM-6 are conditional research labels, not implemented capabilities
+or amendments to A7 v1. Exact next prompt:
+**TIAF A7 — FORECASTING FRAMEWORK INTEGRATION RECONCILIATION**.
+The [FF record](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md) dispositions the
+24 FM thesis findings at draft-design level, not as new canonical deferral entries.
+FF ARCHITECTURE ACCEPTED; MINIATURE REALIZATION DEFINED;
+IMPLEMENTATION NOT_STARTED; RUNTIME NOT_IMPLEMENTED;
+A7 ACCEPTANCE PAUSED. No FF stage closes a data, scheduler, HOT or publication gate.
+
 ## Immediate milestone work deliberately not registered
 
 The following was not a deferral because the accepted roadmap placed it in the
@@ -560,3 +609,28 @@ Two main-row wording clarifications preserve statuses: DEF-007 now specifies the
 calendar gate for session-sensitive promises rather than any fixed wall-clock
 periodic slice; DEF-058 acknowledges accepted R1 instead of calling it immediate
 unresolved remediation. Neither is implementation burn-down.
+
+## Forecasting Framework — architecture accepted; A7 integration next
+
+The [independent repeat review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
+records **FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTED** and closes FFA-B01.
+The five original HOLD dimensions now have four ACCEPT and one
+ACCEPT_WITH_CLARIFICATION verdicts. The [original HOLD](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE.md)
+and [clock correction](TIAF_FORECASTING_FRAMEWORK_HISTORICAL_EVALUATION_CLOCK_SEMANTICS_CORRECTION.md)
+remain historical evidence; no previous verdict is overwritten.
+
+FF ARCHITECTURE ACCEPTED; FF THESIS RECONCILED;
+FF IMPLEMENTATION NOT_STARTED / RUNTIME NOT_IMPLEMENTED; A7 ACCEPTANCE PAUSED;
+A6 FROZEN; FM/LFDE PRESERVED AS ADVANCED FORECASTER FAMILY.
+The [28-finding reconciliation](TIAF_FORECASTING_FRAMEWORK_THESIS_ARCHITECTURE_RECONCILIATION.md)
+retains 15 NO_CHANGE, nine CLARIFICATION_ADOPTED, two IMPLEMENTATION_DETAIL and
+two DEFER. All four original non-blocking follow-ups remain at their stated gates.
+The non-normative [PDF](TI_Forecasting_Framework_Thesis.pdf),
+[editable DOCX](TI_Forecasting_Framework_Thesis.docx) and
+[creation record / current addendum](TIAF_FORECASTING_FRAMEWORK_THESIS_RECORD.md)
+retain the original edition. A7/FM sources and all 58 canonical deferrals are unchanged.
+
+The [forward sequence](IMPLEMENTATION_ROADMAP.md#current-forward-sequence)
+requires **TIAF A7 — FORECASTING FRAMEWORK INTEGRATION RECONCILIATION**,
+then independent A7 acceptance and separately authorized implementation.
+Architecture acceptance is not model/data approval, runtime readiness or a new capability.

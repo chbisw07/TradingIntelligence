@@ -40,7 +40,7 @@ implemented; R4 adapter import isolation and R5 COLD ownership are accepted/done
 Neither added a public operation at the time; A6.3 now adds the separately
 governed ninth operation.
 HOT transitions remain deferred (DEF-057). Future `sector.rotation`,
-`signal.qualify` and `forecast.return` discovery examples are not implemented
+`signal.qualify` and historical `forecast.return` discovery examples are not implemented
 public capabilities. Their typed publication/projection readiness is DEF-058.
 The [R1 acceptance closure](TIAF_PLUGGABILITY_R1_ACCEPTANCE_AND_A5_FREEZE_READINESS.md)
 finds R2–R5 unnecessary for A5 freeze and A5 ready for final documentation and
@@ -88,11 +88,12 @@ authority, dependency availability, health or fresh data.
 
 No LIVE_READ facade operation exists. A4.2's governed internal acquisition bridge
 is not a public endpoint. Future `sector.rotation`, `signal.qualify` and
-`forecast.return` are design examples only; recurring monitoring, TM/scanner
+the reconciled A7 design's `forecast.assess` are proposals only; the earlier
+`forecast.return` example reserves no ID or alias. Recurring monitoring, TM/scanner
 runtime and remote transport are not callable capabilities.
 
 A6 is **FROZEN at `tiaf-a6-baseline`; A6.1–A6.4 ACCEPTED / DONE;
-`expression.assess` PUBLISHED. A7 is ACTIVE / NEXT — NOT_IMPLEMENTED**. The
+`expression.assess` PUBLISHED. A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION NOT_STARTED / RUNTIME NOT_IMPLEMENTED**. The
 [A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines the
 advisory, captured-input, deterministic long single-leg CE/PE assessment now
 published by [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) and closed by its
@@ -107,6 +108,33 @@ publishes it without adding live acquisition and is accepted/done.
 The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md)
 records the explicit 93-case corpus, public disposition goldens and final
 freeze-readiness result without adding another capability.
+
+The [reconciled A7 architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md)
+and [roadmap](TIAF_A7_DETAILED_ROADMAP.md) propose separate forecasting,
+evaluation and learning, with one exact equity endpoint target and no v1
+automatic influence on A4/A5/A6. The [reconciliation](TIAF_A7_RECONCILIATION_RECORD.md)
+retains the existing A3 forecast placeholder without claiming an implementation.
+The [A7 thesis creation edition](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md)
+is unchanged; all [17 findings are RECONCILED](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md).
+A7 ARCHITECTURE is ACCEPTED; implementation sequencing is NEXT. The intervening
+[FF architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED;
+FF MINIATURE REALIZATION is DEFINED; FF THESIS RECONCILED; FF ARCHITECTURE
+ACCEPTANCE COMPLETE; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; sequencing/planning NEXT; IMPLEMENTATION NOT_STARTED;
+RUNTIME NOT_IMPLEMENTED. FM/LFDE is its advanced family; its existing thesis is retained.
+The completed [FF/A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
+is now independently [accepted](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md).
+It adds no capability IDs; A7's documentation
+now owns the integrated stage crosswalk. The Evaluation-owned population
+report is a proposed internal artifact, not another capability. Explanatory
+examples and registry mockups add no model, callable operation or acceptance claim.
+
+| A7 design surface | Proposed placement | Current status |
+|---|---|---|
+| `forecast.assess` | Future public captured/local shadow/advisory inference | ARCHITECTURE RECONCILED / NOT_IMPLEMENTED; not in catalog |
+| `forecast.evaluate` | Future engineering persisted-corpus evaluation | ARCHITECTURE RECONCILED / NOT_IMPLEMENTED; not in catalog |
+| `model.list` / `model.describe` | Engineering registry inspection initially, not new public operations | PROPOSED / NOT_IMPLEMENTED |
+| A7 recorded replay / pinned verification | Future additive artifact-kind support through existing replay seam | PROPOSED / NOT_IMPLEMENTED; old replay unchanged |
+| Training / calibration / promotion | Governed engineering lifecycle, no public training command | PROPOSED / NOT_IMPLEMENTED |
 
 ## Data and evidence
 
@@ -289,7 +317,7 @@ it does not overload corporate-action or earnings-call semantics.
 | Narrow local capability facade and lifecycle | IMPLEMENTED / ACCEPTED | [POST_A3_PRE_A4_LOCAL_FACADE](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md) plus A4.1/A5.2/A6.3 now expose nine explicit same-process capabilities, including `a4.evaluate`, `position.assess` and `expression.assess`, with trusted admission, budget/authority intersection, frozen composition, safe logical artifact refs and offline replay; no live operation, remote transport or broker authority |
 | Deterministic arbitration / adversarial resolution | IMPLEMENTED / FROZEN at `tiaf-a4-baseline` | [A4.1](TIAF_A4_1_DETERMINISTIC_CHALLENGE_ARBITRATION.md) implements bounded primary/counter theses and deterministic arbitration; [A4.2](TIAF_A4_2_GOVERNED_EVIDENCE_NEED_PLANNER_BRIDGE.md) adds governed one-round evidence admission, A3.8 execution, later successor projection and offline chain replay; [major closure](TIAF_A4_MAJOR_MILESTONE_CLOSURE_REVIEW.md) accepts the combined no-model boundary |
 | Position intelligence | IMPLEMENTED / FROZEN at `tiaf-a5-baseline` | [A5.1](TIAF_A5_1_DETERMINISTIC_SINGLE_POSITION_BASELINE.md) deterministic baseline plus [A5.2](TIAF_A5_2_GOVERNED_POSITION_FACADE_SHELL.md) governed facade/Shell publication and [closure](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); no live TM/broker/multi-leg runtime |
-| Option strategy comparison/selection | PLANNED | A6/DEF-006 deterministic valid candidates first; forecast-enhanced higher-order comparison after admitted A7 evidence; no initial A4 contract selection |
+| Option strategy comparison/selection | BOUNDED A6 IMPLEMENTED; broader scope DEFERRED | Frozen captured-read long single-leg CE/PE selection; DEF-006 broader strategies and A7-enhanced comparison remain deferred; no initial A4 contract selection |
 | Forecast interpretation | PLANNED | Conditional A3 consumer of calibrated A7 evidence |
 | Scanner intelligence | EXTERNAL/INTEGRATION | A9 scanner boundary |
 
@@ -328,3 +356,33 @@ it does not overload corporate-action or earnings-call semantics.
 TIAF indicators and features never place orders. Primitive features,
 indicators, future strategies, Agent reasoning, and execution authority remain
 distinct architectural layers.
+
+<a id="forecasting-framework--a7-integrated-architecture-acceptance-next"></a>
+
+## Forecasting Framework and A7 — architecture accepted; sequencing next
+
+The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
+**A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
+A6 FROZEN; FF ARCHITECTURE ACCEPTED; A7 ARCHITECTURE ACCEPTED;
+A7 THESIS RECONCILED AS NEEDED; A7 / FF IMPLEMENTATION NOT_STARTED;
+RUNTIME NOT_IMPLEMENTED. FM/LFDE remains an optional advanced Forecaster family.
+
+A7 is the lifecycle umbrella. FF owns forecasting contracts, typed DAG and
+bounded runtime; Evaluation owns Ground Truth, Outcome Journal, joined Forecast
+Ledger, benchmarks/metrics/calibration qualification/drift; Learning owns
+candidate fits and the single artifact/lifecycle registry. Independent reviewer
+approval and trusted COLD selection stay separate. The
+[A7 roadmap](TIAF_A7_DETAILED_ROADMAP.md) contains FF-0…FF-7 unchanged,
+with the old A7.1…A7.5 crosswalk. FF-0/1 raw research precedes FF-2's calibrated
+miniature; publication is separately accepted, advanced families optional.
+
+The [FF repeat review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
+closed FFA-B01; the [A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
+then reconciled all 17 A7 findings. Original HOLD, correction, repeat acceptance,
+integration and all 28 FF findings remain historical evidence. Their then-next
+language and the Deferral Register's dated A7.x notes are not the current queue.
+All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
+
+Exact next prompt: **TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+This is a planning gate, not implementation readiness or authorization to train,
+approve models, publish capabilities, change frozen A6 or begin A8.

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><g font-family="DejaVu Sans">
+<rect width="1500" height="800" fill="white"/>
+<text x="60" y="53" font-size="36" fill="#17324D" text-anchor="start">Calibration: probability versus observed frequency</text>
+<text x="60" y="94" font-size="25" fill="#087D83" text-anchor="start">ILLUSTRATIVE • INVENTED DATA • NOT MEASURED TI PERFORMANCE</text>
+<text x="665" y="726" font-size="30" fill="#17324D" text-anchor="middle">Forecast probability</text>
+<text transform="translate(40 397) rotate(-90)" text-anchor="middle" font-size="30" fill="#17324D">Observed event frequency</text>
+<line x1="140.0" y1="150" x2="140.0" y2="650" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="140" y1="650.0" x2="1170" y2="650.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="140.0" y="690" font-size="27" fill="#17324D" text-anchor="middle">0.0</text>
+<text x="117" y="660.0" font-size="27" fill="#17324D" text-anchor="end">0.0</text>
+<line x1="346.0" y1="150" x2="346.0" y2="650" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="140" y1="550.0" x2="1170" y2="550.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="346.0" y="690" font-size="27" fill="#17324D" text-anchor="middle">0.2</text>
+<text x="117" y="560.0" font-size="27" fill="#17324D" text-anchor="end">0.2</text>
+<line x1="552.0" y1="150" x2="552.0" y2="650" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="140" y1="450.0" x2="1170" y2="450.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="552.0" y="690" font-size="27" fill="#17324D" text-anchor="middle">0.4</text>
+<text x="117" y="460.0" font-size="27" fill="#17324D" text-anchor="end">0.4</text>
+<line x1="758.0" y1="150" x2="758.0" y2="650" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="140" y1="350.0" x2="1170" y2="350.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="758.0" y="690" font-size="27" fill="#17324D" text-anchor="middle">0.6</text>
+<text x="117" y="360.0" font-size="27" fill="#17324D" text-anchor="end">0.6</text>
+<line x1="964.0" y1="150" x2="964.0" y2="650" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="140" y1="250.0" x2="1170" y2="250.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="964.0" y="690" font-size="27" fill="#17324D" text-anchor="middle">0.8</text>
+<text x="117" y="260.0" font-size="27" fill="#17324D" text-anchor="end">0.8</text>
+<line x1="1170.0" y1="150" x2="1170.0" y2="650" stroke="#D6E0E7" stroke-width="3"/>
+<line x1="140" y1="150.0" x2="1170" y2="150.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="1170.0" y="690" font-size="27" fill="#17324D" text-anchor="middle">1.0</text>
+<text x="117" y="160.0" font-size="27" fill="#17324D" text-anchor="end">1.0</text>
+<line x1="140" y1="650" x2="1170" y2="650" stroke="#17324D" stroke-width="3"/>
+<line x1="140" y1="650" x2="140" y2="150" stroke="#17324D" stroke-width="3"/>
+<line x1="140" y1="650" x2="1170" y2="150" stroke="#8C9EAA" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="230" y="190" font-size="29" fill="#53687A" text-anchor="start">Dashed line: exact agreement</text>
+<line x1="861.0" y1="305.0" x2="861.0" y2="300.0" stroke="#087D83" stroke-width="3" stroke-dasharray="7 5"/>
+<circle cx="861.0" cy="305.0" r="10" fill="#087D83"/>
+<line x1="1067.0" y1="340.0" x2="1067.0" y2="200.0" stroke="#B44D29" stroke-width="3" stroke-dasharray="7 5"/>
+<circle cx="1067.0" cy="340.0" r="10" fill="#B44D29"/>
+<text x="410" y="275" font-size="33" fill="#087D83" text-anchor="start">0.70 → 0.69</text>
+<text x="410" y="315" font-size="27" fill="#087D83" text-anchor="start">690 / 1,000 positive</text>
+<text x="965" y="410" font-size="33" fill="#B44D29" text-anchor="start">0.90 → 0.62</text>
+<text x="965" y="450" font-size="27" fill="#B44D29" text-anchor="start">620 / 1,000 positive</text>
+<text x="965" y="490" font-size="29" fill="#B44D29" text-anchor="start">Overconfident</text>
+<text x="60" y="777" font-size="25" fill="#17324D" text-anchor="start">A close point is not proof of calibration across bins, regimes or future samples.</text>
+</g></svg>

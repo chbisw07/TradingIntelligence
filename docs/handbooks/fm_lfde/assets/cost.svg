@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><g font-family="DejaVu Sans">
+<rect width="1500" height="800" fill="white"/>
+<text x="55" y="53" font-size="36" fill="#17324D" text-anchor="start">Complexity must earn its cost; dimension alone explains neither</text>
+<text x="55" y="94" font-size="25" fill="#087D83" text-anchor="start">ILLUSTRATIVE • INVENTED DATA • NOT MEASURED TI PERFORMANCE</text>
+<text x="382.5" y="166" font-size="29" fill="#17324D" text-anchor="middle">Invented inference latency (ms)</text>
+<line x1="120" y1="620.0" x2="645" y2="620.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="104" y="629.0" font-size="26" fill="#17324D" text-anchor="end">0</text>
+<line x1="120" y1="539.0" x2="645" y2="539.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="104" y="548.0" font-size="26" fill="#17324D" text-anchor="end">20</text>
+<line x1="120" y1="458.0" x2="645" y2="458.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="104" y="467.0" font-size="26" fill="#17324D" text-anchor="end">40</text>
+<line x1="120" y1="377.0" x2="645" y2="377.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="104" y="386.0" font-size="26" fill="#17324D" text-anchor="end">60</text>
+<line x1="120" y1="296.0" x2="645" y2="296.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="104" y="305.0" font-size="26" fill="#17324D" text-anchor="end">80</text>
+<line x1="120" y1="215.0" x2="645" y2="215.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="104" y="224.0" font-size="26" fill="#17324D" text-anchor="end">100</text>
+<line x1="120" y1="215" x2="120" y2="620" stroke="#17324D" stroke-width="3"/>
+<line x1="120" y1="620" x2="645" y2="620" stroke="#17324D" stroke-width="3"/>
+<rect x="154.5" y="611.9" width="106" height="8.1" fill="#B44D29"/>
+<text x="207.5" y="597.9" font-size="30" fill="#B44D29" text-anchor="middle">2</text>
+<text x="207.5" y="662" font-size="29" fill="#17324D" text-anchor="middle">8</text>
+<rect x="329.5" y="563.3" width="106" height="56.7" fill="#B44D29"/>
+<text x="382.5" y="549.3" font-size="30" fill="#B44D29" text-anchor="middle">14</text>
+<text x="382.5" y="662" font-size="29" fill="#17324D" text-anchor="middle">32</text>
+<rect x="504.5" y="296.0" width="106" height="324.0" fill="#B44D29"/>
+<text x="557.5" y="282.0" font-size="30" fill="#B44D29" text-anchor="middle">80</text>
+<text x="557.5" y="662" font-size="29" fill="#17324D" text-anchor="middle">64</text>
+<text x="1122.5" y="166" font-size="29" fill="#17324D" text-anchor="middle">Invented paired Brier gain (ΔZ)</text>
+<line x1="860" y1="620.0" x2="1385" y2="620.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="844" y="629.0" font-size="26" fill="#17324D" text-anchor="end">0.000</text>
+<line x1="860" y1="539.0" x2="1385" y2="539.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="844" y="548.0" font-size="26" fill="#17324D" text-anchor="end">0.002</text>
+<line x1="860" y1="458.0" x2="1385" y2="458.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="844" y="467.0" font-size="26" fill="#17324D" text-anchor="end">0.004</text>
+<line x1="860" y1="377.0" x2="1385" y2="377.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="844" y="386.0" font-size="26" fill="#17324D" text-anchor="end">0.006</text>
+<line x1="860" y1="296.0" x2="1385" y2="296.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="844" y="305.0" font-size="26" fill="#17324D" text-anchor="end">0.008</text>
+<line x1="860" y1="215.0" x2="1385" y2="215.0" stroke="#D6E0E7" stroke-width="3"/>
+<text x="844" y="224.0" font-size="26" fill="#17324D" text-anchor="end">0.010</text>
+<line x1="860" y1="215" x2="860" y2="620" stroke="#17324D" stroke-width="3"/>
+<line x1="860" y1="620" x2="1385" y2="620" stroke="#17324D" stroke-width="3"/>
+<rect x="894.5" y="377.0" width="106" height="243.0" fill="#087D83"/>
+<text x="947.5" y="363.0" font-size="30" fill="#087D83" text-anchor="middle">0.006</text>
+<text x="947.5" y="662" font-size="29" fill="#17324D" text-anchor="middle">8</text>
+<rect x="1069.5" y="296.0" width="106" height="324.0" fill="#087D83"/>
+<text x="1122.5" y="282.0" font-size="30" fill="#087D83" text-anchor="middle">0.008</text>
+<text x="1122.5" y="662" font-size="29" fill="#17324D" text-anchor="middle">32</text>
+<rect x="1244.5" y="275.75" width="106" height="344.25" fill="#087D83"/>
+<text x="1297.5" y="261.75" font-size="30" fill="#087D83" text-anchor="middle">0.0085</text>
+<text x="1297.5" y="662" font-size="29" fill="#17324D" text-anchor="middle">64</text>
+<text x="750" y="719" font-size="30" fill="#17324D" text-anchor="middle">Latent dimension in each panel: 8, 32, 64</text>
+<text x="55" y="778" font-size="24" fill="#17324D" text-anchor="start">Not a hardware benchmark, recommended dimension, deployment budget or pricing estimate.</text>
+</g></svg>
