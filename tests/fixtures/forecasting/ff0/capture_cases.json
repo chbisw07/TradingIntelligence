@@ -1,0 +1,21 @@
+{
+  "kind": "SYNTHETIC_TEST_MANIFEST_NOT_REPLAY_CORPUS",
+  "schema_version": "1.0",
+  "description": "Authored FF-0.2 specimens; no empirical data or executed BaseRate. Tests construct corpora in tmp_path.",
+  "capture_fingerprints": {
+    "actual": "3b8e7b1547028192a18c36c4eb789868cb58057f2285efc2a0e36f5213049462",
+    "simulated": "519c4bd7fb7b3f59d524a60af67d6e73b94bb24e508cdc60326a3d055d551c01"
+  },
+  "cases": [
+    {"id": "actual-with-outcome", "plan_cases": ["FF0-19", "FF0-22"], "fixture": "packet() + outcome_packet()"},
+    {"id": "simulated-with-same-outcome", "plan_cases": ["FF0-18", "FF0-22"], "fixture": "packet(simulated=True) + shared outcome"},
+    {"id": "actual-and-two-simulations", "plan_cases": ["FF0-17", "FF0-18"], "fixture": "packet() + packet(simulated=True, number=1/2)"},
+    {"id": "equal-close-zero", "plan_cases": ["FF0-19"], "fixture": "outcome_packet(price=Decimal('105'))"},
+    {"id": "missing-target-no-label", "plan_cases": ["FF0-20"], "fixture": "outcome_packet(price=None), before/at/after deadline"},
+    {"id": "revised-truth", "plan_cases": ["FF0-21", "FF0-22"], "fixture": "outcome_packet(revision=1, previous=original)"},
+    {"id": "target-version-mismatch", "plan_cases": ["FF0-22"], "fixture": "altered target_version; contract rejection"},
+    {"id": "subject-mismatch", "plan_cases": ["FF0-22"], "fixture": "altered neutral subject; contract rejection"},
+    {"id": "session-mismatch", "plan_cases": ["FF0-22"], "fixture": "altered pinned target session; rejection"},
+    {"id": "fingerprint-tamper", "plan_cases": ["FF0-23", "FF0-25"], "fixture": "altered persisted bytes; replay integrity failure"}
+  ]
+}

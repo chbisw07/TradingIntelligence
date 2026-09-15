@@ -23,7 +23,7 @@ remaining high-priority deferrals. See
 Current gate (2026-09-14, Asia/Kolkata): A5 FROZEN at `tiaf-a5-baseline`;
 R1–R5 are ACCEPTED / DONE; A6 architecture and non-normative thesis are ACCEPTED;
 A6.1–A6.4 are ACCEPTED / DONE, A6 is FROZEN at `tiaf-a6-baseline`,
-`expression.assess` is PUBLISHED, and A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0.1 ONLY) / RUNTIME NOT_IMPLEMENTED.
+`expression.assess` is PUBLISHED, and A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0.1–0.2 ONLY) / RUNTIME NOT_IMPLEMENTED.
 
 ```text
 A5 FROZEN → R2 ACCEPTED
@@ -32,7 +32,7 @@ A5 FROZEN → R2 ACCEPTED
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
   → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
-  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0.1 ONLY) → A8 → A9 → A10
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0.1–0.2 ONLY) → A8 → A9 → A10
 ```
 
 R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
@@ -655,12 +655,12 @@ milestones are renumbered or runtime deferrals closed.
 ### Current forward sequence and adjacent TBDs
 
 A5 and A6 are FROZEN and R1–R5 are closed. A6.1–A6.4 are accepted/done;
-A7 architecture is ACCEPTED, thesis RECONCILED; implementation IN_PROGRESS (FF-0.1 only),
+A7 architecture is ACCEPTED, thesis RECONCILED; implementation IN_PROGRESS (FF-0.1–0.2 only),
 runtime NOT_IMPLEMENTED.
 The intervening [FF platform](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED;
 its miniature is DEFINED and FM/LFDE is an advanced family with its thesis retained.
-A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; FF-0.1 is ACCEPTED; separately authorized FF-0.2 is NEXT. Next:
-**TIAF A7 / FF-0.2 — CAPTURE STORE, TRUTH AND RECORDED REPLAY**.
+A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; FF-0.1–0.2 are ACCEPTED; separately authorized FF-0.3 is NEXT. Next:
+**TIAF A7 / FF-0.3 — BASERATE, COLD RUNTIME AND PINNED VERIFICATION**.
 FF repeat acceptance closes FFA-B01; A7 integration is reconciled and
 [A7 architecture independently accepted](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md). Canonical delivery uses FF-0…FF-7 within A7; the old
 five-slice proposal is mapped in the integrated roadmap. Any A7-informed A6 follow-up needs separate policy acceptance.
@@ -701,12 +701,12 @@ The [thesis record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 links the DOCX/PDF, sources, document validation and fourteen classified findings.
 The [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1 after the fourteen-finding reconciliation.
-Current next step is a separately authorized FF-0.2 capture store / truth / recorded replay request.
+Current next step is a separately authorized FF-0.3 BaseRate / COLD runtime / pinned verification request.
 A6.4 changes no thesis artifact.
 
 <a id="a7--architecture-reconciled-runtime-not-implemented"></a>
 
-### A7 — Architecture accepted; FF-0.1 foundation accepted
+### A7 — Architecture accepted; FF-0.2 capture/truth/replay accepted
 
 The [non-normative thesis creation edition](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md)
 is unchanged. Its [seventeen findings are RECONCILED](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md);
@@ -722,7 +722,7 @@ The [architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md),
 
 | Canonical stage / checkpoint within A7 | Bounded deliverable | Current state |
 |---|---|---|
-| FF-0 | Contracts, singleton B0, exact target/PIT/journal, both realization modes, capture/verifier boundary | IN_PROGRESS: FF-0.1 foundation accepted; FF-0.2–0.4 pending |
+| FF-0 | Contracts, singleton B0, exact target/PIT/journal, both realization modes, capture/verifier boundary | IN_PROGRESS: FF-0.1–0.2 accepted; FF-0.3–0.4 pending |
 | FF-1 | B0/B2 raw research, benchmark view, ledger/population/paired evaluation and chronological controls | NOT_IMPLEMENTED |
 | FF-2 | Held-out calibration, shared registry/lifecycle, drift/shadow/approval/COLD selection, complete miniature/replay | NOT_IMPLEMENTED |
 | Post-FF-2 publication checkpoint | Separately accepted governed facade/Shell projection; no new numbered hierarchy | NOT_IMPLEMENTED |
@@ -742,22 +742,24 @@ forecast contracts, A2–A6 policies/captures and R1–R5 are unchanged.
 
 <a id="forecasting-framework--a7-integrated-architecture-acceptance-next"></a>
 
-## Forecasting Framework and A7 — architecture accepted; FF-0.1 foundation accepted
+## Forecasting Framework and A7 — architecture accepted; FF-0.2 capture/truth/replay accepted
 
-The [FF-0.1 implementation record](TIAF_A7_FF0_1_CONTRACTS_TARGET_CLOCK_IMPLEMENTATION.md)
-records **FF0_1_ACCEPTED**: immutable contracts, one synthetic RELIANCE target,
-clock/knowledge validation and deterministic identity primitives. A7 / FF is
+The [FF-0.1 foundation](TIAF_A7_FF0_1_CONTRACTS_TARGET_CLOCK_IMPLEMENTATION.md)
+remains accepted. The [FF-0.2 implementation record](TIAF_A7_FF0_2_CAPTURE_STORE_TRUTH_RECORDED_REPLAY_IMPLEMENTATION.md)
+records **FF0_2_ACCEPTED**: bounded JSON/JSONL capture, independent revision-safe
+truth, exact linkage and recorded replay over synthetic inputs. A7 / FF is
 **IMPLEMENTATION IN_PROGRESS; FORECAST EXECUTION RUNTIME NOT_IMPLEMENTED**.
-Only the first of the [four planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
-is complete. Next is separately authorized **FF-0.2 — Capture store, truth and
-recorded replay**. FF-0 overall is not accepted; no model, public capability or
-empirical qualification is delivered. Calibration remains at FF-2.
+The first two of the [four planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
+are complete. Next is separately authorized **FF-0.3 — BaseRate, COLD runtime
+and pinned verification**. FF-0 overall is not accepted; no executed model,
+public capability or empirical qualification is delivered. Calibration remains
+at FF-2; recorded replay is not recomputation or new simulation.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
 **A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
 A6 FROZEN; FF ARCHITECTURE ACCEPTED; A7 ARCHITECTURE ACCEPTED;
 A7 THESIS RECONCILED AS NEEDED; then A7 / FF IMPLEMENTATION NOT_STARTED;
-RUNTIME NOT_IMPLEMENTED. The foundation-only update above supersedes that status.
+RUNTIME NOT_IMPLEMENTED. The bounded implementation update above supersedes that status.
 FM/LFDE remains an optional advanced Forecaster family.
 
 A7 is the lifecycle umbrella. FF owns forecasting contracts, typed DAG and
@@ -776,7 +778,7 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FF-0.2 — CAPTURE STORE, TRUTH AND RECORDED REPLAY**.
-FF-0.1 acceptance is limited to the tested foundation. FF-0.2 needs a separate
+Exact next prompt: **TIAF A7 / FF-0.3 — BASERATE, COLD RUNTIME AND PINNED VERIFICATION**.
+FF-0.2 acceptance is limited to capture/truth/recorded replay. FF-0.3 needs a separate
 request; no training, model approval, publication, frozen-A6 changes or A8 is
 authorized. Historical planning/acceptance records retain their then-current status.

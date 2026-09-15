@@ -117,3 +117,10 @@ class ArtifactReference(ForecastContract):
     artifact_id: LogicalId
     artifact_version: str = Field(min_length=1, max_length=40, pattern=r"^[A-Za-z0-9_.-]+$")
     fingerprint: Sha256
+
+
+class CapturedBlobReference(ForecastContract):
+    """Pin semantic content and its exact immutable storage envelope separately."""
+
+    artifact: ArtifactReference
+    blob_hash: Sha256
