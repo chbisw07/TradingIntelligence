@@ -1,19 +1,23 @@
 # TIAF A7 — Integrated Forecasting / Evaluation / Learning Roadmap
 
-The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
-(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
-BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
-next only under a separate implementation request; calibration stays at FF-2,
-public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+The [FF-0.1 implementation record](TIAF_A7_FF0_1_CONTRACTS_TARGET_CLOCK_IMPLEMENTATION.md)
+records **FF0_1_ACCEPTED**: immutable contracts, one synthetic RELIANCE target,
+clock/knowledge validation and deterministic identity primitives. A7 / FF is
+**IMPLEMENTATION IN_PROGRESS; FORECAST EXECUTION RUNTIME NOT_IMPLEMENTED**.
+Only the first of the [four planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
+is complete. Next is separately authorized **FF-0.2 — Capture store, truth and
+recorded replay**. FF-0 overall is not accepted; no model, public capability or
+empirical qualification is delivered. Calibration remains at FF-2.
 
 ## Status and sequencing
 
 **2026-09-15 (Asia/Kolkata): A7 ARCHITECTURE ACCEPTED;
 A7 THESIS RECONCILED AS NEEDED; FF ARCHITECTURE ACCEPTED;
-A7 / FF IMPLEMENTATION NOT_STARTED; RUNTIME NOT_IMPLEMENTED.**
+A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0.1 ONLY); RUNTIME NOT_IMPLEMENTED.**
 
 The [independent acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) approves the
-architecture for sequencing; a bounded implementation request is still required.
+architecture for sequencing. The separate FF-0.1 request implemented only the
+foundation; FF-0.2 and later work still require their own bounded requests.
 
 The [integration record](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 owns the old-to-new disposition. The [A7 architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md)
@@ -28,7 +32,8 @@ A6 FROZEN at tiaf-a6-baseline; R1–R5 ACCEPTED / DONE
  → FF ARCHITECTURE ACCEPTED; FF THESIS RECONCILED
  → A7 FF INTEGRATION RECONCILED; A7 ARCHITECTURE ACCEPTED
  → FF-0 MINIATURE PLAN COMPLETE [planning only]
- → separately authorized FF-0.1 CONTRACTS / TARGET / CLOCKS [NEXT]
+ → FF-0.1 CONTRACTS / TARGET / CLOCKS [ACCEPTED; FOUNDATION ONLY]
+ → separately authorized FF-0.2 CAPTURE / TRUTH / RECORDED REPLAY [NEXT]
  → separately authorized bounded FF-0 → FF-1 → FF-2 [complete miniature]
       ├─ separate facade / Shell publication checkpoint, if authorized
       ├─ FF-3 optional multi-family / simple ensemble
@@ -49,7 +54,7 @@ crosswalk below transfers their obligations without claiming any implementation.
 FM-0…FM-6 / LFDE L0…L5 are nested family research gates at FF-5, not another
 generic forecast/evaluation stack.
 
-The first implementation request may authorize FF-0 alone. FF-0/1 mechanics
+The first implementation request authorized FF-0.1 alone. FF-0/1 mechanics
 and raw research can be useful before FF-2 completes calibration/lifecycle.
 No requirement to finish every optional stage before bounded A7 closure.
 Closure must explicitly identify implemented scope, empirical status and carried
@@ -227,11 +232,11 @@ A8 TM, A9 Scanner and A10 operations keep their major order.
 
 ## Decision and exact next prompt
 
-**A7_ARCHITECTURE_ACCEPTED**
+**A7_ARCHITECTURE_ACCEPTED; FF0_1_ACCEPTED (foundation only)**
 
-**TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**
+**TIAF A7 / FF-0.2 — CAPTURE STORE, TRUTH AND RECORDED REPLAY**
 
-Independent architecture acceptance is complete; FF-0 planning is complete; separately authorized FF-0.1 is next.
+Independent architecture acceptance is complete; FF-0 planning is complete; FF-0.1 is accepted; separately authorized FF-0.2 is next.
 Only a later separately
-authorized bounded request may implement FF-0. No training, live calls, A8 work,
+authorized bounded request may implement FF-0.2 or subsequent steps. No training, live calls, A8 work,
 frozen-A6 change, new public capability, commit, tag or push.

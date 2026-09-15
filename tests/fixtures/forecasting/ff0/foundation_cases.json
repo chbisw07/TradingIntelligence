@@ -1,0 +1,12 @@
+{
+  "description": "SYNTHETIC engineering cases, not real RELIANCE prices or NSE calendar evidence",
+  "cases": [
+    {"id": "actual-valid", "simulated": false, "accepted": true, "changes": {}},
+    {"id": "actual-backdated", "simulated": false, "accepted": false, "changes": {"issued_at": "2026-02-04T16:05:00+05:30"}},
+    {"id": "actual-open-equality", "simulated": false, "accepted": false, "changes": {"issued_at": "2026-02-05T09:15:00+05:30"}},
+    {"id": "simulated-later-computation", "simulated": true, "accepted": true, "changes": {"computed_at": "2026-09-15T12:00:00+05:30"}},
+    {"id": "simulated-fake-issue", "simulated": true, "accepted": false, "changes": {"issued_at": "2026-02-04T16:07:00+05:30"}},
+    {"id": "simulated-leakage", "simulated": true, "accepted": false, "changes": {"request.information_cutoff": "2026-02-05T10:00:00+05:30"}},
+    {"id": "equal-close-policy", "simulated": false, "accepted": true, "changes": {"request.target.equal_close_policy": "CLASS_ZERO"}}
+  ]
+}

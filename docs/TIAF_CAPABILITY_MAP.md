@@ -93,7 +93,7 @@ the reconciled A7 design's `forecast.assess` are proposals only; the earlier
 runtime and remote transport are not callable capabilities.
 
 A6 is **FROZEN at `tiaf-a6-baseline`; A6.1–A6.4 ACCEPTED / DONE;
-`expression.assess` PUBLISHED. A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION NOT_STARTED / RUNTIME NOT_IMPLEMENTED**. The
+`expression.assess` PUBLISHED. A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0.1 ONLY) / RUNTIME NOT_IMPLEMENTED**. The
 [A6 draft](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE.md) defines the
 advisory, captured-input, deterministic long single-leg CE/PE assessment now
 published by [A6.3](TIAF_A6_3_FACADE_TI_SHELL_EXPOSURE.md) and closed by its
@@ -116,10 +116,10 @@ automatic influence on A4/A5/A6. The [reconciliation](TIAF_A7_RECONCILIATION_REC
 retains the existing A3 forecast placeholder without claiming an implementation.
 The [A7 thesis creation edition](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md)
 is unchanged; all [17 findings are RECONCILED](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md).
-A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; separately authorized FF-0.1 is NEXT. The intervening
+A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; FF-0.1 is ACCEPTED; separately authorized FF-0.2 is NEXT. The intervening
 [FF architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED;
 FF MINIATURE REALIZATION is DEFINED; FF THESIS RECONCILED; FF ARCHITECTURE
-ACCEPTANCE COMPLETE; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; separately authorized FF-0.1 NEXT; IMPLEMENTATION NOT_STARTED;
+ACCEPTANCE COMPLETE; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0.1 ACCEPTED; separately authorized FF-0.2 NEXT; IMPLEMENTATION IN_PROGRESS (FF-0.1 ONLY);
 RUNTIME NOT_IMPLEMENTED. FM/LFDE is its advanced family; its existing thesis is retained.
 The completed [FF/A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 is now independently [accepted](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md).
@@ -359,19 +359,23 @@ distinct architectural layers.
 
 <a id="forecasting-framework--a7-integrated-architecture-acceptance-next"></a>
 
-## Forecasting Framework and A7 — architecture accepted; FF-0 plan complete
+## Forecasting Framework and A7 — architecture accepted; FF-0.1 foundation accepted
 
-The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
-(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
-BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
-next only under a separate implementation request; calibration stays at FF-2,
-public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+The [FF-0.1 implementation record](TIAF_A7_FF0_1_CONTRACTS_TARGET_CLOCK_IMPLEMENTATION.md)
+records **FF0_1_ACCEPTED**: immutable contracts, one synthetic RELIANCE target,
+clock/knowledge validation and deterministic identity primitives. A7 / FF is
+**IMPLEMENTATION IN_PROGRESS; FORECAST EXECUTION RUNTIME NOT_IMPLEMENTED**.
+Only the first of the [four planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
+is complete. Next is separately authorized **FF-0.2 — Capture store, truth and
+recorded replay**. FF-0 overall is not accepted; no model, public capability or
+empirical qualification is delivered. Calibration remains at FF-2.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
 **A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
 A6 FROZEN; FF ARCHITECTURE ACCEPTED; A7 ARCHITECTURE ACCEPTED;
-A7 THESIS RECONCILED AS NEEDED; A7 / FF IMPLEMENTATION NOT_STARTED;
-RUNTIME NOT_IMPLEMENTED. FM/LFDE remains an optional advanced Forecaster family.
+A7 THESIS RECONCILED AS NEEDED; then A7 / FF IMPLEMENTATION NOT_STARTED;
+RUNTIME NOT_IMPLEMENTED. The foundation-only update above supersedes that status.
+FM/LFDE remains an optional advanced Forecaster family.
 
 A7 is the lifecycle umbrella. FF owns forecasting contracts, typed DAG and
 bounded runtime; Evaluation owns Ground Truth, Outcome Journal, joined Forecast
@@ -389,7 +393,7 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
-This is planning readiness only. FF-0.1 still needs separate authorization;
-this pass does not authorize training, model approval, publication, frozen-A6
-changes or A8.
+Exact next prompt: **TIAF A7 / FF-0.2 — CAPTURE STORE, TRUTH AND RECORDED REPLAY**.
+FF-0.1 acceptance is limited to the tested foundation. FF-0.2 needs a separate
+request; no training, model approval, publication, frozen-A6 changes or A8 is
+authorized. Historical planning/acceptance records retain their then-current status.
