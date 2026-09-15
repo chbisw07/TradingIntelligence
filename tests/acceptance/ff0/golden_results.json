@@ -1,0 +1,19 @@
+{
+  "actual": {
+    "capture_id": "cd95a799070542759f15b471c48ed741584c6ffea3030d673d6812cdb72c5eb9",
+    "result_fingerprint": "fb130e4dfb9c21c5a68d691c4c03c3e91b2664a1cdfd775ad5b4bc442310e766"
+  },
+  "insufficient": {
+    "capture_id": "b61423c6030e6defbd844e6831854cbf9b285063b4197e0a7139900753f8f526",
+    "result_fingerprint": "c3a38f254f9879666d4e72f01294e4acca5ce2ab4063836d919538e4650a904f"
+  },
+  "simulated": {
+    "capture_id": "3118e6d9a990da7931b51fbb2a80eafd5424b21486121774a1e46862c11ba00b",
+    "result_fingerprint": "ee0373edf897dc1d3e63d95af735eb603a6ce257c63698c979139857cd4f46ea"
+  },
+  "tampered": {
+    "exit_code": 1,
+    "original_record_mutated": false,
+    "verification": "MISMATCH"
+  }
+}

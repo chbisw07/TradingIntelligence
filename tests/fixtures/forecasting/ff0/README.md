@@ -24,8 +24,8 @@ constructs the pinned counts/witness, explicit COLD config, input closure and
 trusted test clocks. The runtime consumes those counts and really computes
 12/20 = 0.6 (also 0/20 and 20/20), without fitting or acquiring data. Later
 target truth stays a separate Evaluation operation. Original manifests and
-their golden fingerprints are unchanged. The complete 28-case CLI acceptance
-remains FF-0.4, not delivered here.
+their golden fingerprints are unchanged. FF-0.4 now completes the
+[28-case CLI acceptance](../../../acceptance/ff0/README.md).
 
 Run FF-0.3 BaseRate/runtime/pinned-verification tests with:
 
@@ -43,3 +43,25 @@ Run the capture/truth/link tests with:
   tests/unit/evaluation/test_forecast_truth.py \
   tests/unit/evaluation/test_forecast_linkage.py
 ```
+
+## FF-0.4 serialized engineering inputs
+
+`local_config.json` explicitly registers four pinned JSON packets:
+
+| Logical input ID | Packet | Meaning |
+|---|---|---|
+| `ff-request:reliance-s21-actual` | `reliance-s21-actual.json` | Synthetic ACTUAL, now-past target open; real-clock invocation must be UNAVAILABLE |
+| `ff-request:reliance-s21-simulated` | `reliance-s21-simulated.json` | Historical SIMULATED request, raw 12/20 probability, computation now |
+| `ff-request:reliance-s21-insufficient` | `reliance-s21-insufficient.json` | SIMULATED support n=19, explicit UNAVAILABLE without estimate |
+| `ff-outcome-input:reliance-s21-up` | `reliance-s21-up.json` | Independent synthetic terminal evidence, label 1; no generation inputs |
+
+These are data, not executable Python selectors. The configured input root is
+this directory; the explicitly selected output root is `/tmp/tiaf-ff0-miniature`.
+No CLI default selects that root. If it already contains a corpus, preserve it
+and use a reviewed config with a separate output directory for a fresh exercise.
+Do not run this config against important/shared data. No command deletes or repairs.
+
+Follow the [operator guide](../../../../docs/TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTANCE_HARDENING_IMPLEMENTATION.md#3-operator-guide).
+The test manifests here and `tests/acceptance/ff0/corpus_manifest.csv` are **not**
+`forecast_runs.jsonl` or replay inputs. The CLI accepts only registered input IDs
+and exact persisted run/outcome IDs under the selected trusted config.

@@ -476,6 +476,24 @@ class ForecastCorpusStore:
         validate_capture(capture, blobs, as_of=self.as_of)
         return blobs
 
+    def get_forecast_links(self, run_id: str) -> tuple[EvaluationLink, ...]:
+        """Bounded read-only inspection of exact persisted links; no latest-truth join."""
+        TypeAdapter(LogicalId).validate_python(run_id)
+        index = self._load()
+        if run_id not in index.forecasts:
+            raise ForecastIntegrityError("FORECAST_NOT_FOUND")
+        capture = index.forecasts[run_id]
+        validate_capture(capture, self._blobs(capture.closure, index), as_of=self.as_of)
+        for link in index.links.values():
+            if link.run_id == run_id:
+                self._check_link_rights(link, index)
+        return tuple(
+            sorted(
+                (link for link in index.links.values() if link.run_id == run_id),
+                key=lambda link: link.link_id or "",
+            )
+        )
+
     def get_link(self, link_id: str) -> EvaluationLink:
         index = self._load()
         if link_id not in index.links:

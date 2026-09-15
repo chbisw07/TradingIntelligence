@@ -7,21 +7,23 @@ records **FF0_3_ACCEPTED**: deterministic synthetic BaseRate, an immutable inter
 COLD owner, honest ACTUAL/SIMULATED execution, capture and separate exact pinned
 verification. A7 / FF is **IMPLEMENTATION IN_PROGRESS; INTERNAL SYNTHETIC RUNTIME
 IMPLEMENTED; PUBLIC FORECAST CAPABILITY NOT_PUBLISHED**.
-The first three of the [four planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
-are complete. Next is separately authorized **FF-0.4 — Engineering CLI and
-acceptance hardening**. FF-0 overall is not accepted; no empirical qualification,
-calibration, trained model or new consumer authority is delivered. Calibration
-remains at FF-2; recorded replay is not recomputation or new simulation.
+All four [planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
+are complete. The [FF-0.4 engineering CLI](TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTANCE_HARDENING_IMPLEMENTATION.md)
+and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
+28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**. Next is separately
+requested FF-1 **planning**, not implementation approval. No empirical
+qualification, calibration, trained model or new consumer authority is delivered.
+Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
 
 ## Status and sequencing
 
 **2026-09-15 (Asia/Kolkata): A7 ARCHITECTURE ACCEPTED;
 A7 THESIS RECONCILED AS NEEDED; FF ARCHITECTURE ACCEPTED;
-A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0.1–0.3 ONLY); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
+A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED ONLY); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
 
 The [independent acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) approves the
-architecture for sequencing. Separate FF-0.1–0.3 requests implemented foundation,
-capture/truth/replay and internal synthetic runtime; FF-0.4 and later need their own bounded requests.
+architecture for sequencing. Separate FF-0.1–0.4 requests implemented foundation, capture/truth/replay,
+internal synthetic runtime and engineering CLI acceptance; FF-1 and later need their own bounded requests.
 
 The [integration record](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 owns the old-to-new disposition. The [A7 architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md)
@@ -39,8 +41,9 @@ A6 FROZEN at tiaf-a6-baseline; R1–R5 ACCEPTED / DONE
  → FF-0.1 CONTRACTS / TARGET / CLOCKS [ACCEPTED; FOUNDATION ONLY]
  → FF-0.2 CAPTURE / TRUTH / RECORDED REPLAY [ACCEPTED; NO EXECUTION]
  → FF-0.3 BASERATE / COLD RUNTIME / PINNED VERIFICATION [ACCEPTED; SYNTHETIC ONLY]
- → separately authorized FF-0.4 ENGINEERING CLI / ACCEPTANCE HARDENING [NEXT]
- → separately authorized bounded FF-0 → FF-1 → FF-2 [complete miniature]
+ → FF-0.4 ENGINEERING CLI / ACCEPTANCE HARDENING [ACCEPTED; FF-0 COMPLETE]
+ → separately requested FF-1 LOGISTIC BENCHMARK / PAIRED EVALUATION PLANNING [NEXT]
+ → separately authorized FF-1 implementation → FF-2 [complete calibrated miniature]
       ├─ separate facade / Shell publication checkpoint, if authorized
       ├─ FF-3 optional multi-family / simple ensemble
       ├─ FF-4 optional LLM
@@ -238,11 +241,11 @@ A8 TM, A9 Scanner and A10 operations keep their major order.
 
 ## Decision and exact next prompt
 
-**A7_ARCHITECTURE_ACCEPTED; FF0_3_ACCEPTED (internal synthetic BaseRate/runtime/verification only)**
+**A7_ARCHITECTURE_ACCEPTED; FF0_ACCEPTED (internal synthetic engineering miniature only)**
 
-**TIAF A7 / FF-0.4 — ENGINEERING CLI AND ACCEPTANCE HARDENING**
+**TIAF A7 / FF-1 — LOGISTIC BENCHMARK AND PAIRED EVALUATION PLANNING**
 
-Independent architecture acceptance is complete; FF-0 planning is complete; FF-0.1–0.3 are accepted; separately authorized FF-0.4 is next.
+Independent architecture acceptance is complete; FF-0 planning is complete; FF-0 is accepted; separately requested FF-1 planning is next.
 Only a later separately
-authorized bounded request may implement FF-0.4 or subsequent steps. No training, live calls, A8 work,
+authorized bounded planning request may define FF-1 prerequisites; implementation needs separate authorization. No training, live calls, A8 work,
 frozen-A6 change, new public capability, commit, tag or push.

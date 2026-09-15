@@ -322,3 +322,42 @@ Inputs are gzip/base64-wrapped JSON captures in
 standard library. This storage wrapper is only for checked-in test inputs;
 public capture/replay uses ordinary JSON. Fixture authoring is test-only and
 is never imported by the acceptance script.
+
+## FF-0 internal forecasting miniature
+
+`forecast_miniature.py` is an engineering-only one-shot adapter using the existing
+Shell parser/safety utilities. It does not add a public Shell command/capability,
+REPL, provider/LLM read or broker authority. All output is versioned JSON.
+
+```bash
+.venv/bin/python scripts/forecast_miniature.py --help
+.venv/bin/python scripts/forecast_miniature.py run \
+  --config tests/fixtures/forecasting/ff0/local_config.json \
+  --input ff-request:reliance-s21-simulated
+```
+
+The config is required; there is no default corpus or environment discovery.
+This checked-in synthetic config explicitly writes `/tmp/tiaf-ff0-miniature`.
+Preserve an existing corpus; use a separate config/output root for a fresh
+exercise. Mode, historical as-of, cutoff and pinned profile come from the
+registered packet, not a `--mode`, `--now`, model path or remote URL.
+
+Supported verbs: `run`, independent `outcome`, exact `link`, read-only `inspect`,
+and read-only `replay [--verify]`. Recorded replay never invokes a forecaster;
+`--verify` explicitly adds one separately accounted pinned recomputation.
+Repeated `run` creates a new run, not a replay. Historical ACTUAL inputs invoked
+today remain UNAVAILABLE, with no fake issue timestamp. `GENERATED` is raw
+synthetic research, not calibrated or advisory.
+
+Exit 0 means completed operation (including domain UNAVAILABLE); 2 means invalid
+command/config/admission; 1 means execution/persistence/integrity failure or
+requested verification MISMATCH/UNVERIFIABLE. Inspect JSON status, not only exit 0.
+
+See the [complete operator guide](../docs/TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTANCE_HARDENING_IMPLEMENTATION.md#3-operator-guide)
+for all commands, linkage, corpus layout, failures and observability. Test manifests
+and goldens are **not** persisted replay corpora:
+
+```bash
+.venv/bin/pytest -q tests/unit/forecasting/test_engineering_cli.py -k golden
+.venv/bin/pytest -q -s tests/acceptance/ff0
+```
