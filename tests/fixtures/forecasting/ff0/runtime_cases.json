@@ -1,0 +1,21 @@
+{
+  "kind": "SYNTHETIC_TEST_MANIFEST_NOT_REPLAY_CORPUS",
+  "description": "Authored FF-0.3 windows and prices; not qualified real NSE or RELIANCE history.",
+  "sessions": [
+    "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12",
+    "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-19",
+    "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-27",
+    "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03",
+    "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10"
+  ],
+  "close_strings": ["100", "101", "102", "101", "102", "103", "102", "103", "104", "103", "104", "105", "104", "105", "106", "105", "106", "107", "106", "105", "105"],
+  "positive_count": 12,
+  "qualified_count": 20,
+  "cases": [
+    "sufficient-support", "no-qualified-history", "insufficient-support",
+    "future-label-excluded", "invalid-label-excluded", "equal-close-is-zero",
+    "actual-timely", "actual-no-backdating", "simulated-later-computation",
+    "simulated-leakage-denied", "recorded-replay", "independent-truth-link",
+    "cold-freeze", "profile-pin-mismatch"
+  ]
+}

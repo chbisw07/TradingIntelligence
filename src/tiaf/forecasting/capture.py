@@ -264,6 +264,42 @@ def capture_roots(capture: ForecastCapture) -> tuple[ArtifactReference, ...]:
     )
 
 
+def select_artifacts(
+    roots: tuple[ArtifactReference, ...], artifacts: tuple[CapturedArtifact, ...]
+) -> tuple[CapturedArtifact, ...]:
+    """Select exact transitive pins from a bounded supplied shelf; never fetch anything."""
+    if len(artifacts) > MAX_ARTIFACTS:
+        raise ForecastStoreError("ARTIFACT_LIMIT")
+    by_ref: dict[ArtifactReference, CapturedArtifact] = {}
+    by_id: dict[str, CapturedArtifact] = {}
+    for item in artifacts:
+        item = CapturedArtifact.model_validate(item)
+        old = by_id.get(item.reference.artifact_id)
+        if old is not None and old != item:
+            raise ForecastIntegrityError("CONFLICTING_ARTIFACT_REFERENCE")
+        by_id[item.reference.artifact_id] = item
+        by_ref[item.reference] = item
+    selected: dict[ArtifactReference, CapturedArtifact] = {}
+    active: set[ArtifactReference] = set()
+
+    def visit(ref: ArtifactReference) -> None:
+        if ref in active:
+            raise ForecastIntegrityError("ARTIFACT_REFERENCE_CYCLE")
+        if ref in selected:
+            return
+        if ref not in by_ref:
+            raise ForecastIntegrityError("ARTIFACT_REFERENCE_MISSING")
+        active.add(ref)
+        for child in by_ref[ref].dependencies:
+            visit(child)
+        active.remove(ref)
+        selected[ref] = by_ref[ref]
+
+    for ref in roots:
+        visit(ref)
+    return tuple(sorted(selected.values(), key=lambda item: item.blob_reference.blob_hash))
+
+
 def validate_capture(
     capture: ForecastCapture,
     artifacts: tuple[CapturedArtifact, ...],

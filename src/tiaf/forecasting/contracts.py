@@ -1,8 +1,15 @@
 """FF-0.1 contract shapes and pure validation; no forecaster or runtime."""
 
-from typing import Annotated, Literal, Self
+from typing import Annotated, Any, Literal, Self
 
-from pydantic import Field, StrictFloat, field_validator, model_validator
+from pydantic import (
+    Field,
+    SerializerFunctionWrapHandler,
+    StrictFloat,
+    field_validator,
+    model_serializer,
+    model_validator,
+)
 
 from tiaf.evaluation.forecast_contracts import (
     EvidenceReference,
@@ -13,6 +20,7 @@ from tiaf.planner.models import Sha256
 
 from .enums import ForecastRealizationMode, ForecastReason, ForecastStatus, KnowledgeBasis
 from .evidence import validate_knowledge, validate_required_evidence, window_evidence
+from .execution import ForecastExecution
 from .identity import ArtifactReference, ForecastContract, ForecastDateTime, LogicalId
 from .identity import semantic_fingerprint as fingerprint
 
@@ -205,11 +213,32 @@ class ForecastResult(ForecastContract):
     contradictions: tuple[ArtifactReference, ...] = ()
     authority: Literal["NO_ACTION_AUTHORITY"] = "NO_ACTION_AUTHORITY"
     admission: Literal["RESEARCH_ONLY"] = "RESEARCH_ONLY"
-    usage_state: Literal["NOT_RECORDED_CONTRACT_ONLY"] = "NOT_RECORDED_CONTRACT_ONLY"
+    usage_state: Literal["NOT_RECORDED_CONTRACT_ONLY", "RECORDED"] = "NOT_RECORDED_CONTRACT_ONLY"
+    inference: ForecastExecution | None = None
     replay_fingerprint: Sha256 | None = None
+
+    @model_serializer(mode="wrap")
+    def preserve_legacy_projection(self, handler: SerializerFunctionWrapHandler) -> dict[str, Any]:
+        data: dict[str, Any] = handler(self)
+        if self.inference is None:
+            data.pop("inference", None)
+        return data
 
     @model_validator(mode="after")
     def result_invariants(self) -> Self:
+        if (self.usage_state == "RECORDED") != (self.inference is not None):
+            raise ValueError("EXECUTION_USAGE_STATE_MISMATCH")
+        if self.inference is not None:
+            if self.inference.configuration_ref != self.request.configuration_ref:
+                raise ValueError("EXECUTION_CONFIGURATION_MISMATCH")
+            if self.inference.composition_ref != self.request.profile_ref:
+                raise ValueError("EXECUTION_COMPOSITION_MISMATCH")
+            if self.inference.usage.completed_at != self.computed_at:
+                raise ValueError("EXECUTION_COMPLETION_MISMATCH")
+            if self.status is ForecastStatus.GENERATED and (
+                self.inference.usage.attempts != 1 or self.inference.support is None
+            ):
+                raise ValueError("GENERATED_REQUIRES_INVOKED_SUPPORT")
         request = self.request
         generated = self.status is ForecastStatus.GENERATED
         if generated != isinstance(self.output, BinaryProbabilityOutput):
@@ -221,13 +250,17 @@ class ForecastResult(ForecastContract):
                     ForecastReason.TARGET_SESSION_UNRESOLVED,
                 },
                 ForecastStatus.ABSTAINED: {ForecastReason.POLICY_ABSTENTION},
-                ForecastStatus.FAILED: {ForecastReason.INTERNAL_EXECUTION_FAILURE},
+                ForecastStatus.FAILED: {
+                    ForecastReason.INTERNAL_EXECUTION_FAILURE,
+                    ForecastReason.LOCAL_DEADLINE_EXCEEDED,
+                },
                 ForecastStatus.UNAVAILABLE: set(ForecastReason)
                 - {
                     ForecastReason.SCOPE_UNSUPPORTED,
                     ForecastReason.TARGET_SESSION_UNRESOLVED,
                     ForecastReason.POLICY_ABSTENTION,
                     ForecastReason.INTERNAL_EXECUTION_FAILURE,
+                    ForecastReason.LOCAL_DEADLINE_EXCEEDED,
                 },
             }
             if not set(self.output.reasons) <= allowed[self.status]:

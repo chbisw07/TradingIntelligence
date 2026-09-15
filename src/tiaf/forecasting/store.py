@@ -465,6 +465,17 @@ class ForecastCorpusStore:
         self._check_outcome(entry, index, now=self.as_of)
         return entry
 
+    def get_forecast_artifacts(self, run_id: str) -> tuple[CapturedArtifact, ...]:
+        """Read only the validated captured closure, never unrelated journal observations."""
+        TypeAdapter(LogicalId).validate_python(run_id)
+        index = self._load()
+        if run_id not in index.forecasts:
+            raise ForecastIntegrityError("FORECAST_NOT_FOUND")
+        capture = index.forecasts[run_id]
+        blobs = self._blobs(capture.closure, index)
+        validate_capture(capture, blobs, as_of=self.as_of)
+        return blobs
+
     def get_link(self, link_id: str) -> EvaluationLink:
         index = self._load()
         if link_id not in index.links:

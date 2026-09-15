@@ -1,25 +1,27 @@
 # TIAF A7 — Integrated Forecasting / Evaluation / Learning Roadmap
 
 The [FF-0.1 foundation](TIAF_A7_FF0_1_CONTRACTS_TARGET_CLOCK_IMPLEMENTATION.md)
-remains accepted. The [FF-0.2 implementation record](TIAF_A7_FF0_2_CAPTURE_STORE_TRUTH_RECORDED_REPLAY_IMPLEMENTATION.md)
-records **FF0_2_ACCEPTED**: bounded JSON/JSONL capture, independent revision-safe
-truth, exact linkage and recorded replay over synthetic inputs. A7 / FF is
-**IMPLEMENTATION IN_PROGRESS; FORECAST EXECUTION RUNTIME NOT_IMPLEMENTED**.
-The first two of the [four planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
-are complete. Next is separately authorized **FF-0.3 — BaseRate, COLD runtime
-and pinned verification**. FF-0 overall is not accepted; no executed model,
-public capability or empirical qualification is delivered. Calibration remains
-at FF-2; recorded replay is not recomputation or new simulation.
+and [FF-0.2 capture/truth/replay](TIAF_A7_FF0_2_CAPTURE_STORE_TRUTH_RECORDED_REPLAY_IMPLEMENTATION.md)
+remain accepted. The [FF-0.3 implementation record](TIAF_A7_FF0_3_BASERATE_COLD_RUNTIME_PINNED_VERIFICATION_IMPLEMENTATION.md)
+records **FF0_3_ACCEPTED**: deterministic synthetic BaseRate, an immutable internal
+COLD owner, honest ACTUAL/SIMULATED execution, capture and separate exact pinned
+verification. A7 / FF is **IMPLEMENTATION IN_PROGRESS; INTERNAL SYNTHETIC RUNTIME
+IMPLEMENTED; PUBLIC FORECAST CAPABILITY NOT_PUBLISHED**.
+The first three of the [four planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
+are complete. Next is separately authorized **FF-0.4 — Engineering CLI and
+acceptance hardening**. FF-0 overall is not accepted; no empirical qualification,
+calibration, trained model or new consumer authority is delivered. Calibration
+remains at FF-2; recorded replay is not recomputation or new simulation.
 
 ## Status and sequencing
 
 **2026-09-15 (Asia/Kolkata): A7 ARCHITECTURE ACCEPTED;
 A7 THESIS RECONCILED AS NEEDED; FF ARCHITECTURE ACCEPTED;
-A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0.1–0.2 ONLY); RUNTIME NOT_IMPLEMENTED.**
+A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0.1–0.3 ONLY); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
 
 The [independent acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) approves the
-architecture for sequencing. Separate FF-0.1 and FF-0.2 requests implemented the
-foundation and capture/truth/replay; FF-0.3 and later need their own bounded requests.
+architecture for sequencing. Separate FF-0.1–0.3 requests implemented foundation,
+capture/truth/replay and internal synthetic runtime; FF-0.4 and later need their own bounded requests.
 
 The [integration record](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 owns the old-to-new disposition. The [A7 architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md)
@@ -36,7 +38,8 @@ A6 FROZEN at tiaf-a6-baseline; R1–R5 ACCEPTED / DONE
  → FF-0 MINIATURE PLAN COMPLETE [planning only]
  → FF-0.1 CONTRACTS / TARGET / CLOCKS [ACCEPTED; FOUNDATION ONLY]
  → FF-0.2 CAPTURE / TRUTH / RECORDED REPLAY [ACCEPTED; NO EXECUTION]
- → separately authorized FF-0.3 BASERATE / COLD RUNTIME / PINNED VERIFICATION [NEXT]
+ → FF-0.3 BASERATE / COLD RUNTIME / PINNED VERIFICATION [ACCEPTED; SYNTHETIC ONLY]
+ → separately authorized FF-0.4 ENGINEERING CLI / ACCEPTANCE HARDENING [NEXT]
  → separately authorized bounded FF-0 → FF-1 → FF-2 [complete miniature]
       ├─ separate facade / Shell publication checkpoint, if authorized
       ├─ FF-3 optional multi-family / simple ensemble
@@ -235,11 +238,11 @@ A8 TM, A9 Scanner and A10 operations keep their major order.
 
 ## Decision and exact next prompt
 
-**A7_ARCHITECTURE_ACCEPTED; FF0_2_ACCEPTED (capture/truth/recorded replay only)**
+**A7_ARCHITECTURE_ACCEPTED; FF0_3_ACCEPTED (internal synthetic BaseRate/runtime/verification only)**
 
-**TIAF A7 / FF-0.3 — BASERATE, COLD RUNTIME AND PINNED VERIFICATION**
+**TIAF A7 / FF-0.4 — ENGINEERING CLI AND ACCEPTANCE HARDENING**
 
-Independent architecture acceptance is complete; FF-0 planning is complete; FF-0.1–0.2 are accepted; separately authorized FF-0.3 is next.
+Independent architecture acceptance is complete; FF-0 planning is complete; FF-0.1–0.3 are accepted; separately authorized FF-0.4 is next.
 Only a later separately
-authorized bounded request may implement FF-0.3 or subsequent steps. No training, live calls, A8 work,
+authorized bounded request may implement FF-0.4 or subsequent steps. No training, live calls, A8 work,
 frozen-A6 change, new public capability, commit, tag or push.
