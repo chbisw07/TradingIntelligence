@@ -1,5 +1,11 @@
 # FM / LFDE — Market-State Forecasting Architecture
 
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+
 ## 1. Status, decision and limits
 
 **2026-09-15 (Asia/Kolkata): ARCHITECTURE DRAFT;
@@ -21,7 +27,7 @@ A6 remains frozen at `tiaf-a6-baseline`. The
 [A7 integration reconciliation](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 now places this family in **A7 → Forecasting → FF → FMLFDEForecaster**.
 A7 is [ARCHITECTURE ACCEPTED](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md);
-implementation sequencing / FF-0 miniature realization planning is NEXT.
+the FF-0 plan is complete; separately authorized FF-0.1 is NEXT.
 This accepts the platform/umbrella boundary, not this family's empirical readiness.
 This relationship update changes no tensor/K/Z/state/dynamics/head, ablation,
 transfer-learning, graph, Monte Carlo or family stop gate. Generic truth,
@@ -793,7 +799,7 @@ FM-0 reuses the FF miniature and shared A7 scientific-control infrastructure
 registry, calibrator fitter or composition engine. FM-1–FM-6 are
 conditional research stages, **not newly numbered A7 milestones**. The current
 A7 miniature is FF-0–FF-2 with B0/B2 and separate held-out calibration;
-A7 architecture acceptance is complete and sequencing/planning is next. The integrated roadmap
+A7 architecture acceptance is complete and FF-0 planning is complete; separately authorized FF-0.1 is next. The integrated roadmap
 retains all nested family gates without making them miniature prerequisites.
 
 The dedicated [FM/LFDE thesis](TIAF_FM_LFDE_THESIS_RECORD.md) already teaches
@@ -804,7 +810,7 @@ do not rename the advanced handbook or claim its examples are empirical validati
 Paper 1/2 remain about FM/LFDE evaluated within FF, not generic platform software.
 
 Exact next prompt:
-**TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+**TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
 
 ## Sources
 

@@ -1,5 +1,11 @@
 # TIAF A7 — Forecasting, Evaluation & Learning Architecture
 
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+
 ## 1. Status, authority and decision
 
 **2026-09-15 (Asia/Kolkata): A7 ARCHITECTURE ACCEPTED;
@@ -12,8 +18,7 @@ nor an empirical model result.
 The [reconciliation record](TIAF_A7_RECONCILIATION_RECORD.md) identifies inherited
 decisions, corrections and new proposals. The [detailed roadmap](TIAF_A7_DETAILED_ROADMAP.md)
 owns the integrated crosswalk: A7 contains FF-0–FF-7 unchanged, not a competing
-A7.1–A7.5 implementation sequence. Implementation sequencing and an FF-0
-miniature realization plan are next; implementation needs separate authorization. The [thesis reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md)
+A7.1–A7.5 implementation sequence. The FF-0 miniature plan is complete; FF-0.1 implementation needs separate authorization. The [thesis reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md)
 dispositions all seventeen thesis findings. The current
 [FF integration reconciliation](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 maps every A7 section and affected thesis claim. The
@@ -1414,9 +1419,9 @@ then-open questions; this reconciled Markdown controls the resolved design.
 No trained model, measured performance or runtime acceptance is implied.
 
 **Decision: A7_ARCHITECTURE_ACCEPTED.** Next prompt title:
-**TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+**TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
 The [acceptance record](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) retains the review and
-clarifications. Planning comes next, **then** a separately authorized bounded
-FF-0 request under the integrated A7 roadmap. Residual source qualification, concrete feature/protocol values,
+clarifications. The FF-0 plan is complete; a separately authorized bounded
+FF-0.1 request is next under the integrated A7 roadmap. Residual source qualification, concrete feature/protocol values,
 dependency and publication choices retain their explicit blocking gates in the
 roadmap. No implementation readiness is asserted.

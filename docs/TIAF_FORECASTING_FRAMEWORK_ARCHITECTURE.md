@@ -1,11 +1,17 @@
 # Forecasting Framework — Platform Architecture
 
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+
 ## 1. Status, principle and authority
 
 **2026-09-15 (Asia/Kolkata): FF ARCHITECTURE ACCEPTED;
 FF THESIS RECONCILED; IMPLEMENTATION NOT_STARTED; RUNTIME NOT_IMPLEMENTED.** A6 remains FROZEN
 at `tiaf-a6-baseline`; [A7 architecture is ACCEPTED](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md).
-Implementation sequencing / FF-0 miniature realization planning is NEXT. This is normative direction
+The FF-0 plan is complete; separately authorized FF-0.1 is NEXT. This is normative direction
 for the **accepted architecture**, not implementation or model-approval authority.
 
 > Forecasting is a platform capability; forecasters are replaceable scientific instruments.
@@ -1235,9 +1241,9 @@ entry, deliverables, tests, success, stop/fallback and next-stage gate. All exis
 historical data qualification, production LLM readiness, HOT loading or consumer
 publication is closed by a diagram.
 
-Exact next prompt: **TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+Exact next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
 The [repeat review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
 records closure of all five prior HOLD dimensions; original HOLD/correction
 history is preserved. A7 integration is reconciled and independently accepted;
-sequencing/planning is next and implementation requires separate authorization.
+FF-0 planning is complete; separately authorized FF-0.1 is next and implementation requires separate authorization.
 No trained model or runtime success is claimed.

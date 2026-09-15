@@ -14,7 +14,13 @@ Evaluation owns truth/qualification/linkage; Learning owns candidate artifacts
 and lifecycle history. Independent approval and trusted COLD selection remain
 separate. FM/LFDE remains an optional advanced Forecaster family.
 
-Exact next prompt: **TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+
+Exact next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
 Everything below is the preserved earlier record, including then-current status,
 stage labels, findings and validation counts. Neither those historical labels
 nor this navigation update authorize implementation, training, live work or A8.

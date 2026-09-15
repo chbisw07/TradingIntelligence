@@ -1,5 +1,11 @@
 # TIAF A7 — Integrated Forecasting / Evaluation / Learning Roadmap
 
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+
 ## Status and sequencing
 
 **2026-09-15 (Asia/Kolkata): A7 ARCHITECTURE ACCEPTED;
@@ -21,7 +27,8 @@ The [milestone ledger](MILESTONES.md) owns actual acceptances/tags.
 A6 FROZEN at tiaf-a6-baseline; R1–R5 ACCEPTED / DONE
  → FF ARCHITECTURE ACCEPTED; FF THESIS RECONCILED
  → A7 FF INTEGRATION RECONCILED; A7 ARCHITECTURE ACCEPTED
- → A7 IMPLEMENTATION SEQUENCING / FF-0 MINIATURE REALIZATION PLAN [NEXT]
+ → FF-0 MINIATURE PLAN COMPLETE [planning only]
+ → separately authorized FF-0.1 CONTRACTS / TARGET / CLOCKS [NEXT]
  → separately authorized bounded FF-0 → FF-1 → FF-2 [complete miniature]
       ├─ separate facade / Shell publication checkpoint, if authorized
       ├─ FF-3 optional multi-family / simple ensemble
@@ -222,9 +229,9 @@ A8 TM, A9 Scanner and A10 operations keep their major order.
 
 **A7_ARCHITECTURE_ACCEPTED**
 
-**TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**
+**TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**
 
-Independent architecture acceptance is complete; sequencing/planning is next.
+Independent architecture acceptance is complete; FF-0 planning is complete; separately authorized FF-0.1 is next.
 Only a later separately
 authorized bounded request may implement FF-0. No training, live calls, A8 work,
 frozen-A6 change, new public capability, commit, tag or push.

@@ -40,9 +40,9 @@ Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
 | What did this consolidation change? | [Post-R1 record](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md). |
 | What is A7's accepted architecture? | [FF-integrated architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md), [17-finding reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md), [integrated stage crosswalk](TIAF_A7_DETAILED_ROADMAP.md); ARCHITECTURE ACCEPTED after the explicit FF integration and independent review. No runtime approval. |
 | What is the stable forecasting platform? | [FF architecture ACCEPTED](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md), [bounded roadmap](TIAF_FORECASTING_FRAMEWORK_DETAILED_ROADMAP.md), [decision and findings dispositions](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md). Primitive/composite typed DAG, common truth, paired evaluation; miniature DEFINED, not implemented. |
-| How do I learn the Forecasting Framework? | [Separate platform thesis PDF](TI_Forecasting_Framework_Thesis.pdf), [editable Word edition](TI_Forecasting_Framework_Thesis.docx), [creation/validation and 28 findings](TIAF_FORECASTING_FRAMEWORK_THESIS_RECORD.md). Non-normative; all 28 findings reconciled; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; sequencing/planning NEXT. |
+| How do I learn the Forecasting Framework? | [Separate platform thesis PDF](TI_Forecasting_Framework_Thesis.pdf), [editable Word edition](TI_Forecasting_Framework_Thesis.docx), [creation/validation and 28 findings](TIAF_FORECASTING_FRAMEWORK_THESIS_RECORD.md). Non-normative; all 28 findings reconciled; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; separately authorized FF-0.1 NEXT. |
 | Where does FM/LFDE fit? | [Advanced FMLFDEForecaster design](TIAF_FM_LFDE_MARKET_STATE_FORECASTING_ARCHITECTURE.md), [research matrix](TIAF_FM_LFDE_RESEARCH_RECONCILIATION.md), [nested family roadmap](TIAF_FM_LFDE_DETAILED_ROADMAP.md). Internals retained; shared platform ownership is FF. |
-| How do I understand FM/LFDE? | [Illustrated thesis PDF](TI_FM_LFDE_Market_State_Forecasting_Thesis.pdf), [editable DOCX](TI_FM_LFDE_Market_State_Forecasting_Thesis.docx), [creation record and current addendum](TIAF_FM_LFDE_THESIS_RECORD.md). Unchanged advanced-reference edition; separate FF thesis RECONCILED; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; sequencing/planning NEXT. |
+| How do I understand FM/LFDE? | [Illustrated thesis PDF](TI_FM_LFDE_Market_State_Forecasting_Thesis.pdf), [editable DOCX](TI_FM_LFDE_Market_State_Forecasting_Thesis.docx), [creation record and current addendum](TIAF_FM_LFDE_THESIS_RECORD.md). Unchanged advanced-reference edition; separate FF thesis RECONCILED; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; separately authorized FF-0.1 NEXT. |
 | How do I understand A7's forecasting, evaluation and learning concepts? | [Reference thesis PDF](TI_Forecasting_Evaluation_Learning_Thesis.pdf), [editable DOCX](TI_Forecasting_Evaluation_Learning_Thesis.docx), [creation record](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md). Unchanged non-normative creation edition; thesis RECONCILED; A7 architecture ACCEPTED, implementation NOT_STARTED. |
 
 A1–A5 are FROZEN; A5 is tagged at `tiaf-a5-baseline`. R1 is ACCEPTED / DONE.
@@ -82,12 +82,12 @@ one exact equity-return target, chronological calibrated evaluation and explicit
 shadow/advisory approval; it does not change frozen A4/A5/A6 or the nine-operation
 catalog. Thesis RECONCILED; A7 architecture ACCEPTED, implementation NOT_STARTED. The intervening
 [FF platform design](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED and
-FM/LFDE is its advanced family. A7 ARCHITECTURE is ACCEPTED; sequencing/planning is NEXT;
-**TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN** is next.
+FM/LFDE is its advanced family. A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; separately authorized FF-0.1 is NEXT;
+**TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION** is next.
 FF repeat acceptance closes FFA-B01. The completed
 [A7 integration reconciliation](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 and [independent acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) precede the
-next sequencing plan; implementation remains separately authorized.
+completed FF-0 plan; implementation remains separately authorized.
 Historical records remain preserved; the current A7 architecture and roadmap are integrated.
 The [original source audit](TIAF_A7_RECONCILIATION_RECORD.md)
 remains a historical architecture-pass record.
@@ -323,7 +323,13 @@ overlay, and A8 integrates with TM without transferring authority.
 
 <a id="forecasting-framework--a7-integrated-architecture-acceptance-next"></a>
 
-## Forecasting Framework and A7 — architecture accepted; sequencing next
+## Forecasting Framework and A7 — architecture accepted; FF-0 plan complete
+
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
 **A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
@@ -347,6 +353,7 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
-This is a planning gate, not implementation readiness or authorization to train,
-approve models, publish capabilities, change frozen A6 or begin A8.
+Exact next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
+This is planning readiness only. FF-0.1 still needs separate authorization;
+this pass does not authorize training, model approval, publication, frozen-A6
+changes or A8.

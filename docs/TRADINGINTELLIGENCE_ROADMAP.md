@@ -614,7 +614,7 @@ records the explicit 93-case corpus used to freeze the deterministic baseline.
 The non-normative [thesis and findings record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 preserves the handbook step. The [fourteen-finding reconciliation](TIAF_A6_THESIS_ARCHITECTURE_RECONCILIATION.md)
 updates normative Markdown, not thesis artifacts or runtime. The current next
-step is A7 implementation sequencing / FF-0 miniature realization planning after the completed FF integration.
+step is a separately authorized FF-0.1 contracts / target / clock foundation request after the completed FF integration.
 
 Two delivery tracks under A6/DEF-006: deterministic admissible candidates first;
 forecast-enhanced comparison only after admitted A7 evidence. A5 still precedes
@@ -673,7 +673,7 @@ The intervening [FF platform architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTU
 advanced family; its [thesis](TIAF_FM_LFDE_THESIS_RECORD.md) is retained unchanged.
 FF ARCHITECTURE is ACCEPTED; MINIATURE REALIZATION DEFINED; A7 ARCHITECTURE ACCEPTED; IMPLEMENTATION NOT_STARTED;
 RUNTIME NOT_IMPLEMENTED. Next:
-**TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+**TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
 FF repeat acceptance closes FFA-B01; A7 integration and
 [independent architecture acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) are
 complete. No A7 design rewrite or runtime implementation now.
@@ -957,7 +957,13 @@ This roadmap should always be read together with the TIAF architecture thesis.
 
 <a id="forecasting-framework--a7-integrated-architecture-acceptance-next"></a>
 
-## Forecasting Framework and A7 — architecture accepted; sequencing next
+## Forecasting Framework and A7 — architecture accepted; FF-0 plan complete
+
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
 **A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
@@ -981,6 +987,7 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
-This is a planning gate, not implementation readiness or authorization to train,
-approve models, publish capabilities, change frozen A6 or begin A8.
+Exact next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
+This is planning readiness only. FF-0.1 still needs separate authorization;
+this pass does not authorize training, model approval, publication, frozen-A6
+changes or A8.

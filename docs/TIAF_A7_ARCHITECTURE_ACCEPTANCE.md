@@ -1,5 +1,19 @@
 # TIAF A7 — Architecture Acceptance
 
+## Current navigation — FF-0 plan complete
+
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+
+Exact next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
+The acceptance record below is preserved verbatim, including its then-current
+HEAD, status, Git recommendation and validation counts. The architecture
+checkpoint was subsequently committed as `3aceb27`; that does not authorize
+runtime work. This new pointer is not a repeat architecture acceptance.
+
 ## 1. Decision and scope
 
 **A7_ARCHITECTURE_ACCEPTED**

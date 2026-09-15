@@ -1,5 +1,11 @@
 # FM / LFDE — Detailed Research and Delivery Roadmap
 
+The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
+(**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
+BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
+next only under a separate implementation request; calibration stays at FF-2,
+public capability publication stays separate, and runtime remains NOT_IMPLEMENTED.
+
 **2026-09-15 (Asia/Kolkata): ADVANCED FMLFDEForecaster FAMILY / DRAFT / NOT_IMPLEMENTED.**
 This is a gated research roadmap, not permission to start coding, acquire data,
 train models, run providers or publish forecasts. FM is Forecasting Module;
@@ -25,7 +31,8 @@ FM/LFDE architecture + advanced thesis — created; family now positioned in FF
   → FF platform architecture ACCEPTED; thesis RECONCILED
   → A7 FF integration RECONCILED
   → A7 ARCHITECTURE ACCEPTED
-  → A7 IMPLEMENTATION SEQUENCING / FF-0 MINIATURE REALIZATION PLAN [NEXT]
+  → FF-0 MINIATURE PLAN COMPLETE [planning only]
+ → separately authorized FF-0.1 CONTRACTS / TARGET / CLOCKS [NEXT]
   → separately authorized bounded scientific-control implementation
   → qualified data + preregistered experiment profile
   → candidate experiments, only as their gates are met
@@ -251,7 +258,7 @@ Its numerical examples are **illustrative**, not measured TI performance.
 The [FF decision record](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md) dispositions
 its 24 findings; source DOCX/PDF/build assets remain unchanged. The separate FF
 platform thesis is now created/reconciled and FF architecture accepted. A7
-integration is reconciled and architecture accepted; sequencing/planning is next.
+integration is reconciled and architecture accepted; FF-0 planning is complete; separately authorized FF-0.1 is next.
 
 Paper 1 becomes a candidate conceptual manuscript only after thesis/design
 review and further novelty reconciliation. Paper 2 needs qualified data,
@@ -260,4 +267,4 @@ shadow evidence. Neither is authored now. See
 [research readiness](TIAF_FM_LFDE_RESEARCH_RECONCILIATION.md#5-paper-readiness-and-thesis-handoff).
 
 Exact next prompt:
-**TIAF A7 — IMPLEMENTATION SEQUENCING AND FF-0 MINIATURE REALIZATION PLAN**.
+**TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
