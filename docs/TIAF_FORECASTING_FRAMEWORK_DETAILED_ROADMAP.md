@@ -10,15 +10,18 @@ IMPLEMENTED; PUBLIC FORECAST CAPABILITY NOT_PUBLISHED**.
 All four [planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
 are complete. The [FF-0.4 engineering CLI](TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTANCE_HARDENING_IMPLEMENTATION.md)
 and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
-28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**. Next is separately
-requested FF-1 **planning**, not implementation approval. No empirical
+28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**; frozen at `e5283c9`
+(`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
+is **READY_FOR_FF1_IMPLEMENTATION** (planning readiness only); FF-1 runtime
+remains **NOT_IMPLEMENTED**. Next is separately requested FF-1.1 qualification
+and feature-schema implementation. Empirical fitting remains **HOLD**. No empirical
 qualification, calibration, trained model or new consumer authority is delivered.
 Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
 
-**2026-09-15 (Asia/Kolkata): FF ARCHITECTURE ACCEPTED;
+**2026-09-19 (Asia/Kolkata): FF ARCHITECTURE ACCEPTED;
 FF THESIS RECONCILED; IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED ONLY); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
 A6 FROZEN; [A7 ARCHITECTURE ACCEPTED](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md);
-A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED ONLY). FF-0 planning is complete; FF-0 is accepted; separately requested FF-1 planning is next. The [repeat acceptance](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
+A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED ONLY). FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; separately requested FF-1.1 qualification implementation is next. The [repeat acceptance](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
 closes FFA-B01 after the [clock correction](TIAF_FORECASTING_FRAMEWORK_HISTORICAL_EVALUATION_CLOCK_SEMANTICS_CORRECTION.md);
 the [original review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE.md) retains its historical HOLD.
 The [FF architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) owns accepted architecture
@@ -42,7 +45,8 @@ FF architecture ACCEPTED; dedicated thesis RECONCILED
  → FF-0.2 CAPTURE / TRUTH / RECORDED REPLAY [ACCEPTED; NO EXECUTION]
  → FF-0.3 BASERATE / COLD RUNTIME / PINNED VERIFICATION [ACCEPTED; SYNTHETIC ONLY]
  → FF-0.4 ENGINEERING CLI / ACCEPTANCE HARDENING [ACCEPTED; FF-0 COMPLETE]
- → separately requested FF-1 LOGISTIC BENCHMARK / PAIRED EVALUATION PLANNING [NEXT]
+ → FF-1 LOGISTIC BENCHMARK / PAIRED EVALUATION PLAN [COMPLETE; NO FIT APPROVAL]
+ → separately requested FF-1.1 DATA QUALIFICATION / FEATURE SCHEMA [NEXT]
  → separately authorized implementation requests
  → separately authorized FF-1 implementation → FF-2 [complete benchmarked/calibrated miniature]
       ├─ FF-3 [optional multi-family / simple composition]
@@ -81,7 +85,7 @@ dispositions, ledger and comparisons reuse A7-wide Evaluation concepts. Likewise
 the Benchmark Registry is a curated reference view over the one artifact/lifecycle
 registry, not a new activation service. The old A7.1–A7.5 proposal is superseded
 by the [explicit A7 crosswalk](TIAF_A7_DETAILED_ROADMAP.md#historical-five-slice-crosswalk).
-Independent A7 architecture acceptance is complete; FF-0 planning is complete; FF-0 is accepted; separately requested FF-1 planning is next.
+Independent A7 architecture acceptance is complete; FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; separately requested FF-1.1 qualification implementation is next.
 No implementation beyond the accepted FF-0 engineering miniature is authorized.
 A8/A9/A10 ordering is unchanged.
 
@@ -145,6 +149,25 @@ fails before executing nodes; no repair by selecting a different instrument.
 common observation identity, accepted finite protocol for comparison work.
 
 ## 4. FF-1 — Benchmark Registry, Forecast Ledger and paired evaluation
+
+**Current planning:** [Logistic benchmark / paired evaluation plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
+is complete; runtime NOT_IMPLEMENTED. The plan pins RELIANCE-only, five existing
+A2 daily features, one fixed Logistic configuration, five annual SIMULATED
+walk-forward folds, unchanged last-20 BaseRate and dependent-session paired
+loss comparisons. It adds no calibration or public capability. Empirical fitting
+is HOLD pending rights, PIT archives and independent protocol/job admission.
+
+| Planned slice | Bounded deliverable |
+|---|---|
+| FF-1.1 — NEXT, separately requested | Data qualification and feature schema; no learned fit |
+| FF-1.2 | Governed optional Logistic training and immutable candidate artifact |
+| FF-1.3 | Additive research versions, COLD two-arm inference, walk-forward and replay |
+| FF-1.4 | Common-truth Ledger, paired metrics, uncertainty and full dispositions |
+| FF-1.5 | Internal engineering CLI, acceptance corpus and honest empirical/synthetic status |
+
+All five are future implementation; the detailed plan owns exact admission,
+failure and acceptance tests. FF-0 v1 synthetic-only contracts stay unchanged;
+research input bindings require explicit additive versions, not relabeling.
 
 **Entry:** FF-0 mechanics accepted; qualified paired dataset or explicitly
 SYNTHETIC_ONLY exercise; exact fit/comparison grant and frozen protocol.
@@ -402,7 +425,7 @@ The previous architecture checkpoint requested a **separate FF platform thesis**
 preserving the FM/LFDE advanced handbook. That thesis
 is now created and its 28 findings are reconciled; neither artifact edition is
 regenerated by this pass. Current next prompt:
-**TIAF A7 / FF-1 — LOGISTIC BENCHMARK AND PAIRED EVALUATION PLANNING**.
+**TIAF A7 / FF-1.1 — DATA QUALIFICATION AND FEATURE SCHEMA IMPLEMENTATION**.
 The bounded FFA-B01 correction supplies mode/clock guards and FF-0–FF-2 fixture
 obligations; the repeat review accepts the architecture, not their implementation.
 All four non-blocking

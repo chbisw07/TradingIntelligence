@@ -116,10 +116,10 @@ automatic influence on A4/A5/A6. The [reconciliation](TIAF_A7_RECONCILIATION_REC
 retains the existing A3 forecast placeholder without claiming an implementation.
 The [A7 thesis creation edition](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md)
 is unchanged; all [17 findings are RECONCILED](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md).
-A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; FF-0 is ACCEPTED; separately requested FF-1 planning is NEXT. The intervening
+A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; FF-0 is ACCEPTED; FF-1 planning is COMPLETE; separately requested FF-1.1 qualification implementation is NEXT. The intervening
 [FF architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED;
 FF MINIATURE REALIZATION is DEFINED; FF THESIS RECONCILED; FF ARCHITECTURE
-ACCEPTANCE COMPLETE; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0 ACCEPTED; separately requested FF-1 planning NEXT; IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED ONLY);
+ACCEPTANCE COMPLETE; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0 ACCEPTED; FF-1 plan COMPLETE; FF-1.1 qualification implementation NEXT; IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED ONLY);
 INTERNAL SYNTHETIC RUNTIME IMPLEMENTED; PUBLIC FORECAST CAPABILITY NOT_PUBLISHED. FM/LFDE is its advanced family; its existing thesis is retained.
 The completed [FF/A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 is now independently [accepted](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md).
@@ -371,8 +371,11 @@ IMPLEMENTED; PUBLIC FORECAST CAPABILITY NOT_PUBLISHED**.
 All four [planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
 are complete. The [FF-0.4 engineering CLI](TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTANCE_HARDENING_IMPLEMENTATION.md)
 and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
-28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**. Next is separately
-requested FF-1 **planning**, not implementation approval. No empirical
+28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**; frozen at `e5283c9`
+(`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
+is **READY_FOR_FF1_IMPLEMENTATION** (planning readiness only); FF-1 runtime
+remains **NOT_IMPLEMENTED**. Next is separately requested FF-1.1 qualification
+and feature-schema implementation. Empirical fitting remains **HOLD**. No empirical
 qualification, calibration, trained model or new consumer authority is delivered.
 Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
 
@@ -399,7 +402,8 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FF-1 — LOGISTIC BENCHMARK AND PAIRED EVALUATION PLANNING**.
-FF-0 acceptance is limited to internal synthetic engineering mechanics. FF-1 needs a separate
-planning request; no training, model approval, publication, frozen-A6 changes or A8 is
+Exact next prompt: **TIAF A7 / FF-1.1 — DATA QUALIFICATION AND FEATURE SCHEMA IMPLEMENTATION**.
+FF-0 acceptance is limited to internal synthetic engineering mechanics. The FF-1 plan
+needs a separate FF-1.1 implementation request; no training, model approval,
+publication, frozen-A6 changes or A8 is
 authorized. Historical planning/acceptance records retain their then-current status.

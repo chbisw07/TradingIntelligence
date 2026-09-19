@@ -1,6 +1,27 @@
 # Forecasting Framework — Architecture Decision and Reconciliation Record
 
-## Current status — architecture accepted after repeat review
+## Current follow-up — FF-1 implementation planning complete
+
+2026-09-19 (Asia/Kolkata): **READY_FOR_FF1_IMPLEMENTATION** is planning
+readiness only. The [bounded FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
+chooses RELIANCE cash equity, the unchanged next-session target, five existing
+A2 features, fixed L2 Logistic, five chronological annual folds, unchanged
+last-20 BaseRate and paired proper-loss/block-uncertainty protocols. No empirical
+outcomes were inspected or fitted to choose these engineering baseline values.
+
+FF-0 is already frozen at `e5283c9` / `tiaf-a7-ff0-baseline`. Its synthetic-only
+v1 contracts and exact replay stay unchanged; empirical research needs explicit
+additive versions, qualified rights/PIT archives and independent protocol/job
+approval. Raw EXPERIMENTAL CHALLENGER status is not approval or PRIMARY selection.
+FF-1 runtime remains NOT_IMPLEMENTED; empirical fitting HOLD. No new deferral,
+runtime, capability, trained artifact or automatic A4/A5/A6 authority is added.
+
+Exact next prompt:
+**TIAF A7 / FF-1.1 — DATA QUALIFICATION AND FEATURE SCHEMA IMPLEMENTATION**.
+Original review decisions and then-next text below are historical; the current
+plan does not retroactively qualify data or change those recorded verdicts.
+
+## Historical checkpoint — architecture accepted after repeat review
 
 **FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTED** — 2026-09-14 (Asia/Kolkata).
 The [independent repeat acceptance](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)

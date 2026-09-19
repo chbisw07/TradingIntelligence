@@ -3,7 +3,7 @@
 This is the **near-term forward queue**, subordinate to the intended major order
 in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 [milestone ledger](MILESTONES.md) owns actual status/tags and the
-[README](../README.md) is the executive dashboard. Status: 2026-09-15
+[README](../README.md) is the executive dashboard. Status: 2026-09-19
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
 ```text
@@ -100,13 +100,15 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. **TIAF A7 / FF-1 — LOGISTIC BENCHMARK AND PAIRED EVALUATION PLANNING** after the accepted
+1. **TIAF A7 / FF-1.1 — DATA QUALIFICATION AND FEATURE SCHEMA IMPLEMENTATION** after the accepted
    [FF-0 engineering miniature](TIAF_A7_FF0_ACCEPTANCE.md).
    FF and A7 architectures are independently accepted; the
    [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records residual gates,
    not implementation readiness.
 2. Preserve the [completed four-step FF-0 baseline](TIAF_A7_FF0_ACCEPTANCE.md).
-   FF-1 planning must preregister scientific/data/dependency/fit gates. The [A7 roadmap](TIAF_A7_DETAILED_ROADMAP.md)
+   The [completed FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
+   specifies scientific/data/dependency/fit gates; independent protocol review
+   and empirical qualification remain prerequisites to fitting. The [A7 roadmap](TIAF_A7_DETAILED_ROADMAP.md)
    retains FF-0…FF-7; old A7.1…A7.5 labels are not a second active hierarchy.
 3. FF-0/1 scientific mechanics precede FF-2 calibrated/lifecycle miniature.
    Later publication is a separate checkpoint; optional advanced stages need
@@ -169,8 +171,11 @@ IMPLEMENTED; PUBLIC FORECAST CAPABILITY NOT_PUBLISHED**.
 All four [planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
 are complete. The [FF-0.4 engineering CLI](TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTANCE_HARDENING_IMPLEMENTATION.md)
 and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
-28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**. Next is separately
-requested FF-1 **planning**, not implementation approval. No empirical
+28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**; frozen at `e5283c9`
+(`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
+is **READY_FOR_FF1_IMPLEMENTATION** (planning readiness only); FF-1 runtime
+remains **NOT_IMPLEMENTED**. Next is separately requested FF-1.1 qualification
+and feature-schema implementation. Empirical fitting remains **HOLD**. No empirical
 qualification, calibration, trained model or new consumer authority is delivered.
 Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
 
@@ -197,7 +202,8 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FF-1 — LOGISTIC BENCHMARK AND PAIRED EVALUATION PLANNING**.
-FF-0 acceptance is limited to internal synthetic engineering mechanics. FF-1 needs a separate
-planning request; no training, model approval, publication, frozen-A6 changes or A8 is
+Exact next prompt: **TIAF A7 / FF-1.1 — DATA QUALIFICATION AND FEATURE SCHEMA IMPLEMENTATION**.
+FF-0 acceptance is limited to internal synthetic engineering mechanics. The FF-1 plan
+needs a separate FF-1.1 implementation request; no training, model approval,
+publication, frozen-A6 changes or A8 is
 authorized. Historical planning/acceptance records retain their then-current status.
