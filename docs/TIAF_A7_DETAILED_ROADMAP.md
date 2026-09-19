@@ -12,17 +12,18 @@ are complete. The [FF-0.4 engineering CLI](TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTA
 and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
 28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**; frozen at `e5283c9`
 (`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
-is **READY_FOR_FF1_IMPLEMENTATION** (planning readiness only); FF-1 runtime
-remains **NOT_IMPLEMENTED**. Next is separately requested FF-1.1 qualification
-and feature-schema implementation. Empirical fitting remains **HOLD**. No empirical
-qualification, calibration, trained model or new consumer authority is delivered.
+is complete. [FF-1.1 qualification/schema tooling](TIAF_A7_FF1_1_DATA_QUALIFICATION_FEATURE_SCHEMA_IMPLEMENTATION.md)
+is **FF1_1_ACCEPTED**; learned FF-1 runtime remains **NOT_IMPLEMENTED**.
+**EMPIRICAL_FITTING_AUTHORIZED = NO**. Next is separately requested FF-1.1A
+empirical rights and qualification execution. No real dataset qualification,
+calibration, trained model or new consumer authority is claimed.
 Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
 
 ## Status and sequencing
 
 **2026-09-19 (Asia/Kolkata): A7 ARCHITECTURE ACCEPTED;
 A7 THESIS RECONCILED AS NEEDED; FF ARCHITECTURE ACCEPTED;
-A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED ONLY); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
+A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
 
 The [independent acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) approves the
 architecture for sequencing. Separate FF-0.1–0.4 requests implemented foundation, capture/truth/replay,
@@ -46,7 +47,8 @@ A6 FROZEN at tiaf-a6-baseline; R1–R5 ACCEPTED / DONE
  → FF-0.3 BASERATE / COLD RUNTIME / PINNED VERIFICATION [ACCEPTED; SYNTHETIC ONLY]
  → FF-0.4 ENGINEERING CLI / ACCEPTANCE HARDENING [ACCEPTED; FF-0 COMPLETE]
  → FF-1 LOGISTIC BENCHMARK / PAIRED EVALUATION PLAN [COMPLETE; NO FIT APPROVAL]
- → separately requested FF-1.1 DATA QUALIFICATION / FEATURE SCHEMA [NEXT]
+ → FF-1.1 DATA QUALIFICATION / FEATURE SCHEMA [ACCEPTED]
+ → separately requested FF-1.1A EMPIRICAL RIGHTS / QUALIFICATION [NEXT; NO FIT GRANT]
  → separately authorized FF-1 implementation → FF-2 [complete calibrated miniature]
       ├─ separate facade / Shell publication checkpoint, if authorized
       ├─ FF-3 optional multi-family / simple ensemble
@@ -246,15 +248,15 @@ A8 TM, A9 Scanner and A10 operations keep their major order.
 ## Decision and exact next prompt
 
 **A7_ARCHITECTURE_ACCEPTED; FF0_ACCEPTED AND FROZEN (internal synthetic engineering miniature only);
-FF-1 PLAN COMPLETE; FF-1 RUNTIME NOT_IMPLEMENTED**
+FF-1 PLAN COMPLETE; FF1_1_ACCEPTED; FF-1 LEARNED RUNTIME NOT_IMPLEMENTED**
 
-**TIAF A7 / FF-1.1 — DATA QUALIFICATION AND FEATURE SCHEMA IMPLEMENTATION**
+**TIAF A7 / FF-1.1A — EMPIRICAL DATA RIGHTS AND QUALIFICATION EXECUTION**
 
-Independent architecture acceptance is complete; FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; separately requested FF-1.1 qualification implementation is next.
+Independent architecture acceptance is complete; FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; FF-1.1 qualification/schema is accepted; FF-1.1A empirical qualification is next.
 The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
 defines five bounded slices: qualification/schema, governed Logistic training,
 pinned two-arm walk-forward, paired Evaluation, then engineering acceptance.
-FF-1.1 implementation needs separate authorization; empirical fitting additionally
+FF-1.1 tooling is accepted; FF-1.1A requires a separate request. Empirical fitting still
 needs rights/PIT qualification, approved protocol, dependency lock and job grant.
 No training, live calls, A8 work,
 frozen-A6 change, new public capability, commit, tag or push.
