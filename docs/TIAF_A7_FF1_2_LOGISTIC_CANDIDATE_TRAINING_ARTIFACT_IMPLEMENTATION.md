@@ -2,6 +2,40 @@
 
 ## Status and authority
 
+**FF1_2_ACCEPTED — empirical handoff completed 2026-09-21 (Asia/Kolkata).**
+The FF-1.3 request explicitly approved the exact dependency stack and authorized
+completion of the four pending fits. All four ran once, converged, and passed
+canonical reconstruction (maximum absolute error **0.0** for each fold).
+
+```text
+LOGISTIC_CANDIDATE_TRAINING_COMPLETE = YES
+PROTECTED_HOLDOUT_STATUS = SEALED
+```
+
+Actual command:
+
+```bash
+.venv/bin/python scripts/train_ff1_logistic_candidate.py \
+  --output data/ff1/logistic_training_20260921 \
+  --approve-dependency-lock 54e8577800d2a9132df2c8d3721e0d880da9e706a58f6d8b9beba75338e0ac86
+```
+
+Parent training run:
+`f26605528584a68449396da9dea1a3e28d6e2295f355a7085887e5adedc94406`.
+Private artifacts remain in `data/ff1/logistic_training_20260921/` (Git-ignored).
+The [FF-1.3 handoff record](TIAF_A7_FF1_3_LOGISTIC_WALK_FORWARD_FORECAST_GENERATION.md)
+lists each exact model/scaler fingerprint and downstream verification.
+Iterations by fold 2021–2024: **11, 9, 11, 10**. Actual fit times were
+20:45:12–20:45:18 +05:30; wall seconds per job **1.38037, 1.45145, 1.47998,
+1.62936**, CPU seconds **0.52564, 0.52143, 0.54934, 0.55655**.
+Each worker enforced 512 MiB address-space and 60 CPU-second limits. Lifetime
+peak RSS was 386,268 KiB; local monetary cost remains UNPRICED, not free.
+No holdout fit, network call, tuning, calibration or quality scoring occurred.
+This completes the prior dependency-approval/empirical-fit blocker; it does not
+approve Logistic for production or promote it above BaseRate.
+
+## Historical engineering checkpoint — superseded by the handoff above
+
 2026-09-21, Asia/Kolkata. **HOLD_FF1_2** pending the accepted plan's independent
 review of the exact dependency lock before empirical fitting.
 

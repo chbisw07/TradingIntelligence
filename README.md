@@ -17,12 +17,16 @@ risk/capital/action authority and the broker retains execution truth.
 Status checked **2026-09-21 (Asia/Kolkata)**. The
 [milestone ledger](docs/MILESTONES.md) owns history, tags and closure evidence.
 
-FF-1.2 follow-up: [training-artifact implementation](docs/TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
-is in acceptance **HOLD pending independent dependency-lock approval and the four
-empirical fits**. Synthetic engineering checks and empirical preflight are separate
-from empirical completion. 2025 remains SEALED; no learned forecasts or quality
-metrics. Earlier FF-1.2 “next/request needed” statements below describe the
-FF-1.1A checkpoint; this follow-up is the current action.
+Current follow-up: [FF-1.2 training artifacts](docs/TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
+are empirically complete after explicit dependency approval. The four fixed
+models generated **969 SIMULATED Logistic forecasts** in
+[FF-1.3](docs/TIAF_A7_FF1_3_LOGISTIC_WALK_FORWARD_FORECAST_GENERATION.md), with 991
+candidate captures accounted for and replay MATCH. **FF-1.3 is ACCEPTED**;
+all 3,295 repository tests pass. 2025 remains SEALED; no quality comparison or public forecast
+runtime. Earlier FF-1.2 “next/request needed” statements below describe the
+historical FF-1.1A checkpoint, not the current queue.
+
+Next separately authorized step: **TIAF A7 / FF-1.4 — PAIRED BASERATE VS LOGISTIC EVALUATION**.
 
 | Workstream | State | Meaning | Next step |
 |---|---|---|---|

@@ -432,3 +432,39 @@ Train-only StandardScaler and fixed Logistic emit transparent JSON, not executab
 pickles. Exit 0: complete artifacts; 1: HOLD/partial/failure; 2: invalid CLI/grant.
 No forecast records, empirical quality metrics, provider calls or public `ti`
 capability. Installing optional ML never becomes a replay dependency.
+
+## FF-1.3 Logistic walk-forward generation (internal)
+
+The exact FF-1.2 dependency stack was explicitly approved and all four empirical
+fits completed. This command consumes those pinned artifacts, never fits again:
+
+```bash
+.venv/bin/python scripts/generate_ff1_logistic_forecasts.py \
+  --output data/ff1/logistic_forecasts_20260921
+```
+
+That actual acceptance directory now exists; choose a new Git-ignored `data/ff1`
+directory for a separately authorized rerun. Existing outputs are never overwritten.
+Generation verifies exact dependency versions and lock bytes, the accepted parent
+training seal, every model/scaler, and the approved qualification byte digest.
+Only feature/clock/exclusion fields are decoded; test outcomes and fold outcome
+summaries are not inputs. 2021–2024 only; the 2024→2025 origin is explicitly
+protected and all 2025 reference origins stay outside scope. No provider/network
+calls, evaluation metrics, calibration, promotion, public Shell or trading action.
+
+Replay the actual acceptance corpus without source qualification, CSV, Ground
+Truth or optional ML packages:
+
+```bash
+.venv/bin/python scripts/generate_ff1_logistic_forecasts.py \
+  --corpus data/ff1/logistic_forecasts_20260921 \
+  --verify-run 4dc2adb6f2bb9977bf3a06c2c5903065223cfc6e2c6a58898c0cb65090197812
+```
+
+Exit 0 means complete/MATCH, 1 means HOLD/MISMATCH, 2 means invalid CLI.
+An interrupted campaign has immutable partial blobs but no complete parent;
+it is not an accepted corpus. No automatic retry, resume or latest-alias selection.
+Scientific IDs deduplicate origins across audit captures; do not double-weight
+separately captured reruns in future evaluation. See the
+[FF-1.3 record](../docs/TIAF_A7_FF1_3_LOGISTIC_WALK_FORWARD_FORECAST_GENERATION.md)
+for exact lineage, counts, immutable v2 corpus layout and no-evaluation boundaries.

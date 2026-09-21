@@ -7,10 +7,13 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
 Current follow-up: [FF-1.2 training artifacts](TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
-are implemented, with empirical completion on HOLD until independent approval of
-the exact dependency lock and execution of the four bounded fits. Keep the 2025
-holdout sealed. The earlier FF-1.1A queue below is historical; do not start FF-1.3
-until this acceptance gate closes.
+are empirically complete after explicit lock approval; all four fits converged.
+[FF-1.3](TIAF_A7_FF1_3_LOGISTIC_WALK_FORWARD_FORECAST_GENERATION.md) has generated
+969 Logistic development forecasts, with all 991 origins accounted for and
+replayed. **FF-1.3 is ACCEPTED**, with 3,295 repository tests passing. Keep 2025 SEALED.
+The next separately requested step is **TIAF A7 / FF-1.4 —
+PAIRED BASERATE VS LOGISTIC EVALUATION**; it is not authorized by this pass.
+The earlier FF-1.1A queue below is historical.
 
 ```text
 A5: FROZEN (`tiaf-a5-baseline`)
