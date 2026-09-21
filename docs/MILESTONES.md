@@ -9,7 +9,16 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-2026-09-21 latest: [FF-1.4 development-only paired evaluation](TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
+2026-09-22 latest (review began September 21): [independent FF-1 scientific review](TIAF_A7_FF1_INDEPENDENT_SCIENTIFIC_ACCEPTANCE_AND_FINAL_HOLDOUT_DECISION_DESIGN.md)
+returns **HOLD_FF1_BEFORE_FINAL_HOLDOUT**. No development-gate failure or protected
+outcome violation found; the accepted handoff has only four development models
+and BaseRate artifacts, not the planned fifth-fold final artifacts. Opening
+authorization **NO**, final protocol frozen **NO**, holdout **SEALED**, final
+evidence **NOT_RUN**. Next separately requested:
+**TIAF A7 / FF-1 — PRE-HOLDOUT FIFTH-FOLD ARTIFACT PREPARATION AND NO-REFIT AUTHORITY RECONCILIATION**.
+No runtime changes, model fitting, holdout opening, commit/tag/push.
+
+2026-09-21 FF-1.4 checkpoint: [development-only paired evaluation](TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
 completed 969 exact pairs across 2021–2024, 22 explicit unpaired slots and full
 offline reconstruction MATCH. All preregistered development gates pass;
 scientific classification **INSUFFICIENT_EVIDENCE**. Protected 2025 **SEALED**;

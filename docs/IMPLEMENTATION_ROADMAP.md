@@ -3,15 +3,21 @@
 This is the **near-term forward queue**, subordinate to the intended major order
 in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 [milestone ledger](MILESTONES.md) owns actual status/tags and the
-[README](../README.md) is the executive dashboard. Status: 2026-09-21
+[README](../README.md) is the executive dashboard. Status: 2026-09-22
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
 Current follow-up: [FF-1.4 development-only paired evaluation](TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
 completed 969 paired 2021–2024 observations and offline reconstruction MATCH.
 Development gates pass; classification **INSUFFICIENT_EVIDENCE**. Keep 2025
-**SEALED**, final evidence **NOT_RUN**. **FF1_4_ACCEPTED**; all **3,327** repository tests pass.
-Next separately requested: **TIAF A7 / FF-1 — INDEPENDENT SCIENTIFIC ACCEPTANCE AND FINAL-HOLDOUT DECISION DESIGN**.
-No holdout opening, tuning, calibration or promotion is authorized here.
+**SEALED**, final evidence **NOT_RUN**. **FF1_4_ACCEPTED**; its full-suite checkpoint
+was **3,327 passed**, not a new full run in the subsequent documentation review.
+The [independent review](TIAF_A7_FF1_INDEPENDENT_SCIENTIFIC_ACCEPTANCE_AND_FINAL_HOLDOUT_DECISION_DESIGN.md)
+now returns **HOLD_FF1_BEFORE_FINAL_HOLDOUT**: the planned final-fold model/scaler
+and BaseRate artifacts are missing from the accepted four-fold handoff. Final
+opening is **not authorized**, final protocol **not frozen**.
+Next separately requested: **TIAF A7 / FF-1 — PRE-HOLDOUT FIFTH-FOLD ARTIFACT PREPARATION AND NO-REFIT AUTHORITY RECONCILIATION**.
+No model fitting, holdout opening, tuning, calibration or promotion is authorized
+by this review. Repeat independent freeze review after the handoff is resolved.
 The earlier FF-1.1A queue below is historical.
 
 ```text
