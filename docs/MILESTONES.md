@@ -9,7 +9,16 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-2026-09-21 follow-up: [FF-1.2](TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
+2026-09-21 latest: [FF-1.4 development-only paired evaluation](TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
+completed 969 exact pairs across 2021–2024, 22 explicit unpaired slots and full
+offline reconstruction MATCH. All preregistered development gates pass;
+scientific classification **INSUFFICIENT_EVIDENCE**. Protected 2025 **SEALED**;
+final evidence **NOT_RUN**. **FF1_4_ACCEPTED**; all **3,327** repository tests pass.
+No refit, tuning, calibration, promotion or public activation. Next separately
+requested: **TIAF A7 / FF-1 — INDEPENDENT SCIENTIFIC ACCEPTANCE AND FINAL-HOLDOUT DECISION DESIGN**.
+The following earlier checkpoints retain their then-current queue.
+
+2026-09-21 FF-1.3 checkpoint: [FF-1.2](TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
 is ACCEPTED after explicit dependency-stack approval and four completed,
 converged empirical fits. [FF-1.3](TIAF_A7_FF1_3_LOGISTIC_WALK_FORWARD_FORECAST_GENERATION.md)
 has generated 969 SIMULATED Logistic forecasts; 991 origins are accounted for

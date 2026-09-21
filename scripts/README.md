@@ -468,3 +468,38 @@ Scientific IDs deduplicate origins across audit captures; do not double-weight
 separately captured reruns in future evaluation. See the
 [FF-1.3 record](../docs/TIAF_A7_FF1_3_LOGISTIC_WALK_FORWARD_FORECAST_GENERATION.md)
 for exact lineage, counts, immutable v2 corpus layout and no-evaluation boundaries.
+
+## FF-1.4 development-only paired evaluation (internal)
+
+This consumes immutable FF-1.3 forecasts and accepted external research truth;
+it never refits or derives labels from prices. The bounded command used was:
+
+```bash
+.venv/bin/python scripts/evaluate_ff1_baserate_vs_logistic.py \
+  --output data/ff1/development_evaluation_20260921
+```
+
+That private directory now exists and cannot be overwritten. A separately
+authorized rerun requires a new Git-ignored `data/ff1` directory. The command
+persists fixed policy before loading development labels, freezes BaseRate from
+the last 20 scheduled transitions before each fold cutoff, constructs exact
+pairs, computes fixed metrics/bootstrap, writes an immutable Ledger and verifies
+full reconstruction. Only 2021–2024; 2024→2025 and all 2025 labels are guarded.
+
+Replay this recorded result without original CSV/qualification/Logistic corpus:
+
+```bash
+.venv/bin/python scripts/evaluate_ff1_baserate_vs_logistic.py \
+  --corpus data/ff1/development_evaluation_20260921 \
+  --verify-ledger 62bc746d90386f3b718bf6fe106f4a80832bfa8206ea3605ec96bbb2e5817246
+```
+
+Replay reconstructs pair losses, population, BaseRate, Logistic lineage and
+bootstrap/report fingerprint. It needs the approved NumPy numerical environment;
+it does not fit or import sklearn. The command verifies installed dependency
+metadata and lock bytes; it never installs packages. Exit 0 means completed/MATCH,
+1 HOLD/MISMATCH, 2 invalid CLI. No retry, mutable latest alias or protected test.
+Current scientific result: **INSUFFICIENT_EVIDENCE**, with holdout **SEALED** and
+final evidence **NOT_RUN**. This command cannot emit final support and does not
+promote a model. See the [FF-1.4 report](../docs/TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
+for metrics, limitations, exact policy and fingerprints.

@@ -17,16 +17,15 @@ risk/capital/action authority and the broker retains execution truth.
 Status checked **2026-09-21 (Asia/Kolkata)**. The
 [milestone ledger](docs/MILESTONES.md) owns history, tags and closure evidence.
 
-Current follow-up: [FF-1.2 training artifacts](docs/TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
-are empirically complete after explicit dependency approval. The four fixed
-models generated **969 SIMULATED Logistic forecasts** in
-[FF-1.3](docs/TIAF_A7_FF1_3_LOGISTIC_WALK_FORWARD_FORECAST_GENERATION.md), with 991
-candidate captures accounted for and replay MATCH. **FF-1.3 is ACCEPTED**;
-all 3,295 repository tests pass. 2025 remains SEALED; no quality comparison or public forecast
-runtime. Earlier FF-1.2 “next/request needed” statements below describe the
-historical FF-1.1A checkpoint, not the current queue.
+Current follow-up: [FF-1.4 development-only paired evaluation](docs/TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
+has evaluated **969 paired 2021–2024 observations**, with offline reconstruction
+MATCH. Development support/stability gates pass; scientific classification is
+**INSUFFICIENT_EVIDENCE**, not final support. 2025 remains **SEALED** and final
+holdout evidence **NOT_RUN**. **FF1_4_ACCEPTED**; all **3,327** repository tests pass.
+No tuning, promotion or public forecast activation. Earlier FF-1.2 queue
+statements below describe the historical FF-1.1A checkpoint, not the current queue.
 
-Next separately authorized step: **TIAF A7 / FF-1.4 — PAIRED BASERATE VS LOGISTIC EVALUATION**.
+Next separately authorized step: **TIAF A7 / FF-1 — INDEPENDENT SCIENTIFIC ACCEPTANCE AND FINAL-HOLDOUT DECISION DESIGN**.
 
 | Workstream | State | Meaning | Next step |
 |---|---|---|---|
@@ -40,8 +39,8 @@ Next separately authorized step: **TIAF A7 / FF-1.4 — PAIRED BASERATE VS LOGIS
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
 | A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
-| A7 | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | Contracts, capture, independent truth, BaseRate execution and both replay paths accepted; no public forecast capability | separately requested FF-1.2 training-artifact implementation |
-| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) / FF-0 MINIATURE ACCEPTED; FF-1 LEARNED RUNTIME / FF-2 NOT_IMPLEMENTED / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | Stable primitive/composite forecaster platform; common ground truth and paired evaluation | All 28 findings reconciled; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0 ACCEPTED; FF-1 plan COMPLETE; FF-1.1 qualification/schema ACCEPTED; FF-1.1A adjusted research qualification COMPLETE; FF-1.2 NEXT; no broader implementation approval |
+| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 internal research training, forecasts and development-only comparison implemented; no public forecast capability | Independent scientific acceptance and final-holdout decision design |
+| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 ACCEPTED / FF-1 DEVELOPMENT EVALUATED / FF-2 NOT_IMPLEMENTED | 969 paired observations; INSUFFICIENT_EVIDENCE; 2025 SEALED; final evidence NOT_RUN | Independent scientific review; no tuning, promotion or holdout-opening authority |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / RUNTIME NOT_IMPLEMENTED | Market-state/latent-factor research remains intact; not the platform definition | Conditional family research, not a prerequisite to a useful simple FF |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
 | A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |

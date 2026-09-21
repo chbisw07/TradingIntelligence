@@ -11,6 +11,7 @@ import stat
 from collections import Counter
 from collections.abc import Iterable, Iterator
 from pathlib import Path
+from types import MappingProxyType
 from typing import Annotated, Literal, cast
 
 from pydantic import Field
@@ -47,6 +48,9 @@ _KINDS: dict[str, type[SealedResearch]] = {
 
 
 class ResearchForecastStore:
+    # Explicit schema dispatch per storage owner. FF-1.3 defaults stay unchanged.
+    record_types = MappingProxyType(_KINDS)
+
     def __init__(self, root: Path, *, create: bool = False) -> None:
         if (
             not root.is_absolute()
@@ -83,7 +87,7 @@ class ResearchForecastStore:
             raise ValueError("RESEARCH_CORPUS_LIMIT")
 
     def _path(self, kind: str, fingerprint: str) -> Path:
-        if kind not in _KINDS or not re.fullmatch(r"[a-f0-9]{64}", fingerprint):
+        if kind not in self.record_types or not re.fullmatch(r"[a-f0-9]{64}", fingerprint):
             raise ValueError("INVALID_RESEARCH_REFERENCE")
         if any(p.is_symlink() for p in (self.root, *self.root.parents)):
             raise ValueError("UNSAFE_RESEARCH_CORPUS_ROOT")
@@ -92,7 +96,7 @@ class ResearchForecastStore:
     def put(self, kind: str, value: SealedResearch) -> str:
         if not self.writable:
             raise ValueError("READ_ONLY_RESEARCH_CORPUS")
-        if kind not in _KINDS or type(value) is not _KINDS[kind]:
+        if kind not in self.record_types or type(value) is not self.record_types[kind]:
             raise ValueError("RESEARCH_RECORD_KIND_MISMATCH")
         value = type(value).model_validate(value.model_dump())
         fp = cast(str, value.fingerprint)
@@ -128,7 +132,7 @@ class ResearchForecastStore:
         payload = strict_json(raw.decode())
         if not isinstance(payload, dict) or payload.get("fingerprint") != fingerprint:
             raise ValueError("RESEARCH_RECORDED_SEAL_MISSING")
-        value = _KINDS[kind].model_validate(payload)
+        value = self.record_types[kind].model_validate(payload)
         if raw != (canonical_json(value) + "\n").encode():
             raise ValueError("RESEARCH_BLOB_NOT_CANONICAL")
         return value
