@@ -416,3 +416,19 @@ does not run FF-1.2, open the holdout, approve a model or grant production right
 The [qualification record](../docs/TIAF_A7_FF1_1A_ADJUSTED_DATA_RESEARCH_PROFILE_AND_FINAL_QUALIFICATION.md)
 documents the dataset pin, assumptions, population, fold feasibility and remaining
 research limitations. The old FF-0 CLI and replay corpus format are unchanged.
+
+## FF-1.2 Logistic candidate training (internal)
+
+`train_ff1_logistic_candidate.py --help` documents a bounded offline Learning path.
+The [FF-1.2 implementation record](../docs/TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
+contains the exact command, input seals, population audit and current acceptance
+gate. An independent reviewer must approve the
+[fixed dependency lock](../requirements/ff1-training-linux-py312.lock) before
+passing its SHA-256 to `--approve-dependency-lock`. No implicit approval or install.
+
+Four artifacts entering 2021–2024 only; 2025 and the 2024→2025 target stay sealed.
+New output directory under Git-ignored `data/ff1` only, no overwrite or retries.
+Train-only StandardScaler and fixed Logistic emit transparent JSON, not executable
+pickles. Exit 0: complete artifacts; 1: HOLD/partial/failure; 2: invalid CLI/grant.
+No forecast records, empirical quality metrics, provider calls or public `ti`
+capability. Installing optional ML never becomes a replay dependency.

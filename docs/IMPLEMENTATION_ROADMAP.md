@@ -6,6 +6,12 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 [README](../README.md) is the executive dashboard. Status: 2026-09-21
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
+Current follow-up: [FF-1.2 training artifacts](TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
+are implemented, with empirical completion on HOLD until independent approval of
+the exact dependency lock and execution of the four bounded fits. Keep the 2025
+holdout sealed. The earlier FF-1.1A queue below is historical; do not start FF-1.3
+until this acceptance gate closes.
+
 ```text
 A5: FROZEN (`tiaf-a5-baseline`)
   → R2 (ACCEPTED / DONE)

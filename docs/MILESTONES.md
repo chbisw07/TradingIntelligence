@@ -9,6 +9,12 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
+FF-1.2 follow-up, 2026-09-21: [Logistic training-artifact implementation](TIAF_A7_FF1_2_LOGISTIC_CANDIDATE_TRAINING_ARTIFACT_IMPLEMENTATION.md)
+is in acceptance HOLD, awaiting independent dependency-lock approval and the four
+empirical fits. Synthetic mechanics and empirical input preflight do not establish
+empirical training completion. 2025 remains SEALED; no FF-1.3/public runtime or
+performance evaluation. The FF-1.1A “current next” checkpoint below is historical.
+
 2026-09-21: **FF1_1A_QUALIFICATION_COMPLETE** under the explicit
 [adjusted retrospective research profile](TIAF_A7_FF1_1A_ADJUSTED_DATA_RESEARCH_PROFILE_AND_FINAL_QUALIFICATION.md).
 `ADJUSTED_DATA_RESEARCH_PROFILE_ACCEPTED = YES`;
