@@ -1,5 +1,31 @@
 # Scripts
 
+`provision_reliance_test_data.py` is **INTERNAL / ENGINEERING_RESEARCH_SUPPORT_ONLY**.
+It uses TI's existing local Dhan resolver and neutral historical-data provider
+to provision one RELIANCE/NSE cash-equity daily dataset. It does not define
+production ingestion, scheduling, storage, streaming, freshness or failover.
+Without `--live` it exits safely without settings/provider construction or
+external calls. With explicit authorization:
+
+```bash
+.venv/bin/python scripts/provision_reliance_test_data.py --live
+```
+
+The fixed request covers 2017-11-01 through 2026-01-31 (API end-exclusive
+2026-02-01), with one historical request and no retries, quotes or master
+refresh. Existing configuration and an unambiguous cached identity are required;
+the security ID is resolved, not hard-coded. Output is restricted to the
+Git-ignored `data/ff1/reliance/` directory; existing outputs/symlinks are refused.
+Validation precedes CSV publication. Manifests retain fresh acquisition clocks,
+hashes, UNKNOWN basis/PIT and the accepted WARN_ONLY rights policy. No features,
+labels or fitting are performed. See the [implementation/live record](../docs/TIAF_A7_FF1_1A_TI_NATIVE_RELIANCE_TEST_DATA_PROVISIONING.md).
+After the initial **DH-901 / ProviderAuthError**, a separately user-authorized
+retry succeeded on **2026-09-21 at 12:07:50 Asia/Kolkata**: **2,045 rows**,
+2017-11-01 through 2026-01-30, with offline CSV/manifest verification passing.
+The five local artifacts now exist; rerunning will refuse to overwrite them.
+Provisioning is not scientific qualification or fitting authorization. Next:
+**TIAF A7 / FF-1.1A — EMPIRICAL QUALIFICATION RERUN**.
+
 `dhan_option_chain_smoke.py` is an optional read-only A1.3 inspection utility.
 Without `--expiry` it lists active expiries and stops; chain retrieval always
 requires an explicit expiry. It uses Dhan credentials from the environment and
@@ -325,6 +351,9 @@ is never imported by the acceptance script.
 
 ## FF-0 internal forecasting miniature
 
+For the separate FF-1 adjusted retrospective qualifier, see
+[the bounded offline command](#ff-11a-adjusted-retrospective-qualification) below.
+
 `forecast_miniature.py` is an engineering-only one-shot adapter using the existing
 Shell parser/safety utilities. It does not add a public Shell command/capability,
 REPL, provider/LLM read or broker authority. All output is versioned JSON.
@@ -361,3 +390,29 @@ and goldens are **not** persisted replay corpora:
 .venv/bin/pytest -q tests/unit/forecasting/test_engineering_cli.py -k golden
 .venv/bin/pytest -q -s tests/acceptance/ff0
 ```
+
+## FF-1.1A adjusted retrospective qualification
+
+```bash
+.venv/bin/python scripts/qualify_reliance_adjusted_research.py \
+  --input data/ff1/reliance \
+  --output data/ff1/adjusted_qualification_review_run
+```
+
+Internal/offline only: no provider access, fitting, probabilities or public Shell
+capability. Requires the existing pinned Dhan provisioning files and checked-in
+reviewed calendar/identity/action evidence. It explicitly installs the adjusted
+SIMULATED research profile in the COLD qualification owner; it does not change
+the default captured-as-known path. 2025+ numeric values are not parsed.
+
+Use a **new** output directory under Git-ignored `data/ff1`; existing directories
+are rejected, never overwritten. `qualification.json` contains private unsealed
+features/labels and exact fold memberships; keep it out of Git. `summary.json`
+contains safe counts, policy/context seals and no raw market-data rows. Persisted
+JSON reconstruction must match before success. Exit 0 means all qualification
+gates pass, 1 means HOLD/error; invalid CLI/output scope exits 2. Qualification
+does not run FF-1.2, open the holdout, approve a model or grant production rights.
+
+The [qualification record](../docs/TIAF_A7_FF1_1A_ADJUSTED_DATA_RESEARCH_PROFILE_AND_FINAL_QUALIFICATION.md)
+documents the dataset pin, assumptions, population, fold feasibility and remaining
+research limitations. The old FF-0 CLI and replay corpus format are unchanged.

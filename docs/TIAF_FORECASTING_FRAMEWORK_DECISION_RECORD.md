@@ -1,6 +1,24 @@
 # Forecasting Framework — Architecture Decision and Reconciliation Record
 
-## Current follow-up — FF-1 implementation planning complete
+## Current follow-up — FF-1.1A local-research rights policy
+
+2026-09-20 (Asia/Kolkata): the user-approved
+[bounded revision](TIAF_A7_FF1_1A_RIGHTS_POLICY_REVISION_AND_DATA_PROVISIONING.md)
+makes research rights admission COLD-configurable. Evidence status is independent
+of enforcement: default `WARN_ONLY` admits unverified/ambiguous evidence with a
+warning; `ENFORCE` holds it; `DISABLED` bypasses uncertainty but not explicit
+denial. No denial override is implemented. No rights approval, external-contract
+override, redistribution, commercial publication or retention change is implied.
+
+Qualification policy `1.1` seals evidence status/reference, enforcement,
+configuration hash, admission and warnings. Future training and paired evaluation
+must pin this qualification evidence, not infer permission from a dataset hash.
+No scientific/PIT gate, FF-0 or A6 semantic changes are authorized. The previous
+enforced HOLD remains byte-identical historical evidence. Local daily data is
+still absent; **EMPIRICAL_FITTING_AUTHORIZED = NO**. Next:
+**TIAF A7 / FF-1.1A — LOCAL RELIANCE EMPIRICAL DATASET PROVISIONING**.
+
+## Historical follow-up — FF-1 implementation planning complete
 
 2026-09-19 (Asia/Kolkata): **READY_FOR_FF1_IMPLEMENTATION** is planning
 readiness only. The [bounded FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)

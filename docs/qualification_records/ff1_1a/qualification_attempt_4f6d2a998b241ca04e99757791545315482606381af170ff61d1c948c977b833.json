@@ -1,0 +1,380 @@
+{
+  "artifact_id": "qualification-attempt:ff1-1a-20260919-232301",
+  "artifact_kind": "QUALIFICATION_PREFLIGHT_AUDIT",
+  "audit_format_version": "1.0",
+  "runtime_contract": false,
+  "recorded_at": "2026-09-19T23:23:01.962328+05:30",
+  "timezone": "Asia/Kolkata",
+  "repository_head": "2eb522c1dc978c1f267d4ad6c9cf7d0b287ad9b8",
+  "baselines": {
+    "ff0": "e5283c9eaa4294bd236186d663335efdf7dab236",
+    "a6": "6dc2ff304aae0e87540260b092919bb91e4d4189"
+  },
+  "process_verdict": "HOLD_FF1_1A_QUALIFICATION",
+  "empirical_fitting_authorized": false,
+  "primary_stop_reason": "MISSING_EMPIRICAL_DATASET",
+  "qualification_executed": false,
+  "scope": {
+    "symbol": "RELIANCE",
+    "exchange": "NSE",
+    "segment": "NSE_EQUITY",
+    "instrument_type": "EQUITY",
+    "target": "equity.next_session_close.return_gt_zero@1.0",
+    "proposed_coverage": {
+      "start": "2017-11-01",
+      "end": "2026-01-31",
+      "observed": false
+    },
+    "feature_schema": "ff1.reliance.a2_daily_five/1.0"
+  },
+  "governing_documents": [
+    {
+      "path": "docs/TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md",
+      "sha256": "586f4794c16b5c438625e1c01cb85a15e34d446de6ee136c6e4c583a1e294ae1"
+    },
+    {
+      "path": "docs/TIAF_A7_FF1_1_DATA_QUALIFICATION_FEATURE_SCHEMA_IMPLEMENTATION.md",
+      "sha256": "201fa00864b7974cdd56c1ddb933daf60d61be0d89d3cb4b52ac4a75aca5576d"
+    },
+    {
+      "path": "docs/TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md",
+      "sha256": "61aeae43684f50ec3a88cd2f411332b96b7a7518ad848267b4a7be68d4cb0253"
+    },
+    {
+      "path": "docs/TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md",
+      "sha256": "6e9a0b134909a180640abb76c34d2b427ce54ebfbddf9d850bc5e6424f0d3080"
+    },
+    {
+      "path": "docs/TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md",
+      "sha256": "edd09ea6f24acc7187711e772541c3eb9c56a40569c566d33030009ae9ad8f66"
+    }
+  ],
+  "search_scope": {
+    "repository_inventory": "Tracked and ignored local project data/artifact paths; virtualenv, VCS metadata, tool caches and secrets excluded.",
+    "user_supplied_dataset_paths": [],
+    "external_library_path": null,
+    "repository_empirical_daily_files_found": 0,
+    "repository_rights_documents_found": 0,
+    "live_acquisition_performed": false,
+    "external_home_or_downloads_search_performed": false,
+    "provider_terms_legal_review": "NOT_PERFORMED_NO_DATASET_OR_ENTITLEMENT_IDENTIFIED"
+  },
+  "observed_non_dataset_artifacts": [
+    {
+      "path": "data/instrument_master/dhan/api-scrip-master-detailed.csv",
+      "kind": "INSTRUMENT_MASTER",
+      "sha256": "6e65523933d51e6aad54cb4b3cff4f27708fe0e4710a8c03f239da666f674fd2",
+      "size_bytes": 33964897,
+      "provider_attribution": "Dhan (local path and format, not independent origin authentication)",
+      "matching_record": {
+        "exchange": "NSE",
+        "segment": "E",
+        "security_id": "2885",
+        "isin": "INE002A01018",
+        "instrument": "EQUITY",
+        "underlying_symbol": "RELIANCE",
+        "series": "EQ"
+      },
+      "historical_mapping_qualified": false,
+      "daily_history": false,
+      "limitation": "No historical validity or original capture/admission evidence; file mtime is not source knowledge time."
+    },
+    {
+      "path": "tests/fixtures/forecasting/ff1_1/README.md",
+      "kind": "SYNTHETIC_PROGRAMMATIC_FIXTURE_GUIDE",
+      "daily_history": false
+    },
+    {
+      "path": "tests/fixtures/forecasting/ff0",
+      "kind": "SYNTHETIC_FORECAST_CORPUS",
+      "daily_history": false
+    },
+    {
+      "path": "tests/fixtures/opportunity_intelligence/README.md",
+      "kind": "SYNTHETIC_CAPTURE_GUIDE",
+      "daily_history": false
+    }
+  ],
+  "dataset": {
+    "artifact_id": null,
+    "provider": null,
+    "content_fingerprint": null,
+    "provenance_fingerprint": null,
+    "actual_coverage": null,
+    "frequency": null,
+    "source_timezone": null,
+    "price_basis": null,
+    "security_mapping_ref": null
+  },
+  "rights": {
+    "evidence_refs": [],
+    "local_research": "UNKNOWN",
+    "model_training": "UNKNOWN",
+    "derived_feature_storage": "UNKNOWN",
+    "evaluation_artifact_retention": "UNKNOWN",
+    "replay_evidence_retention": "UNKNOWN",
+    "verdict": "HOLD_DATA_RIGHTS",
+    "reason": "No scoped license/entitlement supplied; access or provider attribution grants no permission."
+  },
+  "population": {
+    "measurement_state": "NOT_EVALUATED_NO_DATASET",
+    "raw_rows": null,
+    "qualified_rows": null,
+    "invalid_rows": null,
+    "requested_observations": null,
+    "feature_eligible": null,
+    "label_eligible": null,
+    "paired_ready_observations": null,
+    "excluded_observations": null,
+    "positive_labels": null,
+    "zero_labels": null,
+    "unavailable_labels": null,
+    "nonfinite_features": null,
+    "missing_sessions": null,
+    "exclusion_reason_counts": null
+  },
+  "feature_derivation": {
+    "status": "NOT_RUN",
+    "feature_set_fingerprint": null,
+    "sanity_summary": null,
+    "imputation_performed": false
+  },
+  "labels": {
+    "status": "NOT_RUN",
+    "empirical_labels_constructed": false,
+    "existing_boundary": "FF-0 OutcomeJournalEntry rejects empirical sources with EMPIRICAL_OUTCOME_NOT_ENABLED; no relabeling or contract relaxation performed."
+  },
+  "pit_policy": {
+    "id": "CAPTURED_AS_KNOWN",
+    "status": "UNQUALIFIED_MISSING_EVIDENCE",
+    "cutoff": "scheduled reference close + 30 minutes",
+    "as_of": "cutoff + 5 minutes; before target open",
+    "requirements": "Original source availability/acquisition/admission by historical cutoff; present computation time separate.",
+    "historical_vintage_waiver": false
+  },
+  "fold_feasibility": {
+    "status": "NOT_EVALUATED",
+    "training_start": "2018-01-01",
+    "embargo": "Full eligible session before first test reference; historical fit cutoff at embargo open.",
+    "training_minimum": 500,
+    "training_minimum_per_class": 100,
+    "baserate_support_required": 20,
+    "feature_input_sessions": 21,
+    "folds": [
+      {
+        "test_year": 2021,
+        "role": "DEVELOPMENT",
+        "training_rows": null,
+        "training_positive": null,
+        "training_zero": null,
+        "test_rows": null,
+        "feature_ready": null,
+        "label_ready": null,
+        "paired_ready": null,
+        "purged": null,
+        "embargoed": null,
+        "baserate_support": null,
+        "status": "NOT_EVALUATED_NO_DATASET"
+      },
+      {
+        "test_year": 2022,
+        "role": "DEVELOPMENT",
+        "training_rows": null,
+        "training_positive": null,
+        "training_zero": null,
+        "test_rows": null,
+        "feature_ready": null,
+        "label_ready": null,
+        "paired_ready": null,
+        "purged": null,
+        "embargoed": null,
+        "baserate_support": null,
+        "status": "NOT_EVALUATED_NO_DATASET"
+      },
+      {
+        "test_year": 2023,
+        "role": "DEVELOPMENT",
+        "training_rows": null,
+        "training_positive": null,
+        "training_zero": null,
+        "test_rows": null,
+        "feature_ready": null,
+        "label_ready": null,
+        "paired_ready": null,
+        "purged": null,
+        "embargoed": null,
+        "baserate_support": null,
+        "status": "NOT_EVALUATED_NO_DATASET"
+      },
+      {
+        "test_year": 2024,
+        "role": "DEVELOPMENT",
+        "training_rows": null,
+        "training_positive": null,
+        "training_zero": null,
+        "test_rows": null,
+        "feature_ready": null,
+        "label_ready": null,
+        "paired_ready": null,
+        "purged": null,
+        "embargoed": null,
+        "baserate_support": null,
+        "status": "NOT_EVALUATED_NO_DATASET"
+      },
+      {
+        "test_year": 2025,
+        "role": "PROTECTED_HOLDOUT",
+        "training_rows": null,
+        "training_positive": null,
+        "training_zero": null,
+        "test_rows": null,
+        "feature_ready": null,
+        "label_ready": null,
+        "paired_ready": null,
+        "purged": null,
+        "embargoed": null,
+        "baserate_support": null,
+        "status": "NOT_EVALUATED_NO_DATASET"
+      }
+    ],
+    "holdout_opened": false
+  },
+  "leakage_audit": {
+    "status": "NOT_RUN_NO_DATASET",
+    "confirmed_leakage": null,
+    "note": "Synthetic anti-leakage tests pass; that is not an empirical leakage audit."
+  },
+  "gates": [
+    {
+      "gate": "rights",
+      "status": "UNKNOWN",
+      "code": "HOLD_DATA_RIGHTS",
+      "blocking": true,
+      "reason": "No scoped use/retention/training evidence"
+    },
+    {
+      "gate": "source_provenance",
+      "status": "MISSING",
+      "code": "HOLD_PIT_PROVENANCE",
+      "blocking": true,
+      "reason": "No empirical captures or original admission lineage"
+    },
+    {
+      "gate": "security_identity",
+      "status": "UNQUALIFIED",
+      "code": "HOLD_SECURITY_IDENTITY",
+      "blocking": true,
+      "reason": "Only an undated local master record, not range-qualified mapping"
+    },
+    {
+      "gate": "daily_frequency",
+      "status": "NOT_EVALUATED",
+      "code": "MISSING_EMPIRICAL_DATASET",
+      "blocking": true,
+      "reason": "Instrument master is not daily bars"
+    },
+    {
+      "gate": "ohlcv_quality",
+      "status": "NOT_EVALUATED",
+      "code": "MISSING_EMPIRICAL_DATASET",
+      "blocking": true,
+      "reason": "No daily rows to inspect"
+    },
+    {
+      "gate": "calendar",
+      "status": "MISSING",
+      "code": "HOLD_CALENDAR",
+      "blocking": true,
+      "reason": "No qualified historical schedule/exception evidence"
+    },
+    {
+      "gate": "corporate_actions",
+      "status": "MISSING",
+      "code": "HOLD_CORPORATE_ACTIONS",
+      "blocking": true,
+      "reason": "No scoped action/basis coverage"
+    },
+    {
+      "gate": "pit_availability",
+      "status": "UNQUALIFIED",
+      "code": "HOLD_PIT_PROVENANCE",
+      "blocking": true,
+      "reason": "No historical availability/acquisition/admission proof"
+    },
+    {
+      "gate": "feature_derivation",
+      "status": "NOT_RUN",
+      "code": "MISSING_EMPIRICAL_DATASET",
+      "blocking": true,
+      "reason": "No qualified 21-session input windows"
+    },
+    {
+      "gate": "label_construction",
+      "status": "NOT_RUN",
+      "code": "MISSING_EMPIRICAL_DATASET",
+      "blocking": true,
+      "reason": "No qualified reference/terminal closes; synthetic-only journal boundary preserved"
+    },
+    {
+      "gate": "fold_feasibility",
+      "status": "NOT_EVALUATED",
+      "code": "HOLD_FOLD_FEASIBILITY",
+      "blocking": true,
+      "reason": "No qualified row/class/calendar support"
+    },
+    {
+      "gate": "leakage_audit",
+      "status": "NOT_RUN",
+      "code": "MISSING_EMPIRICAL_DATASET",
+      "blocking": true,
+      "reason": "No empirical feature/label/fold closure"
+    }
+  ],
+  "no_fitting": {
+    "logistic_fits": 0,
+    "scaler_fits": 0,
+    "empirical_candidate_model_artifacts": 0,
+    "walk_forward_forecasts": 0,
+    "paired_forecast_metrics": 0,
+    "provider_calls": 0,
+    "broker_calls": 0,
+    "research_dataset_qualifier_invocations": 0,
+    "note": "Counts refer to this empirical attempt; synthetic regression fixtures are separate."
+  },
+  "validation": {
+    "ff1_1_tests": {
+      "passed": 102,
+      "seconds": 17.59
+    },
+    "ff0_regressions": {
+      "passed": 416,
+      "seconds": 45.27
+    },
+    "features_source_semantics": {
+      "passed": 610,
+      "seconds": 13.54
+    },
+    "ff0_acceptance": {
+      "passed": 28,
+      "seconds": 31.6
+    },
+    "compileall": "PASS src scripts",
+    "ruff": "PASS src tests scripts",
+    "mypy": "PASS 608 files",
+    "no_ml_import_isolation": "PASS included in targeted tests",
+    "empirical_qualification_tests": "NOT_RUN_NO_DATASET",
+    "full_suite": "NOT_RERUN_NO_RUNTIME_CHANGES_PREFLIGHT_STOP",
+    "prior_full_suite": {
+      "passed": 3023,
+      "provenance": "FF-1.1 implementation record; not a current rerun"
+    }
+  },
+  "next_prompt_title": "TIAF A7 / FF-1.1A — LOCAL RELIANCE DATASET AND RIGHTS/PIT EVIDENCE PROVISIONING",
+  "limitations": [
+    "Not an EmpiricalDatasetQualification runtime record or fitting grant.",
+    "No empirical dataset identity or denominator invented.",
+    "Content addressing detects change; it does not authenticate source rights or enforce filesystem immutability.",
+    "Superseding attempts must use new content-addressed files; preserve this stopped-at-preflight record."
+  ],
+  "qualification_fingerprint": "4f6d2a998b241ca04e99757791545315482606381af170ff61d1c948c977b833"
+}

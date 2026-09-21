@@ -8,7 +8,11 @@ from tiaf.context import AnalysisContext
 from tiaf.features.engine import DeterministicFeatureEngine, builtin_feature_registry
 from tiaf.features.enums import FeatureStatus
 from tiaf.forecasting.identity import ForecastDateTime
-from tiaf.forecasting.research_contracts import FeatureVector, FF1FeatureSchema
+from tiaf.forecasting.research_contracts import (
+    AdjustedFF1FeatureSchema,
+    FeatureVector,
+    FF1FeatureSchema,
+)
 
 
 def derive_features(
@@ -17,6 +21,7 @@ def derive_features(
     reference_close_at: datetime,
     information_cutoff: datetime,
     input_fingerprint: str,
+    schema: FF1FeatureSchema | AdjustedFF1FeatureSchema | None = None,
 ) -> FeatureVector:
     """No formula duplication, scaling, acquisition, labels or learned model.
 
@@ -37,7 +42,9 @@ def derive_features(
         or information_cutoff > context.created_at
     ):
         raise ValueError("FF1_FEATURE_WINDOW_OR_CUTOFF_INVALID")
-    schema = FF1FeatureSchema()
+    schema = (
+        FF1FeatureSchema() if schema is None else type(schema).model_validate(schema.model_dump())
+    )
     engine = DeterministicFeatureEngine(builtin_feature_registry())
     bundle = engine.compute(context, tuple(item.request for item in schema.features))
     values: list[float] = []

@@ -1,5 +1,23 @@
 # TIAF A7 / FF-1 — Logistic Benchmark and Paired Evaluation Plan
 
+**2026-09-21 research-policy correction:** the
+[adjusted-data profile and empirical qualification](TIAF_A7_FF1_1A_ADJUSTED_DATA_RESEARCH_PROFILE_AND_FINAL_QUALIFICATION.md)
+supersede the unadjusted-only, source-text-exact and captured-history requirements
+below **only for this opt-in FF-1 retrospective research profile**. The fresh Dhan
+adjusted vintage remains SIMULATED, with assumed close+30m/+5m clocks; actual
+acquisition is preserved. Original operational CAPTURED_AS_KNOWN and FF-0 remain
+unchanged. The target family, five A2 formulas/schema ID/version, fold boundaries,
+support thresholds, no-tuning rule and sealed 2025 holdout are unchanged.
+`EMPIRICAL_FITTING_AUTHORIZED = YES` for the pinned qualified dataset; no fitting
+was performed. Next: **TIAF A7 / FF-1.2 — LOGISTIC CANDIDATE TRAINING ARTIFACT IMPLEMENTATION**.
+The planning and earlier HOLD statements below retain their historical meaning.
+
+Policy follow-up, 2026-09-20: §3.2 now records the approved FF-1.1A COLD rights
+revision. Rights evidence remains distinct from policy admission; other
+scientific choices are unchanged. Original planning status, validation counts
+and then-next text below are historical. The current provisioning queue is in
+the [revision record](TIAF_A7_FF1_1A_RIGHTS_POLICY_REVISION_AND_DATA_PROVISIONING.md).
+
 ## 1. Decision and authority
 
 **READY_FOR_FF1_IMPLEMENTATION** — 2026-09-19 (Asia/Kolkata).
@@ -105,34 +123,47 @@ conflicting closes. Sort admitted rows by qualified session order.
 
 ### 3.2 Rights gate
 
-The data-rights owner must supply scoped evidence permitting **each** of local
-research, model training, derived-feature/model retention, retained source
-evidence for audit/replay, and evaluation use. Record licensor, dataset/version,
+**2026-09-20 policy evolution:** the
+[FF-1.1A rights-policy revision](TIAF_A7_FF1_1A_RIGHTS_POLICY_REVISION_AND_DATA_PROVISIONING.md)
+separates evidence from local-research admission. The data-rights owner supplies
+the actual known state for **each** of local research, model training,
+derived-feature/model retention, retained source evidence for audit/replay, and
+evaluation use. Record licensor, dataset/version,
 account or entitlement reference without credentials, permitted users/machines,
 retention/expiry and redistribution restrictions. Availability, a working API,
 personal access, or public visibility is not a training/retention license.
 
-Rights are **UNKNOWN / BLOCKING** today: no entitlement documents or empirical
-archives were inspected. Research, fitting and retained evidence may have
-different permissions. Failure of any required permission prevents empirical
-fitting; no synthetic label may disguise an empirical dataset. Revocation or
-retention conflict suspends further use and follows existing retention policy;
-do not silently delete lineage or claim replay remains possible. Reports contain
-rights references, never tokens or secrets. This is an admission requirement,
-not a legal determination of Dhan/NSE terms.
+The COLD default is **WARN_ONLY**: `UNVERIFIED` / `AMBIGUOUS` may proceed with an
+explicit warning, never a claim of rights approval. `ENFORCE` blocks those states;
+`DISABLED` records non-enforcement and keeps the evidence. Explicit
+`VERIFIED_DENIED` blocks under **all three** policies: no override authority is
+implemented. Evidence/source identity mismatches remain hard provenance failures.
+The five legacy assertions remain readable; `NOT_QUALIFIED` means ambiguous, not
+proof of explicit denial. The previous enforced HOLD is preserved as history.
+
+Rights remain **UNVERIFIED** for the absent empirical dataset. Policy permission
+to proceed is not legal permission, redistribution/publication authority, a
+retention change or a learning grant. Revocation/retention handling is unchanged.
+Pin the evidence reference/status, policy/configuration fingerprint, admission
+result and qualification seal in later training-job and paired-evaluation
+lineage. Do not select enforcement per request, from environment variables, or
+to improve an outcome. A new trusted bootstrap is required to change policy.
+All scientific/PIT gates remain mandatory; no synthetic label may disguise an
+empirical dataset. No fitting is authorized in FF-1.1A.
 
 ### 3.3 Qualification checklist and current disposition
 
 `CHECK` means inspection pending; `PASS` requires referenced evidence; `FAIL`
 means a known violation; `BLOCKING` prevents the dependent job. Row-level
-exclusions are counted even when dataset-level gates pass. Unknown does not pass.
-For each row, absent/unverifiable evidence is blocking CHECK; evidence that
+exclusions are counted even when dataset-level gates pass. Unknown scientific
+evidence does not pass. Rights admission alone follows §3.2. For scientific
+rows, absent/unverifiable evidence is blocking CHECK; evidence that
 violates its pass condition is FAIL with the response in the last column.
 
 | CHECK | PASS CONDITION (referenced evidence) | Current result / BLOCKING? | FAIL CONDITION / response |
 |---|---|---|---|
 | Accepted runtime / target | FF-0 tag, target and clock versions | PASS | Stop incompatible extension |
-| Rights by permitted use | Signed/scoped grant and expiry | CHECK — BLOCKING | No empirical fit/use |
+| Rights by permitted use | Evidence status plus pinned COLD policy admits research | UNVERIFIED / WARN_ONLY — warning, not rights approval | Explicit denial always HOLD; ENFORCE also holds unknown/ambiguous |
 | Provider coverage and decimal authority | Immutable native captures and source specification | CHECK — BLOCKING | No guessed close/basis |
 | Subject identity | Dated NSE cash mapping for RELIANCE throughout range | CHECK — BLOCKING | Exclude unresolved scope; no present-day membership inference |
 | Calendar and completed sessions | Versioned qualified schedule, exceptions and terminal target session | CHECK — BLOCKING | No weekday-generated grid |
@@ -805,7 +836,7 @@ claimed to be implemented. Absence and scientific non-support are not crashes.
 | `COMPARISON_INCOMPATIBLE` | Refuse mode/target/label/version/weight mismatch; no coercion |
 | `RESOURCE_LIMIT_EXCEEDED` / `HOLDOUT_NOT_AUTHORIZED` | Preserve partial/denied attempt; no auto-retry or increased grant |
 
-Stop if rights or PIT cannot be qualified, support is too small, feature schema
+Stop if rights admission returns HOLD or PIT cannot be qualified, support is too small, feature schema
 is unreliable, leakage is found, resource/dependency burden exceeds the grant,
 or the fixed Logistic study is scientifically unsupported/unstable. There is
 one campaign here, not repeated trials until success. A repair to a genuine
@@ -825,10 +856,12 @@ Advanced families, public capability and A8 remain later work.
 
 ## 18. Planning validation and remaining blockers
 
-The remaining blockers are empirical admission facts, not unspecified model
-choices: rights, archive/PIT provenance, price/calendar/action qualification,
+The remaining scientific blockers are empirical admission facts, not unspecified
+model choices: archive/PIT provenance, price/calendar/action qualification,
 realized counts/classes, exact training lock and independent protocol/job
-approvals. No qualified historical dataset was inspected, so none is claimed
+approvals. Rights evidence is separately recorded and admitted or held under
+§3.2's pinned policy; unknown rights alone need not block WARN_ONLY research.
+No qualified historical dataset was inspected, so none is claimed
 to pass. These do not block implementing FF-1.1's qualification and refusal path.
 No training grant is inferred from this plan's READY verdict.
 

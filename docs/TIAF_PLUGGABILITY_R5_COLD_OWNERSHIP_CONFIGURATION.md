@@ -28,6 +28,14 @@ operation is added. The acceptance pass is recorded separately and adds no runti
 
 ## Owner, sources and freeze
 
+Scoped follow-up (2026-09-20): the offline FF-1 qualifier now has a separate
+trusted `ResearchQualificationRuntime` / `ResearchRightsConfig` bootstrap.
+It follows this same code-defaults < explicit-config and immutable-owner rule;
+it does **not** add a field to R5 facade/Shell composition or a request override.
+Default `WARN_ONLY`, explicit-denial handling and configuration fingerprints are
+documented in the [FF-1.1A configuration example](TIAF_A7_FF1_1A_RIGHTS_POLICY_REVISION_AND_DATA_PROVISIONING.md#3-cold-configuration-and-replay).
+R5's accepted runtime and historical validation below remain unchanged.
+
 The trusted application bootstrap calls `create_cold_runtime(facade_config,
 explicit=...)`. It validates composition and existing facade policy, resolves
 only selected registered implementations, seals immutable startup metadata,

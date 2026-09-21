@@ -1,0 +1,590 @@
+{
+  "artifact_id": "qualification-attempt:ff1-1a-rerun-20260921-122429",
+  "artifact_kind": "QUALIFICATION_PREFLIGHT_AUDIT",
+  "audit_format_version": "1.0",
+  "runtime_contract": false,
+  "recorded_at": "2026-09-21T12:24:29.146355+05:30",
+  "timezone": "Asia/Kolkata",
+  "repository_head": "2eb522c1dc978c1f267d4ad6c9cf7d0b287ad9b8",
+  "baselines": {
+    "a6": "6dc2ff304aae0e87540260b092919bb91e4d4189",
+    "ff0": "e5283c9eaa4294bd236186d663335efdf7dab236"
+  },
+  "process_verdict": "HOLD_FF1_1A_QUALIFICATION",
+  "empirical_fitting_authorized": false,
+  "primary_stop_reason": "CAPTURED_AS_KNOWN_NOT_SATISFIED",
+  "blocking_codes": [
+    "HOLD_PIT_PROVENANCE",
+    "HOLD_CORPORATE_ACTIONS",
+    "HOLD_CALENDAR",
+    "HOLD_SECURITY_IDENTITY",
+    "HOLD_SOURCE_DECIMAL_AUTHORITY"
+  ],
+  "qualification_executed": false,
+  "execution_note": "Actual dataset integrity/numeric/rights/current-identity preflight executed. Native EmpiricalDataset qualification could not be invoked truthfully without a supplied schedule and exact provenance. No synthetic schedule, source decimals or historical clocks were manufactured.",
+  "scope": {
+    "symbol": "RELIANCE",
+    "exchange": "NSE",
+    "segment": "NSE_EQUITY",
+    "instrument_type": "EQUITY",
+    "target": "equity.next_session_close.return_gt_zero@1.0",
+    "feature_schema": "ff1.reliance.a2_daily_five/1.0",
+    "requested_reference_dates": [
+      "2018-01-01",
+      "2025-12-31"
+    ]
+  },
+  "dataset": {
+    "path": "data/ff1/reliance/reliance_daily_ohlcv.csv",
+    "content_fingerprint": "d91311cdae0ecec8b3f7c60522e805c6b495e02ea633fdcb63b65476ef0dd6f6",
+    "bytes": 99118,
+    "provider": "dhan",
+    "source_system": "TI_NATIVE_DHAN",
+    "acquisition_kind": "FRESH_HISTORICAL_DOWNLOAD",
+    "acquisition_start": "2026-09-21T12:07:50.682638+05:30",
+    "acquired_at": "2026-09-21T12:07:50.995917+05:30",
+    "frequency": "1d",
+    "timezone": "Asia/Kolkata",
+    "coverage": [
+      "2017-11-01",
+      "2026-01-30"
+    ],
+    "price_basis": "UNKNOWN",
+    "source_decimal_precision": "NOT_CERTIFIED_BY_FLOAT_NORMALIZATION",
+    "raw_response_retained": false,
+    "git_ignored": true,
+    "files": [
+      {
+        "path": "data/ff1/reliance/acquisition_request.json",
+        "sha256": "cb62e1279396dbe1b3036ac6c6466b5d0078246f53b208cceacc81dfd85c3b83"
+      },
+      {
+        "path": "data/ff1/reliance/provisioning_manifest.json",
+        "sha256": "cc8121d3ba298c7cb91619a097bbe26e50b1fe0bdf1f02cb5b411e79ee7a7e12"
+      },
+      {
+        "path": "data/ff1/reliance/reliance_daily_ohlcv.csv",
+        "sha256": "d91311cdae0ecec8b3f7c60522e805c6b495e02ea633fdcb63b65476ef0dd6f6"
+      },
+      {
+        "path": "data/ff1/reliance/security_identity.json",
+        "sha256": "fc938beec808247b5bc299755ef4734466d6df5ff6f484d0442bb4ac042196a9"
+      },
+      {
+        "path": "data/ff1/reliance/source_manifest.json",
+        "sha256": "3906a210bb0bf22463f0ee98a78255aa25be052225f356bee1d70b9b370e2906"
+      }
+    ],
+    "source_manifest_fingerprint": "3d1a4e21b6f4d08cb94b29d0aac83ec368c3c79c40bc535f2a75da55fb452c09",
+    "security_manifest_fingerprint": "8ba737a541bb8a12b94ea0f6664270731fd9450d4310b6ca17a3d5b077440579",
+    "request_manifest_fingerprint": "9561d3f62a8f9c5bfbfab7c5b8d029bf6ee2c873f16912f28e7a91539c2717d7",
+    "provisioning_fingerprint": "c54cbf1c7ba1d11a8166aec3a9c10a72efbc95446cc5cc240692fd1b6410e272"
+  },
+  "rights": {
+    "evidence_status": "UNVERIFIED",
+    "enforcement_policy": "WARN_ONLY",
+    "admission_result": "ADMITTED_WITH_WARNING",
+    "warnings": [
+      "RIGHTS_NOT_APPROVED_RESEARCH_ONLY"
+    ],
+    "configuration_fingerprint": "2ca6488c4b09e6437e246f91bfc227c6376c01849498d06df2fb038b5a64d981",
+    "configuration_consistency": "PASS",
+    "evidence_refs": [],
+    "evidence_state_source": "Pinned provisioning/source manifests; no new entitlement evidence supplied."
+  },
+  "security": {
+    "current_mapping": "PASS",
+    "historical_mapping": "UNKNOWN",
+    "verdict": "HOLD_SECURITY_IDENTITY",
+    "provider_security_id": "2885",
+    "isin": "INE002A01018",
+    "checked_at": "2026-09-21T12:24:29.146355+05:30",
+    "master_sha256": "6e65523933d51e6aad54cb4b3cff4f27708fe0e4710a8c03f239da666f674fd2",
+    "current_resolution": {
+      "schema_version": "1.0",
+      "query": {
+        "schema_version": "1.0",
+        "symbol": "RELIANCE",
+        "exchange": "NSE",
+        "segment": "NSE_EQUITY",
+        "instrument_type": "EQUITY",
+        "expiry": null,
+        "strike": null,
+        "option_type": null,
+        "trading_symbol": null,
+        "provider_instrument_id": null,
+        "provider": "dhan",
+        "exact_only": true,
+        "metadata": {}
+      },
+      "matches": [
+        {
+          "schema_version": "1.0",
+          "instrument": {
+            "schema_version": "1.0",
+            "symbol": "RELIANCE",
+            "exchange": "NSE",
+            "segment": "NSE_EQUITY",
+            "instrument_type": "EQUITY",
+            "expiry": null,
+            "strike": null,
+            "option_type": null,
+            "trading_symbol": "RELIANCE INDUSTRIES LTD",
+            "provider_instrument_id": "2885"
+          },
+          "provider_name": "dhan",
+          "provider_instrument_id": "2885",
+          "company_name": "Reliance Industries",
+          "underlying_symbol": "RELIANCE",
+          "lot_size": 1,
+          "tick_size": 10,
+          "source_record_id": "dhan:NSE_EQUITY:2885",
+          "source_observed_at": "2026-09-05T23:50:59.627632+05:30",
+          "resolution_kind": "UNIQUE_NORMALIZED",
+          "quality": "GOOD",
+          "metadata": {
+            "dhan_instrument": "EQUITY",
+            "dhan_instrument_type": "ES",
+            "dhan_segment": "E",
+            "active": true,
+            "isin": "INE002A01018",
+            "buy_sell_indicator": "A",
+            "tradable": true,
+            "provider_test_instrument": false
+          }
+        }
+      ],
+      "resolved": {
+        "schema_version": "1.0",
+        "instrument": {
+          "schema_version": "1.0",
+          "symbol": "RELIANCE",
+          "exchange": "NSE",
+          "segment": "NSE_EQUITY",
+          "instrument_type": "EQUITY",
+          "expiry": null,
+          "strike": null,
+          "option_type": null,
+          "trading_symbol": "RELIANCE INDUSTRIES LTD",
+          "provider_instrument_id": "2885"
+        },
+        "provider_name": "dhan",
+        "provider_instrument_id": "2885",
+        "company_name": "Reliance Industries",
+        "underlying_symbol": "RELIANCE",
+        "lot_size": 1,
+        "tick_size": 10,
+        "source_record_id": "dhan:NSE_EQUITY:2885",
+        "source_observed_at": "2026-09-05T23:50:59.627632+05:30",
+        "resolution_kind": "UNIQUE_NORMALIZED",
+        "quality": "GOOD",
+        "metadata": {
+          "dhan_instrument": "EQUITY",
+          "dhan_instrument_type": "ES",
+          "dhan_segment": "E",
+          "active": true,
+          "isin": "INE002A01018",
+          "buy_sell_indicator": "A",
+          "tradable": true,
+          "provider_test_instrument": false
+        }
+      },
+      "ambiguous": false,
+      "not_found": false,
+      "source_provider": "dhan",
+      "observed_at": "2026-09-05T23:50:59.627632+05:30",
+      "metadata": {
+        "policy_applied": false,
+        "preferred_exchange": "NSE"
+      }
+    },
+    "current_resolution_fingerprint": "b66f668cec1833708437642afb8e9061cdf956f40e6798b7807a23447736a70f",
+    "historical_caveat": "Current master mtime/observation and resolution are not range-wide historical identity or acquisition proof."
+  },
+  "bar_quality": {
+    "raw_rows": 2045,
+    "valid_rows": 2045,
+    "invalid_rows": 0,
+    "invalid_reason_counts": {},
+    "duplicates": 0,
+    "scope": "Lexical CSV and numeric rules only; original source precision, finality, calendar and provenance not qualified.",
+    "nonfinite_ohlc": 0,
+    "nonpositive_ohlc": 0,
+    "invalid_envelope": 0,
+    "invalid_volume": 0,
+    "sorted": true,
+    "missing_field_rows": 0,
+    "source_decimal_qualified_rows": null
+  },
+  "calendar": {
+    "status": "HOLD_CALENDAR",
+    "policy": "SUPPLIED_QUALIFIED_NSE_CASH_SCHEDULE_AND_EXCEPTIONS_NO_WEEKDAY_INFERENCE",
+    "supplied_date_rows": 2045,
+    "expected_sessions": null,
+    "missing_sessions": null,
+    "extra_or_non_session_rows": null,
+    "duplicate_dates": 0,
+    "unresolved_anomalies": null,
+    "qualified_native_schedule_supplied": false,
+    "calendar_fingerprint": null,
+    "filled_bars": 0
+  },
+  "corporate_actions": {
+    "status": "HOLD_CORPORATE_ACTIONS",
+    "price_basis": "UNKNOWN",
+    "complete_coverage": false,
+    "qualified_exclusions": false,
+    "exclusion_count": null,
+    "policy": "EXCLUDE_AFFECTED_OR_UNKNOWN_UNADJUSTED",
+    "source_price_adjustment_performed": false,
+    "reason": "Partial public corporate-action evidence cannot establish complete unaffected windows, source adjustment/revision semantics or PIT-safe exclusions.",
+    "known_material_examples": [
+      {
+        "event": "Financial-services demerger",
+        "record_date": "2023-07-20",
+        "source_url": "https://www.ril.com/sites/default/files/2024-08/RIL_ANNUALREPORT_2023-24.pdf",
+        "access": "Indexed primary-source Board report excerpt reviewed; full PDF open exceeded web size limit.",
+        "pit_admitted": false
+      },
+      {
+        "event": "1:1 bonus allotment",
+        "record_date": "2024-10-28",
+        "document_date": "2024-10-30",
+        "source_url": "https://www.ril.com/sites/default/files/2025-03/Letter_to_shareholders.pdf",
+        "access": "Primary-source PDF text reviewed.",
+        "pit_admitted": false
+      }
+    ],
+    "provider_spec_url": "https://dhanhq.co/docs/v2/historical-data/",
+    "provider_spec_finding": "Reviewed daily endpoint describes float OHLC, int volume and epoch timestamp, but supplies no explicit adjustment/revision/PIT certification used to resolve these gates.",
+    "web_notes_are_historical_evidence": false,
+    "source_documents_archived": false
+  },
+  "pit_policy": {
+    "id": "CAPTURED_AS_KNOWN",
+    "status": "HOLD_PIT_PROVENANCE",
+    "cutoff": "scheduled reference close + 30 minutes",
+    "as_of": "information cutoff + 5 minutes; strictly before target open",
+    "rule": "Every dependency available/acquired/admitted by information cutoff; actual computation recorded separately.",
+    "actual_download_clock": "2026-09-21T12:07:50.995917+05:30",
+    "alternative_profile_adopted": false,
+    "alternative_assessed": "Assuming daily availability at close + 30 minutes does not prove source revision state or change actual acquisition. No defensible source-specific approved alternative established.",
+    "historical_availability": null,
+    "backdating_performed": false
+  },
+  "population": {
+    "raw_rows": 2045,
+    "valid_numeric_rows": 2045,
+    "invalid_numeric_rows": 0,
+    "qualified_rows": null,
+    "requested_observations": null,
+    "feature_eligible": null,
+    "label_eligible": null,
+    "paired_ready_observations": null,
+    "excluded_observations": null,
+    "positive_labels": null,
+    "zero_labels": null,
+    "unavailable_labels": null,
+    "supplied_reference_date_slots": 1983,
+    "supplied_date_slots_blocked": 1983,
+    "date_only_slot_fingerprint": "2c67a73a8e52ecc58a2442641d543253adde4fdf7483e405b509d10cb7ab3766",
+    "raw_date_counts_by_year": {
+      "2017": 42,
+      "2018": 246,
+      "2019": 245,
+      "2020": 252,
+      "2021": 248,
+      "2022": 248,
+      "2023": 246,
+      "2024": 249,
+      "2025": 249,
+      "2026": 20
+    },
+    "slot_disposition_rule": "For each supplied CSV date in inclusive 2018-01-01..2025-12-31: NOT_EVALUABLE, primary HOLD_CALENDAR, all blocking_codes contribute. These are unresolved date slots, not native observation IDs or a complete NSE session grid.",
+    "slot_reason_counts": {
+      "HOLD_PIT_PROVENANCE": 1983,
+      "HOLD_CORPORATE_ACTIONS": 1983,
+      "HOLD_CALENDAR": 1983,
+      "HOLD_SECURITY_IDENTITY": 1983,
+      "HOLD_SOURCE_DECIMAL_AUTHORITY": 1983
+    },
+    "reason_counts_overlap": true,
+    "qualified_observations_admitted_this_attempt": 0,
+    "constructed_feature_vectors": 0,
+    "constructed_labels": 0
+  },
+  "feature_derivation": {
+    "status": "NOT_RUN_BLOCKED",
+    "schema_id": "ff1.reliance.a2_daily_five/1.0",
+    "schema_fingerprint": "521337f10dd977b523ad6a2bd073ba9f11351f8948c87beff6ec710b4e4b217a",
+    "feature_set_fingerprint": null,
+    "nonfinite_feature_count": null,
+    "sanity_summary": null,
+    "imputation": false,
+    "scaling": false,
+    "extra_features": false
+  },
+  "labels": {
+    "status": "NOT_RUN_BLOCKED",
+    "positive": null,
+    "zero": null,
+    "unavailable": null,
+    "labels_constructed": 0,
+    "boundary": "FF-1.1 emits label=None and NOT_RESOLVED_FF1_1. FF-0 OutcomeJournalEntry rejects empirical sources. No second comparator or relabeling as synthetic."
+  },
+  "fold_feasibility": {
+    "protocol_id": "ff1.reliance.daily_logistic_vs_b0/1.0",
+    "plan_sha256": "30c252ec11b6aa9b0bf67a5f47159ba5af99abda3fbf6aaa61c8c2956dc5026c",
+    "training_start": "2018-01-01",
+    "minimum_training": 500,
+    "minimum_each_training_class": 100,
+    "baserate_required": 20,
+    "embargo": "Full eligible session preceding first test reference; F_j = that session open.",
+    "purge": "Target resolution strictly before F_j and feature/truth availability <= F_j.",
+    "folds": [
+      {
+        "test_year": 2021,
+        "role": "DEVELOPMENT",
+        "supplied_test_date_slots": 248,
+        "supplied_pre_year_training_date_slots": 743,
+        "training_observations": null,
+        "test_observations": null,
+        "purge_exclusions": null,
+        "embargo_exclusions": null,
+        "feature_complete": null,
+        "label_complete": null,
+        "paired_ready_potential": null,
+        "baserate_support": null,
+        "minimum_support_met": null,
+        "status": "NOT_EVALUABLE_UNQUALIFIED_INPUTS"
+      },
+      {
+        "test_year": 2022,
+        "role": "DEVELOPMENT",
+        "supplied_test_date_slots": 248,
+        "supplied_pre_year_training_date_slots": 991,
+        "training_observations": null,
+        "test_observations": null,
+        "purge_exclusions": null,
+        "embargo_exclusions": null,
+        "feature_complete": null,
+        "label_complete": null,
+        "paired_ready_potential": null,
+        "baserate_support": null,
+        "minimum_support_met": null,
+        "status": "NOT_EVALUABLE_UNQUALIFIED_INPUTS"
+      },
+      {
+        "test_year": 2023,
+        "role": "DEVELOPMENT",
+        "supplied_test_date_slots": 246,
+        "supplied_pre_year_training_date_slots": 1239,
+        "training_observations": null,
+        "test_observations": null,
+        "purge_exclusions": null,
+        "embargo_exclusions": null,
+        "feature_complete": null,
+        "label_complete": null,
+        "paired_ready_potential": null,
+        "baserate_support": null,
+        "minimum_support_met": null,
+        "status": "NOT_EVALUABLE_UNQUALIFIED_INPUTS"
+      },
+      {
+        "test_year": 2024,
+        "role": "DEVELOPMENT",
+        "supplied_test_date_slots": 249,
+        "supplied_pre_year_training_date_slots": 1485,
+        "training_observations": null,
+        "test_observations": null,
+        "purge_exclusions": null,
+        "embargo_exclusions": null,
+        "feature_complete": null,
+        "label_complete": null,
+        "paired_ready_potential": null,
+        "baserate_support": null,
+        "minimum_support_met": null,
+        "status": "NOT_EVALUABLE_UNQUALIFIED_INPUTS"
+      },
+      {
+        "test_year": 2025,
+        "role": "PROTECTED_HOLDOUT",
+        "supplied_test_date_slots": 249,
+        "supplied_pre_year_training_date_slots": 1734,
+        "training_observations": null,
+        "test_observations": null,
+        "purge_exclusions": null,
+        "embargo_exclusions": null,
+        "feature_complete": null,
+        "label_complete": null,
+        "paired_ready_potential": null,
+        "baserate_support": null,
+        "minimum_support_met": null,
+        "status": "NOT_EVALUABLE_UNQUALIFIED_INPUTS"
+      }
+    ]
+  },
+  "holdout": {
+    "status": "SEALED",
+    "reference_year": 2025,
+    "supplied_date_rows": 249,
+    "outcomes_opened": false,
+    "price_return_or_class_summaries": false,
+    "holdout_feedback_used": false,
+    "inspection_limit": "Whole-file hashing, schema/boolean numeric-integrity checks and date-only inventory; no holdout-specific OHLC/returns/features/labels/metrics.",
+    "prior_external_inspection": "Not assessed; this record does not certify independent blinding outside the recorded workflow."
+  },
+  "leakage_audit": {
+    "status": "HOLD",
+    "confirmed_realized_feature_leakage": null,
+    "prevention_checks": "No features, labels, fits, imputation or outcome access. CAPTURED_AS_KNOWN would reject current acquisition at every historical cutoff.",
+    "unresolved": [
+      "Historical revision/knowledge provenance",
+      "Complete corporate-action and calendar coverage",
+      "No admitted feature/label/fold dependency closure"
+    ],
+    "zero_feature_leakage_claim": false
+  },
+  "gates": [
+    {
+      "gate": "dataset_integrity",
+      "status": "PASS",
+      "blocking": false,
+      "reason": "CSV and all four sidecars match provisioning pins, schema, count and coverage."
+    },
+    {
+      "gate": "rights_admission",
+      "status": "ADMITTED_WITH_WARNING",
+      "blocking": false,
+      "reason": "UNVERIFIED evidence; accepted WARN_ONLY configuration matches both manifests. Not rights approval."
+    },
+    {
+      "gate": "source_provenance",
+      "status": "HOLD",
+      "blocking": true,
+      "reason": "Fresh-download lineage is intact, but original historical revisions/admission and source-decimal close authority are absent."
+    },
+    {
+      "gate": "security_identity",
+      "status": "HOLD",
+      "blocking": true,
+      "reason": "Current resolver and dataset mapping match RELIANCE/NSE/EQUITY/2885; dated historical validity and historical master knowledge are unqualified."
+    },
+    {
+      "gate": "daily_frequency_ohlcv_quality",
+      "status": "PASS_NUMERIC_ONLY",
+      "blocking": false,
+      "reason": "All 2045 CSV rows pass lexical/finite/positive/envelope/volume/date/order checks; not scientific session/precision/finality qualification."
+    },
+    {
+      "gate": "calendar",
+      "status": "HOLD",
+      "blocking": true,
+      "reason": "No supplied native authoritative NSE schedule or exception coverage. Expected/missing/extra sessions cannot be computed."
+    },
+    {
+      "gate": "corporate_actions_price_basis",
+      "status": "HOLD",
+      "blocking": true,
+      "reason": "Price basis UNKNOWN; material company actions exist, but complete scoped action/revision evidence is absent. No safe exclusion subset established."
+    },
+    {
+      "gate": "pit_availability",
+      "status": "HOLD",
+      "blocking": true,
+      "reason": "CAPTURED_AS_KNOWN remains accepted. September 2026 acquisition cannot satisfy historical 2018-2025 cutoffs. No source-qualified alternative/revision policy."
+    },
+    {
+      "gate": "feature_derivation",
+      "status": "NOT_RUN_BLOCKED",
+      "blocking": true,
+      "reason": "No admitted 21-session windows. Do not derive, impute, scale or report fabricated feature statistics."
+    },
+    {
+      "gate": "label_construction",
+      "status": "NOT_RUN_BLOCKED",
+      "blocking": true,
+      "reason": "Unqualified source-decimal closes, session/action/maturation evidence; FF-0 synthetic-only outcome boundary is preserved."
+    },
+    {
+      "gate": "fold_feasibility",
+      "status": "NOT_EVALUABLE",
+      "blocking": true,
+      "reason": "Only date-presence counts; no qualified schedule, feature/class support or purge/embargo boundaries."
+    },
+    {
+      "gate": "holdout_protection",
+      "status": "SEALED",
+      "blocking": false,
+      "reason": "2025 outcomes/returns/classes/features not exposed. Date counts plus automated whole-file integrity/boolean quality checks only."
+    },
+    {
+      "gate": "leakage_audit",
+      "status": "HOLD",
+      "blocking": true,
+      "reason": "No admissible empirical feature/label/fold closure; freshness/vintage and action-revision safety cannot be proved."
+    }
+  ],
+  "governing_documents": [
+    {
+      "path": "docs/TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md",
+      "sha256": "30c252ec11b6aa9b0bf67a5f47159ba5af99abda3fbf6aaa61c8c2956dc5026c"
+    },
+    {
+      "path": "docs/TIAF_A7_FF1_1_DATA_QUALIFICATION_FEATURE_SCHEMA_IMPLEMENTATION.md",
+      "sha256": "8b9a7759066cdabc7ff4e646fc727d72b0a1f7e05c8a038daf5c7d0c051752de"
+    },
+    {
+      "path": "docs/TIAF_A7_FF1_1A_RIGHTS_POLICY_REVISION_AND_DATA_PROVISIONING.md",
+      "sha256": "d26b42265df6d670b8ef7a0593466cdec611fc7de4da7582f3144da36873b348"
+    },
+    {
+      "path": "docs/TIAF_A7_FF1_1A_TI_NATIVE_RELIANCE_TEST_DATA_PROVISIONING.md",
+      "sha256": "f1bd869803ec62233a9d96370150a509de29a4a6093caebce6795519b642b75e"
+    },
+    {
+      "path": "docs/TIAF_SOURCE_AUTHORITY_PROVENANCE_CONTRADICTION_ARCHITECTURE.md",
+      "sha256": "edd09ea6f24acc7187711e772541c3eb9c56a40569c566d33030009ae9ad8f66"
+    },
+    {
+      "path": "src/tiaf/evaluation/forecast_research_contracts.py",
+      "sha256": "f567f4b4940283df309a57a7a3242ba944e3067741dbea9f9a0ad1453bc048a1"
+    },
+    {
+      "path": "src/tiaf/evaluation/forecast_qualification.py",
+      "sha256": "93ca3db1028436ede72e479a561176180d78b900f753ffcda4f0673805b74aa4"
+    },
+    {
+      "path": "src/tiaf/evaluation/forecast_contracts.py",
+      "sha256": "da830c029f596cd6e64ed43cdc4100f38c29f13a894d7a56989481ebdafd7563"
+    },
+    {
+      "path": "src/tiaf/forecasting/research_contracts.py",
+      "sha256": "92cd9c1570842af7ffecd172ddee3da97af47ac58e07b421edee3b92edac918b"
+    }
+  ],
+  "no_fitting": {
+    "logistic_fits": 0,
+    "scaler_fits": 0,
+    "model_artifacts": 0,
+    "learned_forecasts": 0,
+    "paired_metrics": 0,
+    "calibration": 0,
+    "provider_calls": 0,
+    "broker_calls": 0,
+    "native_empirical_qualifier_invocations": 0,
+    "empirical_integrity_preflight_runs": 1,
+    "public_source_review_performed": true,
+    "external_model_calls": 0
+  },
+  "limitations": [
+    "This is a content-addressed gate audit, not an EmpiricalDatasetQualification runtime report or a fitting grant.",
+    "Unknown eligible populations, session anomalies, labels and fold support are null, not zero.",
+    "Date-presence counts are not qualified observation counts or proof of consecutive eligible sessions.",
+    "Public-source findings are scoped contemporary review notes, not original historical captures or complete corporate-action coverage.",
+    "Content hashes detect modification but do not authenticate evidence or enforce operating-system immutability.",
+    "A future attempt must create a new content-addressed artifact and preserve this one."
+  ],
+  "next_prompt_title": "TIAF A7 / FF-1.1A — PIT/VINTAGE, SOURCE-DECIMAL, CALENDAR AND CORPORATE-ACTION EVIDENCE RESOLUTION",
+  "qualification_fingerprint": "f30caf330ce5192a235d85d18629770d34b3b1547fac9f3dfdfdf5870210a2ed"
+}

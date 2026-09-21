@@ -2,7 +2,9 @@
 
 import math
 from collections import defaultdict
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta
+from typing import TYPE_CHECKING
 
 from pydantic import TypeAdapter
 
@@ -26,7 +28,11 @@ from tiaf.evaluation.forecast_research_contracts import (
     EmpiricalDatasetQualification,
     ObservationEligibility,
     ReasonCount,
+    ResearchRightsConfig,
+    RightsAdmissionResult,
+    RightsEvidenceStatus,
     qualification_verdicts,
+    rights_admission,
 )
 from tiaf.evaluation.forecast_research_contracts import (
     QualificationReason as R,
@@ -36,8 +42,18 @@ from tiaf.evaluation.forecast_research_contracts import (
 )
 from tiaf.forecasting.enums import DataBasis, QualificationStatus
 from tiaf.forecasting.identity import ArtifactReference, ForecastDateTime, semantic_fingerprint
-from tiaf.forecasting.research_contracts import FeatureVector, FF1FeatureSchema
+from tiaf.forecasting.research_contracts import (
+    AdjustedResearchProfile,
+    FeatureVector,
+    FF1FeatureSchema,
+)
 from tiaf.forecasting.research_features import derive_features
+
+if TYPE_CHECKING:
+    from tiaf.evaluation.forecast_retrospective_contracts import (
+        RetrospectiveDataset,
+        RetrospectiveQualification,
+    )
 
 
 def _ordered(reasons: list[R] | tuple[R, ...]) -> tuple[R, ...]:
@@ -48,27 +64,40 @@ def _known(source: EvidenceReference | None, cutoff: datetime, basis: DataBasis)
     return source is not None and source.data_basis is basis and source.admitted_at <= cutoff
 
 
-def _rights_ok(dataset: EmpiricalDataset, at: datetime) -> bool:
+def _rights_status(dataset: EmpiricalDataset, at: datetime) -> RightsEvidenceStatus:
+    """Aggregate supplied evidence independently of enforcement; never erase denial."""
     rights = dataset.rights
+    states = (
+        rights.local_research,
+        rights.model_training,
+        rights.derived_feature_storage,
+        rights.evaluation_artifact_retention,
+        rights.replay_evidence_retention,
+    )
+    status = RightsEvidenceStatus
+    if status.VERIFIED_DENIED in states:
+        return status.VERIFIED_DENIED
+    if (
+        Q.NOT_QUALIFIED in states
+        or status.AMBIGUOUS in states
+        or not _rights_bound(dataset)
+        or rights.coverage_start > dataset.coverage_start
+        or rights.coverage_end < dataset.coverage_end
+        or rights.assessed_at > at
+        or (rights.valid_until is not None and at > rights.valid_until)
+    ):
+        return status.AMBIGUOUS
+    if not rights.basis_refs or any(s in (Q.UNKNOWN, status.UNVERIFIED) for s in states):
+        return status.UNVERIFIED
+    return status.VERIFIED_ALLOWED
+
+
+def _rights_bound(dataset: EmpiricalDataset) -> bool:
+    """Evidence identity is a provenance gate, never bypassed by rights policy."""
     return (
-        all(
-            state is Q.QUALIFIED
-            for state in (
-                rights.local_research,
-                rights.model_training,
-                rights.derived_feature_storage,
-                rights.evaluation_artifact_retention,
-                rights.replay_evidence_retention,
-            )
-        )
-        and bool(rights.basis_refs)
-        and rights.source_artifact == dataset.source.capture
-        and rights.reference == dataset.source.rights_ref
-        and rights.subject == dataset.target.subject
-        and rights.coverage_start <= dataset.coverage_start
-        and rights.coverage_end >= dataset.coverage_end
-        and rights.assessed_at <= at
-        and (rights.valid_until is None or at <= rights.valid_until)
+        dataset.rights.source_artifact == dataset.source.capture
+        and dataset.rights.reference == dataset.source.rights_ref
+        and dataset.rights.subject == dataset.target.subject
     )
 
 
@@ -315,8 +344,55 @@ def _features(
     )
 
 
+@dataclass(frozen=True, slots=True)
+class ResearchQualificationRuntime:
+    """Trusted bootstrap owns one immutable policy for every run in this instance.
+
+    Reconfiguration requires a new owner. No env/file lookup or request policy.
+    Like R5, this is an API freeze, not a hostile-Python sandbox.
+    """
+
+    config: ResearchRightsConfig = field(default_factory=ResearchRightsConfig)
+    retrospective_profile: AdjustedResearchProfile | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self, "config", ResearchRightsConfig.model_validate(self.config.model_dump())
+        )
+        if self.retrospective_profile is not None:
+            object.__setattr__(
+                self,
+                "retrospective_profile",
+                AdjustedResearchProfile.model_validate(self.retrospective_profile.model_dump()),
+            )
+
+    def qualify(
+        self, dataset: EmpiricalDataset, *, assessed_at: datetime
+    ) -> EmpiricalDatasetQualification:
+        return _qualify_dataset(dataset, assessed_at=assessed_at, config=self.config)
+
+    def qualify_retrospective(
+        self, dataset: "RetrospectiveDataset", *, assessed_at: datetime
+    ) -> "RetrospectiveQualification":
+        """Explicit COLD opt-in. Never relabel a fresh vintage as historical capture."""
+        from tiaf.evaluation.forecast_retrospective import qualify_retrospective
+
+        if self.retrospective_profile is None:
+            raise ValueError("ADJUSTED_RESEARCH_PROFILE_NOT_INSTALLED")
+        return qualify_retrospective(
+            dataset, assessed_at=assessed_at, profile=self.retrospective_profile, config=self.config
+        )
+
+
 def qualify_dataset(
     dataset: EmpiricalDataset, *, assessed_at: datetime
+) -> EmpiricalDatasetQualification:
+    """One-run trusted bootstrap using reviewed WARN_ONLY defaults."""
+    return ResearchQualificationRuntime().qualify(dataset, assessed_at=assessed_at)
+
+
+def _qualify_dataset(
+    dataset: EmpiricalDataset, *, assessed_at: datetime, config: ResearchRightsConfig
 ) -> EmpiricalDatasetQualification:
     """Qualify supplied assertions, not authenticate them or authorize fitting."""
     dataset = EmpiricalDataset.model_validate(dataset.model_dump(mode="python"))
@@ -328,7 +404,9 @@ def qualify_dataset(
     rows: dict[str, list[DailyBarInput]] = defaultdict(list)
     bar_results: list[DailyBarQualification] = []
     global_reasons: list[R] = []
-    if not _rights_ok(dataset, assessed_at):
+    evidence_status = _rights_status(dataset, assessed_at)
+    admission, warnings = rights_admission(evidence_status, config.rights_enforcement_policy)
+    if admission is RightsAdmissionResult.HOLD:
         global_reasons.append(R.RIGHTS_UNQUALIFIED)
     if not _security_ok(dataset):
         global_reasons.append(R.SECURITY_IDENTITY)
@@ -338,6 +416,7 @@ def qualify_dataset(
         dataset.source.provenance_ref is None
         or dataset.source.acquisition_at is None
         or dataset.source.acquisition_at > assessed_at
+        or not _rights_bound(dataset)
     ):
         global_reasons.append(R.PROVENANCE_UNQUALIFIED)
     row_dates = tuple(row.session_date for row in dataset.rows)
@@ -520,6 +599,11 @@ def qualify_dataset(
         assessed_at=assessed_at,
         feature_schema=schema,
         rights_ref=dataset.rights.reference,
+        rights_evidence_status=evidence_status,
+        rights_enforcement_policy=config.rights_enforcement_policy,
+        rights_admission_result=admission,
+        rights_warnings=warnings,
+        rights_configuration_fingerprint=config.fingerprint,
         source_fingerprint=semantic_fingerprint(dataset.source),
         security_fingerprint=semantic_fingerprint(dataset.security),
         calendar_fingerprint=semantic_fingerprint(dataset.calendar),

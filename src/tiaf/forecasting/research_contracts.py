@@ -140,10 +140,69 @@ class FF1FeatureSchema(ResearchContract):
         return semantic_fingerprint(self)
 
 
+class AdjustedResearchProfile(ResearchContract):
+    """Opt-in FF-1 retrospective policy, never operational/PIT replay authority."""
+
+    profile_id: Literal["ff1.adjusted_retrospective/1.0"] = "ff1.adjusted_retrospective/1.0"
+    research_mode: Literal["SIMULATED_RESEARCH"] = "SIMULATED_RESEARCH"
+    source_vintage: Literal["FRESH_HISTORICAL_DOWNLOAD"] = "FRESH_HISTORICAL_DOWNLOAD"
+    price_series_basis: Literal["CORPORATE_ACTION_ADJUSTED"] = "CORPORATE_ACTION_ADJUSTED"
+    historical_capture_claim: Literal["NONE"] = "NONE"
+    operational_replay_eligible: Literal[False] = False
+    retrospective_ml_eligible: Literal[True] = True
+    production_eligible: Literal[False] = False
+    availability_evidence: Literal["ASSUMED_CONSERVATIVE_POLICY"] = "ASSUMED_CONSERVATIVE_POLICY"
+    cutoff_minutes_after_close: Literal[30] = 30
+    as_of_minutes_after_cutoff: Literal[5] = 5
+    precision_policy: Literal["NORMALIZED_BINARY64_RESEARCH"] = "NORMALIZED_BINARY64_RESEARCH"
+    source_forensic_eligible: Literal[False] = False
+    near_tie_ulps: Literal[8] = 8
+    feature_absolute_tolerance: Annotated[StrictFloat, Field(ge=1e-8, le=1e-8)] = 1e-8
+    volume_policy: Literal["PROVIDER_DEFINED_COUNTS_WITH_WARNING"] = (
+        "PROVIDER_DEFINED_COUNTS_WITH_WARNING"
+    )
+    action_policy: Literal["EXCLUDE_UNSUPPORTED_BOUNDARY_DEPENDENCIES"] = (
+        "EXCLUDE_UNSUPPORTED_BOUNDARY_DEPENDENCIES"
+    )
+    holdout_year: Literal[2025] = 2025
+    target_family: Literal["equity.next_session_close.return_gt_zero@1.0"] = (
+        "equity.next_session_close.return_gt_zero@1.0"
+    )
+
+    @property
+    def fingerprint(self) -> str:
+        return semantic_fingerprint(self)
+
+
+class AdjustedFF1FeatureSchema(ResearchContract):
+    """Same formula schema; separately pinned research eligibility context.
+
+    Deliberately not a subclass/override of the captured-as-known schema.
+    """
+
+    feature_schema_id: Literal["ff1.reliance.a2_daily_five"] = "ff1.reliance.a2_daily_five"
+    feature_schema_version: Literal["1.0"] = "1.0"
+    features: tuple[FeatureSpec, ...] = _FEATURES
+    profile: AdjustedResearchProfile
+    missing_policy: Literal["NO_IMPUTATION"] = "NO_IMPUTATION"
+    preprocessing: Literal["NONE_FF1_1"] = "NONE_FF1_1"
+    derivation_version: Literal["A2_PROJECTOR_1.0"] = "A2_PROJECTOR_1.0"
+
+    @model_validator(mode="after")
+    def fixed_schema(self) -> Self:
+        if self.features != _FEATURES:
+            raise ValueError("FF1_FEATURE_SCHEMA_MISMATCH")
+        return self
+
+    @property
+    def fingerprint(self) -> str:
+        return semantic_fingerprint(self)
+
+
 class FeatureVector(ResearchContract):
     """Unscaled A2 values, not a probability or a data-use authorization."""
 
-    feature_schema: FF1FeatureSchema
+    feature_schema: FF1FeatureSchema | AdjustedFF1FeatureSchema
     input_fingerprint: Sha256
     values: tuple[Annotated[StrictFloat, Field(allow_inf_nan=False)], ...] = Field(
         min_length=5, max_length=5

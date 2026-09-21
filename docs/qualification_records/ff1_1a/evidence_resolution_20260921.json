@@ -1,0 +1,435 @@
+{
+  "artifact_id": "evidence-resolution:ff1-1a-20260921",
+  "artifact_kind": "SCIENTIFIC_EVIDENCE_RESOLUTION_AUDIT",
+  "audit_format_version": "1.0",
+  "runtime_contract": false,
+  "recorded_at": "2026-09-21T13:04:51.879465+05:30",
+  "timezone": "Asia/Kolkata",
+  "previous_qualification_fingerprint": "f30caf330ce5192a235d85d18629770d34b3b1547fac9f3dfdfdf5870210a2ed",
+  "process_verdict": "HOLD_EVIDENCE_RESOLUTION",
+  "ready_for_empirical_qualification_rerun": false,
+  "empirical_fitting_authorized": false,
+  "dataset": {
+    "path": "data/ff1/reliance/reliance_daily_ohlcv.csv",
+    "sha256": "d91311cdae0ecec8b3f7c60522e805c6b495e02ea633fdcb63b65476ef0dd6f6",
+    "source_manifest_fingerprint": "3d1a4e21b6f4d08cb94b29d0aac83ec368c3c79c40bc535f2a75da55fb452c09",
+    "acquired_at": "2026-09-21T12:07:50.995917+05:30",
+    "unchanged": true
+  },
+  "sources": [
+    {
+      "id": "dhan-adjustment-support",
+      "url": "https://dhan.co/support/platforms/dhanhq-api/is-the-historical-data-from-dhan-s-data-api-adjusted-for-corporate-actions-like-bonuses-and-splits/",
+      "publisher": "Dhan",
+      "document_date": null,
+      "review_mode": "FULL_PAGE_AND_LOCAL_BYTES",
+      "local_path": "data/ff1/evidence_resolution_20260921/dhan_basis.html",
+      "sha256": "65d4dbf30bd77a9f3595440a6755542b3305b65d2d8235fe229ae7c6ce9fa6e4",
+      "claim": "Daily historical data is adjusted for bonuses and splits; factors, revision history and other action treatment not specified."
+    },
+    {
+      "id": "dhan-historical-schema",
+      "url": "https://dhanhq.co/docs/v2/historical-data/",
+      "publisher": "Dhan",
+      "document_date": null,
+      "review_mode": "WEB_DOCUMENTATION",
+      "local_path": null,
+      "sha256": null,
+      "claim": "Daily endpoint returns numeric OHLC arrays; no source-decimal scale or unadjusted selector established by the reviewed schema."
+    },
+    {
+      "id": "nse-holidays-2018",
+      "url": "https://nsearchives.nseindia.com/content/circulars/CMTR36475.pdf",
+      "publisher": "NSE",
+      "document_date": "2017-12-12",
+      "review_mode": "WEB_EXTRACTED_DOCUMENT",
+      "local_path": null,
+      "sha256": null,
+      "claim": "Initial 2018 CM holiday list; November 7 Muhurat session stated but its timings deferred."
+    },
+    {
+      "id": "nse-holidays-2024",
+      "url": "https://nsearchives.nseindia.com/content/circulars/CMTR59722.pdf",
+      "publisher": "NSE",
+      "document_date": "2023-12-12",
+      "review_mode": "WEB_EXTRACTED_DOCUMENT",
+      "local_path": null,
+      "sha256": null,
+      "claim": "Initial 2024 CM holiday list; November 1 Muhurat session stated but its timings deferred."
+    },
+    {
+      "id": "ncl-january-2024",
+      "url": "https://nsearchives.nseindia.com/content/circulars/CMPT60343.pdf",
+      "publisher": "NSE Clearing",
+      "document_date": "2024-01-19",
+      "review_mode": "WEB_EXTRACTED_DOCUMENT",
+      "local_path": null,
+      "sha256": null,
+      "claim": "Revised settlement timetable corroborates January 20 trading and January 22 holiday; references NSE/CMTR/60338 and 60340. Not a substitute for trading-session clock authority."
+    },
+    {
+      "id": "ril-identity-2018",
+      "url": "https://www.ril.com/ar2017-18/pdf/CorporateGovernanceReport.pdf",
+      "publisher": "Reliance Industries",
+      "document_date": null,
+      "report_period": "2017-18",
+      "locator": "Printed page 215 / PDF page 20",
+      "review_mode": "WEB_EXTRACT_AND_LOCAL_PDF",
+      "local_path": "data/ff1/evidence_resolution_20260921/ril_identity_2018.pdf",
+      "sha256": "b4989f943e98722f56cc5eb5312c5fbb9fc825221ee9cf18c924016d8e66405c",
+      "claim": "NSE-listed equity symbol RELIANCE, ISIN INE002A01018; checkpoint not a full effective-dated provider mapping."
+    },
+    {
+      "id": "ril-rights-2020",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/may-2020/1589793193201.pdf",
+      "publisher": "Reliance Industries, hosted by SEBI",
+      "document_date": "2020-05-15",
+      "locator": "Cover and printed page 62 / PDF page 63",
+      "review_mode": "LOCAL_PDF_AND_WEB_INDEX",
+      "local_path": "data/ff1/evidence_resolution_20260921/ril_rights_2020.pdf",
+      "sha256": "28f2020c48f4dc1ea66b2e0811d49b8382a5b90e6ed20a105b75571fdaae41e6",
+      "claim": "Rights issue 1 for 15, record date May 14; existing NSE RELIANCE ISIN INE002A01018 distinct from partly-paid rights IN9002A01024 and entitlement INE002A20018."
+    },
+    {
+      "id": "nse-demerger-2023",
+      "url": "https://nsearchives.nseindia.com/web/sites/default/files/2023-07/ind_prs17072023.pdf",
+      "publisher": "NSE Indices",
+      "document_date": "2023-07-17",
+      "review_mode": "WEB_SEARCH_EXTRACT_ONLY",
+      "local_path": null,
+      "sha256": null,
+      "claim": "Capital-market special pre-open July 20, 2023 for financial-services demerger; references NSE/CMTR/57524. Not Dhan adjustment methodology."
+    },
+    {
+      "id": "ril-bonus-2024",
+      "url": "https://nsearchives.nseindia.com/corporate/RELIANCE_16102024200409_SE_16102024.pdf",
+      "publisher": "Reliance Industries, hosted by NSE",
+      "document_date": "2024-10-16",
+      "review_mode": "WEB_EXTRACTED_DOCUMENT",
+      "local_path": null,
+      "sha256": null,
+      "claim": "1:1 bonus, record date October 28, 2024. Record date is not independently certified here as ex-date."
+    }
+  ],
+  "source_retention": {
+    "retained_verified_at": "2026-09-21T12:56:05.319635+05:30",
+    "byte_pinned_local_blobs": 3,
+    "source_publication_or_historical_capture_not_inferred_from_download": true,
+    "failed_raw_downloads": "NSE archives HTTP/2 internal errors, then one HTTP/1.1 attempt per URL timed out; web-extracted facts retained with no invented byte hashes.",
+    "no_raw_exchange_pdf_retention_claim": true
+  },
+  "vintage_policy_proposal": {
+    "artifact_id": "ff1-1a:fresh-revised-history-proposal",
+    "version": "1.0",
+    "classification": "RESEARCH_POLICY_PROPOSAL",
+    "adoption_status": "NOT_ADOPTED_FOR_CURRENT_FF1",
+    "runtime_enabled": false,
+    "source_vintage": "FRESH_HISTORICAL_DOWNLOAD",
+    "realization_mode": "SIMULATED",
+    "historical_capture_claim": "NONE",
+    "operational_replay_eligible": false,
+    "historical_pit_qualified": false,
+    "revised_history_exploration": "CONDITIONAL_SEPARATE_PROFILE_ONLY",
+    "current_ff1_training_eligible": false,
+    "current_ff1_evaluation_eligible": false,
+    "empirical_fitting_authorized": false,
+    "availability_policy": "CONSERVATIVE_EOD_SIMULATION",
+    "availability_evidence": "ASSUMED_CONSERVATIVE_POLICY",
+    "information_cutoff_offset_minutes": 30,
+    "simulated_as_of_offset_minutes": 5,
+    "simulated_as_of_must_precede_next_target_open": true,
+    "provider_publication_sla_verified": false,
+    "actual_acquisition_must_be_preserved": true,
+    "calendar_must_supply_actual_session_close": true,
+    "original_knowledge_policy": "CAPTURED_AS_KNOWN",
+    "required_warnings": [
+      "FRESH_DOWNLOAD_NOT_HISTORICAL_CAPTURE",
+      "REVISIONS_KNOWN_ONLY_AT_DOWNLOAD_MAY_BE_PRESENT",
+      "ASSUMED_AVAILABILITY_NOT_PROVIDER_PUBLICATION",
+      "NOT_OPERATIONAL_OR_PIT_BENCHMARK_EVIDENCE"
+    ],
+    "remaining_requirements": [
+      "Separate acceptance and explicit native profile/schema binding",
+      "Exact compatible unadjusted source artifact",
+      "Qualified session schedule including exceptional clocks",
+      "Complete applicable action and dated identity evidence",
+      "Separate qualification and leakage review; no learning grant in this pass"
+    ],
+    "fingerprint": "25307e246e72626bd153e425f5aa2646155d627a406cb78eb8f47bfdc1b5a5ac"
+  },
+  "calendar_evidence": {
+    "artifact_id": "ff1-1a:nse-calendar-evidence",
+    "version": "1.0",
+    "status": "PARTIAL_NOT_A_QUALIFIED_SCHEDULE",
+    "complete": false,
+    "required_coverage": [
+      "2017-11-01",
+      "2026-01-30"
+    ],
+    "complete_qualified_coverage": null,
+    "authority_refs": [
+      "nse-holidays-2018",
+      "nse-holidays-2024",
+      "ncl-january-2024"
+    ],
+    "declared_closed_dates": [
+      "2018-01-26",
+      "2018-02-13",
+      "2018-03-02",
+      "2018-03-29",
+      "2018-03-30",
+      "2018-05-01",
+      "2018-08-15",
+      "2018-08-22",
+      "2018-09-13",
+      "2018-09-20",
+      "2018-10-02",
+      "2018-10-18",
+      "2018-11-08",
+      "2018-11-23",
+      "2018-12-25",
+      "2024-01-26",
+      "2024-03-08",
+      "2024-03-25",
+      "2024-03-29",
+      "2024-04-11",
+      "2024-04-17",
+      "2024-05-01",
+      "2024-06-17",
+      "2024-07-17",
+      "2024-08-15",
+      "2024-10-02",
+      "2024-11-15",
+      "2024-12-25"
+    ],
+    "special_session_facts": [
+      {
+        "date": "2018-11-07",
+        "kind": "MUHURAT",
+        "authority_ref": "nse-holidays-2018",
+        "open_at": null,
+        "close_at": null,
+        "supplied": true
+      },
+      {
+        "date": "2024-11-01",
+        "kind": "MUHURAT",
+        "authority_ref": "nse-holidays-2024",
+        "open_at": null,
+        "close_at": null,
+        "supplied": true
+      }
+    ],
+    "date_only_check": {
+      "checked_at": "2026-09-21T12:56:05.319635+05:30",
+      "supplied_rows": 2045,
+      "duplicates": 0,
+      "declared_closed_dates_checked": 28,
+      "supplied_on_declared_closed_dates": [],
+      "missing_declared_special_dates": [],
+      "expected_sessions_full_range": null,
+      "missing_sessions_full_range": null,
+      "extra_sessions_full_range": null,
+      "known_subset_pass_is_full_calendar_pass": false
+    },
+    "unresolved_weekend_row_dates": [
+      "2019-10-27",
+      "2020-02-01",
+      "2020-11-14",
+      "2023-11-12",
+      "2024-01-20",
+      "2024-03-02",
+      "2024-05-18",
+      "2025-02-01"
+    ],
+    "january_2024_crosscheck": {
+      "corroborating_ref": "ncl-january-2024",
+      "supplied_january_20": true,
+      "supplied_january_22": false,
+      "trading_clock_circulars_not_retrieved": [
+        "NSE/CMTR/60338",
+        "NSE/CMTR/60340"
+      ]
+    },
+    "unresolved_scope": [
+      "Complete annual trading calendars and amendments 2017-2026",
+      "Exceptional open/close and Muhurat clocks",
+      "Other exceptional weekday sessions and closures; weekend row list is not exhaustive",
+      "Security-specific session eligibility, suspensions and missing rows",
+      "Actual calendar acquisition is current, not historical"
+    ],
+    "fingerprint": "95b115334a61b8e0cde4f79210fcaa6390b9ddd6e8c91caa9861a74876f5b2a0"
+  },
+  "historical_identity": {
+    "artifact_id": "ff1-1a:reliance-identity-checkpoints",
+    "version": "1.0",
+    "canonical_symbol": "RELIANCE",
+    "exchange": "NSE",
+    "security_type": "FULLY_PAID_CASH_EQUITY",
+    "isin": "INE002A01018",
+    "provider": "dhan",
+    "provider_security_ids": [
+      {
+        "id": "2885",
+        "current_resolver_checked_at": "2026-09-21T12:24:29.146355+05:30",
+        "historical_effective_from": null,
+        "historical_effective_until": null
+      }
+    ],
+    "required_coverage": [
+      "2017-11-01",
+      "2026-01-30"
+    ],
+    "qualified_historical_effective_from": null,
+    "qualified_historical_effective_until": null,
+    "evidence_refs": [
+      "ril-identity-2018",
+      "ril-rights-2020",
+      "qualification-attempt:f30caf330ce5192a235d85d18629770d34b3b1547fac9f3dfdfdf5870210a2ed"
+    ],
+    "checkpoint_consistency": "CORROBORATED",
+    "continuity_verdict": "HOLD_FULL_INTERVAL_AND_PROVIDER_SERIES_UNQUALIFIED",
+    "excluded_identity_classes": [
+      "PARTLY_PAID_RIGHTS_IN9002A01024",
+      "RIGHTS_ENTITLEMENT_INE002A20018",
+      "SPUN_OFF_JFSL"
+    ],
+    "economic_series_continuity": "MATERIAL_2023_DEMERGER_REQUIRES_ACTION_QUALIFICATION",
+    "no_interpolation_of_effective_dates": true,
+    "fingerprint": "dde938630170af24778b24b83cb6fee19166a0c2e4d3f967d2168515f3a0fe1a"
+  },
+  "decimal": {
+    "original_raw_response_retained": false,
+    "source_precision": "UNKNOWN",
+    "normalized_precision": "PYTHON_FLOAT_CSV_TEXT_NOT_SOURCE_AUTHORITY",
+    "new_decimal_artifact": null,
+    "new_decimal_fingerprint": null,
+    "new_rounding_policy": null,
+    "invariance_proven": false,
+    "tolerance_route_used": false,
+    "option_a": "NO_RAW_CAPTURE_AVAILABLE",
+    "option_b": "NOT_EXECUTED; fresh Dhan adjusted data would not resolve accepted unadjusted target",
+    "option_c": "NOT_ESTABLISHED; source rounding bounds and source-exact comparator absent",
+    "status": "HOLD_SOURCE_DECIMAL_AUTHORITY"
+  },
+  "corporate_actions": {
+    "price_basis_verdict": "ADJUSTED",
+    "basis_evidence_scope": "CURRENT_OFFICIAL_DHAN_DAILY_HISTORICAL_POLICY",
+    "dataset_application": "INFERRED_FROM_SAME_PROVIDER_ENDPOINT; original response not independently re-certified",
+    "original_manifest_price_basis": "UNKNOWN_PRESERVED",
+    "basis_source_ref": "dhan-adjustment-support",
+    "methodology_complete": false,
+    "accepted_target": "equity.next_session_close.return_gt_zero@1.0",
+    "accepted_target_basis": "UNADJUSTED_COMPLETED_CLOSE",
+    "accepted_target_compatible": false,
+    "strategy": "C_HOLD",
+    "actions_complete": false,
+    "actions": [
+      {
+        "kind": "RIGHTS_ISSUE",
+        "ratio": "1:15",
+        "record_date": "2020-05-14",
+        "ex_date": null,
+        "source_ref": "ril-rights-2020"
+      },
+      {
+        "kind": "FINANCIAL_SERVICES_DEMERGER",
+        "market_boundary_date": "2023-07-20",
+        "source_ref": "nse-demerger-2023"
+      },
+      {
+        "kind": "BONUS",
+        "ratio": "1:1",
+        "record_date": "2024-10-28",
+        "ex_date": null,
+        "source_ref": "ril-bonus-2024"
+      }
+    ],
+    "active_exclusion_policy": null,
+    "exclusions_applied": 0,
+    "future_unadjusted_dependency_rule": "Only after qualifying unadjusted input: existing 21-session dependency closure plus next-session target transition must have complete unaffected action evidence; unknown blocks. No arbitrary calendar-day exclusion and no inferred unaffected intervals.",
+    "blocking_codes": [
+      "HOLD_ADJUSTED_SOURCE_UNADJUSTED_TARGET_MISMATCH",
+      "HOLD_COMPLETE_ACTION_COVERAGE_AND_METHOD"
+    ]
+  },
+  "holdout": {
+    "year": 2025,
+    "status": "SEALED",
+    "outcomes_opened": false,
+    "feature_label_or_performance_inspection": false,
+    "date_only_operations": true
+  },
+  "execution": {
+    "native_empirical_qualifier_invocations": 0,
+    "features_constructed": 0,
+    "labels_constructed": 0,
+    "logistic_fits": 0,
+    "scaler_fits": 0,
+    "learned_forecasts": 0,
+    "paired_metrics": 0,
+    "market_data_provider_calls": 0,
+    "broker_calls": 0,
+    "runtime_files_changed": 0
+  },
+  "gates": [
+    {
+      "gate": "source_vintage_provenance",
+      "previous": "HOLD",
+      "evidence": "2026 acquisition preserved; separate revised-history proposal pinned",
+      "current": "HOLD_CURRENT_FF1; NOT_CAPTURED_AS_KNOWN",
+      "blocking": true
+    },
+    {
+      "gate": "pit_availability",
+      "previous": "HOLD",
+      "evidence": "Close+30m cutoff/+5m as-of retained as proposed assumption, not publication fact",
+      "current": "HOLD_NO_ADOPTED_ALTERNATIVE_PROFILE",
+      "blocking": true
+    },
+    {
+      "gate": "source_decimal_fidelity",
+      "previous": "HOLD",
+      "evidence": "Default JSON float and CSV exporter inspected; no original numeric capture",
+      "current": "HOLD_EXACT_COMPATIBLE_SOURCE_REQUIRED",
+      "blocking": true
+    },
+    {
+      "gate": "calendar",
+      "previous": "HOLD",
+      "evidence": "28 closed-date checks and 2 declared special sessions consistent; 8 weekend dates need clock qualification",
+      "current": "HOLD_PARTIAL_AUTHORITY_ONLY",
+      "blocking": true
+    },
+    {
+      "gate": "corporate_actions_price_basis",
+      "previous": "HOLD_UNKNOWN_BASIS",
+      "evidence": "Official Dhan adjusted daily policy; rights/demerger/bonus checkpoints",
+      "current": "HOLD_ADJUSTED_SOURCE_UNADJUSTED_TARGET_MISMATCH",
+      "blocking": true
+    },
+    {
+      "gate": "historical_security_identity",
+      "previous": "HOLD_CURRENT_MAPPING_ONLY",
+      "evidence": "2017-18 and 2020 NSE symbol/ISIN corroboration plus 2026 current resolver",
+      "current": "HOLD_FULL_INTERVAL_AND_PROVIDER_SERIES_UNQUALIFIED",
+      "blocking": true
+    },
+    {
+      "gate": "rights_admission",
+      "previous": "ADMITTED_WITH_WARNING",
+      "evidence": "Existing rights config unchanged",
+      "current": "WARN_ONLY_ADMITTED_WITH_WARNING",
+      "blocking": false
+    },
+    {
+      "gate": "dataset_integrity",
+      "previous": "PASS",
+      "evidence": "CSV byte hash and 2045 date rows/zero duplicates reconfirmed",
+      "current": "PASS",
+      "blocking": false
+    }
+  ],
+  "next_prompt_title": "TIAF A7 / FF-1.1A — UNADJUSTED SOURCE-EXACT DATA, NSE SESSION/ACTION AND DATED IDENTITY EVIDENCE, WITH VINTAGE PROFILE ACCEPTANCE",
+  "evidence_resolution_fingerprint": "0e6d8036f8429238a97859c65772b706aac108c0b80f4e58c30517abe5c2d2b8"
+}

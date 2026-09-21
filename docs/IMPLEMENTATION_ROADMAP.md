@@ -3,7 +3,7 @@
 This is the **near-term forward queue**, subordinate to the intended major order
 in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 [milestone ledger](MILESTONES.md) owns actual status/tags and the
-[README](../README.md) is the executive dashboard. Status: 2026-09-19
+[README](../README.md) is the executive dashboard. Status: 2026-09-21
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
 ```text
@@ -100,15 +100,20 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. **TIAF A7 / FF-1.1A — EMPIRICAL DATA RIGHTS AND QUALIFICATION EXECUTION** after the accepted
+1. **TIAF A7 / FF-1.2 — LOGISTIC CANDIDATE TRAINING ARTIFACT IMPLEMENTATION** after the accepted
    [FF-0 engineering miniature](TIAF_A7_FF0_ACCEPTANCE.md).
    FF and A7 architectures are independently accepted; the
    [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records residual gates,
    not implementation readiness.
+   The [FF-1.1A rights-policy revision](TIAF_A7_FF1_1A_RIGHTS_POLICY_REVISION_AND_DATA_PROVISIONING.md)
+   is complete: COLD WARN_ONLY admits uncertain rights with a warning, never
+   approval. The [adjusted-data research qualification](TIAF_A7_FF1_1A_ADJUSTED_DATA_RESEARCH_PROFILE_AND_FINAL_QUALIFICATION.md)
+   now passes on the existing Dhan dataset. Empirical fitting is authorized for
+   that pinned research profile only; no fit was performed. 2025 remains sealed.
 2. Preserve the [completed four-step FF-0 baseline](TIAF_A7_FF0_ACCEPTANCE.md).
    The [completed FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
    specifies scientific/data/dependency/fit gates; independent protocol review
-   and empirical qualification remain prerequisites to fitting. The [A7 roadmap](TIAF_A7_DETAILED_ROADMAP.md)
+   remains distinct from model approval. The [A7 roadmap](TIAF_A7_DETAILED_ROADMAP.md)
    retains FF-0…FF-7; old A7.1…A7.5 labels are not a second active hierarchy.
 3. FF-0/1 scientific mechanics precede FF-2 calibrated/lifecycle miniature.
    Later publication is a separate checkpoint; optional advanced stages need
@@ -175,9 +180,11 @@ and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
 (`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
 is complete. [FF-1.1 qualification/schema tooling](TIAF_A7_FF1_1_DATA_QUALIFICATION_FEATURE_SCHEMA_IMPLEMENTATION.md)
 is **FF1_1_ACCEPTED**; learned FF-1 runtime remains **NOT_IMPLEMENTED**.
-**EMPIRICAL_FITTING_AUTHORIZED = NO**. Next is separately requested FF-1.1A
-empirical rights and qualification execution. No real dataset qualification,
-calibration, trained model or new consumer authority is claimed.
+**EMPIRICAL_FITTING_AUTHORIZED = YES** for the pinned
+[FF-1.1A adjusted retrospective qualification](TIAF_A7_FF1_1A_ADJUSTED_DATA_RESEARCH_PROFILE_AND_FINAL_QUALIFICATION.md).
+Rights remain UNVERIFIED/WARN_ONLY, not approved. The existing Dhan dataset
+passes bounded research gates; 2025 remains sealed. No fitting, calibration,
+trained model or new consumer authority is claimed.
 Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
@@ -203,8 +210,9 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FF-1.1A — EMPIRICAL DATA RIGHTS AND QUALIFICATION EXECUTION**.
+Exact next prompt: **TIAF A7 / FF-1.2 — LOGISTIC CANDIDATE TRAINING ARTIFACT IMPLEMENTATION**.
 FF-0 acceptance is limited to internal synthetic engineering mechanics. The FF-1 plan
-has an accepted FF-1.1 tooling slice; FF-1.1A needs a separate request. No training, model approval,
-publication, frozen-A6 changes or A8 is
-authorized. Historical planning/acceptance records retain their then-current status.
+has accepted FF-1.1 tooling and the FF-1.1A adjusted research qualification.
+No fit was performed; FF-1.2 implementation requires its own request. Model
+approval, publication, frozen-A6 changes and A8 remain out of scope. Historical
+planning/acceptance records retain their then-current status.

@@ -1,6 +1,8 @@
 """Independent deterministic endpoint labeler; no forecast, store or execution imports."""
 
 from datetime import datetime
+from decimal import Decimal
+from typing import Literal
 
 from tiaf.forecasting.enums import QualificationStatus
 from tiaf.forecasting.identity import ArtifactReference, CapturedBlobReference
@@ -12,6 +14,13 @@ from .forecast_contracts import (
     OutcomeJournalEntry,
     QualifiedCloseObservation,
 )
+
+
+def endpoint_direction(reference: Decimal, terminal: Decimal) -> Literal[0, 1]:
+    """Shared target arithmetic; callers own basis, clock and evidence qualification."""
+    if not reference.is_finite() or not terminal.is_finite() or min(reference, terminal) <= 0:
+        raise ValueError("INVALID_DIRECTION_ENDPOINT")
+    return 1 if terminal > reference else 0
 
 
 def resolve_outcome(
@@ -100,7 +109,7 @@ def resolve_outcome(
             state, eligibility, reason = "CENSORED", "INELIGIBLE", "truth:missing-after-deadline"
     elif closed:
         assert reference.value is not None
-        label = int(terminal.value > reference.value)
+        label = endpoint_direction(reference.value, terminal.value)
         state, observation, eligibility, reason = (
             "CLOSED",
             "COMPLETE",

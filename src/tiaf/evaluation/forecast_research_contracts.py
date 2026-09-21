@@ -42,6 +42,56 @@ class QualificationState(StrEnum):
     UNKNOWN = "UNKNOWN"
 
 
+class RightsEvidenceStatus(StrEnum):
+    VERIFIED_ALLOWED = "VERIFIED_ALLOWED"
+    VERIFIED_DENIED = "VERIFIED_DENIED"
+    UNVERIFIED = "UNVERIFIED"
+    AMBIGUOUS = "AMBIGUOUS"
+
+
+class RightsEnforcementPolicy(StrEnum):
+    ENFORCE = "ENFORCE"
+    WARN_ONLY = "WARN_ONLY"
+    DISABLED = "DISABLED"
+
+
+class RightsAdmissionResult(StrEnum):
+    ADMITTED = "ADMITTED"
+    ADMITTED_WITH_WARNING = "ADMITTED_WITH_WARNING"
+    NOT_ENFORCED = "NOT_ENFORCED"
+    HOLD = "HOLD"
+
+
+class ResearchRightsConfig(ResearchContract):
+    """Trusted COLD research bootstrap input; never a dataset/request override."""
+
+    policy_version: Literal["FF1_RIGHTS_1.0"] = "FF1_RIGHTS_1.0"
+    rights_enforcement_policy: RightsEnforcementPolicy = RightsEnforcementPolicy.WARN_ONLY
+
+    @property
+    def fingerprint(self) -> str:
+        return semantic_fingerprint(self)
+
+
+def rights_admission(
+    status: RightsEvidenceStatus, policy: RightsEnforcementPolicy
+) -> tuple[RightsAdmissionResult, tuple[str, ...]]:
+    """Research admission only, not a legal permission or learning grant.
+
+    No higher-authority denial override exists in this workflow. Even DISABLED
+    keeps an explicit denial blocking; it bypasses uncertainty, not a denial.
+    """
+    if status is RightsEvidenceStatus.VERIFIED_DENIED:
+        return RightsAdmissionResult.HOLD, ("EXPLICIT_RIGHTS_DENIAL_NO_OVERRIDE",)
+    if policy is RightsEnforcementPolicy.DISABLED:
+        return RightsAdmissionResult.NOT_ENFORCED, ("RIGHTS_ENFORCEMENT_DISABLED",)
+    if status is RightsEvidenceStatus.VERIFIED_ALLOWED:
+        return RightsAdmissionResult.ADMITTED, ()
+    if policy is RightsEnforcementPolicy.ENFORCE:
+        return RightsAdmissionResult.HOLD, ("RIGHTS_EVIDENCE_NOT_VERIFIED_ALLOWED",)
+    return RightsAdmissionResult.ADMITTED_WITH_WARNING, ("RIGHTS_NOT_APPROVED_RESEARCH_ONLY",)
+
+
 class QualificationReason(StrEnum):
     RIGHTS_UNQUALIFIED = "RIGHTS_UNQUALIFIED"
     SECURITY_IDENTITY = "SECURITY_IDENTITY"
@@ -73,14 +123,31 @@ class DataRightsQualification(ResearchContract):
     subject: InstrumentKey
     coverage_start: ResearchDate
     coverage_end: ResearchDate
-    local_research: QualificationState
-    model_training: QualificationState
-    derived_feature_storage: QualificationState
-    evaluation_artifact_retention: QualificationState
-    replay_evidence_retention: QualificationState
+    # Preserve legacy source assertions without equating NOT_QUALIFIED to denial.
+    local_research: QualificationState | RightsEvidenceStatus
+    model_training: QualificationState | RightsEvidenceStatus
+    derived_feature_storage: QualificationState | RightsEvidenceStatus
+    evaluation_artifact_retention: QualificationState | RightsEvidenceStatus
+    replay_evidence_retention: QualificationState | RightsEvidenceStatus
     basis_refs: tuple[ArtifactReference, ...] = ()
     assessed_at: ForecastDateTime
     valid_until: ForecastDateTime | None = None
+
+    @model_validator(mode="after")
+    def verified_evidence_requires_basis(self) -> Self:
+        states = (
+            self.local_research,
+            self.model_training,
+            self.derived_feature_storage,
+            self.evaluation_artifact_retention,
+            self.replay_evidence_retention,
+        )
+        if not self.basis_refs and any(
+            s in (RightsEvidenceStatus.VERIFIED_ALLOWED, RightsEvidenceStatus.VERIFIED_DENIED)
+            for s in states
+        ):
+            raise ValueError("VERIFIED_RIGHTS_BASIS_REQUIRED")
+        return self
 
     @property
     def reference(self) -> ArtifactReference:
@@ -287,10 +354,15 @@ class EmpiricalDatasetQualification(ResearchContract):
     dataset_id: LogicalId
     dataset_fingerprint: Sha256
     data_basis: DataBasis
-    policy: Literal["FF1_1_QUALIFICATION_1.0"] = "FF1_1_QUALIFICATION_1.0"
+    policy: Literal["FF1_1_QUALIFICATION_1.1"] = "FF1_1_QUALIFICATION_1.1"
     assessed_at: ForecastDateTime
     feature_schema: FF1FeatureSchema
     rights_ref: ArtifactReference
+    rights_evidence_status: RightsEvidenceStatus
+    rights_enforcement_policy: RightsEnforcementPolicy
+    rights_admission_result: RightsAdmissionResult
+    rights_warnings: tuple[str, ...]
+    rights_configuration_fingerprint: Sha256
     source_fingerprint: Sha256
     security_fingerprint: Sha256
     calendar_fingerprint: Sha256
@@ -328,6 +400,19 @@ class EmpiricalDatasetQualification(ResearchContract):
 
     @model_validator(mode="after")
     def partition_and_seal(self) -> Self:
+        admission, warnings = rights_admission(
+            self.rights_evidence_status, self.rights_enforcement_policy
+        )
+        config = ResearchRightsConfig(rights_enforcement_policy=self.rights_enforcement_policy)
+        if (
+            self.rights_admission_result != admission
+            or self.rights_warnings != warnings
+            or self.rights_configuration_fingerprint != config.fingerprint
+            or (QualificationReason.RIGHTS_UNQUALIFIED in self.reasons)
+            != (admission is RightsAdmissionResult.HOLD)
+            or (admission is RightsAdmissionResult.HOLD and self.eligible_observations)
+        ):
+            raise ValueError("QUALIFICATION_RIGHTS_POLICY_MISMATCH")
         if len({o.slot_id for o in self.observations}) != len(self.observations):
             raise ValueError("DUPLICATE_OBSERVATION_SLOT")
         eligible = sum(o.eligible for o in self.observations)

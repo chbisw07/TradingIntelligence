@@ -10,10 +10,12 @@ from typing import Any
 import pytest
 from pydantic import ValidationError
 
-from tiaf.evaluation.forecast_qualification import qualify_dataset
+from tiaf.evaluation.forecast_qualification import ResearchQualificationRuntime, qualify_dataset
 from tiaf.evaluation.forecast_research_contracts import (
     EmpiricalDataset,
     EmpiricalDatasetQualification,
+    ResearchRightsConfig,
+    RightsEnforcementPolicy,
 )
 from tiaf.evaluation.forecast_research_contracts import (
     QualificationReason as R,
@@ -27,8 +29,15 @@ from ._capture_support import outcome_packet, packet
 from ._research_support import ASSESSMENT, dataset, payload, repin_rights
 
 
-def report(data: dict[str, Any] | None = None) -> EmpiricalDatasetQualification:
-    return qualify_dataset(
+def report(
+    data: dict[str, Any] | None = None,
+    *,
+    enforcement: RightsEnforcementPolicy = RightsEnforcementPolicy.WARN_ONLY,
+) -> EmpiricalDatasetQualification:
+    runtime = ResearchQualificationRuntime(
+        ResearchRightsConfig(rights_enforcement_policy=enforcement)
+    )
+    return runtime.qualify(
         dataset() if data is None else EmpiricalDataset.model_validate(data), assessed_at=ASSESSMENT
     )
 
@@ -106,7 +115,7 @@ def test_every_required_right_must_be_explicitly_qualified(field: str, state: st
     data = payload()
     data["rights"][field] = state
     repin_rights(data)
-    result = report(data)
+    result = report(data, enforcement=RightsEnforcementPolicy.ENFORCE)
     assert "HOLD_DATA_RIGHTS" in result.verdicts
     assert result.eligible_observations == 0
     assert all(R.RIGHTS_UNQUALIFIED in o.reasons for o in result.observations)
@@ -128,7 +137,7 @@ def test_rights_require_scoped_pinned_basis(fault: str) -> None:
         repin_rights(data)
     else:
         data["source"]["rights_ref"]["fingerprint"] = "0" * 64
-    assert "HOLD_DATA_RIGHTS" in report(data).verdicts
+    assert "HOLD_DATA_RIGHTS" in report(data, enforcement=RightsEnforcementPolicy.ENFORCE).verdicts
 
 
 @pytest.mark.parametrize(

@@ -6,6 +6,19 @@ Date: **2026-09-19, Asia/Kolkata**. Decision: **FF1_1_ACCEPTED**.
 data/fitting authorization are separate gates. No real dataset, entitlement or
 retained historical capture was inspected, acquired or certified in this pass.
 
+### Subsequent rights-policy revision — 2026-09-20
+
+The [FF-1.1A revision](TIAF_A7_FF1_1A_RIGHTS_POLICY_REVISION_AND_DATA_PROVISIONING.md)
+introduces qualification policy `FF1_1_QUALIFICATION_1.1` and COLD
+`ResearchRightsConfig` (default `WARN_ONLY`). Reports now distinguish rights
+evidence, enforcement, admission and warnings, and seal the configuration hash.
+Unknown/ambiguous rights need not block local research; explicit denial still
+blocks. Source/evidence identity and every scientific gate remain mandatory.
+No fitting grant, dataset, PIT relaxation or FF-0 change follows from this policy.
+The sections below record the **original FF-1.1 acceptance**, including its
+effectively enforced rights gate, test counts and then-next title. They are not
+retroactively revised. Configuration and current queue are in the follow-up.
+
 ## 1. Scope and preserved baselines
 
 Entry HEAD: `8bd1a72` (completed FF-1 plan); entry worktree clean.
