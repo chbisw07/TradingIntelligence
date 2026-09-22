@@ -9,7 +9,17 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-2026-09-22 latest (review began September 21): [independent FF-1 scientific review](TIAF_A7_FF1_INDEPENDENT_SCIENTIFIC_ACCEPTANCE_AND_FINAL_HOLDOUT_DECISION_DESIGN.md)
+2026-09-22 latest: [pre-holdout fifth-fold artifact preparation](TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
+completed one empirical scaler/model fit and the BaseRate freeze at
+2024-12-31T09:15:00+05:30. 1,690 TRAIN rows (878/812), 11 iterations,
+reconstruction MATCH; **FIFTH_FOLD_PREPARATION_COMPLETE**, **3,351** tests pass. Handoff
+`c40148f60e985c83fe8bca027a3722583ed8c1999ecfc86e4959c4fe6166ce54`.
+2025 remains SEALED; no protected forecasts/metrics, no final protocol freeze
+or opening authority. Next separately requested:
+**TIAF A7 / FF-1 — FINAL-HOLDOUT PROTOCOL FREEZE REVIEW (WITH FIFTH-FOLD HANDOFF)**.
+The prior review below is unchanged historical evidence; no commit/tag/push.
+
+2026-09-22 review checkpoint (began September 21): [independent FF-1 scientific review](TIAF_A7_FF1_INDEPENDENT_SCIENTIFIC_ACCEPTANCE_AND_FINAL_HOLDOUT_DECISION_DESIGN.md)
 returns **HOLD_FF1_BEFORE_FINAL_HOLDOUT**. No development-gate failure or protected
 outcome violation found; the accepted handoff has only four development models
 and BaseRate artifacts, not the planned fifth-fold final artifacts. Opening

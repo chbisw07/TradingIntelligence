@@ -503,3 +503,38 @@ Current scientific result: **INSUFFICIENT_EVIDENCE**, with holdout **SEALED** an
 final evidence **NOT_RUN**. This command cannot emit final support and does not
 promote a model. See the [FF-1.4 report](../docs/TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
 for metrics, limitations, exact policy and fingerprints.
+
+## FF-1 fifth-fold pre-holdout preparation (internal, single attempt)
+
+`prepare_ff1_fifth_fold_artifacts.py` prepares only the model, TRAIN scaler and
+BaseRate state at the fixed 2024-12-31 09:15 Asia/Kolkata cutoff. It does not
+generate protected forecasts, score 2025, freeze a final protocol or grant
+holdout-opening authority. A separate fifth-fold grant leaves the old four-fold
+grant unchanged. Safe default (no arguments) performs no operation.
+
+The authorized command has **already run once**; do not repeat it:
+
+```bash
+.venv/bin/python scripts/prepare_ff1_fifth_fold_artifacts.py --prepare \
+  --approve-dependency-lock 54e8577800d2a9132df2c8d3721e0d880da9e706a58f6d8b9beba75338e0ac86
+```
+
+Output is fixed to `data/ff1/preholdout_fifth_fold_20260922`. Existing output is
+refused, including an incomplete attempt. No alternate output/force/retry option.
+An exclusive attempt record is persisted before the worker starts; failed fits
+cannot be silently repeated. Do not delete/rename the corpus to bypass this gate.
+`--preflight` checks only TRAIN admission and creates no fit or corpus.
+
+Read-only reconstruction of the actual handoff:
+
+```bash
+.venv/bin/python scripts/prepare_ff1_fifth_fold_artifacts.py \
+  --verify-handoff c40148f60e985c83fe8bca027a3722583ed8c1999ecfc86e4959c4fe6166ce54
+```
+
+`--corpus` is permitted only for replay of a relocated captured corpus. Replay
+does not require original qualification/CSV or optional ML packages. Exit 0
+means completed/MATCH (or explicitly safe/preflight success), 1 HOLD/MISMATCH,
+2 invalid CLI. No network, provider, broker, calibration or public activation.
+See the [fifth-fold handoff report](../docs/TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
+for authority, exact hashes, audit accounting and the required next freeze review.

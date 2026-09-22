@@ -5,10 +5,12 @@ Full capture fingerprints include audit clocks; scientific fingerprints do not.
 """
 
 import math
+from datetime import datetime
 from typing import Annotated, Literal, Self
 
 from pydantic import Field, StrictFloat, StrictInt, model_validator
 
+from tiaf.contracts.common import TIAF_TIMEZONE
 from tiaf.forecasting.identity import ForecastDateTime, semantic_fingerprint
 from tiaf.forecasting.research_contracts import ResearchContract, ResearchDate
 from tiaf.planner.models import Sha256
@@ -94,6 +96,49 @@ class TrainingGrant(SealedResearch):
     max_attempts_per_fold: Literal[1] = 1
 
 
+FIFTH_CUTOFF = datetime(2024, 12, 31, 9, 15, tzinfo=TIAF_TIMEZONE)
+
+
+class FifthFoldGrant(SealedResearch):
+    """Separate pre-open authority. Never widens the four-development-fold grant."""
+
+    grant_id: Literal["ff1.pre_holdout.fifth_fold/1.0"] = "ff1.pre_holdout.fifth_fold/1.0"
+    basis: Literal["QUALIFIED_ADJUSTED_RESEARCH", "SYNTHETIC_ENGINEERING"]
+    qualification_fingerprint: Sha256
+    qualification_blob: Sha256
+    dataset_fingerprint: Sha256
+    research_profile_fingerprint: Sha256
+    feature_schema_fingerprint: Sha256
+    protocol_fingerprint: Sha256
+    authority_document_fingerprint: Sha256
+    dependency_lock_fingerprint: Sha256
+    code_fingerprint: Sha256
+    issued_at: ForecastDateTime
+    cutoff: ForecastDateTime = FIFTH_CUTOFF
+    allowed_folds: tuple[Literal[2025]] = (2025,)
+    pre_holdout_fifth_fold_fit: Literal["AUTHORIZED"] = "AUTHORIZED"
+    post_holdout_refit: Literal["FORBIDDEN"] = "FORBIDDEN"
+    holdout_status: Literal["SEALED"] = "SEALED"
+    protected_outcome_access: Literal["NONE"] = "NONE"
+    final_evaluation_authorized: Literal[False] = False
+    forecast_generation: Literal["DEFERRED_TO_ONE_SHOT_EVALUATION"] = (
+        "DEFERRED_TO_ONE_SHOT_EVALUATION"
+    )
+    max_fits: Literal[1] = 1
+    max_scaler_fits: Literal[1] = 1
+    max_attempts_per_fold: Literal[1] = 1
+    fit_timeout_seconds: Literal[60] = 60
+    campaign_timeout_seconds: Literal[600] = 600
+    worker_memory_mib: Literal[512] = 512
+    numeric_threads: Literal[1] = 1
+
+    @model_validator(mode="after")
+    def fixed_cutoff(self) -> Self:
+        if self.cutoff != FIFTH_CUTOFF or self.issued_at <= self.cutoff:
+            raise ValueError("FIFTH_FOLD_CUTOFF_OR_AUTHORITY_CLOCK")
+        return self
+
+
 class PopulationAudit(ResearchContract):
     """Disjoint whole-population buckets; purge total includes the embargo subset."""
 
@@ -128,8 +173,8 @@ class FoldManifest(SealedResearch):
     )
     feature_schema_id: Literal["ff1.reliance.a2_daily_five/1.0"] = "ff1.reliance.a2_daily_five/1.0"
     feature_order: FeatureOrder = FEATURE_ORDER
-    grant: TrainingGrant
-    fold_id: Literal[2021, 2022, 2023, 2024]
+    grant: TrainingGrant | FifthFoldGrant
+    fold_id: Literal[2021, 2022, 2023, 2024, 2025]
     fit_cutoff: ForecastDateTime
     embargo_date: ResearchDate
     train_start: ResearchDate
@@ -152,7 +197,9 @@ class FoldManifest(SealedResearch):
     def membership(self) -> Self:
         ids = self.observation_ids
         if (
-            len(ids) != self.audit.train
+            self.fold_id not in self.grant.allowed_folds
+            or (isinstance(self.grant, FifthFoldGrant) and self.fit_cutoff != FIFTH_CUTOFF)
+            or len(ids) != self.audit.train
             or len(ids) != len(set(ids))
             or self.observation_order_fingerprint != semantic_fingerprint(ids)
             or self.train_start > self.train_end

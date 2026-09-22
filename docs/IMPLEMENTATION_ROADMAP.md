@@ -11,13 +11,16 @@ completed 969 paired 2021–2024 observations and offline reconstruction MATCH.
 Development gates pass; classification **INSUFFICIENT_EVIDENCE**. Keep 2025
 **SEALED**, final evidence **NOT_RUN**. **FF1_4_ACCEPTED**; its full-suite checkpoint
 was **3,327 passed**, not a new full run in the subsequent documentation review.
-The [independent review](TIAF_A7_FF1_INDEPENDENT_SCIENTIFIC_ACCEPTANCE_AND_FINAL_HOLDOUT_DECISION_DESIGN.md)
-now returns **HOLD_FF1_BEFORE_FINAL_HOLDOUT**: the planned final-fold model/scaler
-and BaseRate artifacts are missing from the accepted four-fold handoff. Final
-opening is **not authorized**, final protocol **not frozen**.
-Next separately requested: **TIAF A7 / FF-1 — PRE-HOLDOUT FIFTH-FOLD ARTIFACT PREPARATION AND NO-REFIT AUTHORITY RECONCILIATION**.
-No model fitting, holdout opening, tuning, calibration or promotion is authorized
-by this review. Repeat independent freeze review after the handoff is resolved.
+The [fifth-fold preparation](TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
+has now supplied the model/scaler/BaseRate handoff missing at the preserved
+independent review: one empirical fit, 1,690 training rows, replay MATCH.
+**FIFTH_FOLD_PREPARATION_COMPLETE**; **3,351** repository tests pass.
+Final opening remains **not authorized**,
+final protocol **not frozen**; the 2025 holdout is SEALED.
+Next separately requested: **TIAF A7 / FF-1 — FINAL-HOLDOUT PROTOCOL FREEZE REVIEW (WITH FIFTH-FOLD HANDOFF)**.
+No second fit, post-holdout refit, holdout opening, tuning, calibration or promotion
+is authorized by preparation. The independent reviewer must freeze the final
+one-shot protocol before any protected outcome access.
 The earlier FF-1.1A queue below is historical.
 
 ```text

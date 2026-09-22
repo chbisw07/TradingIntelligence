@@ -26,13 +26,15 @@ holdout evidence **NOT_RUN**. **FF1_4_ACCEPTED**; its full-suite checkpoint was
 No tuning, promotion or public forecast activation. Earlier FF-1.2 queue
 statements below describe the historical FF-1.1A checkpoint, not the current queue.
 
-Latest [independent scientific review](docs/TIAF_A7_FF1_INDEPENDENT_SCIENTIFIC_ACCEPTANCE_AND_FINAL_HOLDOUT_DECISION_DESIGN.md):
-**HOLD_FF1_BEFORE_FINAL_HOLDOUT**. Development gates remain accepted, but the
-planned fifth-fold model/scaler and BaseRate artifacts are not in the accepted
-four-fold handoff. Final opening is **not authorized**; final protocol **not frozen**.
-2025 remains SEALED; final evidence NOT_RUN.
+Latest [pre-holdout fifth-fold preparation](docs/TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
+has produced the missing model/scaler and BaseRate handoff: 1,690 TRAIN rows,
+one empirical fit, 11 iterations, reconstruction MATCH.
+**FIFTH_FOLD_PREPARATION_COMPLETE**; **3,351** repository tests pass.
+The prior independent review is preserved unchanged. Final opening
+remains **not authorized**, final protocol **not frozen**, 2025 **SEALED** and
+final evidence **NOT_RUN**. No post-holdout refit is allowed.
 
-Next separately authorized step: **TIAF A7 / FF-1 — PRE-HOLDOUT FIFTH-FOLD ARTIFACT PREPARATION AND NO-REFIT AUTHORITY RECONCILIATION**.
+Next separately authorized step: **TIAF A7 / FF-1 — FINAL-HOLDOUT PROTOCOL FREEZE REVIEW (WITH FIFTH-FOLD HANDOFF)**.
 
 | Workstream | State | Meaning | Next step |
 |---|---|---|---|
@@ -46,8 +48,8 @@ Next separately authorized step: **TIAF A7 / FF-1 — PRE-HOLDOUT FIFTH-FOLD ART
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
 | A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
-| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 development evaluated; final-artifact handoff HOLD; no public forecast capability | Pre-holdout fifth-fold artifact preparation and no-refit authority reconciliation |
-| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 ACCEPTED / FF-1 DEVELOPMENT EVALUATED / FF-2 NOT_IMPLEMENTED | 969 paired observations; INSUFFICIENT_EVIDENCE; 2025 SEALED; final evidence NOT_RUN | Resolve final-fold artifact handoff, then repeat protocol-freeze review; opening not authorized |
+| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 development evaluated; pre-holdout fifth-fold artifacts prepared; no public forecast capability | Final-holdout protocol freeze review with fifth-fold handoff |
+| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 ACCEPTED / FF-1 DEVELOPMENT EVALUATED / FF-2 NOT_IMPLEMENTED | 969 paired observations; INSUFFICIENT_EVIDENCE; fifth-fold preparation does not score 2025; holdout SEALED | Review and freeze final protocol; opening not authorized |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / RUNTIME NOT_IMPLEMENTED | Market-state/latent-factor research remains intact; not the platform definition | Conditional family research, not a prerequisite to a useful simple FF |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
 | A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |

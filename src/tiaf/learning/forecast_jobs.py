@@ -19,6 +19,7 @@ from tiaf.forecasting.capture import strict_json
 from tiaf.forecasting.identity import ForecastDateTime, canonical_json
 
 from .forecast_artifacts import (
+    FifthFoldGrant,
     Finite,
     LogisticArtifact,
     SealedResearch,
@@ -28,8 +29,8 @@ from .forecast_artifacts import (
 from .forecast_training import read_bounded
 
 
-class TrainingJob(SealedResearch):
-    fold_id: Literal[2021, 2022, 2023, 2024]
+class _TrainingJob(SealedResearch):
+    fold_id: int
     grant_fingerprint: str
     manifest_fingerprint: str
     status: Literal["TRAINED", "UNAVAILABLE", "FAILED"]
@@ -66,6 +67,22 @@ class TrainingJob(SealedResearch):
         return self
 
 
+class TrainingJob(_TrainingJob):
+    fold_id: Literal[2021, 2022, 2023, 2024]
+
+
+class FifthTrainingJob(_TrainingJob):
+    fold_id: Literal[2025] = 2025
+
+    @model_validator(mode="after")
+    def fifth_authority(self) -> Self:
+        if self.artifact is not None and not isinstance(
+            self.artifact.manifest.grant, FifthFoldGrant
+        ):
+            raise ValueError("FIFTH_AUTHORITY_REQUIRED")
+        return self
+
+
 class TrainingRun(SealedResearch):
     grant: TrainingGrant
     jobs: tuple[TrainingJob, ...] = Field(max_length=4)
@@ -90,6 +107,12 @@ class TrainingRun(SealedResearch):
 
 
 def run_fit(request: TrainingInput) -> TrainingJob:
+    if not isinstance(request.manifest.grant, TrainingGrant):
+        raise ValueError("DEVELOPMENT_GRANT_REQUIRED")
+    return _run_fit(request, TrainingJob)
+
+
+def _run_fit[Job: _TrainingJob](request: TrainingInput, job_type: type[Job]) -> Job:
     request = TrainingInput.model_validate(request.model_dump())
     m = request.manifest
     start = datetime.now(TIAF_TIMEZONE)
@@ -144,9 +167,9 @@ def run_fit(request: TrainingInput) -> TrainingJob:
         elapsed_seconds=time.monotonic() - tick,
     )
     try:
-        return TrainingJob.model_validate({**fields, **result})
+        return job_type.model_validate({**fields, **result})
     except ValueError:
-        return TrainingJob.model_validate(
+        return job_type.model_validate(
             {
                 **fields,
                 "status": "FAILED",

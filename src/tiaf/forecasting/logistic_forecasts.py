@@ -154,7 +154,8 @@ def generate(
     ):
         raise ValueError("FORECAST_HANDOFF_OR_CLOCK_MISMATCH")
     request = ResearchForecastRequest(
-        fold_id=model.manifest.fold_id,
+        # TrainingRun/model_for admits development jobs only; fifth-fold handoff is separate.
+        fold_id=cast(Fold, model.manifest.fold_id),
         origin=origin,
         composition=LogisticComposition(
             model_fingerprint=cast(str, model.fingerprint),
