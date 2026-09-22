@@ -9,7 +9,19 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-2026-09-22 latest: [one-shot protected 2025 final-holdout evaluation](TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
+2026-09-22 latest: [independent final scientific closure and baseline decision](TIAF_A7_FF1_INDEPENDENT_FINAL_SCIENTIFIC_CLOSURE_AND_BASELINE_DECISION.md)
+returns **FF1_FINAL_CLOSURE_ACCEPTED** / **FF1_SCIENTIFICALLY_CLOSED_INCONCLUSIVE**.
+Scientific outcome **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE** is preserved.
+Infrastructure accepted; BaseRate BENCHMARK, Logistic CHALLENGER / EXPERIMENTAL,
+promotion eligible NO. 2025 remains CONSUMED, one execution, no post-holdout refit.
+FF-2 eligible for a new governed research proposal only; data/fit/prospective-use
+gates are not granted. **READY_TO_TAG_FF1 = YES** for a research baseline, not
+Logistic superiority/activation. No empirical rerun or runtime change. No tag yet.
+Exact next task: **TIAF A7 / FF-1 — FINAL FREEZE / TAG READINESS CHECK**.
+
+The execution checkpoint below retains its historical then-next task.
+
+2026-09-22 execution checkpoint: [one-shot protected 2025 final-holdout evaluation](TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
 returns **FF1_FINAL_HOLDOUT_ACCEPTED**, scientific **INSUFFICIENT_EVIDENCE**
 (`CONFIDENCE_NONDECISIVE`). 249/249 pairs, 128 positive / 121 zero, coverage 100%,
 49 complete blocks, no exclusions. Captured replay MATCH; **3,445** full-suite

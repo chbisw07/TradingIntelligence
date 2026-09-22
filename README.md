@@ -17,11 +17,22 @@ risk/capital/action authority and the broker retains execution truth.
 Status checked **2026-09-22 (Asia/Kolkata)**. The
 [milestone ledger](docs/MILESTONES.md) owns history, tags and closure evidence.
 
-Latest: [one-shot protected 2025 final-holdout evaluation](docs/TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
+Latest: [independent final scientific closure](docs/TIAF_A7_FF1_INDEPENDENT_FINAL_SCIENTIFIC_CLOSURE_AND_BASELINE_DECISION.md)
+returns **FF1_FINAL_CLOSURE_ACCEPTED** / **FF1_SCIENTIFICALLY_CLOSED_INCONCLUSIVE**.
+Scientific outcome remains **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**.
+Infrastructure accepted; Logistic **CHALLENGER / EXPERIMENTAL**, promotion
+eligible **NO**; BaseRate **BENCHMARK**, FF-0 behavior unchanged. 2025 remains
+**CONSUMED**, one execution, no post-holdout refit. **READY_TO_TAG_FF1 = YES**
+for the research baseline, not superiority or production activation; no tag
+created. FF-2 is eligible for a new governed research proposal only, with separate
+calibration/test qualification and approval still required. No empirical rerun.
+
+Execution checkpoint: [one-shot protected 2025 final-holdout evaluation](docs/TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
 returns **FF1_FINAL_HOLDOUT_ACCEPTED**, scientific outcome **INSUFFICIENT_EVIDENCE**
 (`CONFIDENCE_NONDECISIVE`). All 249 origins paired; 128 positive / 121 zero,
 100% coverage, 49 complete blocks, no exclusions. Captured replay **MATCH**;
-**3,445** full-suite tests pass. 2025 is permanently **CONSUMED**, evidence
+**3,445** full-suite tests passed at execution (not rerun for documentation closure).
+2025 is permanently **CONSUMED**, evidence
 **COMPLETE**, execution count **1**. No post-holdout refit, retry or automatic
 promotion; Logistic remains CHALLENGER / EXPERIMENTAL and BaseRate BENCHMARK.
 
@@ -51,7 +62,7 @@ protocol frozen, final evaluation authorized for the separately requested next
 pass. **3,414** tests pass; both captured closures replay MATCH. 2025 remains
 **SEALED**, final evidence **NOT_RUN**, empirical execution slot unconsumed.
 
-Next separately requested: **TIAF A7 / FF-1 — INDEPENDENT FINAL SCIENTIFIC CLOSURE AND BASELINE DECISION**.
+Next separately requested: **TIAF A7 / FF-1 — FINAL FREEZE / TAG READINESS CHECK**.
 
 | Workstream | State | Meaning | Next step |
 |---|---|---|---|
@@ -65,8 +76,8 @@ Next separately requested: **TIAF A7 / FF-1 — INDEPENDENT FINAL SCIENTIFIC CLO
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
 | A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
-| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 final one-shot execution complete; no public forecast capability | Independent final scientific closure and baseline decision |
-| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 ACCEPTED / FF-1 FINAL_HOLDOUT_ACCEPTED / FF-2 NOT_IMPLEMENTED | Final INSUFFICIENT_EVIDENCE; 2025 CONSUMED / evidence COMPLETE; no promotion | Preserve nondecisive result; no refit, retry or recycled holdout |
+| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 scientific closure accepted, inconclusive; no public forecast capability | FF-1 final freeze / tag readiness check |
+| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 ACCEPTED / FF-1 FINAL_CLOSURE_ACCEPTED / FF-2 NOT_IMPLEMENTED | Final INSUFFICIENT_EVIDENCE; 2025 CONSUMED / evidence COMPLETE; no promotion | Research-baseline freeze check; no refit, retry or recycled holdout |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / RUNTIME NOT_IMPLEMENTED | Market-state/latent-factor research remains intact; not the platform definition | Conditional family research, not a prerequisite to a useful simple FF |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
 | A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |
