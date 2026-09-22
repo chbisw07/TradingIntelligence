@@ -1,5 +1,29 @@
 # TIAF A7 — Forecasting, Evaluation & Learning Architecture
 
+**Current checkpoint — 2026-09-22 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
+`tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
+(`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
+**INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**; infrastructure accepted,
+Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
+2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
+
+**FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
+complete; FLC-1 inference seams implemented. Logistic is the sole learned reference;
+no additional families or FF-0 behavior change. **FF-2 is intentionally
+DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
+research proposal with new validation evidence. Eligibility is not a fit grant.
+A7 overall remains IN_PROGRESS; no public forecasting capability or A4/A5/A6 influence.
+
+See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
+and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
+See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
+Exact next task: **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**, separately requested.
+
+The dated architecture checkpoints below preserve their then-current state;
+FF §22 adds the current lifecycle direction without reopening their acceptance.
+
+Historical FF-0 planning checkpoint:
+
 The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
 (**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
 BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
@@ -955,7 +979,10 @@ Evaluation: degradation/opportunity evidence
  → trusted startup owner: next approved COLD configuration → FF enforcement
 ```
 
-Initial manual lifecycle is part of FF-2; FF-6 expands bounded correction
+FLC now brings forward reusable lifecycle/event contracts and synthetic denial
+fixtures per [FF §22](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc).
+Actual scoped manual shadow/advisory approval remains part of deferred FF-2;
+FF-6 expands bounded correction
 workflows. Neither may auto-activate, mutate an active graph, change targets or
 widen authority. Trigger policy belongs to Learning governance; drift detection
 belongs to Evaluation and recurring dispatch remains Monitoring/A10.
@@ -1418,7 +1445,9 @@ The DOCX/PDF remain the unchanged creation edition, including dated status and
 then-open questions; this reconciled Markdown controls the resolved design.
 No trained model, measured performance or runtime acceptance is implied.
 
-**Decision: A7_ARCHITECTURE_ACCEPTED.** Next prompt title:
+Historical architecture-acceptance checkpoint (superseded queue, not new authority):
+
+**Decision: A7_ARCHITECTURE_ACCEPTED.** Then-next prompt title:
 **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
 The [acceptance record](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) retains the review and
 clarifications. The FF-0 plan is complete; a separately authorized bounded

@@ -1,5 +1,25 @@
 # TIAF Detailed Implementation Targets
 
+**Current checkpoint — 2026-09-22 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
+`tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
+(`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
+**INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**; infrastructure accepted,
+Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
+2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
+
+**FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
+complete; FLC-1 inference seams implemented. Logistic is the sole learned reference;
+no additional families or FF-0 behavior change. **FF-2 is intentionally
+DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
+research proposal with new validation evidence. Eligibility is not a fit grant.
+A7 overall remains IN_PROGRESS; no public forecasting capability or A4/A5/A6 influence.
+
+See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
+and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
+See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
+Exact next task: **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**, separately requested.
+
+
 This document is the detailed, evolving engineering continuation map beneath
 the stable project roadmap. Status must describe repository reality.
 
@@ -23,7 +43,7 @@ remaining high-priority deferrals. See
 Current gate (2026-09-19, Asia/Kolkata): A5 FROZEN at `tiaf-a5-baseline`;
 R1–R5 are ACCEPTED / DONE; A6 architecture and non-normative thesis are ACCEPTED;
 A6.1–A6.4 are ACCEPTED / DONE, A6 is FROZEN at `tiaf-a6-baseline`,
-`expression.assess` is PUBLISHED, and A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.
+`expression.assess` is PUBLISHED, and A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0/FF-1 FROZEN; FLC CURRENT) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.
 
 ```text
 A5 FROZEN → R2 ACCEPTED
@@ -32,7 +52,7 @@ A5 FROZEN → R2 ACCEPTED
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
   → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
-  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) → A8 → A9 → A10
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0/FF-1 FROZEN; FLC CURRENT) → A8 → A9 → A10
 ```
 
 R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
@@ -655,12 +675,12 @@ milestones are renumbered or runtime deferrals closed.
 ### Current forward sequence and adjacent TBDs
 
 A5 and A6 are FROZEN and R1–R5 are closed. A6.1–A6.4 are accepted/done;
-A7 architecture is ACCEPTED, thesis RECONCILED; implementation IN_PROGRESS (FF-0 and FF-1.1 accepted),
+A7 architecture is ACCEPTED, thesis RECONCILED; implementation IN_PROGRESS (FF-0/FF-1 frozen; FLC current),
 internal synthetic runtime IMPLEMENTED; public forecast capability NOT_PUBLISHED.
 The intervening [FF platform](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED;
 its miniature is DEFINED and FM/LFDE is an advanced family with its thesis retained.
-A7 ARCHITECTURE is ACCEPTED; FF-0 planning is COMPLETE; FF-0 is ACCEPTED; FF-1 planning is COMPLETE; FF-1.1 qualification/schema is ACCEPTED; FF-1.1A empirical qualification is NEXT. Next:
-**TIAF A7 / FF-1.1A — EMPIRICAL DATA RIGHTS AND QUALIFICATION EXECUTION**.
+A7 ARCHITECTURE is ACCEPTED; FF-0/FF-1 FROZEN; FLC CURRENT; FF-2 DEFERRED / NOT_STARTED. Next:
+**TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**.
 FF repeat acceptance closes FFA-B01; A7 integration is reconciled and
 [A7 architecture independently accepted](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md). Canonical delivery uses FF-0…FF-7 within A7; the old
 five-slice proposal is mapped in the integrated roadmap. Any A7-informed A6 follow-up needs separate policy acceptance.
@@ -701,7 +721,7 @@ The [thesis record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 links the DOCX/PDF, sources, document validation and fourteen classified findings.
 The [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1 after the fourteen-finding reconciliation.
-Current next step is separately requested FF-1.1A empirical data rights and qualification execution.
+Current next step is separately requested **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**.
 A6.4 changes no thesis artifact.
 
 <a id="a7--architecture-reconciled-runtime-not-implemented"></a>
@@ -723,8 +743,9 @@ The [architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md),
 | Canonical stage / checkpoint within A7 | Bounded deliverable | Current state |
 |---|---|---|
 | FF-0 | Contracts, singleton B0, exact target/PIT/journal, both realization modes, capture/verifier and internal CLI | ACCEPTED: all four steps, 28/28 semantic cases; engineering-only |
-| FF-1 | B0/B2 raw research, benchmark view, ledger/population/paired evaluation and chronological controls | [PLAN COMPLETE](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md); runtime NOT_IMPLEMENTED; FF-1.1 qualification accepted; FF-1.1A empirical qualification next, empirical fitting HOLD |
-| FF-2 | Held-out calibration, shared registry/lifecycle, drift/shadow/approval/COLD selection, complete miniature/replay | NOT_IMPLEMENTED |
+| FF-1 | B0/B2 raw research, benchmark view, ledger/population/paired evaluation and chronological controls | COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`; INSUFFICIENT_EVIDENCE |
+| FLC | Logistic reference lifecycle contracts, tuning/diagnostics and calibration-readiness seams | CURRENT; [documentation/gap plan complete](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md); FLC-1 implemented; FLC-2 next |
+| FF-2 | Held-out calibration, shared registry/lifecycle, drift/shadow/approval/COLD selection, complete miniature/replay | DEFERRED / NOT_STARTED until FLC closure and separately approved new research |
 | Post-FF-2 publication checkpoint | Separately accepted governed facade/Shell projection; no new numbered hierarchy | NOT_IMPLEMENTED |
 | FF-3…FF-7 | Conditional multi-family/composition, LLM, FM/LFDE, correction expansion and advanced routing | NOT_IMPLEMENTED / GATED |
 | Scoped major closure checkpoint | Incremental failure corpus, frozen-baseline regression, empirical status and retained deferrals | NOT_STARTED |
@@ -735,8 +756,8 @@ preserves all old A7.1…A7.5 obligations; those are no longer current delivery 
 Initial target is strict next-session closing price return > 0 for qualified
 cash equities, not option POP, path/target success or expected monetary utility.
 Data rights, schedule/action coverage and PIT qualification are independent
-gates. Model rejection is valid; no trained model or calibrated accuracy is
-claimed. Proposed future `forecast.assess` / engineering `forecast.evaluate`
+gates. A fixed Logistic challenger exists, with no promotion or calibrated
+accuracy claim; model rejection and insufficient evidence remain valid. Proposed future `forecast.assess` / engineering `forecast.evaluate`
 are not registered; the current facade catalog remains nine. Existing A3.1
 forecast contracts, A2–A6 policies/captures and R1–R5 are unchanged.
 
@@ -757,11 +778,25 @@ and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
 28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**; frozen at `e5283c9`
 (`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
 is complete. [FF-1.1 qualification/schema tooling](TIAF_A7_FF1_1_DATA_QUALIFICATION_FEATURE_SCHEMA_IMPLEMENTATION.md)
-is **FF1_1_ACCEPTED**; learned FF-1 runtime remains **NOT_IMPLEMENTED**.
-**EMPIRICAL_FITTING_AUTHORIZED = NO**. Next is separately requested FF-1.1A
-empirical rights and qualification execution. No real dataset qualification,
-calibration, trained model or new consumer authority is claimed.
-Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
+is **FF1_1_ACCEPTED**; later FF-1 training/evaluation is complete and frozen.
+**Current checkpoint — 2026-09-22 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
+`tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
+(`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
+**INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**; infrastructure accepted,
+Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
+2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
+
+**FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
+complete; FLC-1 inference seams implemented. Logistic is the sole learned reference;
+no additional families or FF-0 behavior change. **FF-2 is intentionally
+DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
+research proposal with new validation evidence. Eligibility is not a fit grant.
+A7 overall remains IN_PROGRESS; no public forecasting capability or A4/A5/A6 influence.
+
+See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
+and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
+See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
+Exact next task: **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**, separately requested.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
 **A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
@@ -786,8 +821,6 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FF-1.1A — EMPIRICAL DATA RIGHTS AND QUALIFICATION EXECUTION**.
-FF-0 acceptance is limited to internal synthetic engineering mechanics. The FF-1 plan
-has an accepted FF-1.1 tooling slice; FF-1.1A needs a separate request. No training, model approval,
-publication, frozen-A6 changes or A8 is
-authorized. Historical planning/acceptance records retain their then-current status.
+Exact next prompt: **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**.
+FLC completion is required before any new FF-2 proposal; it does not reopen FF-1.
+Historical records keep their as-of states; no runtime implementation in this pass.

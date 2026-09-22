@@ -1,5 +1,14 @@
 # Forecasting Framework — Platform Architecture
 
+**Current direction — 2026-09-22 (Asia/Kolkata):** FF-0 and FF-1 are frozen;
+FF-1 is scientifically closed INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE.
+The bounded **FLC (Forecaster Lifecycle Completion)** phase precedes FF-2,
+which is intentionally DEFERRED / NOT_STARTED. [Section 22](#22-forecaster-lifecycle-completion-flc)
+defines the additive lifecycle direction; the [gap/work plan](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md)
+owns implementation packages. No FF-0 behavior change or FF-1 reopening.
+
+Historical FF-0 planning checkpoint (then-next wording, not the current queue):
+
 The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
 (**READY_FOR_FF0_IMPLEMENTATION**, planning only). It chooses synthetic captured-input
 BaseRate mechanics, four FF-0 steps and a 28-case acceptance corpus. FF-0.1 is
@@ -1185,7 +1194,8 @@ unapplied-finding/next-step wording. The record supplies current status.
 ## 20. Precise future A7 integration plan
 
 The heading is retained for stable historical links; its documentation integration
-is now complete as described below, while runtime remains unimplemented.
+is complete. The original unimplemented-runtime checkpoint is superseded by
+frozen FF-0/FF-1; remaining reusable lifecycle work is FLC (§22).
 
 The [A7 integration record](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 has applied the previously proposed integration map to the A7 architecture,
@@ -1241,9 +1251,208 @@ entry, deliverables, tests, success, stop/fallback and next-stage gate. All exis
 historical data qualification, production LLM readiness, HOT loading or consumer
 publication is closed by a diagram.
 
-Exact next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
+Historical architecture-acceptance next prompt: **TIAF A7 / FF-0.1 — CONTRACTS, TARGET AND CLOCK FOUNDATION IMPLEMENTATION**.
 The [repeat review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
 records closure of all five prior HOLD dimensions; original HOLD/correction
 history is preserved. A7 integration is reconciled and independently accepted;
 FF-0 planning is complete; separately authorized FF-0.1 is next and implementation requires separate authorization.
 No trained model or runtime success is claimed.
+
+## 22. Forecaster Lifecycle Completion (FLC)
+
+Implementation cross-reference: [FLC-1](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md)
+now supplies additive internal inference/identity adapters. Training, lifecycle
+execution, diagnostics, calibration and full integration below remain later
+FLC packages; FF-0/FF-1 contracts and pins are unchanged.
+
+This 2026-09-22 additive architecture direction completes the reusable lifecycle
+using **Logistic as the sole learned reference forecaster** and **BaseRate as
+first-class BENCHMARK**. It does not assert that a generic implementation exists.
+The repository-grounded [gap matrix and work packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md)
+distinguish delivered FF-0/1 mechanics from proposed FLC interfaces. FLC avoids
+the existing FFA-Bxx/Cxx review-finding namespace. It is a bounded intervening
+completion track inside A7, not FF-1.6, a new model family or a renumbering of FF-2…FF-7.
+
+### 22.1 Ownership and minimum reusable seams
+
+“Framework lifecycle” means the cooperating FF / Evaluation / Learning system;
+it never moves scientific judgment into an inference object. Extend §§2/3/9,
+not replace them. Proposed interfaces are internal, additive and data-only at
+boundaries. Exact Python names are implementation choices; the obligations below
+are not a public capability declaration.
+
+```mermaid
+flowchart TB
+    G[Governed Learning: grant and experiment manifest] --> T[Model-specific trainer]
+    G --> O[Model-specific optimizer: finite development trials]
+    O --> T
+    T --> A[Immutable model and transform artifacts]
+    A --> S[Single Learning registry: records and lifecycle events]
+    S --> B[FF exact COLD binding and admitted input]
+    B --> F[Pure Forecaster: BaseRate or Logistic]
+    F --> R[Raw typed forecast or explicit absence]
+    R -. future admitted composition .-> C[Reusable calibrator application]
+    C --> CR[Separate transformed output and pipeline identity]
+    R --> E[Independent Evaluation: common metrics and comparison]
+    CR --> E
+    J[Evaluation Ground Truth and PIT-qualified population] --> E
+    A --> D[Model-specific diagnostics: descriptive reports]
+    D --> E
+    E --> H[Independent reviewer: approve / hold / reject]
+    H -. separate future scope-limited grant .-> B
+```
+
+The calibrator and approval arrows are target architecture, not implemented FLC
+runtime or authority to fit/activate FF-2. Capture/lineage applies to every node.
+
+| Responsibility | Owner and narrow seam | Must not do |
+| --- | --- | --- |
+| Descriptor / prediction | FF owns request/result/absence meaning; model implements descriptor and deterministic predict over already admitted inputs plus exact artifact | Fit, fetch, load an arbitrary path, label outcomes, choose its evaluator or promote itself |
+| Training / preprocessing | Learning grants/contains jobs; Logistic adapter owns solver, train-only scaler and fit algorithm | Put Logistic-specific knobs into the generic FF request; require BaseRate to pretend to train |
+| Optimization | Family optimizer proposes finite valid configurations; Learning owns grant, trial ledger and selection freeze; Evaluation owns scoring contract | Search on protected/test evidence; change objective after results; hide failed trials |
+| Persistence / restore | Learning owns immutable typed artifacts/events; storage adapters perform bounded I/O; family codec validates numeric state; FF binds admitted content | Executable pickle, mutable latest alias, second activation registry, silent migration |
+| Calibration | Learning fits a reusable calibrator under its own grant; FF applies an exact compatible wrapper; Evaluation qualifies the whole pipeline | Hide calibration inside Logistic; treat missing calibrator as identity; imply fitted means approved |
+| Diagnostics / studies | Family adapter owns model-specific descriptions; common envelope carries inputs, method, limitations and costs | Declare superiority, causal effects or independent significance from descriptive plots |
+| Common evaluation | Independent Evaluation owns shared labels, Brier/log loss, reliability, paired rows, uncertainty and benchmark decision | Let a forecaster select the final metric/population or rewrite captured probabilities |
+| PIT / replay / provenance | Evidence owners qualify sources; FF gates issuance/learned dependencies, captures results; Evaluation owns truth/ledger; Learning owns fit reproduction | Decode outcomes in prediction; backdate availability; silently substitute current code/model |
+
+A descriptor declares supported target/schema/output, identity/version, required
+evidence, deterministic/numeric and verifier policy, optional dependencies and
+finite cost limits. A training-capability declaration is optional and separate
+from inference. A pure artifact-bound predictor accepts a qualified feature or
+support projection, returns the existing probability/absence semantics, and
+cannot enlarge scope. No universal estimator base class with fit/save/tune/evaluate
+methods is required. BaseRate's permitted historical k/n population and Logistic's
+feature-conditional probability share an event target, not an input algorithm.
+
+### 22.2 Distinct identities, immutable lifecycle and replay
+
+| Identity | Meaning; change rule |
+| --- | --- |
+| Forecaster / implementation version | Algorithm family and exact inference implementation, not lifecycle status |
+| Model candidate / artifact version and hash | One immutable fitted state plus scaler, class/event mapping, dependency and training pins; changed fit/config means new candidate |
+| Feature / target schema | Ordered feature semantics, units/lookbacks/missingness and event definition; not package version |
+| Experiment / protocol / split | Hypothesis, population/vintage, trial budget, selection method and evidence-use rules; changed scientific procedure requires new identity |
+| Full capture / scientific fingerprint | Preserve existing distinct projections: capture includes audit clocks; scientific identity pins material inputs/method; neither replaces the other |
+| Lifecycle event / role / COLD binding | Separate recorded evidence state, per-profile purpose and authorized prospective selection; none inferred from a model name |
+
+Preserve package `0.1.0`, existing contract `1.0`, additive research schema `2.0`
+and model artifact `1.0` as distinct historical concepts. New schemas are additive;
+do not broaden FF-0 BaseRate literals or FF-1 fixed LogisticConfig/grants in place.
+New envelopes may reference legacy artifacts without resealing/relabeling them.
+Existing exact-version dispatch/verifiers and original artifacts remain available;
+unknown version/missing pin means explicit unavailable verification, not fallback.
+
+Conceptual workflow, not new runtime enum names:
+
+```mermaid
+flowchart LR
+    P[New definition / experiment grant] --> D[Development data qualification]
+    D --> T[Train; optional bounded development tuning]
+    T --> F[Freeze selected candidate and all trial history]
+    F --> C{Calibration in approved scope?}
+    C -->|No: raw research| E[Independent evaluation under frozen protocol]
+    C -->|Future FF-2 only| K[Separate calibration fit and pipeline freeze]
+    K --> E
+    E --> V{Scientific evidence}
+    V --> I[Insufficient evidence: close / hold use]
+    V --> R[Reject: preserve record]
+    V --> S[Supported: eligible for independent review]
+    S --> A[Separate shadow / advisory approval]
+    A --> B[Separate future COLD binding]
+```
+
+Candidate freeze occurs BEFORE protected evaluation, not after choosing a winner
+on it. Calibration-method selection, if later allowed, is itself development
+selection with separate qualification; test data is never the selector. Scientific
+outcomes are not lifecycle grants. Preserve the §9.1 lossless event mapping and
+denied/suspended/expired history; no automatic promotion after EVALUATED. FLC proves
+these records and denial paths synthetically, not an operational approval service.
+
+Replay lineage is:
+
+```text
+source/vintage + target + feature/split + grant/protocol + trial history
+    -> frozen scaler/model + code/dependency pins
+    -> request/input + raw output [-> optional calibrator/output]
+    -> forecast capture -> independent truth revision -> paired ledger/report
+    -> reviewer event -> separate binding (if ever granted)
+
+Recorded replay: decode captured facts; no model fit/inference/network required.
+Pinned verification: use exact declared implementation/artifact, record own clock.
+Fit reproduction/new simulation: separate operation and authority, never replay.
+```
+
+All datetimes remain aware Asia/Kolkata via `ZoneInfo("Asia/Kolkata")`; reject
+naive values. Preserve actual computation/issuance, simulated as-of, information
+cutoff, source availability/acquisition and learned-state cutoff independently.
+For T, only legitimately available inputs and learned/selected state at or before
+the applicable cutoff are admitted; retained strict-before-open rules still apply.
+Purge/embargo follow target and label-maturity dependencies, not random row splits.
+The FF-1 adjusted fresh vintage remains SIMULATED research, never historical
+CAPTURED_AS_KNOWN. Private ignored corpora need separate custody; a Git tag is not
+a data archive. Hash-only integrity checks are not numerical evaluation.
+
+### 22.3 Training, tuning, diagnostics and calibration are different
+
+Training fits one frozen configuration on authorized TRAIN only. Tuning compares
+configurations on permitted development folds and freezes selection before test.
+The family owns Logistic search space, solver/penalty compatibility, regularization,
+class weighting if ever permitted, seeds and scoring inputs. Common governance
+owns split membership, eligibility, trial/time/memory caps, objective/tie rule,
+all attempts and selection provenance. Trial failure cannot grant another attempt.
+FLC implements bounded mechanics on newly identified synthetic fixtures; it is
+not permission to run another empirical campaign or search existing FF-1 results.
+
+Logistic diagnostics may describe standardized coefficient direction/magnitude,
+train-scaler-conditioned odds ratios, probability distribution and fold stability.
+State units, scale, correlated-feature limitations, support and method. Odds ratios
+are conditional model associations, not probability-point changes or causal effects;
+regularized coefficients do not imply classical unbiased p-values. Sensitivity,
+feature ablation, redundancy and resampling studies require explicit study manifests;
+those requiring fits consume new trial grants and identities. Full such empirical
+studies are not FLC acceptance requirements. Common bootstrap CIs of paired losses
+remain Evaluation's work, not model-specific self-validation.
+
+Calibration changes the probability mapping over a frozen model; it is not base
+model retraining or hyperparameter selection. The reusable composition seam pins
+base model/scaler/target, raw input semantics (logit versus probability), calibrator
+artifact/method, calibration split and qualification scope. Preserve raw and
+transformed captures. Missing/mismatched/failed required transform returns explicit
+absence; no silent raw fallback under a calibrated label. FLC supplies contracts,
+compatibility and synthetic test doubles only. FF-2 still owns the initial held-out
+sigmoid fit, empirical reliability qualification, shadow and approval; Platt,
+isotonic or temperature alternatives are not new implementations or experiments here.
+
+### 22.4 Future extension and hard boundaries
+
+```text
+ordinary future family: family fit + config/optimizer + diagnostics
+                       -> existing FF prediction/artifact contract
+                       -> shared truth/evaluation/calibration/replay/governance
+
+future regime/sector pattern A          future pattern B
+CompositeForecaster                    declared router -> separate Forecasters
+  -> pinned internal submodels           -> selected child + selection provenance
+  -> one traced result                   -> one traced root result
+```
+
+Neither regime/sector pattern is selected now. Both would need PIT-known context,
+explicit unknown-context behavior, bounded experts, dependency lineage and independent
+evaluation; learned routers add their own fit/qualification, under existing FF-7
+gates. No XGBoost, neural, ensemble, regime/sector implementation or mock production
+family is needed to prove the Logistic-driven seams.
+
+Later self-improvement separates Evaluation drift findings, Learning proposals,
+new candidate retraining, separate recalibration, comparison, independent approval
+and new COLD binding. Online learning mutates state over arriving observations and
+needs its own architecture; it is not authorized retraining, calibration or replay.
+Recurring dispatch/HOT/automation stay deferred. No model may self-correct the
+running binding or override deterministic TI, TM or broker authority.
+
+FF-1 stays permanently closed: 2025 CONSUMED, one execution, no same-experiment
+refit, retuning, feature/threshold change, calibration rescue or post-holdout
+adaptation. Any future Logistic revision requires a **new candidate/model identity,
+new experiment identity and new validation strategy**. Merely renaming 2025 does
+not restore unseen evidence. FLC completion is an engineering reference milestone,
+not Logistic victory or FF-2 research authorization.

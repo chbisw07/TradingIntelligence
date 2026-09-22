@@ -1,64 +1,39 @@
 # Forecasting Framework — Bounded Delivery Roadmap
 
-The [FF-0.1 foundation](TIAF_A7_FF0_1_CONTRACTS_TARGET_CLOCK_IMPLEMENTATION.md)
-and [FF-0.2 capture/truth/replay](TIAF_A7_FF0_2_CAPTURE_STORE_TRUTH_RECORDED_REPLAY_IMPLEMENTATION.md)
-remain accepted. The [FF-0.3 implementation record](TIAF_A7_FF0_3_BASERATE_COLD_RUNTIME_PINNED_VERIFICATION_IMPLEMENTATION.md)
-records **FF0_3_ACCEPTED**: deterministic synthetic BaseRate, an immutable internal
-COLD owner, honest ACTUAL/SIMULATED execution, capture and separate exact pinned
-verification. A7 / FF is **IMPLEMENTATION IN_PROGRESS; INTERNAL SYNTHETIC RUNTIME
-IMPLEMENTED; PUBLIC FORECAST CAPABILITY NOT_PUBLISHED**.
-All four [planned FF-0 steps](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md)
-are complete. The [FF-0.4 engineering CLI](TIAF_A7_FF0_4_ENGINEERING_CLI_ACCEPTANCE_HARDENING_IMPLEMENTATION.md)
-and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
-28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**; frozen at `e5283c9`
-(`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
-is complete. [FF-1.1 qualification/schema tooling](TIAF_A7_FF1_1_DATA_QUALIFICATION_FEATURE_SCHEMA_IMPLEMENTATION.md)
-is **FF1_1_ACCEPTED**; learned FF-1 runtime remains **NOT_IMPLEMENTED**.
-**EMPIRICAL_FITTING_AUTHORIZED = NO**. Next is separately requested FF-1.1A
-empirical rights and qualification execution. No real dataset qualification,
-calibration, trained model or new consumer authority is claimed.
-Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
+**Current checkpoint — 2026-09-22 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
+`tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
+(`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
+**INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**; infrastructure accepted,
+Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
+2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
 
-**2026-09-19 (Asia/Kolkata): FF ARCHITECTURE ACCEPTED;
-FF THESIS RECONCILED; IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
-A6 FROZEN; [A7 ARCHITECTURE ACCEPTED](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md);
-A7 / FF IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED). FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; FF-1.1 qualification/schema is accepted; FF-1.1A empirical qualification is next. The [repeat acceptance](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE_REPEAT.md)
-closes FFA-B01 after the [clock correction](TIAF_FORECASTING_FRAMEWORK_HISTORICAL_EVALUATION_CLOCK_SEMANTICS_CORRECTION.md);
-the [original review](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE_ACCEPTANCE.md) retains its historical HOLD.
-The [FF architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) owns accepted architecture
-semantics; the [decision record](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md)
-records reconciliation. No stage below is authorized to begin by this document.
+**FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
+complete; FLC-1 inference seams implemented. Logistic is the sole learned reference;
+no additional families or FF-0 behavior change. **FF-2 is intentionally
+DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
+research proposal with new validation evidence. Eligibility is not a fit grant.
+A7 overall remains IN_PROGRESS; no public forecasting capability or A4/A5/A6 influence.
 
-Forecasting is a platform capability; forecasters are replaceable scientific
-instruments. FF hosts one or many primitive or composite forecasters, evaluates
-them against common ground truth, preserves component observability, and supports
-safe composition, calibration, lifecycle, replay, benchmarking and governed
-self-correction. See the [28-finding disposition](TIAF_FORECASTING_FRAMEWORK_THESIS_ARCHITECTURE_RECONCILIATION.md).
+See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
+and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
+See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
+Exact next task: **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**, separately requested.
+
 
 ## 1. Sequence, dependencies and deliberate simplification
 
 ```text
-FF architecture ACCEPTED; dedicated thesis RECONCILED
- → A7 FF INTEGRATION RECONCILED [documentation complete]
- → A7 ARCHITECTURE ACCEPTED
- → FF-0 MINIATURE PLAN COMPLETE [planning only]
- → FF-0.1 CONTRACTS / TARGET / CLOCKS [ACCEPTED; FOUNDATION ONLY]
- → FF-0.2 CAPTURE / TRUTH / RECORDED REPLAY [ACCEPTED; NO EXECUTION]
- → FF-0.3 BASERATE / COLD RUNTIME / PINNED VERIFICATION [ACCEPTED; SYNTHETIC ONLY]
- → FF-0.4 ENGINEERING CLI / ACCEPTANCE HARDENING [ACCEPTED; FF-0 COMPLETE]
- → FF-1 LOGISTIC BENCHMARK / PAIRED EVALUATION PLAN [COMPLETE; NO FIT APPROVAL]
- → FF-1.1 DATA QUALIFICATION / FEATURE SCHEMA [ACCEPTED]
- → separately requested FF-1.1A EMPIRICAL RIGHTS / QUALIFICATION [NEXT; NO FIT GRANT]
- → separately authorized implementation requests
- → separately authorized FF-1 implementation → FF-2 [complete benchmarked/calibrated miniature]
-      ├─ FF-3 [optional multi-family / simple composition]
-      ├─ FF-4 [optional LLM]
-      └─ FF-5 [optional advanced FM/LFDE, internal FM/L gates retained]
- → FF-6 [optional governed correction expansion]
- → FF-7 [optional advanced routing / MoE]
+A7: FF-0 COMPLETE / FROZEN
+ → FF-1 COMPLETE / FROZEN — INSUFFICIENT_EVIDENCE
+ → FLC CURRENT — FLC-1 implemented; FLC-2 next
+     Logistic only learned reference; BaseRate BENCHMARK
+ → FF-2 DEFERRED until FLC closes + separate new research/data/protocol approval
+ → existing conditional FF-3…FF-7 and separate publication / scoped closure gates
+ → A8 → A9 → A10 [major order unchanged]
 ```
 
-FF-0–FF-7 are now the canonical delivery notation within the A7 umbrella,
+FF-0–FF-7 remain the canonical delivery notation within the A7 umbrella;
+FLC is an intervening completion track, not an additional model stage,
 not an additional A7.x hierarchy or eight compulsory model deployments. FF-4 is **not** a prerequisite for FF-5; an LLM adds no
 necessary capability for numeric latent research. FF-3 is required before using
 a multi-family ensemble, not before evaluating a standalone advanced forecaster
@@ -87,8 +62,8 @@ dispositions, ledger and comparisons reuse A7-wide Evaluation concepts. Likewise
 the Benchmark Registry is a curated reference view over the one artifact/lifecycle
 registry, not a new activation service. The old A7.1–A7.5 proposal is superseded
 by the [explicit A7 crosswalk](TIAF_A7_DETAILED_ROADMAP.md#historical-five-slice-crosswalk).
-Independent A7 architecture acceptance is complete; FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; FF-1.1 qualification/schema is accepted; FF-1.1A empirical qualification is next.
-No implementation beyond accepted FF-0 and FF-1.1 tooling is authorized by this status.
+FF-0 and FF-1 are complete/frozen. FLC implementation is next under a separate
+request; FF-2 is deferred until its closure and a newly approved research proposal.
 A8/A9/A10 ordering is unchanged.
 
 ## 2. Common entry package and completion meanings
@@ -152,25 +127,14 @@ common observation identity, accepted finite protocol for comparison work.
 
 ## 4. FF-1 — Benchmark Registry, Forecast Ledger and paired evaluation
 
-**Current planning:** [Logistic benchmark / paired evaluation plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
-is complete; FF-1.1 tooling is accepted, learned runtime NOT_IMPLEMENTED. The plan pins RELIANCE-only, five existing
-A2 daily features, one fixed Logistic configuration, five annual SIMULATED
-walk-forward folds, unchanged last-20 BaseRate and dependent-session paired
-loss comparisons. It adds no calibration or public capability. Empirical fitting
-is HOLD pending rights, PIT archives and independent protocol/job admission.
-
-| Planned slice | Bounded deliverable |
-|---|---|
-| FF-1.1 — ACCEPTED | Data qualification and feature schema tooling; no learned fit |
-| FF-1.1A — NEXT, separately requested | Empirical rights and qualification execution; fitting authorization still NO |
-| FF-1.2 | Governed optional Logistic training and immutable candidate artifact |
-| FF-1.3 | Additive research versions, COLD two-arm inference, walk-forward and replay |
-| FF-1.4 | Common-truth Ledger, paired metrics, uncertainty and full dispositions |
-| FF-1.5 | Internal engineering CLI, acceptance corpus and honest empirical/synthetic status |
-
-FF-1.1 is accepted; FF-1.1A and FF-1.2–1.5 remain future; the detailed plan owns exact admission,
-failure and acceptance tests. FF-0 v1 synthetic-only contracts stay unchanged;
-research input bindings require explicit additive versions, not relabeling.
+**Current status: COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`.**
+The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md) and
+[slice/closure evidence](TIAF_A7_FF1_INDEPENDENT_FINAL_SCIENTIFIC_CLOSURE_AND_BASELINE_DECISION.md)
+record the actual qualification, fixed training, walk-forward, development,
+fifth-fold, one-shot evaluation and final closure. Planned slice names are not
+claims of separate tags. Final outcome is INSUFFICIENT_EVIDENCE; 2025 CONSUMED,
+one execution, no refit. The stage obligations below are retained, not a new
+instruction to run FF-1. Remaining reusable lifecycle gaps belong to FLC.
 
 **Entry:** FF-0 mechanics accepted; qualified paired dataset or explicitly
 SYNTHETIC_ONLY exercise; exact fit/comparison grant and frozen protocol.
@@ -210,13 +174,32 @@ Benchmark-only mechanics remain usable for engineering inspection.
 **Next-stage gate:** trusted comparison infrastructure and sufficient separately
 qualified calibration/test data; no additional ML families required.
 
+## 4a. FLC — Forecaster Lifecycle Completion before FF-2
+
+[FF §22](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
+owns the additive architecture; [FLC-0…8](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md)
+owns the inspected gap matrix, package deliverables/tests/non-goals/models.
+CURRENT: FLC-1 implemented; FLC-2 next. This brings forward
+reusable inference/training/artifact/event/tuning/diagnostic and evaluation seams
+using only Logistic and BaseRate. Calibration contracts/test doubles are in scope;
+fitted calibration, real shadow/advisory approval and FF-2 science are not.
+
+Exit: reviewed synthetic reference lifecycle, native restore and recorded/pinned
+replay separation, old FF-0/1 preservation, independent common evaluation,
+finite trials and explicit failure/absence. No empirical superiority required.
+Failure of a mandatory seam blocks FLC closure, never licenses editing FF-1.
+
 ## 5. FF-2 — Calibration, lifecycle, shadow and complete miniature
 
-**Entry:** accepted FF-1 comparison/ledger, qualified held-out calibration split,
+**Status: DEFERRED / NOT_STARTED until FLC closure.**
+
+**Entry:** accepted FLC reference closure and FF-1 comparison/ledger, a separately
+approved new experiment/validation strategy (2025 is not unseen), qualified held-out calibration split,
 frozen support/usefulness/shadow/health policies and explicit prospective grant.
 
 **Calibration placement decision:** FF-0 defines typed calibration state/pins and
 tests raw/absent qualification; FF-1 can score raw B0/B2 research probabilities;
+FLC defines/tests reusable calibration and lifecycle seams without fitting;
 FF-2 fits/applies/independently qualifies the held-out sigmoid wrapper and completes
 the calibrated miniature. No fitted calibrator or advisory calibration claim is
 required to prove FF-0 singleton mechanics. Fit grants/data gates still apply.
@@ -428,7 +411,7 @@ The previous architecture checkpoint requested a **separate FF platform thesis**
 preserving the FM/LFDE advanced handbook. That thesis
 is now created and its 28 findings are reconciled; neither artifact edition is
 regenerated by this pass. Current next prompt:
-**TIAF A7 / FF-1.1A — EMPIRICAL DATA RIGHTS AND QUALIFICATION EXECUTION**.
+**TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**.
 The bounded FFA-B01 correction supplies mode/clock guards and FF-0–FF-2 fixture
 obligations; the repeat review accepts the architecture, not their implementation.
 All four non-blocking
