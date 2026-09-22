@@ -17,7 +17,7 @@ promotion eligible NO. 2025 remains CONSUMED, one execution, no post-holdout ref
 FF-2 eligible for a new governed research proposal only; data/fit/prospective-use
 gates are not granted. **READY_TO_TAG_FF1 = YES** for a research baseline, not
 Logistic superiority/activation. No empirical rerun or runtime change. No tag yet.
-Exact next task: **TIAF A7 / FF-1 — FINAL FREEZE / TAG READINESS CHECK**.
+Exact next task: **TIAF A7 / FF-1 — COMMIT AND BASELINE TAG EXECUTION**.
 
 The execution checkpoint below retains its historical then-next task.
 
@@ -122,9 +122,13 @@ work; FUTURE/TBD indicate later/unresolved scope; NOT_IMPLEMENTED means no runti
 | TI_SHELL v0.1 | FROZEN | `tiaf-a4.91-shell-v0.1` | [Local command implementation](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md) |
 | A5 | FROZEN | `tiaf-a5-baseline` | [Closure: READY_TO_FREEZE_A5](TIAF_A5_MAJOR_MILESTONE_CLOSURE_REVIEW.md); [final check: READY_TO_TAG_A5](TIAF_A5_FINAL_FREEZE_TAG_READINESS_CHECK.md) |
 | A6 | FROZEN | `tiaf-a6-baseline` | [A6.4 freeze readiness](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md); final tag closure verified |
-| A7 | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | FF architecture ACCEPTED and A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0 ACCEPTED; FF-1 plan COMPLETE; FF-1.1 qualification/schema ACCEPTED; FF-1.1A adjusted research qualification COMPLETE; FF-1.2 NEXT; no overall A7 baseline tag | [FF-integrated architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md), [17-finding reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md), [thesis record](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md), [integrated stage crosswalk](TIAF_A7_DETAILED_ROADMAP.md) |
+| A7 | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | FF architecture ACCEPTED and A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0 ACCEPTED; FF-1 plan COMPLETE; FF-1.1 qualification/schema ACCEPTED; FF-1 final closure ACCEPTED / SCIENTIFICALLY CLOSED INCONCLUSIVE; freeze/tag completion NEXT; no overall A7 baseline tag | [FF-integrated architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md), [17-finding reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md), [thesis record](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md), [integrated stage crosswalk](TIAF_A7_DETAILED_ROADMAP.md) |
 
 ### Accepted submilestones and intervening gates
+
+The slice rows below preserve their historical as-of-acceptance scope and gates,
+including superseded qualification HOLDs; they are not the current queue.
+Current FF-1 closure and tag readiness are recorded above and in the renewed review.
 
 | Track | Accepted slices / actual tags | Evidence index / qualification |
 |---|---|---|
@@ -195,7 +199,7 @@ A5 FROZEN (`tiaf-a5-baseline`)
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
   → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
-  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) → A8 → A9 → A10
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE) → A8 → A9 → A10
 ```
 
 ## Future / parallel workstreams
@@ -205,8 +209,8 @@ A5 FROZEN (`tiaf-a5-baseline`)
 | Monitoring | ACCEPTED design; recurring runtime NOT_IMPLEMENTED | A8 TM, A9 scanner intake, A10 operations |
 | Trading Ecosystem | ACCEPTED ownership design; integration NOT_IMPLEMENTED | A8/A9/A10 |
 | A6 | FROZEN; A6.1–A6.4 ACCEPTED / DONE | `tiaf-a6-baseline`; [A6.4](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.md) closes the 93-case corpus; `expression.assess` PUBLISHED |
-| A7 forecasting / evaluation | Architecture ACCEPTED / thesis RECONCILED; IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | Completed FF integration; old A7.1–A7.5 mapped to canonical FF stages, no automatic A6 overlay |
-| Forecasting Framework | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) / FF-0 MINIATURE ACCEPTED; FF-1 LEARNED RUNTIME / FF-2 NOT_IMPLEMENTED / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | FF-0 accepted (all four steps); FF-1 plan COMPLETE; FF-1.1 qualification/schema ACCEPTED; FF-1.1A adjusted research qualification COMPLETE; FF-1.2 NEXT; public exposure still absent |
+| A7 forecasting / evaluation | Architecture ACCEPTED / thesis RECONCILED; IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE); INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | Completed FF integration; old A7.1–A7.5 mapped to canonical FF stages, no automatic A6 overlay |
+| Forecasting Framework | ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE) / FF-0 MINIATURE ACCEPTED; FF-1 TRAINING/EVALUATION IMPLEMENTED / FF-2 NOT_IMPLEMENTED / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED | FF-0 accepted (all four steps); FF-1 plan COMPLETE; FF-1.1 qualification/schema ACCEPTED; FF-1 final closure ACCEPTED / SCIENTIFICALLY CLOSED INCONCLUSIVE; freeze/tag completion NEXT; public exposure still absent |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / NOT_IMPLEMENTED | Conditional internal research; not abandoned or required before a simple FF |
 | Sector Rotation | FUTURE / TBD design, NOT_IMPLEMENTED | Relative to A7/A8 explicitly TBD |
 | Signal Qualification | FUTURE / TBD design, NOT_IMPLEMENTED | Intended after Sector Rotation review unless reordered; A7/A8 placement TBD |
@@ -564,7 +568,7 @@ The [A6.4 closure](TIAF_A6_4_FINAL_HARDENING_ACCEPTANCE_CORPUS_FREEZE_READINESS.
 records the explicit 93-case acceptance corpus and recommends the baseline.
 The subsequent A7 architecture and thesis are RECONCILED. Their architecture acceptance was paused for FF review; FF acceptance and
 A7 integration are complete. The [independent A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md)
-now accepts the architecture; FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; FF-1.1 qualification/schema is accepted; FF-1.1A adjusted research qualification is complete; FF-1.2 is next.
+now accepts the architecture; FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; FF-1.1 qualification/schema is accepted; FF-1 training and evaluation are complete; FF-1 is scientifically closed inconclusive. Freeze/tag completion is next.
 
 ## FM / LFDE — Intervening research architecture
 
@@ -585,21 +589,25 @@ altering the thesis edition. Shared platform ownership moves to FF below.
 ## Forecasting Framework — Platform reconciliation
 
 **FORECASTING FRAMEWORK ARCHITECTURE ACCEPTED; FF MINIATURE REALIZATION DEFINED;
-FF THESIS RECONCILED; FF ARCHITECTURE ACCEPTED; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0 ACCEPTED; FF-1 plan COMPLETE; FF-1.1 qualification/schema ACCEPTED; FF-1.1A adjusted research qualification COMPLETE; FF-1.2 NEXT; INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
+FF THESIS RECONCILED; FF ARCHITECTURE ACCEPTED; FFA-B01 CLOSED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0 plan COMPLETE; FF-0 ACCEPTED; FF-1 plan COMPLETE; FF-1.1 qualification/schema ACCEPTED; FF-1 final closure ACCEPTED / SCIENTIFICALLY CLOSED INCONCLUSIVE; freeze/tag completion NEXT; INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
 The [architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md),
 [roadmap](TIAF_FORECASTING_FRAMEWORK_DETAILED_ROADMAP.md) and
 [decision](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md) define primitive and
 composite forecasters, typed DAGs, shared truth/ledger, paired evaluation,
 calibration and governed future COLD selection. No model family is the platform.
-Retain the advanced FM/LFDE thesis; the separate platform handbook is CREATED. Next:
-**TIAF A7 / FF-1.1A — LOCAL RELIANCE EMPIRICAL DATASET PROVISIONING**. A6 remains FROZEN and A7
-ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED). FF acceptance closes
-FFA-B01; A7 integration and independent architecture acceptance are complete.
+Retain the advanced FM/LFDE thesis and platform handbook. FF-1 is **FF1_FINAL_CLOSURE_ACCEPTED / FF1_SCIENTIFICALLY_CLOSED_INCONCLUSIVE**.
+The outcome remains **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**;
+infrastructure is accepted. BaseRate remains BENCHMARK and Logistic remains
+CHALLENGER / EXPERIMENTAL, promotion eligible NO. 2025 is CONSUMED, executions
+used 1, post-holdout refit allowed NO. FF-2 is NOT_IMPLEMENTED; research eligibility
+permits only a new governed proposal, not a fit or activation. A7 remains
+IN_PROGRESS; no public forecasting capability or automatic A4/A5/A6 influence.
+See the [renewed readiness review](TIAF_A7_FF1_FINAL_FREEZE_TAG_READINESS_CHECK.md).
 
 ## TIAF_A7 — Evaluation, Forecasting and Learning
 
 **Current state: ARCHITECTURE ACCEPTED / THESIS RECONCILED /
-IMPLEMENTATION IN_PROGRESS (FF-0 AND FF-1.1 ACCEPTED) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
+IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
 The [architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md)
 separates forecasting, evaluation and governed learning. Initial proposal:
 one precisely defined next-session-close cash-equity return probability,
@@ -617,7 +625,8 @@ report addition, one implementation detail, three no-change decisions and one
 retained deferral. Its then-recommended next gate was independent architecture
 acceptance, not implementation. The intervening FF review and explicit
 [A7 integration](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
-are now completed; A7 architecture is accepted; FF-0 planning is complete; FF-0 is accepted; FF-1 planning is complete; FF-1.1 qualification/schema is accepted; FF-1.1A adjusted research qualification is complete; FF-1.2 is next. Original findings and
+are now completed; A7 architecture and FF-0 are accepted; FF-1 training/evaluation
+is complete and scientifically closed inconclusive; freeze/tag completion is next. Original findings and
 thesis editions remain intact, with current ownership/stages in the integrated design.
 
 The following is the broader long-term charter, **not mandatory initial v1**:
@@ -709,13 +718,17 @@ and [final FF-0 acceptance](TIAF_A7_FF0_ACCEPTANCE.md) record **FF0_ACCEPTED**:
 28/28 semantic cases; **INTERNAL_ENGINEERING_CLI_ONLY**; frozen at `e5283c9`
 (`tiaf-a7-ff0-baseline`). The [FF-1 plan](TIAF_A7_FF1_LOGISTIC_BENCHMARK_PAIRED_EVALUATION_PLAN.md)
 is complete. [FF-1.1 qualification/schema tooling](TIAF_A7_FF1_1_DATA_QUALIFICATION_FEATURE_SCHEMA_IMPLEMENTATION.md)
-is **FF1_1_ACCEPTED**; learned FF-1 runtime remains **NOT_IMPLEMENTED**.
-**EMPIRICAL_FITTING_AUTHORIZED = YES** for the pinned
-[FF-1.1A adjusted retrospective qualification](TIAF_A7_FF1_1A_ADJUSTED_DATA_RESEARCH_PROFILE_AND_FINAL_QUALIFICATION.md).
-Rights remain UNVERIFIED/WARN_ONLY, not approved. The existing Dhan dataset
-passes bounded research gates; 2025 remains sealed. No fitting, calibration,
-trained model or new consumer authority is claimed.
-Calibration remains at FF-2; recorded replay is not recomputation or new simulation.
+is **FF1_1_ACCEPTED**. Subsequent training and paired evaluation are complete.
+Rights remain UNVERIFIED/WARN_ONLY, not legally approved; the adjusted vintage
+remains retrospective SIMULATED research, not CAPTURED_AS_KNOWN.
+FF-1 is **FF1_FINAL_CLOSURE_ACCEPTED / FF1_SCIENTIFICALLY_CLOSED_INCONCLUSIVE**.
+The outcome remains **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**;
+infrastructure is accepted. BaseRate remains BENCHMARK and Logistic remains
+CHALLENGER / EXPERIMENTAL, promotion eligible NO. 2025 is CONSUMED, executions
+used 1, post-holdout refit allowed NO. FF-2 is NOT_IMPLEMENTED; research eligibility
+permits only a new governed proposal, not a fit or activation. A7 remains
+IN_PROGRESS; no public forecasting capability or automatic A4/A5/A6 influence.
+See the [renewed readiness review](TIAF_A7_FF1_FINAL_FREEZE_TAG_READINESS_CHECK.md).
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
 **A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
@@ -740,9 +753,6 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FF-1.2 — LOGISTIC CANDIDATE TRAINING ARTIFACT IMPLEMENTATION**.
-FF-0 acceptance is limited to internal synthetic engineering mechanics. The FF-1 plan
-has accepted FF-1.1 tooling and the FF-1.1A adjusted research qualification.
-No fit was performed; FF-1.2 implementation requires its own request. Model
-approval, publication, frozen-A6 changes and A8 remain out of scope. Historical
+Exact next prompt: **TIAF A7 / FF-1 — COMMIT AND BASELINE TAG EXECUTION**.
+No commit, tag or push is performed by this documentation pass. Historical
 planning/acceptance records retain their then-current status.
