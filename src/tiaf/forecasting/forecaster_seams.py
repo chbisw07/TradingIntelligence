@@ -31,6 +31,11 @@ class ForecasterRole(StrEnum):
 class ForecasterLifecycle(StrEnum):
     UNSPECIFIED = "UNSPECIFIED"
     EXPERIMENTAL = "EXPERIMENTAL"
+    VALIDATED = "VALIDATED"
+    SHADOW = "SHADOW"
+    APPROVED = "APPROVED"
+    SUSPENDED = "SUSPENDED"
+    RETIRED = "RETIRED"
 
 
 class ForecasterFamily(StrEnum):

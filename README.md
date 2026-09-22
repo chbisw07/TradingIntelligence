@@ -22,7 +22,8 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
 
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
-complete; FLC-1 inference seams implemented. Logistic is the sole learned reference;
+complete; FLC-1 inference and FLC-2 training/custody/lifecycle seams implemented.
+Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
 research proposal with new validation evidence. Eligibility is not a fit grant.
@@ -31,7 +32,8 @@ A7 overall remains IN_PROGRESS; no public forecasting capability or A4/A5/A6 inf
 See [FF lifecycle architecture](docs/TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](docs/TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
 See the [FLC-1 implementation and validation](docs/TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
-Exact next task: **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**, separately requested.
+See the [FLC-2 implementation and validation](docs/TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md).
+Exact next task: **TIAF A7 / FLC-3 — BOUNDED DEVELOPMENT-ONLY OPTIMIZATION**, separately requested.
 
 ### Historical execution and preparation checkpoints
 
@@ -86,7 +88,7 @@ Current queue resumes below; prior freeze/readiness checkpoints are complete.
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
 | A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
-| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 scientific closure accepted, inconclusive; no public forecast capability | FLC-2, then remaining FLC before FF-2 |
+| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 scientific closure accepted, inconclusive; no public forecast capability | FLC-3, then remaining FLC before FF-2 |
 | Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 FROZEN / FF-1 FROZEN / FLC CURRENT / FF-2 DEFERRED | Final INSUFFICIENT_EVIDENCE; 2025 CONSUMED / evidence COMPLETE; no promotion | FLC CURRENT; FF-2 intentionally deferred; no refit or recycled holdout |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / RUNTIME NOT_IMPLEMENTED | Market-state/latent-factor research remains intact; not the platform definition | Conditional family research, not a prerequisite to a useful simple FF |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
@@ -211,7 +213,7 @@ Forward sequence: `A6.1 → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10`
 
 ## NEXT STEPS
 
-1. **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**, separately requested; complete FLC-2…8.
+1. **TIAF A7 / FLC-3 — BOUNDED DEVELOPMENT-ONLY OPTIMIZATION**, separately requested; complete FLC-3…8.
 2. Preserve frozen FF-0/FF-1, consumed 2025 evidence and the no-refit restriction.
 3. Defer FF-2 until FLC closes, then consider only a separately approved new governed research proposal
    with new qualified validation evidence; eligibility is not authorization.
@@ -401,6 +403,6 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FLC-2 — TRAINING, MODEL IDENTITY, PERSISTENCE AND LIFECYCLE NORMALIZATION**.
+Exact next prompt: **TIAF A7 / FLC-3 — BOUNDED DEVELOPMENT-ONLY OPTIMIZATION**.
 No commit, tag or push is performed by this documentation pass. Historical
 planning/acceptance records retain their then-current status.
