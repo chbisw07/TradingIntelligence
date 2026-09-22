@@ -15,12 +15,16 @@ The [fifth-fold preparation](TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARA
 has now supplied the model/scaler/BaseRate handoff missing at the preserved
 independent review: one empirical fit, 1,690 training rows, replay MATCH.
 **FIFTH_FOLD_PREPARATION_COMPLETE**; **3,351** repository tests pass.
-Final opening remains **not authorized**,
-final protocol **not frozen**; the 2025 holdout is SEALED.
-Next separately requested: **TIAF A7 / FF-1 — FINAL-HOLDOUT PROTOCOL FREEZE REVIEW (WITH FIFTH-FOLD HANDOFF)**.
+Preparation itself did not authorize opening or freeze the final protocol.
+The [final-holdout freeze review](TIAF_A7_FF1_FINAL_HOLDOUT_PROTOCOL_FREEZE_REVIEW_WITH_FIFTH_FOLD_HANDOFF.md)
+now returns **FF1_READY_FOR_FINAL_HOLDOUT**: handoff RESOLVED, final evaluation
+authorized YES, protocol frozen YES; **3,414** tests pass and both closures
+replay MATCH. 2025 remains SEALED, final evidence NOT_RUN, execution slot unused.
+Next separately requested:
+**TIAF A7 / FF-1 — ONE-SHOT PROTECTED 2025 FINAL-HOLDOUT EVALUATION**.
 No second fit, post-holdout refit, holdout opening, tuning, calibration or promotion
-is authorized by preparation. The independent reviewer must freeze the final
-one-shot protocol before any protected outcome access.
+is authorized by preparation. Execution must use the now-frozen protocol and
+durably consume its single claim before any protected numeric access; no retry.
 The earlier FF-1.1A queue below is historical.
 
 ```text

@@ -9,7 +9,17 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-2026-09-22 latest: [pre-holdout fifth-fold artifact preparation](TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
+2026-09-22 latest: [final-holdout protocol freeze review](TIAF_A7_FF1_FINAL_HOLDOUT_PROTOCOL_FREEZE_REVIEW_WITH_FIFTH_FOLD_HANDOFF.md)
+returns **FF1_READY_FOR_FINAL_HOLDOUT**. Fifth-fold blocker RESOLVED; final
+evaluation authorized YES, decision protocol frozen YES. Both closures replay
+MATCH; **3,414** tests pass. Protocol
+`2664b2d4963626e99a246eb30eb58dab2c8531038b59ef5a6cf679464cbaa814`.
+Protected evidence remains NOT_RUN and 2025 SEALED; execution slot unused.
+No new fit or post-holdout refit, no commit/tag/push. Next separately requested:
+**TIAF A7 / FF-1 — ONE-SHOT PROTECTED 2025 FINAL-HOLDOUT EVALUATION**.
+Prior preparation and review checkpoints below retain their historical decisions.
+
+2026-09-22 preparation checkpoint: [pre-holdout fifth-fold artifact preparation](TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
 completed one empirical scaler/model fit and the BaseRate freeze at
 2024-12-31T09:15:00+05:30. 1,690 TRAIN rows (878/812), 11 iterations,
 reconstruction MATCH; **FIFTH_FOLD_PREPARATION_COMPLETE**, **3,351** tests pass. Handoff

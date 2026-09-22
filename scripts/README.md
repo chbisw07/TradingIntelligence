@@ -504,6 +504,31 @@ final evidence **NOT_RUN**. This command cannot emit final support and does not
 promote a model. See the [FF-1.4 report](../docs/TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
 for metrics, limitations, exact policy and fingerprints.
 
+## FF-1 final-holdout protocol freeze (internal, no outcome execution)
+
+`freeze_ff1_final_protocol.py` independently replays the accepted fifth-fold and
+development closures, reads only ID/date/context metadata from the pinned
+qualification and freezes a canonical protocol. It never fits, generates final
+forecasts or opens protected outcomes. No arguments prints a safe no-op message.
+The process blocks network/subprocesses, fitting imports, protected raw source
+reads and writes to input corpora.
+
+```bash
+.venv/bin/python scripts/freeze_ff1_final_protocol.py --help
+.venv/bin/python scripts/freeze_ff1_final_protocol.py --freeze
+.venv/bin/python scripts/freeze_ff1_final_protocol.py --verify-protocol <protocol-fingerprint>
+```
+
+Freeze writes once to `data/ff1/final_protocol_20260922/`; existing custody is not
+overwritten. See the [freeze review](../docs/TIAF_A7_FF1_FINAL_HOLDOUT_PROTOCOL_FREEZE_REVIEW_WITH_FIFTH_FOLD_HANDOFF.md)
+for the exact fingerprint and validation status before using a command. Keep the
+protocol and later consumed-attempt record: deleting/copying a corpus does not
+create new authority. There is no `--execute`, `--open`, `--force` or reset flag.
+Read-only protocol replay does not consume the future single execution. The
+separately authorized final runner must validate these pins and durably consume
+the one-shot claim **before** decoding protected values; no retry after failure.
+Exit 0 is no-op, freeze success or replay MATCH; 1 is HOLD/mismatch; 2 invalid CLI.
+
 ## FF-1 fifth-fold pre-holdout preparation (internal, single attempt)
 
 `prepare_ff1_fifth_fold_artifacts.py` prepares only the model, TRAIN scaler and
