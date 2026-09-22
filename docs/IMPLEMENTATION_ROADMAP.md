@@ -6,7 +6,20 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 [README](../README.md) is the executive dashboard. Status: 2026-09-22
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
-Current follow-up: [FF-1.4 development-only paired evaluation](TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
+Current gate: [one-shot protected 2025 final-holdout evaluation](TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
+is **FF1_FINAL_HOLDOUT_ACCEPTED**; scientific result **INSUFFICIENT_EVIDENCE**
+(`CONFIDENCE_NONDECISIVE`). All 249 intended origins paired, all support gates
+passed, captured replay MATCH, **3,445** tests passed. 2025 is **CONSUMED**,
+evidence **COMPLETE**, executions used **1**. No further opening, refit, retry,
+threshold change or automatic promotion. Logistic remains CHALLENGER / EXPERIMENTAL.
+
+Exact next separately requested task:
+**TIAF A7 / FF-1 — INDEPENDENT FINAL SCIENTIFIC CLOSURE AND BASELINE DECISION**.
+
+Historical checkpoints below retain their then-current SEALED/NOT_RUN states and
+then-next tasks. They do not authorize reuse of the now-consumed holdout.
+
+Development checkpoint: [FF-1.4 development-only paired evaluation](TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
 completed 969 paired 2021–2024 observations and offline reconstruction MATCH.
 Development gates pass; classification **INSUFFICIENT_EVIDENCE**. Keep 2025
 **SEALED**, final evidence **NOT_RUN**. **FF1_4_ACCEPTED**; its full-suite checkpoint

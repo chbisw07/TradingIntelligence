@@ -9,7 +9,19 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
-2026-09-22 latest: [final-holdout protocol freeze review](TIAF_A7_FF1_FINAL_HOLDOUT_PROTOCOL_FREEZE_REVIEW_WITH_FIFTH_FOLD_HANDOFF.md)
+2026-09-22 latest: [one-shot protected 2025 final-holdout evaluation](TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
+returns **FF1_FINAL_HOLDOUT_ACCEPTED**, scientific **INSUFFICIENT_EVIDENCE**
+(`CONFIDENCE_NONDECISIVE`). 249/249 pairs, 128 positive / 121 zero, coverage 100%,
+49 complete blocks, no exclusions. Captured replay MATCH; **3,445** full-suite
+tests pass. Holdout **CONSUMED**, final evidence **COMPLETE**, executions used **1**.
+The lower Logistic point losses do not override the Brier interval crossing zero.
+No refit, retry, automatic promotion, commit, tag or push. Exact next task:
+**TIAF A7 / FF-1 — INDEPENDENT FINAL SCIENTIFIC CLOSURE AND BASELINE DECISION**.
+
+The following checkpoints retain their historical as-of-review states, not
+current permission to open or reuse 2025.
+
+2026-09-22 freeze checkpoint: [final-holdout protocol freeze review](TIAF_A7_FF1_FINAL_HOLDOUT_PROTOCOL_FREEZE_REVIEW_WITH_FIFTH_FOLD_HANDOFF.md)
 returns **FF1_READY_FOR_FINAL_HOLDOUT**. Fifth-fold blocker RESOLVED; final
 evaluation authorized YES, decision protocol frozen YES. Both closures replay
 MATCH; **3,414** tests pass. Protocol

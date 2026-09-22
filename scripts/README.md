@@ -504,6 +504,33 @@ final evidence **NOT_RUN**. This command cannot emit final support and does not
 promote a model. See the [FF-1.4 report](../docs/TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
 for metrics, limitations, exact policy and fingerprints.
 
+## FF-1 final-holdout execution and captured replay (internal, one shot)
+
+`evaluate_ff1_final_holdout.py` is the separately authorized final runner.
+Read the [one-shot execution record](../docs/TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
+for its current consumption status and exact ledger fingerprint **before** use.
+No arguments is a safe no-op. `--preflight` performs sealed/opaque identity
+checks; it does not consume authority. `--execute --approved-protocol <exact-pin>`
+requires the accepted frozen protocol and permanently consumes the only attempt
+before protected numeric access. There is no refit, reset, retry, alternate output,
+seed, exclusion or threshold option. Do not run execution again after consumption,
+even after a failure. Keep the fixed custody and final corpus intact.
+
+Once complete, the supported verification command is:
+
+```bash
+.venv/bin/python scripts/evaluate_ff1_final_holdout.py \
+  --verify-ledger <recorded-final-ledger-fingerprint>
+```
+
+This reads `data/ff1/final_holdout_20260922/` only for data. It verifies frozen
+code/dependency pins and reconstructs the captured features, probabilities,
+Evaluation-owned truth, original-grid paired metrics, bootstrap and decision.
+No original CSV/qualification access, new claim, fit, network or broker call.
+Logistic remains CHALLENGER / EXPERIMENTAL; no automatic promotion. Exit 0 is
+safe no-op, successful preflight/execution or replay MATCH; 1 is HOLD/MISMATCH;
+2 indicates invalid CLI arguments.
+
 ## FF-1 final-holdout protocol freeze (internal, no outcome execution)
 
 `freeze_ff1_final_protocol.py` independently replays the accepted fifth-fold and

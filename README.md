@@ -17,7 +17,18 @@ risk/capital/action authority and the broker retains execution truth.
 Status checked **2026-09-22 (Asia/Kolkata)**. The
 [milestone ledger](docs/MILESTONES.md) owns history, tags and closure evidence.
 
-Current follow-up: [FF-1.4 development-only paired evaluation](docs/TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
+Latest: [one-shot protected 2025 final-holdout evaluation](docs/TIAF_A7_FF1_ONE_SHOT_PROTECTED_2025_FINAL_HOLDOUT_EVALUATION.md)
+returns **FF1_FINAL_HOLDOUT_ACCEPTED**, scientific outcome **INSUFFICIENT_EVIDENCE**
+(`CONFIDENCE_NONDECISIVE`). All 249 origins paired; 128 positive / 121 zero,
+100% coverage, 49 complete blocks, no exclusions. Captured replay **MATCH**;
+**3,445** full-suite tests pass. 2025 is permanently **CONSUMED**, evidence
+**COMPLETE**, execution count **1**. No post-holdout refit, retry or automatic
+promotion; Logistic remains CHALLENGER / EXPERIMENTAL and BaseRate BENCHMARK.
+
+The following checkpoints retain their as-of-review states; their SEALED/NOT_RUN
+statements are historical, superseded by the completed execution above.
+
+Development checkpoint: [FF-1.4 development-only paired evaluation](docs/TIAF_A7_FF1_4_DEVELOPMENT_ONLY_PAIRED_BASERATE_VS_LOGISTIC_EVALUATION.md)
 has evaluated **969 paired 2021–2024 observations**, with offline reconstruction
 MATCH. Development support/stability gates pass; scientific classification is
 **INSUFFICIENT_EVIDENCE**, not final support. 2025 remains **SEALED** and final
@@ -26,7 +37,7 @@ holdout evidence **NOT_RUN**. **FF1_4_ACCEPTED**; its full-suite checkpoint was
 No tuning, promotion or public forecast activation. Earlier FF-1.2 queue
 statements below describe the historical FF-1.1A checkpoint, not the current queue.
 
-Latest [pre-holdout fifth-fold preparation](docs/TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
+Preparation checkpoint: [pre-holdout fifth-fold preparation](docs/TIAF_A7_FF1_PRE_HOLDOUT_FIFTH_FOLD_ARTIFACT_PREPARATION_AND_AUTHORITY_RECONCILIATION.md)
 has produced the missing model/scaler and BaseRate handoff: 1,690 TRAIN rows,
 one empirical fit, 11 iterations, reconstruction MATCH.
 **FIFTH_FOLD_PREPARATION_COMPLETE**; **3,351** repository tests pass.
@@ -34,13 +45,13 @@ The prior independent review is preserved unchanged. That preparation did not
 authorize final opening or freeze the decision protocol. 2025 remains **SEALED**
 and final evidence **NOT_RUN**. No post-holdout refit is allowed.
 
-Latest [final-holdout freeze review](docs/TIAF_A7_FF1_FINAL_HOLDOUT_PROTOCOL_FREEZE_REVIEW_WITH_FIFTH_FOLD_HANDOFF.md)
+Freeze checkpoint: [final-holdout freeze review](docs/TIAF_A7_FF1_FINAL_HOLDOUT_PROTOCOL_FREEZE_REVIEW_WITH_FIFTH_FOLD_HANDOFF.md)
 returns **FF1_READY_FOR_FINAL_HOLDOUT**: fifth-fold blocker resolved, exact one-shot
 protocol frozen, final evaluation authorized for the separately requested next
 pass. **3,414** tests pass; both captured closures replay MATCH. 2025 remains
 **SEALED**, final evidence **NOT_RUN**, empirical execution slot unconsumed.
 
-Next separately requested: **TIAF A7 / FF-1 — ONE-SHOT PROTECTED 2025 FINAL-HOLDOUT EVALUATION**.
+Next separately requested: **TIAF A7 / FF-1 — INDEPENDENT FINAL SCIENTIFIC CLOSURE AND BASELINE DECISION**.
 
 | Workstream | State | Meaning | Next step |
 |---|---|---|---|
@@ -54,8 +65,8 @@ Next separately requested: **TIAF A7 / FF-1 — ONE-SHOT PROTECTED 2025 FINAL-HO
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
 | A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
-| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 final one-shot protocol frozen/authorized; no public forecast capability | Separately requested one-shot final-holdout execution |
-| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 ACCEPTED / FF-1 READY_FOR_FINAL_HOLDOUT / FF-2 NOT_IMPLEMENTED | Development INSUFFICIENT_EVIDENCE; 2025 SEALED / final evidence NOT_RUN; no promotion | Execute only the pinned final protocol; no refit or retry |
+| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 final one-shot execution complete; no public forecast capability | Independent final scientific closure and baseline decision |
+| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 ACCEPTED / FF-1 FINAL_HOLDOUT_ACCEPTED / FF-2 NOT_IMPLEMENTED | Final INSUFFICIENT_EVIDENCE; 2025 CONSUMED / evidence COMPLETE; no promotion | Preserve nondecisive result; no refit, retry or recycled holdout |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / RUNTIME NOT_IMPLEMENTED | Market-state/latent-factor research remains intact; not the platform definition | Conditional family research, not a prerequisite to a useful simple FF |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
 | A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |
