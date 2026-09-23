@@ -16,6 +16,10 @@ does not replace FF-0…FF-7 or change A7 → A8 → A9 → A10:
 2. Late A7 / pre-A8: separately approve a minimal identity, typed-claim,
    resolution/service contract, adapter and Claim Ledger foundation. Start with
    one synthetic existing-FF binary mapping; no network host or empirical fit.
+   The [active-primary clarification](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md#61-active-primary-llm-and-provider-neutral-configuration)
+   adds provider-neutral LLM service/configuration and synthesizer/contributor
+   references to those same envelopes. One primary LLM is the future normal App
+   policy; foundation tests use fixtures, not live adapters, switching or failover.
 3. A8: separately admitted capture, bounded outcome resolution, independent
    Evaluation/performance views and TI/TM links. Durable recurring scheduling
    remains A10; an earlier local slice needs explicit operational acceptance.

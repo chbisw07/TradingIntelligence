@@ -7,8 +7,9 @@ an empirical-use grant, a model-promotion decision, or permission to start A8.
 The proposed foundation still needs a separately authorized, bounded contract
 implementation and acceptance pass. Conceptual names below are not published APIs.
 
-Inspection baseline: `396228f9c70016e09be8ffaffbfd57e0c7bc77d0` (clean working
-tree before this documentation pass). Existing behavior and historical scientific
+Initial architecture inspection baseline: `396228f9c70016e09be8ffaffbfd57e0c7bc77d0`
+(clean working tree before the initial pass; reconciliation baseline in §14.1).
+Existing behavior and historical scientific
 records are not changed. Normative ownership remains with the
 [system architecture](TIAF_SYSTEM_ARCHITECTURE.md),
 [Forecasting Framework](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md),
@@ -23,6 +24,9 @@ Reading routes:
 - [Repository findings](#2-repository-findings-and-reusable-boundaries) →
   [ownership diagram](#3-complete-logical-architecture-and-ownership) →
   [claims](#5-typed-claims-and-interpretation).
+- [Active primary LLM](#61-active-primary-llm-and-provider-neutral-configuration) →
+  [fallback identity](#62-active-llm-failure-and-failover) →
+  [reconciliation findings](#141-active-primary-llm-reconciliation-impact).
 - [IFL and truth](#7-ifl-components-capture-and-durable-state) →
   [measurement](#8-independent-evaluation-and-performance-memory) →
   [governed improvement](#9-learning-coordinator-and-governed-improvement).
@@ -56,8 +60,11 @@ and a profitable trade could incorrectly be treated as the same kind of evidence
 
 **Design philosophy:** use LLMs for ambiguity, interpretation, synthesis and
 diagnosis; use deterministic TI infrastructure for identity, clocks, history,
-truth, measurement, provenance and authority. Astra can contribute intelligence;
-it cannot become the historical record or approve its own effectiveness.
+truth, measurement, provenance and authority. The active LLM can contribute
+intelligence; it cannot become the historical record or approve its own
+effectiveness. **The active LLM is configuration, not architecture.** The normal
+future Workflow App path selects one primary reasoning/synthesis LLM (§6.1),
+without making IFL provider-specific or requiring LLMs in deterministic paths.
 
 Goals are heterogeneous outputs, independent measurement, attributable synthesis,
 offline recorded replay, service-specific evolution and topology-independent
@@ -194,7 +201,9 @@ wraps FF; `RegimeDetectionService` classifies regimes; `VolatilityForecastServic
 emits numeric/interval claims; `SectorRotationService` emits comparative context;
 `CandidateRankingService` ranks a fixed universe; `OptionsIntelligenceService`
 separates underlying claims from expression advice; `MacroIntelligenceService`
-provides contextual claims; `LLMReasoningService` provides structured reasoning.
+provides contextual claims; `LLMIntelligenceService` provides structured reasoning
+and synthesis. This is the clarified name for the previously illustrative
+`LLMReasoningService` role, not a second service or a new runtime registration.
 One service may compose multiple producers; one producer may serve several
 capabilities. Neither multiplicity implies multiple hosts.
 
@@ -303,22 +312,22 @@ and insufficient evidence rather than coercing every response into a trade.
 
 ### 5.3 LLM-assisted classification and direct LLM claims
 
-Use deterministic templates for known structured requests. Astra may assist in
+Use deterministic templates for known structured requests. The active LLM may assist in
 classifying an ambiguous query, extracting candidate targets/horizons, explaining
 evidence or proposing a schema mapping. The validated request/claim must exist
 before any applicable outcome is visible to that production flow. Material
 ambiguity requires clarification or explicit non-evaluable status; the LLM cannot
 silently choose “touched intraday” when the user meant “closed above at horizon.”
 
-Direct Astra claims need the same identity, time, target, horizon, resolver,
+Direct LLM claims need the same identity, time, target, horizon, resolver,
 evidence and immutable capture as model claims. An LLM's stated confidence is
 not empirical calibration and an agent's policy confidence is not event
 probability. Store the original response plus the normalization policy/result;
 do not repair historical claims by rerunning a newer prompt.
 
-## 6. Astra roles and deterministic boundaries
+## 6. LLM roles and deterministic boundaries
 
-| Astra / LLM may assist | Deterministic or separately governed owner remains |
+| Active LLM may assist | Deterministic or separately governed owner remains |
 |---|---|
 | Query interpretation and typed-claim extraction | Request validation, permitted ontology, clarification and capture |
 | Evidence-linked thesis and multi-producer synthesis | Contributor lineage, conflict preservation, schema and budget admission |
@@ -349,6 +358,107 @@ invent a dated snapshot or assume a model alias is immutable.
 [OpenAI GPT-6 Astra model documentation](https://developers.openai.com/api/docs/models/gpt-6-astra)
 (checked 2026-09-23). Effort recommendations are engineering judgment, not a
 measured accuracy/cost comparison or a claim about this account's availability.
+
+### 6.1 Active primary LLM and provider-neutral configuration
+
+**Normal future Workflow App mode: `active_primary_llm_count = 1`.** One selected
+top-tier LLM is the primary reasoning/synthesis model for the admitted
+runtime/session configuration scope—not one provider permanently embedded in TI,
+not a limit of one model call, and not the only Intelligence Producer. The scope
+must have one authoritative binding; session overrides, if later allowed, must
+resolve to one effective configuration before admission, not competing defaults.
+“Top-tier” means an explicitly qualified capability/policy choice, not a hard-coded
+vendor name or an implemented automatic model-selection algorithm.
+
+Examples of replaceable selections include OpenAI GPT-6 Astra, Anthropic Claude,
+Google Gemini or future qualified equivalents. These are conceptual alternatives,
+not claims of installed integrations. Provider-specific adaptation stays behind
+the logical service; its contract, IFL semantics and claim ontology stay stable.
+
+```text
+Workflow App -> provider-neutral ActiveLLMConfiguration selection
+                         |
+              TI admission + pinned effective configuration
+                         |
+              existing Planner / workflow orchestrator
+                 |                           |
+                 v                           v
+       LLMIntelligenceService       independent Forecast / ML / Agents / Tools
+       (interpretation if needed)            |
+                 |                captured outputs + dissent + provenance
+                 +---------------------------+
+                         |
+       SAME pinned active LLM via LLMIntelligenceService (synthesis)
+                         |
+       validated IntelligenceResponse + immutable claim capture -> IFL
+
+LLMIntelligenceService -> existing reasoning gateway / ReasoningProvider seam
+                         +-- provider adapter: OpenAI (future)
+                         +-- provider adapter: Anthropic (future)
+                         +-- provider adapter: Google (future)
+                         +-- other qualified adapter (future)
+```
+
+The orchestrator remains the execution/budget/admission owner. The active LLM
+can propose tool use or interpret an objective; it cannot bypass the Planner,
+invoke unrestricted services, set authoritative clocks or grant itself access.
+This diagram does not add a competing gateway or require literal serial ordering.
+
+Conceptual `ActiveLLMConfiguration` extends the future service-binding envelope,
+reusing `ReasoningModelIdentity`, provider registry and COLD composition patterns:
+
+| Configuration part | Required meaning |
+|---|---|
+| Scope / binding | Runtime/session scope, logical service ID, immutable configuration ID/version and effective generation |
+| Selection | Provider, requested model identity, requested version where available and actual observed version or explicit UNKNOWN in the result |
+| Interpretation | Prompt/template version, tool configuration/policy version, orchestration version and decoding configuration reference |
+| Capability / limits | Declared capabilities, admitted reasoning role, referenced authority/budget/deadline and fallback policies; declarations are not grants |
+
+Every evaluable LLM-generated or LLM-synthesized claim records `producer_type=LLM`,
+the logical service and actual producer/model/configuration identity plus these
+interpretation references. Diagnostic and synthesis roles remain distinguishable
+even when using the same active model. Requested and actual identities must not
+be conflated. Unknown backing-model version stays UNKNOWN; do not fabricate a
+binary hash or infer an immutable revision from an alias. Exact version-observability
+and attestation remain adapter/governance TBDs (IFL-T11/T20).
+
+The Workflow App may expose selection through this provider-neutral configuration
+interface; trusted system configuration/admission validates and binds it. The App
+does not implement provider SDK logic, credentials, routing or independent authority.
+No settings UI, adapter or active-model switching is implemented by this amendment.
+
+Current `NO_LLM`, offline replay and deterministic captured-read paths remain valid
+and make no model calls. A missing/unavailable primary puts the future normal LLM
+path into an explicit degraded/unavailable state, not a fabricated active model.
+The cardinality describes the admitted normal mode, not guaranteed availability.
+Offline comparisons, separately admitted shadow evaluation, controlled failover
+and specialized non-primary LLM services are possible later. They have explicit
+roles, scopes, budgets and identities; they are not simultaneous primary models,
+LLM voting or consensus. Independent ML services and agents remain callable.
+
+### 6.2 Active LLM failure and failover
+
+The general failure matrix (§13) applies, with these primary-role clarifications.
+No switching/failover implementation or HOT activation authority is added.
+
+| Condition | Required future behavior |
+|---|---|
+| Active LLM unavailable / provider outage | Return explicit unavailable or admitted degraded result; preserve available contributor evidence without claiming LLM synthesis. |
+| Timeout | Record attempt and possibly unknown remote completion/usage; late output cannot replace an already committed response. |
+| Quota exhausted | Surface quota/budget failure; bounded retry/fallback only if admitted, never evade caller limits. |
+| Selected model unavailable | Reject unavailable selection or use separately admitted fallback; do not substitute a vendor default under the requested identity. |
+| Provider changes observable backing version | Record actual identity and enforce pin policy; reject incompatible bindings. |
+| Backing version opaque or silently changed without observable signal | Record observability limits; do not claim detection or immutable pinning. Strict verifiable-version profiles must deny insufficient identity evidence. |
+| Fallback provider/model admitted | Create a distinct actual producer/configuration binding and linked attempt; preserve original selection, failure and fallback reason. Never label fallback output as the original model. |
+
+Pin the effective primary for an admitted invocation. Normal configuration changes
+apply at a controlled boundary; COLD remains the default. In-flight changes need
+an explicit failure/re-admission policy, not silent mutation. Controlled failover
+supersedes the failed primary attempt for the same logical response; it does not
+run two competing primary synthesizers. If partial reasoning from the first model
+is retained as evidence for the fallback, both contributions and the final actual
+synthesizer must be recorded. Handoff/draining details remain future implementation
+decisions; no cross-generation reuse is presumed safe.
 
 ## 7. IFL components, capture and durable state
 
@@ -454,8 +564,9 @@ claim + truth revision + evaluation protocol + population/membership
                     -> authorized dashboard / diagnosis / proposal inputs
 ```
 
-Index by service, producer, model/version, claim/target, horizon, instrument,
-sector, regime, evaluation period and evidence-use class. Sector/regime slices
+Index by service, producer, provider, model/version, prompt/configuration version,
+claim/target, horizon, instrument, sector, regime, evaluation period and
+evidence-use class. Sector/regime slices
 must declare whether membership was known at issuance or is an ex-post diagnostic;
 future knowledge cannot enter historical selection features. Preserve retired
 versions, replacements and synthetic/empirical distinctions, not one rolling
@@ -549,6 +660,36 @@ position advice and A6 expression evaluation keep their present boundaries.
 IFL feedback does not automatically retune A2 or alter A4/A5/A6 policy. A2 remains
 the replayable benchmark, not an output to optimize for attractive examples.
 
+### 10.1 Two-level provenance and LLM replacement continuity
+
+```text
+Final synthesized evaluable claim
+  +-- SynthesizerIdentity
+  |     actual active LLM provider/model/observed version/configuration
+  |     prompt/tool/orchestration versions + invocation/attempt
+  +-- ContributorProvenance[]
+        service/producer/model versions + individual output/evidence references
+        regime / forecast / sector / agents / tools + dissent and absence
+```
+
+Tools supplying facts retain evidence-source identity; not every tool response is
+an independently evaluable producer claim. IFL evaluates the final claim and
+relevant evaluable contributor claims separately under their own resolution
+contracts. This can support diagnosis of a wrong contributor, correct contributors
+with flawed synthesis, or a correct final claim despite a weak contributor.
+Those patterns are not proof of causal blame; correlated inputs, different targets
+and sample limitations must remain visible. Diagnosis is not implemented here.
+
+Illustratively, Period A may use Astra, Period B Claude and Period C Gemini.
+**Changing the active LLM must not invalidate, rewrite or reinterpret historical
+IFL claims, Ground Truth or evaluations.** Preserve the period's actual identity,
+prompt/configuration and contributor links; new defaults never rebind old records.
+Performance Memory can compare qualified histories by provider/model/version,
+prompt/configuration, claim type, horizon, sector and regime. Changes in cohort,
+evidence or market period must not be misreported as the causal effect of the
+LLM switch. Offline recorded replay and objective Evaluation require no old LLM
+call; unsupported numerical regeneration remains explicit.
+
 ## 11. TM and Workflow App boundaries
 
 ```text
@@ -587,6 +728,14 @@ Illustrative view, not an implemented UI:
 Workflow App is a presentation/integration consumer, not the IFL ledger. Shell,
 web and later consoles should use the same admission/result boundary, not each
 reimplement service selection or scoring.
+
+The App exposes the active-primary selection and actual synthesizer/configuration
+used, including fallback/degraded status, through the neutral boundary in §6.1.
+TI owns adaptation and admission. IFL belongs to deterministic TI infrastructure,
+not the active LLM: immutable history, Ground Truth, authoritative clocks,
+Performance Memory and candidate lineage remain outside it; promotion and
+production activation remain separately governed. LLMs can interpret, synthesize,
+diagnose and propose, never self-authorize these decisions.
 
 ## 12. Local, remote and deployment architecture
 
@@ -724,6 +873,44 @@ work is invalidated. Required changes are additive heterogeneous envelopes,
 adapter mappings and later ledger/resolver/evaluation/operational capabilities.
 No frozen producer must adopt the complete ontology to remain useful.
 
+### 14.1 Active primary LLM reconciliation impact
+
+Reconciliation inspected clean baseline `24225e5534f6cb7957e360eaec3e60796f62484d`
+on 2026-09-23 (Asia/Kolkata). Findings below classify the architecture **before**
+this amendment; they are not runtime implementation statuses.
+
+| Concept | Finding | Minimum amendment |
+|---|---|---|
+| Active primary LLM | EXISTS_BUT_NEEDS_CLARIFICATION | §6 previously allowed reasoning/synthesis but did not designate one primary role; §6.1 now does. |
+| Provider-neutral LLM service | EXISTS_BUT_NEEDS_CLARIFICATION | Existing logical reasoning role and SDK-neutral gateway are reused; §6.1 makes provider substitution explicit. |
+| Single-active-LLM policy | MISSING | §6.1 defines normal-mode cardinality and scope, without invalidating NO_LLM paths. |
+| Synthesizer identity | EXISTS | §10 already required it; §10.1 makes the two-level representation explicit. |
+| Contributor provenance | EXISTS | §10 already retained inputs/dissent; §10.1 preserves independent evaluation and diagnosis limits. |
+| Active LLM configuration | EXISTS_BUT_NEEDS_CLARIFICATION | §4.3 held identity/configuration fields; §6.1 adds the effective primary binding and App boundary. |
+| Fallback identity semantics | EXISTS_BUT_NEEDS_CLARIFICATION | §12.1 already required a new producer binding; §6.2 specifies primary handoff and opaque-version handling. |
+| Historical continuity across LLM changes | EXISTS_BUT_NEEDS_CLARIFICATION | Immutable claims/versioned history existed; §10.1 states provider-switch continuity explicitly. |
+
+This clarification's impact is distinct from the larger future extension needs
+in §14. No source change or existing scientific-work redesign is required.
+
+| Area | Impact of this reconciliation |
+|---|---|
+| FF-0 / FF-1 | NO_CHANGE; frozen behavior/history and consumed 2025 restrictions preserved. |
+| FLC | NO_CHANGE; lifecycle/training/inference owners unchanged. |
+| FF-2 | NO_CHANGE; empirical authority and readiness remain UNVERIFIABLE / NOT GRANTED and NO. |
+| Forecast Framework / family-neutral inference | NO_CHANGE; specialized binary contracts remain unchanged. |
+| Claim architecture | DOCUMENTATION_CLARIFICATION; active synthesizer binding, no new claim kind. |
+| Ground Truth / Evaluation | NO_CHANGE; independent deterministic ownership and scoring remain. |
+| Performance Memory design | DOCUMENTATION_CLARIFICATION; provider/prompt/configuration dimensions and switch-comparison limits explicit. |
+| Producer identity | DOCUMENTATION_CLARIFICATION; actual synthesizer/fallback identity and observable version limits explicit. |
+| Service identity | DOCUMENTATION_CLARIFICATION; stable logical LLM service, replaceable provider selection. |
+| Agent architecture | NO_REDESIGN; independent contributors and existing reasoning gateway retained. |
+| A8 TI/TM integration | NO_BOUNDARY_CHANGE; TI selection grants no TM/execution authority. |
+| Workflow App architecture | DOCUMENTATION_CLARIFICATION; provider-neutral primary selection, not provider SDK logic or activation authority. |
+
+Disposition: NO_RUNTIME_CHANGE, NO_FF_REDESIGN, NO_FLC_REDESIGN,
+NO_FF2_REDESIGN, SMALL_IFL_DOCUMENTATION_REFINEMENT.
+
 ## 15. Phased work plan and implementation timing
 
 Major order remains A7 → A8 → A9 → A10. IFL is cross-cutting, not a replacement
@@ -750,11 +937,16 @@ Codex models below are planning guidance, not runtime dependencies or approvals.
   and resolution references, service descriptor/request/result, LocalAdapter
   and transport-neutral RemoteAdapter interface only, minimal Claim Ledger
   boundary; one synthetic existing-FF binary mapping end to end.
+  The same envelopes include the provider-neutral logical LLM service descriptor,
+  ActiveLLMConfiguration and synthesizer/contributor identity references (§6.1/§10.1);
+  use captured/test-double data, not a new gateway, provider SDK or live LLM.
 - Tests/gates: immutable/list/JSON and Asia/Kolkata round trips; exact native FF
   preservation; claim/request/version mismatch rejection; zero live/network/model
   calls in replay; duplicate semantics; non-evaluable/absence handling; scoped
   authority denial. A test double may prove local/remote contract parity without
   a real endpoint. Unsupported claim kinds must reject, not coerce.
+  Verify one effective primary per scope, actual fallback identity, opaque-version
+  limitations and historical replay after a configuration change using fixtures only.
 - Non-goals: all seven resolver implementations, empirical fitting, actual remote
   hosting, generic model registry, autonomous learning or public live exposure.
 - Recommended model: GPT-6 Astra **High**; Extra High for independent acceptance
@@ -851,6 +1043,16 @@ TI/TM design exploration need not wait for every future IFL capability.
 28. Semantic collections are immutable and clocks remain aware/canonical Asia/Kolkata.
 29. Planner, Ground Truth, Evaluation, Learning and TM retain their respective ownership; no parallel engines are introduced by naming IFL.
 30. No UI/session/conversation is the authoritative ledger or a source of operational grants.
+31. Normal future Workflow App operation has one active primary reasoning/synthesis LLM per admitted configuration scope; unavailable/degraded and NO_LLM paths are explicit.
+32. The active LLM is selected through provider-neutral configuration, not hard-coded into IFL architecture.
+33. Every evaluable LLM-generated or synthesized claim records its actual provider/model/version-observability/configuration identity.
+34. The active LLM is a producer/synthesizer, not the owner of IFL truth, clocks, history, lineage or authority.
+35. IFL semantics remain independent of the selected LLM provider/model.
+36. Switching the primary LLM never rewrites or reinterprets historical claims, Ground Truth or evaluations.
+37. Final synthesized claims retain both synthesizer identity and contributor provenance where applicable.
+38. Local/remote/provider differences do not change the meaning of the claim contract; outputs and failures can differ and must be attributed honestly.
+39. Fallback to a different provider/model records a distinct actual producer/configuration binding, never the original model's identity.
+40. Future offline/shadow comparisons or non-primary specialist LLMs have separate scopes/roles and do not change the one-active-primary normal model.
 
 ## 17. Open decisions and risks
 
@@ -868,8 +1070,8 @@ below are local to this architecture and do not claim existing DEF register IDs.
 | IFL-T07 | Minimum qualified sample requirements | Research governance, IV |
 | IFL-T08 | Time/sample/condition retraining policy | Learning + governance, IV |
 | IFL-T09 | Drift/degradation thresholds and false-alarm treatment | Evaluation + governance, IV |
-| IFL-T10 | Producer selection, fallback and ensemble policy | Planner/governance, II/III then V |
-| IFL-T11 | LLM prompt/tool/version provenance granularity and retention | Reasoning gateway + custody, II |
+| IFL-T10 | Detailed primary configuration scope/override and handoff/draining policy; fallback and separately governed ensemble policy (one-primary normal mode fixed by §6.1) | Planner/governance, II/III then V |
+| IFL-T11 | LLM prompt/tool/version provenance granularity, capability qualification and retention | Reasoning gateway + custody, II |
 | IFL-T12 | HTTP vs gRPC vs local IPC for justified deployment | Deployment owner, before remote implementation |
 | IFL-T13 | Service discovery mechanism beyond COLD allowlist | Deployment/composition, V if required |
 | IFL-T14 | Authentication, authorization, tenancy and revocation design | Security/authority owner, before remote access |
@@ -934,7 +1136,7 @@ READY_FOR_FUTURE_IFL_IMPLEMENTATION = NO
 Phase II contracts/adapters/capture foundation before generic A8 service promises,
 not architectural rework or permission to begin implementation now.
 
-### Documentation validation for this pass
+### Historical validation of the initial architecture pass
 
 - Existing `docs.handbooks.a7_forecasting.validate_handbook.validate_links(True)`:
   PASS, 703 local links across eight Markdown files (the six changed/new files
@@ -950,3 +1152,38 @@ not architectural rework or permission to begin implementation now.
   Markdown navigation updates. HEAD remains the inspection baseline above.
 - Runtime tests were not rerun: this is architecture/documentation-only work,
   not a new FF/FLC runtime acceptance or protected scientific evaluation.
+
+### Active primary LLM reconciliation closure
+
+The bounded clarification is complete; broad IFL readiness above remains NO and
+the pre-A8 foundation gate is unchanged. Remaining configuration handoff, provider
+version observability and adapter details are recorded under IFL-T10/T11/T20;
+they do not require FF/FLC redesign. No runtime integration, active switching,
+failover, UI settings, voting, consensus or model-selection algorithm is implemented.
+
+```text
+ACTIVE_PRIMARY_LLM_MODEL_DEFINED = YES
+SINGLE_ACTIVE_LLM_RUNTIME_POLICY_DEFINED = YES
+PROVIDER_NEUTRAL_LLM_SERVICE_DEFINED = YES
+ACTIVE_LLM_CONFIGURATION_DEFINED = YES
+SYNTHESIZER_CONTRIBUTOR_PROVENANCE_DEFINED = YES
+LLM_SWITCH_HISTORICAL_CONTINUITY_DEFINED = YES
+FAILOVER_IDENTITY_SEMANTICS_DEFINED = YES
+WORKFLOW_APP_LLM_BOUNDARY_DEFINED = YES
+IFL_REMAINS_PROVIDER_NEUTRAL = YES
+CURRENT_FF_PRESERVED = YES
+CURRENT_FLC_PRESERVED = YES
+CURRENT_FF2_PRESERVED = YES
+SOURCE_CHANGE_REQUIRED = NO
+```
+
+Reconciliation recommendation: **ARCHITECTURE_CLARIFICATION_COMPLETE**.
+
+Reconciliation validation: the existing Markdown link validator passed **174 local
+links across four Markdown files** (the two changed files plus its two fixed
+reference inputs). Fenced-block/whitespace and two-file scope checks passed;
+all 13 reconciliation flags and 40 architectural invariants are present.
+`git diff --check` passed. Source, scripts, tests, data and qualification records
+remain unchanged from the reconciliation baseline. No runtime/full pytest was
+needed or run; no commit, tag or push was performed. The initial pass's validation
+counts above remain historical, not the result of this reconciliation.
