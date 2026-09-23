@@ -14,8 +14,10 @@ offline replay without fitting or lifecycle authority.
 [FLC-6 reusable independent Evaluation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md)
 now normalizes immutable evaluation/population/participant/metric/statistical
 identities, synthetic paired evidence and a read-only FF-1 view inside the existing
-Evaluation owner. FLC-7 integration, provenance and replay hardening is next under
-separate authorization; FF-2 remains
+Evaluation owner. [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md)
+now adds bounded typed lineage, common recorded/reconstruction replay and explicit
+custody/availability separation. FLC-8 reference closure and acceptance is next
+under separate authorization; FF-2 remains
 deferred. The FLC-0 baseline, gap classifications and counts below are
 retained as historical evidence, not current missing-feature claims.
 

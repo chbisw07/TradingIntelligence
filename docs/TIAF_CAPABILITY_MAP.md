@@ -69,6 +69,12 @@ link implementation, acceptance and outstanding boundaries.
 
 ## Current public/engineering catalog versus future designs
 
+Internal FLC-1…7 lifecycle seams now include
+[bounded integration, provenance and replay](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
+These research codecs and offline verification functions add no facade/Shell
+operation or runtime approval. FLC-8 reference closure is the next gate; FF-2
+remains deferred pending closure and a separately governed research proposal.
+
 This exact nine-operation inventory mirrors the static local facade catalog;
 it is not a new registry or permission grant. All reads remain captured/local.
 `REQUIRES_RUNTIME_CHECK` means discovery does not assert request readiness,

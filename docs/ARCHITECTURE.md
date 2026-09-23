@@ -12,7 +12,8 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
 complete; FLC-1 inference, FLC-2 training/custody/lifecycle, FLC-3 synthetic-only
 optimization, FLC-4 model-specific diagnostics and FLC-5 synthetic calibration
-composition readiness and FLC-6 reusable independent Evaluation implemented.
+composition readiness, FLC-6 reusable independent Evaluation and FLC-7
+integration/provenance/replay hardening implemented.
 Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
@@ -27,7 +28,8 @@ See the [FLC-3 synthetic-only optimization and validation](TIAF_A7_FLC_3_BOUNDED
 See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SPECIFIC_DIAGNOSTICS_NORMALIZATION.md).
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
-Exact next task: **TIAF A7 / FLC-7 — INTEGRATION, PROVENANCE AND REPLAY HARDENING**, separately requested.
+See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
+Exact next task: **TIAF A7 / FLC-8 — REFERENCE IMPLEMENTATION CLOSURE AND FLC ACCEPTANCE**, separately requested.
 
 
 Project control starts at the [README dashboard](../README.md) →
@@ -114,7 +116,7 @@ shadow/advisory approval; it does not change frozen A4/A5/A6 or the nine-operati
 catalog. Thesis RECONCILED; A7 architecture ACCEPTED, implementation IN_PROGRESS (FF-0/FF-1 frozen; FLC current). The intervening
 [FF platform design](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED and
 FM/LFDE is its advanced family. A7 ARCHITECTURE is ACCEPTED; FF-0/FF-1 FROZEN; FLC CURRENT; FF-2 DEFERRED / NOT_STARTED;
-**TIAF A7 / FLC-7 — INTEGRATION, PROVENANCE AND REPLAY HARDENING** is next.
+**TIAF A7 / FLC-8 — REFERENCE IMPLEMENTATION CLOSURE AND FLC ACCEPTANCE** is next.
 FF repeat acceptance closes FFA-B01. The completed
 [A7 integration reconciliation](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 and [independent acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) precede the
@@ -399,7 +401,7 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FLC-7 — INTEGRATION, PROVENANCE AND REPLAY HARDENING**.
+Exact next prompt: **TIAF A7 / FLC-8 — REFERENCE IMPLEMENTATION CLOSURE AND FLC ACCEPTANCE**.
 FLC implementation needs a separate request; FF-0/FF-1 remain frozen and 2025
 CONSUMED. No training, promotion, publication, frozen-A6 changes or A8 is
 authorized here. Historical records retain their then-current status.
