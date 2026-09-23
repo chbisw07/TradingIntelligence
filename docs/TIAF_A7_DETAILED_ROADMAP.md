@@ -1,6 +1,6 @@
 # TIAF A7 — Integrated Forecasting / Evaluation / Learning Roadmap
 
-**Current checkpoint — 2026-09-22 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
+**Current checkpoint — 2026-09-23 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
 `tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
 (`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
 **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**; infrastructure accepted,
@@ -8,7 +8,7 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
 
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
-complete; FLC-1 inference and FLC-2 training/custody/lifecycle seams implemented.
+complete; FLC-1 inference, FLC-2 training/custody/lifecycle and FLC-3 synthetic-only optimization implemented.
 Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
@@ -19,7 +19,8 @@ See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-fo
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
 See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
 See the [FLC-2 implementation and validation](TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md).
-Exact next task: **TIAF A7 / FLC-3 — BOUNDED DEVELOPMENT-ONLY OPTIMIZATION**, separately requested.
+See the [FLC-3 synthetic-only optimization and validation](TIAF_A7_FLC_3_BOUNDED_DEVELOPMENT_ONLY_OPTIMIZATION.md).
+Exact next task: **TIAF A7 / FLC-4 — MODEL-SPECIFIC DIAGNOSTICS NORMALIZATION**, separately requested.
 
 
 ## Status and sequencing
@@ -46,7 +47,7 @@ The [milestone ledger](MILESTONES.md) owns actual acceptances/tags.
 ```text
 A7: FF-0 COMPLETE / FROZEN
  → FF-1 COMPLETE / FROZEN — INSUFFICIENT_EVIDENCE
- → FLC CURRENT — FLC-1/2 implemented; FLC-3 next
+ → FLC CURRENT — FLC-1/2/3 implemented; FLC-4 next
      Logistic only learned reference; BaseRate BENCHMARK
  → FF-2 DEFERRED until FLC closes + separate new research/data/protocol approval
  → existing conditional FF-3…FF-7 and separate publication / scoped closure gates
@@ -246,7 +247,7 @@ A8 TM, A9 Scanner and A10 operations keep their major order.
 
 ## Decision and exact next prompt
 
-**Current checkpoint — 2026-09-22 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
+**Current checkpoint — 2026-09-23 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
 `tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
 (`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
 **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**; infrastructure accepted,
@@ -254,7 +255,7 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
 
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
-complete; FLC-1 inference and FLC-2 training/custody/lifecycle seams implemented.
+complete; FLC-1 inference, FLC-2 training/custody/lifecycle and FLC-3 synthetic-only optimization implemented.
 Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
@@ -265,4 +266,5 @@ See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-fo
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
 See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
 See the [FLC-2 implementation and validation](TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md).
-Exact next task: **TIAF A7 / FLC-3 — BOUNDED DEVELOPMENT-ONLY OPTIMIZATION**, separately requested.
+See the [FLC-3 synthetic-only optimization and validation](TIAF_A7_FLC_3_BOUNDED_DEVELOPMENT_ONLY_OPTIMIZATION.md).
+Exact next task: **TIAF A7 / FLC-4 — MODEL-SPECIFIC DIAGNOSTICS NORMALIZATION**, separately requested.

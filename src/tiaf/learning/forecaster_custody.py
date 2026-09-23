@@ -38,6 +38,7 @@ from .forecaster_training import (
     normalize_logistic,
     reference,
 )
+from .synthetic_trials import SyntheticJob, SyntheticModel, SyntheticSpec, normalize
 
 
 class CustodyClass(StrEnum):
@@ -91,6 +92,9 @@ class ForecasterStore(ResearchForecastStore):
             "activation": ActivationState,
             "authorization": TrainingAuthorization,
             "attempt": TrainingAttempt,
+            "trialspec": SyntheticSpec,
+            "trialjob": SyntheticJob,
+            "trialmodel": SyntheticModel,
         }
     )
 
@@ -124,9 +128,32 @@ class ForecasterStore(ResearchForecastStore):
 def persist_training(
     store: ForecasterStore,
     request: TrainingIdentity,
-    manifest: FoldManifest,
-    job: TrainingJob | FifthTrainingJob,
+    manifest: FoldManifest | SyntheticSpec,
+    job: TrainingJob | FifthTrainingJob | SyntheticJob,
 ) -> TrainingBundle:
+    if isinstance(manifest, SyntheticSpec):
+        if not isinstance(job, SyntheticJob):
+            raise ValueError("SYNTHETIC_JOB_REQUIRED")
+        bundle = normalize(request, manifest, job)
+        for kind, child in (
+            ("experiment", request.experiment),
+            ("trialspec", manifest),
+            ("request", request),
+            ("trialjob", job),
+            ("execution", bundle.execution),
+        ):
+            store.put(kind, child)
+        if job.artifact is not None:
+            assert bundle.result.model_identity and bundle.result.preprocessor_identity
+            store.put("scaler", job.artifact.reconstruction.scaler)
+            store.put("preprocessor", bundle.result.preprocessor_identity)
+            store.put("trialmodel", job.artifact)
+            store.put("modelidentity", bundle.result.model_identity)
+        store.put("result", bundle.result)
+        store.put("bundle", bundle)
+        return bundle
+    if isinstance(job, SyntheticJob):
+        raise ValueError("NATIVE_JOB_REQUIRED")
     bundle = normalize_logistic(request, manifest, job)
     # Children before parent: persistence failure cannot create a complete bundle.
     values: list[tuple[str, SealedResearch]] = [
@@ -158,11 +185,13 @@ def restore_training(store: ForecasterStore, bundle_ref: ArtifactReference) -> T
         raise ValueError("TRAINING_BUNDLE_REQUIRED")
     manifest = store.resolve(bundle.request.split_reference)
     job = store.resolve(bundle.execution.native_job_reference)
-    if not isinstance(manifest, FoldManifest) or not isinstance(
-        job, (TrainingJob, FifthTrainingJob)
-    ):
+    if isinstance(manifest, SyntheticSpec) and isinstance(job, SyntheticJob):
+        expected = normalize(bundle.request, manifest, job)
+    elif isinstance(manifest, FoldManifest) and isinstance(job, (TrainingJob, FifthTrainingJob)):
+        expected = normalize_logistic(bundle.request, manifest, job)
+    else:
         raise ValueError("NATIVE_TRAINING_RECORD_REQUIRED")
-    if normalize_logistic(bundle.request, manifest, job) != bundle:
+    if expected != bundle:
         raise ValueError("TRAINING_REPLAY_MISMATCH")
     refs = [
         reference("experiment", bundle.request.experiment),

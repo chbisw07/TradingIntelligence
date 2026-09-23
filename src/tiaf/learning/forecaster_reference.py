@@ -23,6 +23,7 @@ from .forecast_jobs import run_fit
 from .forecaster_authority import TrainingAttempt, TrainingAuthorization, admit_training
 from .forecaster_custody import ForecasterStore, persist_training
 from .forecaster_training import TrainingBundle, TrainingIdentity, logistic_request, reference
+from .synthetic_trials import SyntheticSpec
 
 RECIPE = "flc2.synthetic.integer-patterns.600.v1"
 
@@ -87,12 +88,21 @@ def execute_synthetic_once(
     store: ForecasterStore,
     request: TrainingIdentity,
     authorization: TrainingAuthorization,
+    *,
+    trial: SyntheticSpec | None = None,
+    timeout_seconds: float = 60.0,
 ) -> TrainingBundle:
     """Consume exact external authority before worker launch, even on failure/crash.
 
     Caller owns the new attempt store; reopening is read-only. A different store,
     candidate, version or input requires new external experiment/authority pins.
     """
+    if trial is not None:
+        from .forecaster_trial_service import execute_trial
+
+        return execute_trial(store, request, authorization, trial, timeout_seconds)
+    if timeout_seconds != 60.0:
+        raise ValueError("FIXED_RECIPE_RESOURCE_POLICY_UNCHANGED")
     if not store.writable or tuple(store.root.glob("attempt-*.json")):
         raise ValueError("TRAINING_ATTEMPT_CONSUMED_OR_READ_ONLY")
     # No input argument exists: only the versioned synthetic recipe can reach fit.
