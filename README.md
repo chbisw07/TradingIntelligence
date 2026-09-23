@@ -27,7 +27,7 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](docs/TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; EMPIRICAL EXECUTION HOLD.**
+**FF-2 CURRENT — FF-2.3 AUTHORITY REVIEW COMPLETE; EMPIRICAL EXECUTION HOLD.**
 The [calibrated Logistic research protocol](docs/TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](docs/TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
 remain the unchanged scientific design and historical HOLD record.
@@ -47,7 +47,9 @@ See the [FLC-4 model-specific diagnostics and validation](docs/TIAF_A7_FLC_4_MOD
 See the [FLC-5 calibration composition and validation](docs/TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](docs/TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](docs/TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: resolve empirical FF-2 use authority; synthetic infrastructure is implemented.
+[FF-2.3 authority resolution](docs/TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md) finds
+2022 and 2023–2024 use UNVERIFIABLE / NOT GRANTED; custody review remains fail-closed.
+Next gate: explicit owner use admission, qualified membership and exact fit authority.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 ### Historical execution and preparation checkpoints
@@ -103,7 +105,7 @@ Current queue resumes below; prior freeze/readiness checkpoints are complete.
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
 | A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
-| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 scientific closure accepted, inconclusive; no public forecast capability | FLC frozen; FF-2.1 governance complete; FF-2.2 synthetic infrastructure implemented; empirical authority next |
+| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 scientific closure accepted, inconclusive; no public forecast capability | FLC frozen; FF-2.1 governance complete; FF-2.2 synthetic infrastructure implemented; FF-2.3 authority UNVERIFIABLE; explicit owner admission required |
 | Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 FROZEN / FF-1 FROZEN / FLC FROZEN / FF-2.1 GOVERNANCE COMPLETE | Final INSUFFICIENT_EVIDENCE; 2025 CONSUMED / evidence COMPLETE; no promotion | FLC FROZEN; FF-2.1 governance complete, empirical execution HOLD; no refit or recycled holdout |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / RUNTIME NOT_IMPLEMENTED | Market-state/latent-factor research remains intact; not the platform definition | Conditional family research, not a prerequisite to a useful simple FF |
 | A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
@@ -142,7 +144,7 @@ The outcome remains **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**;
 infrastructure is accepted. BaseRate remains BENCHMARK and Logistic remains
 CHALLENGER / EXPERIMENTAL, promotion eligible NO. 2025 is CONSUMED, executions
 used 1, post-holdout refit allowed NO. FF-1 is frozen at `tiaf-a7-ff1-baseline`; FLC is frozen at `tiaf-a7-flc-baseline`.
-FF-2.1 governance and FF-2.2 synthetic infrastructure are complete; empirical authority remains unresolved.
+FF-2.1 governance and FF-2.2 synthetic infrastructure are complete; FF-2.3 records empirical authority UNVERIFIABLE / NOT GRANTED.
 Empirical development/final evaluation remain on HOLD; no empirical fit or activation is authorized. A7 remains
 IN_PROGRESS; no public forecasting capability or automatic A4/A5/A6 influence.
 See the [FLC lifecycle gap/work plan](docs/TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -228,7 +230,7 @@ Forward sequence: `A6.1 → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10`
 
 ## NEXT STEPS
 
-1. Review [FF-2.2's implementation and handoff](docs/TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md); resolve empirical use authority before any real-data execution.
+1. Follow [FF-2.3's authority findings and blockers](docs/TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md); obtain explicit owner admission and qualified empirical custody before seeking any execution grant.
 2. Preserve frozen FF-0/FF-1, consumed 2025 evidence and the no-refit restriction.
 3. Keep empirical development, collection and final evaluation on HOLD until
    their separate authority/qualification gates pass; synthetic code grants none.
@@ -244,7 +246,7 @@ A5 tag gates or an instruction to start parallel implementation.
 |---|---|---|---|
 | TI Monitoring | Yes | Runtime: NOT_IMPLEMENTED; A5 intent exists | A8/A9 integration; A10 operations |
 | Trading Ecosystem | Yes, responsibility model | Integration: NOT_IMPLEMENTED | A8/A9/A10 |
-| Forecasting / evaluation | [FF platform ACCEPTED](docs/TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md); A7 architecture ACCEPTED, thesis reconciled | Internal BaseRate and fixed Logistic training/evaluation implemented; FF-1 closed inconclusive; no public forecast capability | FF-0/FF-1/FLC frozen → FF-2.1 governance complete; FF-2.2 synthetic infrastructure implemented; empirical authority next |
+| Forecasting / evaluation | [FF platform ACCEPTED](docs/TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md); A7 architecture ACCEPTED, thesis reconciled | Internal BaseRate and fixed Logistic training/evaluation implemented; FF-1 closed inconclusive; no public forecast capability | FF-0/FF-1/FLC frozen → FF-2.1 governance complete; FF-2.2 synthetic infrastructure implemented; FF-2.3 authority UNVERIFIABLE; explicit owner admission required |
 | Sector Rotation | No; TBD idea note | NOT_IMPLEMENTED | FUTURE; relative to A7/A8 TBD |
 | Signal Qualification | No; TBD idea note | NOT_IMPLEMENTED | FUTURE; intended after Sector Rotation review, A7/A8 placement TBD |
 | TM / Scanner integration | Ecosystem boundaries accepted | NOT_IMPLEMENTED | A8 / A9 respectively |
@@ -390,7 +392,7 @@ The outcome remains **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**;
 infrastructure is accepted. BaseRate remains BENCHMARK and Logistic remains
 CHALLENGER / EXPERIMENTAL, promotion eligible NO. 2025 is CONSUMED, executions
 used 1, post-holdout refit allowed NO. FF-1 is frozen at `tiaf-a7-ff1-baseline`; FLC is frozen at `tiaf-a7-flc-baseline`.
-FF-2.1 governance and FF-2.2 synthetic infrastructure are complete; empirical authority remains unresolved.
+FF-2.1 governance and FF-2.2 synthetic infrastructure are complete; FF-2.3 records empirical authority UNVERIFIABLE / NOT GRANTED.
 Empirical development/final evaluation remain on HOLD; no empirical fit or activation is authorized. A7 remains
 IN_PROGRESS; no public forecasting capability or automatic A4/A5/A6 influence.
 See the [FLC lifecycle gap/work plan](docs/TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -418,6 +420,6 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Proposed next task: **FF-2 EMPIRICAL AUTHORITY RESOLUTION — NO EXECUTION GRANT YET**; empirical grants and final readiness remain separate.
+Proposed next task: **FF-2 OWNER USE ADMISSION AND EMPIRICAL QUALIFICATION — NO EXECUTION GRANT YET**; empirical grants and final readiness remain separate.
 No commit, tag or push is performed by this implementation pass. Historical
 planning/acceptance records retain their then-current status.

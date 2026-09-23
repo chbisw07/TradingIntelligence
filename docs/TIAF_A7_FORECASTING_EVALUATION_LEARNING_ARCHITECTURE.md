@@ -13,7 +13,7 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; EMPIRICAL EXECUTION HOLD.**
+**FF-2 CURRENT — FF-2.3 AUTHORITY REVIEW COMPLETE; EMPIRICAL EXECUTION HOLD.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
 remain the unchanged scientific design and historical HOLD record.
@@ -33,7 +33,9 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: resolve empirical FF-2 use authority; synthetic infrastructure is implemented.
+[FF-2.3 authority resolution](TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md) finds
+2022 and 2023–2024 use UNVERIFIABLE / NOT GRANTED; custody review remains fail-closed.
+Next gate: explicit owner use admission, qualified membership and exact fit authority.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 The dated architecture checkpoints below preserve their then-current state;

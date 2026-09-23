@@ -80,6 +80,9 @@ calibrated Logistic research protocol. [FF-2.1 governance](TIAF_A7_FF2_1_DATA_US
 defines data-use/qualification rules. [FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
 implements bounded fitting/application, separate raw/calibrated captures, replay
 and Evaluation plumbing. Empirical development/final readiness remain NO.
+[FF-2.3 authority resolution](TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md)
+records UNVERIFIABLE / NOT GRANTED for historical empirical use; bounded metadata
+custody review always denies execution. Explicit owner admission is still required.
 No empirical Evaluation admission, public capability or runtime promotion is added.
 Resolving this internal seam does not authorize new public operations.
 

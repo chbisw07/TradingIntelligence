@@ -1,5 +1,12 @@
 # Forecasting Framework — Platform Architecture
 
+**Current implementation checkpoint — 2026-09-23:** FF-0/FF-1/FLC remain frozen;
+FF-2.2 synthetic infrastructure is implemented.
+[FF-2.3 authority resolution](TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md)
+finds historical empirical use UNVERIFIABLE / NOT GRANTED. Metadata custody
+review is fail-closed; no empirical or prospective execution is authorized.
+The dated architecture/readiness checkpoints below retain their historical meaning.
+
 **Current direction — 2026-09-22 (Asia/Kolkata):** FF-0 and FF-1 are frozen;
 FF-1 is scientifically closed INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE.
 The bounded **FLC (Forecaster Lifecycle Completion)** phase precedes FF-2,
@@ -1280,6 +1287,8 @@ now defines a new, bounded calibrated Logistic proposal using these owners.
 defines data-use and prospective qualification. [FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
 adds the bounded sigmoid capability and raw/calibrated wrapper over the existing
 owners. Empirical development/final readiness remain NO; historical science is unchanged.
+[FF-2.3](TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md) adds a sealed
+authority refusal and bounded metadata review, not an empirical grant or runner.
 Actual lifecycle activation,
 authenticated approval and empirical calibration fitting remain deferred; FF-0/FF-1
 contracts and pins are unchanged.
