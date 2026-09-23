@@ -21,6 +21,11 @@ from .forecaster_seams import (
 )
 from .forecasters import resolve_forecaster
 from .identity import ArtifactReference, ForecastContract, canonical_json, semantic_fingerprint
+from .inference_contracts import (
+    InferenceProvenance,
+    NeutralInferenceRequest,
+    NeutralInferenceResult,
+)
 from .logistic_forecasts import ResearchForecastRequest, generate, model_for
 from .logistic_projection import ForecastProjection
 from .support import BaseRateArtifact, admit_support
@@ -177,3 +182,53 @@ def recorded_inference_replay(encoded: str, fingerprint: str) -> InferenceResult
     if canonical_json(value) != encoded or semantic_fingerprint(value) != fingerprint:
         raise ForecastIntegrityError("INFERENCE_REPLAY_FINGERPRINT_MISMATCH")
     return InferenceResult.model_validate(value)
+
+
+@dataclass(frozen=True, slots=True)
+class NativeInferenceBridge:
+    """Adapter edge: carry existing native validations into the neutral runner.
+
+    Does not replace the old wire codec or alter native numeric/replay behavior.
+    Other families bind their own validated inputs via InferenceAdapter directly.
+    """
+
+    native_request: InferenceRequest
+    context: BaseRateContext | LogisticContext
+
+    def descriptor(self) -> InferenceDescriptor:
+        return resolve_inference_forecaster(self.native_request.key, self.context).descriptor()
+
+    def request(self) -> NeutralInferenceRequest:
+        native = InferenceRequest.model_validate(self.native_request)
+        return NeutralInferenceRequest(
+            key=native.key,
+            observation_id=(
+                native.native.observation_id
+                if isinstance(native.native, ForecastRequest)
+                else native.native.origin.observation_id
+            ),
+            target_id=native.target_id,
+            subject=native.subject,
+            mode=native.mode,
+            information_cutoff=native.information_cutoff,
+            as_of=native.as_of,
+            computed_at=native.computed_at,
+            context_ref=native.context_ref,
+            input_ref=reference("native-request", native),
+        )
+
+    def forecast(self, request: NeutralInferenceRequest) -> NeutralInferenceResult:
+        request = NeutralInferenceRequest.model_validate(request)
+        if request != self.request():
+            raise ForecastIntegrityError("NATIVE_BRIDGE_REQUEST_MISMATCH")
+        native = resolve_inference_forecaster(self.native_request.key, self.context).forecast(
+            self.native_request
+        )
+        return NeutralInferenceResult(
+            request=request,
+            descriptor=native.descriptor,
+            artifacts=InferenceProvenance.model_validate(native.artifacts.model_dump()),
+            status=native.status,
+            output=native.output,
+            native_result=reference("native-result", native),
+        )

@@ -14,6 +14,7 @@ from .enums import ForecastRealizationMode
 from .forecaster_adapters import BaseRateContext, LogisticContext
 from .forecaster_seams import ForecasterKey, InferenceResult
 from .identity import ArtifactReference, ForecastDateTime, LogicalId, semantic_fingerprint
+from .inference_contracts import NeutralInferenceResult
 
 
 class Relation(StrEnum):
@@ -149,6 +150,20 @@ class ProvenanceRecord(SealedResearch):
         )
 
 
+class NeutralInferenceCapture(SealedResearch):
+    """Additive family-neutral codec. Native bytes remain adapter-owned references.
+
+    Recorded replay validates this envelope and declared custody, not unavailable
+    native bytes or numeric reconstruction. No code is loaded from references.
+    """
+
+    result: NeutralInferenceResult
+
+    @property
+    def computed_at(self) -> ForecastDateTime:
+        return self.result.request.computed_at
+
+
 class InferenceCapture(SealedResearch):
     """Lossless FLC-1 envelope plus separately addressable, exact native context."""
 
@@ -157,6 +172,8 @@ class InferenceCapture(SealedResearch):
 
 
 class InferenceContext(SealedResearch):
+    """Legacy native capture codec only; new families use NeutralInferenceCapture."""
+
     native: BaseRateContext | LogisticContext
 
 

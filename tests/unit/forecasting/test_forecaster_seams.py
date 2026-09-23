@@ -8,7 +8,7 @@ import pytest
 from pydantic import ValidationError
 
 from tiaf.forecasting import forecaster_adapters as adapters
-from tiaf.forecasting import forecaster_seams as seams
+from tiaf.forecasting import forecaster_legacy as seams
 from tiaf.forecasting.contracts import BinaryProbabilityOutput, ForecastRequest
 from tiaf.forecasting.enums import ForecastRealizationMode, ForecastStatus
 from tiaf.forecasting.errors import ForecastIntegrityError

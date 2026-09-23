@@ -41,11 +41,13 @@ from .contracts import BinaryProbabilityOutput
 from .forecaster_adapters import resolve_inference_forecaster
 from .forecaster_seams import ForecasterKey
 from .identity import ArtifactReference, ForecastDateTime
+from .inference_contracts import ForecasterCapability
 from .lifecycle_provenance import (
     ArtifactPrediction,
     InferenceCapture,
     InferenceContext,
     LineageBranch,
+    NeutralInferenceCapture,
     ProvenanceEdge,
     ProvenanceNode,
     ProvenanceRecord,
@@ -60,6 +62,7 @@ _NEW: dict[str, type[SealedResearch]] = {
     "provenance": ProvenanceRecord,
     "infercapture": InferenceCapture,
     "infercontext": InferenceContext,
+    "neutralinfercapture": NeutralInferenceCapture,
     "predictionprobe": ArtifactPrediction,
     "replayrequest": ReplayRequest,
     "replayresult": ReplayResult,
@@ -203,7 +206,7 @@ def dependencies(value: SealedResearch) -> tuple[tuple[ArtifactReference, Relati
         relation = Relation.USES
         if isinstance(value, TrainingIdentity) and ref == value.split_reference:
             relation = Relation.TRAINED_FROM
-        elif isinstance(value, (InferenceCapture, ArtifactPrediction)):
+        elif isinstance(value, (InferenceCapture, NeutralInferenceCapture, ArtifactPrediction)):
             relation = Relation.DERIVED_FROM
         elif isinstance(value, DiagnosticEnvelope) and ref == value.artifact_reference:
             relation = Relation.DIAGNOSES
@@ -323,7 +326,7 @@ def _validate_graph(
                 record = records.get(ref)
                 key = (
                     record.result.request.key
-                    if isinstance(record, InferenceCapture)
+                    if isinstance(record, (InferenceCapture, NeutralInferenceCapture))
                     else record.forecaster
                     if isinstance(record, ArtifactPrediction)
                     else None
@@ -370,9 +373,9 @@ def _validate_graph(
                     probability = None
                     if isinstance(source, ArtifactPrediction):
                         probability = source.output.probability
-                    elif isinstance(source, InferenceCapture) and isinstance(
-                        source.result.output, BinaryProbabilityOutput
-                    ):
+                    elif isinstance(
+                        source, (InferenceCapture, NeutralInferenceCapture)
+                    ) and isinstance(source.result.output, BinaryProbabilityOutput):
                         probability = source.result.output.probability
                     elif isinstance(source, CalibrationApplyResult):
                         probability = source.calibrated_probability
@@ -385,6 +388,30 @@ def _validate_graph(
                         if (
                             participant.forecaster != source.forecaster
                             or participant.forecast_or_composition != source.model
+                        ):
+                            raise ValueError("PROVENANCE_EVALUATION_PARTICIPANT_MISMATCH")
+                    if isinstance(source, NeutralInferenceCapture):
+                        participant = forecast_set.participant
+                        forecast = source.result.request
+                        if (
+                            participant.forecaster != forecast.key
+                            or participant.forecast_or_composition
+                            != source.result.artifacts.composition
+                            or row.observation_id != forecast.observation_id
+                            or forecast.target_id
+                            != f"{participant.target.target_id}/{participant.target.target_version}"
+                            or forecast.subject != value.request.identity.subject
+                            or forecast.mode != participant.realization_mode
+                            or (
+                                participant.form
+                                != (
+                                    "ARTIFACT_BACKED_FORECASTER"
+                                    if source.result.descriptor.supports(
+                                        ForecasterCapability.ARTIFACT_BACKED
+                                    )
+                                    else "PRIMITIVE_FORECASTER"
+                                )
+                            )
                         ):
                             raise ValueError("PROVENANCE_EVALUATION_PARTICIPANT_MISMATCH")
                     source_at = getattr(source, "computed_at", None)
@@ -436,7 +463,7 @@ def _validate_graph(
 
 
 _TARGETS: dict[str, tuple[type[SealedResearch], ...]] = {
-    "INFERENCE": (InferenceCapture, ArtifactPrediction),
+    "INFERENCE": (InferenceCapture, NeutralInferenceCapture, ArtifactPrediction),
     "TRAINING_ARTIFACTS": (TrainingBundle,),
     "DIAGNOSTICS": (DiagnosticEnvelope,),
     "CALIBRATION": (CalibrationApplyResult,),
@@ -509,7 +536,7 @@ def replay_lifecycle(store: LifecycleStore, request: ReplayRequest) -> ReplayRes
             raise ValueError("REPLAY_TARGET_OUTSIDE_GRAPH")
         if type(target) not in _TARGETS[request.target_kind]:
             raise ValueError("REPLAY_TARGET_KIND_MISMATCH")
-        if isinstance(target, InferenceCapture):
+        if isinstance(target, (InferenceCapture, NeutralInferenceCapture)):
             historical_as_of, mode = target.result.request.as_of, target.result.request.mode
         if request.mode == "RECORDED_VERIFY":
             status = "MATCH"
@@ -518,6 +545,8 @@ def replay_lifecycle(store: LifecycleStore, request: ReplayRequest) -> ReplayRes
             reason = "replay:consumed-evidence-recorded-verification-only"
         else:
             status = _reconstruct(reader, target, request.target)
+            if status == "UNSUPPORTED" and isinstance(target, NeutralInferenceCapture):
+                reason = "replay:neutral-native-reconstruction-unsupported"
         if status == "MATCH":
             reason = (
                 "replay:recorded-closure-verified"

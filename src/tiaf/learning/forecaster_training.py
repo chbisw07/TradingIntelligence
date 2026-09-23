@@ -9,13 +9,13 @@ from typing import Literal, Self, cast
 
 from pydantic import Field, model_validator
 
-from tiaf.forecasting.forecaster_seams import ForecasterFamily, ForecasterKey
 from tiaf.forecasting.identity import (
     ArtifactReference,
     ForecastDateTime,
     LogicalId,
     semantic_fingerprint,
 )
+from tiaf.forecasting.inference_contracts import FamilyIdentifier, ForecasterFamily, ForecasterKey
 from tiaf.planner.models import Sha256
 
 from .forecast_artifacts import (
@@ -47,7 +47,7 @@ class ExperimentIdentity(SealedResearch):
 
 class TrainingIdentity(SealedResearch):
     experiment: ExperimentIdentity
-    family: ForecasterFamily
+    family: FamilyIdentifier
     target_id: str = Field(min_length=1)
     target_version: str = Field(min_length=1)
     subject: str = Field(min_length=1)
@@ -108,7 +108,7 @@ class PreprocessorIdentity(SealedResearch):
 class ModelArtifactIdentity(SealedResearch):
     artifact: ArtifactReference
     forecaster: ForecasterKey
-    family: ForecasterFamily
+    family: FamilyIdentifier
     model_version: str = Field(min_length=1)
     request_reference: ArtifactReference
     execution_reference: ArtifactReference

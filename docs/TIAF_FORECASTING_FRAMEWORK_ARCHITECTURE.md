@@ -7,6 +7,14 @@ which is intentionally DEFERRED / NOT_STARTED. [Section 22](#22-forecaster-lifec
 defines the additive lifecycle direction; the [gap/work plan](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md)
 owns implementation packages. No FF-0 behavior change or FF-1 reopening.
 
+**Implementation closure checkpoint — 2026-09-23:** FLC-1…7 are accepted within
+their bounded internal profiles. [FLC-8 review](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md)
+records the original future-family HOLD (FLC8-B01) and subsequent authorized
+neutral-seam implementation. Common typed identity/request/result contracts now
+accept adapter-bound families without native unions; legacy codecs stay at the
+edge. Validation/source review pass; technical freeze readiness is YES.
+No freeze operation or FF-2 start is authorized by that readiness result.
+
 Historical FF-0 planning checkpoint (then-next wording, not the current queue):
 
 The [bounded FF-0 implementation plan](TIAF_A7_IMPLEMENTATION_SEQUENCING_FF0_MINIATURE_PLAN.md) is complete
@@ -1260,10 +1268,14 @@ No trained model or runtime success is claimed.
 
 ## 22. Forecaster Lifecycle Completion (FLC)
 
-Implementation cross-reference: [FLC-1](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md)
-now supplies additive internal inference/identity adapters. Training, lifecycle
-execution, diagnostics, calibration and full integration below remain later
-FLC packages; FF-0/FF-1 contracts and pins are unchanged.
+Implementation cross-reference: [FLC-1…7 checkpoints](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md)
+now supply bounded internal inference, training/custody/lifecycle records,
+synthetic optimization, diagnostics, authored calibration readiness, independent
+Evaluation and shared provenance/replay. [FLC-8 closure](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md)
+records the original HOLD and authorized family-neutral seam reconciliation;
+validation/source review pass. Actual lifecycle activation,
+authenticated approval and calibration fitting remain deferred; FF-0/FF-1
+contracts and pins are unchanged.
 
 This 2026-09-22 additive architecture direction completes the reusable lifecycle
 using **Logistic as the sole learned reference forecaster** and **BaseRate as
