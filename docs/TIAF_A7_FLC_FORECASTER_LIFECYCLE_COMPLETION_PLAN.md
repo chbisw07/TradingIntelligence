@@ -10,8 +10,12 @@ now adds common internal request/envelope semantics with typed BaseRate and
 Logistic payloads, existing custody and offline replay.
 [FLC-5 calibration composition readiness](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md)
 adds separate raw/transformed outputs, a synthetic-only reference wrapper and
-offline replay without fitting or lifecycle authority. FLC-6 reusable independent
-evaluation normalization is next under separate authorization; FF-2 remains
+offline replay without fitting or lifecycle authority.
+[FLC-6 reusable independent Evaluation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md)
+now normalizes immutable evaluation/population/participant/metric/statistical
+identities, synthetic paired evidence and a read-only FF-1 view inside the existing
+Evaluation owner. FLC-7 integration, provenance and replay hardening is next under
+separate authorization; FF-2 remains
 deferred. The FLC-0 baseline, gap classifications and counts below are
 retained as historical evidence, not current missing-feature claims.
 
