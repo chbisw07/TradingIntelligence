@@ -13,15 +13,16 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
+**FF-2 CURRENT — FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; EMPIRICAL EXECUTION HOLD.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
 remain the unchanged scientific design and historical HOLD record.
 [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
 historical-use boundaries, prospective qualification and the fixed one-shot trigger.
-**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
-empirical development and final evaluation readiness NO. No empirical grant,
-calibration fit, live accrual, runtime promotion or public capability is added.
+[FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
+implements bounded sigmoid fitting, separate raw/calibrated captures, custody,
+recorded replay and Evaluation plumbing. Empirical development and final readiness
+remain NO; no live accrual, promotion or public forecast capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -32,7 +33,7 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Next gate: resolve empirical FF-2 use authority; synthetic infrastructure is implemented.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 
@@ -708,7 +709,7 @@ The intervening [FF platform architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTU
 [decision](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md) position FM/LFDE as one
 advanced family; its [thesis](TIAF_FM_LFDE_THESIS_RECORD.md) is retained unchanged.
 FF and A7 architecture are accepted; frozen FF-1 remains inconclusive.
-Next: **FF-2.2 CALIBRATION IMPLEMENTATION — SYNTHETIC ONLY** following FF-2.1
+Next: **FF-2 EMPIRICAL AUTHORITY RESOLUTION — NO EXECUTION GRANT YET** following FF-2.1
 governance. No empirical fit, collection, final opening or promotion is authorized.
 FF repeat acceptance closes FFA-B01; A7 integration and
 [independent architecture acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) are
@@ -1008,15 +1009,16 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
+**FF-2 CURRENT — FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; EMPIRICAL EXECUTION HOLD.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
 remain the unchanged scientific design and historical HOLD record.
 [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
 historical-use boundaries, prospective qualification and the fixed one-shot trigger.
-**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
-empirical development and final evaluation readiness NO. No empirical grant,
-calibration fit, live accrual, runtime promotion or public capability is added.
+[FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
+implements bounded sigmoid fitting, separate raw/calibrated captures, custody,
+recorded replay and Evaluation plumbing. Empirical development and final readiness
+remain NO; no live accrual, promotion or public forecast capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -1027,7 +1029,7 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Next gate: resolve empirical FF-2 use authority; synthetic infrastructure is implemented.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
@@ -1052,7 +1054,7 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Proposed next task: **FF-2.2 CALIBRATION IMPLEMENTATION — SYNTHETIC ONLY**; empirical grants and final readiness remain separate.
+Proposed next task: **FF-2 EMPIRICAL AUTHORITY RESOLUTION — NO EXECUTION GRANT YET**; empirical grants and final readiness remain separate.
 FLC-1/2/3/4/5/6/7 supply internal inference, Learning, synthetic optimization, diagnostics, calibration readiness, independent Evaluation and shared provenance/replay. FLC8-B01's reconciliation is validated and source-reviewed; technical freeze readiness is YES;
 this pass does not authorize training, model approval, publication, frozen-A6
 changes or A8.

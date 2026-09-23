@@ -13,15 +13,16 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
+**FF-2 CURRENT — FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; EMPIRICAL EXECUTION HOLD.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
 remain the unchanged scientific design and historical HOLD record.
 [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
 historical-use boundaries, prospective qualification and the fixed one-shot trigger.
-**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
-empirical development and final evaluation readiness NO. No empirical grant,
-calibration fit, live accrual, runtime promotion or public capability is added.
+[FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
+implements bounded sigmoid fitting, separate raw/calibrated captures, custody,
+recorded replay and Evaluation plumbing. Empirical development and final readiness
+remain NO; no live accrual, promotion or public forecast capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -32,7 +33,7 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Next gate: resolve empirical FF-2 use authority; synthetic infrastructure is implemented.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 
@@ -62,7 +63,7 @@ A7: FF-0 COMPLETE / FROZEN
  → FF-1 COMPLETE / FROZEN — INSUFFICIENT_EVIDENCE
  → FLC COMPLETE / FROZEN — tiaf-a7-flc-baseline
      Logistic only learned reference; BaseRate BENCHMARK
- → FF-2.1 GOVERNANCE COMPLETE → FF-2.2 SYNTHETIC IMPLEMENTATION NEXT; no empirical fit/promotion
+ → FF-2.1 GOVERNANCE COMPLETE → FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; no empirical fit/promotion
  → existing conditional FF-3…FF-7 and separate publication / scoped closure gates
  → A8 → A9 → A10 [major order unchanged]
 ```
@@ -113,7 +114,7 @@ are resolved by this table; their scientific requirements are not deleted.
 | FF-0 | Immutable request/result/descriptor/artifact/DAG/run, singleton B0 fixture, capture and pinned-verifier boundary; mode/clock and finite graph admission | One target/horizon/schedule/label specification, journal and population contracts, knowledge/rights qualification rules | Exact declarative artifact references and separate bounded job grants; no empirical fit implied | Synthetic contract/PIT/replay mechanics; unqualified data cannot yield empirical claims |
 | FF-1 | B0 control and B2 logistic raw research instruments; named comparison arms | Benchmark view, Ledger snapshots, PairedComparisonManifest, proper metrics, dispositions, chronological walk-forward, context and uncertainty protocols | Authorized candidate fits/selection with all trials/usage; one typed artifact registry | Reproducible honest paired report; zero pairs or insufficient support is NOT_EVALUABLE/inconclusive |
 | FLC (inserted completion track) | Neutral inference/artifact/calibration-readiness seams; Logistic reference, unchanged BaseRate | Common metric adapters, diagnostic-report consumption and synthetic comparison tests | Model-specific training/tuning/diagnostics plus shared immutable lifecycle records; no empirical grant | [FLC-0…8 plan](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md); engineering closure before any FF-2 proposal |
-| FF-2 (CURRENT: protocol only; runtime NOT_IMPLEMENTED) | Pinned sigmoid wrapper, complete graph/artifact replay, scoped shadow and eligible advisory root enforcement | Independent calibration, controls, health/drift and matured ACTUAL shadow evidence | Lossless lifecycle/role events, explicit reviewer approvals and trusted COLD binding/rollback | Complete miniature; reject miscalibrated/unsupported/failed-shadow candidates, no public or decision influence inferred |
+| FF-2 (CURRENT: synthetic calibration infrastructure; broader empirical/shadow work deferred) | Pinned sigmoid wrapper, complete graph/artifact replay, scoped shadow and eligible advisory root enforcement | Independent calibration, controls, health/drift and matured ACTUAL shadow evidence | Lossless lifecycle/role events, explicit reviewer approvals and trusted COLD binding/rollback | Complete miniature; reject miscalibrated/unsupported/failed-shadow candidates, no public or decision influence inferred |
 | FF-3 | Optional B3 single conventional challenger; B4 kNN only by hypothesis; B5 simple compatible calibrated ensemble, typed vote, shared-node execution | Component/parent/best-control and optional preregistered removal studies, disagreement and unique cost | New weights/member set as candidates, independent qualification before binding | Keep simpler useful root if complexity adds no supported value; no renormalization after required failure |
 | FF-4 | Optional LLMForecaster via governed model gateway; exact captured prompt/response/observable revision | Common truth, proper losses/calibration, mode/vintage limits, failure-rate and latency/cost comparison | Prompt/model/calibration or inclusion/removal candidates under separate grants | No privileged vote/role; unknown history bars PIT claims, exact replay need not imply recomputation |
 | FF-5 | Optional FMLFDEForecaster preserving tensor/K/Z/state/head/internal calibration | Shared truth and K/Z/K+Z, classical and other FF controls, ablations/stability | Nested FM/L candidates and basis/calibration manifests | Reject weak Z/dynamics/modalities within finite budget; family never owns generic truth or approval |
@@ -273,15 +274,16 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
+**FF-2 CURRENT — FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; EMPIRICAL EXECUTION HOLD.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
 remain the unchanged scientific design and historical HOLD record.
 [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
 historical-use boundaries, prospective qualification and the fixed one-shot trigger.
-**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
-empirical development and final evaluation readiness NO. No empirical grant,
-calibration fit, live accrual, runtime promotion or public capability is added.
+[FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
+implements bounded sigmoid fitting, separate raw/calibrated captures, custody,
+recorded replay and Evaluation plumbing. Empirical development and final readiness
+remain NO; no live accrual, promotion or public forecast capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -292,5 +294,5 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Next gate: resolve empirical FF-2 use authority; synthetic infrastructure is implemented.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.

@@ -1277,11 +1277,11 @@ validation/source review pass; FLC is frozen at `tiaf-a7-flc-baseline`.
 The [FF-2.0 research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 now defines a new, bounded calibrated Logistic proposal using these owners.
 [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md)
-defines data-use and prospective qualification. FF-2.2 is ready for synthetic-only
-implementation; empirical development/final readiness remain NO. Neither pass
-implements a calibrator or revises historical science.
+defines data-use and prospective qualification. [FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
+adds the bounded sigmoid capability and raw/calibrated wrapper over the existing
+owners. Empirical development/final readiness remain NO; historical science is unchanged.
 Actual lifecycle activation,
-authenticated approval and calibration fitting remain deferred; FF-0/FF-1
+authenticated approval and empirical calibration fitting remain deferred; FF-0/FF-1
 contracts and pins are unchanged.
 
 This 2026-09-22 additive architecture direction completes the reusable lifecycle

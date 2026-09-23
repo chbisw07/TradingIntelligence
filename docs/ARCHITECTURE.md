@@ -15,15 +15,16 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
+**FF-2 CURRENT — FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED; EMPIRICAL EXECUTION HOLD.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
 remain the unchanged scientific design and historical HOLD record.
 [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
 historical-use boundaries, prospective qualification and the fixed one-shot trigger.
-**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
-empirical development and final evaluation readiness NO. No empirical grant,
-calibration fit, live accrual, runtime promotion or public capability is added.
+[FF-2.2 synthetic infrastructure](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md)
+implements bounded sigmoid fitting, separate raw/calibrated captures, custody,
+recorded replay and Evaluation plumbing. Empirical development and final readiness
+remain NO; no live accrual, promotion or public forecast capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -34,7 +35,7 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Next gate: resolve empirical FF-2 use authority; synthetic infrastructure is implemented.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 
@@ -75,11 +76,11 @@ Read [THESIS](TIAF_THESIS.md) → [SYSTEM](TIAF_SYSTEM_ARCHITECTURE.md) →
 | How do consumers access TI? | [Local facade](TIAF_POST_A3_PRE_A4_LOCAL_FACADE.md), [Shell](TIAF_TI_SHELL_V0_1_IMPLEMENTATION.md); no remote/live public operation. |
 | What did this consolidation change? | [Post-R1 record](TIAF_POST_R1_DOCUMENTATION_CONSOLIDATION_AND_SYNCHRONIZATION.md). |
 | What is A7's accepted architecture? | [FF-integrated architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md), [17-finding reconciliation](TIAF_A7_THESIS_ARCHITECTURE_RECONCILIATION.md), [integrated stage crosswalk](TIAF_A7_DETAILED_ROADMAP.md); ARCHITECTURE ACCEPTED after the explicit FF integration and independent review. No runtime approval. |
-| What is the stable forecasting platform? | [FF architecture ACCEPTED](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md), [bounded roadmap](TIAF_FORECASTING_FRAMEWORK_DETAILED_ROADMAP.md), [decision and findings dispositions](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md). Primitive/composite typed DAG, common truth, paired evaluation; FF-0/FF-1/FLC frozen; FF-2.1 governance complete and FF-2.2 synthetic-only implementation next. |
-| How do I learn the Forecasting Framework? | [Separate platform thesis PDF](TI_Forecasting_Framework_Thesis.pdf), [editable Word edition](TI_Forecasting_Framework_Thesis.docx), [creation/validation and 28 findings](TIAF_FORECASTING_FRAMEWORK_THESIS_RECORD.md). Non-normative; all 28 findings reconciled; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2.1 GOVERNANCE COMPLETE / CALIBRATION NOT_IMPLEMENTED. |
+| What is the stable forecasting platform? | [FF architecture ACCEPTED](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md), [bounded roadmap](TIAF_FORECASTING_FRAMEWORK_DETAILED_ROADMAP.md), [decision and findings dispositions](TIAF_FORECASTING_FRAMEWORK_DECISION_RECORD.md). Primitive/composite typed DAG, common truth, paired evaluation; FF-0/FF-1/FLC frozen; FF-2.1 governance complete and FF-2.2 synthetic infrastructure implemented; empirical authority next. |
+| How do I learn the Forecasting Framework? | [Separate platform thesis PDF](TI_Forecasting_Framework_Thesis.pdf), [editable Word edition](TI_Forecasting_Framework_Thesis.docx), [creation/validation and 28 findings](TIAF_FORECASTING_FRAMEWORK_THESIS_RECORD.md). Non-normative; all 28 findings reconciled; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED / EMPIRICAL EXECUTION HOLD. |
 | How does the complete forecaster lifecycle fit? | [FF §22](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc) owns the additive architecture; [FLC gap/work plan](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md) owns bounded packages. Logistic reference only; no new family, fit or activation. |
 | Where does FM/LFDE fit? | [Advanced FMLFDEForecaster design](TIAF_FM_LFDE_MARKET_STATE_FORECASTING_ARCHITECTURE.md), [research matrix](TIAF_FM_LFDE_RESEARCH_RECONCILIATION.md), [nested family roadmap](TIAF_FM_LFDE_DETAILED_ROADMAP.md). Internals retained; shared platform ownership is FF. |
-| How do I understand FM/LFDE? | [Illustrated thesis PDF](TI_FM_LFDE_Market_State_Forecasting_Thesis.pdf), [editable DOCX](TI_FM_LFDE_Market_State_Forecasting_Thesis.docx), [creation record and current addendum](TIAF_FM_LFDE_THESIS_RECORD.md). Unchanged advanced-reference edition; separate FF thesis RECONCILED; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2.1 GOVERNANCE COMPLETE / CALIBRATION NOT_IMPLEMENTED. |
+| How do I understand FM/LFDE? | [Illustrated thesis PDF](TI_FM_LFDE_Market_State_Forecasting_Thesis.pdf), [editable DOCX](TI_FM_LFDE_Market_State_Forecasting_Thesis.docx), [creation record and current addendum](TIAF_FM_LFDE_THESIS_RECORD.md). Unchanged advanced-reference edition; separate FF thesis RECONCILED; FF architecture ACCEPTED; A7 integration RECONCILED; A7 architecture ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED / EMPIRICAL EXECUTION HOLD. |
 | How do I understand A7's forecasting, evaluation and learning concepts? | [Reference thesis PDF](TI_Forecasting_Evaluation_Learning_Thesis.pdf), [editable DOCX](TI_Forecasting_Evaluation_Learning_Thesis.docx), [creation record](TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md). Unchanged non-normative creation edition; thesis RECONCILED; A7 architecture ACCEPTED, implementation IN_PROGRESS (FF-0/FF-1/FLC frozen; FF-2.1 governance complete). |
 
 A1–A5 are FROZEN; A5 is tagged at `tiaf-a5-baseline`. R1 is ACCEPTED / DONE.
@@ -121,9 +122,9 @@ one exact equity-return target, chronological calibrated evaluation and explicit
 shadow/advisory approval; it does not change frozen A4/A5/A6 or the nine-operation
 catalog. Thesis RECONCILED; A7 architecture ACCEPTED, implementation IN_PROGRESS (FF-0/FF-1/FLC frozen; FF-2.1 governance complete). The intervening
 [FF platform design](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED and
-FM/LFDE is its advanced family. A7 ARCHITECTURE is ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2.1 GOVERNANCE COMPLETE / CALIBRATION NOT_IMPLEMENTED;
+FM/LFDE is its advanced family. A7 ARCHITECTURE is ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2.2 SYNTHETIC INFRASTRUCTURE IMPLEMENTED / EMPIRICAL EXECUTION HOLD;
 FLC8-B01 is resolved and FLC is frozen. FF-2.1 governance is complete;
-FF-2.2 synthetic-only implementation is next. Empirical fitting/promotion remain unauthorized.
+FF-2.2 synthetic infrastructure is implemented; empirical authority resolution is next. Empirical fitting/promotion remain unauthorized.
 FF repeat acceptance closes FFA-B01. The completed
 [A7 integration reconciliation](TIAF_A7_FORECASTING_FRAMEWORK_INTEGRATION_RECONCILIATION.md)
 and [independent acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) precede the
@@ -382,9 +383,10 @@ is **FF1_1_ACCEPTED**. Subsequent FF-1 training and evaluation are complete/froz
 at `tiaf-a7-ff1-baseline`; the result is INSUFFICIENT_EVIDENCE. The bounded
 [FLC plan](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md) is delivered and
 frozen; [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md)
-is complete. Learned calibration is NOT_IMPLEMENTED; FF-2.2 synthetic-only
-implementation is next, with empirical development/final evaluation on HOLD.
-No new fit, consumer authority or public forecasting capability is granted.
+is complete. [FF-2.2](TIAF_A7_FF2_2_SYNTHETIC_CALIBRATION_INFRASTRUCTURE.md) implements
+synthetic-only fitting and raw/calibrated evidence plumbing; empirical
+development/final evaluation remain on HOLD. No empirical fit, consumer
+authority or public forecasting capability is granted.
 Recorded replay is not recomputation or new simulation.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
@@ -410,7 +412,7 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Proposed next task: **FF-2.2 CALIBRATION IMPLEMENTATION — SYNTHETIC ONLY**; empirical grants and final readiness remain separate.
+Proposed next task: **FF-2 EMPIRICAL AUTHORITY RESOLUTION — NO EXECUTION GRANT YET**; empirical grants and final readiness remain separate.
 FLC8-B01's reconciliation is validated and source-reviewed; FF-0/FF-1 remain frozen and 2025
 CONSUMED. No training, promotion, publication, frozen-A6 changes or A8 is
 authorized here. Historical records retain their then-current status.
