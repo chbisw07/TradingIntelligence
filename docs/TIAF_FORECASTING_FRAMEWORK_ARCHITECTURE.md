@@ -1273,7 +1273,12 @@ now supply bounded internal inference, training/custody/lifecycle records,
 synthetic optimization, diagnostics, authored calibration readiness, independent
 Evaluation and shared provenance/replay. [FLC-8 closure](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md)
 records the original HOLD and authorized family-neutral seam reconciliation;
-validation/source review pass. Actual lifecycle activation,
+validation/source review pass; FLC is frozen at `tiaf-a7-flc-baseline`.
+The [FF-2.0 research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
+now defines a new, bounded calibrated Logistic proposal using these owners.
+It is protocol-only, with implementation HOLD pending explicit data-use/scope
+gates; it does not implement a calibrator or revise historical science.
+Actual lifecycle activation,
 authenticated approval and calibration fitting remain deferred; FF-0/FF-1
 contracts and pins are unchanged.
 

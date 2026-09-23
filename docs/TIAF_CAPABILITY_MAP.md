@@ -74,8 +74,11 @@ Internal FLC-1…7 lifecycle seams now include
 These research codecs and offline verification functions add no facade/Shell
 operation or runtime approval. [FLC-8 closure review](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md)
 records the original future-family HOLD (FLC8-B01) and subsequent authorized
-neutral-seam implementation. Validation/source review pass; freeze/tag-readiness
-is next, with no public capability or FF-2 start authorized.
+neutral-seam implementation. FLC is now frozen at `tiaf-a7-flc-baseline`.
+[FF-2.0](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md) defines only a new
+calibrated Logistic research protocol; implementation is on HOLD. No learned
+calibration fit/application, empirical Evaluation admission, public capability
+or runtime promotion is added by this documentation pass.
 Resolving this internal seam does not authorize new public operations.
 
 This exact nine-operation inventory mirrors the static local facade catalog;

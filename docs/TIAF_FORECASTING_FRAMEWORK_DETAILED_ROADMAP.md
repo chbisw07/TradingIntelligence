@@ -7,20 +7,20 @@
 Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
 
-**FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
-complete; FLC-1 inference, FLC-2 training/custody/lifecycle, FLC-3 synthetic-only
-optimization, FLC-4 model-specific diagnostics and FLC-5 synthetic calibration
-composition readiness, FLC-6 reusable independent Evaluation and FLC-7
-integration/provenance/replay hardening implemented; their package acceptances
-remain intact. [FLC-8 closure review](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md) records the original
-**HOLD_FLC_FINAL_CLOSURE** and its subsequent authorized reconciliation:
-**FLC8-B01 is RESOLVED** by a typed neutral path and test-only extension proof.
-Validation and the separate source closure review pass; technical freeze readiness
-is YES, not authorization to commit/tag. FLC is not frozen.
-Logistic remains the sole learned reference; no production family or FF-0 change. **FF-2 is intentionally
-DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
-research proposal with new validation evidence. Eligibility is not a fit grant.
-A7 overall remains IN_PROGRESS; no public forecasting capability or A4/A5/A6 influence.
+**FLC COMPLETE / FROZEN** at `tiaf-a7-flc-baseline`,
+commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
+`main` verified synchronized from a clean tree on 2026-09-23.
+The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
+is preserved as historical evidence; the later Git freeze is now verified.
+
+**FF-2 CURRENT — FF-2.0 PROTOCOL ONLY.**
+The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
+and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
+define a new bounded proposal. **HOLD_FF2_IMPLEMENTATION**: FF-2-specific
+data-use authority and prospective qualification are unresolved; known history
+is not an independent final test. No calibration implementation, fit, final
+consumption or runtime promotion is authorized. A7 remains IN_PROGRESS; no new
+public forecasting capability or A4/A5/A6 influence.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -31,8 +31,8 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate, separately requested: **TIAF A7 / FLC — FINAL FREEZE / TAG READINESS CHECK**.
-FF-2 remains deferred; no commit, tag, push or calibration fit is authorized.
+Next gate: review FF-2.0 and resolve its explicit data-use/implementation scope;
+FF-2.1 is not authorized by this documentation pass. No commit, tag or push.
 
 
 ## 1. Sequence, dependencies and deliberate simplification
@@ -40,9 +40,9 @@ FF-2 remains deferred; no commit, tag, push or calibration fit is authorized.
 ```text
 A7: FF-0 COMPLETE / FROZEN
  → FF-1 COMPLETE / FROZEN — INSUFFICIENT_EVIDENCE
- → FLC CURRENT — FLC-1/2/3/4/5/6/7 accepted; FLC8-B01 resolved; validation/source review passed; freeze/tag-readiness next
+ → FLC COMPLETE / FROZEN — tiaf-a7-flc-baseline
      Logistic only learned reference; BaseRate BENCHMARK
- → FF-2 DEFERRED until FLC closes + separate new research/data/protocol approval
+ → FF-2 CURRENT — protocol only; implementation HOLD, no fit or promotion
  → existing conditional FF-3…FF-7 and separate publication / scoped closure gates
  → A8 → A9 → A10 [major order unchanged]
 ```
@@ -77,8 +77,8 @@ dispositions, ledger and comparisons reuse A7-wide Evaluation concepts. Likewise
 the Benchmark Registry is a curated reference view over the one artifact/lifecycle
 registry, not a new activation service. The old A7.1–A7.5 proposal is superseded
 by the [explicit A7 crosswalk](TIAF_A7_DETAILED_ROADMAP.md#historical-five-slice-crosswalk).
-FF-0 and FF-1 are complete/frozen. FLC implementation is next under a separate
-request; FF-2 is deferred until its closure and a newly approved research proposal.
+FF-0, FF-1 and FLC are complete/frozen. FF-2.0 defines the new research protocol only.
+FF-2 implementation remains on HOLD pending its explicit admission/scope gates.
 A8/A9/A10 ordering is unchanged.
 
 ## 2. Common entry package and completion meanings
@@ -194,7 +194,7 @@ qualified calibration/test data; no additional ML families required.
 [FF §22](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 owns the additive architecture; [FLC-0…8](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md)
 owns the inspected gap matrix, package deliverables/tests/non-goals/models.
-CURRENT: FLC-1/2/3/4/5/6/7 accepted; FLC8-B01 resolved; validation/source review passed; freeze/tag-readiness next. This brings forward
+COMPLETE / FROZEN at `tiaf-a7-flc-baseline`; FLC8-B01 resolved and reviewed. This delivered
 reusable inference/training/artifact/event/tuning/diagnostic and evaluation seams
 using only Logistic and BaseRate. Calibration contracts/test doubles are in scope;
 fitted calibration, real shadow/advisory approval and FF-2 science are not.
@@ -206,7 +206,20 @@ Failure of a mandatory seam blocks FLC closure, never licenses editing FF-1.
 
 ## 5. FF-2 — Calibration, lifecycle, shadow and complete miniature
 
-**Status: DEFERRED / NOT_STARTED until FLC closure.**
+**Status: CURRENT — FF-2.0 PROTOCOL ONLY; runtime NOT_IMPLEMENTED.**
+
+The [FF-2.0 protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
+and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
+now specialize this stage into FF-2.0–2.5. Their
+[finite delivery plan](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md#14-finite-delivery-plan)
+owns the current implementation sequence: protocol → separately authorized
+calibration/adapters → known-development selection → candidate freeze/prospective
+final → scientific closure → optional, separately authorized promotion integration.
+Recommendation: **HOLD_FF2_IMPLEMENTATION** pending explicit FF-2 data-use/scope
+resolution. There is no presently qualified independent final corpus. The broader
+deliverables below remain conditional architecture, not completed calibration,
+shadow or permission to activate. FLC already delivered lifecycle foundations;
+FF-2 must reuse them, not build a competing lifecycle stack.
 
 **Entry:** accepted FLC reference closure and FF-1 comparison/ledger, a separately
 approved new experiment/validation strategy (2025 is not unseen), qualified held-out calibration split,
@@ -426,7 +439,8 @@ The previous architecture checkpoint requested a **separate FF platform thesis**
 preserving the FM/LFDE advanced handbook. That thesis
 is now created and its 28 findings are reconciled; neither artifact edition is
 regenerated by this pass. Current next prompt:
-**TIAF A7 / FLC — FINAL FREEZE / TAG READINESS CHECK**, following validated and source-reviewed B01 reconciliation.
+**FF-2.0 protocol/data-use authority review**, followed only by a separately
+scoped FF-2.1 implementation request if admitted.
 The bounded FFA-B01 correction supplies mode/clock guards and FF-0–FF-2 fixture
 obligations; the repeat review accepts the architecture, not their implementation.
 All four non-blocking
