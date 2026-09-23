@@ -13,14 +13,15 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.0 PROTOCOL ONLY.**
+**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
-define a new bounded proposal. **HOLD_FF2_IMPLEMENTATION**: FF-2-specific
-data-use authority and prospective qualification are unresolved; known history
-is not an independent final test. No calibration implementation, fit, final
-consumption or runtime promotion is authorized. A7 remains IN_PROGRESS; no new
-public forecasting capability or A4/A5/A6 influence.
+remain the unchanged scientific design and historical HOLD record.
+[FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
+historical-use boundaries, prospective qualification and the fixed one-shot trigger.
+**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
+empirical development and final evaluation readiness NO. No empirical grant,
+calibration fit, live accrual, runtime promotion or public capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -31,8 +32,8 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: review FF-2.0 and resolve its explicit data-use/implementation scope;
-FF-2.1 is not authorized by this documentation pass. No commit, tag or push.
+Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 
 This document is the detailed, evolving engineering continuation map beneath
@@ -58,7 +59,7 @@ remaining high-priority deferrals. See
 Current gate (2026-09-19, Asia/Kolkata): A5 FROZEN at `tiaf-a5-baseline`;
 R1–R5 are ACCEPTED / DONE; A6 architecture and non-normative thesis are ACCEPTED;
 A6.1–A6.4 are ACCEPTED / DONE, A6 is FROZEN at `tiaf-a6-baseline`,
-`expression.assess` is PUBLISHED, and A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0/FF-1/FLC FROZEN; FF-2 PROTOCOL ONLY) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.
+`expression.assess` is PUBLISHED, and A7 is ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0/FF-1/FLC FROZEN; FF-2.1 GOVERNANCE COMPLETE) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.
 
 ```text
 A5 FROZEN → R2 ACCEPTED
@@ -67,7 +68,7 @@ A5 FROZEN → R2 ACCEPTED
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
   → A6.3 ACCEPTED / DONE → A6.4 ACCEPTED / DONE
-  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0/FF-1/FLC FROZEN; FF-2 PROTOCOL ONLY) → A8 → A9 → A10
+  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0/FF-1/FLC FROZEN; FF-2.1 GOVERNANCE COMPLETE) → A8 → A9 → A10
 ```
 
 R1 is ACCEPTED. R1–R5 are the cross-cutting pluggability remediation / hardening
@@ -690,12 +691,12 @@ milestones are renumbered or runtime deferrals closed.
 ### Current forward sequence and adjacent TBDs
 
 A5 and A6 are FROZEN and R1–R5 are closed. A6.1–A6.4 are accepted/done;
-A7 architecture is ACCEPTED, thesis RECONCILED; implementation IN_PROGRESS (FF-0/FF-1/FLC frozen; FF-2 protocol only),
+A7 architecture is ACCEPTED, thesis RECONCILED; implementation IN_PROGRESS (FF-0/FF-1/FLC frozen; FF-2.1 governance complete),
 internal synthetic runtime IMPLEMENTED; public forecast capability NOT_PUBLISHED.
 The intervening [FF platform](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md) is ACCEPTED;
 its miniature is DEFINED and FM/LFDE is an advanced family with its thesis retained.
-A7 ARCHITECTURE is ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2 CURRENT / PROTOCOL ONLY. Next:
-**FF-2.0 protocol/data-use authority review**, then separately scoped FF-2.1 if admitted.
+A7 ARCHITECTURE is ACCEPTED; FF-0/FF-1 FROZEN; FLC FROZEN; FF-2.1 GOVERNANCE COMPLETE / CALIBRATION NOT_IMPLEMENTED. Next:
+**FF-2.2 CALIBRATION IMPLEMENTATION — SYNTHETIC ONLY**; empirical grants remain separate.
 FF repeat acceptance closes FFA-B01; A7 integration is reconciled and
 [A7 architecture independently accepted](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md). Canonical delivery uses FF-0…FF-7 within A7; the old
 five-slice proposal is mapped in the integrated roadmap. Any A7-informed A6 follow-up needs separate policy acceptance.
@@ -736,8 +737,8 @@ The [thesis record](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_THESIS_RECORD.md)
 links the DOCX/PDF, sources, document validation and fourteen classified findings.
 The [independent acceptance](TIAF_A6_TRADE_EXPRESSION_INTELLIGENCE_ARCHITECTURE_ACCEPTANCE.md)
 records READY_TO_IMPLEMENT_A6_1 after the fourteen-finding reconciliation.
-Next gate after validated and source-reviewed B01 reconciliation:
-**FF-2.0 protocol/data-use authority review**, separately requested; implementation remains on HOLD.
+Next gate after FLC freeze and FF-2.1 governance:
+**FF-2.2 CALIBRATION IMPLEMENTATION — SYNTHETIC ONLY**; empirical execution remains on HOLD.
 A6.4 changes no thesis artifact.
 
 <a id="a7--architecture-reconciled-runtime-not-implemented"></a>
@@ -761,7 +762,7 @@ The [architecture](TIAF_A7_FORECASTING_EVALUATION_LEARNING_ARCHITECTURE.md),
 | FF-0 | Contracts, singleton B0, exact target/PIT/journal, both realization modes, capture/verifier and internal CLI | ACCEPTED: all four steps, 28/28 semantic cases; engineering-only |
 | FF-1 | B0/B2 raw research, benchmark view, ledger/population/paired evaluation and chronological controls | COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`; INSUFFICIENT_EVIDENCE |
 | FLC | Logistic reference lifecycle contracts, tuning/diagnostics and calibration-readiness seams | COMPLETE / FROZEN at `tiaf-a7-flc-baseline`; [closure](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation) preserved |
-| FF-2 | New calibrated Logistic research, reusing frozen FLC owners; optional promotion remains separate | CURRENT — [FF-2.0 protocol only](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md); implementation HOLD; no fitted calibrator or runtime promotion |
+| FF-2 | New calibrated Logistic research, reusing frozen FLC owners; optional promotion remains separate | CURRENT — [FF-2.1 governance complete](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md); FF-2.2 synthetic-only next; no fitted calibrator or runtime promotion |
 | Post-FF-2 publication checkpoint | Separately accepted governed facade/Shell projection; no new numbered hierarchy | NOT_IMPLEMENTED |
 | FF-3…FF-7 | Conditional multi-family/composition, LLM, FM/LFDE, correction expansion and advanced routing | NOT_IMPLEMENTED / GATED |
 | Scoped major closure checkpoint | Incremental failure corpus, frozen-baseline regression, empirical status and retained deferrals | NOT_STARTED |
@@ -808,14 +809,15 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.0 PROTOCOL ONLY.**
+**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
-define a new bounded proposal. **HOLD_FF2_IMPLEMENTATION**: FF-2-specific
-data-use authority and prospective qualification are unresolved; known history
-is not an independent final test. No calibration implementation, fit, final
-consumption or runtime promotion is authorized. A7 remains IN_PROGRESS; no new
-public forecasting capability or A4/A5/A6 influence.
+remain the unchanged scientific design and historical HOLD record.
+[FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
+historical-use boundaries, prospective qualification and the fixed one-shot trigger.
+**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
+empirical development and final evaluation readiness NO. No empirical grant,
+calibration fit, live accrual, runtime promotion or public capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -826,8 +828,8 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: review FF-2.0 and resolve its explicit data-use/implementation scope;
-FF-2.1 is not authorized by this documentation pass. No commit, tag or push.
+Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 The [A7 acceptance](TIAF_A7_ARCHITECTURE_ACCEPTANCE.md) records
 **A7_ARCHITECTURE_ACCEPTED** on **2026-09-15 (Asia/Kolkata)**:
@@ -852,6 +854,6 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Proposed next task: **FF-2.0 protocol/data-use authority review**, then a separately scoped FF-2.1 request if admitted.
+Proposed next task: **FF-2.2 CALIBRATION IMPLEMENTATION — SYNTHETIC ONLY**; empirical grants and final readiness remain separate.
 FLC's prerequisite freeze is verified; this new FF-2 proposal does not reopen FF-1.
 Historical records keep their as-of states; no runtime implementation in this pass.

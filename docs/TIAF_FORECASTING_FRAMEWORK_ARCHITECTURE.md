@@ -1276,8 +1276,10 @@ records the original HOLD and authorized family-neutral seam reconciliation;
 validation/source review pass; FLC is frozen at `tiaf-a7-flc-baseline`.
 The [FF-2.0 research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 now defines a new, bounded calibrated Logistic proposal using these owners.
-It is protocol-only, with implementation HOLD pending explicit data-use/scope
-gates; it does not implement a calibrator or revise historical science.
+[FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md)
+defines data-use and prospective qualification. FF-2.2 is ready for synthetic-only
+implementation; empirical development/final readiness remain NO. Neither pass
+implements a calibrator or revises historical science.
 Actual lifecycle activation,
 authenticated approval and calibration fitting remain deferred; FF-0/FF-1
 contracts and pins are unchanged.

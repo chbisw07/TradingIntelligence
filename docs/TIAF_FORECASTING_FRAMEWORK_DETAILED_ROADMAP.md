@@ -13,14 +13,15 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.0 PROTOCOL ONLY.**
+**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
-define a new bounded proposal. **HOLD_FF2_IMPLEMENTATION**: FF-2-specific
-data-use authority and prospective qualification are unresolved; known history
-is not an independent final test. No calibration implementation, fit, final
-consumption or runtime promotion is authorized. A7 remains IN_PROGRESS; no new
-public forecasting capability or A4/A5/A6 influence.
+remain the unchanged scientific design and historical HOLD record.
+[FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
+historical-use boundaries, prospective qualification and the fixed one-shot trigger.
+**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
+empirical development and final evaluation readiness NO. No empirical grant,
+calibration fit, live accrual, runtime promotion or public capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -31,8 +32,8 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: review FF-2.0 and resolve its explicit data-use/implementation scope;
-FF-2.1 is not authorized by this documentation pass. No commit, tag or push.
+Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 
 ## 1. Sequence, dependencies and deliberate simplification
@@ -42,7 +43,7 @@ A7: FF-0 COMPLETE / FROZEN
  → FF-1 COMPLETE / FROZEN — INSUFFICIENT_EVIDENCE
  → FLC COMPLETE / FROZEN — tiaf-a7-flc-baseline
      Logistic only learned reference; BaseRate BENCHMARK
- → FF-2 CURRENT — protocol only; implementation HOLD, no fit or promotion
+ → FF-2.1 GOVERNANCE COMPLETE → FF-2.2 SYNTHETIC IMPLEMENTATION NEXT; no empirical fit/promotion
  → existing conditional FF-3…FF-7 and separate publication / scoped closure gates
  → A8 → A9 → A10 [major order unchanged]
 ```
@@ -77,8 +78,8 @@ dispositions, ledger and comparisons reuse A7-wide Evaluation concepts. Likewise
 the Benchmark Registry is a curated reference view over the one artifact/lifecycle
 registry, not a new activation service. The old A7.1–A7.5 proposal is superseded
 by the [explicit A7 crosswalk](TIAF_A7_DETAILED_ROADMAP.md#historical-five-slice-crosswalk).
-FF-0, FF-1 and FLC are complete/frozen. FF-2.0 defines the new research protocol only.
-FF-2 implementation remains on HOLD pending its explicit admission/scope gates.
+FF-0, FF-1 and FLC are complete/frozen. FF-2.0 defines the unchanged research protocol.
+FF-2.1 governance separates synthetic implementation readiness from empirical/final HOLD.
 A8/A9/A10 ordering is unchanged.
 
 ## 2. Common entry package and completion meanings
@@ -206,17 +207,18 @@ Failure of a mandatory seam blocks FLC closure, never licenses editing FF-1.
 
 ## 5. FF-2 — Calibration, lifecycle, shadow and complete miniature
 
-**Status: CURRENT — FF-2.0 PROTOCOL ONLY; runtime NOT_IMPLEMENTED.**
+**Status: CURRENT — FF-2.1 GOVERNANCE COMPLETE; calibration NOT_IMPLEMENTED.**
 
 The [FF-2.0 protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
-now specialize this stage into FF-2.0–2.5. Their
+specialized this stage into FF-2.0–2.5. Their historical
 [finite delivery plan](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md#14-finite-delivery-plan)
-owns the current implementation sequence: protocol → separately authorized
-calibration/adapters → known-development selection → candidate freeze/prospective
-final → scientific closure → optional, separately authorized promotion integration.
-Recommendation: **HOLD_FF2_IMPLEMENTATION** pending explicit FF-2 data-use/scope
-resolution. There is no presently qualified independent final corpus. The broader
+is supplemented by [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md):
+protocol → data-use/qualification design → **FF-2.2 synthetic-only calibration
+implementation** → separately granted known-development selection → freeze/accrual
+→ one final opening → closure → optional separate promotion integration.
+Recommendation: **GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY**. Empirical development
+and final readiness remain NO; there is no qualified independent final corpus. The broader
 deliverables below remain conditional architecture, not completed calibration,
 shadow or permission to activate. FLC already delivered lifecycle foundations;
 FF-2 must reuse them, not build a competing lifecycle stack.
@@ -439,8 +441,8 @@ The previous architecture checkpoint requested a **separate FF platform thesis**
 preserving the FM/LFDE advanced handbook. That thesis
 is now created and its 28 findings are reconciled; neither artifact edition is
 regenerated by this pass. Current next prompt:
-**FF-2.0 protocol/data-use authority review**, followed only by a separately
-scoped FF-2.1 implementation request if admitted.
+**FF-2.2 CALIBRATION IMPLEMENTATION — SYNTHETIC ONLY**. FF-2.1 inserts the
+governance stage without rewriting FF-2.0 history or granting empirical fitting.
 The bounded FFA-B01 correction supplies mode/clock guards and FF-0–FF-2 fixture
 obligations; the repeat review accepts the architecture, not their implementation.
 All four non-blocking

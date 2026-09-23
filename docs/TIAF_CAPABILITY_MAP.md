@@ -76,7 +76,9 @@ operation or runtime approval. [FLC-8 closure review](TIAF_A7_FLC_8_REFERENCE_IM
 records the original future-family HOLD (FLC8-B01) and subsequent authorized
 neutral-seam implementation. FLC is now frozen at `tiaf-a7-flc-baseline`.
 [FF-2.0](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md) defines only a new
-calibrated Logistic research protocol; implementation is on HOLD. No learned
+calibrated Logistic research protocol. [FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md)
+defines data-use/qualification rules; FF-2.2 is ready for synthetic-only
+implementation. Empirical development/final readiness remain NO. No learned
 calibration fit/application, empirical Evaluation admission, public capability
 or runtime promotion is added by this documentation pass.
 Resolving this internal seam does not authorize new public operations.

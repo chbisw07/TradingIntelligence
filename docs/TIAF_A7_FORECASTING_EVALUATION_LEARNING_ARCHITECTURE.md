@@ -13,14 +13,15 @@ commit `5f1e80c7e0614233b5670ca3acf9229edd0ea0db`; local/remote tag and
 The [FLC closure report](TIAF_A7_FLC_8_REFERENCE_IMPLEMENTATION_CLOSURE_AND_FLC_ACCEPTANCE.md#13-authorized-family-neutral-inference-reconciliation)
 is preserved as historical evidence; the later Git freeze is now verified.
 
-**FF-2 CURRENT — FF-2.0 PROTOCOL ONLY.**
+**FF-2 CURRENT — FF-2.1 GOVERNANCE COMPLETE; CALIBRATION NOT_IMPLEMENTED.**
 The [calibrated Logistic research protocol](TIAF_A7_FF2_0_CALIBRATED_LOGISTIC_RESEARCH_PROTOCOL.md)
 and [data-rights/readiness record](TIAF_A7_FF2_0_BASELINE_DATA_RIGHTS_AND_READINESS.md)
-define a new bounded proposal. **HOLD_FF2_IMPLEMENTATION**: FF-2-specific
-data-use authority and prospective qualification are unresolved; known history
-is not an independent final test. No calibration implementation, fit, final
-consumption or runtime promotion is authorized. A7 remains IN_PROGRESS; no new
-public forecasting capability or A4/A5/A6 influence.
+remain the unchanged scientific design and historical HOLD record.
+[FF-2.1 governance](TIAF_A7_FF2_1_DATA_USE_AUTHORITY_AND_PROSPECTIVE_EVIDENCE_QUALIFICATION.md) now defines
+historical-use boundaries, prospective qualification and the fixed one-shot trigger.
+**GO_FF2_SYNTHETIC_IMPLEMENTATION_ONLY** for FF-2.2: implementation readiness YES;
+empirical development and final evaluation readiness NO. No empirical grant,
+calibration fit, live accrual, runtime promotion or public capability is added.
 
 See [FF lifecycle architecture](TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md#22-forecaster-lifecycle-completion-flc)
 and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
@@ -31,8 +32,8 @@ See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SP
 See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
 See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REUSABLE_INDEPENDENT_EVALUATION_NORMALIZATION.md).
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
-Next gate: review FF-2.0 and resolve its explicit data-use/implementation scope;
-FF-2.1 is not authorized by this documentation pass. No commit, tag or push.
+Next gate: FF-2.2 calibration implementation with authored synthetic evidence only.
+Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 The dated architecture checkpoints below preserve their then-current state;
 FF §22 adds the current lifecycle direction without reopening their acceptance.
