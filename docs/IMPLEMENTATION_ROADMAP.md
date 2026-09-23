@@ -14,7 +14,8 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 2025 is CONSUMED, executions used 1, post-holdout refit allowed NO.
 
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
-complete; FLC-1 inference, FLC-2 training/custody/lifecycle and FLC-3 synthetic-only optimization implemented.
+complete; FLC-1 inference, FLC-2 training/custody/lifecycle, FLC-3 synthetic-only
+optimization and FLC-4 model-specific diagnostics implemented.
 Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
@@ -26,7 +27,8 @@ and [FLC gaps/packages](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md).
 See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.md).
 See the [FLC-2 implementation and validation](TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md).
 See the [FLC-3 synthetic-only optimization and validation](TIAF_A7_FLC_3_BOUNDED_DEVELOPMENT_ONLY_OPTIMIZATION.md).
-Exact next task: **TIAF A7 / FLC-4 — MODEL-SPECIFIC DIAGNOSTICS NORMALIZATION**, separately requested.
+See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SPECIFIC_DIAGNOSTICS_NORMALIZATION.md).
+Exact next task: **TIAF A7 / FLC-5 — CALIBRATION COMPOSITION READINESS**, separately requested.
 
 Historical checkpoints below retain their then-current SEALED/NOT_RUN states and
 then-next tasks. They do not authorize reuse of the now-consumed holdout.
@@ -146,7 +148,7 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. **TIAF A7 / FLC-4 — MODEL-SPECIFIC DIAGNOSTICS NORMALIZATION**, separately requested; complete FLC-4…8.
+1. **TIAF A7 / FLC-5 — CALIBRATION COMPOSITION READINESS**, separately requested; complete FLC-5…8.
 2. Preserve frozen FF-0/FF-1, consumed 2025 evidence and the no-refit restriction.
 3. Defer FF-2 until FLC closes, then consider only a separately approved new governed research proposal
    with new qualified validation evidence; eligibility is not authorization.
@@ -258,6 +260,6 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FLC-4 — MODEL-SPECIFIC DIAGNOSTICS NORMALIZATION**.
+Exact next prompt: **TIAF A7 / FLC-5 — CALIBRATION COMPOSITION READINESS**.
 No commit, tag or push is performed by this documentation pass. Historical
 planning/acceptance records retain their then-current status.

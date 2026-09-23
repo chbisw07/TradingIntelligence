@@ -5,8 +5,11 @@ validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_AND_LIFECYCLE_SEAM_NORMALIZATION.m
 are now implemented. [FLC-2 training/custody/lifecycle normalization](TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md)
 is also implemented. [FLC-3 bounded synthetic-only optimization](TIAF_A7_FLC_3_BOUNDED_DEVELOPMENT_ONLY_OPTIMIZATION.md)
 now extends that same training service with a separately versioned worker and
-artifact adapter. FLC-4 diagnostics is next under separate authorization; FF-2
-remains deferred. The FLC-0 baseline, gap classifications and counts below are
+artifact adapter. [FLC-4 model-specific diagnostics](TIAF_A7_FLC_4_MODEL_SPECIFIC_DIAGNOSTICS_NORMALIZATION.md)
+now adds common internal request/envelope semantics with typed BaseRate and
+Logistic payloads, existing custody and offline replay. FLC-5 calibration
+composition readiness is next under separate authorization; FF-2 remains
+deferred. The FLC-0 baseline, gap classifications and counts below are
 retained as historical evidence, not current missing-feature claims.
 
 ## Decision, scope and evidence baseline
