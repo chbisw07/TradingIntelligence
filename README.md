@@ -14,6 +14,37 @@ risk/capital/action authority and the broker retains execution truth.
 
 ## Current Project Status
 
+```text
+A7 — Forecasting / Learning Foundation
+│
+├── FF-0   Forecast Framework runtime foundation        ✅ complete/frozen
+├── FF-1   First learned forecaster: Logistic           ✅ complete/frozen
+├── FLC    Forecaster lifecycle completion              ✅ complete/frozen
+├── FF-2.0 Calibration research protocol                ✅ complete
+├── FF-2.1 Data-use / prospective evidence governance   ✅ complete
+├── FF-2.2 Synthetic calibration infrastructure         ✅ complete
+├── FF-2.3 Empirical authority resolution               ✅ complete
+│        result: empirical use NOT granted
+│
+├── FF-2.4 ? empirical calibration development          ⏸ blocked
+├── FF-2.5 ? candidate freeze / prospective accrual     ⏸ blocked
+├── FF-2.6 ? protected final evaluation                 ⏸ future
+└── FF-2.7 ? scientific closure / optional promotion    ⏸ future
+```
+
+**Current A7 state:** The Forecast Framework runtime foundation, first learned
+Logistic forecaster and Forecaster Lifecycle are complete/frozen. FF-2 protocol,
+governance, synthetic calibration infrastructure and authority review are complete
+through FF-2.3, but empirical development is blocked because an FF-2-specific
+empirical-use grant has not been established (UNVERIFIABLE / NOT GRANTED).
+This does not block the separately planned pre-A8 IFL foundation work, which may
+proceed under its own scope approval. A7 remains in progress; FF-2 final protected
+evaluation has not started, and Logistic is not promoted.
+
+The `?` markers preserve tentative phase numbers/names for FF-2.4–FF-2.7;
+they are not formally frozen milestones. FF-1's scientific outcome remains
+INSUFFICIENT_EVIDENCE, not demonstrated scientific success.
+
 **Current checkpoint — 2026-09-23 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
 `tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
 (`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
