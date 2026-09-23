@@ -1,5 +1,25 @@
 # TIAF Detailed Implementation Targets
 
+## IFL / Intelligence Service architecture overlay
+
+The [2026-09-23 design](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md) defines
+heterogeneous producers, local/optional remote service contracts, typed claims,
+independent Ground Truth/Evaluation, Performance Memory and governed improvement
+proposals. **Architecture DEFINED; runtime NOT_IMPLEMENTED; acceptance pending.**
+It is additive to FF/FLC and leaves FF-2 empirical authority UNVERIFIABLE / NOT
+GRANTED. The [impact matrix](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md#14-impact-and-compatibility-assessment)
+identifies adapter/extension needs without invalidating current work.
+
+Recommended next design-to-implementation gate, only after separate approval:
+bounded late-A7/pre-A8 identity/claim/resolution/service/adapter/ledger contracts
+with one synthetic FF mapping. No generic output-union rewrite, new trainer,
+remote host, model fit or public forecast operation. A8 integration and A10
+durable scheduling retain their existing ownership; the
+[five-phase plan](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md#15-phased-work-plan-and-implementation-timing)
+defines dependencies, deliverables, tests, non-goals and model recommendations.
+
+## Preserved FF/FLC execution checkpoint
+
 **Current checkpoint — 2026-09-23 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
 `tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
 (`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains

@@ -6,6 +6,28 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 [README](../README.md) is the executive dashboard. Status: 2026-09-22
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
+### IFL / Intelligence Service planning overlay — 2026-09-23
+
+The [IFL architecture and phased work plan](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md#15-phased-work-plan-and-implementation-timing)
+are now defined, **not implemented or implementation-authorized**. The overlay
+does not replace FF-0…FF-7 or change A7 → A8 → A9 → A10:
+
+1. Now: architecture/impact analysis only, complete in this documentation pass.
+2. Late A7 / pre-A8: separately approve a minimal identity, typed-claim,
+   resolution/service contract, adapter and Claim Ledger foundation. Start with
+   one synthetic existing-FF binary mapping; no network host or empirical fit.
+3. A8: separately admitted capture, bounded outcome resolution, independent
+   Evaluation/performance views and TI/TM links. Durable recurring scheduling
+   remains A10; an earlier local slice needs explicit operational acceptance.
+4. Later: qualified diagnosis/drift and proposal generation, then conditional
+   multi-service/remote operations and governed retraining—not auto-promotion.
+
+Recommendation: REQUIRES_PRE_A8_FOUNDATION_WORK before generic intelligence-service
+integration promises. Current FF/FLC stay valid; FF-2 empirical development and
+protected evaluation remain HOLD. No current public capability is added.
+
+### Preserved FF/FLC execution checkpoint
+
 **Current checkpoint — 2026-09-23 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
 `tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
 (`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains

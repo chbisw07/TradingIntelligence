@@ -237,6 +237,12 @@ Forward sequence: `A6.1 → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10`
 4. Continue remaining A7 stages under the accepted FF-0…FF-7 sequence and ownership.
 5. Keep A8 deferred under remaining A7; preserve the A8 → A9 → A10 major order.
 
+The [IFL / Intelligence Service architecture](docs/TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md)
+now defines the additive heterogeneous-producer, typed-claim and feedback design.
+This is documentation only: IFL is NOT_IMPLEMENTED and FF-2 remains on empirical
+HOLD. Its recommended pre-A8 minimum foundation requires separate authorization;
+durable recurring operations remain A10 unless explicitly approved earlier.
+
 ## Parallel / Future Workstreams
 
 Accepted design does **not** imply implemented runtime. These are not additional
@@ -245,6 +251,7 @@ A5 tag gates or an instruction to start parallel implementation.
 | Workstream | Architecture accepted? | Implementation started? | Placement |
 |---|---|---|---|
 | TI Monitoring | Yes | Runtime: NOT_IMPLEMENTED; A5 intent exists | A8/A9 integration; A10 operations |
+| IFL / Intelligence Services | [Design defined; acceptance pending](docs/TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md) | NOT_IMPLEMENTED | Proposed bounded late-A7/pre-A8 foundation; later integration/operations separately gated |
 | Trading Ecosystem | Yes, responsibility model | Integration: NOT_IMPLEMENTED | A8/A9/A10 |
 | Forecasting / evaluation | [FF platform ACCEPTED](docs/TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md); A7 architecture ACCEPTED, thesis reconciled | Internal BaseRate and fixed Logistic training/evaluation implemented; FF-1 closed inconclusive; no public forecast capability | FF-0/FF-1/FLC frozen → FF-2.1 governance complete; FF-2.2 synthetic infrastructure implemented; FF-2.3 authority UNVERIFIABLE; explicit owner admission required |
 | Sector Rotation | No; TBD idea note | NOT_IMPLEMENTED | FUTURE; relative to A7/A8 TBD |

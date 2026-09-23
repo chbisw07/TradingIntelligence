@@ -9,6 +9,15 @@ DOCX/PDF companions are non-normative.
 
 ## Current Development Position
 
+**2026-09-23 architecture-only checkpoint:**
+[IFL / Intelligence Service design](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md)
+is documented with repository impact analysis and a phased plan. Architecture
+DEFINED, implementation NOT_STARTED; independent architecture acceptance remains
+pending. Recommendation: REQUIRES_PRE_A8_FOUNDATION_WORK, by separate scope
+approval. This does not advance A7/A8 acceptance, grant FF-2 empirical authority,
+change frozen milestones or introduce a new tag. Durable recurrence remains A10
+unless an earlier bounded slice is separately approved.
+
 **Current checkpoint — 2026-09-23 (Asia/Kolkata):** FF-0 COMPLETE / FROZEN at
 `tiaf-a7-ff0-baseline`; FF-1 COMPLETE / FROZEN at `tiaf-a7-ff1-baseline`
 (`21783ea31d4ce3b54fbcc6fcce6ef7e641bd5bec`). FF-1 scientific outcome remains
