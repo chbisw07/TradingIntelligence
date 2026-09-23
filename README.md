@@ -15,6 +15,21 @@ risk/capital/action authority and the broker retains execution truth.
 ## Current Project Status
 
 ```text
+TradingIntelligence — Major Implementation Status
+
+A1 — Data Foundation                                  ✅ frozen
+A2 — Deterministic Baseline                            ✅ frozen
+A3 — Specialist Intelligence                          ✅ frozen
+A4 — Arbitration and Adversarial Review                ✅ frozen
+A5 — Position Intelligence MVP                         ✅ frozen
+
+A6 — Trade Expression Intelligence                     ✅ frozen
+│
+├── A6.1 Contracts / Admission / Policy                 ✅ accepted / done
+├── A6.2 Evaluation / Ranking / Replay                  ✅ accepted / done
+├── A6.3 Facade / Shell Exposure                        ✅ accepted / done
+└── A6.4 Final Hardening / Freeze Readiness              ✅ accepted / done
+
 A7 — Forecasting / Learning Foundation — IN_PROGRESS
 │
 ├── FF-0   Forecast Framework runtime foundation        ✅ complete/frozen
@@ -57,7 +72,11 @@ IFL — Intelligence Feedback & Learning
 
                          ↓
 
-A8 — TI ↔ TM Integration Foundation — NEXT MAJOR WORK / READY_TO_START / NOT_IMPLEMENTED
+A8 — TI ↔ TM Integration Foundation                    ▶ NEXT MAJOR WORK
+     READY_TO_START / NOT_IMPLEMENTED
+A9 — Scanner Integration                              ⏳ planned / NOT_IMPLEMENTED
+A10 — Production Hardening                            ⏳ planned / NOT_IMPLEMENTED
+      Includes Monitoring Runtime operationalization
 ```
 
 **Current project state:** A7 remains formally IN_PROGRESS: FF-0/FF-1/FLC are
