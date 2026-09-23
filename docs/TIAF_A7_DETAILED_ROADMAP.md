@@ -9,7 +9,8 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
 complete; FLC-1 inference, FLC-2 training/custody/lifecycle, FLC-3 synthetic-only
-optimization and FLC-4 model-specific diagnostics implemented.
+optimization, FLC-4 model-specific diagnostics and FLC-5 synthetic calibration
+composition readiness implemented.
 Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
@@ -22,7 +23,8 @@ See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_
 See the [FLC-2 implementation and validation](TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md).
 See the [FLC-3 synthetic-only optimization and validation](TIAF_A7_FLC_3_BOUNDED_DEVELOPMENT_ONLY_OPTIMIZATION.md).
 See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SPECIFIC_DIAGNOSTICS_NORMALIZATION.md).
-Exact next task: **TIAF A7 / FLC-5 — CALIBRATION COMPOSITION READINESS**, separately requested.
+See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
+Exact next task: **TIAF A7 / FLC-6 — REUSABLE INDEPENDENT EVALUATION NORMALIZATION**, separately requested.
 
 
 ## Status and sequencing
@@ -49,7 +51,7 @@ The [milestone ledger](MILESTONES.md) owns actual acceptances/tags.
 ```text
 A7: FF-0 COMPLETE / FROZEN
  → FF-1 COMPLETE / FROZEN — INSUFFICIENT_EVIDENCE
- → FLC CURRENT — FLC-1/2/3/4 implemented; FLC-5 next
+ → FLC CURRENT — FLC-1/2/3/4/5 implemented; FLC-6 next
      Logistic only learned reference; BaseRate BENCHMARK
  → FF-2 DEFERRED until FLC closes + separate new research/data/protocol approval
  → existing conditional FF-3…FF-7 and separate publication / scoped closure gates
@@ -258,7 +260,8 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
 complete; FLC-1 inference, FLC-2 training/custody/lifecycle, FLC-3 synthetic-only
-optimization and FLC-4 model-specific diagnostics implemented.
+optimization, FLC-4 model-specific diagnostics and FLC-5 synthetic calibration
+composition readiness implemented.
 Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
@@ -271,4 +274,5 @@ See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_
 See the [FLC-2 implementation and validation](TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md).
 See the [FLC-3 synthetic-only optimization and validation](TIAF_A7_FLC_3_BOUNDED_DEVELOPMENT_ONLY_OPTIMIZATION.md).
 See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SPECIFIC_DIAGNOSTICS_NORMALIZATION.md).
-Exact next task: **TIAF A7 / FLC-5 — CALIBRATION COMPOSITION READINESS**, separately requested.
+See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
+Exact next task: **TIAF A7 / FLC-6 — REUSABLE INDEPENDENT EVALUATION NORMALIZATION**, separately requested.

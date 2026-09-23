@@ -7,8 +7,11 @@ is also implemented. [FLC-3 bounded synthetic-only optimization](TIAF_A7_FLC_3_B
 now extends that same training service with a separately versioned worker and
 artifact adapter. [FLC-4 model-specific diagnostics](TIAF_A7_FLC_4_MODEL_SPECIFIC_DIAGNOSTICS_NORMALIZATION.md)
 now adds common internal request/envelope semantics with typed BaseRate and
-Logistic payloads, existing custody and offline replay. FLC-5 calibration
-composition readiness is next under separate authorization; FF-2 remains
+Logistic payloads, existing custody and offline replay.
+[FLC-5 calibration composition readiness](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md)
+adds separate raw/transformed outputs, a synthetic-only reference wrapper and
+offline replay without fitting or lifecycle authority. FLC-6 reusable independent
+evaluation normalization is next under separate authorization; FF-2 remains
 deferred. The FLC-0 baseline, gap classifications and counts below are
 retained as historical evidence, not current missing-feature claims.
 

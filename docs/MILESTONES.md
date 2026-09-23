@@ -18,7 +18,8 @@ Logistic CHALLENGER / EXPERIMENTAL, promotion eligible NO; BaseRate BENCHMARK.
 
 **FLC — Forecaster Lifecycle Completion is CURRENT**: architecture/gap plan
 complete; FLC-1 inference, FLC-2 training/custody/lifecycle, FLC-3 synthetic-only
-optimization and FLC-4 model-specific diagnostics implemented.
+optimization, FLC-4 model-specific diagnostics and FLC-5 synthetic calibration
+composition readiness implemented.
 Logistic is the sole learned reference;
 no additional families or FF-0 behavior change. **FF-2 is intentionally
 DEFERRED / NOT_STARTED until FLC closure**, then only a separately approved new
@@ -31,7 +32,8 @@ See the [FLC-1 implementation and validation](TIAF_A7_FLC_1_FORECASTER_CONTRACT_
 See the [FLC-2 implementation and validation](TIAF_A7_FLC_2_TRAINING_MODEL_IDENTITY_PERSISTENCE_AND_LIFECYCLE_NORMALIZATION.md).
 See the [FLC-3 synthetic-only optimization and validation](TIAF_A7_FLC_3_BOUNDED_DEVELOPMENT_ONLY_OPTIMIZATION.md).
 See the [FLC-4 model-specific diagnostics and validation](TIAF_A7_FLC_4_MODEL_SPECIFIC_DIAGNOSTICS_NORMALIZATION.md).
-Exact next task: **TIAF A7 / FLC-5 — CALIBRATION COMPOSITION READINESS**, separately requested.
+See the [FLC-5 calibration composition and validation](TIAF_A7_FLC_5_CALIBRATION_COMPOSITION_READINESS.md).
+Exact next task: **TIAF A7 / FLC-6 — REUSABLE INDEPENDENT EVALUATION NORMALIZATION**, separately requested.
 
 The execution checkpoint below retains its historical then-next task.
 
@@ -144,7 +146,7 @@ work; FUTURE/TBD indicate later/unresolved scope; NOT_IMPLEMENTED means no runti
 | --- | --- | --- |
 | FF-0 | COMPLETE / FROZEN | `tiaf-a7-ff0-baseline`; preserve runtime |
 | FF-1 | COMPLETE / FROZEN | `tiaf-a7-ff1-baseline` at `21783ea`; INSUFFICIENT_EVIDENCE, no promotion |
-| FLC | CURRENT; FLC-1/2/3/4 implemented; FLC-5 next | [Bounded FLC plan](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md); FLC-5 next |
+| FLC | CURRENT; FLC-1/2/3/4/5 implemented; FLC-6 next | [Bounded FLC plan](TIAF_A7_FLC_FORECASTER_LIFECYCLE_COMPLETION_PLAN.md); FLC-6 next |
 | FF-2 | DEFERRED / NOT_STARTED | After FLC closure and new governed research proposal |
 
 ### Accepted submilestones and intervening gates
@@ -778,6 +780,6 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Exact next prompt: **TIAF A7 / FLC-5 — CALIBRATION COMPOSITION READINESS**.
+Exact next prompt: **TIAF A7 / FLC-6 — REUSABLE INDEPENDENT EVALUATION NORMALIZATION**.
 No commit, tag or push is performed by this documentation pass. Historical
 planning/acceptance records retain their then-current status.
