@@ -15,7 +15,7 @@ risk/capital/action authority and the broker retains execution truth.
 ## Current Project Status
 
 ```text
-A7 — Forecasting / Learning Foundation
+A7 — Forecasting / Learning Foundation — IN_PROGRESS
 │
 ├── FF-0   Forecast Framework runtime foundation        ✅ complete/frozen
 ├── FF-1   First learned forecaster: Logistic           ✅ complete/frozen
@@ -24,22 +24,53 @@ A7 — Forecasting / Learning Foundation
 ├── FF-2.1 Data-use / prospective evidence governance   ✅ complete
 ├── FF-2.2 Synthetic calibration infrastructure         ✅ complete
 ├── FF-2.3 Empirical authority resolution               ✅ complete
-│        result: empirical use NOT granted
+│        result: empirical use NOT GRANTED / UNVERIFIABLE
 │
 ├── FF-2.4 ? empirical calibration development          ⏸ blocked
 ├── FF-2.5 ? candidate freeze / prospective accrual     ⏸ blocked
 ├── FF-2.6 ? protected final evaluation                 ⏸ future
 └── FF-2.7 ? scientific closure / optional promotion    ⏸ future
+
+IFL — Intelligence Feedback & Learning
+│
+├── Architecture / Intelligence Service design         ✅ defined
+├── Active-primary-LLM clarification                    ✅ defined
+├── Pre-A8 foundation contracts                         ✅ complete / A8 consumption ready
+│   ├── producer/service identity
+│   ├── model/version integration
+│   ├── provider-neutral ActiveLLMConfiguration
+│   ├── seven typed claim kinds
+│   ├── primary/secondary claims
+│   ├── resolution contracts
+│   ├── synthesizer/contributor provenance
+│   ├── IntelligenceResponse
+│   ├── IntelligenceService contract
+│   └── local/remote adapter boundaries
+│
+└── Full IFL runtime                                    ⏳ NOT_IMPLEMENTED
+    ├── Claim Ledger
+    ├── Outcome Scheduler
+    ├── Ground Truth runtime integration
+    ├── Performance Memory
+    ├── drift / diagnosis
+    └── retraining / improvement coordinator
+
+                         ↓
+
+A8 — TI ↔ TM Integration Foundation — NEXT MAJOR WORK / READY_TO_START / NOT_IMPLEMENTED
 ```
 
-**Current A7 state:** The Forecast Framework runtime foundation, first learned
-Logistic forecaster and Forecaster Lifecycle are complete/frozen. FF-2 protocol,
-governance, synthetic calibration infrastructure and authority review are complete
-through FF-2.3, but empirical development is blocked because an FF-2-specific
-empirical-use grant has not been established (UNVERIFIABLE / NOT GRANTED).
-This does not block the separately planned pre-A8 IFL foundation work, which may
-proceed under its own scope approval. A7 remains in progress; FF-2 final protected
-evaluation has not started, and Logistic is not promoted.
+**Current project state:** A7 remains formally IN_PROGRESS: FF-0/FF-1/FLC are
+complete/frozen and FF-2.0–FF-2.3 are complete, but the FF-2 empirical branch is
+HOLD / BLOCKED BY AUTHORITY (NOT GRANTED / UNVERIFIABLE). This scientific/governance
+block is not an architectural or implementation blocker for A8. The IFL architecture
+is defined and the [bounded pre-A8 foundation contracts](docs/TIAF_IFL_FOUNDATION_PRODUCER_CLAIM_SERVICE_CONTRACTS.md)
+are complete and accepted for A8 consumption. **A8 TI ↔ TM integration may begin
+while FF-2 remains open on HOLD**; FF-2 is not abandoned and resumes when its
+separate empirical-authority/prospective-evidence gates are satisfied. Full IFL
+runtime is NOT_IMPLEMENTED. No FF-2 empirical fitting is authorized, protected
+final evaluation has not started, and no promotion or public/live forecast
+activation is implied.
 
 The `?` markers preserve tentative phase numbers/names for FF-2.4–FF-2.7;
 they are not formally frozen milestones. FF-1's scientific outcome remains
@@ -80,7 +111,7 @@ See the [FLC-6 reusable independent Evaluation and validation](docs/TIAF_A7_FLC_
 See the [FLC-7 integration, provenance and replay hardening](docs/TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
 [FF-2.3 authority resolution](docs/TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md) finds
 2022 and 2023–2024 use UNVERIFIABLE / NOT GRANTED; custody review remains fail-closed.
-Next gate: explicit owner use admission, qualified membership and exact fit authority.
+FF-2 branch's next gate: explicit owner use admission, qualified membership and exact fit authority.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 ### Historical execution and preparation checkpoints
@@ -136,23 +167,30 @@ Current queue resumes below; prior freeze/readiness checkpoints are complete.
 | R4 | ACCEPTED / DONE | Optional adapter imports and package dependencies isolated | Preserve isolation baseline |
 | R5 | ACCEPTED / DONE — BEFORE_A6 | Trusted startup selection, identity and binding freeze | Preserve COLD boundary |
 | A6 | FROZEN | Deterministic captured-read Trade Expression Intelligence at `tiaf-a6-baseline`; `expression.assess` PUBLISHED | Preserve baseline |
-| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0 accepted; FF-1 scientific closure accepted, inconclusive; no public forecast capability | FLC frozen; FF-2.1 governance complete; FF-2.2 synthetic infrastructure implemented; FF-2.3 authority UNVERIFIABLE; explicit owner admission required |
-| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 FROZEN / FF-1 FROZEN / FLC FROZEN / FF-2.1 GOVERNANCE COMPLETE | Final INSUFFICIENT_EVIDENCE; 2025 CONSUMED / evidence COMPLETE; no promotion | FLC FROZEN; FF-2.1 governance complete, empirical execution HOLD; no refit or recycled holdout |
+| A7 | ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS | FF-0/FF-1/FLC complete/frozen; FF-2.0–FF-2.3 complete; empirical continuation HOLD | Resume FF-2 when authority/evidence gates pass; does not block A8 |
+| Forecasting Framework (FF) | ARCHITECTURE ACCEPTED / FF-0 FROZEN / FF-1 FROZEN / FLC FROZEN / FF-2.0–FF-2.3 COMPLETE | Final INSUFFICIENT_EVIDENCE; 2025 CONSUMED / evidence COMPLETE; no promotion | Empirical execution HOLD; no refit or recycled holdout |
+| IFL / Intelligence Services | ARCHITECTURE DEFINED / PRE-A8 FOUNDATION COMPLETE / FULL RUNTIME NOT_IMPLEMENTED | Accepted producer/claim/service contracts, not full IFL runtime | A8 consumption ready; runtime slices separately gated |
 | FM / LFDE design track | ADVANCED FORECASTER FAMILY IN FF / THESIS RETAINED / RUNTIME NOT_IMPLEMENTED | Market-state/latent-factor research remains intact; not the platform definition | Conditional family research, not a prerequisite to a useful simple FF |
-| A8 | PLANNED / NOT_IMPLEMENTED | TradeMonitor integration | After A7 |
+| A8 | READY_TO_START / NOT_IMPLEMENTED | TI ↔ TM Integration Foundation | NEXT MAJOR WORK on stable TI/IFL contracts; blocked FF-2 branch may remain open |
 | A9 | PLANNED / NOT_IMPLEMENTED | Scanner integration | After A8 |
 | A10 | PLANNED / NOT_IMPLEMENTED | Production hardening + Monitoring Runtime operationalization | After A9 |
 
 FROZEN means an existing accepted tag; ACCEPTED means reviewed bounded scope;
 DONE means its bounded remediation is closed. READY_FOR_ACCEPTANCE means the
 implementation and regression are complete but the closure remains separate.
+READY_TO_START identifies the next implementation target, not delivered runtime
+or an empirical, trading or activation grant.
 PENDING is the gated queue, DEFERRED registered postponed work, FUTURE later
 work, TBD unresolved placement/design, and NOT_IMPLEMENTED absence of runtime.
 
 ## CURRENT ACTIVE WORKSTREAM
 
 **R1–R5 ACCEPTED / DONE; A6 FROZEN at `tiaf-a6-baseline`;
-`expression.assess` PUBLISHED; A7 ARCHITECTURE ACCEPTED / THESIS RECONCILED / IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE) / INTERNAL SYNTHETIC RUNTIME IMPLEMENTED.**
+`expression.assess` PUBLISHED; A7 IN_PROGRESS with FF-2 empirical continuation HOLD;
+IFL pre-A8 foundation COMPLETE; A8 TI ↔ TM Integration Foundation is NEXT MAJOR
+WORK / READY_TO_START / NOT_IMPLEMENTED.**
+The blocked scientific branch remains open independently; full IFL runtime is
+not implemented and this reconciliation starts no implementation work.
 The non-normative A7 reference is available as [PDF](docs/TI_Forecasting_Evaluation_Learning_Thesis.pdf)
 and [editable DOCX](docs/TI_Forecasting_Evaluation_Learning_Thesis.docx), with a
 [creation record](docs/TIAF_A7_FORECASTING_EVALUATION_LEARNING_THESIS_RECORD.md).
@@ -254,26 +292,43 @@ A6.1 CONTRACTS / ADMISSION / POLICY — ACCEPTED / DONE
 A6.2 EVALUATION / RANKING / REPLAY — ACCEPTED / DONE
   ↓
 A6.3 FACADE / SHELL — ACCEPTED / DONE → A6.4 ACCEPTED / DONE
-  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE) → A8 → A9 → A10
+  → A6 FROZEN (`tiaf-a6-baseline`)
+  → A7 IN_PROGRESS: FF-0 / FF-1 / FLC complete/frozen; FF-2.0–FF-2.3 complete
+      └── FF-2 empirical continuation HOLD; resume when authority/evidence gates pass
+  → IFL pre-A8 foundation COMPLETE; full IFL runtime NOT_IMPLEMENTED
+  → A8 TI ↔ TM Integration Foundation NEXT / READY_TO_START / NOT_IMPLEMENTED
+  → A9 (after A8) → A10 (after A9)
 ```
 
 Forward sequence: `A6.1 → A6.2 → A6.3 → A6.4 → A7 → A8 → A9 → A10`.
+This is the major capability order, not a requirement to close the blocked FF-2
+scientific branch before starting A8. The detailed executive tree appears once,
+under Current Project Status; this path summarizes the integration transition.
 
 ## NEXT STEPS
 
-1. Follow [FF-2.3's authority findings and blockers](docs/TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md); obtain explicit owner admission and qualified empirical custody before seeking any execution grant.
-2. Preserve frozen FF-0/FF-1, consumed 2025 evidence and the no-refit restriction.
-3. Keep empirical development, collection and final evaluation on HOLD until
-   their separate authority/qualification gates pass; synthetic code grants none.
-4. Continue remaining A7 stages under the accepted FF-0…FF-7 sequence and ownership.
-5. Keep A8 deferred under remaining A7; preserve the A8 → A9 → A10 major order.
+1. Preserve [FF-2 empirical HOLD](docs/TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md)
+   and frozen FF-0/FF-1/FLC, consumed 2025 evidence and the no-refit restriction.
+2. Preserve completed IFL pre-A8 contracts as the stable integration surface.
+3. Begin **A8 TI ↔ TM Integration Foundation** as the next major implementation
+   work without waiting for formal closure of the blocked FF-2 branch.
+4. Let A8 establish the first trader-oriented vertical integration boundary;
+   preserve TI advice versus TM risk/capital/action authority and broker truth.
+5. Resume FF-2 empirical development when its separate empirical-authority and
+   prospective-evidence gates pass; no fitting or protected evaluation grant is implied.
+6. Add full IFL runtime later under separate admission, driven by integrated
+   workflow needs; foundation acceptance does not implement those features.
+7. A9 follows A8; A10 follows A9. Neither begins in this documentation pass.
 
 The [IFL / Intelligence Service architecture](docs/TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md)
 now defines the additive heterogeneous-producer, typed-claim and feedback design.
 The bounded [pre-A8 foundation contracts](docs/TIAF_IFL_FOUNDATION_PRODUCER_CLAIM_SERVICE_CONTRACTS.md)
-are implemented: producer/service identity, typed claims, provenance and local/remote
-service interfaces. Full IFL runtime remains NOT_IMPLEMENTED; FF-2 remains on
-empirical HOLD. Ledger, integration and operational work require separate authority;
+are COMPLETE and accepted for A8 consumption: producer/service identity, typed
+claims, provenance and local/remote service interfaces. Full IFL runtime remains
+NOT_IMPLEMENTED; FF-2 remains on empirical HOLD. Claim Ledger, scheduling,
+Performance Memory, drift/diagnosis, retraining, real IFL HTTP/gRPC transports,
+provider adapters and Workflow App are not supplied by these contracts.
+A8 is next; its implementation scope and operational slices require separate admission;
 durable recurring operations remain A10 unless explicitly approved earlier.
 
 ## Parallel / Future Workstreams
@@ -284,12 +339,12 @@ A5 tag gates or an instruction to start parallel implementation.
 | Workstream | Architecture accepted? | Implementation started? | Placement |
 |---|---|---|---|
 | TI Monitoring | Yes | Runtime: NOT_IMPLEMENTED; A5 intent exists | A8/A9 integration; A10 operations |
-| IFL / Intelligence Services | [Design defined; acceptance pending](docs/TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md) | [Foundation contracts implemented](docs/TIAF_IFL_FOUNDATION_PRODUCER_CLAIM_SERVICE_CONTRACTS.md); runtime NOT_IMPLEMENTED | Bounded pre-A8 contract surface; later ledger/integration/operations separately gated |
+| IFL / Intelligence Services | [Architecture defined](docs/TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md) | [Pre-A8 foundation COMPLETE](docs/TIAF_IFL_FOUNDATION_PRODUCER_CLAIM_SERVICE_CONTRACTS.md); full runtime NOT_IMPLEMENTED | A8 consumption ready; later ledger/operations separately gated |
 | Trading Ecosystem | Yes, responsibility model | Integration: NOT_IMPLEMENTED | A8/A9/A10 |
 | Forecasting / evaluation | [FF platform ACCEPTED](docs/TIAF_FORECASTING_FRAMEWORK_ARCHITECTURE.md); A7 architecture ACCEPTED, thesis reconciled | Internal BaseRate and fixed Logistic training/evaluation implemented; FF-1 closed inconclusive; no public forecast capability | FF-0/FF-1/FLC frozen → FF-2.1 governance complete; FF-2.2 synthetic infrastructure implemented; FF-2.3 authority UNVERIFIABLE; explicit owner admission required |
 | Sector Rotation | No; TBD idea note | NOT_IMPLEMENTED | FUTURE; relative to A7/A8 TBD |
 | Signal Qualification | No; TBD idea note | NOT_IMPLEMENTED | FUTURE; intended after Sector Rotation review, A7/A8 placement TBD |
-| TM / Scanner integration | Ecosystem boundaries accepted | NOT_IMPLEMENTED | A8 / A9 respectively |
+| TM / Scanner integration | Ecosystem boundaries accepted | NOT_IMPLEMENTED | A8 TI ↔ TM foundation NEXT / READY_TO_START; A9 scanner integration follows A8 |
 | Web / multi-console Cockpit | Ownership model accepted; UI design TBD | NOT_IMPLEMENTED | FUTURE; delivery placement TBD |
 | Runtime / production hardening | Monitoring/deployment boundaries accepted | Full operational runtime NOT_IMPLEMENTED | A10 |
 
@@ -460,6 +515,8 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Proposed next task: **FF-2 OWNER USE ADMISSION AND EMPIRICAL QUALIFICATION — NO EXECUTION GRANT YET**; empirical grants and final readiness remain separate.
+Next major work: **A8 TI ↔ TM INTEGRATION FOUNDATION — READY_TO_START / NOT_IMPLEMENTED**.
+FF-2 owner use admission and empirical qualification remain a separate gated
+continuation; no empirical execution grant or final readiness is implied.
 No commit, tag or push is performed by this implementation pass. Historical
 planning/acceptance records retain their then-current status.

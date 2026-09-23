@@ -3,19 +3,22 @@
 This is the **near-term forward queue**, subordinate to the intended major order
 in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 [milestone ledger](MILESTONES.md) owns actual status/tags and the
-[README](../README.md) is the executive dashboard. Status: 2026-09-22
+[README](../README.md) is the executive dashboard. Status: 2026-09-24
 (Asia/Kolkata); historical reviews retain their original then-next decisions.
 
-### IFL / Intelligence Service planning overlay — 2026-09-23
+### IFL / Intelligence Service current overlay — 2026-09-24
 
 The [IFL architecture and phased work plan](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md#15-phased-work-plan-and-implementation-timing)
 define the overlay; architecture alone grants no runtime implementation authority.
-The overlay does not replace FF-0…FF-7 or change A7 → A8 → A9 → A10:
+The overlay does not replace FF-0…FF-7 or renumber A7 → A8 → A9 → A10.
+Current sequencing permits A8 to begin on stable TI/IFL contracts while A7's
+scientifically gated FF-2 empirical branch remains open on HOLD:
 
 1. Architecture checkpoint: architecture/impact analysis completed on 2026-09-23.
-2. Late A7 / pre-A8: separately approve a minimal identity, typed-claim,
-   resolution/service contract, adapter and Claim Ledger foundation. Start with
-   one synthetic existing-FF binary mapping; no network host or empirical fit.
+2. Late A7 / pre-A8: identity, typed-claim, resolution/service contracts and
+   local/remote adapter boundaries are COMPLETE and accepted for A8 consumption,
+   with synthetic existing-FF mapping proofs. Claim Ledger runtime remains
+   NOT_IMPLEMENTED and separately gated; no network host or empirical fit is added.
    The [active-primary clarification](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md#61-active-primary-llm-and-provider-neutral-configuration)
    adds provider-neutral LLM service/configuration and synthesizer/contributor
    references to those same envelopes. One primary LLM is the future normal App
@@ -31,8 +34,19 @@ authorized [producer/claim/service foundation](TIAF_IFL_FOUNDATION_PRODUCER_CLAI
 implements immutable identities, seven claim kinds, resolution/provenance envelopes
 and local/remote adapter interfaces with synthetic contract proofs. It does not
 implement Claim Ledger, network adapters, orchestration or full IFL runtime.
-The rest of the phase-2 foundation and phase-3 integration remain separately gated;
-this checkpoint does not start A8 or grant a public facade capability.
+That foundation checkpoint did not itself start A8 or grant a public facade
+capability. The current queue now selects **A8 TI ↔ TM Integration Foundation**
+as **READY_TO_START / NOT_IMPLEMENTED — NEXT MAJOR WORK**. A7 remains formally
+IN_PROGRESS; FF-0/FF-1/FLC are complete/frozen and FF-2.0–FF-2.3 are complete.
+FF-2's empirical-use authority is NOT GRANTED / UNVERIFIABLE: this scientific/
+governance block is not an architectural or implementation blocker for A8.
+Formal closure of that blocked branch is not an A8 prerequisite. FF-2 is not
+abandoned; it resumes when its separate empirical-authority/prospective-evidence
+gates become valid. This documentation pass performs no A8 implementation.
+Full IFL runtime remains NOT_IMPLEMENTED: Claim Ledger, Outcome Scheduler, Ground
+Truth runtime integration, Performance Memory, drift/diagnosis and retraining/
+improvement coordination. Real IFL HTTP/gRPC transports, provider adapters and
+Workflow App also remain unimplemented; future slices require separate admission.
 Current FF/FLC stay valid; FF-2 empirical development and protected evaluation
 remain HOLD. See the implementation report for validation and consumption readiness.
 
@@ -73,7 +87,7 @@ See the [FLC-6 reusable independent Evaluation and validation](TIAF_A7_FLC_6_REU
 See the [FLC-7 integration, provenance and replay hardening](TIAF_A7_FLC_7_INTEGRATION_PROVENANCE_AND_REPLAY_HARDENING.md).
 [FF-2.3 authority resolution](TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md) finds
 2022 and 2023–2024 use UNVERIFIABLE / NOT GRANTED; custody review remains fail-closed.
-Next gate: explicit owner use admission, qualified membership and exact fit authority.
+FF-2 branch's next gate: explicit owner use admission, qualified membership and exact fit authority.
 Empirical fitting and protected evaluation require separate grants. No commit, tag or push.
 
 Historical checkpoints below retain their then-current SEALED/NOT_RUN states and
@@ -109,7 +123,12 @@ A5: FROZEN (`tiaf-a5-baseline`)
   → A6.1 CONTRACTS / ADMISSION / POLICY ACCEPTED / DONE
   → A6.2 EVALUATION / RANKING / REPLAY ACCEPTED / DONE
   → A6.3 FACADE / SHELL ACCEPTED / DONE → A6.4 ACCEPTED / DONE
-  → A6 FROZEN (`tiaf-a6-baseline`) → A7 ARCHITECTURE ACCEPTED / IMPLEMENTATION IN_PROGRESS (FF-0 ACCEPTED; FF-1 SCIENTIFICALLY CLOSED INCONCLUSIVE) → A8 → A9 → A10
+  → A6 FROZEN (`tiaf-a6-baseline`)
+  → A7 IN_PROGRESS: FF-0 / FF-1 / FLC complete/frozen; FF-2.0–FF-2.3 complete
+      └── FF-2 empirical continuation HOLD; resume when authority/evidence gates pass
+  → IFL pre-A8 foundation COMPLETE; full IFL runtime NOT_IMPLEMENTED
+  → A8 TI ↔ TM Integration Foundation NEXT / READY_TO_START / NOT_IMPLEMENTED
+  → A9 (after A8) → A10 (after A9)
 ```
 
 R1 is ACCEPTED. [R2 Discovery Metadata](TIAF_PLUGGABILITY_R2_DISCOVERY_METADATA.md)
@@ -129,6 +148,9 @@ Interpretive capability arrives in `TIAF_A3`, followed by arbitration in
 in `TIAF_A5` and `TIAF_A6`. Evaluation becomes a dedicated capability in
 `TIAF_A7` before external integration with TradeMonitor (`TIAF_A8`) and scanners
 (`TIAF_A9`). `TIAF_A10` completes production hardening.
+This capability order does not require all A7 scientific branches to close before
+A8: stable TI/IFL pre-A8 contracts now permit integration to proceed alongside the
+open, authority-blocked FF-2 branch.
 
 After the frozen A4 baseline, the approved
 [command-first TI_SHELL architecture](TIAF_TI_SHELL_ARCHITECTURE.md) is now
@@ -194,12 +216,20 @@ is now available for [A4](TIAF_A4_DETAILED_ROADMAP.md) and
 
 ## Current forward sequence
 
-1. Follow [FF-2.3's authority findings and blockers](TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md); obtain explicit owner admission and qualified empirical custody before seeking any execution grant.
-2. Preserve frozen FF-0/FF-1, consumed 2025 evidence and the no-refit restriction.
-3. Keep empirical development, collection and final evaluation on HOLD until
-   their separate authority/qualification gates pass; synthetic code grants none.
-4. Continue remaining A7 stages under the accepted FF-0…FF-7 sequence and ownership.
-5. Keep A8 deferred under remaining A7; preserve the A8 → A9 → A10 major order.
+1. Preserve [FF-2 empirical HOLD](TIAF_A7_FF2_3_EMPIRICAL_DATA_USE_AUTHORITY_RESOLUTION.md)
+   and frozen FF-0/FF-1/FLC, consumed 2025 evidence and the no-refit restriction.
+2. Preserve the completed [IFL pre-A8 contracts](TIAF_IFL_FOUNDATION_PRODUCER_CLAIM_SERVICE_CONTRACTS.md)
+   as the stable integration surface.
+3. Begin **A8 TI ↔ TM Integration Foundation** as the next major implementation
+   work, without requiring formal closure of the blocked FF-2 empirical branch.
+4. Let A8 establish the first trader-oriented vertical integration boundary;
+   preserve TI advice versus TM risk/capital/action authority and broker truth.
+5. Resume FF-2 empirical development only when explicit empirical-authority and
+   prospective-evidence gates are satisfied. The branch remains open, not abandoned;
+   no empirical fitting is authorized and protected FF-2 final evaluation has not started.
+6. Add full IFL runtime capabilities later under separate scope/admission, driven
+   by integrated workflow needs—not inferred from foundation acceptance.
+7. A9 follows A8; A10 follows A9. Neither begins in this documentation pass.
 
 FF-1 is **FF1_FINAL_CLOSURE_ACCEPTED / FF1_SCIENTIFICALLY_CLOSED_INCONCLUSIVE**.
 The outcome remains **INSUFFICIENT_EVIDENCE / CONFIDENCE_NONDECISIVE**;
@@ -306,6 +336,8 @@ integration and all 28 FF findings remain historical evidence. Their then-next
 language and the Deferral Register's dated A7.x notes are not the current queue.
 All 58 canonical deferral rows and six thesis DOCX/PDF artifacts are unchanged.
 
-Proposed next task: **FF-2 OWNER USE ADMISSION AND EMPIRICAL QUALIFICATION — NO EXECUTION GRANT YET**; empirical grants and final readiness remain separate.
+Next major work: **A8 TI ↔ TM INTEGRATION FOUNDATION — READY_TO_START / NOT_IMPLEMENTED**.
+FF-2 owner use admission and empirical qualification remain a separate gated
+continuation; no empirical execution grant or final readiness is implied.
 No commit, tag or push is performed by this implementation pass. Historical
 planning/acceptance records retain their then-current status.
