@@ -9,10 +9,10 @@ in the [development roadmap](TRADINGINTELLIGENCE_ROADMAP.md). The
 ### IFL / Intelligence Service planning overlay — 2026-09-23
 
 The [IFL architecture and phased work plan](TIAF_IFL_INTELLIGENCE_SERVICE_ARCHITECTURE.md#15-phased-work-plan-and-implementation-timing)
-are now defined, **not implemented or implementation-authorized**. The overlay
-does not replace FF-0…FF-7 or change A7 → A8 → A9 → A10:
+define the overlay; architecture alone grants no runtime implementation authority.
+The overlay does not replace FF-0…FF-7 or change A7 → A8 → A9 → A10:
 
-1. Now: architecture/impact analysis only, complete in this documentation pass.
+1. Architecture checkpoint: architecture/impact analysis completed on 2026-09-23.
 2. Late A7 / pre-A8: separately approve a minimal identity, typed-claim,
    resolution/service contract, adapter and Claim Ledger foundation. Start with
    one synthetic existing-FF binary mapping; no network host or empirical fit.
@@ -26,9 +26,15 @@ does not replace FF-0…FF-7 or change A7 → A8 → A9 → A10:
 4. Later: qualified diagnosis/drift and proposal generation, then conditional
    multi-service/remote operations and governed retraining—not auto-promotion.
 
-Recommendation: REQUIRES_PRE_A8_FOUNDATION_WORK before generic intelligence-service
-integration promises. Current FF/FLC stay valid; FF-2 empirical development and
-protected evaluation remain HOLD. No current public capability is added.
+**Bounded implementation checkpoint — 2026-09-24 (Asia/Kolkata):** the separately
+authorized [producer/claim/service foundation](TIAF_IFL_FOUNDATION_PRODUCER_CLAIM_SERVICE_CONTRACTS.md)
+implements immutable identities, seven claim kinds, resolution/provenance envelopes
+and local/remote adapter interfaces with synthetic contract proofs. It does not
+implement Claim Ledger, network adapters, orchestration or full IFL runtime.
+The rest of the phase-2 foundation and phase-3 integration remain separately gated;
+this checkpoint does not start A8 or grant a public facade capability.
+Current FF/FLC stay valid; FF-2 empirical development and protected evaluation
+remain HOLD. See the implementation report for validation and consumption readiness.
 
 ### Preserved FF/FLC execution checkpoint
 
